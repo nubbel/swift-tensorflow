@@ -91,7 +91,7 @@ if which protoc >/dev/null; then
         # Node
         if [ "$CONDITION" == "5" ] ; then
         protoc --plugin=protoc-gen-grpc=$(which grpc_node_plugin) \
-        --node_out=. \
+        --js_out=. \
         --grpc_out=. \
         $file_path
         fi
