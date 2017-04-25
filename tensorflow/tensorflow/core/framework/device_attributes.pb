@@ -1,6 +1,6 @@
 
-¢
-1tensorflow/core/framework/device_attributes.proto
+­
+<tensorflow/tensorflow/core/framework/device_attributes.proto
 tensorflow"'
 DeviceLocality
 bus_id (RbusId"ö

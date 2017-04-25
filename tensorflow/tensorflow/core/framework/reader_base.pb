@@ -1,6 +1,6 @@
 
-¥
-+tensorflow/core/framework/reader_base.proto
+°
+6tensorflow/tensorflow/core/framework/reader_base.proto
 tensorflow"®
 ReaderBaseState!
 work_started (RworkStarted#

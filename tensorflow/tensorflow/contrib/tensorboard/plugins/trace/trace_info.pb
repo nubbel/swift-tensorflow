@@ -1,6 +1,6 @@
 
-ì
-=tensorflow/contrib/tensorboard/plugins/trace/trace_info.prototensorflow.contrib.tensorboard"…
+÷
+Htensorflow/tensorflow/contrib/tensorboard/plugins/trace/trace_info.prototensorflow.contrib.tensorboard"…
 	TraceInfo8
 ops (2&.tensorflow.contrib.tensorboard.OpInfoRops>
 files (2(.tensorflow.contrib.tensorboard.FileInfoRfiles" 

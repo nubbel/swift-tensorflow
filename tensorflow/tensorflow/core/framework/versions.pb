@@ -1,6 +1,6 @@
 
-á
-(tensorflow/core/framework/versions.proto
+ì
+3tensorflow/tensorflow/core/framework/versions.proto
 tensorflow"p
 
 VersionDef

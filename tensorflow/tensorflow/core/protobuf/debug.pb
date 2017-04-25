@@ -1,6 +1,6 @@
 
-Ì
-$tensorflow/core/protobuf/debug.proto
+×
+/tensorflow/tensorflow/core/protobuf/debug.proto
 tensorflow"Ú
 DebugTensorWatch
 	node_name (	RnodeName

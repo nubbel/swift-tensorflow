@@ -1,6 +1,6 @@
 
-ï
-(tensorflow/core/framework/variable.proto
+ú
+3tensorflow/tensorflow/core/framework/variable.proto
 tensorflow"ð
 VariableDef#
 variable_name (	RvariableName)

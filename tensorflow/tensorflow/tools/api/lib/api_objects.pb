@@ -1,6 +1,6 @@
 
-‡
-*tensorflow/tools/api/lib/api_objects.proto third_party.tensorflow.tools.api"7
+’
+5tensorflow/tensorflow/tools/api/lib/api_objects.proto third_party.tensorflow.tools.api"7
 TFAPIMember
 name (	Rname
 mtype (	Rmtype"O

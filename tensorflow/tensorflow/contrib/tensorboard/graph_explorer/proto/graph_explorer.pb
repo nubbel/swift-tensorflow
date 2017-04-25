@@ -1,6 +1,6 @@
 
-°	
-Htensorflow/contrib/tensorboard/graph_explorer/proto/graph_explorer.protograph_explorer"¦
+»	
+Stensorflow/tensorflow/contrib/tensorboard/graph_explorer/proto/graph_explorer.protograph_explorer"¦
 Node
 name (	Rname?
 	node_attr (2".graph_explorer.Node.NodeAttrEntryRnodeAttrK

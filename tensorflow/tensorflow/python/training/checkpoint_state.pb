@@ -1,6 +1,6 @@
 
-Ñ
-1tensorflow/python/training/checkpoint_state.proto
+Ü
+<tensorflow/tensorflow/python/training/checkpoint_state.proto
 tensorflow"‚
 CheckpointState2
 model_checkpoint_path (	RmodelCheckpointPath;

@@ -1,6 +1,6 @@
 
-­
-?tensorflow/contrib/cloud/kernels/bigquery_table_partition.proto
+¸
+Jtensorflow/tensorflow/contrib/cloud/kernels/bigquery_table_partition.proto
 tensorflow"V
 BigQueryTablePartition
 start_index (R
