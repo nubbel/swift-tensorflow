@@ -4,8 +4,7 @@
 ## Table of Contents
 * [function.proto](#function.proto)
  * [FunctionDef](#tensorflow.FunctionDef)
- * [FunctionDef.Node](#tensorflow.FunctionDef.Node)
- * [FunctionDef.Node.AttrEntry](#tensorflow.FunctionDef.Node.AttrEntry)
+ * [FunctionDef.AttrEntry](#tensorflow.FunctionDef.AttrEntry)
  * [FunctionDef.RetEntry](#tensorflow.FunctionDef.RetEntry)
  * [FunctionDefLibrary](#tensorflow.FunctionDefLibrary)
  * [GradientDef](#tensorflow.GradientDef)
@@ -25,26 +24,13 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | signature | [OpDef](#tensorflow.OpDef) | optional |  |
-| node | [FunctionDef.Node](#tensorflow.FunctionDef.Node) | repeated |  |
+| attr | [FunctionDef.AttrEntry](#tensorflow.FunctionDef.AttrEntry) | repeated |  |
 | node_def | [NodeDef](#tensorflow.NodeDef) | repeated |  |
 | ret | [FunctionDef.RetEntry](#tensorflow.FunctionDef.RetEntry) | repeated |  |
 
 
-<a name="tensorflow.FunctionDef.Node"/>
-### FunctionDef.Node
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| ret | [string](#string) | repeated |  |
-| op | [string](#string) | optional |  |
-| arg | [string](#string) | repeated |  |
-| dep | [string](#string) | repeated |  |
-| attr | [FunctionDef.Node.AttrEntry](#tensorflow.FunctionDef.Node.AttrEntry) | repeated |  |
-
-
-<a name="tensorflow.FunctionDef.Node.AttrEntry"/>
-### FunctionDef.Node.AttrEntry
+<a name="tensorflow.FunctionDef.AttrEntry"/>
+### FunctionDef.AttrEntry
 
 
 | Field | Type | Label | Description |

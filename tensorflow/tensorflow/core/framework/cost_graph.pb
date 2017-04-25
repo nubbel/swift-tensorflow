@@ -1,9 +1,9 @@
 
-‚
+²	
 *tensorflow/core/framework/cost_graph.proto
-tensorflow,tensorflow/core/framework/tensor_shape.proto%tensorflow/core/framework/types.proto"¸
+tensorflow,tensorflow/core/framework/tensor_shape.proto%tensorflow/core/framework/types.proto"è
 CostGraphDef1
-node (2.tensorflow.CostGraphDef.NodeRnodeô
+node (2.tensorflow.CostGraphDef.NodeRnode¤
 Node
 name (	Rname
 device (	Rdevice
@@ -12,8 +12,16 @@ tensorflow,tensorflow/core/framework/tensor_shape.proto%tensorflow/core/framew
 input_info (2'.tensorflow.CostGraphDef.Node.InputInfoR	inputInfoI
 output_info (2(.tensorflow.CostGraphDef.Node.OutputInfoR
 outputInfo2
-temporary_memory_size (RtemporaryMemorySize!
-compute_cost	 (RcomputeCost
+temporary_memory_size (RtemporaryMemorySize1
+host_temp_memory_size
+ (RhostTempMemorySize5
+device_temp_memory_size (RdeviceTempMemorySize=
+host_persistent_memory_size (RhostPersistentMemorySizeA
+device_persistent_memory_size (RdevicePersistentMemorySize!
+compute_cost	 (RcomputeCost!
+compute_time (RcomputeTime
+memory_time (R
+memoryTime
 is_final (RisFinal#
 control_input (RcontrolInputY
 	InputInfo%

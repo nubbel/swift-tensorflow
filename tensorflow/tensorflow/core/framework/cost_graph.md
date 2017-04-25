@@ -37,7 +37,13 @@
 | input_info | [CostGraphDef.Node.InputInfo](#tensorflow.CostGraphDef.Node.InputInfo) | repeated |  |
 | output_info | [CostGraphDef.Node.OutputInfo](#tensorflow.CostGraphDef.Node.OutputInfo) | repeated |  |
 | temporary_memory_size | [int64](#int64) | optional |  |
+| host_temp_memory_size | [int64](#int64) | optional |  |
+| device_temp_memory_size | [int64](#int64) | optional |  |
+| host_persistent_memory_size | [int64](#int64) | optional |  |
+| device_persistent_memory_size | [int64](#int64) | optional |  |
 | compute_cost | [int64](#int64) | optional |  |
+| compute_time | [int64](#int64) | optional |  |
+| memory_time | [int64](#int64) | optional |  |
 | is_final | [bool](#bool) | optional |  |
 | control_input | [int32](#int32) | repeated |  |
 

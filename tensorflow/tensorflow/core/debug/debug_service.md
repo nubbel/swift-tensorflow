@@ -4,6 +4,8 @@
 ## Table of Contents
 * [debug_service.proto](#debug_service.proto)
  * [EventReply](#tensorflow.EventReply)
+ * [EventReply.DebugOpStateChange](#tensorflow.EventReply.DebugOpStateChange)
+ * [EventReply.DebugOpStateChange.Change](#tensorflow.EventReply.DebugOpStateChange.Change)
  * [EventListener](#tensorflow.EventListener)
 * [Scalar Value Types](#scalar-value-types)
 
@@ -20,8 +22,30 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
+| debug_op_state_changes | [EventReply.DebugOpStateChange](#tensorflow.EventReply.DebugOpStateChange) | repeated |  |
 
 
+<a name="tensorflow.EventReply.DebugOpStateChange"/>
+### EventReply.DebugOpStateChange
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| change | [EventReply.DebugOpStateChange.Change](#tensorflow.EventReply.DebugOpStateChange.Change) | optional |  |
+| node_name | [string](#string) | optional |  |
+| output_slot | [int32](#int32) | optional |  |
+| debug_op | [string](#string) | optional |  |
+
+
+
+<a name="tensorflow.EventReply.DebugOpStateChange.Change"/>
+### EventReply.DebugOpStateChange.Change
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| DISABLE | 0 |  |
+| ENABLE | 1 |  |
 
 
 
