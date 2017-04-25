@@ -1,17 +1,26 @@
 
-Ä	
+Ï
 *tensorflow/core/framework/step_stats.proto
-tensorflow6tensorflow/core/framework/allocation_description.proto2tensorflow/core/framework/tensor_description.proto"|
+tensorflow6tensorflow/core/framework/allocation_description.proto2tensorflow/core/framework/tensor_description.proto"õ
 AllocatorMemoryUsed%
 allocator_name (	RallocatorName
 total_bytes (R
 totalBytes
 
-peak_bytes (R	peakBytes"n
+peak_bytes (R	peakBytes
+
+live_bytes (R	liveBytes"n
 
 NodeOutput
 slot (RslotL
-tensor_description (2.tensorflow.TensorDescriptionRtensorDescription"Ö
+tensor_description (2.tensorflow.TensorDescriptionRtensorDescription"ç
+MemoryStats1
+host_temp_memory_size (RhostTempMemorySize5
+device_temp_memory_size (RdeviceTempMemorySize=
+host_persistent_memory_size (RhostPersistentMemorySizeA
+device_persistent_memory_size (RdevicePersistentMemorySizeF
+ host_persistent_tensor_alloc_ids (RhostPersistentTensorAllocIdsJ
+"device_persistent_tensor_alloc_ids (RdevicePersistentTensorAllocIds"¡
 NodeExecStats
 	node_name (	RnodeName(
 all_start_micros (RallStartMicros-
@@ -24,7 +33,8 @@ NodeOutput
 scheduled_micros	 (RscheduledMicros
 	thread_id
  (RthreadIdN
-referenced_tensor (2!.tensorflow.AllocationDescriptionRreferencedTensor"c
+referenced_tensor (2!.tensorflow.AllocationDescriptionRreferencedTensor:
+memory_stats (2.tensorflow.MemoryStatsRmemoryStats"c
 DeviceStepStats
 device (	Rdevice8
 

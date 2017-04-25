@@ -5,6 +5,7 @@
 * [step_stats.proto](#step_stats.proto)
  * [AllocatorMemoryUsed](#tensorflow.AllocatorMemoryUsed)
  * [DeviceStepStats](#tensorflow.DeviceStepStats)
+ * [MemoryStats](#tensorflow.MemoryStats)
  * [NodeExecStats](#tensorflow.NodeExecStats)
  * [NodeOutput](#tensorflow.NodeOutput)
  * [StepStats](#tensorflow.StepStats)
@@ -26,6 +27,7 @@
 | allocator_name | [string](#string) | optional |  |
 | total_bytes | [int64](#int64) | optional |  |
 | peak_bytes | [int64](#int64) | optional |  |
+| live_bytes | [int64](#int64) | optional |  |
 
 
 <a name="tensorflow.DeviceStepStats"/>
@@ -36,6 +38,20 @@
 | ----- | ---- | ----- | ----------- |
 | device | [string](#string) | optional |  |
 | node_stats | [NodeExecStats](#tensorflow.NodeExecStats) | repeated |  |
+
+
+<a name="tensorflow.MemoryStats"/>
+### MemoryStats
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| host_temp_memory_size | [int64](#int64) | optional |  |
+| device_temp_memory_size | [int64](#int64) | optional |  |
+| host_persistent_memory_size | [int64](#int64) | optional |  |
+| device_persistent_memory_size | [int64](#int64) | optional |  |
+| host_persistent_tensor_alloc_ids | [int64](#int64) | repeated |  |
+| device_persistent_tensor_alloc_ids | [int64](#int64) | repeated |  |
 
 
 <a name="tensorflow.NodeExecStats"/>
@@ -55,6 +71,7 @@
 | scheduled_micros | [int64](#int64) | optional |  |
 | thread_id | [uint32](#uint32) | optional |  |
 | referenced_tensor | [AllocationDescription](#tensorflow.AllocationDescription) | repeated |  |
+| memory_stats | [MemoryStats](#tensorflow.MemoryStats) | optional |  |
 
 
 <a name="tensorflow.NodeOutput"/>

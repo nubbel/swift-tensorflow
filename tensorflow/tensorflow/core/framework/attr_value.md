@@ -47,6 +47,7 @@
 | type | [DataType](#tensorflow.DataType) | repeated |  |
 | shape | [TensorShapeProto](#tensorflow.TensorShapeProto) | repeated |  |
 | tensor | [TensorProto](#tensorflow.TensorProto) | repeated |  |
+| func | [NameAttrList](#tensorflow.NameAttrList) | repeated |  |
 
 
 <a name="tensorflow.NameAttrList"/>
