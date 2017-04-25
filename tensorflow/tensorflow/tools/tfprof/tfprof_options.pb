@@ -1,6 +1,6 @@
 
-¦
-7tensorflow/tensorflow/tools/tfprof/tfprof_options.prototensorflow.tfprof"×
+›
+,tensorflow/tools/tfprof/tfprof_options.prototensorflow.tfprof"×
 OptionsProto
 	max_depth (RmaxDepth
 	min_bytes (RminBytes

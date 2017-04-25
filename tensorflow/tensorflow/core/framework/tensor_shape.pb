@@ -1,6 +1,6 @@
 
-œ
-7tensorflow/tensorflow/core/framework/tensor_shape.proto
+‘
+,tensorflow/core/framework/tensor_shape.proto
 tensorflow"˜
 TensorShapeProto2
 dim (2 .tensorflow.TensorShapeProto.DimRdim!

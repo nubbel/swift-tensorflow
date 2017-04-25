@@ -164,7 +164,7 @@ if which protoc >/dev/null; then
         # Swift
         if [ "$CONDITION" == "1" ] ; then
           # https://github.com/grpc/grpc-swift/blob/574c47b6a39959ff4f2e3eda1874108f95e00fa9/Plugin/README.md
-           echo  "\n☄️ protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=. \ \n$file_path \n"
+          echo  "\n☄️ protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=. \ \n$file_path \n"
           protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc  \
           --proto_path=tensorflow \
           --swiftgrpc_out=. \
@@ -176,8 +176,9 @@ if which protoc >/dev/null; then
           --proto_path=tensorflow \
           --swift_out=. \
           --descriptor_set_out $output_file \
-          --doc_out=markdown,$doc_output_file:"." \
           $file_path 
+          #--doc_out=markdown,$doc_output_file:"." \some problems related to directory - https://github.com/estan/protoc-gen-doc/issues/267
+
           
 
           

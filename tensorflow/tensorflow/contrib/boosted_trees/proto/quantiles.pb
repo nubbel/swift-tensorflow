@@ -1,6 +1,6 @@
 
-Ç
-Atensorflow/tensorflow/contrib/boosted_trees/proto/quantiles.protoboosted_trees"G
+¼
+6tensorflow/contrib/boosted_trees/proto/quantiles.protoboosted_trees"G
 QuantileConfig
 eps (Reps#
 num_quantiles (RnumQuantiles"s

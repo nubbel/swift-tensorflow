@@ -1,6 +1,6 @@
 
-®
-:tensorflow/tensorflow/core/framework/resource_handle.proto
+ù
+/tensorflow/core/framework/resource_handle.proto
 tensorflow"ü
 ResourceHandle
 device (	Rdevice

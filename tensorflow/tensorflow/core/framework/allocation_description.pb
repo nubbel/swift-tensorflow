@@ -1,6 +1,6 @@
 
-‘
-Atensorflow/tensorflow/core/framework/allocation_description.proto
+†
+6tensorflow/core/framework/allocation_description.proto
 tensorflow"ù
 AllocationDescription'
 requested_bytes (RrequestedBytes'

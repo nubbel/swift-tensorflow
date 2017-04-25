@@ -1,6 +1,6 @@
 
-”
-;tensorflow/tensorflow/core/util/memmapped_file_system.proto
+‰
+0tensorflow/core/util/memmapped_file_system.proto
 tensorflow"Q
 #MemmappedFileSystemDirectoryElement
 offset (Roffset
