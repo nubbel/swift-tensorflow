@@ -16,7 +16,7 @@ RUNME.sh will auto download latest tensorflow / swift grpc and build protobuf fi
 * [Tensorflow Client Service](Sources/tensorflow.client.pb.swift)    
 * [Tensorflow GRPC Client Service](Sources/tensorflow.grpc.client.pb.swift)    
 * [Tensorflow GRPC Server Service](Sources/tensorflow.grpc.server.pb.swift)    
-* [Tensorflow Server](tensorflow.server.pb.swift)    
+* [Tensorflow Server](Sources/tensorflow.server.pb.swift)    
 
 
 
