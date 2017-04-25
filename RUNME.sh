@@ -63,12 +63,12 @@ function cloneTensorFlowRemoveAllFilesExceptProto {
 }
 
 printf "\033c"
-echo "INFO - we're going to do a fresh git clone of swift-protobuf + tensorflow\n";
-echo "& only keep files that are  .proto \n\n\n";
+echo "\n\n\nINFO - we're going to do a fresh git clone of swift-protobuf + tensorflow\n";
+echo "& keep the  .proto files and mass convert to swift 🚀 \n\n\n";
 
 
 if [ -d "swift-protobuf" ] ; then
- read -p "Existing swift-protobuf  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
+ read -p "⚠️  Existing swift-protobuf  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
   if [ "$CONDITION" == "n" ] ; then
     echo "";
   else 
@@ -83,7 +83,7 @@ fi
 # GOOGLE GRPC SWIFT
 if [ -d "grpc-swift" ] ; then
   printf "\033c"
- read -p "Existing grpc-swift  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
+ read -p "⚠️  Existing grpc-swift  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
   if [ "$CONDITION" == "n" ] ; then
     echo "";
   else 
@@ -104,7 +104,7 @@ fi
 # TENSORFLOW
 if [ -d "tensorflow" ] ; then
   printf "\033c"
-  read -p "Existing tensorflow directory detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
+  read -p "⚠️  Existing tensorflow directory detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
   if [ "$CONDITION" == "n" ] ; then
     echo "ok";
   else 
@@ -159,12 +159,12 @@ if which protoc >/dev/null; then
         
         test=$file_path
         output_file=${test/.proto/.pb}
-        doc_output_file=${test/proto/md}
+        doc_output_file=${test/.proto/.md}
         
         # Swift
         if [ "$CONDITION" == "1" ] ; then
           # https://github.com/grpc/grpc-swift/blob/574c47b6a39959ff4f2e3eda1874108f95e00fa9/Plugin/README.md
-           echo  "\n☄️ protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=.\ \n$file_path \n"
+           echo  "\n☄️ protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=. \ \n$file_path \n"
           protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc  \
           --proto_path=tensorflow \
           --swiftgrpc_out=. \
