@@ -7,7 +7,7 @@
  using [swift-protobuf](https://github.com/apple/swift-protobuf) &     using [swift-grpc-protobuf](https://github.com/grpc/grpc-swift)   
 
 
-RUNME.sh will auto download latest tensorflow / swift grpc and build protobuf files en masse. 
+[RUNME.sh](RUNME.sh)  will  download latest tensorflow proto files / swift grpc and build protobuf files en masse. 
 
 
 * [Tensorflow Client Service - tensorflow.client.pb.swift](Generated/tensorflow.client.pb.swift) 
