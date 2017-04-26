@@ -231,12 +231,9 @@ if [ "$CONDITION" == "1" ] ; then
 	  done
 
     # move swift files to this directory
-   # mkdir servingGenerated
-   # mkdir servingDocumentation
-   # find . -maxdepth 1 -name "*.swift" -exec mv {} servingGenerated \;
-   # cd tensorflow_serving
-   # find . -name "*.swift" -exec mv {} ../servingGenerated \;
-   # find . -name "*.md"  -exec mv {} ../servingDocumentation \;
+   mkdir Generated
+   mv tensorflow tensorflow_serving Generated
+   find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
   fi
 
 else
