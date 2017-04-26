@@ -91,10 +91,12 @@ struct Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf.Message {
     get {return _storage._serverDef ?? Tensorflow_ServerDef()}
     set {_uniqueStorage()._serverDef = newValue}
   }
-  /// Returns true if `serverDef` has been explicitly set.
-  var hasServerDef: Bool {return _storage._serverDef != nil}
-  /// Clears the value of `serverDef`. Subsequent reads from it will return its default value.
-  mutating func clearServerDef() {_storage._serverDef = nil}
+  var hasServerDef: Bool {
+    return _storage._serverDef != nil
+  }
+  mutating func clearServerDef() {
+    _storage._serverDef = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -160,10 +162,12 @@ struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
     get {return _storage._graphDef ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._graphDef = newValue}
   }
-  /// Returns true if `graphDef` has been explicitly set.
-  var hasGraphDef: Bool {return _storage._graphDef != nil}
-  /// Clears the value of `graphDef`. Subsequent reads from it will return its default value.
-  mutating func clearGraphDef() {_storage._graphDef = nil}
+  var hasGraphDef: Bool {
+    return _storage._graphDef != nil
+  }
+  mutating func clearGraphDef() {
+    _storage._graphDef = nil
+  }
 
   /// True iff the graph (before partitioning) contains control flow nodes.
   ///
@@ -178,10 +182,12 @@ struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
     get {return _storage._graphOptions ?? Tensorflow_GraphOptions()}
     set {_uniqueStorage()._graphOptions = newValue}
   }
-  /// Returns true if `graphOptions` has been explicitly set.
-  var hasGraphOptions: Bool {return _storage._graphOptions != nil}
-  /// Clears the value of `graphOptions`. Subsequent reads from it will return its default value.
-  mutating func clearGraphOptions() {_storage._graphOptions = nil}
+  var hasGraphOptions: Bool {
+    return _storage._graphOptions != nil
+  }
+  mutating func clearGraphOptions() {
+    _storage._graphOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -407,10 +413,12 @@ struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
     get {return _storage._execOpts ?? Tensorflow_ExecutorOpts()}
     set {_uniqueStorage()._execOpts = newValue}
   }
-  /// Returns true if `execOpts` has been explicitly set.
-  var hasExecOpts: Bool {return _storage._execOpts != nil}
-  /// Clears the value of `execOpts`. Subsequent reads from it will return its default value.
-  mutating func clearExecOpts() {_storage._execOpts = nil}
+  var hasExecOpts: Bool {
+    return _storage._execOpts != nil
+  }
+  mutating func clearExecOpts() {
+    _storage._execOpts = nil
+  }
 
   /// Runs the graph.
   ///
@@ -506,19 +514,23 @@ struct Tensorflow_RunGraphResponse: SwiftProtobuf.Message {
     get {return _storage._stepStats ?? Tensorflow_StepStats()}
     set {_uniqueStorage()._stepStats = newValue}
   }
-  /// Returns true if `stepStats` has been explicitly set.
-  var hasStepStats: Bool {return _storage._stepStats != nil}
-  /// Clears the value of `stepStats`. Subsequent reads from it will return its default value.
-  mutating func clearStepStats() {_storage._stepStats = nil}
+  var hasStepStats: Bool {
+    return _storage._stepStats != nil
+  }
+  mutating func clearStepStats() {
+    _storage._stepStats = nil
+  }
 
   var costGraph: Tensorflow_CostGraphDef {
     get {return _storage._costGraph ?? Tensorflow_CostGraphDef()}
     set {_uniqueStorage()._costGraph = newValue}
   }
-  /// Returns true if `costGraph` has been explicitly set.
-  var hasCostGraph: Bool {return _storage._costGraph != nil}
-  /// Clears the value of `costGraph`. Subsequent reads from it will return its default value.
-  mutating func clearCostGraph() {_storage._costGraph = nil}
+  var hasCostGraph: Bool {
+    return _storage._costGraph != nil
+  }
+  mutating func clearCostGraph() {
+    _storage._costGraph = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -629,30 +641,36 @@ struct Tensorflow_RecvTensorRequest: SwiftProtobuf.Message {
     get {return _storage._clientLocality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._clientLocality = newValue}
   }
-  /// Returns true if `clientLocality` has been explicitly set.
-  var hasClientLocality: Bool {return _storage._clientLocality != nil}
-  /// Clears the value of `clientLocality`. Subsequent reads from it will return its default value.
-  mutating func clearClientLocality() {_storage._clientLocality = nil}
+  var hasClientLocality: Bool {
+    return _storage._clientLocality != nil
+  }
+  mutating func clearClientLocality() {
+    _storage._clientLocality = nil
+  }
 
   /// Optional information on server-side device locality.
   var serverLocality: Tensorflow_DeviceLocality {
     get {return _storage._serverLocality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._serverLocality = newValue}
   }
-  /// Returns true if `serverLocality` has been explicitly set.
-  var hasServerLocality: Bool {return _storage._serverLocality != nil}
-  /// Clears the value of `serverLocality`. Subsequent reads from it will return its default value.
-  mutating func clearServerLocality() {_storage._serverLocality = nil}
+  var hasServerLocality: Bool {
+    return _storage._serverLocality != nil
+  }
+  mutating func clearServerLocality() {
+    _storage._serverLocality = nil
+  }
 
   /// Optional information needed by the RPC subsystem.
   var transportOptions: Google_Protobuf_Any {
     get {return _storage._transportOptions ?? Google_Protobuf_Any()}
     set {_uniqueStorage()._transportOptions = newValue}
   }
-  /// Returns true if `transportOptions` has been explicitly set.
-  var hasTransportOptions: Bool {return _storage._transportOptions != nil}
-  /// Clears the value of `transportOptions`. Subsequent reads from it will return its default value.
-  mutating func clearTransportOptions() {_storage._transportOptions = nil}
+  var hasTransportOptions: Bool {
+    return _storage._transportOptions != nil
+  }
+  mutating func clearTransportOptions() {
+    _storage._transportOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -710,10 +728,12 @@ struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
     get {return _storage._tensor ?? Tensorflow_TensorProto()}
     set {_uniqueStorage()._tensor = newValue}
   }
-  /// Returns true if `tensor` has been explicitly set.
-  var hasTensor: Bool {return _storage._tensor != nil}
-  /// Clears the value of `tensor`. Subsequent reads from it will return its default value.
-  mutating func clearTensor() {_storage._tensor = nil}
+  var hasTensor: Bool {
+    return _storage._tensor != nil
+  }
+  mutating func clearTensor() {
+    _storage._tensor = nil
+  }
 
   /// If true, this tensor was the output of a dead node, and the
   /// content is invalid.
@@ -734,10 +754,12 @@ struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
     get {return _storage._transportOptions ?? Google_Protobuf_Any()}
     set {_uniqueStorage()._transportOptions = newValue}
   }
-  /// Returns true if `transportOptions` has been explicitly set.
-  var hasTransportOptions: Bool {return _storage._transportOptions != nil}
-  /// Clears the value of `transportOptions`. Subsequent reads from it will return its default value.
-  mutating func clearTransportOptions() {_storage._transportOptions = nil}
+  var hasTransportOptions: Bool {
+    return _storage._transportOptions != nil
+  }
+  mutating func clearTransportOptions() {
+    _storage._transportOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -836,10 +858,12 @@ struct Tensorflow_LabeledStepStats: SwiftProtobuf.Message {
     get {return _storage._stepStats ?? Tensorflow_StepStats()}
     set {_uniqueStorage()._stepStats = newValue}
   }
-  /// Returns true if `stepStats` has been explicitly set.
-  var hasStepStats: Bool {return _storage._stepStats != nil}
-  /// Clears the value of `stepStats`. Subsequent reads from it will return its default value.
-  mutating func clearStepStats() {_storage._stepStats = nil}
+  var hasStepStats: Bool {
+    return _storage._stepStats != nil
+  }
+  mutating func clearStepStats() {
+    _storage._stepStats = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -971,10 +995,12 @@ struct Tensorflow_TracingRequest: SwiftProtobuf.Message {
     get {return _storage._options ?? Tensorflow_TraceOpts()}
     set {_uniqueStorage()._options = newValue}
   }
-  /// Returns true if `options` has been explicitly set.
-  var hasOptions: Bool {return _storage._options != nil}
-  /// Clears the value of `options`. Subsequent reads from it will return its default value.
-  mutating func clearOptions() {_storage._options = nil}
+  var hasOptions: Bool {
+    return _storage._options != nil
+  }
+  mutating func clearOptions() {
+    _storage._options = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

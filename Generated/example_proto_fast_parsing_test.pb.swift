@@ -30,10 +30,12 @@ struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
     get {return _storage._features ?? Tensorflow_Features()}
     set {_uniqueStorage()._features = newValue}
   }
-  /// Returns true if `features` has been explicitly set.
-  var hasFeatures: Bool {return _storage._features != nil}
-  /// Clears the value of `features`. Subsequent reads from it will return its default value.
-  mutating func clearFeatures() {_storage._features = nil}
+  var hasFeatures: Bool {
+    return _storage._features != nil
+  }
+  mutating func clearFeatures() {
+    _storage._features = nil
+  }
 
   var extra1: String {
     get {return _storage._extra1}
@@ -69,10 +71,12 @@ struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
     get {return _storage._extra7 ?? Tensorflow_Features()}
     set {_uniqueStorage()._extra7 = newValue}
   }
-  /// Returns true if `extra7` has been explicitly set.
-  var hasExtra7: Bool {return _storage._extra7 != nil}
-  /// Clears the value of `extra7`. Subsequent reads from it will return its default value.
-  mutating func clearExtra7() {_storage._extra7 = nil}
+  var hasExtra7: Bool {
+    return _storage._extra7 != nil
+  }
+  mutating func clearExtra7() {
+    _storage._extra7 = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

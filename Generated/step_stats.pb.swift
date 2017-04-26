@@ -77,10 +77,12 @@ struct Tensorflow_NodeOutput: SwiftProtobuf.Message {
     get {return _storage._tensorDescription ?? Tensorflow_TensorDescription()}
     set {_uniqueStorage()._tensorDescription = newValue}
   }
-  /// Returns true if `tensorDescription` has been explicitly set.
-  var hasTensorDescription: Bool {return _storage._tensorDescription != nil}
-  /// Clears the value of `tensorDescription`. Subsequent reads from it will return its default value.
-  mutating func clearTensorDescription() {_storage._tensorDescription = nil}
+  var hasTensorDescription: Bool {
+    return _storage._tensorDescription != nil
+  }
+  mutating func clearTensorDescription() {
+    _storage._tensorDescription = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -238,10 +240,12 @@ struct Tensorflow_NodeExecStats: SwiftProtobuf.Message {
     get {return _storage._memoryStats ?? Tensorflow_MemoryStats()}
     set {_uniqueStorage()._memoryStats = newValue}
   }
-  /// Returns true if `memoryStats` has been explicitly set.
-  var hasMemoryStats: Bool {return _storage._memoryStats != nil}
-  /// Clears the value of `memoryStats`. Subsequent reads from it will return its default value.
-  mutating func clearMemoryStats() {_storage._memoryStats = nil}
+  var hasMemoryStats: Bool {
+    return _storage._memoryStats != nil
+  }
+  mutating func clearMemoryStats() {
+    _storage._memoryStats = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

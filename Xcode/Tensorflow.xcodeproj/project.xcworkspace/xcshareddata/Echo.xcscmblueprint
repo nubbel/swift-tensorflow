@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9EDDABE139EFE2CF16D7964A3F5B908927455C00",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : 9223372036854775807,
+    "8B06E12A8BC7ADE97BC9AAF1FFA2035EEC0C9610" : 9223372036854775807,
+    "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC" : 9223372036854775807,
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : 9223372036854775807,
+    "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5" : 9223372036854775807,
+    "D591987028BFCE350CA11D7DA7F1AE9C4373C207" : 9223372036854775807,
+    "A23C305BE52F465232B82C027D37FEAA140CED69" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DCC05FEE-FDEF-48CF-AC0C-219878AE5E8B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9EDDABE139EFE2CF16D7964A3F5B908927455C00" : "grpc-swift\/",
+    "8B06E12A8BC7ADE97BC9AAF1FFA2035EEC0C9610" : "grpc-swift\/third_party\/grpc\/",
+    "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC" : "grpc-swift\/Plugin\/.build\/checkouts\/swift-protobuf.git--7219529775138357838\/",
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : "grpc-swift\/Plugin\/.build\/checkouts\/Stencil.git-7635584243355970173\/",
+    "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5" : "grpc-swift\/Plugin\/.build\/checkouts\/PathKit.git--1865447967743163058\/",
+    "D591987028BFCE350CA11D7DA7F1AE9C4373C207" : "grpc-swift\/Plugin\/.build\/checkouts\/Spectre.git--7655155069707042687\/",
+    "A23C305BE52F465232B82C027D37FEAA140CED69" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Echo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Examples\/Echo\/Xcode\/Echo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/jp\/Documents\/gitWorkspace\/swift-tensorflow\/grpc-swift\/Plugin\/.build\/repositories\/Stencil.git-7635584243355970173",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DA8097D366B6AFDAEA91946C35253AA1EBC780B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/apple\/swift-protobuf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "43BF8F9148B1F39FBDE34E7D1E69C54C78D21FCC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/grpc\/grpc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8B06E12A8BC7ADE97BC9AAF1FFA2035EEC0C9610"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/grpc\/grpc-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9EDDABE139EFE2CF16D7964A3F5B908927455C00"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nubbel\/swift-tensorflow.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A23C305BE52F465232B82C027D37FEAA140CED69"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/jp\/Documents\/gitWorkspace\/swift-tensorflow\/grpc-swift\/Plugin\/.build\/repositories\/Spectre.git--7655155069707042687",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D591987028BFCE350CA11D7DA7F1AE9C4373C207"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/jp\/Documents\/gitWorkspace\/swift-tensorflow\/grpc-swift\/Plugin\/.build\/repositories\/PathKit.git--1865447967743163058",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E3472B155FC961329A2EA7BFAD3AFAE6EFBD63E5"
+    }
+  ]
+}

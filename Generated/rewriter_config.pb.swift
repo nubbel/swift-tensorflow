@@ -78,10 +78,12 @@ struct Tensorflow_RewriterConfig: SwiftProtobuf.Message {
     get {return _storage._autoParallel ?? Tensorflow_AutoParallelOptions()}
     set {_uniqueStorage()._autoParallel = newValue}
   }
-  /// Returns true if `autoParallel` has been explicitly set.
-  var hasAutoParallel: Bool {return _storage._autoParallel != nil}
-  /// Clears the value of `autoParallel`. Subsequent reads from it will return its default value.
-  mutating func clearAutoParallel() {_storage._autoParallel = nil}
+  var hasAutoParallel: Bool {
+    return _storage._autoParallel != nil
+  }
+  mutating func clearAutoParallel() {
+    _storage._autoParallel = nil
+  }
 
   /// If non-empty, will use this as an alternative way to specify a list of
   /// optimizations to turn on and the order of the optimizations.

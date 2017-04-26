@@ -64,19 +64,23 @@ struct Tensorflow_Tfcompile_Feed: SwiftProtobuf.Message {
     get {return _storage._id ?? Tensorflow_Tfcompile_TensorId()}
     set {_uniqueStorage()._id = newValue}
   }
-  /// Returns true if `id` has been explicitly set.
-  var hasId: Bool {return _storage._id != nil}
-  /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  mutating func clearId() {_storage._id = nil}
+  var hasId: Bool {
+    return _storage._id != nil
+  }
+  mutating func clearId() {
+    _storage._id = nil
+  }
 
   var shape: Tensorflow_TensorShapeProto {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   /// Optional name for generated code.
   var name: String {
@@ -129,10 +133,12 @@ struct Tensorflow_Tfcompile_Fetch: SwiftProtobuf.Message {
     get {return _storage._id ?? Tensorflow_Tfcompile_TensorId()}
     set {_uniqueStorage()._id = newValue}
   }
-  /// Returns true if `id` has been explicitly set.
-  var hasId: Bool {return _storage._id != nil}
-  /// Clears the value of `id`. Subsequent reads from it will return its default value.
-  mutating func clearId() {_storage._id = nil}
+  var hasId: Bool {
+    return _storage._id != nil
+  }
+  mutating func clearId() {
+    _storage._id = nil
+  }
 
   /// Optional name for generated code.
   var name: String {

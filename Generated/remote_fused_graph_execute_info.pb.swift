@@ -30,10 +30,12 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
     get {return _storage._remoteGraph ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._remoteGraph = newValue}
   }
-  /// Returns true if `remoteGraph` has been explicitly set.
-  var hasRemoteGraph: Bool {return _storage._remoteGraph != nil}
-  /// Clears the value of `remoteGraph`. Subsequent reads from it will return its default value.
-  mutating func clearRemoteGraph() {_storage._remoteGraph = nil}
+  var hasRemoteGraph: Bool {
+    return _storage._remoteGraph != nil
+  }
+  mutating func clearRemoteGraph() {
+    _storage._remoteGraph = nil
+  }
 
   /// Remote fused graph input node name
   var graphInputNodeName: [String] {
@@ -89,10 +91,12 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
       get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
       set {_uniqueStorage()._shape = newValue}
     }
-    /// Returns true if `shape` has been explicitly set.
-    var hasShape: Bool {return _storage._shape != nil}
-    /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-    mutating func clearShape() {_storage._shape = nil}
+    var hasShape: Bool {
+      return _storage._shape != nil
+    }
+    mutating func clearShape() {
+      _storage._shape = nil
+    }
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 

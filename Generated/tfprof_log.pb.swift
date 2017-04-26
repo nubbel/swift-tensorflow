@@ -23,26 +23,32 @@ struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
   static let protoMessageName: String = _protobuf_package + ".OpLogEntry"
 
   /// op name.
+  fileprivate var _name: String? = nil
   var name: String {
     get {return _name ?? String()}
     set {_name = newValue}
   }
-  /// Returns true if `name` has been explicitly set.
-  var hasName: Bool {return self._name != nil}
-  /// Clears the value of `name`. Subsequent reads from it will return its default value.
-  mutating func clearName() {self._name = nil}
+  var hasName: Bool {
+    return self._name != nil
+  }
+  mutating func clearName() {
+    self._name = nil
+  }
 
   /// float_ops is filled by tfprof Python API when called. It requires the
   /// op has RegisterStatistics defined. Currently, Conv2D, MatMul, etc, are
   /// implemented.
+  fileprivate var _floatOps: Int64? = nil
   var floatOps: Int64 {
     get {return _floatOps ?? 0}
     set {_floatOps = newValue}
   }
-  /// Returns true if `floatOps` has been explicitly set.
-  var hasFloatOps: Bool {return self._floatOps != nil}
-  /// Clears the value of `floatOps`. Subsequent reads from it will return its default value.
-  mutating func clearFloatOps() {self._floatOps = nil}
+  var hasFloatOps: Bool {
+    return self._floatOps != nil
+  }
+  mutating func clearFloatOps() {
+    self._floatOps = nil
+  }
 
   /// User can define extra op type information for an op. This allows the user
   /// to select a group of ops precisely using op_type as a key.
@@ -75,9 +81,6 @@ struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-
-  fileprivate var _name: String? = nil
-  fileprivate var _floatOps: Int64? = nil
 }
 
 struct Tensorflow_Tfprof_OpLog: SwiftProtobuf.Message {

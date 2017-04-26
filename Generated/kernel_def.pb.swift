@@ -56,10 +56,12 @@ struct Tensorflow_KernelDef: SwiftProtobuf.Message {
       get {return _storage._allowedValues ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._allowedValues = newValue}
     }
-    /// Returns true if `allowedValues` has been explicitly set.
-    var hasAllowedValues: Bool {return _storage._allowedValues != nil}
-    /// Clears the value of `allowedValues`. Subsequent reads from it will return its default value.
-    mutating func clearAllowedValues() {_storage._allowedValues = nil}
+    var hasAllowedValues: Bool {
+      return _storage._allowedValues != nil
+    }
+    mutating func clearAllowedValues() {
+      _storage._allowedValues = nil
+    }
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 

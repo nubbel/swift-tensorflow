@@ -1,0 +1,919 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D35C9FAC1D74B079000443CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C9FAB1D74B079000443CD /* AppDelegate.swift */; };
+		D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAD1D74B079000443CD /* Assets.xcassets */; };
+		D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAF1D74B079000443CD /* MainMenu.xib */; };
+		D35C9FC81D74B0C1000443CD /* EchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C9FC71D74B0C1000443CD /* EchoViewController.swift */; };
+		D3971E211D89132E001A0B3F /* ssl.key in Resources */ = {isa = PBXBuildFile; fileRef = D3971E201D89132E001A0B3F /* ssl.key */; };
+		D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */ = {isa = PBXBuildFile; fileRef = D3BFE28B1D87A45D00A648D8 /* ssl.crt */; };
+		E8D0D68F1EB0E2BE009B2929 /* allocation_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */; };
+		E8D0D6901EB0E2BE009B2929 /* api_objects.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */; };
+		E8D0D6911EB0E2BE009B2929 /* attr_value.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */; };
+		E8D0D6921EB0E2BE009B2929 /* bigquery_table_partition.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */; };
+		E8D0D6931EB0E2BE009B2929 /* checkpoint_state.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */; };
+		E8D0D6941EB0E2BE009B2929 /* compare_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */; };
+		E8D0D6951EB0E2BE009B2929 /* config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6491EB0E2BE009B2929 /* config.pb.swift */; };
+		E8D0D6961EB0E2BE009B2929 /* control_flow.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */; };
+		E8D0D6971EB0E2BE009B2929 /* cost_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */; };
+		E8D0D6981EB0E2BE009B2929 /* cpp_shape_inference.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */; };
+		E8D0D6991EB0E2BE009B2929 /* debug.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */; };
+		E8D0D69A1EB0E2BE009B2929 /* debug_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */; };
+		E8D0D69B1EB0E2BE009B2929 /* device_attributes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */; };
+		E8D0D69C1EB0E2BE009B2929 /* error_codes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */; };
+		E8D0D69D1EB0E2BE009B2929 /* event.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6511EB0E2BE009B2929 /* event.pb.swift */; };
+		E8D0D69E1EB0E2BE009B2929 /* example.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6521EB0E2BE009B2929 /* example.pb.swift */; };
+		E8D0D69F1EB0E2BE009B2929 /* example_parser_configuration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */; };
+		E8D0D6A01EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */; };
+		E8D0D6A11EB0E2BE009B2929 /* feature.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */; };
+		E8D0D6A21EB0E2BE009B2929 /* function.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6561EB0E2BE009B2929 /* function.pb.swift */; };
+		E8D0D6A31EB0E2BE009B2929 /* graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */; };
+		E8D0D6A41EB0E2BE009B2929 /* graph_explorer.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */; };
+		E8D0D6A51EB0E2BE009B2929 /* graph_transfer_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */; };
+		E8D0D6A61EB0E2BE009B2929 /* hparam.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */; };
+		E8D0D6A71EB0E2BE009B2929 /* kernel_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */; };
+		E8D0D6A81EB0E2BE009B2929 /* learner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */; };
+		E8D0D6A91EB0E2BE009B2929 /* log_memory.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */; };
+		E8D0D6AA1EB0E2BE009B2929 /* manifest.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */; };
+		E8D0D6AB1EB0E2BE009B2929 /* master.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */; };
+		E8D0D6AC1EB0E2BE009B2929 /* master_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */; };
+		E8D0D6AD1EB0E2BE009B2929 /* memmapped_file_system.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */; };
+		E8D0D6AE1EB0E2BE009B2929 /* meta_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */; };
+		E8D0D6AF1EB0E2BE009B2929 /* named_tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */; };
+		E8D0D6B01EB0E2BE009B2929 /* node_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */; };
+		E8D0D6B11EB0E2BE009B2929 /* op_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */; };
+		E8D0D6B21EB0E2BE009B2929 /* op_gen_overrides.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */; };
+		E8D0D6B31EB0E2BE009B2929 /* op_performance_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */; };
+		E8D0D6B41EB0E2BE009B2929 /* projector_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */; };
+		E8D0D6B51EB0E2BE009B2929 /* quantiles.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */; };
+		E8D0D6B61EB0E2BE009B2929 /* queue_runner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */; };
+		E8D0D6B71EB0E2BE009B2929 /* reader_base.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */; };
+		E8D0D6B81EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */; };
+		E8D0D6B91EB0E2BE009B2929 /* resource_handle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */; };
+		E8D0D6BA1EB0E2BE009B2929 /* rewriter_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */; };
+		E8D0D6BB1EB0E2BE009B2929 /* saved_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */; };
+		E8D0D6BC1EB0E2BE009B2929 /* saved_tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */; };
+		E8D0D6BD1EB0E2BE009B2929 /* saver.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */; };
+		E8D0D6BE1EB0E2BE009B2929 /* session.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6721EB0E2BE009B2929 /* session.pb.swift */; };
+		E8D0D6BF1EB0E2BE009B2929 /* step_stats.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */; };
+		E8D0D6C01EB0E2BE009B2929 /* summary.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */; };
+		E8D0D6C11EB0E2BE009B2929 /* tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */; };
+		E8D0D6C21EB0E2BE009B2929 /* tensor_bundle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */; };
+		E8D0D6C31EB0E2BE009B2929 /* tensor_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */; };
+		E8D0D6C41EB0E2BE009B2929 /* tensor_shape.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */; };
+		E8D0D6C51EB0E2BE009B2929 /* tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */; };
+		E8D0D6C61EB0E2BE009B2929 /* tensorflow.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */; };
+		E8D0D6C71EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */; };
+		E8D0D6C81EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */; };
+		E8D0D6C91EB0E2BE009B2929 /* tensorflow.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */; };
+		E8D0D6CA1EB0E2BE009B2929 /* tensorflow_server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */; };
+		E8D0D6CB1EB0E2BE009B2929 /* test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */; };
+		E8D0D6CC1EB0E2BE009B2929 /* test_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */; };
+		E8D0D6CD1EB0E2BE009B2929 /* tfcompile.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */; };
+		E8D0D6CE1EB0E2BE009B2929 /* tfprof_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */; };
+		E8D0D6CF1EB0E2BE009B2929 /* tfprof_options.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */; };
+		E8D0D6D01EB0E2BE009B2929 /* tfprof_output.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */; };
+		E8D0D6D11EB0E2BE009B2929 /* trace_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */; };
+		E8D0D6D21EB0E2BE009B2929 /* tree_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */; };
+		E8D0D6D31EB0E2BE009B2929 /* types.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6871EB0E2BE009B2929 /* types.pb.swift */; };
+		E8D0D6D41EB0E2BE009B2929 /* variable.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */; };
+		E8D0D6D51EB0E2BE009B2929 /* verbs_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */; };
+		E8D0D6D61EB0E2BE009B2929 /* versions.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */; };
+		E8D0D6D71EB0E2BE009B2929 /* worker.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */; };
+		E8D0D6D81EB0E2BE009B2929 /* worker_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */; };
+		E8D0D6D91EB0E2BE009B2929 /* xla.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */; };
+		E8D0D6DA1EB0E2BE009B2929 /* xla_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */; };
+		E8D0D7361EB0E8C7009B2929 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D7351EB0E8C7009B2929 /* README.md */; };
+		E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */; };
+		E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */; };
+		E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E8D0D6E41EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_Protobuf_macOS";
+			remoteInfo = SwiftProtobuf_macOS;
+		};
+		E8D0D6E61EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_ProtobufTestSuite_macOS";
+			remoteInfo = SwiftProtobufTestSuite_macOS;
+		};
+		E8D0D6E81EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_Protobuf_iOS";
+			remoteInfo = SwiftProtobuf_iOS;
+		};
+		E8D0D6EA1EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "_____Product_ProtobufTestSuite_iOS";
+			remoteInfo = SwiftProtobufTestSuite_iOS;
+		};
+		E8D0D6EC1EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F44F936F1DAEA53900BC5B85;
+			remoteInfo = SwiftProtobuf_tvOS;
+		};
+		E8D0D6EE1EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F44F939F1DAEA7C500BC5B85;
+			remoteInfo = SwiftProtobufTestSuite_tvOS;
+		};
+		E8D0D6F01EB0E2D2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F44F93FE1DAEB13F00BC5B85;
+			remoteInfo = SwiftProtobuf_watchOS;
+		};
+		E8D0D6F81EB0E2F2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_778;
+			remoteInfo = CgRPC;
+		};
+		E8D0D6FA1EB0E2F2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_779;
+			remoteInfo = BoringSSL;
+		};
+		E8D0D6FC1EB0E2F2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_780;
+			remoteInfo = gRPC;
+		};
+		E8D0D6FE1EB0E2F2009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = OBJ_781;
+			remoteInfo = gRPCTests;
+		};
+		E8D0D7101EB0E363009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_Protobuf";
+			remoteInfo = SwiftProtobuf_macOS;
+		};
+		E8D0D7121EB0E367009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1366;
+			remoteInfo = gRPC;
+		};
+		E8D0D7141EB0E387009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_782;
+			remoteInfo = CgRPC;
+		};
+		E8D0D7161EB0E38A009B2929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1062;
+			remoteInfo = BoringSSL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D35C9FA81D74B079000443CD /* Tensorflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D35C9FAB1D74B079000443CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D35C9FAD1D74B079000443CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D35C9FB01D74B079000443CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D35C9FB21D74B079000443CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D35C9FC71D74B0C1000443CD /* EchoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EchoViewController.swift; sourceTree = "<group>"; };
+		D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftGRPC.xcodeproj; path = "../grpc-swift/SwiftGRPC.xcodeproj"; sourceTree = "<group>"; };
+		D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftProtobuf.xcodeproj; path = "../grpc-swift/third_party/swift-protobuf/SwiftProtobuf.xcodeproj"; sourceTree = "<group>"; };
+		D3971E201D89132E001A0B3F /* ssl.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.key; sourceTree = "<group>"; };
+		D3BFE28B1D87A45D00A648D8 /* ssl.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.crt; sourceTree = "<group>"; };
+		E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allocation_description.pb.swift; sourceTree = "<group>"; };
+		E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_objects.pb.swift; sourceTree = "<group>"; };
+		E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = attr_value.pb.swift; sourceTree = "<group>"; };
+		E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigquery_table_partition.pb.swift; sourceTree = "<group>"; };
+		E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkpoint_state.pb.swift; sourceTree = "<group>"; };
+		E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compare_test.pb.swift; sourceTree = "<group>"; };
+		E8D0D6491EB0E2BE009B2929 /* config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.pb.swift; sourceTree = "<group>"; };
+		E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = control_flow.pb.swift; sourceTree = "<group>"; };
+		E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cost_graph.pb.swift; sourceTree = "<group>"; };
+		E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cpp_shape_inference.pb.swift; sourceTree = "<group>"; };
+		E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug.pb.swift; sourceTree = "<group>"; };
+		E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug_service.pb.swift; sourceTree = "<group>"; };
+		E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device_attributes.pb.swift; sourceTree = "<group>"; };
+		E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = error_codes.pb.swift; sourceTree = "<group>"; };
+		E8D0D6511EB0E2BE009B2929 /* event.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.pb.swift; sourceTree = "<group>"; };
+		E8D0D6521EB0E2BE009B2929 /* example.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example.pb.swift; sourceTree = "<group>"; };
+		E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_parser_configuration.pb.swift; sourceTree = "<group>"; };
+		E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_proto_fast_parsing_test.pb.swift; sourceTree = "<group>"; };
+		E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feature.pb.swift; sourceTree = "<group>"; };
+		E8D0D6561EB0E2BE009B2929 /* function.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = function.pb.swift; sourceTree = "<group>"; };
+		E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph.pb.swift; sourceTree = "<group>"; };
+		E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_explorer.pb.swift; sourceTree = "<group>"; };
+		E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_transfer_info.pb.swift; sourceTree = "<group>"; };
+		E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hparam.pb.swift; sourceTree = "<group>"; };
+		E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kernel_def.pb.swift; sourceTree = "<group>"; };
+		E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = learner.pb.swift; sourceTree = "<group>"; };
+		E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = log_memory.pb.swift; sourceTree = "<group>"; };
+		E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manifest.pb.swift; sourceTree = "<group>"; };
+		E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master.pb.swift; sourceTree = "<group>"; };
+		E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master_service.pb.swift; sourceTree = "<group>"; };
+		E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memmapped_file_system.pb.swift; sourceTree = "<group>"; };
+		E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meta_graph.pb.swift; sourceTree = "<group>"; };
+		E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = named_tensor.pb.swift; sourceTree = "<group>"; };
+		E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = node_def.pb.swift; sourceTree = "<group>"; };
+		E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_def.pb.swift; sourceTree = "<group>"; };
+		E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_gen_overrides.pb.swift; sourceTree = "<group>"; };
+		E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_performance_data.pb.swift; sourceTree = "<group>"; };
+		E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = projector_config.pb.swift; sourceTree = "<group>"; };
+		E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quantiles.pb.swift; sourceTree = "<group>"; };
+		E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queue_runner.pb.swift; sourceTree = "<group>"; };
+		E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reader_base.pb.swift; sourceTree = "<group>"; };
+		E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = remote_fused_graph_execute_info.pb.swift; sourceTree = "<group>"; };
+		E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resource_handle.pb.swift; sourceTree = "<group>"; };
+		E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewriter_config.pb.swift; sourceTree = "<group>"; };
+		E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_model.pb.swift; sourceTree = "<group>"; };
+		E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_tensor_slice.pb.swift; sourceTree = "<group>"; };
+		E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saver.pb.swift; sourceTree = "<group>"; };
+		E8D0D6721EB0E2BE009B2929 /* session.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = session.pb.swift; sourceTree = "<group>"; };
+		E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = step_stats.pb.swift; sourceTree = "<group>"; };
+		E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summary.pb.swift; sourceTree = "<group>"; };
+		E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor.pb.swift; sourceTree = "<group>"; };
+		E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_bundle.pb.swift; sourceTree = "<group>"; };
+		E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_description.pb.swift; sourceTree = "<group>"; };
+		E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_shape.pb.swift; sourceTree = "<group>"; };
+		E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_slice.pb.swift; sourceTree = "<group>"; };
+		E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.client.pb.swift; sourceTree = "<group>"; };
+		E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.client.pb.swift; sourceTree = "<group>"; };
+		E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.server.pb.swift; sourceTree = "<group>"; };
+		E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.server.pb.swift; sourceTree = "<group>"; };
+		E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow_server.pb.swift; sourceTree = "<group>"; };
+		E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.pb.swift; sourceTree = "<group>"; };
+		E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_log.pb.swift; sourceTree = "<group>"; };
+		E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfcompile.pb.swift; sourceTree = "<group>"; };
+		E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_log.pb.swift; sourceTree = "<group>"; };
+		E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_options.pb.swift; sourceTree = "<group>"; };
+		E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_output.pb.swift; sourceTree = "<group>"; };
+		E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trace_info.pb.swift; sourceTree = "<group>"; };
+		E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tree_config.pb.swift; sourceTree = "<group>"; };
+		E8D0D6871EB0E2BE009B2929 /* types.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = types.pb.swift; sourceTree = "<group>"; };
+		E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = variable.pb.swift; sourceTree = "<group>"; };
+		E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbs_service.pb.swift; sourceTree = "<group>"; };
+		E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = versions.pb.swift; sourceTree = "<group>"; };
+		E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker.pb.swift; sourceTree = "<group>"; };
+		E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker_service.pb.swift; sourceTree = "<group>"; };
+		E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla.pb.swift; sourceTree = "<group>"; };
+		E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla_data.pb.swift; sourceTree = "<group>"; };
+		E8D0D7351EB0E8C7009B2929 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.client.pb.swift; sourceTree = "<group>"; };
+		E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.pb.swift; sourceTree = "<group>"; };
+		E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.server.pb.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D35C9FA51D74B079000443CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D35C9F9F1D74B079000443CD = {
+			isa = PBXGroup;
+			children = (
+				E8D0D7351EB0E8C7009B2929 /* README.md */,
+				E8D0D6421EB0E2BE009B2929 /* Generated */,
+				D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */,
+				D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */,
+				D35C9FAA1D74B079000443CD /* Test */,
+				D35C9FA91D74B079000443CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D35C9FA91D74B079000443CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D35C9FA81D74B079000443CD /* Tensorflow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D35C9FAA1D74B079000443CD /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0D7391EB0EAE6009B2929 /* EchoGenerated */,
+				D35C9FAB1D74B079000443CD /* AppDelegate.swift */,
+				D35C9FAD1D74B079000443CD /* Assets.xcassets */,
+				D35C9FC71D74B0C1000443CD /* EchoViewController.swift */,
+				D35C9FB21D74B079000443CD /* Info.plist */,
+				D35C9FAF1D74B079000443CD /* MainMenu.xib */,
+				D3BFE28B1D87A45D00A648D8 /* ssl.crt */,
+				D3971E201D89132E001A0B3F /* ssl.key */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		E8D0D6421EB0E2BE009B2929 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */,
+				E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */,
+				E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */,
+				E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */,
+				E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */,
+				E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */,
+				E8D0D6491EB0E2BE009B2929 /* config.pb.swift */,
+				E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */,
+				E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */,
+				E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */,
+				E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */,
+				E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */,
+				E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */,
+				E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */,
+				E8D0D6511EB0E2BE009B2929 /* event.pb.swift */,
+				E8D0D6521EB0E2BE009B2929 /* example.pb.swift */,
+				E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */,
+				E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */,
+				E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */,
+				E8D0D6561EB0E2BE009B2929 /* function.pb.swift */,
+				E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */,
+				E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */,
+				E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */,
+				E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */,
+				E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */,
+				E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */,
+				E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */,
+				E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */,
+				E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */,
+				E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */,
+				E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */,
+				E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */,
+				E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */,
+				E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */,
+				E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */,
+				E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */,
+				E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */,
+				E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */,
+				E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */,
+				E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */,
+				E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */,
+				E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */,
+				E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */,
+				E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */,
+				E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */,
+				E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */,
+				E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */,
+				E8D0D6721EB0E2BE009B2929 /* session.pb.swift */,
+				E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */,
+				E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */,
+				E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */,
+				E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */,
+				E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */,
+				E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */,
+				E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */,
+				E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */,
+				E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */,
+				E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */,
+				E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */,
+				E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */,
+				E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */,
+				E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */,
+				E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */,
+				E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */,
+				E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */,
+				E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */,
+				E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */,
+				E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */,
+				E8D0D6871EB0E2BE009B2929 /* types.pb.swift */,
+				E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */,
+				E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */,
+				E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */,
+				E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */,
+				E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */,
+				E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */,
+				E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */,
+			);
+			name = Generated;
+			path = ../Generated;
+			sourceTree = "<group>";
+		};
+		E8D0D6DB1EB0E2D2009B2929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0D6E51EB0E2D2009B2929 /* SwiftProtobuf.framework */,
+				E8D0D6E71EB0E2D2009B2929 /* SwiftProtobufTests.xctest */,
+				E8D0D6E91EB0E2D2009B2929 /* SwiftProtobuf.framework */,
+				E8D0D6EB1EB0E2D2009B2929 /* SwiftProtobufTests.xctest */,
+				E8D0D6ED1EB0E2D2009B2929 /* SwiftProtobuf.framework */,
+				E8D0D6EF1EB0E2D2009B2929 /* SwiftProtobufTests.xctest */,
+				E8D0D6F11EB0E2D2009B2929 /* SwiftProtobuf.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D0D6F21EB0E2F1009B2929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0D6F91EB0E2F2009B2929 /* CgRPC.framework */,
+				E8D0D6FB1EB0E2F2009B2929 /* BoringSSL.framework */,
+				E8D0D6FD1EB0E2F2009B2929 /* gRPC.framework */,
+				E8D0D6FF1EB0E2F2009B2929 /* gRPCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D0D7391EB0EAE6009B2929 /* EchoGenerated */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */,
+				E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */,
+				E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */,
+			);
+			path = EchoGenerated;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D35C9FA71D74B079000443CD /* Tensorflow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D35C9FB51D74B079000443CD /* Build configuration list for PBXNativeTarget "Tensorflow" */;
+			buildPhases = (
+				D35C9FA41D74B079000443CD /* Sources */,
+				D35C9FA51D74B079000443CD /* Frameworks */,
+				D35C9FA61D74B079000443CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E8D0D7171EB0E38A009B2929 /* PBXTargetDependency */,
+				E8D0D7151EB0E387009B2929 /* PBXTargetDependency */,
+				E8D0D7131EB0E367009B2929 /* PBXTargetDependency */,
+				E8D0D7111EB0E363009B2929 /* PBXTargetDependency */,
+				D38E00371E315DB700CE7B16 /* PBXTargetDependency */,
+				D38E00391E315DB700CE7B16 /* PBXTargetDependency */,
+				D38E003B1E315DB700CE7B16 /* PBXTargetDependency */,
+			);
+			name = Tensorflow;
+			productName = Echo;
+			productReference = D35C9FA81D74B079000443CD /* Tensorflow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D35C9FA01D74B079000443CD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Google;
+				TargetAttributes = {
+					D35C9FA71D74B079000443CD = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EQHXZ8M8AV;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D35C9FA31D74B079000443CD /* Build configuration list for PBXProject "Tensorflow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D35C9F9F1D74B079000443CD;
+			productRefGroup = D35C9FA91D74B079000443CD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = E8D0D6F21EB0E2F1009B2929 /* Products */;
+					ProjectRef = D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */;
+				},
+				{
+					ProductGroup = E8D0D6DB1EB0E2D2009B2929 /* Products */;
+					ProjectRef = D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D35C9FA71D74B079000443CD /* Tensorflow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		E8D0D6E51EB0E2D2009B2929 /* SwiftProtobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftProtobuf.framework;
+			remoteRef = E8D0D6E41EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6E71EB0E2D2009B2929 /* SwiftProtobufTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftProtobufTests.xctest;
+			remoteRef = E8D0D6E61EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6E91EB0E2D2009B2929 /* SwiftProtobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftProtobuf.framework;
+			remoteRef = E8D0D6E81EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6EB1EB0E2D2009B2929 /* SwiftProtobufTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftProtobufTests.xctest;
+			remoteRef = E8D0D6EA1EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6ED1EB0E2D2009B2929 /* SwiftProtobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftProtobuf.framework;
+			remoteRef = E8D0D6EC1EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6EF1EB0E2D2009B2929 /* SwiftProtobufTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftProtobufTests.xctest;
+			remoteRef = E8D0D6EE1EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6F11EB0E2D2009B2929 /* SwiftProtobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftProtobuf.framework;
+			remoteRef = E8D0D6F01EB0E2D2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6F91EB0E2F2009B2929 /* CgRPC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CgRPC.framework;
+			remoteRef = E8D0D6F81EB0E2F2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6FB1EB0E2F2009B2929 /* BoringSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BoringSSL.framework;
+			remoteRef = E8D0D6FA1EB0E2F2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6FD1EB0E2F2009B2929 /* gRPC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = gRPC.framework;
+			remoteRef = E8D0D6FC1EB0E2F2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E8D0D6FF1EB0E2F2009B2929 /* gRPCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = file;
+			path = gRPCTests.xctest;
+			remoteRef = E8D0D6FE1EB0E2F2009B2929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D35C9FA61D74B079000443CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */,
+				D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */,
+				D3971E211D89132E001A0B3F /* ssl.key in Resources */,
+				D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D35C9FA41D74B079000443CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D0D6A61EB0E2BE009B2929 /* hparam.pb.swift in Sources */,
+				E8D0D6B51EB0E2BE009B2929 /* quantiles.pb.swift in Sources */,
+				E8D0D6C21EB0E2BE009B2929 /* tensor_bundle.pb.swift in Sources */,
+				E8D0D6BD1EB0E2BE009B2929 /* saver.pb.swift in Sources */,
+				E8D0D6C61EB0E2BE009B2929 /* tensorflow.client.pb.swift in Sources */,
+				E8D0D6A81EB0E2BE009B2929 /* learner.pb.swift in Sources */,
+				E8D0D6CD1EB0E2BE009B2929 /* tfcompile.pb.swift in Sources */,
+				D35C9FC81D74B0C1000443CD /* EchoViewController.swift in Sources */,
+				E8D0D6AF1EB0E2BE009B2929 /* named_tensor.pb.swift in Sources */,
+				E8D0D6A11EB0E2BE009B2929 /* feature.pb.swift in Sources */,
+				E8D0D6A51EB0E2BE009B2929 /* graph_transfer_info.pb.swift in Sources */,
+				E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */,
+				E8D0D6AE1EB0E2BE009B2929 /* meta_graph.pb.swift in Sources */,
+				E8D0D6AC1EB0E2BE009B2929 /* master_service.pb.swift in Sources */,
+				E8D0D6941EB0E2BE009B2929 /* compare_test.pb.swift in Sources */,
+				E8D0D6A71EB0E2BE009B2929 /* kernel_def.pb.swift in Sources */,
+				E8D0D6AA1EB0E2BE009B2929 /* manifest.pb.swift in Sources */,
+				E8D0D6D21EB0E2BE009B2929 /* tree_config.pb.swift in Sources */,
+				E8D0D6C81EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift in Sources */,
+				E8D0D6C11EB0E2BE009B2929 /* tensor.pb.swift in Sources */,
+				E8D0D6B71EB0E2BE009B2929 /* reader_base.pb.swift in Sources */,
+				E8D0D6B61EB0E2BE009B2929 /* queue_runner.pb.swift in Sources */,
+				E8D0D6911EB0E2BE009B2929 /* attr_value.pb.swift in Sources */,
+				D35C9FAC1D74B079000443CD /* AppDelegate.swift in Sources */,
+				E8D0D6B91EB0E2BE009B2929 /* resource_handle.pb.swift in Sources */,
+				E8D0D6B41EB0E2BE009B2929 /* projector_config.pb.swift in Sources */,
+				E8D0D69C1EB0E2BE009B2929 /* error_codes.pb.swift in Sources */,
+				E8D0D6C51EB0E2BE009B2929 /* tensor_slice.pb.swift in Sources */,
+				E8D0D6CC1EB0E2BE009B2929 /* test_log.pb.swift in Sources */,
+				E8D0D6A41EB0E2BE009B2929 /* graph_explorer.pb.swift in Sources */,
+				E8D0D7361EB0E8C7009B2929 /* README.md in Sources */,
+				E8D0D6D11EB0E2BE009B2929 /* trace_info.pb.swift in Sources */,
+				E8D0D6971EB0E2BE009B2929 /* cost_graph.pb.swift in Sources */,
+				E8D0D69D1EB0E2BE009B2929 /* event.pb.swift in Sources */,
+				E8D0D6991EB0E2BE009B2929 /* debug.pb.swift in Sources */,
+				E8D0D6B21EB0E2BE009B2929 /* op_gen_overrides.pb.swift in Sources */,
+				E8D0D6931EB0E2BE009B2929 /* checkpoint_state.pb.swift in Sources */,
+				E8D0D6A91EB0E2BE009B2929 /* log_memory.pb.swift in Sources */,
+				E8D0D6B01EB0E2BE009B2929 /* node_def.pb.swift in Sources */,
+				E8D0D6D31EB0E2BE009B2929 /* types.pb.swift in Sources */,
+				E8D0D6A31EB0E2BE009B2929 /* graph.pb.swift in Sources */,
+				E8D0D6B81EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift in Sources */,
+				E8D0D6D51EB0E2BE009B2929 /* verbs_service.pb.swift in Sources */,
+				E8D0D6981EB0E2BE009B2929 /* cpp_shape_inference.pb.swift in Sources */,
+				E8D0D69F1EB0E2BE009B2929 /* example_parser_configuration.pb.swift in Sources */,
+				E8D0D6D61EB0E2BE009B2929 /* versions.pb.swift in Sources */,
+				E8D0D6AD1EB0E2BE009B2929 /* memmapped_file_system.pb.swift in Sources */,
+				E8D0D6CE1EB0E2BE009B2929 /* tfprof_log.pb.swift in Sources */,
+				E8D0D6D41EB0E2BE009B2929 /* variable.pb.swift in Sources */,
+				E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */,
+				E8D0D6D81EB0E2BE009B2929 /* worker_service.pb.swift in Sources */,
+				E8D0D69A1EB0E2BE009B2929 /* debug_service.pb.swift in Sources */,
+				E8D0D6CB1EB0E2BE009B2929 /* test.pb.swift in Sources */,
+				E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */,
+				E8D0D6BB1EB0E2BE009B2929 /* saved_model.pb.swift in Sources */,
+				E8D0D6C71EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift in Sources */,
+				E8D0D6BF1EB0E2BE009B2929 /* step_stats.pb.swift in Sources */,
+				E8D0D6CA1EB0E2BE009B2929 /* tensorflow_server.pb.swift in Sources */,
+				E8D0D6AB1EB0E2BE009B2929 /* master.pb.swift in Sources */,
+				E8D0D6951EB0E2BE009B2929 /* config.pb.swift in Sources */,
+				E8D0D6D71EB0E2BE009B2929 /* worker.pb.swift in Sources */,
+				E8D0D6D01EB0E2BE009B2929 /* tfprof_output.pb.swift in Sources */,
+				E8D0D6C01EB0E2BE009B2929 /* summary.pb.swift in Sources */,
+				E8D0D6C41EB0E2BE009B2929 /* tensor_shape.pb.swift in Sources */,
+				E8D0D69B1EB0E2BE009B2929 /* device_attributes.pb.swift in Sources */,
+				E8D0D6921EB0E2BE009B2929 /* bigquery_table_partition.pb.swift in Sources */,
+				E8D0D6C31EB0E2BE009B2929 /* tensor_description.pb.swift in Sources */,
+				E8D0D6D91EB0E2BE009B2929 /* xla.pb.swift in Sources */,
+				E8D0D6BA1EB0E2BE009B2929 /* rewriter_config.pb.swift in Sources */,
+				E8D0D6BE1EB0E2BE009B2929 /* session.pb.swift in Sources */,
+				E8D0D6BC1EB0E2BE009B2929 /* saved_tensor_slice.pb.swift in Sources */,
+				E8D0D6CF1EB0E2BE009B2929 /* tfprof_options.pb.swift in Sources */,
+				E8D0D6C91EB0E2BE009B2929 /* tensorflow.server.pb.swift in Sources */,
+				E8D0D6B31EB0E2BE009B2929 /* op_performance_data.pb.swift in Sources */,
+				E8D0D6901EB0E2BE009B2929 /* api_objects.pb.swift in Sources */,
+				E8D0D6A01EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift in Sources */,
+				E8D0D6961EB0E2BE009B2929 /* control_flow.pb.swift in Sources */,
+				E8D0D69E1EB0E2BE009B2929 /* example.pb.swift in Sources */,
+				E8D0D6A21EB0E2BE009B2929 /* function.pb.swift in Sources */,
+				E8D0D68F1EB0E2BE009B2929 /* allocation_description.pb.swift in Sources */,
+				E8D0D6B11EB0E2BE009B2929 /* op_def.pb.swift in Sources */,
+				E8D0D6DA1EB0E2BE009B2929 /* xla_data.pb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D38E00371E315DB700CE7B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BoringSSL;
+		};
+		D38E00391E315DB700CE7B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CgRPC;
+		};
+		D38E003B1E315DB700CE7B16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gRPC;
+		};
+		E8D0D7111EB0E363009B2929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftProtobuf_macOS;
+			targetProxy = E8D0D7101EB0E363009B2929 /* PBXContainerItemProxy */;
+		};
+		E8D0D7131EB0E367009B2929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gRPC;
+			targetProxy = E8D0D7121EB0E367009B2929 /* PBXContainerItemProxy */;
+		};
+		E8D0D7151EB0E387009B2929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CgRPC;
+			targetProxy = E8D0D7141EB0E387009B2929 /* PBXContainerItemProxy */;
+		};
+		E8D0D7171EB0E38A009B2929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BoringSSL;
+			targetProxy = E8D0D7161EB0E38A009B2929 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D35C9FAF1D74B079000443CD /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D35C9FB01D74B079000443CD /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D35C9FB31D74B079000443CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../Sources/CgRPC/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D35C9FB41D74B079000443CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../../Sources/CgRPC/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		D35C9FB61D74B079000443CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../grpc-swift/Sources/CgRPC/include\"";
+				INFOPLIST_FILE = "$(SRCROOT)/Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.Tensorflow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D35C9FB71D74B079000443CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../grpc-swift/Sources/CgRPC/include\"";
+				INFOPLIST_FILE = "$(SRCROOT)/Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.Tensorflow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D35C9FA31D74B079000443CD /* Build configuration list for PBXProject "Tensorflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D35C9FB31D74B079000443CD /* Debug */,
+				D35C9FB41D74B079000443CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D35C9FB51D74B079000443CD /* Build configuration list for PBXNativeTarget "Tensorflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D35C9FB61D74B079000443CD /* Debug */,
+				D35C9FB71D74B079000443CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D35C9FA01D74B079000443CD /* Project object */;
+}

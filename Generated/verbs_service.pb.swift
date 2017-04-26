@@ -116,10 +116,12 @@ struct Tensorflow_GetRemoteAddressRequest: SwiftProtobuf.Message {
     get {return _storage._channel ?? Tensorflow_Channel()}
     set {_uniqueStorage()._channel = newValue}
   }
-  /// Returns true if `channel` has been explicitly set.
-  var hasChannel: Bool {return _storage._channel != nil}
-  /// Clears the value of `channel`. Subsequent reads from it will return its default value.
-  mutating func clearChannel() {_storage._channel = nil}
+  var hasChannel: Bool {
+    return _storage._channel != nil
+  }
+  mutating func clearChannel() {
+    _storage._channel = nil
+  }
 
   var mr: [Tensorflow_MemoryRegion] {
     get {return _storage._mr}
@@ -174,10 +176,12 @@ struct Tensorflow_GetRemoteAddressResponse: SwiftProtobuf.Message {
     get {return _storage._channel ?? Tensorflow_Channel()}
     set {_uniqueStorage()._channel = newValue}
   }
-  /// Returns true if `channel` has been explicitly set.
-  var hasChannel: Bool {return _storage._channel != nil}
-  /// Clears the value of `channel`. Subsequent reads from it will return its default value.
-  mutating func clearChannel() {_storage._channel = nil}
+  var hasChannel: Bool {
+    return _storage._channel != nil
+  }
+  mutating func clearChannel() {
+    _storage._channel = nil
+  }
 
   var mr: [Tensorflow_MemoryRegion] {
     get {return _storage._mr}

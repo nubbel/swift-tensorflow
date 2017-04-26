@@ -40,30 +40,36 @@ struct Tensorflow_MetaGraphDef: SwiftProtobuf.Message {
     get {return _storage._metaInfoDef ?? Tensorflow_MetaGraphDef.MetaInfoDef()}
     set {_uniqueStorage()._metaInfoDef = newValue}
   }
-  /// Returns true if `metaInfoDef` has been explicitly set.
-  var hasMetaInfoDef: Bool {return _storage._metaInfoDef != nil}
-  /// Clears the value of `metaInfoDef`. Subsequent reads from it will return its default value.
-  mutating func clearMetaInfoDef() {_storage._metaInfoDef = nil}
+  var hasMetaInfoDef: Bool {
+    return _storage._metaInfoDef != nil
+  }
+  mutating func clearMetaInfoDef() {
+    _storage._metaInfoDef = nil
+  }
 
   /// GraphDef.
   var graphDef: Tensorflow_GraphDef {
     get {return _storage._graphDef ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._graphDef = newValue}
   }
-  /// Returns true if `graphDef` has been explicitly set.
-  var hasGraphDef: Bool {return _storage._graphDef != nil}
-  /// Clears the value of `graphDef`. Subsequent reads from it will return its default value.
-  mutating func clearGraphDef() {_storage._graphDef = nil}
+  var hasGraphDef: Bool {
+    return _storage._graphDef != nil
+  }
+  mutating func clearGraphDef() {
+    _storage._graphDef = nil
+  }
 
   /// SaverDef.
   var saverDef: Tensorflow_SaverDef {
     get {return _storage._saverDef ?? Tensorflow_SaverDef()}
     set {_uniqueStorage()._saverDef = newValue}
   }
-  /// Returns true if `saverDef` has been explicitly set.
-  var hasSaverDef: Bool {return _storage._saverDef != nil}
-  /// Clears the value of `saverDef`. Subsequent reads from it will return its default value.
-  mutating func clearSaverDef() {_storage._saverDef = nil}
+  var hasSaverDef: Bool {
+    return _storage._saverDef != nil
+  }
+  mutating func clearSaverDef() {
+    _storage._saverDef = nil
+  }
 
   /// collection_def: Map from collection name to collections.
   /// See CollectionDef section for details.
@@ -105,10 +111,12 @@ struct Tensorflow_MetaGraphDef: SwiftProtobuf.Message {
       get {return _storage._strippedOpList ?? Tensorflow_OpList()}
       set {_uniqueStorage()._strippedOpList = newValue}
     }
-    /// Returns true if `strippedOpList` has been explicitly set.
-    var hasStrippedOpList: Bool {return _storage._strippedOpList != nil}
-    /// Clears the value of `strippedOpList`. Subsequent reads from it will return its default value.
-    mutating func clearStrippedOpList() {_storage._strippedOpList = nil}
+    var hasStrippedOpList: Bool {
+      return _storage._strippedOpList != nil
+    }
+    mutating func clearStrippedOpList() {
+      _storage._strippedOpList = nil
+    }
 
     /// A serialized protobuf. Can be the time this meta graph is created, or
     /// modified, or name of the model.
@@ -116,10 +124,12 @@ struct Tensorflow_MetaGraphDef: SwiftProtobuf.Message {
       get {return _storage._anyInfo ?? Google_Protobuf_Any()}
       set {_uniqueStorage()._anyInfo = newValue}
     }
-    /// Returns true if `anyInfo` has been explicitly set.
-    var hasAnyInfo: Bool {return _storage._anyInfo != nil}
-    /// Clears the value of `anyInfo`. Subsequent reads from it will return its default value.
-    mutating func clearAnyInfo() {_storage._anyInfo = nil}
+    var hasAnyInfo: Bool {
+      return _storage._anyInfo != nil
+    }
+    mutating func clearAnyInfo() {
+      _storage._anyInfo = nil
+    }
 
     /// User supplied tag(s) on the meta_graph and included graph_def.
     ///
@@ -575,10 +585,12 @@ struct Tensorflow_TensorInfo: SwiftProtobuf.Message {
     get {return _storage._tensorShape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._tensorShape = newValue}
   }
-  /// Returns true if `tensorShape` has been explicitly set.
-  var hasTensorShape: Bool {return _storage._tensorShape != nil}
-  /// Clears the value of `tensorShape`. Subsequent reads from it will return its default value.
-  mutating func clearTensorShape() {_storage._tensorShape = nil}
+  var hasTensorShape: Bool {
+    return _storage._tensorShape != nil
+  }
+  mutating func clearTensorShape() {
+    _storage._tensorShape = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -731,10 +743,12 @@ struct Tensorflow_AssetFileDef: SwiftProtobuf.Message {
     get {return _storage._tensorInfo ?? Tensorflow_TensorInfo()}
     set {_uniqueStorage()._tensorInfo = newValue}
   }
-  /// Returns true if `tensorInfo` has been explicitly set.
-  var hasTensorInfo: Bool {return _storage._tensorInfo != nil}
-  /// Clears the value of `tensorInfo`. Subsequent reads from it will return its default value.
-  mutating func clearTensorInfo() {_storage._tensorInfo = nil}
+  var hasTensorInfo: Bool {
+    return _storage._tensorInfo != nil
+  }
+  mutating func clearTensorInfo() {
+    _storage._tensorInfo = nil
+  }
 
   /// The filename within an assets directory. Note: does not include the path
   /// prefix, i.e. directories. For an asset at /tmp/path/vocab.txt, the filename

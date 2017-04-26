@@ -60,10 +60,12 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
     get {return _storage._device ?? Tensorflow_OpInfo.DeviceProperties()}
     set {_uniqueStorage()._device = newValue}
   }
-  /// Returns true if `device` has been explicitly set.
-  var hasDevice: Bool {return _storage._device != nil}
-  /// Clears the value of `device`. Subsequent reads from it will return its default value.
-  mutating func clearDevice() {_storage._device = nil}
+  var hasDevice: Bool {
+    return _storage._device != nil
+  }
+  mutating func clearDevice() {
+    _storage._device = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -79,19 +81,23 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
       get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
       set {_uniqueStorage()._shape = newValue}
     }
-    /// Returns true if `shape` has been explicitly set.
-    var hasShape: Bool {return _storage._shape != nil}
-    /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-    mutating func clearShape() {_storage._shape = nil}
+    var hasShape: Bool {
+      return _storage._shape != nil
+    }
+    mutating func clearShape() {
+      _storage._shape = nil
+    }
 
     var value: Tensorflow_TensorProto {
       get {return _storage._value ?? Tensorflow_TensorProto()}
       set {_uniqueStorage()._value = newValue}
     }
-    /// Returns true if `value` has been explicitly set.
-    var hasValue: Bool {return _storage._value != nil}
-    /// Clears the value of `value`. Subsequent reads from it will return its default value.
-    mutating func clearValue() {_storage._value = nil}
+    var hasValue: Bool {
+      return _storage._value != nil
+    }
+    mutating func clearValue() {
+      _storage._value = nil
+    }
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -275,10 +281,12 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
     get {return _storage._op ?? Tensorflow_OpInfo()}
     set {_uniqueStorage()._op = newValue}
   }
-  /// Returns true if `op` has been explicitly set.
-  var hasOp: Bool {return _storage._op != nil}
-  /// Clears the value of `op`. Subsequent reads from it will return its default value.
-  mutating func clearOp() {_storage._op = nil}
+  var hasOp: Bool {
+    return _storage._op != nil
+  }
+  mutating func clearOp() {
+    _storage._op = nil
+  }
 
   /// The node name (optional). Makes it easier to associate the performance data
   /// with a specific graph node.
@@ -327,10 +335,12 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
     get {return _storage._opMemory ?? Tensorflow_OpPerformance.OpMemory()}
     set {_uniqueStorage()._opMemory = newValue}
   }
-  /// Returns true if `opMemory` has been explicitly set.
-  var hasOpMemory: Bool {return _storage._opMemory != nil}
-  /// Clears the value of `opMemory`. Subsequent reads from it will return its default value.
-  mutating func clearOpMemory() {_storage._opMemory = nil}
+  var hasOpMemory: Bool {
+    return _storage._opMemory != nil
+  }
+  mutating func clearOpMemory() {
+    _storage._opMemory = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

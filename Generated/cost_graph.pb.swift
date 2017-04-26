@@ -130,10 +130,12 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
         get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
         set {_uniqueStorage()._shape = newValue}
       }
-      /// Returns true if `shape` has been explicitly set.
-      var hasShape: Bool {return _storage._shape != nil}
-      /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-      mutating func clearShape() {_storage._shape = nil}
+      var hasShape: Bool {
+        return _storage._shape != nil
+      }
+      mutating func clearShape() {
+        _storage._shape = nil
+      }
 
       var dtype: Tensorflow_DataType {
         get {return _storage._dtype}

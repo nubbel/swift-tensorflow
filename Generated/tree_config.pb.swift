@@ -80,10 +80,12 @@ struct Tensorflow_BoostedTrees_Trees_TreeNode: SwiftProtobuf.Message {
     get {return _storage._nodeMetadata ?? Tensorflow_BoostedTrees_Trees_TreeNodeMetadata()}
     set {_uniqueStorage()._nodeMetadata = newValue}
   }
-  /// Returns true if `nodeMetadata` has been explicitly set.
-  var hasNodeMetadata: Bool {return _storage._nodeMetadata != nil}
-  /// Clears the value of `nodeMetadata`. Subsequent reads from it will return its default value.
-  mutating func clearNodeMetadata() {_storage._nodeMetadata = nil}
+  var hasNodeMetadata: Bool {
+    return _storage._nodeMetadata != nil
+  }
+  mutating func clearNodeMetadata() {
+    _storage._nodeMetadata = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -155,10 +157,12 @@ struct Tensorflow_BoostedTrees_Trees_TreeNodeMetadata: SwiftProtobuf.Message {
     get {return _storage._originalLeaf ?? Tensorflow_BoostedTrees_Trees_Leaf()}
     set {_uniqueStorage()._originalLeaf = newValue}
   }
-  /// Returns true if `originalLeaf` has been explicitly set.
-  var hasOriginalLeaf: Bool {return _storage._originalLeaf != nil}
-  /// Clears the value of `originalLeaf`. Subsequent reads from it will return its default value.
-  mutating func clearOriginalLeaf() {_storage._originalLeaf = nil}
+  var hasOriginalLeaf: Bool {
+    return _storage._originalLeaf != nil
+  }
+  mutating func clearOriginalLeaf() {
+    _storage._originalLeaf = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -379,10 +383,12 @@ struct Tensorflow_BoostedTrees_Trees_SparseFloatBinarySplitDefaultLeft: SwiftPro
     get {return _storage._split ?? Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit()}
     set {_uniqueStorage()._split = newValue}
   }
-  /// Returns true if `split` has been explicitly set.
-  var hasSplit: Bool {return _storage._split != nil}
-  /// Clears the value of `split`. Subsequent reads from it will return its default value.
-  mutating func clearSplit() {_storage._split = nil}
+  var hasSplit: Bool {
+    return _storage._split != nil
+  }
+  mutating func clearSplit() {
+    _storage._split = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -420,10 +426,12 @@ struct Tensorflow_BoostedTrees_Trees_SparseFloatBinarySplitDefaultRight: SwiftPr
     get {return _storage._split ?? Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit()}
     set {_uniqueStorage()._split = newValue}
   }
-  /// Returns true if `split` has been explicitly set.
-  var hasSplit: Bool {return _storage._split != nil}
-  /// Clears the value of `split`. Subsequent reads from it will return its default value.
-  mutating func clearSplit() {_storage._split = nil}
+  var hasSplit: Bool {
+    return _storage._split != nil
+  }
+  mutating func clearSplit() {
+    _storage._split = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

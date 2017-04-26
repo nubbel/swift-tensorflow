@@ -52,10 +52,12 @@ struct Tensorflow_SavedSliceMeta: SwiftProtobuf.Message {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   /// Type of the tensor
   var type: Tensorflow_DataType {
@@ -126,10 +128,12 @@ struct Tensorflow_SavedTensorSliceMeta: SwiftProtobuf.Message {
     get {return _storage._versions ?? Tensorflow_VersionDef()}
     set {_uniqueStorage()._versions = newValue}
   }
-  /// Returns true if `versions` has been explicitly set.
-  var hasVersions: Bool {return _storage._versions != nil}
-  /// Clears the value of `versions`. Subsequent reads from it will return its default value.
-  mutating func clearVersions() {_storage._versions = nil}
+  var hasVersions: Bool {
+    return _storage._versions != nil
+  }
+  mutating func clearVersions() {
+    _storage._versions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -181,10 +185,12 @@ struct Tensorflow_SavedSlice: SwiftProtobuf.Message {
     get {return _storage._slice ?? Tensorflow_TensorSliceProto()}
     set {_uniqueStorage()._slice = newValue}
   }
-  /// Returns true if `slice` has been explicitly set.
-  var hasSlice: Bool {return _storage._slice != nil}
-  /// Clears the value of `slice`. Subsequent reads from it will return its default value.
-  mutating func clearSlice() {_storage._slice = nil}
+  var hasSlice: Bool {
+    return _storage._slice != nil
+  }
+  mutating func clearSlice() {
+    _storage._slice = nil
+  }
 
   /// The raw data of the slice is stored as a TensorProto. Only raw data are
   /// stored (we don't fill in fields such as dtype or tensor_shape).
@@ -192,10 +198,12 @@ struct Tensorflow_SavedSlice: SwiftProtobuf.Message {
     get {return _storage._data ?? Tensorflow_TensorProto()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -244,20 +252,24 @@ struct Tensorflow_SavedTensorSlices: SwiftProtobuf.Message {
     get {return _storage._meta ?? Tensorflow_SavedTensorSliceMeta()}
     set {_uniqueStorage()._meta = newValue}
   }
-  /// Returns true if `meta` has been explicitly set.
-  var hasMeta: Bool {return _storage._meta != nil}
-  /// Clears the value of `meta`. Subsequent reads from it will return its default value.
-  mutating func clearMeta() {_storage._meta = nil}
+  var hasMeta: Bool {
+    return _storage._meta != nil
+  }
+  mutating func clearMeta() {
+    _storage._meta = nil
+  }
 
   /// This exists in all but the first item of each checkpoint file.
   var data: Tensorflow_SavedSlice {
     get {return _storage._data ?? Tensorflow_SavedSlice()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

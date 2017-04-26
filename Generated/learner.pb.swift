@@ -393,20 +393,24 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     get {return _storage._regularization ?? Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig()}
     set {_uniqueStorage()._regularization = newValue}
   }
-  /// Returns true if `regularization` has been explicitly set.
-  var hasRegularization: Bool {return _storage._regularization != nil}
-  /// Clears the value of `regularization`. Subsequent reads from it will return its default value.
-  mutating func clearRegularization() {_storage._regularization = nil}
+  var hasRegularization: Bool {
+    return _storage._regularization != nil
+  }
+  mutating func clearRegularization() {
+    _storage._regularization = nil
+  }
 
   /// Constraints.
   var constraints: Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig {
     get {return _storage._constraints ?? Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig()}
     set {_uniqueStorage()._constraints = newValue}
   }
-  /// Returns true if `constraints` has been explicitly set.
-  var hasConstraints: Bool {return _storage._constraints != nil}
-  /// Clears the value of `constraints`. Subsequent reads from it will return its default value.
-  mutating func clearConstraints() {_storage._constraints = nil}
+  var hasConstraints: Bool {
+    return _storage._constraints != nil
+  }
+  mutating func clearConstraints() {
+    _storage._constraints = nil
+  }
 
   /// Pruning.
   var pruningMode: Tensorflow_BoostedTrees_Learner_LearnerConfig.PruningMode {
@@ -425,10 +429,12 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     get {return _storage._learningRateTuner ?? Tensorflow_BoostedTrees_Learner_LearningRateConfig()}
     set {_uniqueStorage()._learningRateTuner = newValue}
   }
-  /// Returns true if `learningRateTuner` has been explicitly set.
-  var hasLearningRateTuner: Bool {return _storage._learningRateTuner != nil}
-  /// Clears the value of `learningRateTuner`. Subsequent reads from it will return its default value.
-  mutating func clearLearningRateTuner() {_storage._learningRateTuner = nil}
+  var hasLearningRateTuner: Bool {
+    return _storage._learningRateTuner != nil
+  }
+  mutating func clearLearningRateTuner() {
+    _storage._learningRateTuner = nil
+  }
 
   /// Multi-class strategy.
   var multiClassStrategy: Tensorflow_BoostedTrees_Learner_LearnerConfig.MultiClassStrategy {
@@ -442,10 +448,12 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     get {return _storage._averagingConfig ?? Tensorflow_BoostedTrees_Learner_AveragingConfig()}
     set {_uniqueStorage()._averagingConfig = newValue}
   }
-  /// Returns true if `averagingConfig` has been explicitly set.
-  var hasAveragingConfig: Bool {return _storage._averagingConfig != nil}
-  /// Clears the value of `averagingConfig`. Subsequent reads from it will return its default value.
-  mutating func clearAveragingConfig() {_storage._averagingConfig = nil}
+  var hasAveragingConfig: Bool {
+    return _storage._averagingConfig != nil
+  }
+  mutating func clearAveragingConfig() {
+    _storage._averagingConfig = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

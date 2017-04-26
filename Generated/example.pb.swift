@@ -29,10 +29,12 @@ struct Tensorflow_Example: SwiftProtobuf.Message {
     get {return _storage._features ?? Tensorflow_Features()}
     set {_uniqueStorage()._features = newValue}
   }
-  /// Returns true if `features` has been explicitly set.
-  var hasFeatures: Bool {return _storage._features != nil}
-  /// Clears the value of `features`. Subsequent reads from it will return its default value.
-  mutating func clearFeatures() {_storage._features = nil}
+  var hasFeatures: Bool {
+    return _storage._features != nil
+  }
+  mutating func clearFeatures() {
+    _storage._features = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -69,19 +71,23 @@ struct Tensorflow_SequenceExample: SwiftProtobuf.Message {
     get {return _storage._context ?? Tensorflow_Features()}
     set {_uniqueStorage()._context = newValue}
   }
-  /// Returns true if `context` has been explicitly set.
-  var hasContext: Bool {return _storage._context != nil}
-  /// Clears the value of `context`. Subsequent reads from it will return its default value.
-  mutating func clearContext() {_storage._context = nil}
+  var hasContext: Bool {
+    return _storage._context != nil
+  }
+  mutating func clearContext() {
+    _storage._context = nil
+  }
 
   var featureLists: Tensorflow_FeatureLists {
     get {return _storage._featureLists ?? Tensorflow_FeatureLists()}
     set {_uniqueStorage()._featureLists = newValue}
   }
-  /// Returns true if `featureLists` has been explicitly set.
-  var hasFeatureLists: Bool {return _storage._featureLists != nil}
-  /// Clears the value of `featureLists`. Subsequent reads from it will return its default value.
-  mutating func clearFeatureLists() {_storage._featureLists = nil}
+  var hasFeatureLists: Bool {
+    return _storage._featureLists != nil
+  }
+  mutating func clearFeatureLists() {
+    _storage._featureLists = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

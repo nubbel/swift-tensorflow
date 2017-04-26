@@ -45,10 +45,12 @@ struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
     get {return _storage._version ?? Tensorflow_VersionDef()}
     set {_uniqueStorage()._version = newValue}
   }
-  /// Returns true if `version` has been explicitly set.
-  var hasVersion: Bool {return _storage._version != nil}
-  /// Clears the value of `version`. Subsequent reads from it will return its default value.
-  mutating func clearVersion() {_storage._version = nil}
+  var hasVersion: Bool {
+    return _storage._version != nil
+  }
+  mutating func clearVersion() {
+    _storage._version = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -133,10 +135,12 @@ struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   /// The binary content of the tensor lies in:
   ///   File "shard_id": bytes [offset, offset + size).

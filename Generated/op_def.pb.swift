@@ -53,10 +53,12 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
     get {return _storage._deprecation ?? Tensorflow_OpDeprecation()}
     set {_uniqueStorage()._deprecation = newValue}
   }
-  /// Returns true if `deprecation` has been explicitly set.
-  var hasDeprecation: Bool {return _storage._deprecation != nil}
-  /// Clears the value of `deprecation`. Subsequent reads from it will return its default value.
-  mutating func clearDeprecation() {_storage._deprecation = nil}
+  var hasDeprecation: Bool {
+    return _storage._deprecation != nil
+  }
+  mutating func clearDeprecation() {
+    _storage._deprecation = nil
+  }
 
   /// One-line human-readable description of what the Op does.
   var summary: String {
@@ -219,10 +221,12 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
       get {return _storage._defaultValue ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._defaultValue = newValue}
     }
-    /// Returns true if `defaultValue` has been explicitly set.
-    var hasDefaultValue: Bool {return _storage._defaultValue != nil}
-    /// Clears the value of `defaultValue`. Subsequent reads from it will return its default value.
-    mutating func clearDefaultValue() {_storage._defaultValue = nil}
+    var hasDefaultValue: Bool {
+      return _storage._defaultValue != nil
+    }
+    mutating func clearDefaultValue() {
+      _storage._defaultValue = nil
+    }
 
     /// Human-readable description.
     var description_p: String {
@@ -252,10 +256,12 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
       get {return _storage._allowedValues ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._allowedValues = newValue}
     }
-    /// Returns true if `allowedValues` has been explicitly set.
-    var hasAllowedValues: Bool {return _storage._allowedValues != nil}
-    /// Clears the value of `allowedValues`. Subsequent reads from it will return its default value.
-    mutating func clearAllowedValues() {_storage._allowedValues = nil}
+    var hasAllowedValues: Bool {
+      return _storage._allowedValues != nil
+    }
+    mutating func clearAllowedValues() {
+      _storage._allowedValues = nil
+    }
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 

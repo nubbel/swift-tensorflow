@@ -62,10 +62,12 @@ struct Xla_ExecutionOptions: SwiftProtobuf.Message {
     get {return _storage._shapeWithOutputLayout ?? Xla_Shape()}
     set {_uniqueStorage()._shapeWithOutputLayout = newValue}
   }
-  /// Returns true if `shapeWithOutputLayout` has been explicitly set.
-  var hasShapeWithOutputLayout: Bool {return _storage._shapeWithOutputLayout != nil}
-  /// Clears the value of `shapeWithOutputLayout`. Subsequent reads from it will return its default value.
-  mutating func clearShapeWithOutputLayout() {_storage._shapeWithOutputLayout = nil}
+  var hasShapeWithOutputLayout: Bool {
+    return _storage._shapeWithOutputLayout != nil
+  }
+  mutating func clearShapeWithOutputLayout() {
+    _storage._shapeWithOutputLayout = nil
+  }
 
   /// Used to seed random-number generators used in this computation.  If this is
   /// 0, we generate a seed ourselves.
@@ -119,10 +121,12 @@ struct Xla_SnapshotComputationRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -159,10 +163,12 @@ struct Xla_SnapshotComputationResponse: SwiftProtobuf.Message {
     get {return _storage._module ?? Xla_SessionModule()}
     set {_uniqueStorage()._module = newValue}
   }
-  /// Returns true if `module` has been explicitly set.
-  var hasModule: Bool {return _storage._module != nil}
-  /// Clears the value of `module`. Subsequent reads from it will return its default value.
-  mutating func clearModule() {_storage._module = nil}
+  var hasModule: Bool {
+    return _storage._module != nil
+  }
+  mutating func clearModule() {
+    _storage._module = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -199,10 +205,12 @@ struct Xla_LoadComputationSnapshotRequest: SwiftProtobuf.Message {
     get {return _storage._module ?? Xla_SessionModule()}
     set {_uniqueStorage()._module = newValue}
   }
-  /// Returns true if `module` has been explicitly set.
-  var hasModule: Bool {return _storage._module != nil}
-  /// Clears the value of `module`. Subsequent reads from it will return its default value.
-  mutating func clearModule() {_storage._module = nil}
+  var hasModule: Bool {
+    return _storage._module != nil
+  }
+  mutating func clearModule() {
+    _storage._module = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -239,10 +247,12 @@ struct Xla_LoadComputationSnapshotResponse: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -331,10 +341,12 @@ struct Xla_TransferToClientRequest: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   /// This optional field directs the service to return the literal in this
   /// layout. A shape is used to hold the layout to accommodate tuples.
@@ -342,10 +354,12 @@ struct Xla_TransferToClientRequest: SwiftProtobuf.Message {
     get {return _storage._shapeWithLayout ?? Xla_Shape()}
     set {_uniqueStorage()._shapeWithLayout = newValue}
   }
-  /// Returns true if `shapeWithLayout` has been explicitly set.
-  var hasShapeWithLayout: Bool {return _storage._shapeWithLayout != nil}
-  /// Clears the value of `shapeWithLayout`. Subsequent reads from it will return its default value.
-  mutating func clearShapeWithLayout() {_storage._shapeWithLayout = nil}
+  var hasShapeWithLayout: Bool {
+    return _storage._shapeWithLayout != nil
+  }
+  mutating func clearShapeWithLayout() {
+    _storage._shapeWithLayout = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -386,10 +400,12 @@ struct Xla_TransferToClientResponse: SwiftProtobuf.Message {
     get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
-  /// Returns true if `literal` has been explicitly set.
-  var hasLiteral: Bool {return _storage._literal != nil}
-  /// Clears the value of `literal`. Subsequent reads from it will return its default value.
-  mutating func clearLiteral() {_storage._literal = nil}
+  var hasLiteral: Bool {
+    return _storage._literal != nil
+  }
+  mutating func clearLiteral() {
+    _storage._literal = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -426,19 +442,23 @@ struct Xla_TransferToServerRequest: SwiftProtobuf.Message {
     get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
-  /// Returns true if `literal` has been explicitly set.
-  var hasLiteral: Bool {return _storage._literal != nil}
-  /// Clears the value of `literal`. Subsequent reads from it will return its default value.
-  mutating func clearLiteral() {_storage._literal = nil}
+  var hasLiteral: Bool {
+    return _storage._literal != nil
+  }
+  mutating func clearLiteral() {
+    _storage._literal = nil
+  }
 
   var deviceHandle: Xla_DeviceHandle {
     get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
     set {_uniqueStorage()._deviceHandle = newValue}
   }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
+  var hasDeviceHandle: Bool {
+    return _storage._deviceHandle != nil
+  }
+  mutating func clearDeviceHandle() {
+    _storage._deviceHandle = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -479,10 +499,12 @@ struct Xla_TransferToServerResponse: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -524,10 +546,12 @@ struct Xla_TransferToServerInProcessRequest: SwiftProtobuf.Message {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -568,10 +592,12 @@ struct Xla_TransferToServerInProcessResponse: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -608,10 +634,12 @@ struct Xla_TransferToClientInProcessRequest: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var buffer: UInt64 {
     get {return _storage._buffer}
@@ -674,10 +702,12 @@ struct Xla_TransferToInfeedRequest: SwiftProtobuf.Message {
     get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
-  /// Returns true if `literal` has been explicitly set.
-  var hasLiteral: Bool {return _storage._literal != nil}
-  /// Clears the value of `literal`. Subsequent reads from it will return its default value.
-  mutating func clearLiteral() {_storage._literal = nil}
+  var hasLiteral: Bool {
+    return _storage._literal != nil
+  }
+  mutating func clearLiteral() {
+    _storage._literal = nil
+  }
 
   var replicaId: Int64 {
     get {return _storage._replicaId}
@@ -688,10 +718,12 @@ struct Xla_TransferToInfeedRequest: SwiftProtobuf.Message {
     get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
     set {_uniqueStorage()._deviceHandle = newValue}
   }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
+  var hasDeviceHandle: Bool {
+    return _storage._deviceHandle != nil
+  }
+  mutating func clearDeviceHandle() {
+    _storage._deviceHandle = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -755,10 +787,12 @@ struct Xla_TransferFromOutfeedRequest: SwiftProtobuf.Message {
     get {return _storage._shapeWithLayout ?? Xla_Shape()}
     set {_uniqueStorage()._shapeWithLayout = newValue}
   }
-  /// Returns true if `shapeWithLayout` has been explicitly set.
-  var hasShapeWithLayout: Bool {return _storage._shapeWithLayout != nil}
-  /// Clears the value of `shapeWithLayout`. Subsequent reads from it will return its default value.
-  mutating func clearShapeWithLayout() {_storage._shapeWithLayout = nil}
+  var hasShapeWithLayout: Bool {
+    return _storage._shapeWithLayout != nil
+  }
+  mutating func clearShapeWithLayout() {
+    _storage._shapeWithLayout = nil
+  }
 
   var replicaId: Int64 {
     get {return _storage._replicaId}
@@ -769,10 +803,12 @@ struct Xla_TransferFromOutfeedRequest: SwiftProtobuf.Message {
     get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
     set {_uniqueStorage()._deviceHandle = newValue}
   }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
+  var hasDeviceHandle: Bool {
+    return _storage._deviceHandle != nil
+  }
+  mutating func clearDeviceHandle() {
+    _storage._deviceHandle = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -817,10 +853,12 @@ struct Xla_TransferFromOutfeedResponse: SwiftProtobuf.Message {
     get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
-  /// Returns true if `literal` has been explicitly set.
-  var hasLiteral: Bool {return _storage._literal != nil}
-  /// Clears the value of `literal`. Subsequent reads from it will return its default value.
-  mutating func clearLiteral() {_storage._literal = nil}
+  var hasLiteral: Bool {
+    return _storage._literal != nil
+  }
+  mutating func clearLiteral() {
+    _storage._literal = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -857,10 +895,12 @@ struct Xla_ResetDeviceRequest: SwiftProtobuf.Message {
     get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
     set {_uniqueStorage()._deviceHandle = newValue}
   }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
+  var hasDeviceHandle: Bool {
+    return _storage._deviceHandle != nil
+  }
+  mutating func clearDeviceHandle() {
+    _storage._deviceHandle = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -914,10 +954,12 @@ struct Xla_ComputationStatsRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -954,10 +996,12 @@ struct Xla_ComputationStatsResponse: SwiftProtobuf.Message {
     get {return _storage._stats ?? Xla_ComputationStats()}
     set {_uniqueStorage()._stats = newValue}
   }
-  /// Returns true if `stats` has been explicitly set.
-  var hasStats: Bool {return _storage._stats != nil}
-  /// Clears the value of `stats`. Subsequent reads from it will return its default value.
-  mutating func clearStats() {_storage._stats = nil}
+  var hasStats: Bool {
+    return _storage._stats != nil
+  }
+  mutating func clearStats() {
+    _storage._stats = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1020,10 +1064,12 @@ struct Xla_ComputationResponse: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1077,10 +1123,12 @@ struct Xla_CreateChannelHandleResponse: SwiftProtobuf.Message {
     get {return _storage._channel ?? Xla_ChannelHandle()}
     set {_uniqueStorage()._channel = newValue}
   }
-  /// Returns true if `channel` has been explicitly set.
-  var hasChannel: Bool {return _storage._channel != nil}
-  /// Clears the value of `channel`. Subsequent reads from it will return its default value.
-  mutating func clearChannel() {_storage._channel = nil}
+  var hasChannel: Bool {
+    return _storage._channel != nil
+  }
+  mutating func clearChannel() {
+    _storage._channel = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1117,10 +1165,12 @@ struct Xla_UnregisterRequest: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1174,19 +1224,23 @@ struct Xla_SetReturnValueRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  /// Returns true if `operand` has been explicitly set.
-  var hasOperand: Bool {return _storage._operand != nil}
-  /// Clears the value of `operand`. Subsequent reads from it will return its default value.
-  mutating func clearOperand() {_storage._operand = nil}
+  var hasOperand: Bool {
+    return _storage._operand != nil
+  }
+  mutating func clearOperand() {
+    _storage._operand = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1244,10 +1298,12 @@ struct Xla_ExecuteRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var arguments: [Xla_GlobalDataHandle] {
     get {return _storage._arguments}
@@ -1260,20 +1316,24 @@ struct Xla_ExecuteRequest: SwiftProtobuf.Message {
     get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
     set {_uniqueStorage()._deviceHandle = newValue}
   }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
+  var hasDeviceHandle: Bool {
+    return _storage._deviceHandle != nil
+  }
+  mutating func clearDeviceHandle() {
+    _storage._deviceHandle = nil
+  }
 
   /// Options that affect how XLA compiles and runs code to service this request.
   var executionOptions: Xla_ExecutionOptions {
     get {return _storage._executionOptions ?? Xla_ExecutionOptions()}
     set {_uniqueStorage()._executionOptions = newValue}
   }
-  /// Returns true if `executionOptions` has been explicitly set.
-  var hasExecutionOptions: Bool {return _storage._executionOptions != nil}
-  /// Clears the value of `executionOptions`. Subsequent reads from it will return its default value.
-  mutating func clearExecutionOptions() {_storage._executionOptions = nil}
+  var hasExecutionOptions: Bool {
+    return _storage._executionOptions != nil
+  }
+  mutating func clearExecutionOptions() {
+    _storage._executionOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1348,19 +1408,23 @@ struct Xla_ExecuteResponse: SwiftProtobuf.Message {
     get {return _storage._output ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._output = newValue}
   }
-  /// Returns true if `output` has been explicitly set.
-  var hasOutput: Bool {return _storage._output != nil}
-  /// Clears the value of `output`. Subsequent reads from it will return its default value.
-  mutating func clearOutput() {_storage._output = nil}
+  var hasOutput: Bool {
+    return _storage._output != nil
+  }
+  mutating func clearOutput() {
+    _storage._output = nil
+  }
 
   var profile: Xla_ExecutionProfile {
     get {return _storage._profile ?? Xla_ExecutionProfile()}
     set {_uniqueStorage()._profile = newValue}
   }
-  /// Returns true if `profile` has been explicitly set.
-  var hasProfile: Bool {return _storage._profile != nil}
-  /// Clears the value of `profile`. Subsequent reads from it will return its default value.
-  mutating func clearProfile() {_storage._profile = nil}
+  var hasProfile: Bool {
+    return _storage._profile != nil
+  }
+  mutating func clearProfile() {
+    _storage._profile = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1427,10 +1491,12 @@ struct Xla_ExecuteAsyncRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var arguments: [Xla_GlobalDataHandle] {
     get {return _storage._arguments}
@@ -1442,10 +1508,12 @@ struct Xla_ExecuteAsyncRequest: SwiftProtobuf.Message {
     get {return _storage._executionOptions ?? Xla_ExecutionOptions()}
     set {_uniqueStorage()._executionOptions = newValue}
   }
-  /// Returns true if `executionOptions` has been explicitly set.
-  var hasExecutionOptions: Bool {return _storage._executionOptions != nil}
-  /// Clears the value of `executionOptions`. Subsequent reads from it will return its default value.
-  mutating func clearExecutionOptions() {_storage._executionOptions = nil}
+  var hasExecutionOptions: Bool {
+    return _storage._executionOptions != nil
+  }
+  mutating func clearExecutionOptions() {
+    _storage._executionOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1491,10 +1559,12 @@ struct Xla_ExecuteAsyncResponse: SwiftProtobuf.Message {
     get {return _storage._execution ?? Xla_ExecutionHandle()}
     set {_uniqueStorage()._execution = newValue}
   }
-  /// Returns true if `execution` has been explicitly set.
-  var hasExecution: Bool {return _storage._execution != nil}
-  /// Clears the value of `execution`. Subsequent reads from it will return its default value.
-  mutating func clearExecution() {_storage._execution = nil}
+  var hasExecution: Bool {
+    return _storage._execution != nil
+  }
+  mutating func clearExecution() {
+    _storage._execution = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1531,10 +1601,12 @@ struct Xla_WaitForExecutionRequest: SwiftProtobuf.Message {
     get {return _storage._execution ?? Xla_ExecutionHandle()}
     set {_uniqueStorage()._execution = newValue}
   }
-  /// Returns true if `execution` has been explicitly set.
-  var hasExecution: Bool {return _storage._execution != nil}
-  /// Clears the value of `execution`. Subsequent reads from it will return its default value.
-  mutating func clearExecution() {_storage._execution = nil}
+  var hasExecution: Bool {
+    return _storage._execution != nil
+  }
+  mutating func clearExecution() {
+    _storage._execution = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1571,19 +1643,23 @@ struct Xla_WaitForExecutionResponse: SwiftProtobuf.Message {
     get {return _storage._output ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._output = newValue}
   }
-  /// Returns true if `output` has been explicitly set.
-  var hasOutput: Bool {return _storage._output != nil}
-  /// Clears the value of `output`. Subsequent reads from it will return its default value.
-  mutating func clearOutput() {_storage._output = nil}
+  var hasOutput: Bool {
+    return _storage._output != nil
+  }
+  mutating func clearOutput() {
+    _storage._output = nil
+  }
 
   var profile: Xla_ExecutionProfile {
     get {return _storage._profile ?? Xla_ExecutionProfile()}
     set {_uniqueStorage()._profile = newValue}
   }
-  /// Returns true if `profile` has been explicitly set.
-  var hasProfile: Bool {return _storage._profile != nil}
-  /// Clears the value of `profile`. Subsequent reads from it will return its default value.
-  mutating func clearProfile() {_storage._profile = nil}
+  var hasProfile: Bool {
+    return _storage._profile != nil
+  }
+  mutating func clearProfile() {
+    _storage._profile = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1624,19 +1700,23 @@ struct Xla_IsConstantRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  /// Returns true if `operand` has been explicitly set.
-  var hasOperand: Bool {return _storage._operand != nil}
-  /// Clears the value of `operand`. Subsequent reads from it will return its default value.
-  mutating func clearOperand() {_storage._operand = nil}
+  var hasOperand: Bool {
+    return _storage._operand != nil
+  }
+  mutating func clearOperand() {
+    _storage._operand = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1703,28 +1783,34 @@ struct Xla_ComputeConstantRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  /// Returns true if `operand` has been explicitly set.
-  var hasOperand: Bool {return _storage._operand != nil}
-  /// Clears the value of `operand`. Subsequent reads from it will return its default value.
-  mutating func clearOperand() {_storage._operand = nil}
+  var hasOperand: Bool {
+    return _storage._operand != nil
+  }
+  mutating func clearOperand() {
+    _storage._operand = nil
+  }
 
   var outputLayout: Xla_Layout {
     get {return _storage._outputLayout ?? Xla_Layout()}
     set {_uniqueStorage()._outputLayout = newValue}
   }
-  /// Returns true if `outputLayout` has been explicitly set.
-  var hasOutputLayout: Bool {return _storage._outputLayout != nil}
-  /// Clears the value of `outputLayout`. Subsequent reads from it will return its default value.
-  mutating func clearOutputLayout() {_storage._outputLayout = nil}
+  var hasOutputLayout: Bool {
+    return _storage._outputLayout != nil
+  }
+  mutating func clearOutputLayout() {
+    _storage._outputLayout = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1769,10 +1855,12 @@ struct Xla_ComputeConstantResponse: SwiftProtobuf.Message {
     get {return _storage._output ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._output = newValue}
   }
-  /// Returns true if `output` has been explicitly set.
-  var hasOutput: Bool {return _storage._output != nil}
-  /// Clears the value of `output`. Subsequent reads from it will return its default value.
-  mutating func clearOutput() {_storage._output = nil}
+  var hasOutput: Bool {
+    return _storage._output != nil
+  }
+  mutating func clearOutput() {
+    _storage._output = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1809,10 +1897,12 @@ struct Xla_DeconstructTupleRequest: SwiftProtobuf.Message {
     get {return _storage._tupleHandle ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._tupleHandle = newValue}
   }
-  /// Returns true if `tupleHandle` has been explicitly set.
-  var hasTupleHandle: Bool {return _storage._tupleHandle != nil}
-  /// Clears the value of `tupleHandle`. Subsequent reads from it will return its default value.
-  mutating func clearTupleHandle() {_storage._tupleHandle = nil}
+  var hasTupleHandle: Bool {
+    return _storage._tupleHandle != nil
+  }
+  mutating func clearTupleHandle() {
+    _storage._tupleHandle = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1888,10 +1978,12 @@ struct Xla_LoadDataRequest: SwiftProtobuf.Message {
     get {return _storage._elementShape ?? Xla_Shape()}
     set {_uniqueStorage()._elementShape = newValue}
   }
-  /// Returns true if `elementShape` has been explicitly set.
-  var hasElementShape: Bool {return _storage._elementShape != nil}
-  /// Clears the value of `elementShape`. Subsequent reads from it will return its default value.
-  mutating func clearElementShape() {_storage._elementShape = nil}
+  var hasElementShape: Bool {
+    return _storage._elementShape != nil
+  }
+  mutating func clearElementShape() {
+    _storage._elementShape = nil
+  }
 
   /// Warning: ColumnIO does not support random-access, so use offset with
   /// caution in performance-critical scenarios.
@@ -1968,19 +2060,23 @@ struct Xla_LoadDataResponse: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var dataShape: Xla_Shape {
     get {return _storage._dataShape ?? Xla_Shape()}
     set {_uniqueStorage()._dataShape = newValue}
   }
-  /// Returns true if `dataShape` has been explicitly set.
-  var hasDataShape: Bool {return _storage._dataShape != nil}
-  /// Clears the value of `dataShape`. Subsequent reads from it will return its default value.
-  mutating func clearDataShape() {_storage._dataShape = nil}
+  var hasDataShape: Bool {
+    return _storage._dataShape != nil
+  }
+  mutating func clearDataShape() {
+    _storage._dataShape = nil
+  }
 
   var availableRows: Int64 {
     get {return _storage._availableRows}
@@ -2048,10 +2144,12 @@ struct Xla_SpecializeRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var arguments: [Xla_GlobalDataHandle] {
     get {return _storage._arguments}
@@ -2114,10 +2212,12 @@ struct Xla_GetShapeRequest: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2154,10 +2254,12 @@ struct Xla_GetShapeResponse: SwiftProtobuf.Message {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2194,10 +2296,12 @@ struct Xla_GetComputationShapeRequest: SwiftProtobuf.Message {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  /// Returns true if `computation` has been explicitly set.
-  var hasComputation: Bool {return _storage._computation != nil}
-  /// Clears the value of `computation`. Subsequent reads from it will return its default value.
-  mutating func clearComputation() {_storage._computation = nil}
+  var hasComputation: Bool {
+    return _storage._computation != nil
+  }
+  mutating func clearComputation() {
+    _storage._computation = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2234,10 +2338,12 @@ struct Xla_GetComputationShapeResponse: SwiftProtobuf.Message {
     get {return _storage._programShape ?? Xla_ProgramShape()}
     set {_uniqueStorage()._programShape = newValue}
   }
-  /// Returns true if `programShape` has been explicitly set.
-  var hasProgramShape: Bool {return _storage._programShape != nil}
-  /// Clears the value of `programShape`. Subsequent reads from it will return its default value.
-  mutating func clearProgramShape() {_storage._programShape = nil}
+  var hasProgramShape: Bool {
+    return _storage._programShape != nil
+  }
+  mutating func clearProgramShape() {
+    _storage._programShape = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -2274,10 +2380,12 @@ struct Xla_UnpackRequest: SwiftProtobuf.Message {
     get {return _storage._data ?? Xla_GlobalDataHandle()}
     set {_uniqueStorage()._data = newValue}
   }
-  /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return _storage._data != nil}
-  /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {_storage._data = nil}
+  var hasData: Bool {
+    return _storage._data != nil
+  }
+  mutating func clearData() {
+    _storage._data = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

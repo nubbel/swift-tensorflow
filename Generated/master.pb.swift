@@ -42,20 +42,24 @@ struct Tensorflow_CreateSessionRequest: SwiftProtobuf.Message {
     get {return _storage._graphDef ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._graphDef = newValue}
   }
-  /// Returns true if `graphDef` has been explicitly set.
-  var hasGraphDef: Bool {return _storage._graphDef != nil}
-  /// Clears the value of `graphDef`. Subsequent reads from it will return its default value.
-  mutating func clearGraphDef() {_storage._graphDef = nil}
+  var hasGraphDef: Bool {
+    return _storage._graphDef != nil
+  }
+  mutating func clearGraphDef() {
+    _storage._graphDef = nil
+  }
 
   /// Configuration options.
   var config: Tensorflow_ConfigProto {
     get {return _storage._config ?? Tensorflow_ConfigProto()}
     set {_uniqueStorage()._config = newValue}
   }
-  /// Returns true if `config` has been explicitly set.
-  var hasConfig: Bool {return _storage._config != nil}
-  /// Clears the value of `config`. Subsequent reads from it will return its default value.
-  mutating func clearConfig() {_storage._config = nil}
+  var hasConfig: Bool {
+    return _storage._config != nil
+  }
+  mutating func clearConfig() {
+    _storage._config = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -144,10 +148,12 @@ struct Tensorflow_ExtendSessionRequest: SwiftProtobuf.Message {
     get {return _storage._graphDef ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._graphDef = newValue}
   }
-  /// Returns true if `graphDef` has been explicitly set.
-  var hasGraphDef: Bool {return _storage._graphDef != nil}
-  /// Clears the value of `graphDef`. Subsequent reads from it will return its default value.
-  mutating func clearGraphDef() {_storage._graphDef = nil}
+  var hasGraphDef: Bool {
+    return _storage._graphDef != nil
+  }
+  mutating func clearGraphDef() {
+    _storage._graphDef = nil
+  }
 
   /// REQUIRED: The version number of the graph to be extended. This will be
   /// tested against the current server-side version number, and the operation
@@ -258,10 +264,12 @@ struct Tensorflow_RunStepRequest: SwiftProtobuf.Message {
     get {return _storage._options ?? Tensorflow_RunOptions()}
     set {_uniqueStorage()._options = newValue}
   }
-  /// Returns true if `options` has been explicitly set.
-  var hasOptions: Bool {return _storage._options != nil}
-  /// Clears the value of `options`. Subsequent reads from it will return its default value.
-  mutating func clearOptions() {_storage._options = nil}
+  var hasOptions: Bool {
+    return _storage._options != nil
+  }
+  mutating func clearOptions() {
+    _storage._options = nil
+  }
 
   /// Partial run handle (optional). If specified, this will be a partial run
   /// execution, run up to the specified fetches.
@@ -333,10 +341,12 @@ struct Tensorflow_RunStepResponse: SwiftProtobuf.Message {
     get {return _storage._metadata ?? Tensorflow_RunMetadata()}
     set {_uniqueStorage()._metadata = newValue}
   }
-  /// Returns true if `metadata` has been explicitly set.
-  var hasMetadata: Bool {return _storage._metadata != nil}
-  /// Clears the value of `metadata`. Subsequent reads from it will return its default value.
-  mutating func clearMetadata() {_storage._metadata = nil}
+  var hasMetadata: Bool {
+    return _storage._metadata != nil
+  }
+  mutating func clearMetadata() {
+    _storage._metadata = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

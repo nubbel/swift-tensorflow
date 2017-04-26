@@ -84,10 +84,12 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
       get {return _storage._value ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._value = newValue}
     }
-    /// Returns true if `value` has been explicitly set.
-    var hasValue: Bool {return _storage._value != nil}
-    /// Clears the value of `value`. Subsequent reads from it will return its default value.
-    mutating func clearValue() {_storage._value = nil}
+    var hasValue: Bool {
+      return _storage._value != nil
+    }
+    mutating func clearValue() {
+      _storage._value = nil
+    }
 
     var unknownFields = SwiftProtobuf.UnknownStorage()
 

@@ -137,19 +137,23 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     get {return _storage._optionalNestedMessage ?? Tensorflow_Test_TestAllTypes.NestedMessage()}
     set {_uniqueStorage()._optionalNestedMessage = newValue}
   }
-  /// Returns true if `optionalNestedMessage` has been explicitly set.
-  var hasOptionalNestedMessage: Bool {return _storage._optionalNestedMessage != nil}
-  /// Clears the value of `optionalNestedMessage`. Subsequent reads from it will return its default value.
-  mutating func clearOptionalNestedMessage() {_storage._optionalNestedMessage = nil}
+  var hasOptionalNestedMessage: Bool {
+    return _storage._optionalNestedMessage != nil
+  }
+  mutating func clearOptionalNestedMessage() {
+    _storage._optionalNestedMessage = nil
+  }
 
   var optionalForeignMessage: Tensorflow_Test_ForeignMessage {
     get {return _storage._optionalForeignMessage ?? Tensorflow_Test_ForeignMessage()}
     set {_uniqueStorage()._optionalForeignMessage = newValue}
   }
-  /// Returns true if `optionalForeignMessage` has been explicitly set.
-  var hasOptionalForeignMessage: Bool {return _storage._optionalForeignMessage != nil}
-  /// Clears the value of `optionalForeignMessage`. Subsequent reads from it will return its default value.
-  mutating func clearOptionalForeignMessage() {_storage._optionalForeignMessage = nil}
+  var hasOptionalForeignMessage: Bool {
+    return _storage._optionalForeignMessage != nil
+  }
+  mutating func clearOptionalForeignMessage() {
+    _storage._optionalForeignMessage = nil
+  }
 
   var optionalNestedEnum: Tensorflow_Test_TestAllTypes.NestedEnum {
     get {return _storage._optionalNestedEnum}
@@ -419,10 +423,12 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
       get {return _storage._msg ?? Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage()}
       set {_uniqueStorage()._msg = newValue}
     }
-    /// Returns true if `msg` has been explicitly set.
-    var hasMsg: Bool {return _storage._msg != nil}
-    /// Clears the value of `msg`. Subsequent reads from it will return its default value.
-    mutating func clearMsg() {_storage._msg = nil}
+    var hasMsg: Bool {
+      return _storage._msg != nil
+    }
+    mutating func clearMsg() {
+      _storage._msg = nil
+    }
 
     var optionalInt64: Int64 {
       get {return _storage._optionalInt64}
@@ -715,19 +721,23 @@ struct Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf.Message {
     get {return _storage._child ?? Tensorflow_Test_NestedTestAllTypes()}
     set {_uniqueStorage()._child = newValue}
   }
-  /// Returns true if `child` has been explicitly set.
-  var hasChild: Bool {return _storage._child != nil}
-  /// Clears the value of `child`. Subsequent reads from it will return its default value.
-  mutating func clearChild() {_storage._child = nil}
+  var hasChild: Bool {
+    return _storage._child != nil
+  }
+  mutating func clearChild() {
+    _storage._child = nil
+  }
 
   var payload: Tensorflow_Test_TestAllTypes {
     get {return _storage._payload ?? Tensorflow_Test_TestAllTypes()}
     set {_uniqueStorage()._payload = newValue}
   }
-  /// Returns true if `payload` has been explicitly set.
-  var hasPayload: Bool {return _storage._payload != nil}
-  /// Clears the value of `payload`. Subsequent reads from it will return its default value.
-  mutating func clearPayload() {_storage._payload = nil}
+  var hasPayload: Bool {
+    return _storage._payload != nil
+  }
+  mutating func clearPayload() {
+    _storage._payload = nil
+  }
 
   var mapStringToInt64: Dictionary<String,Int64> {
     get {return _storage._mapStringToInt64}

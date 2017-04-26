@@ -87,10 +87,12 @@ struct Tensorflow_CondContextDef: SwiftProtobuf.Message {
     get {return _storage._valuesDef ?? Tensorflow_ValuesDef()}
     set {_uniqueStorage()._valuesDef = newValue}
   }
-  /// Returns true if `valuesDef` has been explicitly set.
-  var hasValuesDef: Bool {return _storage._valuesDef != nil}
-  /// Clears the value of `valuesDef`. Subsequent reads from it will return its default value.
-  mutating func clearValuesDef() {_storage._valuesDef = nil}
+  var hasValuesDef: Bool {
+    return _storage._valuesDef != nil
+  }
+  mutating func clearValuesDef() {
+    _storage._valuesDef = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -193,10 +195,12 @@ struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
     get {return _storage._valuesDef ?? Tensorflow_ValuesDef()}
     set {_uniqueStorage()._valuesDef = newValue}
   }
-  /// Returns true if `valuesDef` has been explicitly set.
-  var hasValuesDef: Bool {return _storage._valuesDef != nil}
-  /// Clears the value of `valuesDef`. Subsequent reads from it will return its default value.
-  mutating func clearValuesDef() {_storage._valuesDef = nil}
+  var hasValuesDef: Bool {
+    return _storage._valuesDef != nil
+  }
+  mutating func clearValuesDef() {
+    _storage._valuesDef = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

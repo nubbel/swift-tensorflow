@@ -99,14 +99,17 @@ struct CompareTest_Medium: SwiftProtobuf.Message {
     struct GroupB: SwiftProtobuf.Message {
       static let protoMessageName: String = CompareTest_Medium.GroupA.protoMessageName + ".GroupB"
 
+      fileprivate var _strings: String? = nil
       var strings: String {
         get {return _strings ?? String()}
         set {_strings = newValue}
       }
-      /// Returns true if `strings` has been explicitly set.
-      var hasStrings: Bool {return self._strings != nil}
-      /// Clears the value of `strings`. Subsequent reads from it will return its default value.
-      mutating func clearStrings() {self._strings = nil}
+      var hasStrings: Bool {
+        return self._strings != nil
+      }
+      mutating func clearStrings() {
+        self._strings = nil
+      }
 
       var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -132,8 +135,6 @@ struct CompareTest_Medium: SwiftProtobuf.Message {
         }
         try unknownFields.traverse(visitor: &visitor)
       }
-
-      fileprivate var _strings: String? = nil
     }
 
     init() {}
@@ -203,46 +204,56 @@ struct CompareTest_Large: SwiftProtobuf.Message {
     get {return _storage._string_ ?? String()}
     set {_uniqueStorage()._string_ = newValue}
   }
-  /// Returns true if `string_` has been explicitly set.
-  var hasString_: Bool {return _storage._string_ != nil}
-  /// Clears the value of `string_`. Subsequent reads from it will return its default value.
-  mutating func clearString_() {_storage._string_ = nil}
+  var hasString_: Bool {
+    return _storage._string_ != nil
+  }
+  mutating func clearString_() {
+    _storage._string_ = nil
+  }
 
   var int64_: Int64 {
     get {return _storage._int64_ ?? 0}
     set {_uniqueStorage()._int64_ = newValue}
   }
-  /// Returns true if `int64_` has been explicitly set.
-  var hasInt64_: Bool {return _storage._int64_ != nil}
-  /// Clears the value of `int64_`. Subsequent reads from it will return its default value.
-  mutating func clearInt64_() {_storage._int64_ = nil}
+  var hasInt64_: Bool {
+    return _storage._int64_ != nil
+  }
+  mutating func clearInt64_() {
+    _storage._int64_ = nil
+  }
 
   var float_: Float {
     get {return _storage._float_ ?? 0}
     set {_uniqueStorage()._float_ = newValue}
   }
-  /// Returns true if `float_` has been explicitly set.
-  var hasFloat_: Bool {return _storage._float_ != nil}
-  /// Clears the value of `float_`. Subsequent reads from it will return its default value.
-  mutating func clearFloat_() {_storage._float_ = nil}
+  var hasFloat_: Bool {
+    return _storage._float_ != nil
+  }
+  mutating func clearFloat_() {
+    _storage._float_ = nil
+  }
 
   var bool_: Bool {
     get {return _storage._bool_ ?? false}
     set {_uniqueStorage()._bool_ = newValue}
   }
-  /// Returns true if `bool_` has been explicitly set.
-  var hasBool_: Bool {return _storage._bool_ != nil}
-  /// Clears the value of `bool_`. Subsequent reads from it will return its default value.
-  mutating func clearBool_() {_storage._bool_ = nil}
+  var hasBool_: Bool {
+    return _storage._bool_ != nil
+  }
+  mutating func clearBool_() {
+    _storage._bool_ = nil
+  }
 
   var enum_: CompareTest_Enum {
     get {return _storage._enum_ ?? CompareTest_Enum.a}
     set {_uniqueStorage()._enum_ = newValue}
   }
-  /// Returns true if `enum_` has been explicitly set.
-  var hasEnum_: Bool {return _storage._enum_ != nil}
-  /// Clears the value of `enum_`. Subsequent reads from it will return its default value.
-  mutating func clearEnum_() {_storage._enum_ = nil}
+  var hasEnum_: Bool {
+    return _storage._enum_ != nil
+  }
+  mutating func clearEnum_() {
+    _storage._enum_ = nil
+  }
 
   var int64S: [Int64] {
     get {return _storage._int64S}
@@ -253,37 +264,45 @@ struct CompareTest_Large: SwiftProtobuf.Message {
     get {return _storage._medium ?? CompareTest_Medium()}
     set {_uniqueStorage()._medium = newValue}
   }
-  /// Returns true if `medium` has been explicitly set.
-  var hasMedium: Bool {return _storage._medium != nil}
-  /// Clears the value of `medium`. Subsequent reads from it will return its default value.
-  mutating func clearMedium() {_storage._medium = nil}
+  var hasMedium: Bool {
+    return _storage._medium != nil
+  }
+  mutating func clearMedium() {
+    _storage._medium = nil
+  }
 
   var small: CompareTest_Small {
     get {return _storage._small ?? CompareTest_Small()}
     set {_uniqueStorage()._small = newValue}
   }
-  /// Returns true if `small` has been explicitly set.
-  var hasSmall: Bool {return _storage._small != nil}
-  /// Clears the value of `small`. Subsequent reads from it will return its default value.
-  mutating func clearSmall() {_storage._small = nil}
+  var hasSmall: Bool {
+    return _storage._small != nil
+  }
+  mutating func clearSmall() {
+    _storage._small = nil
+  }
 
   var double_: Double {
     get {return _storage._double_ ?? 0}
     set {_uniqueStorage()._double_ = newValue}
   }
-  /// Returns true if `double_` has been explicitly set.
-  var hasDouble_: Bool {return _storage._double_ != nil}
-  /// Clears the value of `double_`. Subsequent reads from it will return its default value.
-  mutating func clearDouble_() {_storage._double_ = nil}
+  var hasDouble_: Bool {
+    return _storage._double_ != nil
+  }
+  mutating func clearDouble_() {
+    _storage._double_ = nil
+  }
 
   var withMap: CompareTest_WithMap {
     get {return _storage._withMap ?? CompareTest_WithMap()}
     set {_uniqueStorage()._withMap = newValue}
   }
-  /// Returns true if `withMap` has been explicitly set.
-  var hasWithMap: Bool {return _storage._withMap != nil}
-  /// Clears the value of `withMap`. Subsequent reads from it will return its default value.
-  mutating func clearWithMap() {_storage._withMap = nil}
+  var hasWithMap: Bool {
+    return _storage._withMap != nil
+  }
+  mutating func clearWithMap() {
+    _storage._withMap = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -359,23 +378,29 @@ struct CompareTest_Large: SwiftProtobuf.Message {
 struct CompareTest_Labeled: SwiftProtobuf.Message {
   static let protoMessageName: String = _protobuf_package + ".Labeled"
 
+  fileprivate var _required: Int32? = nil
   var required: Int32 {
     get {return _required ?? 0}
     set {_required = newValue}
   }
-  /// Returns true if `required` has been explicitly set.
-  var hasRequired: Bool {return self._required != nil}
-  /// Clears the value of `required`. Subsequent reads from it will return its default value.
-  mutating func clearRequired() {self._required = nil}
+  var hasRequired: Bool {
+    return self._required != nil
+  }
+  mutating func clearRequired() {
+    self._required = nil
+  }
 
+  fileprivate var _optional: Int32? = nil
   var optional: Int32 {
     get {return _optional ?? 0}
     set {_optional = newValue}
   }
-  /// Returns true if `optional` has been explicitly set.
-  var hasOptional: Bool {return self._optional != nil}
-  /// Clears the value of `optional`. Subsequent reads from it will return its default value.
-  mutating func clearOptional() {self._optional = nil}
+  var hasOptional: Bool {
+    return self._optional != nil
+  }
+  mutating func clearOptional() {
+    self._optional = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -405,9 +430,6 @@ struct CompareTest_Labeled: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-
-  fileprivate var _required: Int32? = nil
-  fileprivate var _optional: Int32? = nil
 }
 
 struct CompareTest_WithMap: SwiftProtobuf.Message {

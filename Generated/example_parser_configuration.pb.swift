@@ -77,19 +77,23 @@ struct Tensorflow_FixedLenFeatureProto: SwiftProtobuf.Message {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   var defaultValue: Tensorflow_TensorProto {
     get {return _storage._defaultValue ?? Tensorflow_TensorProto()}
     set {_uniqueStorage()._defaultValue = newValue}
   }
-  /// Returns true if `defaultValue` has been explicitly set.
-  var hasDefaultValue: Bool {return _storage._defaultValue != nil}
-  /// Clears the value of `defaultValue`. Subsequent reads from it will return its default value.
-  mutating func clearDefaultValue() {_storage._defaultValue = nil}
+  var hasDefaultValue: Bool {
+    return _storage._defaultValue != nil
+  }
+  mutating func clearDefaultValue() {
+    _storage._defaultValue = nil
+  }
 
   var valuesOutputTensorName: String {
     get {return _storage._valuesOutputTensorName}

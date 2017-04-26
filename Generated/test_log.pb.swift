@@ -548,20 +548,24 @@ struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
     get {return _storage._platformInfo ?? Tensorflow_PlatformInfo()}
     set {_uniqueStorage()._platformInfo = newValue}
   }
-  /// Returns true if `platformInfo` has been explicitly set.
-  var hasPlatformInfo: Bool {return _storage._platformInfo != nil}
-  /// Clears the value of `platformInfo`. Subsequent reads from it will return its default value.
-  mutating func clearPlatformInfo() {_storage._platformInfo = nil}
+  var hasPlatformInfo: Bool {
+    return _storage._platformInfo != nil
+  }
+  mutating func clearPlatformInfo() {
+    _storage._platformInfo = nil
+  }
 
   /// CPU Information.
   var cpuInfo: Tensorflow_CPUInfo {
     get {return _storage._cpuInfo ?? Tensorflow_CPUInfo()}
     set {_uniqueStorage()._cpuInfo = newValue}
   }
-  /// Returns true if `cpuInfo` has been explicitly set.
-  var hasCpuInfo: Bool {return _storage._cpuInfo != nil}
-  /// Clears the value of `cpuInfo`. Subsequent reads from it will return its default value.
-  mutating func clearCpuInfo() {_storage._cpuInfo = nil}
+  var hasCpuInfo: Bool {
+    return _storage._cpuInfo != nil
+  }
+  mutating func clearCpuInfo() {
+    _storage._cpuInfo = nil
+  }
 
   /// Other devices that are attached and relevant (e.g. GPUInfo).
   var deviceInfo: [Google_Protobuf_Any] {
@@ -579,10 +583,12 @@ struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
     get {return _storage._memoryInfo ?? Tensorflow_MemoryInfo()}
     set {_uniqueStorage()._memoryInfo = newValue}
   }
-  /// Returns true if `memoryInfo` has been explicitly set.
-  var hasMemoryInfo: Bool {return _storage._memoryInfo != nil}
-  /// Clears the value of `memoryInfo`. Subsequent reads from it will return its default value.
-  mutating func clearMemoryInfo() {_storage._memoryInfo = nil}
+  var hasMemoryInfo: Bool {
+    return _storage._memoryInfo != nil
+  }
+  mutating func clearMemoryInfo() {
+    _storage._memoryInfo = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -685,30 +691,36 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
     get {return _storage._entries ?? Tensorflow_BenchmarkEntries()}
     set {_uniqueStorage()._entries = newValue}
   }
-  /// Returns true if `entries` has been explicitly set.
-  var hasEntries: Bool {return _storage._entries != nil}
-  /// Clears the value of `entries`. Subsequent reads from it will return its default value.
-  mutating func clearEntries() {_storage._entries = nil}
+  var hasEntries: Bool {
+    return _storage._entries != nil
+  }
+  mutating func clearEntries() {
+    _storage._entries = nil
+  }
 
   /// The configuration of the build (compiled opt? with cuda? any copts?)
   var buildConfiguration: Tensorflow_BuildConfiguration {
     get {return _storage._buildConfiguration ?? Tensorflow_BuildConfiguration()}
     set {_uniqueStorage()._buildConfiguration = newValue}
   }
-  /// Returns true if `buildConfiguration` has been explicitly set.
-  var hasBuildConfiguration: Bool {return _storage._buildConfiguration != nil}
-  /// Clears the value of `buildConfiguration`. Subsequent reads from it will return its default value.
-  mutating func clearBuildConfiguration() {_storage._buildConfiguration = nil}
+  var hasBuildConfiguration: Bool {
+    return _storage._buildConfiguration != nil
+  }
+  mutating func clearBuildConfiguration() {
+    _storage._buildConfiguration = nil
+  }
 
   /// The commit id (git hash or changelist)
   var commitId: Tensorflow_CommitId {
     get {return _storage._commitId ?? Tensorflow_CommitId()}
     set {_uniqueStorage()._commitId = newValue}
   }
-  /// Returns true if `commitId` has been explicitly set.
-  var hasCommitId: Bool {return _storage._commitId != nil}
-  /// Clears the value of `commitId`. Subsequent reads from it will return its default value.
-  mutating func clearCommitId() {_storage._commitId = nil}
+  var hasCommitId: Bool {
+    return _storage._commitId != nil
+  }
+  mutating func clearCommitId() {
+    _storage._commitId = nil
+  }
 
   /// The time the run started (in seconds of UTC time since Unix epoch)
   var startTime: Int64 {
@@ -727,20 +739,24 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
     get {return _storage._machineConfiguration ?? Tensorflow_MachineConfiguration()}
     set {_uniqueStorage()._machineConfiguration = newValue}
   }
-  /// Returns true if `machineConfiguration` has been explicitly set.
-  var hasMachineConfiguration: Bool {return _storage._machineConfiguration != nil}
-  /// Clears the value of `machineConfiguration`. Subsequent reads from it will return its default value.
-  mutating func clearMachineConfiguration() {_storage._machineConfiguration = nil}
+  var hasMachineConfiguration: Bool {
+    return _storage._machineConfiguration != nil
+  }
+  mutating func clearMachineConfiguration() {
+    _storage._machineConfiguration = nil
+  }
 
   /// Run-specific parameters (arguments, etc)
   var runConfiguration: Tensorflow_RunConfiguration {
     get {return _storage._runConfiguration ?? Tensorflow_RunConfiguration()}
     set {_uniqueStorage()._runConfiguration = newValue}
   }
-  /// Returns true if `runConfiguration` has been explicitly set.
-  var hasRunConfiguration: Bool {return _storage._runConfiguration != nil}
-  /// Clears the value of `runConfiguration`. Subsequent reads from it will return its default value.
-  mutating func clearRunConfiguration() {_storage._runConfiguration = nil}
+  var hasRunConfiguration: Bool {
+    return _storage._runConfiguration != nil
+  }
+  mutating func clearRunConfiguration() {
+    _storage._runConfiguration = nil
+  }
 
   /// Benchmark target identifier.
   var name: String {

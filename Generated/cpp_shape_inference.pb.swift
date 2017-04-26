@@ -26,19 +26,23 @@ struct Tensorflow_CppShapeInferenceResult: SwiftProtobuf.Message {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  /// Returns true if `shape` has been explicitly set.
-  var hasShape: Bool {return _storage._shape != nil}
-  /// Clears the value of `shape`. Subsequent reads from it will return its default value.
-  mutating func clearShape() {_storage._shape = nil}
+  var hasShape: Bool {
+    return _storage._shape != nil
+  }
+  mutating func clearShape() {
+    _storage._shape = nil
+  }
 
   var handleShape: Tensorflow_TensorShapeProto {
     get {return _storage._handleShape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._handleShape = newValue}
   }
-  /// Returns true if `handleShape` has been explicitly set.
-  var hasHandleShape: Bool {return _storage._handleShape != nil}
-  /// Clears the value of `handleShape`. Subsequent reads from it will return its default value.
-  mutating func clearHandleShape() {_storage._handleShape = nil}
+  var hasHandleShape: Bool {
+    return _storage._handleShape != nil
+  }
+  mutating func clearHandleShape() {
+    _storage._handleShape = nil
+  }
 
   var handleDtype: Tensorflow_DataType {
     get {return _storage._handleDtype}

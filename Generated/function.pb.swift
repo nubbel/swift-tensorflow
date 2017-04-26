@@ -67,10 +67,12 @@ struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
     get {return _storage._signature ?? Tensorflow_OpDef()}
     set {_uniqueStorage()._signature = newValue}
   }
-  /// Returns true if `signature` has been explicitly set.
-  var hasSignature: Bool {return _storage._signature != nil}
-  /// Clears the value of `signature`. Subsequent reads from it will return its default value.
-  mutating func clearSignature() {_storage._signature = nil}
+  var hasSignature: Bool {
+    return _storage._signature != nil
+  }
+  mutating func clearSignature() {
+    _storage._signature = nil
+  }
 
   /// Attributes specific to this function definition.
   var attr: Dictionary<String,Tensorflow_AttrValue> {

@@ -5,20 +5,6 @@
 #
 #
 
-
-
-
-function gitCloneSwiftProtobuf {
-printf "\033c"
- echo "Fetching latest protobuf from Apple"
- git clone https://github.com/apple/swift-protobuf.git
-  cd swift-protobuf
-  swift build
-  cp .build/debug/protoc-gen-swift ./
-  read -p " you may want to manually sudo /copy protoc-gen-swiftgrpc /usr/local/bin"
-  cd ..
-}
-
 function gitCloneGrpcSwift { 
   printf "\033c"
   echo "Fetching latest protoc-gen-swiftgrpc from Google"
@@ -26,8 +12,6 @@ function gitCloneGrpcSwift {
   cd grpc-swift
   cd Plugin
   make
-  cp  protoc-gen-swiftgrpc /usr/local/bin
-  read -p " you may need to manually sudo /copy protoc-gen-swiftgrpc /usr/local/bin" 
   cd ..
   cd ..
 }
@@ -43,7 +27,7 @@ function installProtocDoc {
   cd protoc-gen-doc
   qmake
   make
-  cp protoc-gen-doc /usr/local/bin
+  cp protoc-gen-doc /usr/local/bin/
   cd ..
 }
 
@@ -69,26 +53,12 @@ echo "\n\n\nINFO - we're going to do a fresh git clone of swift-protobuf + tenso
 echo "& keep the  .proto files and mass convert to swift 🚀 \n\n\n";
 
 
-if [ -d "swift-protobuf" ] ; then
- read -p "⚠️  Existing swift-protobuf  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
-  if [ "$CONDITION" == "n" ] ; then
-    echo "";
-  else 
-      rm -rf swift-protobuf
-      gitCloneSwiftProtobuf
-  fi
-else
-  gitCloneSwiftProtobuf
-fi
-
 
 # GOOGLE GRPC SWIFT
 if [ -d "grpc-swift" ] ; then
   printf "\033c"
- read -p "⚠️  Existing grpc-swift  detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
-  if [ "$CONDITION" == "n" ] ; then
-    echo "";
-  else 
+ read -p "⚠️  Existing grpc-swift  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+  if [ "$CONDITION" == "y" ] ; then
       rm -rf grpc-swift
       gitCloneGrpcSwift
   fi
@@ -106,10 +76,8 @@ fi
 # TENSORFLOW
 if [ -d "tensorflow" ] ; then
   printf "\033c"
-  read -p "⚠️  Existing tensorflow directory detected - do you want to blow away & fetch latest code ? [Y/n]" CONDITION;
-  if [ "$CONDITION" == "n" ] ; then
-    echo "ok";
-  else 
+  read -p "⚠️  Existing tensorflow directory detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+  if [ "$CONDITION" == "y" ]; then
       rm -rf tensorflow 
       cloneTensorFlowRemoveAllFilesExceptProto 
   fi 
@@ -166,23 +134,27 @@ if which protoc >/dev/null; then
         # Swift
         if [ "$CONDITION" == "1" ] ; then
           # https://github.com/grpc/grpc-swift/blob/574c47b6a39959ff4f2e3eda1874108f95e00fa9/Plugin/README.md
-          echo  "\n☄️ protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=. \ \n$file_path \n"
-          protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc  \
+          echo  "\n🍿 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc  \ \n--proto_path=tensorflow  \ \n--swiftgrpc_out=. \ \n$file_path \n"
+          protoc --plugin=./grpc-swift/Plugin/protoc-gen-swiftgrpc   \
           --proto_path=tensorflow \
           --swiftgrpc_out=. \
           $file_path 
        
-          # output swift proto documentation
+          # output swift file
           echo "\n🚀 protoc  \ \n--proto_path=tensorflow  \ \n--swift_out=. --descriptor_set_out $output_file \ \n $file_path \n \n" #\n--doc_out=markdown,$doc_output_file:"." \
-          protoc \
+          protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift   \
           --proto_path=tensorflow \
           --swift_out="." \
           --descriptor_set_out $output_file \
           $file_path 
-          #--doc_out=markdown,$doc_output_file:"." \some problems related to directory - https://github.com/estan/protoc-gen-doc/issues/267
 
-          
-
+          # output swift proto documentation
+          echo "\n📚 protoc  --proto_path=tensorflow \ \n  --doc_out=markdown,$doc_output_file:. \ \n  $file_path  " 
+          protoc  \
+          --proto_path=tensorflow \
+          --doc_out=markdown,$doc_output_file:"." \
+          $file_path 
+          # \No such file or directory -  related to directory - https://github.com/estan/protoc-gen-doc/issues/267
           
         fi
 
@@ -295,9 +267,11 @@ if which protoc >/dev/null; then
 	done
   # move swift files to this directory
   mkdir Generated
+  mkdir Documentation
   find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
   cd tensorflow
   find ./ -name "*.swift" -exec mv {} ../Generated \;
+  find ./ -name "*.md"  -exec mv {} ../Documentation \;
 
    
 else

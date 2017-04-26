@@ -31,10 +31,12 @@ struct Tensorflow_Serving_Signatures: SwiftProtobuf.Message {
     get {return _storage._defaultSignature ?? Tensorflow_Serving_Signature()}
     set {_uniqueStorage()._defaultSignature = newValue}
   }
-  /// Returns true if `defaultSignature` has been explicitly set.
-  var hasDefaultSignature: Bool {return _storage._defaultSignature != nil}
-  /// Clears the value of `defaultSignature`. Subsequent reads from it will return its default value.
-  mutating func clearDefaultSignature() {_storage._defaultSignature = nil}
+  var hasDefaultSignature: Bool {
+    return _storage._defaultSignature != nil
+  }
+  mutating func clearDefaultSignature() {
+    _storage._defaultSignature = nil
+  }
 
   /// Named signatures of the graph.
   var namedSignatures: Dictionary<String,Tensorflow_Serving_Signature> {
@@ -114,10 +116,12 @@ struct Tensorflow_Serving_AssetFile: SwiftProtobuf.Message {
     get {return _storage._tensorBinding ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._tensorBinding = newValue}
   }
-  /// Returns true if `tensorBinding` has been explicitly set.
-  var hasTensorBinding: Bool {return _storage._tensorBinding != nil}
-  /// Clears the value of `tensorBinding`. Subsequent reads from it will return its default value.
-  mutating func clearTensorBinding() {_storage._tensorBinding = nil}
+  var hasTensorBinding: Bool {
+    return _storage._tensorBinding != nil
+  }
+  mutating func clearTensorBinding() {
+    _storage._tensorBinding = nil
+  }
 
   /// The filename within the assets directory. Note: does not include the base
   /// path or asset directory prefix. Base paths can and will change when models
@@ -246,19 +250,23 @@ struct Tensorflow_Serving_RegressionSignature: SwiftProtobuf.Message {
     get {return _storage._input ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._input = newValue}
   }
-  /// Returns true if `input` has been explicitly set.
-  var hasInput: Bool {return _storage._input != nil}
-  /// Clears the value of `input`. Subsequent reads from it will return its default value.
-  mutating func clearInput() {_storage._input = nil}
+  var hasInput: Bool {
+    return _storage._input != nil
+  }
+  mutating func clearInput() {
+    _storage._input = nil
+  }
 
   var output: Tensorflow_Serving_TensorBinding {
     get {return _storage._output ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._output = newValue}
   }
-  /// Returns true if `output` has been explicitly set.
-  var hasOutput: Bool {return _storage._output != nil}
-  /// Clears the value of `output`. Subsequent reads from it will return its default value.
-  mutating func clearOutput() {_storage._output = nil}
+  var hasOutput: Bool {
+    return _storage._output != nil
+  }
+  mutating func clearOutput() {
+    _storage._output = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -304,28 +312,34 @@ struct Tensorflow_Serving_ClassificationSignature: SwiftProtobuf.Message {
     get {return _storage._input ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._input = newValue}
   }
-  /// Returns true if `input` has been explicitly set.
-  var hasInput: Bool {return _storage._input != nil}
-  /// Clears the value of `input`. Subsequent reads from it will return its default value.
-  mutating func clearInput() {_storage._input = nil}
+  var hasInput: Bool {
+    return _storage._input != nil
+  }
+  mutating func clearInput() {
+    _storage._input = nil
+  }
 
   var classes: Tensorflow_Serving_TensorBinding {
     get {return _storage._classes ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._classes = newValue}
   }
-  /// Returns true if `classes` has been explicitly set.
-  var hasClasses: Bool {return _storage._classes != nil}
-  /// Clears the value of `classes`. Subsequent reads from it will return its default value.
-  mutating func clearClasses() {_storage._classes = nil}
+  var hasClasses: Bool {
+    return _storage._classes != nil
+  }
+  mutating func clearClasses() {
+    _storage._classes = nil
+  }
 
   var scores: Tensorflow_Serving_TensorBinding {
     get {return _storage._scores ?? Tensorflow_Serving_TensorBinding()}
     set {_uniqueStorage()._scores = newValue}
   }
-  /// Returns true if `scores` has been explicitly set.
-  var hasScores: Bool {return _storage._scores != nil}
-  /// Clears the value of `scores`. Subsequent reads from it will return its default value.
-  mutating func clearScores() {_storage._scores = nil}
+  var hasScores: Bool {
+    return _storage._scores != nil
+  }
+  mutating func clearScores() {
+    _storage._scores = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

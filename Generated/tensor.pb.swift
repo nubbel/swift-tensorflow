@@ -33,10 +33,12 @@ struct Tensorflow_TensorProto: SwiftProtobuf.Message {
     get {return _storage._tensorShape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._tensorShape = newValue}
   }
-  /// Returns true if `tensorShape` has been explicitly set.
-  var hasTensorShape: Bool {return _storage._tensorShape != nil}
-  /// Clears the value of `tensorShape`. Subsequent reads from it will return its default value.
-  mutating func clearTensorShape() {_storage._tensorShape = nil}
+  var hasTensorShape: Bool {
+    return _storage._tensorShape != nil
+  }
+  mutating func clearTensorShape() {
+    _storage._tensorShape = nil
+  }
 
   /// Version number.
   ///

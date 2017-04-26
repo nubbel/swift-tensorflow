@@ -46,19 +46,23 @@ struct Xla_OperationRequest: SwiftProtobuf.Message {
     get {return _storage._outputHandle ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._outputHandle = newValue}
   }
-  /// Returns true if `outputHandle` has been explicitly set.
-  var hasOutputHandle: Bool {return _storage._outputHandle != nil}
-  /// Clears the value of `outputHandle`. Subsequent reads from it will return its default value.
-  mutating func clearOutputHandle() {_storage._outputHandle = nil}
+  var hasOutputHandle: Bool {
+    return _storage._outputHandle != nil
+  }
+  mutating func clearOutputHandle() {
+    _storage._outputHandle = nil
+  }
 
   var outputShape: Xla_Shape {
     get {return _storage._outputShape ?? Xla_Shape()}
     set {_uniqueStorage()._outputShape = newValue}
   }
-  /// Returns true if `outputShape` has been explicitly set.
-  var hasOutputShape: Bool {return _storage._outputShape != nil}
-  /// Clears the value of `outputShape`. Subsequent reads from it will return its default value.
-  mutating func clearOutputShape() {_storage._outputShape = nil}
+  var hasOutputShape: Bool {
+    return _storage._outputShape != nil
+  }
+  mutating func clearOutputShape() {
+    _storage._outputShape = nil
+  }
 
   /// For operations which call embedded computations such as "Map", these are
   /// the version(s) that the embedded computation should be called at. A version
@@ -82,10 +86,12 @@ struct Xla_OperationRequest: SwiftProtobuf.Message {
     get {return _storage._request ?? Xla_OpRequest()}
     set {_uniqueStorage()._request = newValue}
   }
-  /// Returns true if `request` has been explicitly set.
-  var hasRequest: Bool {return _storage._request != nil}
-  /// Clears the value of `request`. Subsequent reads from it will return its default value.
-  mutating func clearRequest() {_storage._request = nil}
+  var hasRequest: Bool {
+    return _storage._request != nil
+  }
+  mutating func clearRequest() {
+    _storage._request = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -143,10 +149,12 @@ struct Xla_SessionComputation: SwiftProtobuf.Message {
     get {return _storage._computationHandle ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computationHandle = newValue}
   }
-  /// Returns true if `computationHandle` has been explicitly set.
-  var hasComputationHandle: Bool {return _storage._computationHandle != nil}
-  /// Clears the value of `computationHandle`. Subsequent reads from it will return its default value.
-  mutating func clearComputationHandle() {_storage._computationHandle = nil}
+  var hasComputationHandle: Bool {
+    return _storage._computationHandle != nil
+  }
+  mutating func clearComputationHandle() {
+    _storage._computationHandle = nil
+  }
 
   /// Map from ComputationDataHandle value to operation request. The highest
   /// ComputationDataHandle value corresponds to the root of the computation.
@@ -206,10 +214,12 @@ struct Xla_SessionModule: SwiftProtobuf.Message {
     get {return _storage._entry ?? Xla_SessionComputation()}
     set {_uniqueStorage()._entry = newValue}
   }
-  /// Returns true if `entry` has been explicitly set.
-  var hasEntry: Bool {return _storage._entry != nil}
-  /// Clears the value of `entry`. Subsequent reads from it will return its default value.
-  mutating func clearEntry() {_storage._entry = nil}
+  var hasEntry: Bool {
+    return _storage._entry != nil
+  }
+  mutating func clearEntry() {
+    _storage._entry = nil
+  }
 
   /// Embedded computations that are transitively referred to by the entry
   /// computation.
@@ -229,10 +239,12 @@ struct Xla_SessionModule: SwiftProtobuf.Message {
     get {return _storage._result ?? Xla_Literal()}
     set {_uniqueStorage()._result = newValue}
   }
-  /// Returns true if `result` has been explicitly set.
-  var hasResult: Bool {return _storage._result != nil}
-  /// Clears the value of `result`. Subsequent reads from it will return its default value.
-  mutating func clearResult() {_storage._result = nil}
+  var hasResult: Bool {
+    return _storage._result != nil
+  }
+  mutating func clearResult() {
+    _storage._result = nil
+  }
 
   /// The name of the platform used to run the computation.
   var executionPlatform: String {

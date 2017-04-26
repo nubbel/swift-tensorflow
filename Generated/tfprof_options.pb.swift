@@ -24,61 +24,79 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
   static let protoMessageName: String = _protobuf_package + ".OptionsProto"
 
+  fileprivate var _maxDepth: Int64? = nil
   var maxDepth: Int64 {
     get {return _maxDepth ?? 0}
     set {_maxDepth = newValue}
   }
-  /// Returns true if `maxDepth` has been explicitly set.
-  var hasMaxDepth: Bool {return self._maxDepth != nil}
-  /// Clears the value of `maxDepth`. Subsequent reads from it will return its default value.
-  mutating func clearMaxDepth() {self._maxDepth = nil}
+  var hasMaxDepth: Bool {
+    return self._maxDepth != nil
+  }
+  mutating func clearMaxDepth() {
+    self._maxDepth = nil
+  }
 
+  fileprivate var _minBytes: Int64? = nil
   var minBytes: Int64 {
     get {return _minBytes ?? 0}
     set {_minBytes = newValue}
   }
-  /// Returns true if `minBytes` has been explicitly set.
-  var hasMinBytes: Bool {return self._minBytes != nil}
-  /// Clears the value of `minBytes`. Subsequent reads from it will return its default value.
-  mutating func clearMinBytes() {self._minBytes = nil}
+  var hasMinBytes: Bool {
+    return self._minBytes != nil
+  }
+  mutating func clearMinBytes() {
+    self._minBytes = nil
+  }
 
+  fileprivate var _minMicros: Int64? = nil
   var minMicros: Int64 {
     get {return _minMicros ?? 0}
     set {_minMicros = newValue}
   }
-  /// Returns true if `minMicros` has been explicitly set.
-  var hasMinMicros: Bool {return self._minMicros != nil}
-  /// Clears the value of `minMicros`. Subsequent reads from it will return its default value.
-  mutating func clearMinMicros() {self._minMicros = nil}
+  var hasMinMicros: Bool {
+    return self._minMicros != nil
+  }
+  mutating func clearMinMicros() {
+    self._minMicros = nil
+  }
 
+  fileprivate var _minParams: Int64? = nil
   var minParams: Int64 {
     get {return _minParams ?? 0}
     set {_minParams = newValue}
   }
-  /// Returns true if `minParams` has been explicitly set.
-  var hasMinParams: Bool {return self._minParams != nil}
-  /// Clears the value of `minParams`. Subsequent reads from it will return its default value.
-  mutating func clearMinParams() {self._minParams = nil}
+  var hasMinParams: Bool {
+    return self._minParams != nil
+  }
+  mutating func clearMinParams() {
+    self._minParams = nil
+  }
 
+  fileprivate var _minFloatOps: Int64? = nil
   var minFloatOps: Int64 {
     get {return _minFloatOps ?? 0}
     set {_minFloatOps = newValue}
   }
-  /// Returns true if `minFloatOps` has been explicitly set.
-  var hasMinFloatOps: Bool {return self._minFloatOps != nil}
-  /// Clears the value of `minFloatOps`. Subsequent reads from it will return its default value.
-  mutating func clearMinFloatOps() {self._minFloatOps = nil}
+  var hasMinFloatOps: Bool {
+    return self._minFloatOps != nil
+  }
+  mutating func clearMinFloatOps() {
+    self._minFloatOps = nil
+  }
 
   var deviceRegexes: [String] = []
 
+  fileprivate var _orderBy: String? = nil
   var orderBy: String {
     get {return _orderBy ?? String()}
     set {_orderBy = newValue}
   }
-  /// Returns true if `orderBy` has been explicitly set.
-  var hasOrderBy: Bool {return self._orderBy != nil}
-  /// Clears the value of `orderBy`. Subsequent reads from it will return its default value.
-  mutating func clearOrderBy() {self._orderBy = nil}
+  var hasOrderBy: Bool {
+    return self._orderBy != nil
+  }
+  mutating func clearOrderBy() {
+    self._orderBy = nil
+  }
 
   var accountTypeRegexes: [String] = []
 
@@ -90,34 +108,43 @@ struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
 
   var hideNameRegexes: [String] = []
 
+  fileprivate var _accountDisplayedOpOnly: Bool? = nil
   var accountDisplayedOpOnly: Bool {
     get {return _accountDisplayedOpOnly ?? false}
     set {_accountDisplayedOpOnly = newValue}
   }
-  /// Returns true if `accountDisplayedOpOnly` has been explicitly set.
-  var hasAccountDisplayedOpOnly: Bool {return self._accountDisplayedOpOnly != nil}
-  /// Clears the value of `accountDisplayedOpOnly`. Subsequent reads from it will return its default value.
-  mutating func clearAccountDisplayedOpOnly() {self._accountDisplayedOpOnly = nil}
+  var hasAccountDisplayedOpOnly: Bool {
+    return self._accountDisplayedOpOnly != nil
+  }
+  mutating func clearAccountDisplayedOpOnly() {
+    self._accountDisplayedOpOnly = nil
+  }
 
   var select: [String] = []
 
+  fileprivate var _viz: Bool? = nil
   var viz: Bool {
     get {return _viz ?? false}
     set {_viz = newValue}
   }
-  /// Returns true if `viz` has been explicitly set.
-  var hasViz: Bool {return self._viz != nil}
-  /// Clears the value of `viz`. Subsequent reads from it will return its default value.
-  mutating func clearViz() {self._viz = nil}
+  var hasViz: Bool {
+    return self._viz != nil
+  }
+  mutating func clearViz() {
+    self._viz = nil
+  }
 
+  fileprivate var _dumpToFile: String? = nil
   var dumpToFile: String {
     get {return _dumpToFile ?? String()}
     set {_dumpToFile = newValue}
   }
-  /// Returns true if `dumpToFile` has been explicitly set.
-  var hasDumpToFile: Bool {return self._dumpToFile != nil}
-  /// Clears the value of `dumpToFile`. Subsequent reads from it will return its default value.
-  mutating func clearDumpToFile() {self._dumpToFile = nil}
+  var hasDumpToFile: Bool {
+    return self._dumpToFile != nil
+  }
+  mutating func clearDumpToFile() {
+    self._dumpToFile = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -198,16 +225,6 @@ struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
     }
     try unknownFields.traverse(visitor: &visitor)
   }
-
-  fileprivate var _maxDepth: Int64? = nil
-  fileprivate var _minBytes: Int64? = nil
-  fileprivate var _minMicros: Int64? = nil
-  fileprivate var _minParams: Int64? = nil
-  fileprivate var _minFloatOps: Int64? = nil
-  fileprivate var _orderBy: String? = nil
-  fileprivate var _accountDisplayedOpOnly: Bool? = nil
-  fileprivate var _viz: Bool? = nil
-  fileprivate var _dumpToFile: String? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.

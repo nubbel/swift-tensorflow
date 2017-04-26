@@ -282,10 +282,12 @@ struct Tensorflow_GraphOptions: SwiftProtobuf.Message {
     get {return _storage._optimizerOptions ?? Tensorflow_OptimizerOptions()}
     set {_uniqueStorage()._optimizerOptions = newValue}
   }
-  /// Returns true if `optimizerOptions` has been explicitly set.
-  var hasOptimizerOptions: Bool {return _storage._optimizerOptions != nil}
-  /// Clears the value of `optimizerOptions`. Subsequent reads from it will return its default value.
-  mutating func clearOptimizerOptions() {_storage._optimizerOptions = nil}
+  var hasOptimizerOptions: Bool {
+    return _storage._optimizerOptions != nil
+  }
+  mutating func clearOptimizerOptions() {
+    _storage._optimizerOptions = nil
+  }
 
   /// The number of steps to run before returning a cost model detailing
   /// the memory usage and performance of each node of the graph. 0 means
@@ -339,10 +341,12 @@ struct Tensorflow_GraphOptions: SwiftProtobuf.Message {
     get {return _storage._rewriteOptions ?? Tensorflow_RewriterConfig()}
     set {_uniqueStorage()._rewriteOptions = newValue}
   }
-  /// Returns true if `rewriteOptions` has been explicitly set.
-  var hasRewriteOptions: Bool {return _storage._rewriteOptions != nil}
-  /// Clears the value of `rewriteOptions`. Subsequent reads from it will return its default value.
-  mutating func clearRewriteOptions() {_storage._rewriteOptions = nil}
+  var hasRewriteOptions: Bool {
+    return _storage._rewriteOptions != nil
+  }
+  mutating func clearRewriteOptions() {
+    _storage._rewriteOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -548,10 +552,12 @@ struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
     get {return _storage._gpuOptions ?? Tensorflow_GPUOptions()}
     set {_uniqueStorage()._gpuOptions = newValue}
   }
-  /// Returns true if `gpuOptions` has been explicitly set.
-  var hasGpuOptions: Bool {return _storage._gpuOptions != nil}
-  /// Clears the value of `gpuOptions`. Subsequent reads from it will return its default value.
-  mutating func clearGpuOptions() {_storage._gpuOptions = nil}
+  var hasGpuOptions: Bool {
+    return _storage._gpuOptions != nil
+  }
+  mutating func clearGpuOptions() {
+    _storage._gpuOptions = nil
+  }
 
   /// Whether soft placement is allowed. If allow_soft_placement is true,
   /// an op will be placed on CPU if
@@ -576,10 +582,12 @@ struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
     get {return _storage._graphOptions ?? Tensorflow_GraphOptions()}
     set {_uniqueStorage()._graphOptions = newValue}
   }
-  /// Returns true if `graphOptions` has been explicitly set.
-  var hasGraphOptions: Bool {return _storage._graphOptions != nil}
-  /// Clears the value of `graphOptions`. Subsequent reads from it will return its default value.
-  mutating func clearGraphOptions() {_storage._graphOptions = nil}
+  var hasGraphOptions: Bool {
+    return _storage._graphOptions != nil
+  }
+  mutating func clearGraphOptions() {
+    _storage._graphOptions = nil
+  }
 
   /// Global timeout for all blocking operations in this session.  If non-zero,
   /// and not overridden on a per-operation basis, this value will be used as the
@@ -594,10 +602,12 @@ struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
     get {return _storage._rpcOptions ?? Tensorflow_RPCOptions()}
     set {_uniqueStorage()._rpcOptions = newValue}
   }
-  /// Returns true if `rpcOptions` has been explicitly set.
-  var hasRpcOptions: Bool {return _storage._rpcOptions != nil}
-  /// Clears the value of `rpcOptions`. Subsequent reads from it will return its default value.
-  mutating func clearRpcOptions() {_storage._rpcOptions = nil}
+  var hasRpcOptions: Bool {
+    return _storage._rpcOptions != nil
+  }
+  mutating func clearRpcOptions() {
+    _storage._rpcOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -708,10 +718,12 @@ struct Tensorflow_RunOptions: SwiftProtobuf.Message {
     get {return _storage._debugOptions ?? Tensorflow_DebugOptions()}
     set {_uniqueStorage()._debugOptions = newValue}
   }
-  /// Returns true if `debugOptions` has been explicitly set.
-  var hasDebugOptions: Bool {return _storage._debugOptions != nil}
-  /// Clears the value of `debugOptions`. Subsequent reads from it will return its default value.
-  mutating func clearDebugOptions() {_storage._debugOptions = nil}
+  var hasDebugOptions: Bool {
+    return _storage._debugOptions != nil
+  }
+  mutating func clearDebugOptions() {
+    _storage._debugOptions = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -804,20 +816,24 @@ struct Tensorflow_RunMetadata: SwiftProtobuf.Message {
     get {return _storage._stepStats ?? Tensorflow_StepStats()}
     set {_uniqueStorage()._stepStats = newValue}
   }
-  /// Returns true if `stepStats` has been explicitly set.
-  var hasStepStats: Bool {return _storage._stepStats != nil}
-  /// Clears the value of `stepStats`. Subsequent reads from it will return its default value.
-  mutating func clearStepStats() {_storage._stepStats = nil}
+  var hasStepStats: Bool {
+    return _storage._stepStats != nil
+  }
+  mutating func clearStepStats() {
+    _storage._stepStats = nil
+  }
 
   /// The cost graph for the computation defined by the run call.
   var costGraph: Tensorflow_CostGraphDef {
     get {return _storage._costGraph ?? Tensorflow_CostGraphDef()}
     set {_uniqueStorage()._costGraph = newValue}
   }
-  /// Returns true if `costGraph` has been explicitly set.
-  var hasCostGraph: Bool {return _storage._costGraph != nil}
-  /// Clears the value of `costGraph`. Subsequent reads from it will return its default value.
-  mutating func clearCostGraph() {_storage._costGraph = nil}
+  var hasCostGraph: Bool {
+    return _storage._costGraph != nil
+  }
+  mutating func clearCostGraph() {
+    _storage._costGraph = nil
+  }
 
   /// Graphs of the partitions executed by executors.
   var partitionGraphs: [Tensorflow_GraphDef] {

@@ -46,10 +46,12 @@ struct Tensorflow_VariableDef: SwiftProtobuf.Message {
     get {return _storage._saveSliceInfoDef ?? Tensorflow_SaveSliceInfoDef()}
     set {_uniqueStorage()._saveSliceInfoDef = newValue}
   }
-  /// Returns true if `saveSliceInfoDef` has been explicitly set.
-  var hasSaveSliceInfoDef: Bool {return _storage._saveSliceInfoDef != nil}
-  /// Clears the value of `saveSliceInfoDef`. Subsequent reads from it will return its default value.
-  mutating func clearSaveSliceInfoDef() {_storage._saveSliceInfoDef = nil}
+  var hasSaveSliceInfoDef: Bool {
+    return _storage._saveSliceInfoDef != nil
+  }
+  mutating func clearSaveSliceInfoDef() {
+    _storage._saveSliceInfoDef = nil
+  }
 
   /// Whether to represent this as a ResourceVariable.
   var isResource: Bool {

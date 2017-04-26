@@ -96,10 +96,12 @@ struct Tensorflow_EmbeddingInfo: SwiftProtobuf.Message {
     get {return _storage._sprite ?? Tensorflow_SpriteMetadata()}
     set {_uniqueStorage()._sprite = newValue}
   }
-  /// Returns true if `sprite` has been explicitly set.
-  var hasSprite: Bool {return _storage._sprite != nil}
-  /// Clears the value of `sprite`. Subsequent reads from it will return its default value.
-  mutating func clearSprite() {_storage._sprite = nil}
+  var hasSprite: Bool {
+    return _storage._sprite != nil
+  }
+  mutating func clearSprite() {
+    _storage._sprite = nil
+  }
 
   /// Path to the TSV file holding the tensor values. If missing, the tensor
   /// is assumed to be stored in the model checkpoint.

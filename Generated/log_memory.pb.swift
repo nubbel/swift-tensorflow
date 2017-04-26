@@ -74,10 +74,12 @@ struct Tensorflow_MemoryLogTensorAllocation: SwiftProtobuf.Message {
     get {return _storage._tensor ?? Tensorflow_TensorDescription()}
     set {_uniqueStorage()._tensor = newValue}
   }
-  /// Returns true if `tensor` has been explicitly set.
-  var hasTensor: Bool {return _storage._tensor != nil}
-  /// Clears the value of `tensor`. Subsequent reads from it will return its default value.
-  mutating func clearTensor() {_storage._tensor = nil}
+  var hasTensor: Bool {
+    return _storage._tensor != nil
+  }
+  mutating func clearTensor() {
+    _storage._tensor = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -177,10 +179,12 @@ struct Tensorflow_MemoryLogTensorOutput: SwiftProtobuf.Message {
     get {return _storage._tensor ?? Tensorflow_TensorDescription()}
     set {_uniqueStorage()._tensor = newValue}
   }
-  /// Returns true if `tensor` has been explicitly set.
-  var hasTensor: Bool {return _storage._tensor != nil}
-  /// Clears the value of `tensor`. Subsequent reads from it will return its default value.
-  mutating func clearTensor() {_storage._tensor = nil}
+  var hasTensor: Bool {
+    return _storage._tensor != nil
+  }
+  mutating func clearTensor() {
+    _storage._tensor = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

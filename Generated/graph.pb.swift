@@ -35,10 +35,12 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
     get {return _storage._versions ?? Tensorflow_VersionDef()}
     set {_uniqueStorage()._versions = newValue}
   }
-  /// Returns true if `versions` has been explicitly set.
-  var hasVersions: Bool {return _storage._versions != nil}
-  /// Clears the value of `versions`. Subsequent reads from it will return its default value.
-  mutating func clearVersions() {_storage._versions = nil}
+  var hasVersions: Bool {
+    return _storage._versions != nil
+  }
+  mutating func clearVersions() {
+    _storage._versions = nil
+  }
 
   /// Deprecated single version field; use versions above instead.  Since all
   /// GraphDef changes before "versions" was introduced were forward
@@ -80,10 +82,12 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
     get {return _storage._library ?? Tensorflow_FunctionDefLibrary()}
     set {_uniqueStorage()._library = newValue}
   }
-  /// Returns true if `library` has been explicitly set.
-  var hasLibrary: Bool {return _storage._library != nil}
-  /// Clears the value of `library`. Subsequent reads from it will return its default value.
-  mutating func clearLibrary() {_storage._library = nil}
+  var hasLibrary: Bool {
+    return _storage._library != nil
+  }
+  mutating func clearLibrary() {
+    _storage._library = nil
+  }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 

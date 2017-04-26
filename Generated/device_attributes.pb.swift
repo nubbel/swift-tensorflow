@@ -74,10 +74,12 @@ struct Tensorflow_DeviceAttributes: SwiftProtobuf.Message {
     get {return _storage._locality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._locality = newValue}
   }
-  /// Returns true if `locality` has been explicitly set.
-  var hasLocality: Bool {return _storage._locality != nil}
-  /// Clears the value of `locality`. Subsequent reads from it will return its default value.
-  mutating func clearLocality() {_storage._locality = nil}
+  var hasLocality: Bool {
+    return _storage._locality != nil
+  }
+  mutating func clearLocality() {
+    _storage._locality = nil
+  }
 
   /// A device is assigned a global unique number each time it is
   /// initialized. "incarnation" should never be 0.

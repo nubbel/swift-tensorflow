@@ -113,10 +113,12 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
     get {return _storage._cluster ?? Tensorflow_ClusterDef()}
     set {_uniqueStorage()._cluster = newValue}
   }
-  /// Returns true if `cluster` has been explicitly set.
-  var hasCluster: Bool {return _storage._cluster != nil}
-  /// Clears the value of `cluster`. Subsequent reads from it will return its default value.
-  mutating func clearCluster() {_storage._cluster = nil}
+  var hasCluster: Bool {
+    return _storage._cluster != nil
+  }
+  mutating func clearCluster() {
+    _storage._cluster = nil
+  }
 
   /// The name of the job of which this server is a member.
   ///
@@ -141,10 +143,12 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
     get {return _storage._defaultSessionConfig ?? Tensorflow_ConfigProto()}
     set {_uniqueStorage()._defaultSessionConfig = newValue}
   }
-  /// Returns true if `defaultSessionConfig` has been explicitly set.
-  var hasDefaultSessionConfig: Bool {return _storage._defaultSessionConfig != nil}
-  /// Clears the value of `defaultSessionConfig`. Subsequent reads from it will return its default value.
-  mutating func clearDefaultSessionConfig() {_storage._defaultSessionConfig = nil}
+  var hasDefaultSessionConfig: Bool {
+    return _storage._defaultSessionConfig != nil
+  }
+  mutating func clearDefaultSessionConfig() {
+    _storage._defaultSessionConfig = nil
+  }
 
   /// The protocol to be used by this server.
   ///
