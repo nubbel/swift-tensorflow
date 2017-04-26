@@ -93,6 +93,7 @@
 		E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */; };
 		E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */; };
 		E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */; };
+		E8D0D7431EB0F4EF009B2929 /* EchoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,7 @@
 		E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.client.pb.swift; sourceTree = "<group>"; };
 		E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.pb.swift; sourceTree = "<group>"; };
 		E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.server.pb.swift; sourceTree = "<group>"; };
+		E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EchoProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 		D35C9FAA1D74B079000443CD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */,
 				E8D0D7391EB0EAE6009B2929 /* EchoGenerated */,
 				D35C9FAB1D74B079000443CD /* AppDelegate.swift */,
 				D35C9FAD1D74B079000443CD /* Assets.xcassets */,
@@ -683,6 +686,7 @@
 				E8D0D6D41EB0E2BE009B2929 /* variable.pb.swift in Sources */,
 				E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */,
 				E8D0D6D81EB0E2BE009B2929 /* worker_service.pb.swift in Sources */,
+				E8D0D7431EB0F4EF009B2929 /* EchoProvider.swift in Sources */,
 				E8D0D69A1EB0E2BE009B2929 /* debug_service.pb.swift in Sources */,
 				E8D0D6CB1EB0E2BE009B2929 /* test.pb.swift in Sources */,
 				E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */,

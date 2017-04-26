@@ -584,13 +584,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
   }
 
   /// Synchronous. Unary.
-  public func getstatus(_ request: Tensorflow_GetStatusRequest)
+  func getstatus(_ request: Tensorflow_GetStatusRequest)
     throws
     -> Tensorflow_GetStatusResponse {
       return try Tensorflow_Grpc_WorkerServiceGetStatusCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func getstatus(_ request: Tensorflow_GetStatusRequest,
+  func getstatus(_ request: Tensorflow_GetStatusRequest,
                   completion: @escaping (Tensorflow_GetStatusResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceGetStatusCall {
@@ -599,13 +599,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest)
+  func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest)
     throws
     -> Tensorflow_CreateWorkerSessionResponse {
       return try Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest,
+  func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest,
                   completion: @escaping (Tensorflow_CreateWorkerSessionResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall {
@@ -614,13 +614,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func registergraph(_ request: Tensorflow_RegisterGraphRequest)
+  func registergraph(_ request: Tensorflow_RegisterGraphRequest)
     throws
     -> Tensorflow_RegisterGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceRegisterGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func registergraph(_ request: Tensorflow_RegisterGraphRequest,
+  func registergraph(_ request: Tensorflow_RegisterGraphRequest,
                   completion: @escaping (Tensorflow_RegisterGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRegisterGraphCall {
@@ -629,13 +629,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest)
+  func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest)
     throws
     -> Tensorflow_DeregisterGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceDeregisterGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest,
+  func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest,
                   completion: @escaping (Tensorflow_DeregisterGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceDeregisterGraphCall {
@@ -644,13 +644,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func rungraph(_ request: Tensorflow_RunGraphRequest)
+  func rungraph(_ request: Tensorflow_RunGraphRequest)
     throws
     -> Tensorflow_RunGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceRunGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func rungraph(_ request: Tensorflow_RunGraphRequest,
+  func rungraph(_ request: Tensorflow_RunGraphRequest,
                   completion: @escaping (Tensorflow_RunGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRunGraphCall {
@@ -659,13 +659,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest)
+  func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest)
     throws
     -> Tensorflow_CleanupGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceCleanupGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest,
+  func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest,
                   completion: @escaping (Tensorflow_CleanupGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCleanupGraphCall {
@@ -674,13 +674,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func cleanupall(_ request: Tensorflow_CleanupAllRequest)
+  func cleanupall(_ request: Tensorflow_CleanupAllRequest)
     throws
     -> Tensorflow_CleanupAllResponse {
       return try Tensorflow_Grpc_WorkerServiceCleanupAllCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func cleanupall(_ request: Tensorflow_CleanupAllRequest,
+  func cleanupall(_ request: Tensorflow_CleanupAllRequest,
                   completion: @escaping (Tensorflow_CleanupAllResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCleanupAllCall {
@@ -689,13 +689,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func recvtensor(_ request: Tensorflow_RecvTensorRequest)
+  func recvtensor(_ request: Tensorflow_RecvTensorRequest)
     throws
     -> Tensorflow_RecvTensorResponse {
       return try Tensorflow_Grpc_WorkerServiceRecvTensorCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func recvtensor(_ request: Tensorflow_RecvTensorRequest,
+  func recvtensor(_ request: Tensorflow_RecvTensorRequest,
                   completion: @escaping (Tensorflow_RecvTensorResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRecvTensorCall {
@@ -704,13 +704,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func logging(_ request: Tensorflow_LoggingRequest)
+  func logging(_ request: Tensorflow_LoggingRequest)
     throws
     -> Tensorflow_LoggingResponse {
       return try Tensorflow_Grpc_WorkerServiceLoggingCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func logging(_ request: Tensorflow_LoggingRequest,
+  func logging(_ request: Tensorflow_LoggingRequest,
                   completion: @escaping (Tensorflow_LoggingResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceLoggingCall {
@@ -719,13 +719,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func tracing(_ request: Tensorflow_TracingRequest)
+  func tracing(_ request: Tensorflow_TracingRequest)
     throws
     -> Tensorflow_TracingResponse {
       return try Tensorflow_Grpc_WorkerServiceTracingCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func tracing(_ request: Tensorflow_TracingRequest,
+  func tracing(_ request: Tensorflow_TracingRequest,
                   completion: @escaping (Tensorflow_TracingResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceTracingCall {

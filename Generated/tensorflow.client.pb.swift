@@ -67,7 +67,7 @@ public class Tensorflow_EventListenerSendEventsCall {
   }
 
   /// Call this to wait for a result. Blocking.
-  public func receive() throws -> Tensorflow_EventReply {
+   func receive() throws -> Tensorflow_EventReply {
     var returnError : Tensorflow_EventListenerClientError?
     var returnMessage : Tensorflow_EventReply!
     let sem = DispatchSemaphore(value: 0)
@@ -86,7 +86,7 @@ public class Tensorflow_EventListenerSendEventsCall {
   }
 
   /// Call this to wait for a result. Nonblocking.
-  public func receive(completion:@escaping (Tensorflow_EventReply?, Tensorflow_EventListenerClientError?)->()) throws {
+  func receive(completion:@escaping (Tensorflow_EventReply?, Tensorflow_EventListenerClientError?)->()) throws {
     do {
       try call.receiveMessage() {(data) in
         if let data = data {
@@ -103,13 +103,13 @@ public class Tensorflow_EventListenerSendEventsCall {
   }
 
   /// Call this to send each message in the request stream.
-  public func send(_ message:Echo_EchoRequest, errorHandler:@escaping (Error)->()) throws {
+  func send(_ message:Echo_EchoRequest, errorHandler:@escaping (Error)->()) throws {
     let messageData = try message.serializedData()
     try call.sendMessage(data:messageData, errorHandler:errorHandler)
   }
 
   /// Call this to close the sending connection. Blocking.
-  public func closeSend() throws {
+  func closeSend() throws {
     let sem = DispatchSemaphore(value: 0)
     try closeSend() {
       sem.signal()
@@ -118,7 +118,7 @@ public class Tensorflow_EventListenerSendEventsCall {
   }
 
   /// Call this to close the sending connection. Nonblocking.
-  public func closeSend(completion:@escaping ()->()) throws {
+  func closeSend(completion:@escaping ()->()) throws {
     try call.close() {
       completion()
     }
@@ -161,7 +161,7 @@ public class Tensorflow_EventListenerService {
   /// Asynchronous. Bidirectional-streaming.
   /// Use methods on the returned object to stream messages,
   /// to wait for replies, and to close the connection.
-  public func sendevents(completion: @escaping (CallResult)->())
+  func sendevents(completion: @escaping (CallResult)->())
     throws
     -> Tensorflow_EventListenerSendEventsCall {
       return try Tensorflow_EventListenerSendEventsCall(channel).start(metadata:metadata, completion:completion)

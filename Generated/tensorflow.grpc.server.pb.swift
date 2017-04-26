@@ -49,7 +49,7 @@ public enum Tensorflow_Grpc_WorkerServiceServerError : Error {
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-public protocol Tensorflow_Grpc_WorkerServiceProvider {
+protocol Tensorflow_Grpc_WorkerServiceProvider { 
   func getstatus(request : Tensorflow_GetStatusRequest, session : Tensorflow_Grpc_WorkerServiceGetStatusSession) throws -> Tensorflow_GetStatusResponse
   func createworkersession(request : Tensorflow_CreateWorkerSessionRequest, session : Tensorflow_Grpc_WorkerServiceCreateWorkerSessionSession) throws -> Tensorflow_CreateWorkerSessionResponse
   func registergraph(request : Tensorflow_RegisterGraphRequest, session : Tensorflow_Grpc_WorkerServiceRegisterGraphSession) throws -> Tensorflow_RegisterGraphResponse
@@ -335,7 +335,7 @@ public class Tensorflow_Grpc_WorkerServiceServer {
   private var provider: Tensorflow_Grpc_WorkerServiceProvider?
 
   /// Create a server that accepts insecure connections.
-  public init(address:String,
+   init(address:String,
               provider:Tensorflow_Grpc_WorkerServiceProvider) {
     gRPC.initialize()
     self.address = address
@@ -344,7 +344,7 @@ public class Tensorflow_Grpc_WorkerServiceServer {
   }
 
   /// Create a server that accepts secure connections.
-  public init?(address:String,
+   init?(address:String,
                certificateURL:URL,
                keyURL:URL,
                provider:Tensorflow_Grpc_WorkerServiceProvider) {
@@ -361,7 +361,7 @@ public class Tensorflow_Grpc_WorkerServiceServer {
   }
 
   /// Start the server.
-  public func start(queue:DispatchQueue = DispatchQueue.global()) {
+  func start(queue:DispatchQueue = DispatchQueue.global()) {
     guard let provider = self.provider else {
       assert(false) // the server requires a provider
     }
