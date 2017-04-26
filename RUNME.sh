@@ -15,6 +15,7 @@ printf "\033c"
   cd swift-protobuf
   swift build
   cp .build/debug/protoc-gen-swift ./
+  read -p " you may want to manually sudo /copy protoc-gen-swiftgrpc /usr/local/bin"
   cd ..
 }
 
@@ -26,6 +27,7 @@ function gitCloneGrpcSwift {
   cd Plugin
   make
   cp  protoc-gen-swiftgrpc /usr/local/bin
+  read -p " you may need to manually sudo /copy protoc-gen-swiftgrpc /usr/local/bin" 
   cd ..
   cd ..
 }
@@ -171,10 +173,10 @@ if which protoc >/dev/null; then
           $file_path 
        
           # output swift proto documentation
-          echo "\n🚀 protoc --plugin=protoc-gen-swift=$(which protoc-gen-swift)  \ \n--proto_path=tensorflow  \ \n--swift_out=. --descriptor_set_out $output_file \ \n--doc_out=markdown,$doc_output_file:"." \ \n $file_path \n \n"
-          protoc --plugin=protoc-gen-swift=$(which protoc-gen-swift) \
+          echo "\n🚀 protoc  \ \n--proto_path=tensorflow  \ \n--swift_out=. --descriptor_set_out $output_file \ \n $file_path \n \n" #\n--doc_out=markdown,$doc_output_file:"." \
+          protoc \
           --proto_path=tensorflow \
-          --swift_out=. \
+          --swift_out="." \
           --descriptor_set_out $output_file \
           $file_path 
           #--doc_out=markdown,$doc_output_file:"." \some problems related to directory - https://github.com/estan/protoc-gen-doc/issues/267
@@ -293,7 +295,8 @@ if which protoc >/dev/null; then
 	done
   # move swift files to this directory
   mkdir Sources
-  find . -maxdepth 1 -name "*.swift" -exec mv {} Sources \;
+  cd tensorflow
+  find ./ -name "*.swift" -exec mv {} ../Sources \;
 
    
 else
