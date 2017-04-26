@@ -13,82 +13,180 @@
 		D35C9FC81D74B0C1000443CD /* EchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C9FC71D74B0C1000443CD /* EchoViewController.swift */; };
 		D3971E211D89132E001A0B3F /* ssl.key in Resources */ = {isa = PBXBuildFile; fileRef = D3971E201D89132E001A0B3F /* ssl.key */; };
 		D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */ = {isa = PBXBuildFile; fileRef = D3BFE28B1D87A45D00A648D8 /* ssl.crt */; };
-		E8D0D68F1EB0E2BE009B2929 /* allocation_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */; };
-		E8D0D6901EB0E2BE009B2929 /* api_objects.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */; };
-		E8D0D6911EB0E2BE009B2929 /* attr_value.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */; };
-		E8D0D6921EB0E2BE009B2929 /* bigquery_table_partition.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */; };
-		E8D0D6931EB0E2BE009B2929 /* checkpoint_state.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */; };
-		E8D0D6941EB0E2BE009B2929 /* compare_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */; };
-		E8D0D6951EB0E2BE009B2929 /* config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6491EB0E2BE009B2929 /* config.pb.swift */; };
-		E8D0D6961EB0E2BE009B2929 /* control_flow.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */; };
-		E8D0D6971EB0E2BE009B2929 /* cost_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */; };
-		E8D0D6981EB0E2BE009B2929 /* cpp_shape_inference.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */; };
-		E8D0D6991EB0E2BE009B2929 /* debug.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */; };
-		E8D0D69A1EB0E2BE009B2929 /* debug_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */; };
-		E8D0D69B1EB0E2BE009B2929 /* device_attributes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */; };
-		E8D0D69C1EB0E2BE009B2929 /* error_codes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */; };
-		E8D0D69D1EB0E2BE009B2929 /* event.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6511EB0E2BE009B2929 /* event.pb.swift */; };
-		E8D0D69E1EB0E2BE009B2929 /* example.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6521EB0E2BE009B2929 /* example.pb.swift */; };
-		E8D0D69F1EB0E2BE009B2929 /* example_parser_configuration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */; };
-		E8D0D6A01EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */; };
-		E8D0D6A11EB0E2BE009B2929 /* feature.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */; };
-		E8D0D6A21EB0E2BE009B2929 /* function.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6561EB0E2BE009B2929 /* function.pb.swift */; };
-		E8D0D6A31EB0E2BE009B2929 /* graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */; };
-		E8D0D6A41EB0E2BE009B2929 /* graph_explorer.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */; };
-		E8D0D6A51EB0E2BE009B2929 /* graph_transfer_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */; };
-		E8D0D6A61EB0E2BE009B2929 /* hparam.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */; };
-		E8D0D6A71EB0E2BE009B2929 /* kernel_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */; };
-		E8D0D6A81EB0E2BE009B2929 /* learner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */; };
-		E8D0D6A91EB0E2BE009B2929 /* log_memory.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */; };
-		E8D0D6AA1EB0E2BE009B2929 /* manifest.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */; };
-		E8D0D6AB1EB0E2BE009B2929 /* master.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */; };
-		E8D0D6AC1EB0E2BE009B2929 /* master_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */; };
-		E8D0D6AD1EB0E2BE009B2929 /* memmapped_file_system.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */; };
-		E8D0D6AE1EB0E2BE009B2929 /* meta_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */; };
-		E8D0D6AF1EB0E2BE009B2929 /* named_tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */; };
-		E8D0D6B01EB0E2BE009B2929 /* node_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */; };
-		E8D0D6B11EB0E2BE009B2929 /* op_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */; };
-		E8D0D6B21EB0E2BE009B2929 /* op_gen_overrides.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */; };
-		E8D0D6B31EB0E2BE009B2929 /* op_performance_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */; };
-		E8D0D6B41EB0E2BE009B2929 /* projector_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */; };
-		E8D0D6B51EB0E2BE009B2929 /* quantiles.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */; };
-		E8D0D6B61EB0E2BE009B2929 /* queue_runner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */; };
-		E8D0D6B71EB0E2BE009B2929 /* reader_base.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */; };
-		E8D0D6B81EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */; };
-		E8D0D6B91EB0E2BE009B2929 /* resource_handle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */; };
-		E8D0D6BA1EB0E2BE009B2929 /* rewriter_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */; };
-		E8D0D6BB1EB0E2BE009B2929 /* saved_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */; };
-		E8D0D6BC1EB0E2BE009B2929 /* saved_tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */; };
-		E8D0D6BD1EB0E2BE009B2929 /* saver.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */; };
-		E8D0D6BE1EB0E2BE009B2929 /* session.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6721EB0E2BE009B2929 /* session.pb.swift */; };
-		E8D0D6BF1EB0E2BE009B2929 /* step_stats.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */; };
-		E8D0D6C01EB0E2BE009B2929 /* summary.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */; };
-		E8D0D6C11EB0E2BE009B2929 /* tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */; };
-		E8D0D6C21EB0E2BE009B2929 /* tensor_bundle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */; };
-		E8D0D6C31EB0E2BE009B2929 /* tensor_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */; };
-		E8D0D6C41EB0E2BE009B2929 /* tensor_shape.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */; };
-		E8D0D6C51EB0E2BE009B2929 /* tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */; };
-		E8D0D6C61EB0E2BE009B2929 /* tensorflow.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */; };
-		E8D0D6C71EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */; };
-		E8D0D6C81EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */; };
-		E8D0D6C91EB0E2BE009B2929 /* tensorflow.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */; };
-		E8D0D6CA1EB0E2BE009B2929 /* tensorflow_server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */; };
-		E8D0D6CB1EB0E2BE009B2929 /* test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */; };
-		E8D0D6CC1EB0E2BE009B2929 /* test_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */; };
-		E8D0D6CD1EB0E2BE009B2929 /* tfcompile.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */; };
-		E8D0D6CE1EB0E2BE009B2929 /* tfprof_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */; };
-		E8D0D6CF1EB0E2BE009B2929 /* tfprof_options.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */; };
-		E8D0D6D01EB0E2BE009B2929 /* tfprof_output.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */; };
-		E8D0D6D11EB0E2BE009B2929 /* trace_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */; };
-		E8D0D6D21EB0E2BE009B2929 /* tree_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */; };
-		E8D0D6D31EB0E2BE009B2929 /* types.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6871EB0E2BE009B2929 /* types.pb.swift */; };
-		E8D0D6D41EB0E2BE009B2929 /* variable.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */; };
-		E8D0D6D51EB0E2BE009B2929 /* verbs_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */; };
-		E8D0D6D61EB0E2BE009B2929 /* versions.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */; };
-		E8D0D6D71EB0E2BE009B2929 /* worker.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */; };
-		E8D0D6D81EB0E2BE009B2929 /* worker_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */; };
-		E8D0D6D91EB0E2BE009B2929 /* xla.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */; };
-		E8D0D6DA1EB0E2BE009B2929 /* xla_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */; };
+		E811CF4A1EB12E2F004C58C3 /* tfcompile.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE3A1EB12E2F004C58C3 /* tfcompile.pb.swift */; };
+		E811CF4B1EB12E2F004C58C3 /* session.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE3D1EB12E2F004C58C3 /* session.pb.swift */; };
+		E811CF4C1EB12E2F004C58C3 /* xla.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE3E1EB12E2F004C58C3 /* xla.pb.swift */; };
+		E811CF4D1EB12E2F004C58C3 /* xla_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE3F1EB12E2F004C58C3 /* xla_data.pb.swift */; };
+		E811CF4E1EB12E2F004C58C3 /* learner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE431EB12E2F004C58C3 /* learner.pb.swift */; };
+		E811CF4F1EB12E2F004C58C3 /* quantiles.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE441EB12E2F004C58C3 /* quantiles.pb.swift */; };
+		E811CF501EB12E2F004C58C3 /* tree_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE451EB12E2F004C58C3 /* tree_config.pb.swift */; };
+		E811CF511EB12E2F004C58C3 /* bigquery_table_partition.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE481EB12E2F004C58C3 /* bigquery_table_partition.pb.swift */; };
+		E811CF521EB12E2F004C58C3 /* manifest.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE4A1EB12E2F004C58C3 /* manifest.pb.swift */; };
+		E811CF531EB12E2F004C58C3 /* graph_explorer.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE4E1EB12E2F004C58C3 /* graph_explorer.pb.swift */; };
+		E811CF541EB12E2F004C58C3 /* trace_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE511EB12E2F004C58C3 /* trace_info.pb.swift */; };
+		E811CF551EB12E2F004C58C3 /* hparam.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE551EB12E2F004C58C3 /* hparam.pb.swift */; };
+		E811CF561EB12E2F004C58C3 /* verbs_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE571EB12E2F004C58C3 /* verbs_service.pb.swift */; };
+		E811CF571EB12E2F004C58C3 /* debug_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE5A1EB12E2F004C58C3 /* debug_service.pb.swift */; };
+		E811CF581EB12E2F004C58C3 /* example.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE5C1EB12E2F004C58C3 /* example.pb.swift */; };
+		E811CF591EB12E2F004C58C3 /* example_parser_configuration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE5D1EB12E2F004C58C3 /* example_parser_configuration.pb.swift */; };
+		E811CF5A1EB12E2F004C58C3 /* feature.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE5E1EB12E2F004C58C3 /* feature.pb.swift */; };
+		E811CF5B1EB12E2F004C58C3 /* allocation_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE601EB12E2F004C58C3 /* allocation_description.pb.swift */; };
+		E811CF5C1EB12E2F004C58C3 /* attr_value.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE611EB12E2F004C58C3 /* attr_value.pb.swift */; };
+		E811CF5D1EB12E2F004C58C3 /* cost_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE621EB12E2F004C58C3 /* cost_graph.pb.swift */; };
+		E811CF5E1EB12E2F004C58C3 /* device_attributes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE631EB12E2F004C58C3 /* device_attributes.pb.swift */; };
+		E811CF5F1EB12E2F004C58C3 /* function.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE641EB12E2F004C58C3 /* function.pb.swift */; };
+		E811CF601EB12E2F004C58C3 /* graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE651EB12E2F004C58C3 /* graph.pb.swift */; };
+		E811CF611EB12E2F004C58C3 /* graph_transfer_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE661EB12E2F004C58C3 /* graph_transfer_info.pb.swift */; };
+		E811CF621EB12E2F004C58C3 /* kernel_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE671EB12E2F004C58C3 /* kernel_def.pb.swift */; };
+		E811CF631EB12E2F004C58C3 /* log_memory.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE681EB12E2F004C58C3 /* log_memory.pb.swift */; };
+		E811CF641EB12E2F004C58C3 /* node_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE691EB12E2F004C58C3 /* node_def.pb.swift */; };
+		E811CF651EB12E2F004C58C3 /* op_def.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6A1EB12E2F004C58C3 /* op_def.pb.swift */; };
+		E811CF661EB12E2F004C58C3 /* op_gen_overrides.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6B1EB12E2F004C58C3 /* op_gen_overrides.pb.swift */; };
+		E811CF671EB12E2F004C58C3 /* reader_base.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6C1EB12E2F004C58C3 /* reader_base.pb.swift */; };
+		E811CF681EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6D1EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift */; };
+		E811CF691EB12E2F004C58C3 /* resource_handle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6E1EB12E2F004C58C3 /* resource_handle.pb.swift */; };
+		E811CF6A1EB12E2F004C58C3 /* step_stats.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE6F1EB12E2F004C58C3 /* step_stats.pb.swift */; };
+		E811CF6B1EB12E2F004C58C3 /* summary.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE701EB12E2F004C58C3 /* summary.pb.swift */; };
+		E811CF6C1EB12E2F004C58C3 /* tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE711EB12E2F004C58C3 /* tensor.pb.swift */; };
+		E811CF6D1EB12E2F004C58C3 /* tensor_description.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE721EB12E2F004C58C3 /* tensor_description.pb.swift */; };
+		E811CF6E1EB12E2F004C58C3 /* tensor_shape.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE731EB12E2F004C58C3 /* tensor_shape.pb.swift */; };
+		E811CF6F1EB12E2F004C58C3 /* tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE741EB12E2F004C58C3 /* tensor_slice.pb.swift */; };
+		E811CF701EB12E2F004C58C3 /* types.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE751EB12E2F004C58C3 /* types.pb.swift */; };
+		E811CF711EB12E2F004C58C3 /* variable.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE761EB12E2F004C58C3 /* variable.pb.swift */; };
+		E811CF721EB12E2F004C58C3 /* versions.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE771EB12E2F004C58C3 /* versions.pb.swift */; };
+		E811CF731EB12E2F004C58C3 /* op_performance_data.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE7A1EB12E2F004C58C3 /* op_performance_data.pb.swift */; };
+		E811CF741EB12E2F004C58C3 /* error_codes.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE7D1EB12E2F004C58C3 /* error_codes.pb.swift */; };
+		E811CF751EB12E2F004C58C3 /* config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE7F1EB12E2F004C58C3 /* config.pb.swift */; };
+		E811CF761EB12E2F004C58C3 /* control_flow.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE801EB12E2F004C58C3 /* control_flow.pb.swift */; };
+		E811CF771EB12E2F004C58C3 /* debug.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE811EB12E2F004C58C3 /* debug.pb.swift */; };
+		E811CF781EB12E2F004C58C3 /* master.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE821EB12E2F004C58C3 /* master.pb.swift */; };
+		E811CF791EB12E2F004C58C3 /* master_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE831EB12E2F004C58C3 /* master_service.pb.swift */; };
+		E811CF7A1EB12E2F004C58C3 /* meta_graph.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE841EB12E2F004C58C3 /* meta_graph.pb.swift */; };
+		E811CF7B1EB12E2F004C58C3 /* named_tensor.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE851EB12E2F004C58C3 /* named_tensor.pb.swift */; };
+		E811CF7C1EB12E2F004C58C3 /* queue_runner.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE861EB12E2F004C58C3 /* queue_runner.pb.swift */; };
+		E811CF7D1EB12E2F004C58C3 /* rewriter_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE871EB12E2F004C58C3 /* rewriter_config.pb.swift */; };
+		E811CF7E1EB12E2F004C58C3 /* saved_model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE881EB12E2F004C58C3 /* saved_model.pb.swift */; };
+		E811CF7F1EB12E2F004C58C3 /* saver.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE891EB12E2F004C58C3 /* saver.pb.swift */; };
+		E811CF801EB12E2F004C58C3 /* tensor_bundle.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE8A1EB12E2F004C58C3 /* tensor_bundle.pb.swift */; };
+		E811CF811EB12E2F004C58C3 /* tensorflow_server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE8B1EB12E2F004C58C3 /* tensorflow_server.pb.swift */; };
+		E811CF821EB12E2F004C58C3 /* worker.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE8C1EB12E2F004C58C3 /* worker.pb.swift */; };
+		E811CF831EB12E2F004C58C3 /* worker_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE8D1EB12E2F004C58C3 /* worker_service.pb.swift */; };
+		E811CF841EB12E2F004C58C3 /* event.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE8F1EB12E2F004C58C3 /* event.pb.swift */; };
+		E811CF851EB12E2F004C58C3 /* example_proto_fast_parsing_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE901EB12E2F004C58C3 /* example_proto_fast_parsing_test.pb.swift */; };
+		E811CF861EB12E2F004C58C3 /* memmapped_file_system.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE911EB12E2F004C58C3 /* memmapped_file_system.pb.swift */; };
+		E811CF871EB12E2F004C58C3 /* saved_tensor_slice.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE921EB12E2F004C58C3 /* saved_tensor_slice.pb.swift */; };
+		E811CF881EB12E2F004C58C3 /* test_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE931EB12E2F004C58C3 /* test_log.pb.swift */; };
+		E811CF891EB12E2F004C58C3 /* cpp_shape_inference.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE961EB12E2F004C58C3 /* cpp_shape_inference.pb.swift */; };
+		E811CF8A1EB12E2F004C58C3 /* checkpoint_state.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE981EB12E2F004C58C3 /* checkpoint_state.pb.swift */; };
+		E811CF8B1EB12E2F004C58C3 /* compare_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE9B1EB12E2F004C58C3 /* compare_test.pb.swift */; };
+		E811CF8C1EB12E2F004C58C3 /* projector_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CE9F1EB12E2F004C58C3 /* projector_config.pb.swift */; };
+		E811CF8D1EB12E2F004C58C3 /* tfcompile.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEA31EB12E2F004C58C3 /* tfcompile.proto */; };
+		E811CF8E1EB12E2F004C58C3 /* session.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEA61EB12E2F004C58C3 /* session.proto */; };
+		E811CF8F1EB12E2F004C58C3 /* xla.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEA71EB12E2F004C58C3 /* xla.proto */; };
+		E811CF901EB12E2F004C58C3 /* xla_data.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEA81EB12E2F004C58C3 /* xla_data.proto */; };
+		E811CF911EB12E2F004C58C3 /* learner.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEAC1EB12E2F004C58C3 /* learner.proto */; };
+		E811CF921EB12E2F004C58C3 /* quantiles.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEAD1EB12E2F004C58C3 /* quantiles.proto */; };
+		E811CF931EB12E2F004C58C3 /* tree_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEAE1EB12E2F004C58C3 /* tree_config.proto */; };
+		E811CF941EB12E2F004C58C3 /* bigquery_table_partition.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEB11EB12E2F004C58C3 /* bigquery_table_partition.proto */; };
+		E811CF951EB12E2F004C58C3 /* manifest.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEB31EB12E2F004C58C3 /* manifest.proto */; };
+		E811CF961EB12E2F004C58C3 /* graph_explorer.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEB71EB12E2F004C58C3 /* graph_explorer.proto */; };
+		E811CF971EB12E2F004C58C3 /* trace_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEBA1EB12E2F004C58C3 /* trace_info.proto */; };
+		E811CF981EB12E2F004C58C3 /* hparam.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEBE1EB12E2F004C58C3 /* hparam.proto */; };
+		E811CF991EB12E2F004C58C3 /* verbs_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC01EB12E2F004C58C3 /* verbs_service.proto */; };
+		E811CF9A1EB12E2F004C58C3 /* debug_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC31EB12E2F004C58C3 /* debug_service.proto */; };
+		E811CF9B1EB12E2F004C58C3 /* example.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC51EB12E2F004C58C3 /* example.proto */; };
+		E811CF9C1EB12E2F004C58C3 /* example_parser_configuration.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC61EB12E2F004C58C3 /* example_parser_configuration.proto */; };
+		E811CF9D1EB12E2F004C58C3 /* feature.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC71EB12E2F004C58C3 /* feature.proto */; };
+		E811CF9E1EB12E2F004C58C3 /* allocation_description.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEC91EB12E2F004C58C3 /* allocation_description.proto */; };
+		E811CF9F1EB12E2F004C58C3 /* attr_value.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECA1EB12E2F004C58C3 /* attr_value.proto */; };
+		E811CFA01EB12E2F004C58C3 /* cost_graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECB1EB12E2F004C58C3 /* cost_graph.proto */; };
+		E811CFA11EB12E2F004C58C3 /* device_attributes.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECC1EB12E2F004C58C3 /* device_attributes.proto */; };
+		E811CFA21EB12E2F004C58C3 /* function.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECD1EB12E2F004C58C3 /* function.proto */; };
+		E811CFA31EB12E2F004C58C3 /* graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECE1EB12E2F004C58C3 /* graph.proto */; };
+		E811CFA41EB12E2F004C58C3 /* graph_transfer_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CECF1EB12E2F004C58C3 /* graph_transfer_info.proto */; };
+		E811CFA51EB12E2F004C58C3 /* kernel_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED01EB12E2F004C58C3 /* kernel_def.proto */; };
+		E811CFA61EB12E2F004C58C3 /* log_memory.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED11EB12E2F004C58C3 /* log_memory.proto */; };
+		E811CFA71EB12E2F004C58C3 /* node_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED21EB12E2F004C58C3 /* node_def.proto */; };
+		E811CFA81EB12E2F004C58C3 /* op_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED31EB12E2F004C58C3 /* op_def.proto */; };
+		E811CFA91EB12E2F004C58C3 /* op_gen_overrides.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED41EB12E2F004C58C3 /* op_gen_overrides.proto */; };
+		E811CFAA1EB12E2F004C58C3 /* reader_base.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED51EB12E2F004C58C3 /* reader_base.proto */; };
+		E811CFAB1EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED61EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto */; };
+		E811CFAC1EB12E2F004C58C3 /* resource_handle.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED71EB12E2F004C58C3 /* resource_handle.proto */; };
+		E811CFAD1EB12E2F004C58C3 /* step_stats.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED81EB12E2F004C58C3 /* step_stats.proto */; };
+		E811CFAE1EB12E2F004C58C3 /* summary.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CED91EB12E2F004C58C3 /* summary.proto */; };
+		E811CFAF1EB12E2F004C58C3 /* tensor.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDA1EB12E2F004C58C3 /* tensor.proto */; };
+		E811CFB01EB12E2F004C58C3 /* tensor_description.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDB1EB12E2F004C58C3 /* tensor_description.proto */; };
+		E811CFB11EB12E2F004C58C3 /* tensor_shape.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDC1EB12E2F004C58C3 /* tensor_shape.proto */; };
+		E811CFB21EB12E2F004C58C3 /* tensor_slice.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDD1EB12E2F004C58C3 /* tensor_slice.proto */; };
+		E811CFB31EB12E2F004C58C3 /* types.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDE1EB12E2F004C58C3 /* types.proto */; };
+		E811CFB41EB12E2F004C58C3 /* variable.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEDF1EB12E2F004C58C3 /* variable.proto */; };
+		E811CFB51EB12E2F004C58C3 /* versions.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEE01EB12E2F004C58C3 /* versions.proto */; };
+		E811CFB61EB12E2F004C58C3 /* op_performance_data.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEE31EB12E2F004C58C3 /* op_performance_data.proto */; };
+		E811CFB71EB12E2F004C58C3 /* error_codes.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEE61EB12E2F004C58C3 /* error_codes.proto */; };
+		E811CFB81EB12E2F004C58C3 /* config.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEE81EB12E2F004C58C3 /* config.proto */; };
+		E811CFB91EB12E2F004C58C3 /* control_flow.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEE91EB12E2F004C58C3 /* control_flow.proto */; };
+		E811CFBA1EB12E2F004C58C3 /* debug.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEEA1EB12E2F004C58C3 /* debug.proto */; };
+		E811CFBB1EB12E2F004C58C3 /* master.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEEB1EB12E2F004C58C3 /* master.proto */; };
+		E811CFBC1EB12E2F004C58C3 /* master_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEEC1EB12E2F004C58C3 /* master_service.proto */; };
+		E811CFBD1EB12E2F004C58C3 /* meta_graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEED1EB12E2F004C58C3 /* meta_graph.proto */; };
+		E811CFBE1EB12E2F004C58C3 /* named_tensor.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEEE1EB12E2F004C58C3 /* named_tensor.proto */; };
+		E811CFBF1EB12E2F004C58C3 /* queue_runner.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEEF1EB12E2F004C58C3 /* queue_runner.proto */; };
+		E811CFC01EB12E2F004C58C3 /* rewriter_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF01EB12E2F004C58C3 /* rewriter_config.proto */; };
+		E811CFC11EB12E2F004C58C3 /* saved_model.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF11EB12E2F004C58C3 /* saved_model.proto */; };
+		E811CFC21EB12E2F004C58C3 /* saver.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF21EB12E2F004C58C3 /* saver.proto */; };
+		E811CFC31EB12E2F004C58C3 /* tensor_bundle.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF31EB12E2F004C58C3 /* tensor_bundle.proto */; };
+		E811CFC41EB12E2F004C58C3 /* tensorflow_server.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF41EB12E2F004C58C3 /* tensorflow_server.proto */; };
+		E811CFC51EB12E2F004C58C3 /* worker.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF51EB12E2F004C58C3 /* worker.proto */; };
+		E811CFC61EB12E2F004C58C3 /* worker_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF61EB12E2F004C58C3 /* worker_service.proto */; };
+		E811CFC71EB12E2F004C58C3 /* event.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF81EB12E2F004C58C3 /* event.proto */; };
+		E811CFC81EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEF91EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto */; };
+		E811CFC91EB12E2F004C58C3 /* memmapped_file_system.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEFA1EB12E2F004C58C3 /* memmapped_file_system.proto */; };
+		E811CFCA1EB12E2F004C58C3 /* saved_tensor_slice.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEFB1EB12E2F004C58C3 /* saved_tensor_slice.proto */; };
+		E811CFCB1EB12E2F004C58C3 /* test_log.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEFC1EB12E2F004C58C3 /* test_log.proto */; };
+		E811CFCC1EB12E2F004C58C3 /* cpp_shape_inference.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CEFF1EB12E2F004C58C3 /* cpp_shape_inference.proto */; };
+		E811CFCD1EB12E2F004C58C3 /* checkpoint_state.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF011EB12E2F004C58C3 /* checkpoint_state.proto */; };
+		E811CFCE1EB12E2F004C58C3 /* compare_test.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF041EB12E2F004C58C3 /* compare_test.proto */; };
+		E811CFCF1EB12E2F004C58C3 /* projector_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF081EB12E2F004C58C3 /* projector_config.proto */; };
+		E811CFD01EB12E2F004C58C3 /* api_objects.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF0C1EB12E2F004C58C3 /* api_objects.proto */; };
+		E811CFD11EB12E2F004C58C3 /* test.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF0E1EB12E2F004C58C3 /* test.proto */; };
+		E811CFD21EB12E2F004C58C3 /* tfprof_log.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF101EB12E2F004C58C3 /* tfprof_log.proto */; };
+		E811CFD31EB12E2F004C58C3 /* tfprof_options.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF111EB12E2F004C58C3 /* tfprof_options.proto */; };
+		E811CFD41EB12E2F004C58C3 /* tfprof_output.proto in Resources */ = {isa = PBXBuildFile; fileRef = E811CF121EB12E2F004C58C3 /* tfprof_output.proto */; };
+		E811CFD51EB12E2F004C58C3 /* api_objects.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF161EB12E2F004C58C3 /* api_objects.pb.swift */; };
+		E811CFD61EB12E2F004C58C3 /* test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF181EB12E2F004C58C3 /* test.pb.swift */; };
+		E811CFD71EB12E2F004C58C3 /* tfprof_log.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1A1EB12E2F004C58C3 /* tfprof_log.pb.swift */; };
+		E811CFD81EB12E2F004C58C3 /* tfprof_options.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1B1EB12E2F004C58C3 /* tfprof_options.pb.swift */; };
+		E811CFD91EB12E2F004C58C3 /* tfprof_output.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1C1EB12E2F004C58C3 /* tfprof_output.pb.swift */; };
+		E811CFDA1EB12E2F004C58C3 /* tensorflow.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1D1EB12E2F004C58C3 /* tensorflow.client.pb.swift */; };
+		E811CFDB1EB12E2F004C58C3 /* tensorflow.grpc.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1E1EB12E2F004C58C3 /* tensorflow.grpc.client.pb.swift */; };
+		E811CFDC1EB12E2F004C58C3 /* tensorflow.grpc.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF1F1EB12E2F004C58C3 /* tensorflow.grpc.server.pb.swift */; };
+		E811CFDD1EB12E2F004C58C3 /* tensorflow.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF201EB12E2F004C58C3 /* tensorflow.server.pb.swift */; };
+		E811CFDE1EB12E2F004C58C3 /* tensorflow.serving.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF211EB12E2F004C58C3 /* tensorflow.serving.client.pb.swift */; };
+		E811CFDF1EB12E2F004C58C3 /* tensorflow.serving.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF221EB12E2F004C58C3 /* tensorflow.serving.server.pb.swift */; };
+		E811CFE01EB12E2F004C58C3 /* classification.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF251EB12E2F004C58C3 /* classification.pb.swift */; };
+		E811CFE11EB12E2F004C58C3 /* get_model_metadata.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF261EB12E2F004C58C3 /* get_model_metadata.pb.swift */; };
+		E811CFE21EB12E2F004C58C3 /* inference.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF271EB12E2F004C58C3 /* inference.pb.swift */; };
+		E811CFE31EB12E2F004C58C3 /* input.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF281EB12E2F004C58C3 /* input.pb.swift */; };
+		E811CFE41EB12E2F004C58C3 /* serialized_input.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF2A1EB12E2F004C58C3 /* serialized_input.pb.swift */; };
+		E811CFE51EB12E2F004C58C3 /* model.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF2B1EB12E2F004C58C3 /* model.pb.swift */; };
+		E811CFE61EB12E2F004C58C3 /* predict.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF2C1EB12E2F004C58C3 /* predict.pb.swift */; };
+		E811CFE71EB12E2F004C58C3 /* prediction_service.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF2D1EB12E2F004C58C3 /* prediction_service.pb.swift */; };
+		E811CFE81EB12E2F004C58C3 /* regression.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF2E1EB12E2F004C58C3 /* regression.pb.swift */; };
+		E811CFE91EB12E2F004C58C3 /* log_collector_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF301EB12E2F004C58C3 /* log_collector_config.pb.swift */; };
+		E811CFEA1EB12E2F004C58C3 /* logging_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF311EB12E2F004C58C3 /* logging_config.pb.swift */; };
+		E811CFEB1EB12E2F004C58C3 /* model_server_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF321EB12E2F004C58C3 /* model_server_config.pb.swift */; };
+		E811CFEC1EB12E2F004C58C3 /* platform_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF331EB12E2F004C58C3 /* platform_config.pb.swift */; };
+		E811CFED1EB12E2F004C58C3 /* logging.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF351EB12E2F004C58C3 /* logging.pb.swift */; };
+		E811CFEE1EB12E2F004C58C3 /* fake_loader_source_adapter.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF371EB12E2F004C58C3 /* fake_loader_source_adapter.pb.swift */; };
+		E811CFEF1EB12E2F004C58C3 /* storage_path_error_injecting_source_adapter.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF3A1EB12E2F004C58C3 /* storage_path_error_injecting_source_adapter.pb.swift */; };
+		E811CFF01EB12E2F004C58C3 /* resources.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF3C1EB12E2F004C58C3 /* resources.pb.swift */; };
+		E811CFF11EB12E2F004C58C3 /* hashmap_source_adapter.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF3F1EB12E2F004C58C3 /* hashmap_source_adapter.pb.swift */; };
+		E811CFF21EB12E2F004C58C3 /* saved_model_bundle_source_adapter.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF411EB12E2F004C58C3 /* saved_model_bundle_source_adapter.pb.swift */; };
+		E811CFF31EB12E2F004C58C3 /* session_bundle_config.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF421EB12E2F004C58C3 /* session_bundle_config.pb.swift */; };
+		E811CFF41EB12E2F004C58C3 /* session_bundle_source_adapter.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF431EB12E2F004C58C3 /* session_bundle_source_adapter.pb.swift */; };
+		E811CFF51EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF461EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift */; };
+		E811CFF61EB12E2F004C58C3 /* static_storage_path_source.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF471EB12E2F004C58C3 /* static_storage_path_source.pb.swift */; };
+		E811CFF71EB12E2F004C58C3 /* class_registration_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF491EB12E2F004C58C3 /* class_registration_test.pb.swift */; };
 		E8D0D7361EB0E8C7009B2929 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D7351EB0E8C7009B2929 /* README.md */; };
 		E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */; };
 		E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */; };
@@ -216,82 +314,180 @@
 		D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftProtobuf.xcodeproj; path = "../grpc-swift/third_party/swift-protobuf/SwiftProtobuf.xcodeproj"; sourceTree = "<group>"; };
 		D3971E201D89132E001A0B3F /* ssl.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.key; sourceTree = "<group>"; };
 		D3BFE28B1D87A45D00A648D8 /* ssl.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ssl.crt; sourceTree = "<group>"; };
-		E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allocation_description.pb.swift; sourceTree = "<group>"; };
-		E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_objects.pb.swift; sourceTree = "<group>"; };
-		E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = attr_value.pb.swift; sourceTree = "<group>"; };
-		E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigquery_table_partition.pb.swift; sourceTree = "<group>"; };
-		E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkpoint_state.pb.swift; sourceTree = "<group>"; };
-		E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compare_test.pb.swift; sourceTree = "<group>"; };
-		E8D0D6491EB0E2BE009B2929 /* config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.pb.swift; sourceTree = "<group>"; };
-		E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = control_flow.pb.swift; sourceTree = "<group>"; };
-		E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cost_graph.pb.swift; sourceTree = "<group>"; };
-		E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cpp_shape_inference.pb.swift; sourceTree = "<group>"; };
-		E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug.pb.swift; sourceTree = "<group>"; };
-		E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug_service.pb.swift; sourceTree = "<group>"; };
-		E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device_attributes.pb.swift; sourceTree = "<group>"; };
-		E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = error_codes.pb.swift; sourceTree = "<group>"; };
-		E8D0D6511EB0E2BE009B2929 /* event.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.pb.swift; sourceTree = "<group>"; };
-		E8D0D6521EB0E2BE009B2929 /* example.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example.pb.swift; sourceTree = "<group>"; };
-		E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_parser_configuration.pb.swift; sourceTree = "<group>"; };
-		E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_proto_fast_parsing_test.pb.swift; sourceTree = "<group>"; };
-		E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feature.pb.swift; sourceTree = "<group>"; };
-		E8D0D6561EB0E2BE009B2929 /* function.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = function.pb.swift; sourceTree = "<group>"; };
-		E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph.pb.swift; sourceTree = "<group>"; };
-		E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_explorer.pb.swift; sourceTree = "<group>"; };
-		E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_transfer_info.pb.swift; sourceTree = "<group>"; };
-		E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hparam.pb.swift; sourceTree = "<group>"; };
-		E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kernel_def.pb.swift; sourceTree = "<group>"; };
-		E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = learner.pb.swift; sourceTree = "<group>"; };
-		E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = log_memory.pb.swift; sourceTree = "<group>"; };
-		E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manifest.pb.swift; sourceTree = "<group>"; };
-		E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master.pb.swift; sourceTree = "<group>"; };
-		E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master_service.pb.swift; sourceTree = "<group>"; };
-		E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memmapped_file_system.pb.swift; sourceTree = "<group>"; };
-		E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meta_graph.pb.swift; sourceTree = "<group>"; };
-		E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = named_tensor.pb.swift; sourceTree = "<group>"; };
-		E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = node_def.pb.swift; sourceTree = "<group>"; };
-		E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_def.pb.swift; sourceTree = "<group>"; };
-		E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_gen_overrides.pb.swift; sourceTree = "<group>"; };
-		E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_performance_data.pb.swift; sourceTree = "<group>"; };
-		E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = projector_config.pb.swift; sourceTree = "<group>"; };
-		E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quantiles.pb.swift; sourceTree = "<group>"; };
-		E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queue_runner.pb.swift; sourceTree = "<group>"; };
-		E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reader_base.pb.swift; sourceTree = "<group>"; };
-		E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = remote_fused_graph_execute_info.pb.swift; sourceTree = "<group>"; };
-		E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resource_handle.pb.swift; sourceTree = "<group>"; };
-		E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewriter_config.pb.swift; sourceTree = "<group>"; };
-		E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_model.pb.swift; sourceTree = "<group>"; };
-		E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_tensor_slice.pb.swift; sourceTree = "<group>"; };
-		E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saver.pb.swift; sourceTree = "<group>"; };
-		E8D0D6721EB0E2BE009B2929 /* session.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = session.pb.swift; sourceTree = "<group>"; };
-		E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = step_stats.pb.swift; sourceTree = "<group>"; };
-		E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summary.pb.swift; sourceTree = "<group>"; };
-		E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor.pb.swift; sourceTree = "<group>"; };
-		E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_bundle.pb.swift; sourceTree = "<group>"; };
-		E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_description.pb.swift; sourceTree = "<group>"; };
-		E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_shape.pb.swift; sourceTree = "<group>"; };
-		E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_slice.pb.swift; sourceTree = "<group>"; };
-		E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.client.pb.swift; sourceTree = "<group>"; };
-		E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.client.pb.swift; sourceTree = "<group>"; };
-		E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.server.pb.swift; sourceTree = "<group>"; };
-		E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.server.pb.swift; sourceTree = "<group>"; };
-		E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow_server.pb.swift; sourceTree = "<group>"; };
-		E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.pb.swift; sourceTree = "<group>"; };
-		E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_log.pb.swift; sourceTree = "<group>"; };
-		E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfcompile.pb.swift; sourceTree = "<group>"; };
-		E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_log.pb.swift; sourceTree = "<group>"; };
-		E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_options.pb.swift; sourceTree = "<group>"; };
-		E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_output.pb.swift; sourceTree = "<group>"; };
-		E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trace_info.pb.swift; sourceTree = "<group>"; };
-		E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tree_config.pb.swift; sourceTree = "<group>"; };
-		E8D0D6871EB0E2BE009B2929 /* types.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = types.pb.swift; sourceTree = "<group>"; };
-		E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = variable.pb.swift; sourceTree = "<group>"; };
-		E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbs_service.pb.swift; sourceTree = "<group>"; };
-		E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = versions.pb.swift; sourceTree = "<group>"; };
-		E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker.pb.swift; sourceTree = "<group>"; };
-		E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker_service.pb.swift; sourceTree = "<group>"; };
-		E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla.pb.swift; sourceTree = "<group>"; };
-		E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla_data.pb.swift; sourceTree = "<group>"; };
+		E811CE3A1EB12E2F004C58C3 /* tfcompile.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfcompile.pb.swift; sourceTree = "<group>"; };
+		E811CE3D1EB12E2F004C58C3 /* session.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = session.pb.swift; sourceTree = "<group>"; };
+		E811CE3E1EB12E2F004C58C3 /* xla.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla.pb.swift; sourceTree = "<group>"; };
+		E811CE3F1EB12E2F004C58C3 /* xla_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = xla_data.pb.swift; sourceTree = "<group>"; };
+		E811CE431EB12E2F004C58C3 /* learner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = learner.pb.swift; sourceTree = "<group>"; };
+		E811CE441EB12E2F004C58C3 /* quantiles.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quantiles.pb.swift; sourceTree = "<group>"; };
+		E811CE451EB12E2F004C58C3 /* tree_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tree_config.pb.swift; sourceTree = "<group>"; };
+		E811CE481EB12E2F004C58C3 /* bigquery_table_partition.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bigquery_table_partition.pb.swift; sourceTree = "<group>"; };
+		E811CE4A1EB12E2F004C58C3 /* manifest.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = manifest.pb.swift; sourceTree = "<group>"; };
+		E811CE4E1EB12E2F004C58C3 /* graph_explorer.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_explorer.pb.swift; sourceTree = "<group>"; };
+		E811CE511EB12E2F004C58C3 /* trace_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = trace_info.pb.swift; sourceTree = "<group>"; };
+		E811CE551EB12E2F004C58C3 /* hparam.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hparam.pb.swift; sourceTree = "<group>"; };
+		E811CE571EB12E2F004C58C3 /* verbs_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verbs_service.pb.swift; sourceTree = "<group>"; };
+		E811CE5A1EB12E2F004C58C3 /* debug_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug_service.pb.swift; sourceTree = "<group>"; };
+		E811CE5C1EB12E2F004C58C3 /* example.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example.pb.swift; sourceTree = "<group>"; };
+		E811CE5D1EB12E2F004C58C3 /* example_parser_configuration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_parser_configuration.pb.swift; sourceTree = "<group>"; };
+		E811CE5E1EB12E2F004C58C3 /* feature.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feature.pb.swift; sourceTree = "<group>"; };
+		E811CE601EB12E2F004C58C3 /* allocation_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = allocation_description.pb.swift; sourceTree = "<group>"; };
+		E811CE611EB12E2F004C58C3 /* attr_value.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = attr_value.pb.swift; sourceTree = "<group>"; };
+		E811CE621EB12E2F004C58C3 /* cost_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cost_graph.pb.swift; sourceTree = "<group>"; };
+		E811CE631EB12E2F004C58C3 /* device_attributes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = device_attributes.pb.swift; sourceTree = "<group>"; };
+		E811CE641EB12E2F004C58C3 /* function.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = function.pb.swift; sourceTree = "<group>"; };
+		E811CE651EB12E2F004C58C3 /* graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph.pb.swift; sourceTree = "<group>"; };
+		E811CE661EB12E2F004C58C3 /* graph_transfer_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph_transfer_info.pb.swift; sourceTree = "<group>"; };
+		E811CE671EB12E2F004C58C3 /* kernel_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = kernel_def.pb.swift; sourceTree = "<group>"; };
+		E811CE681EB12E2F004C58C3 /* log_memory.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = log_memory.pb.swift; sourceTree = "<group>"; };
+		E811CE691EB12E2F004C58C3 /* node_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = node_def.pb.swift; sourceTree = "<group>"; };
+		E811CE6A1EB12E2F004C58C3 /* op_def.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_def.pb.swift; sourceTree = "<group>"; };
+		E811CE6B1EB12E2F004C58C3 /* op_gen_overrides.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_gen_overrides.pb.swift; sourceTree = "<group>"; };
+		E811CE6C1EB12E2F004C58C3 /* reader_base.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reader_base.pb.swift; sourceTree = "<group>"; };
+		E811CE6D1EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = remote_fused_graph_execute_info.pb.swift; sourceTree = "<group>"; };
+		E811CE6E1EB12E2F004C58C3 /* resource_handle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resource_handle.pb.swift; sourceTree = "<group>"; };
+		E811CE6F1EB12E2F004C58C3 /* step_stats.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = step_stats.pb.swift; sourceTree = "<group>"; };
+		E811CE701EB12E2F004C58C3 /* summary.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = summary.pb.swift; sourceTree = "<group>"; };
+		E811CE711EB12E2F004C58C3 /* tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor.pb.swift; sourceTree = "<group>"; };
+		E811CE721EB12E2F004C58C3 /* tensor_description.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_description.pb.swift; sourceTree = "<group>"; };
+		E811CE731EB12E2F004C58C3 /* tensor_shape.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_shape.pb.swift; sourceTree = "<group>"; };
+		E811CE741EB12E2F004C58C3 /* tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_slice.pb.swift; sourceTree = "<group>"; };
+		E811CE751EB12E2F004C58C3 /* types.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = types.pb.swift; sourceTree = "<group>"; };
+		E811CE761EB12E2F004C58C3 /* variable.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = variable.pb.swift; sourceTree = "<group>"; };
+		E811CE771EB12E2F004C58C3 /* versions.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = versions.pb.swift; sourceTree = "<group>"; };
+		E811CE7A1EB12E2F004C58C3 /* op_performance_data.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = op_performance_data.pb.swift; sourceTree = "<group>"; };
+		E811CE7D1EB12E2F004C58C3 /* error_codes.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = error_codes.pb.swift; sourceTree = "<group>"; };
+		E811CE7F1EB12E2F004C58C3 /* config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.pb.swift; sourceTree = "<group>"; };
+		E811CE801EB12E2F004C58C3 /* control_flow.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = control_flow.pb.swift; sourceTree = "<group>"; };
+		E811CE811EB12E2F004C58C3 /* debug.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debug.pb.swift; sourceTree = "<group>"; };
+		E811CE821EB12E2F004C58C3 /* master.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master.pb.swift; sourceTree = "<group>"; };
+		E811CE831EB12E2F004C58C3 /* master_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = master_service.pb.swift; sourceTree = "<group>"; };
+		E811CE841EB12E2F004C58C3 /* meta_graph.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = meta_graph.pb.swift; sourceTree = "<group>"; };
+		E811CE851EB12E2F004C58C3 /* named_tensor.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = named_tensor.pb.swift; sourceTree = "<group>"; };
+		E811CE861EB12E2F004C58C3 /* queue_runner.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queue_runner.pb.swift; sourceTree = "<group>"; };
+		E811CE871EB12E2F004C58C3 /* rewriter_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rewriter_config.pb.swift; sourceTree = "<group>"; };
+		E811CE881EB12E2F004C58C3 /* saved_model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_model.pb.swift; sourceTree = "<group>"; };
+		E811CE891EB12E2F004C58C3 /* saver.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saver.pb.swift; sourceTree = "<group>"; };
+		E811CE8A1EB12E2F004C58C3 /* tensor_bundle.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensor_bundle.pb.swift; sourceTree = "<group>"; };
+		E811CE8B1EB12E2F004C58C3 /* tensorflow_server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow_server.pb.swift; sourceTree = "<group>"; };
+		E811CE8C1EB12E2F004C58C3 /* worker.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker.pb.swift; sourceTree = "<group>"; };
+		E811CE8D1EB12E2F004C58C3 /* worker_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = worker_service.pb.swift; sourceTree = "<group>"; };
+		E811CE8F1EB12E2F004C58C3 /* event.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.pb.swift; sourceTree = "<group>"; };
+		E811CE901EB12E2F004C58C3 /* example_proto_fast_parsing_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = example_proto_fast_parsing_test.pb.swift; sourceTree = "<group>"; };
+		E811CE911EB12E2F004C58C3 /* memmapped_file_system.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memmapped_file_system.pb.swift; sourceTree = "<group>"; };
+		E811CE921EB12E2F004C58C3 /* saved_tensor_slice.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_tensor_slice.pb.swift; sourceTree = "<group>"; };
+		E811CE931EB12E2F004C58C3 /* test_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test_log.pb.swift; sourceTree = "<group>"; };
+		E811CE961EB12E2F004C58C3 /* cpp_shape_inference.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cpp_shape_inference.pb.swift; sourceTree = "<group>"; };
+		E811CE981EB12E2F004C58C3 /* checkpoint_state.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkpoint_state.pb.swift; sourceTree = "<group>"; };
+		E811CE9B1EB12E2F004C58C3 /* compare_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compare_test.pb.swift; sourceTree = "<group>"; };
+		E811CE9F1EB12E2F004C58C3 /* projector_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = projector_config.pb.swift; sourceTree = "<group>"; };
+		E811CEA31EB12E2F004C58C3 /* tfcompile.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfcompile.proto; sourceTree = "<group>"; };
+		E811CEA61EB12E2F004C58C3 /* session.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = session.proto; sourceTree = "<group>"; };
+		E811CEA71EB12E2F004C58C3 /* xla.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xla.proto; sourceTree = "<group>"; };
+		E811CEA81EB12E2F004C58C3 /* xla_data.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xla_data.proto; sourceTree = "<group>"; };
+		E811CEAC1EB12E2F004C58C3 /* learner.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = learner.proto; sourceTree = "<group>"; };
+		E811CEAD1EB12E2F004C58C3 /* quantiles.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quantiles.proto; sourceTree = "<group>"; };
+		E811CEAE1EB12E2F004C58C3 /* tree_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tree_config.proto; sourceTree = "<group>"; };
+		E811CEB11EB12E2F004C58C3 /* bigquery_table_partition.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigquery_table_partition.proto; sourceTree = "<group>"; };
+		E811CEB31EB12E2F004C58C3 /* manifest.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manifest.proto; sourceTree = "<group>"; };
+		E811CEB71EB12E2F004C58C3 /* graph_explorer.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph_explorer.proto; sourceTree = "<group>"; };
+		E811CEBA1EB12E2F004C58C3 /* trace_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trace_info.proto; sourceTree = "<group>"; };
+		E811CEBE1EB12E2F004C58C3 /* hparam.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hparam.proto; sourceTree = "<group>"; };
+		E811CEC01EB12E2F004C58C3 /* verbs_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verbs_service.proto; sourceTree = "<group>"; };
+		E811CEC31EB12E2F004C58C3 /* debug_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debug_service.proto; sourceTree = "<group>"; };
+		E811CEC51EB12E2F004C58C3 /* example.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.proto; sourceTree = "<group>"; };
+		E811CEC61EB12E2F004C58C3 /* example_parser_configuration.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_parser_configuration.proto; sourceTree = "<group>"; };
+		E811CEC71EB12E2F004C58C3 /* feature.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = feature.proto; sourceTree = "<group>"; };
+		E811CEC91EB12E2F004C58C3 /* allocation_description.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allocation_description.proto; sourceTree = "<group>"; };
+		E811CECA1EB12E2F004C58C3 /* attr_value.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = attr_value.proto; sourceTree = "<group>"; };
+		E811CECB1EB12E2F004C58C3 /* cost_graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cost_graph.proto; sourceTree = "<group>"; };
+		E811CECC1EB12E2F004C58C3 /* device_attributes.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = device_attributes.proto; sourceTree = "<group>"; };
+		E811CECD1EB12E2F004C58C3 /* function.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = function.proto; sourceTree = "<group>"; };
+		E811CECE1EB12E2F004C58C3 /* graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph.proto; sourceTree = "<group>"; };
+		E811CECF1EB12E2F004C58C3 /* graph_transfer_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph_transfer_info.proto; sourceTree = "<group>"; };
+		E811CED01EB12E2F004C58C3 /* kernel_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kernel_def.proto; sourceTree = "<group>"; };
+		E811CED11EB12E2F004C58C3 /* log_memory.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log_memory.proto; sourceTree = "<group>"; };
+		E811CED21EB12E2F004C58C3 /* node_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = node_def.proto; sourceTree = "<group>"; };
+		E811CED31EB12E2F004C58C3 /* op_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_def.proto; sourceTree = "<group>"; };
+		E811CED41EB12E2F004C58C3 /* op_gen_overrides.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_gen_overrides.proto; sourceTree = "<group>"; };
+		E811CED51EB12E2F004C58C3 /* reader_base.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reader_base.proto; sourceTree = "<group>"; };
+		E811CED61EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = remote_fused_graph_execute_info.proto; sourceTree = "<group>"; };
+		E811CED71EB12E2F004C58C3 /* resource_handle.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resource_handle.proto; sourceTree = "<group>"; };
+		E811CED81EB12E2F004C58C3 /* step_stats.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = step_stats.proto; sourceTree = "<group>"; };
+		E811CED91EB12E2F004C58C3 /* summary.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = summary.proto; sourceTree = "<group>"; };
+		E811CEDA1EB12E2F004C58C3 /* tensor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor.proto; sourceTree = "<group>"; };
+		E811CEDB1EB12E2F004C58C3 /* tensor_description.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_description.proto; sourceTree = "<group>"; };
+		E811CEDC1EB12E2F004C58C3 /* tensor_shape.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_shape.proto; sourceTree = "<group>"; };
+		E811CEDD1EB12E2F004C58C3 /* tensor_slice.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_slice.proto; sourceTree = "<group>"; };
+		E811CEDE1EB12E2F004C58C3 /* types.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = types.proto; sourceTree = "<group>"; };
+		E811CEDF1EB12E2F004C58C3 /* variable.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = variable.proto; sourceTree = "<group>"; };
+		E811CEE01EB12E2F004C58C3 /* versions.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = versions.proto; sourceTree = "<group>"; };
+		E811CEE31EB12E2F004C58C3 /* op_performance_data.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_performance_data.proto; sourceTree = "<group>"; };
+		E811CEE61EB12E2F004C58C3 /* error_codes.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error_codes.proto; sourceTree = "<group>"; };
+		E811CEE81EB12E2F004C58C3 /* config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.proto; sourceTree = "<group>"; };
+		E811CEE91EB12E2F004C58C3 /* control_flow.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_flow.proto; sourceTree = "<group>"; };
+		E811CEEA1EB12E2F004C58C3 /* debug.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debug.proto; sourceTree = "<group>"; };
+		E811CEEB1EB12E2F004C58C3 /* master.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master.proto; sourceTree = "<group>"; };
+		E811CEEC1EB12E2F004C58C3 /* master_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master_service.proto; sourceTree = "<group>"; };
+		E811CEED1EB12E2F004C58C3 /* meta_graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = meta_graph.proto; sourceTree = "<group>"; };
+		E811CEEE1EB12E2F004C58C3 /* named_tensor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = named_tensor.proto; sourceTree = "<group>"; };
+		E811CEEF1EB12E2F004C58C3 /* queue_runner.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queue_runner.proto; sourceTree = "<group>"; };
+		E811CEF01EB12E2F004C58C3 /* rewriter_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rewriter_config.proto; sourceTree = "<group>"; };
+		E811CEF11EB12E2F004C58C3 /* saved_model.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saved_model.proto; sourceTree = "<group>"; };
+		E811CEF21EB12E2F004C58C3 /* saver.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saver.proto; sourceTree = "<group>"; };
+		E811CEF31EB12E2F004C58C3 /* tensor_bundle.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_bundle.proto; sourceTree = "<group>"; };
+		E811CEF41EB12E2F004C58C3 /* tensorflow_server.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensorflow_server.proto; sourceTree = "<group>"; };
+		E811CEF51EB12E2F004C58C3 /* worker.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = worker.proto; sourceTree = "<group>"; };
+		E811CEF61EB12E2F004C58C3 /* worker_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = worker_service.proto; sourceTree = "<group>"; };
+		E811CEF81EB12E2F004C58C3 /* event.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = event.proto; sourceTree = "<group>"; };
+		E811CEF91EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_proto_fast_parsing_test.proto; sourceTree = "<group>"; };
+		E811CEFA1EB12E2F004C58C3 /* memmapped_file_system.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memmapped_file_system.proto; sourceTree = "<group>"; };
+		E811CEFB1EB12E2F004C58C3 /* saved_tensor_slice.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saved_tensor_slice.proto; sourceTree = "<group>"; };
+		E811CEFC1EB12E2F004C58C3 /* test_log.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_log.proto; sourceTree = "<group>"; };
+		E811CEFF1EB12E2F004C58C3 /* cpp_shape_inference.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cpp_shape_inference.proto; sourceTree = "<group>"; };
+		E811CF011EB12E2F004C58C3 /* checkpoint_state.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = checkpoint_state.proto; sourceTree = "<group>"; };
+		E811CF041EB12E2F004C58C3 /* compare_test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compare_test.proto; sourceTree = "<group>"; };
+		E811CF081EB12E2F004C58C3 /* projector_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projector_config.proto; sourceTree = "<group>"; };
+		E811CF0C1EB12E2F004C58C3 /* api_objects.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = api_objects.proto; sourceTree = "<group>"; };
+		E811CF0E1EB12E2F004C58C3 /* test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.proto; sourceTree = "<group>"; };
+		E811CF101EB12E2F004C58C3 /* tfprof_log.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_log.proto; sourceTree = "<group>"; };
+		E811CF111EB12E2F004C58C3 /* tfprof_options.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_options.proto; sourceTree = "<group>"; };
+		E811CF121EB12E2F004C58C3 /* tfprof_output.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_output.proto; sourceTree = "<group>"; };
+		E811CF161EB12E2F004C58C3 /* api_objects.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api_objects.pb.swift; sourceTree = "<group>"; };
+		E811CF181EB12E2F004C58C3 /* test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.pb.swift; sourceTree = "<group>"; };
+		E811CF1A1EB12E2F004C58C3 /* tfprof_log.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_log.pb.swift; sourceTree = "<group>"; };
+		E811CF1B1EB12E2F004C58C3 /* tfprof_options.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_options.pb.swift; sourceTree = "<group>"; };
+		E811CF1C1EB12E2F004C58C3 /* tfprof_output.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tfprof_output.pb.swift; sourceTree = "<group>"; };
+		E811CF1D1EB12E2F004C58C3 /* tensorflow.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.client.pb.swift; sourceTree = "<group>"; };
+		E811CF1E1EB12E2F004C58C3 /* tensorflow.grpc.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.client.pb.swift; sourceTree = "<group>"; };
+		E811CF1F1EB12E2F004C58C3 /* tensorflow.grpc.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.grpc.server.pb.swift; sourceTree = "<group>"; };
+		E811CF201EB12E2F004C58C3 /* tensorflow.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.server.pb.swift; sourceTree = "<group>"; };
+		E811CF211EB12E2F004C58C3 /* tensorflow.serving.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.serving.client.pb.swift; sourceTree = "<group>"; };
+		E811CF221EB12E2F004C58C3 /* tensorflow.serving.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tensorflow.serving.server.pb.swift; sourceTree = "<group>"; };
+		E811CF251EB12E2F004C58C3 /* classification.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = classification.pb.swift; sourceTree = "<group>"; };
+		E811CF261EB12E2F004C58C3 /* get_model_metadata.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = get_model_metadata.pb.swift; sourceTree = "<group>"; };
+		E811CF271EB12E2F004C58C3 /* inference.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inference.pb.swift; sourceTree = "<group>"; };
+		E811CF281EB12E2F004C58C3 /* input.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input.pb.swift; sourceTree = "<group>"; };
+		E811CF2A1EB12E2F004C58C3 /* serialized_input.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serialized_input.pb.swift; sourceTree = "<group>"; };
+		E811CF2B1EB12E2F004C58C3 /* model.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model.pb.swift; sourceTree = "<group>"; };
+		E811CF2C1EB12E2F004C58C3 /* predict.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = predict.pb.swift; sourceTree = "<group>"; };
+		E811CF2D1EB12E2F004C58C3 /* prediction_service.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = prediction_service.pb.swift; sourceTree = "<group>"; };
+		E811CF2E1EB12E2F004C58C3 /* regression.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = regression.pb.swift; sourceTree = "<group>"; };
+		E811CF301EB12E2F004C58C3 /* log_collector_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = log_collector_config.pb.swift; sourceTree = "<group>"; };
+		E811CF311EB12E2F004C58C3 /* logging_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logging_config.pb.swift; sourceTree = "<group>"; };
+		E811CF321EB12E2F004C58C3 /* model_server_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = model_server_config.pb.swift; sourceTree = "<group>"; };
+		E811CF331EB12E2F004C58C3 /* platform_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = platform_config.pb.swift; sourceTree = "<group>"; };
+		E811CF351EB12E2F004C58C3 /* logging.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logging.pb.swift; sourceTree = "<group>"; };
+		E811CF371EB12E2F004C58C3 /* fake_loader_source_adapter.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fake_loader_source_adapter.pb.swift; sourceTree = "<group>"; };
+		E811CF3A1EB12E2F004C58C3 /* storage_path_error_injecting_source_adapter.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storage_path_error_injecting_source_adapter.pb.swift; sourceTree = "<group>"; };
+		E811CF3C1EB12E2F004C58C3 /* resources.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resources.pb.swift; sourceTree = "<group>"; };
+		E811CF3F1EB12E2F004C58C3 /* hashmap_source_adapter.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hashmap_source_adapter.pb.swift; sourceTree = "<group>"; };
+		E811CF411EB12E2F004C58C3 /* saved_model_bundle_source_adapter.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = saved_model_bundle_source_adapter.pb.swift; sourceTree = "<group>"; };
+		E811CF421EB12E2F004C58C3 /* session_bundle_config.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = session_bundle_config.pb.swift; sourceTree = "<group>"; };
+		E811CF431EB12E2F004C58C3 /* session_bundle_source_adapter.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = session_bundle_source_adapter.pb.swift; sourceTree = "<group>"; };
+		E811CF461EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = file_system_storage_path_source.pb.swift; sourceTree = "<group>"; };
+		E811CF471EB12E2F004C58C3 /* static_storage_path_source.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = static_storage_path_source.pb.swift; sourceTree = "<group>"; };
+		E811CF491EB12E2F004C58C3 /* class_registration_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = class_registration_test.pb.swift; sourceTree = "<group>"; };
 		E8D0D7351EB0E8C7009B2929 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.client.pb.swift; sourceTree = "<group>"; };
 		E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.pb.swift; sourceTree = "<group>"; };
@@ -314,8 +510,8 @@
 		D35C9F9F1D74B079000443CD = {
 			isa = PBXGroup;
 			children = (
+				E811CE361EB12E2F004C58C3 /* Generated */,
 				E8D0D7351EB0E8C7009B2929 /* README.md */,
-				E8D0D6421EB0E2BE009B2929 /* Generated */,
 				D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */,
 				D371D5C41EA92FC600C39169 /* SwiftGRPC.xcodeproj */,
 				D35C9FAA1D74B079000443CD /* Test */,
@@ -348,88 +544,994 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		E8D0D6421EB0E2BE009B2929 /* Generated */ = {
+		E811CE361EB12E2F004C58C3 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				E8D0D6431EB0E2BE009B2929 /* allocation_description.pb.swift */,
-				E8D0D6441EB0E2BE009B2929 /* api_objects.pb.swift */,
-				E8D0D6451EB0E2BE009B2929 /* attr_value.pb.swift */,
-				E8D0D6461EB0E2BE009B2929 /* bigquery_table_partition.pb.swift */,
-				E8D0D6471EB0E2BE009B2929 /* checkpoint_state.pb.swift */,
-				E8D0D6481EB0E2BE009B2929 /* compare_test.pb.swift */,
-				E8D0D6491EB0E2BE009B2929 /* config.pb.swift */,
-				E8D0D64A1EB0E2BE009B2929 /* control_flow.pb.swift */,
-				E8D0D64B1EB0E2BE009B2929 /* cost_graph.pb.swift */,
-				E8D0D64C1EB0E2BE009B2929 /* cpp_shape_inference.pb.swift */,
-				E8D0D64D1EB0E2BE009B2929 /* debug.pb.swift */,
-				E8D0D64E1EB0E2BE009B2929 /* debug_service.pb.swift */,
-				E8D0D64F1EB0E2BE009B2929 /* device_attributes.pb.swift */,
-				E8D0D6501EB0E2BE009B2929 /* error_codes.pb.swift */,
-				E8D0D6511EB0E2BE009B2929 /* event.pb.swift */,
-				E8D0D6521EB0E2BE009B2929 /* example.pb.swift */,
-				E8D0D6531EB0E2BE009B2929 /* example_parser_configuration.pb.swift */,
-				E8D0D6541EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift */,
-				E8D0D6551EB0E2BE009B2929 /* feature.pb.swift */,
-				E8D0D6561EB0E2BE009B2929 /* function.pb.swift */,
-				E8D0D6571EB0E2BE009B2929 /* graph.pb.swift */,
-				E8D0D6581EB0E2BE009B2929 /* graph_explorer.pb.swift */,
-				E8D0D6591EB0E2BE009B2929 /* graph_transfer_info.pb.swift */,
-				E8D0D65A1EB0E2BE009B2929 /* hparam.pb.swift */,
-				E8D0D65B1EB0E2BE009B2929 /* kernel_def.pb.swift */,
-				E8D0D65C1EB0E2BE009B2929 /* learner.pb.swift */,
-				E8D0D65D1EB0E2BE009B2929 /* log_memory.pb.swift */,
-				E8D0D65E1EB0E2BE009B2929 /* manifest.pb.swift */,
-				E8D0D65F1EB0E2BE009B2929 /* master.pb.swift */,
-				E8D0D6601EB0E2BE009B2929 /* master_service.pb.swift */,
-				E8D0D6611EB0E2BE009B2929 /* memmapped_file_system.pb.swift */,
-				E8D0D6621EB0E2BE009B2929 /* meta_graph.pb.swift */,
-				E8D0D6631EB0E2BE009B2929 /* named_tensor.pb.swift */,
-				E8D0D6641EB0E2BE009B2929 /* node_def.pb.swift */,
-				E8D0D6651EB0E2BE009B2929 /* op_def.pb.swift */,
-				E8D0D6661EB0E2BE009B2929 /* op_gen_overrides.pb.swift */,
-				E8D0D6671EB0E2BE009B2929 /* op_performance_data.pb.swift */,
-				E8D0D6681EB0E2BE009B2929 /* projector_config.pb.swift */,
-				E8D0D6691EB0E2BE009B2929 /* quantiles.pb.swift */,
-				E8D0D66A1EB0E2BE009B2929 /* queue_runner.pb.swift */,
-				E8D0D66B1EB0E2BE009B2929 /* reader_base.pb.swift */,
-				E8D0D66C1EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift */,
-				E8D0D66D1EB0E2BE009B2929 /* resource_handle.pb.swift */,
-				E8D0D66E1EB0E2BE009B2929 /* rewriter_config.pb.swift */,
-				E8D0D66F1EB0E2BE009B2929 /* saved_model.pb.swift */,
-				E8D0D6701EB0E2BE009B2929 /* saved_tensor_slice.pb.swift */,
-				E8D0D6711EB0E2BE009B2929 /* saver.pb.swift */,
-				E8D0D6721EB0E2BE009B2929 /* session.pb.swift */,
-				E8D0D6731EB0E2BE009B2929 /* step_stats.pb.swift */,
-				E8D0D6741EB0E2BE009B2929 /* summary.pb.swift */,
-				E8D0D6751EB0E2BE009B2929 /* tensor.pb.swift */,
-				E8D0D6761EB0E2BE009B2929 /* tensor_bundle.pb.swift */,
-				E8D0D6771EB0E2BE009B2929 /* tensor_description.pb.swift */,
-				E8D0D6781EB0E2BE009B2929 /* tensor_shape.pb.swift */,
-				E8D0D6791EB0E2BE009B2929 /* tensor_slice.pb.swift */,
-				E8D0D67A1EB0E2BE009B2929 /* tensorflow.client.pb.swift */,
-				E8D0D67B1EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift */,
-				E8D0D67C1EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift */,
-				E8D0D67D1EB0E2BE009B2929 /* tensorflow.server.pb.swift */,
-				E8D0D67E1EB0E2BE009B2929 /* tensorflow_server.pb.swift */,
-				E8D0D67F1EB0E2BE009B2929 /* test.pb.swift */,
-				E8D0D6801EB0E2BE009B2929 /* test_log.pb.swift */,
-				E8D0D6811EB0E2BE009B2929 /* tfcompile.pb.swift */,
-				E8D0D6821EB0E2BE009B2929 /* tfprof_log.pb.swift */,
-				E8D0D6831EB0E2BE009B2929 /* tfprof_options.pb.swift */,
-				E8D0D6841EB0E2BE009B2929 /* tfprof_output.pb.swift */,
-				E8D0D6851EB0E2BE009B2929 /* trace_info.pb.swift */,
-				E8D0D6861EB0E2BE009B2929 /* tree_config.pb.swift */,
-				E8D0D6871EB0E2BE009B2929 /* types.pb.swift */,
-				E8D0D6881EB0E2BE009B2929 /* variable.pb.swift */,
-				E8D0D6891EB0E2BE009B2929 /* verbs_service.pb.swift */,
-				E8D0D68A1EB0E2BE009B2929 /* versions.pb.swift */,
-				E8D0D68B1EB0E2BE009B2929 /* worker.pb.swift */,
-				E8D0D68C1EB0E2BE009B2929 /* worker_service.pb.swift */,
-				E8D0D68D1EB0E2BE009B2929 /* xla.pb.swift */,
-				E8D0D68E1EB0E2BE009B2929 /* xla_data.pb.swift */,
+				E811CE371EB12E2F004C58C3 /* tensorflow */,
+				E811CF1D1EB12E2F004C58C3 /* tensorflow.client.pb.swift */,
+				E811CF1E1EB12E2F004C58C3 /* tensorflow.grpc.client.pb.swift */,
+				E811CF1F1EB12E2F004C58C3 /* tensorflow.grpc.server.pb.swift */,
+				E811CF201EB12E2F004C58C3 /* tensorflow.server.pb.swift */,
+				E811CF211EB12E2F004C58C3 /* tensorflow.serving.client.pb.swift */,
+				E811CF221EB12E2F004C58C3 /* tensorflow.serving.server.pb.swift */,
+				E811CF231EB12E2F004C58C3 /* tensorflow_serving */,
 			);
 			name = Generated;
 			path = ../Generated;
+			sourceTree = "<group>";
+		};
+		E811CE371EB12E2F004C58C3 /* tensorflow */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE381EB12E2F004C58C3 /* compiler */,
+				E811CE401EB12E2F004C58C3 /* contrib */,
+				E811CE581EB12E2F004C58C3 /* core */,
+				E811CE941EB12E2F004C58C3 /* python */,
+				E811CE9C1EB12E2F004C58C3 /* tensorboard */,
+				E811CEA01EB12E2F004C58C3 /* tensorflow */,
+				E811CF131EB12E2F004C58C3 /* tools */,
+			);
+			path = tensorflow;
+			sourceTree = "<group>";
+		};
+		E811CE381EB12E2F004C58C3 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE391EB12E2F004C58C3 /* aot */,
+				E811CE3B1EB12E2F004C58C3 /* xla */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		E811CE391EB12E2F004C58C3 /* aot */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE3A1EB12E2F004C58C3 /* tfcompile.pb.swift */,
+			);
+			path = aot;
+			sourceTree = "<group>";
+		};
+		E811CE3B1EB12E2F004C58C3 /* xla */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE3C1EB12E2F004C58C3 /* service */,
+				E811CE3E1EB12E2F004C58C3 /* xla.pb.swift */,
+				E811CE3F1EB12E2F004C58C3 /* xla_data.pb.swift */,
+			);
+			path = xla;
+			sourceTree = "<group>";
+		};
+		E811CE3C1EB12E2F004C58C3 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE3D1EB12E2F004C58C3 /* session.pb.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		E811CE401EB12E2F004C58C3 /* contrib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE411EB12E2F004C58C3 /* boosted_trees */,
+				E811CE461EB12E2F004C58C3 /* cloud */,
+				E811CE491EB12E2F004C58C3 /* session_bundle */,
+				E811CE4B1EB12E2F004C58C3 /* tensorboard */,
+				E811CE521EB12E2F004C58C3 /* training */,
+				E811CE561EB12E2F004C58C3 /* verbs */,
+			);
+			path = contrib;
+			sourceTree = "<group>";
+		};
+		E811CE411EB12E2F004C58C3 /* boosted_trees */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE421EB12E2F004C58C3 /* proto */,
+			);
+			path = boosted_trees;
+			sourceTree = "<group>";
+		};
+		E811CE421EB12E2F004C58C3 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE431EB12E2F004C58C3 /* learner.pb.swift */,
+				E811CE441EB12E2F004C58C3 /* quantiles.pb.swift */,
+				E811CE451EB12E2F004C58C3 /* tree_config.pb.swift */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		E811CE461EB12E2F004C58C3 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE471EB12E2F004C58C3 /* kernels */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+		E811CE471EB12E2F004C58C3 /* kernels */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE481EB12E2F004C58C3 /* bigquery_table_partition.pb.swift */,
+			);
+			path = kernels;
+			sourceTree = "<group>";
+		};
+		E811CE491EB12E2F004C58C3 /* session_bundle */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE4A1EB12E2F004C58C3 /* manifest.pb.swift */,
+			);
+			path = session_bundle;
+			sourceTree = "<group>";
+		};
+		E811CE4B1EB12E2F004C58C3 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE4C1EB12E2F004C58C3 /* graph_explorer */,
+				E811CE4F1EB12E2F004C58C3 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		E811CE4C1EB12E2F004C58C3 /* graph_explorer */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE4D1EB12E2F004C58C3 /* proto */,
+			);
+			path = graph_explorer;
+			sourceTree = "<group>";
+		};
+		E811CE4D1EB12E2F004C58C3 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE4E1EB12E2F004C58C3 /* graph_explorer.pb.swift */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		E811CE4F1EB12E2F004C58C3 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE501EB12E2F004C58C3 /* trace */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		E811CE501EB12E2F004C58C3 /* trace */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE511EB12E2F004C58C3 /* trace_info.pb.swift */,
+			);
+			path = trace;
+			sourceTree = "<group>";
+		};
+		E811CE521EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE531EB12E2F004C58C3 /* python */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CE531EB12E2F004C58C3 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE541EB12E2F004C58C3 /* training */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		E811CE541EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE551EB12E2F004C58C3 /* hparam.pb.swift */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CE561EB12E2F004C58C3 /* verbs */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE571EB12E2F004C58C3 /* verbs_service.pb.swift */,
+			);
+			path = verbs;
+			sourceTree = "<group>";
+		};
+		E811CE581EB12E2F004C58C3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE591EB12E2F004C58C3 /* debug */,
+				E811CE5B1EB12E2F004C58C3 /* example */,
+				E811CE5F1EB12E2F004C58C3 /* framework */,
+				E811CE781EB12E2F004C58C3 /* grappler */,
+				E811CE7B1EB12E2F004C58C3 /* lib */,
+				E811CE7E1EB12E2F004C58C3 /* protobuf */,
+				E811CE8E1EB12E2F004C58C3 /* util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		E811CE591EB12E2F004C58C3 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE5A1EB12E2F004C58C3 /* debug_service.pb.swift */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		E811CE5B1EB12E2F004C58C3 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE5C1EB12E2F004C58C3 /* example.pb.swift */,
+				E811CE5D1EB12E2F004C58C3 /* example_parser_configuration.pb.swift */,
+				E811CE5E1EB12E2F004C58C3 /* feature.pb.swift */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		E811CE5F1EB12E2F004C58C3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE601EB12E2F004C58C3 /* allocation_description.pb.swift */,
+				E811CE611EB12E2F004C58C3 /* attr_value.pb.swift */,
+				E811CE621EB12E2F004C58C3 /* cost_graph.pb.swift */,
+				E811CE631EB12E2F004C58C3 /* device_attributes.pb.swift */,
+				E811CE641EB12E2F004C58C3 /* function.pb.swift */,
+				E811CE651EB12E2F004C58C3 /* graph.pb.swift */,
+				E811CE661EB12E2F004C58C3 /* graph_transfer_info.pb.swift */,
+				E811CE671EB12E2F004C58C3 /* kernel_def.pb.swift */,
+				E811CE681EB12E2F004C58C3 /* log_memory.pb.swift */,
+				E811CE691EB12E2F004C58C3 /* node_def.pb.swift */,
+				E811CE6A1EB12E2F004C58C3 /* op_def.pb.swift */,
+				E811CE6B1EB12E2F004C58C3 /* op_gen_overrides.pb.swift */,
+				E811CE6C1EB12E2F004C58C3 /* reader_base.pb.swift */,
+				E811CE6D1EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift */,
+				E811CE6E1EB12E2F004C58C3 /* resource_handle.pb.swift */,
+				E811CE6F1EB12E2F004C58C3 /* step_stats.pb.swift */,
+				E811CE701EB12E2F004C58C3 /* summary.pb.swift */,
+				E811CE711EB12E2F004C58C3 /* tensor.pb.swift */,
+				E811CE721EB12E2F004C58C3 /* tensor_description.pb.swift */,
+				E811CE731EB12E2F004C58C3 /* tensor_shape.pb.swift */,
+				E811CE741EB12E2F004C58C3 /* tensor_slice.pb.swift */,
+				E811CE751EB12E2F004C58C3 /* types.pb.swift */,
+				E811CE761EB12E2F004C58C3 /* variable.pb.swift */,
+				E811CE771EB12E2F004C58C3 /* versions.pb.swift */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		E811CE781EB12E2F004C58C3 /* grappler */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE791EB12E2F004C58C3 /* costs */,
+			);
+			path = grappler;
+			sourceTree = "<group>";
+		};
+		E811CE791EB12E2F004C58C3 /* costs */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE7A1EB12E2F004C58C3 /* op_performance_data.pb.swift */,
+			);
+			path = costs;
+			sourceTree = "<group>";
+		};
+		E811CE7B1EB12E2F004C58C3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE7C1EB12E2F004C58C3 /* core */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E811CE7C1EB12E2F004C58C3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE7D1EB12E2F004C58C3 /* error_codes.pb.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		E811CE7E1EB12E2F004C58C3 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE7F1EB12E2F004C58C3 /* config.pb.swift */,
+				E811CE801EB12E2F004C58C3 /* control_flow.pb.swift */,
+				E811CE811EB12E2F004C58C3 /* debug.pb.swift */,
+				E811CE821EB12E2F004C58C3 /* master.pb.swift */,
+				E811CE831EB12E2F004C58C3 /* master_service.pb.swift */,
+				E811CE841EB12E2F004C58C3 /* meta_graph.pb.swift */,
+				E811CE851EB12E2F004C58C3 /* named_tensor.pb.swift */,
+				E811CE861EB12E2F004C58C3 /* queue_runner.pb.swift */,
+				E811CE871EB12E2F004C58C3 /* rewriter_config.pb.swift */,
+				E811CE881EB12E2F004C58C3 /* saved_model.pb.swift */,
+				E811CE891EB12E2F004C58C3 /* saver.pb.swift */,
+				E811CE8A1EB12E2F004C58C3 /* tensor_bundle.pb.swift */,
+				E811CE8B1EB12E2F004C58C3 /* tensorflow_server.pb.swift */,
+				E811CE8C1EB12E2F004C58C3 /* worker.pb.swift */,
+				E811CE8D1EB12E2F004C58C3 /* worker_service.pb.swift */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		E811CE8E1EB12E2F004C58C3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE8F1EB12E2F004C58C3 /* event.pb.swift */,
+				E811CE901EB12E2F004C58C3 /* example_proto_fast_parsing_test.pb.swift */,
+				E811CE911EB12E2F004C58C3 /* memmapped_file_system.pb.swift */,
+				E811CE921EB12E2F004C58C3 /* saved_tensor_slice.pb.swift */,
+				E811CE931EB12E2F004C58C3 /* test_log.pb.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		E811CE941EB12E2F004C58C3 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE951EB12E2F004C58C3 /* framework */,
+				E811CE971EB12E2F004C58C3 /* training */,
+				E811CE991EB12E2F004C58C3 /* util */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		E811CE951EB12E2F004C58C3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE961EB12E2F004C58C3 /* cpp_shape_inference.pb.swift */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		E811CE971EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE981EB12E2F004C58C3 /* checkpoint_state.pb.swift */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CE991EB12E2F004C58C3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE9A1EB12E2F004C58C3 /* protobuf */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		E811CE9A1EB12E2F004C58C3 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE9B1EB12E2F004C58C3 /* compare_test.pb.swift */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		E811CE9C1EB12E2F004C58C3 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE9D1EB12E2F004C58C3 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		E811CE9D1EB12E2F004C58C3 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE9E1EB12E2F004C58C3 /* projector */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		E811CE9E1EB12E2F004C58C3 /* projector */ = {
+			isa = PBXGroup;
+			children = (
+				E811CE9F1EB12E2F004C58C3 /* projector_config.pb.swift */,
+			);
+			path = projector;
+			sourceTree = "<group>";
+		};
+		E811CEA01EB12E2F004C58C3 /* tensorflow */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEA11EB12E2F004C58C3 /* compiler */,
+				E811CEA91EB12E2F004C58C3 /* contrib */,
+				E811CEC11EB12E2F004C58C3 /* core */,
+				E811CEFD1EB12E2F004C58C3 /* python */,
+				E811CF051EB12E2F004C58C3 /* tensorboard */,
+				E811CF091EB12E2F004C58C3 /* tools */,
+			);
+			path = tensorflow;
+			sourceTree = "<group>";
+		};
+		E811CEA11EB12E2F004C58C3 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEA21EB12E2F004C58C3 /* aot */,
+				E811CEA41EB12E2F004C58C3 /* xla */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		E811CEA21EB12E2F004C58C3 /* aot */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEA31EB12E2F004C58C3 /* tfcompile.proto */,
+			);
+			path = aot;
+			sourceTree = "<group>";
+		};
+		E811CEA41EB12E2F004C58C3 /* xla */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEA51EB12E2F004C58C3 /* service */,
+				E811CEA71EB12E2F004C58C3 /* xla.proto */,
+				E811CEA81EB12E2F004C58C3 /* xla_data.proto */,
+			);
+			path = xla;
+			sourceTree = "<group>";
+		};
+		E811CEA51EB12E2F004C58C3 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEA61EB12E2F004C58C3 /* session.proto */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		E811CEA91EB12E2F004C58C3 /* contrib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEAA1EB12E2F004C58C3 /* boosted_trees */,
+				E811CEAF1EB12E2F004C58C3 /* cloud */,
+				E811CEB21EB12E2F004C58C3 /* session_bundle */,
+				E811CEB41EB12E2F004C58C3 /* tensorboard */,
+				E811CEBB1EB12E2F004C58C3 /* training */,
+				E811CEBF1EB12E2F004C58C3 /* verbs */,
+			);
+			path = contrib;
+			sourceTree = "<group>";
+		};
+		E811CEAA1EB12E2F004C58C3 /* boosted_trees */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEAB1EB12E2F004C58C3 /* proto */,
+			);
+			path = boosted_trees;
+			sourceTree = "<group>";
+		};
+		E811CEAB1EB12E2F004C58C3 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEAC1EB12E2F004C58C3 /* learner.proto */,
+				E811CEAD1EB12E2F004C58C3 /* quantiles.proto */,
+				E811CEAE1EB12E2F004C58C3 /* tree_config.proto */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		E811CEAF1EB12E2F004C58C3 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB01EB12E2F004C58C3 /* kernels */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+		E811CEB01EB12E2F004C58C3 /* kernels */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB11EB12E2F004C58C3 /* bigquery_table_partition.proto */,
+			);
+			path = kernels;
+			sourceTree = "<group>";
+		};
+		E811CEB21EB12E2F004C58C3 /* session_bundle */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB31EB12E2F004C58C3 /* manifest.proto */,
+			);
+			path = session_bundle;
+			sourceTree = "<group>";
+		};
+		E811CEB41EB12E2F004C58C3 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB51EB12E2F004C58C3 /* graph_explorer */,
+				E811CEB81EB12E2F004C58C3 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		E811CEB51EB12E2F004C58C3 /* graph_explorer */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB61EB12E2F004C58C3 /* proto */,
+			);
+			path = graph_explorer;
+			sourceTree = "<group>";
+		};
+		E811CEB61EB12E2F004C58C3 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB71EB12E2F004C58C3 /* graph_explorer.proto */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		E811CEB81EB12E2F004C58C3 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEB91EB12E2F004C58C3 /* trace */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		E811CEB91EB12E2F004C58C3 /* trace */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEBA1EB12E2F004C58C3 /* trace_info.proto */,
+			);
+			path = trace;
+			sourceTree = "<group>";
+		};
+		E811CEBB1EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEBC1EB12E2F004C58C3 /* python */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CEBC1EB12E2F004C58C3 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEBD1EB12E2F004C58C3 /* training */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		E811CEBD1EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEBE1EB12E2F004C58C3 /* hparam.proto */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CEBF1EB12E2F004C58C3 /* verbs */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEC01EB12E2F004C58C3 /* verbs_service.proto */,
+			);
+			path = verbs;
+			sourceTree = "<group>";
+		};
+		E811CEC11EB12E2F004C58C3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEC21EB12E2F004C58C3 /* debug */,
+				E811CEC41EB12E2F004C58C3 /* example */,
+				E811CEC81EB12E2F004C58C3 /* framework */,
+				E811CEE11EB12E2F004C58C3 /* grappler */,
+				E811CEE41EB12E2F004C58C3 /* lib */,
+				E811CEE71EB12E2F004C58C3 /* protobuf */,
+				E811CEF71EB12E2F004C58C3 /* util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		E811CEC21EB12E2F004C58C3 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEC31EB12E2F004C58C3 /* debug_service.proto */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		E811CEC41EB12E2F004C58C3 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEC51EB12E2F004C58C3 /* example.proto */,
+				E811CEC61EB12E2F004C58C3 /* example_parser_configuration.proto */,
+				E811CEC71EB12E2F004C58C3 /* feature.proto */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		E811CEC81EB12E2F004C58C3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEC91EB12E2F004C58C3 /* allocation_description.proto */,
+				E811CECA1EB12E2F004C58C3 /* attr_value.proto */,
+				E811CECB1EB12E2F004C58C3 /* cost_graph.proto */,
+				E811CECC1EB12E2F004C58C3 /* device_attributes.proto */,
+				E811CECD1EB12E2F004C58C3 /* function.proto */,
+				E811CECE1EB12E2F004C58C3 /* graph.proto */,
+				E811CECF1EB12E2F004C58C3 /* graph_transfer_info.proto */,
+				E811CED01EB12E2F004C58C3 /* kernel_def.proto */,
+				E811CED11EB12E2F004C58C3 /* log_memory.proto */,
+				E811CED21EB12E2F004C58C3 /* node_def.proto */,
+				E811CED31EB12E2F004C58C3 /* op_def.proto */,
+				E811CED41EB12E2F004C58C3 /* op_gen_overrides.proto */,
+				E811CED51EB12E2F004C58C3 /* reader_base.proto */,
+				E811CED61EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto */,
+				E811CED71EB12E2F004C58C3 /* resource_handle.proto */,
+				E811CED81EB12E2F004C58C3 /* step_stats.proto */,
+				E811CED91EB12E2F004C58C3 /* summary.proto */,
+				E811CEDA1EB12E2F004C58C3 /* tensor.proto */,
+				E811CEDB1EB12E2F004C58C3 /* tensor_description.proto */,
+				E811CEDC1EB12E2F004C58C3 /* tensor_shape.proto */,
+				E811CEDD1EB12E2F004C58C3 /* tensor_slice.proto */,
+				E811CEDE1EB12E2F004C58C3 /* types.proto */,
+				E811CEDF1EB12E2F004C58C3 /* variable.proto */,
+				E811CEE01EB12E2F004C58C3 /* versions.proto */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		E811CEE11EB12E2F004C58C3 /* grappler */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEE21EB12E2F004C58C3 /* costs */,
+			);
+			path = grappler;
+			sourceTree = "<group>";
+		};
+		E811CEE21EB12E2F004C58C3 /* costs */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEE31EB12E2F004C58C3 /* op_performance_data.proto */,
+			);
+			path = costs;
+			sourceTree = "<group>";
+		};
+		E811CEE41EB12E2F004C58C3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEE51EB12E2F004C58C3 /* core */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E811CEE51EB12E2F004C58C3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEE61EB12E2F004C58C3 /* error_codes.proto */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		E811CEE71EB12E2F004C58C3 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEE81EB12E2F004C58C3 /* config.proto */,
+				E811CEE91EB12E2F004C58C3 /* control_flow.proto */,
+				E811CEEA1EB12E2F004C58C3 /* debug.proto */,
+				E811CEEB1EB12E2F004C58C3 /* master.proto */,
+				E811CEEC1EB12E2F004C58C3 /* master_service.proto */,
+				E811CEED1EB12E2F004C58C3 /* meta_graph.proto */,
+				E811CEEE1EB12E2F004C58C3 /* named_tensor.proto */,
+				E811CEEF1EB12E2F004C58C3 /* queue_runner.proto */,
+				E811CEF01EB12E2F004C58C3 /* rewriter_config.proto */,
+				E811CEF11EB12E2F004C58C3 /* saved_model.proto */,
+				E811CEF21EB12E2F004C58C3 /* saver.proto */,
+				E811CEF31EB12E2F004C58C3 /* tensor_bundle.proto */,
+				E811CEF41EB12E2F004C58C3 /* tensorflow_server.proto */,
+				E811CEF51EB12E2F004C58C3 /* worker.proto */,
+				E811CEF61EB12E2F004C58C3 /* worker_service.proto */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		E811CEF71EB12E2F004C58C3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEF81EB12E2F004C58C3 /* event.proto */,
+				E811CEF91EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto */,
+				E811CEFA1EB12E2F004C58C3 /* memmapped_file_system.proto */,
+				E811CEFB1EB12E2F004C58C3 /* saved_tensor_slice.proto */,
+				E811CEFC1EB12E2F004C58C3 /* test_log.proto */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		E811CEFD1EB12E2F004C58C3 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEFE1EB12E2F004C58C3 /* framework */,
+				E811CF001EB12E2F004C58C3 /* training */,
+				E811CF021EB12E2F004C58C3 /* util */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		E811CEFE1EB12E2F004C58C3 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				E811CEFF1EB12E2F004C58C3 /* cpp_shape_inference.proto */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		E811CF001EB12E2F004C58C3 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF011EB12E2F004C58C3 /* checkpoint_state.proto */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		E811CF021EB12E2F004C58C3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF031EB12E2F004C58C3 /* protobuf */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		E811CF031EB12E2F004C58C3 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF041EB12E2F004C58C3 /* compare_test.proto */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		E811CF051EB12E2F004C58C3 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF061EB12E2F004C58C3 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		E811CF061EB12E2F004C58C3 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF071EB12E2F004C58C3 /* projector */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		E811CF071EB12E2F004C58C3 /* projector */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF081EB12E2F004C58C3 /* projector_config.proto */,
+			);
+			path = projector;
+			sourceTree = "<group>";
+		};
+		E811CF091EB12E2F004C58C3 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF0A1EB12E2F004C58C3 /* api */,
+				E811CF0D1EB12E2F004C58C3 /* proto_text */,
+				E811CF0F1EB12E2F004C58C3 /* tfprof */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		E811CF0A1EB12E2F004C58C3 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF0B1EB12E2F004C58C3 /* lib */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		E811CF0B1EB12E2F004C58C3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF0C1EB12E2F004C58C3 /* api_objects.proto */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E811CF0D1EB12E2F004C58C3 /* proto_text */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF0E1EB12E2F004C58C3 /* test.proto */,
+			);
+			path = proto_text;
+			sourceTree = "<group>";
+		};
+		E811CF0F1EB12E2F004C58C3 /* tfprof */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF101EB12E2F004C58C3 /* tfprof_log.proto */,
+				E811CF111EB12E2F004C58C3 /* tfprof_options.proto */,
+				E811CF121EB12E2F004C58C3 /* tfprof_output.proto */,
+			);
+			path = tfprof;
+			sourceTree = "<group>";
+		};
+		E811CF131EB12E2F004C58C3 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF141EB12E2F004C58C3 /* api */,
+				E811CF171EB12E2F004C58C3 /* proto_text */,
+				E811CF191EB12E2F004C58C3 /* tfprof */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		E811CF141EB12E2F004C58C3 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF151EB12E2F004C58C3 /* lib */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		E811CF151EB12E2F004C58C3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF161EB12E2F004C58C3 /* api_objects.pb.swift */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		E811CF171EB12E2F004C58C3 /* proto_text */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF181EB12E2F004C58C3 /* test.pb.swift */,
+			);
+			path = proto_text;
+			sourceTree = "<group>";
+		};
+		E811CF191EB12E2F004C58C3 /* tfprof */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF1A1EB12E2F004C58C3 /* tfprof_log.pb.swift */,
+				E811CF1B1EB12E2F004C58C3 /* tfprof_options.pb.swift */,
+				E811CF1C1EB12E2F004C58C3 /* tfprof_output.pb.swift */,
+			);
+			path = tfprof;
+			sourceTree = "<group>";
+		};
+		E811CF231EB12E2F004C58C3 /* tensorflow_serving */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF241EB12E2F004C58C3 /* apis */,
+				E811CF2F1EB12E2F004C58C3 /* config */,
+				E811CF341EB12E2F004C58C3 /* core */,
+				E811CF381EB12E2F004C58C3 /* model_servers */,
+				E811CF3B1EB12E2F004C58C3 /* resources */,
+				E811CF3D1EB12E2F004C58C3 /* servables */,
+				E811CF441EB12E2F004C58C3 /* sources */,
+				E811CF481EB12E2F004C58C3 /* util */,
+			);
+			path = tensorflow_serving;
+			sourceTree = "<group>";
+		};
+		E811CF241EB12E2F004C58C3 /* apis */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF251EB12E2F004C58C3 /* classification.pb.swift */,
+				E811CF261EB12E2F004C58C3 /* get_model_metadata.pb.swift */,
+				E811CF271EB12E2F004C58C3 /* inference.pb.swift */,
+				E811CF281EB12E2F004C58C3 /* input.pb.swift */,
+				E811CF291EB12E2F004C58C3 /* internal */,
+				E811CF2B1EB12E2F004C58C3 /* model.pb.swift */,
+				E811CF2C1EB12E2F004C58C3 /* predict.pb.swift */,
+				E811CF2D1EB12E2F004C58C3 /* prediction_service.pb.swift */,
+				E811CF2E1EB12E2F004C58C3 /* regression.pb.swift */,
+			);
+			path = apis;
+			sourceTree = "<group>";
+		};
+		E811CF291EB12E2F004C58C3 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF2A1EB12E2F004C58C3 /* serialized_input.pb.swift */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		E811CF2F1EB12E2F004C58C3 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF301EB12E2F004C58C3 /* log_collector_config.pb.swift */,
+				E811CF311EB12E2F004C58C3 /* logging_config.pb.swift */,
+				E811CF321EB12E2F004C58C3 /* model_server_config.pb.swift */,
+				E811CF331EB12E2F004C58C3 /* platform_config.pb.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		E811CF341EB12E2F004C58C3 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF351EB12E2F004C58C3 /* logging.pb.swift */,
+				E811CF361EB12E2F004C58C3 /* test_util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		E811CF361EB12E2F004C58C3 /* test_util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF371EB12E2F004C58C3 /* fake_loader_source_adapter.pb.swift */,
+			);
+			path = test_util;
+			sourceTree = "<group>";
+		};
+		E811CF381EB12E2F004C58C3 /* model_servers */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF391EB12E2F004C58C3 /* test_util */,
+			);
+			path = model_servers;
+			sourceTree = "<group>";
+		};
+		E811CF391EB12E2F004C58C3 /* test_util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF3A1EB12E2F004C58C3 /* storage_path_error_injecting_source_adapter.pb.swift */,
+			);
+			path = test_util;
+			sourceTree = "<group>";
+		};
+		E811CF3B1EB12E2F004C58C3 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF3C1EB12E2F004C58C3 /* resources.pb.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		E811CF3D1EB12E2F004C58C3 /* servables */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF3E1EB12E2F004C58C3 /* hashmap */,
+				E811CF401EB12E2F004C58C3 /* tensorflow */,
+			);
+			path = servables;
+			sourceTree = "<group>";
+		};
+		E811CF3E1EB12E2F004C58C3 /* hashmap */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF3F1EB12E2F004C58C3 /* hashmap_source_adapter.pb.swift */,
+			);
+			path = hashmap;
+			sourceTree = "<group>";
+		};
+		E811CF401EB12E2F004C58C3 /* tensorflow */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF411EB12E2F004C58C3 /* saved_model_bundle_source_adapter.pb.swift */,
+				E811CF421EB12E2F004C58C3 /* session_bundle_config.pb.swift */,
+				E811CF431EB12E2F004C58C3 /* session_bundle_source_adapter.pb.swift */,
+			);
+			path = tensorflow;
+			sourceTree = "<group>";
+		};
+		E811CF441EB12E2F004C58C3 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF451EB12E2F004C58C3 /* storage_path */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+		E811CF451EB12E2F004C58C3 /* storage_path */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF461EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift */,
+				E811CF471EB12E2F004C58C3 /* static_storage_path_source.pb.swift */,
+			);
+			path = storage_path;
+			sourceTree = "<group>";
+		};
+		E811CF481EB12E2F004C58C3 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				E811CF491EB12E2F004C58C3 /* class_registration_test.pb.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		E8D0D6DB1EB0E2D2009B2929 /* Products */ = {
@@ -624,11 +1726,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E811CF8F1EB12E2F004C58C3 /* xla.proto in Resources */,
+				E811CFA51EB12E2F004C58C3 /* kernel_def.proto in Resources */,
+				E811CFB31EB12E2F004C58C3 /* types.proto in Resources */,
+				E811CFAE1EB12E2F004C58C3 /* summary.proto in Resources */,
+				E811CFC11EB12E2F004C58C3 /* saved_model.proto in Resources */,
+				E811CF9F1EB12E2F004C58C3 /* attr_value.proto in Resources */,
+				E811CFC01EB12E2F004C58C3 /* rewriter_config.proto in Resources */,
 				D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */,
+				E811CFBB1EB12E2F004C58C3 /* master.proto in Resources */,
+				E811CFB91EB12E2F004C58C3 /* control_flow.proto in Resources */,
+				E811CFA71EB12E2F004C58C3 /* node_def.proto in Resources */,
+				E811CF961EB12E2F004C58C3 /* graph_explorer.proto in Resources */,
+				E811CF9E1EB12E2F004C58C3 /* allocation_description.proto in Resources */,
+				E811CFCF1EB12E2F004C58C3 /* projector_config.proto in Resources */,
+				E811CFD31EB12E2F004C58C3 /* tfprof_options.proto in Resources */,
+				E811CFBA1EB12E2F004C58C3 /* debug.proto in Resources */,
+				E811CFBD1EB12E2F004C58C3 /* meta_graph.proto in Resources */,
+				E811CFC71EB12E2F004C58C3 /* event.proto in Resources */,
+				E811CFD21EB12E2F004C58C3 /* tfprof_log.proto in Resources */,
+				E811CF941EB12E2F004C58C3 /* bigquery_table_partition.proto in Resources */,
+				E811CFD41EB12E2F004C58C3 /* tfprof_output.proto in Resources */,
+				E811CFBC1EB12E2F004C58C3 /* master_service.proto in Resources */,
+				E811CFC31EB12E2F004C58C3 /* tensor_bundle.proto in Resources */,
+				E811CF911EB12E2F004C58C3 /* learner.proto in Resources */,
 				E8D0D7451EB0F8F9009B2929 /* echo.proto in Resources */,
 				D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */,
+				E811CF9B1EB12E2F004C58C3 /* example.proto in Resources */,
+				E811CFD01EB12E2F004C58C3 /* api_objects.proto in Resources */,
+				E811CFB41EB12E2F004C58C3 /* variable.proto in Resources */,
+				E811CF901EB12E2F004C58C3 /* xla_data.proto in Resources */,
+				E811CFC51EB12E2F004C58C3 /* worker.proto in Resources */,
+				E811CFA11EB12E2F004C58C3 /* device_attributes.proto in Resources */,
+				E811CFAC1EB12E2F004C58C3 /* resource_handle.proto in Resources */,
+				E811CFC21EB12E2F004C58C3 /* saver.proto in Resources */,
+				E811CF951EB12E2F004C58C3 /* manifest.proto in Resources */,
+				E811CFCE1EB12E2F004C58C3 /* compare_test.proto in Resources */,
+				E811CFB21EB12E2F004C58C3 /* tensor_slice.proto in Resources */,
 				D3971E211D89132E001A0B3F /* ssl.key in Resources */,
+				E811CFBF1EB12E2F004C58C3 /* queue_runner.proto in Resources */,
+				E811CFA81EB12E2F004C58C3 /* op_def.proto in Resources */,
+				E811CFCD1EB12E2F004C58C3 /* checkpoint_state.proto in Resources */,
+				E811CFB81EB12E2F004C58C3 /* config.proto in Resources */,
+				E811CFBE1EB12E2F004C58C3 /* named_tensor.proto in Resources */,
+				E811CFB61EB12E2F004C58C3 /* op_performance_data.proto in Resources */,
+				E811CFAD1EB12E2F004C58C3 /* step_stats.proto in Resources */,
+				E811CF8D1EB12E2F004C58C3 /* tfcompile.proto in Resources */,
+				E811CF931EB12E2F004C58C3 /* tree_config.proto in Resources */,
+				E811CF971EB12E2F004C58C3 /* trace_info.proto in Resources */,
+				E811CF9C1EB12E2F004C58C3 /* example_parser_configuration.proto in Resources */,
+				E811CF921EB12E2F004C58C3 /* quantiles.proto in Resources */,
+				E811CFAF1EB12E2F004C58C3 /* tensor.proto in Resources */,
+				E811CF981EB12E2F004C58C3 /* hparam.proto in Resources */,
+				E811CFB11EB12E2F004C58C3 /* tensor_shape.proto in Resources */,
+				E811CFCA1EB12E2F004C58C3 /* saved_tensor_slice.proto in Resources */,
 				D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */,
+				E811CFA91EB12E2F004C58C3 /* op_gen_overrides.proto in Resources */,
+				E811CFB51EB12E2F004C58C3 /* versions.proto in Resources */,
+				E811CF8E1EB12E2F004C58C3 /* session.proto in Resources */,
+				E811CFA21EB12E2F004C58C3 /* function.proto in Resources */,
+				E811CFAB1EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto in Resources */,
+				E811CFC61EB12E2F004C58C3 /* worker_service.proto in Resources */,
+				E811CFB01EB12E2F004C58C3 /* tensor_description.proto in Resources */,
+				E811CFAA1EB12E2F004C58C3 /* reader_base.proto in Resources */,
+				E811CFD11EB12E2F004C58C3 /* test.proto in Resources */,
+				E811CFC81EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto in Resources */,
+				E811CFCB1EB12E2F004C58C3 /* test_log.proto in Resources */,
+				E811CFA41EB12E2F004C58C3 /* graph_transfer_info.proto in Resources */,
+				E811CFA01EB12E2F004C58C3 /* cost_graph.proto in Resources */,
+				E811CFB71EB12E2F004C58C3 /* error_codes.proto in Resources */,
+				E811CF9D1EB12E2F004C58C3 /* feature.proto in Resources */,
+				E811CFC91EB12E2F004C58C3 /* memmapped_file_system.proto in Resources */,
+				E811CF9A1EB12E2F004C58C3 /* debug_service.proto in Resources */,
+				E811CFA61EB12E2F004C58C3 /* log_memory.proto in Resources */,
+				E811CF991EB12E2F004C58C3 /* verbs_service.proto in Resources */,
+				E811CFA31EB12E2F004C58C3 /* graph.proto in Resources */,
+				E811CFCC1EB12E2F004C58C3 /* cpp_shape_inference.proto in Resources */,
+				E811CFC41EB12E2F004C58C3 /* tensorflow_server.proto in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,89 +1813,115 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8D0D6A61EB0E2BE009B2929 /* hparam.pb.swift in Sources */,
-				E8D0D6B51EB0E2BE009B2929 /* quantiles.pb.swift in Sources */,
-				E8D0D6C21EB0E2BE009B2929 /* tensor_bundle.pb.swift in Sources */,
-				E8D0D6BD1EB0E2BE009B2929 /* saver.pb.swift in Sources */,
-				E8D0D6C61EB0E2BE009B2929 /* tensorflow.client.pb.swift in Sources */,
-				E8D0D6A81EB0E2BE009B2929 /* learner.pb.swift in Sources */,
-				E8D0D6CD1EB0E2BE009B2929 /* tfcompile.pb.swift in Sources */,
+				E811CF741EB12E2F004C58C3 /* error_codes.pb.swift in Sources */,
+				E811CF4A1EB12E2F004C58C3 /* tfcompile.pb.swift in Sources */,
+				E811CFE51EB12E2F004C58C3 /* model.pb.swift in Sources */,
+				E811CF871EB12E2F004C58C3 /* saved_tensor_slice.pb.swift in Sources */,
+				E811CFF11EB12E2F004C58C3 /* hashmap_source_adapter.pb.swift in Sources */,
+				E811CFEB1EB12E2F004C58C3 /* model_server_config.pb.swift in Sources */,
+				E811CFD51EB12E2F004C58C3 /* api_objects.pb.swift in Sources */,
 				D35C9FC81D74B0C1000443CD /* EchoViewController.swift in Sources */,
-				E8D0D6AF1EB0E2BE009B2929 /* named_tensor.pb.swift in Sources */,
-				E8D0D6A11EB0E2BE009B2929 /* feature.pb.swift in Sources */,
-				E8D0D6A51EB0E2BE009B2929 /* graph_transfer_info.pb.swift in Sources */,
+				E811CFED1EB12E2F004C58C3 /* logging.pb.swift in Sources */,
+				E811CF8A1EB12E2F004C58C3 /* checkpoint_state.pb.swift in Sources */,
+				E811CFF61EB12E2F004C58C3 /* static_storage_path_source.pb.swift in Sources */,
 				E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */,
-				E8D0D6AE1EB0E2BE009B2929 /* meta_graph.pb.swift in Sources */,
-				E8D0D6AC1EB0E2BE009B2929 /* master_service.pb.swift in Sources */,
-				E8D0D6941EB0E2BE009B2929 /* compare_test.pb.swift in Sources */,
-				E8D0D6A71EB0E2BE009B2929 /* kernel_def.pb.swift in Sources */,
-				E8D0D6AA1EB0E2BE009B2929 /* manifest.pb.swift in Sources */,
-				E8D0D6D21EB0E2BE009B2929 /* tree_config.pb.swift in Sources */,
-				E8D0D6C81EB0E2BE009B2929 /* tensorflow.grpc.server.pb.swift in Sources */,
-				E8D0D6C11EB0E2BE009B2929 /* tensor.pb.swift in Sources */,
-				E8D0D6B71EB0E2BE009B2929 /* reader_base.pb.swift in Sources */,
-				E8D0D6B61EB0E2BE009B2929 /* queue_runner.pb.swift in Sources */,
-				E8D0D6911EB0E2BE009B2929 /* attr_value.pb.swift in Sources */,
+				E811CF821EB12E2F004C58C3 /* worker.pb.swift in Sources */,
+				E811CFEE1EB12E2F004C58C3 /* fake_loader_source_adapter.pb.swift in Sources */,
+				E811CF571EB12E2F004C58C3 /* debug_service.pb.swift in Sources */,
+				E811CF791EB12E2F004C58C3 /* master_service.pb.swift in Sources */,
+				E811CFDB1EB12E2F004C58C3 /* tensorflow.grpc.client.pb.swift in Sources */,
+				E811CFDF1EB12E2F004C58C3 /* tensorflow.serving.server.pb.swift in Sources */,
+				E811CF521EB12E2F004C58C3 /* manifest.pb.swift in Sources */,
+				E811CFF71EB12E2F004C58C3 /* class_registration_test.pb.swift in Sources */,
+				E811CF751EB12E2F004C58C3 /* config.pb.swift in Sources */,
+				E811CF721EB12E2F004C58C3 /* versions.pb.swift in Sources */,
+				E811CF6F1EB12E2F004C58C3 /* tensor_slice.pb.swift in Sources */,
+				E811CFE31EB12E2F004C58C3 /* input.pb.swift in Sources */,
+				E811CF581EB12E2F004C58C3 /* example.pb.swift in Sources */,
+				E811CF801EB12E2F004C58C3 /* tensor_bundle.pb.swift in Sources */,
+				E811CF641EB12E2F004C58C3 /* node_def.pb.swift in Sources */,
+				E811CF6E1EB12E2F004C58C3 /* tensor_shape.pb.swift in Sources */,
+				E811CFE41EB12E2F004C58C3 /* serialized_input.pb.swift in Sources */,
+				E811CFD81EB12E2F004C58C3 /* tfprof_options.pb.swift in Sources */,
+				E811CF771EB12E2F004C58C3 /* debug.pb.swift in Sources */,
 				D35C9FAC1D74B079000443CD /* AppDelegate.swift in Sources */,
-				E8D0D6B91EB0E2BE009B2929 /* resource_handle.pb.swift in Sources */,
-				E8D0D6B41EB0E2BE009B2929 /* projector_config.pb.swift in Sources */,
-				E8D0D69C1EB0E2BE009B2929 /* error_codes.pb.swift in Sources */,
-				E8D0D6C51EB0E2BE009B2929 /* tensor_slice.pb.swift in Sources */,
-				E8D0D6CC1EB0E2BE009B2929 /* test_log.pb.swift in Sources */,
-				E8D0D6A41EB0E2BE009B2929 /* graph_explorer.pb.swift in Sources */,
+				E811CFDA1EB12E2F004C58C3 /* tensorflow.client.pb.swift in Sources */,
+				E811CF6D1EB12E2F004C58C3 /* tensor_description.pb.swift in Sources */,
+				E811CF5A1EB12E2F004C58C3 /* feature.pb.swift in Sources */,
+				E811CF7D1EB12E2F004C58C3 /* rewriter_config.pb.swift in Sources */,
+				E811CFE61EB12E2F004C58C3 /* predict.pb.swift in Sources */,
+				E811CF781EB12E2F004C58C3 /* master.pb.swift in Sources */,
+				E811CF4E1EB12E2F004C58C3 /* learner.pb.swift in Sources */,
+				E811CF861EB12E2F004C58C3 /* memmapped_file_system.pb.swift in Sources */,
+				E811CF511EB12E2F004C58C3 /* bigquery_table_partition.pb.swift in Sources */,
+				E811CF691EB12E2F004C58C3 /* resource_handle.pb.swift in Sources */,
+				E811CF561EB12E2F004C58C3 /* verbs_service.pb.swift in Sources */,
+				E811CF6C1EB12E2F004C58C3 /* tensor.pb.swift in Sources */,
+				E811CFDE1EB12E2F004C58C3 /* tensorflow.serving.client.pb.swift in Sources */,
+				E811CF731EB12E2F004C58C3 /* op_performance_data.pb.swift in Sources */,
+				E811CF671EB12E2F004C58C3 /* reader_base.pb.swift in Sources */,
+				E811CF601EB12E2F004C58C3 /* graph.pb.swift in Sources */,
+				E811CF551EB12E2F004C58C3 /* hparam.pb.swift in Sources */,
 				E8D0D7361EB0E8C7009B2929 /* README.md in Sources */,
-				E8D0D6D11EB0E2BE009B2929 /* trace_info.pb.swift in Sources */,
-				E8D0D6971EB0E2BE009B2929 /* cost_graph.pb.swift in Sources */,
-				E8D0D69D1EB0E2BE009B2929 /* event.pb.swift in Sources */,
-				E8D0D6991EB0E2BE009B2929 /* debug.pb.swift in Sources */,
-				E8D0D6B21EB0E2BE009B2929 /* op_gen_overrides.pb.swift in Sources */,
-				E8D0D6931EB0E2BE009B2929 /* checkpoint_state.pb.swift in Sources */,
-				E8D0D6A91EB0E2BE009B2929 /* log_memory.pb.swift in Sources */,
-				E8D0D6B01EB0E2BE009B2929 /* node_def.pb.swift in Sources */,
-				E8D0D6D31EB0E2BE009B2929 /* types.pb.swift in Sources */,
-				E8D0D6A31EB0E2BE009B2929 /* graph.pb.swift in Sources */,
-				E8D0D6B81EB0E2BE009B2929 /* remote_fused_graph_execute_info.pb.swift in Sources */,
-				E8D0D6D51EB0E2BE009B2929 /* verbs_service.pb.swift in Sources */,
-				E8D0D6981EB0E2BE009B2929 /* cpp_shape_inference.pb.swift in Sources */,
-				E8D0D69F1EB0E2BE009B2929 /* example_parser_configuration.pb.swift in Sources */,
-				E8D0D6D61EB0E2BE009B2929 /* versions.pb.swift in Sources */,
-				E8D0D6AD1EB0E2BE009B2929 /* memmapped_file_system.pb.swift in Sources */,
-				E8D0D6CE1EB0E2BE009B2929 /* tfprof_log.pb.swift in Sources */,
-				E8D0D6D41EB0E2BE009B2929 /* variable.pb.swift in Sources */,
+				E811CF5D1EB12E2F004C58C3 /* cost_graph.pb.swift in Sources */,
+				E811CFE81EB12E2F004C58C3 /* regression.pb.swift in Sources */,
+				E811CFEA1EB12E2F004C58C3 /* logging_config.pb.swift in Sources */,
+				E811CF701EB12E2F004C58C3 /* types.pb.swift in Sources */,
+				E811CFD91EB12E2F004C58C3 /* tfprof_output.pb.swift in Sources */,
+				E811CF541EB12E2F004C58C3 /* trace_info.pb.swift in Sources */,
+				E811CFF41EB12E2F004C58C3 /* session_bundle_source_adapter.pb.swift in Sources */,
+				E811CFE21EB12E2F004C58C3 /* inference.pb.swift in Sources */,
+				E811CFE01EB12E2F004C58C3 /* classification.pb.swift in Sources */,
+				E811CFF51EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift in Sources */,
+				E811CF8C1EB12E2F004C58C3 /* projector_config.pb.swift in Sources */,
+				E811CFF21EB12E2F004C58C3 /* saved_model_bundle_source_adapter.pb.swift in Sources */,
+				E811CF5E1EB12E2F004C58C3 /* device_attributes.pb.swift in Sources */,
+				E811CF5B1EB12E2F004C58C3 /* allocation_description.pb.swift in Sources */,
 				E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */,
-				E8D0D6D81EB0E2BE009B2929 /* worker_service.pb.swift in Sources */,
+				E811CF4C1EB12E2F004C58C3 /* xla.pb.swift in Sources */,
+				E811CF4F1EB12E2F004C58C3 /* quantiles.pb.swift in Sources */,
+				E811CF7B1EB12E2F004C58C3 /* named_tensor.pb.swift in Sources */,
+				E811CF831EB12E2F004C58C3 /* worker_service.pb.swift in Sources */,
+				E811CF6A1EB12E2F004C58C3 /* step_stats.pb.swift in Sources */,
+				E811CF661EB12E2F004C58C3 /* op_gen_overrides.pb.swift in Sources */,
+				E811CFE91EB12E2F004C58C3 /* log_collector_config.pb.swift in Sources */,
+				E811CFD71EB12E2F004C58C3 /* tfprof_log.pb.swift in Sources */,
+				E811CF841EB12E2F004C58C3 /* event.pb.swift in Sources */,
+				E811CFF31EB12E2F004C58C3 /* session_bundle_config.pb.swift in Sources */,
 				E8D0D7431EB0F4EF009B2929 /* EchoProvider.swift in Sources */,
-				E8D0D69A1EB0E2BE009B2929 /* debug_service.pb.swift in Sources */,
-				E8D0D6CB1EB0E2BE009B2929 /* test.pb.swift in Sources */,
+				E811CFE11EB12E2F004C58C3 /* get_model_metadata.pb.swift in Sources */,
 				E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */,
-				E8D0D6BB1EB0E2BE009B2929 /* saved_model.pb.swift in Sources */,
-				E8D0D6C71EB0E2BE009B2929 /* tensorflow.grpc.client.pb.swift in Sources */,
-				E8D0D6BF1EB0E2BE009B2929 /* step_stats.pb.swift in Sources */,
-				E8D0D6CA1EB0E2BE009B2929 /* tensorflow_server.pb.swift in Sources */,
-				E8D0D6AB1EB0E2BE009B2929 /* master.pb.swift in Sources */,
-				E8D0D6951EB0E2BE009B2929 /* config.pb.swift in Sources */,
-				E8D0D6D71EB0E2BE009B2929 /* worker.pb.swift in Sources */,
-				E8D0D6D01EB0E2BE009B2929 /* tfprof_output.pb.swift in Sources */,
-				E8D0D6C01EB0E2BE009B2929 /* summary.pb.swift in Sources */,
-				E8D0D6C41EB0E2BE009B2929 /* tensor_shape.pb.swift in Sources */,
-				E8D0D69B1EB0E2BE009B2929 /* device_attributes.pb.swift in Sources */,
-				E8D0D6921EB0E2BE009B2929 /* bigquery_table_partition.pb.swift in Sources */,
-				E8D0D6C31EB0E2BE009B2929 /* tensor_description.pb.swift in Sources */,
-				E8D0D6D91EB0E2BE009B2929 /* xla.pb.swift in Sources */,
-				E8D0D6BA1EB0E2BE009B2929 /* rewriter_config.pb.swift in Sources */,
-				E8D0D6BE1EB0E2BE009B2929 /* session.pb.swift in Sources */,
-				E8D0D6BC1EB0E2BE009B2929 /* saved_tensor_slice.pb.swift in Sources */,
-				E8D0D6CF1EB0E2BE009B2929 /* tfprof_options.pb.swift in Sources */,
-				E8D0D6C91EB0E2BE009B2929 /* tensorflow.server.pb.swift in Sources */,
-				E8D0D6B31EB0E2BE009B2929 /* op_performance_data.pb.swift in Sources */,
-				E8D0D6901EB0E2BE009B2929 /* api_objects.pb.swift in Sources */,
-				E8D0D6A01EB0E2BE009B2929 /* example_proto_fast_parsing_test.pb.swift in Sources */,
-				E8D0D6961EB0E2BE009B2929 /* control_flow.pb.swift in Sources */,
-				E8D0D69E1EB0E2BE009B2929 /* example.pb.swift in Sources */,
-				E8D0D6A21EB0E2BE009B2929 /* function.pb.swift in Sources */,
-				E8D0D68F1EB0E2BE009B2929 /* allocation_description.pb.swift in Sources */,
-				E8D0D6B11EB0E2BE009B2929 /* op_def.pb.swift in Sources */,
-				E8D0D6DA1EB0E2BE009B2929 /* xla_data.pb.swift in Sources */,
+				E811CF811EB12E2F004C58C3 /* tensorflow_server.pb.swift in Sources */,
+				E811CF591EB12E2F004C58C3 /* example_parser_configuration.pb.swift in Sources */,
+				E811CF7F1EB12E2F004C58C3 /* saver.pb.swift in Sources */,
+				E811CF4B1EB12E2F004C58C3 /* session.pb.swift in Sources */,
+				E811CF531EB12E2F004C58C3 /* graph_explorer.pb.swift in Sources */,
+				E811CFD61EB12E2F004C58C3 /* test.pb.swift in Sources */,
+				E811CFDD1EB12E2F004C58C3 /* tensorflow.server.pb.swift in Sources */,
+				E811CF681EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift in Sources */,
+				E811CF7E1EB12E2F004C58C3 /* saved_model.pb.swift in Sources */,
+				E811CF8B1EB12E2F004C58C3 /* compare_test.pb.swift in Sources */,
+				E811CF5C1EB12E2F004C58C3 /* attr_value.pb.swift in Sources */,
+				E811CF7C1EB12E2F004C58C3 /* queue_runner.pb.swift in Sources */,
+				E811CF711EB12E2F004C58C3 /* variable.pb.swift in Sources */,
+				E811CF6B1EB12E2F004C58C3 /* summary.pb.swift in Sources */,
+				E811CF651EB12E2F004C58C3 /* op_def.pb.swift in Sources */,
+				E811CFE71EB12E2F004C58C3 /* prediction_service.pb.swift in Sources */,
+				E811CF501EB12E2F004C58C3 /* tree_config.pb.swift in Sources */,
+				E811CF631EB12E2F004C58C3 /* log_memory.pb.swift in Sources */,
+				E811CFDC1EB12E2F004C58C3 /* tensorflow.grpc.server.pb.swift in Sources */,
+				E811CFF01EB12E2F004C58C3 /* resources.pb.swift in Sources */,
+				E811CF611EB12E2F004C58C3 /* graph_transfer_info.pb.swift in Sources */,
+				E811CFEF1EB12E2F004C58C3 /* storage_path_error_injecting_source_adapter.pb.swift in Sources */,
+				E811CF761EB12E2F004C58C3 /* control_flow.pb.swift in Sources */,
+				E811CF891EB12E2F004C58C3 /* cpp_shape_inference.pb.swift in Sources */,
+				E811CF621EB12E2F004C58C3 /* kernel_def.pb.swift in Sources */,
+				E811CF881EB12E2F004C58C3 /* test_log.pb.swift in Sources */,
+				E811CFEC1EB12E2F004C58C3 /* platform_config.pb.swift in Sources */,
+				E811CF4D1EB12E2F004C58C3 /* xla_data.pb.swift in Sources */,
+				E811CF7A1EB12E2F004C58C3 /* meta_graph.pb.swift in Sources */,
+				E811CF5F1EB12E2F004C58C3 /* function.pb.swift in Sources */,
+				E811CF851EB12E2F004C58C3 /* example_proto_fast_parsing_test.pb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

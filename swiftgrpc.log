@@ -1,8 +1,7 @@
-File tensorflow/core/framework/tensor_shape.proto
-File tensorflow/core/framework/types.proto
-File tensorflow/tools/tfprof/tfprof_output.proto
+File google/protobuf/any.proto
+File tensorflow_serving/util/class_registration_test.proto
 PluginLibrary.Google_Protobuf_Compiler_CodeGeneratorRequest:
-file_to_generate: "tensorflow/tools/tfprof/tfprof_output.proto"
+file_to_generate: "tensorflow_serving/util/class_registration_test.proto"
 compiler_version {
   major: 3
   minor: 2
@@ -10,1638 +9,380 @@ compiler_version {
   suffix: ""
 }
 proto_file {
-  name: "tensorflow/core/framework/tensor_shape.proto"
-  package: "tensorflow"
+  name: "google/protobuf/any.proto"
+  package: "google.protobuf"
   message_type {
-    name: "TensorShapeProto"
+    name: "Any"
     field {
-      name: "dim"
-      number: 2
-      label: LABEL_REPEATED
-      type: TYPE_MESSAGE
-      type_name: ".tensorflow.TensorShapeProto.Dim"
-      json_name: "dim"
-    }
-    field {
-      name: "unknown_rank"
-      number: 3
+      name: "type_url"
+      number: 1
       label: LABEL_OPTIONAL
-      type: TYPE_BOOL
-      json_name: "unknownRank"
+      type: TYPE_STRING
+      json_name: "typeUrl"
     }
-    nested_type {
-      name: "Dim"
-      field {
-        name: "size"
-        number: 1
-        label: LABEL_OPTIONAL
-        type: TYPE_INT64
-        json_name: "size"
-      }
-      field {
-        name: "name"
-        number: 2
-        label: LABEL_OPTIONAL
-        type: TYPE_STRING
-        json_name: "name"
-      }
+    field {
+      name: "value"
+      number: 2
+      label: LABEL_OPTIONAL
+      type: TYPE_BYTES
+      json_name: "value"
     }
   }
   options {
-    java_package: "org.tensorflow.framework"
-    java_outer_classname: "TensorShapeProtos"
+    java_package: "com.google.protobuf"
+    java_outer_classname: "AnyProto"
     java_multiple_files: true
-    cc_enable_arenas: true
+    go_package: "github.com/golang/protobuf/ptypes/any"
+    objc_class_prefix: "GPB"
+    csharp_namespace: "Google.Protobuf.WellKnownTypes"
   }
   source_code_info {
     location {
-      span: [2, 0, 44, 2]
+      span: [30, 0, 138, 1]
+    }
+    location {
+      path: [12]
+      span: [30, 0, 18]
+      leading_detached_comments: " Protocol Buffers - Google's data interchange format\n Copyright 2008 Google Inc.  All rights reserved.\n https://developers.google.com/protocol-buffers/\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are\n met:\n\n     * Redistributions of source code must retain the above copyright\n notice, this list of conditions and the following disclaimer.\n     * Redistributions in binary form must reproduce the above\n copyright notice, this list of conditions and the following disclaimer\n in the documentation and/or other materials provided with the\n distribution.\n     * Neither the name of Google Inc. nor the names of its\n contributors may be used to endorse or promote products derived from\n this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+    }
+    location {
+      path: [2]
+      span: [32, 8, 23]
+    }
+    location {
+      path: [8]
+      span: [34, 0, 59]
+    }
+    location {
+      path: [8, 999, 0]
+      span: [34, 0, 59]
+    }
+    location {
+      path: [8, 999, 0, 2]
+      span: [34, 7, 23]
+    }
+    location {
+      path: [8, 999, 0, 2, 0]
+      span: [34, 7, 23]
+    }
+    location {
+      path: [8, 999, 0, 2, 0, 1]
+      span: [34, 7, 23]
+    }
+    location {
+      path: [8, 999, 0, 7]
+      span: [34, 26, 58]
+    }
+    location {
+      path: [8]
+      span: [35, 0, 60]
+    }
+    location {
+      path: [8, 999, 1]
+      span: [35, 0, 60]
+    }
+    location {
+      path: [8, 999, 1, 2]
+      span: [35, 7, 17]
+    }
+    location {
+      path: [8, 999, 1, 2, 0]
+      span: [35, 7, 17]
+    }
+    location {
+      path: [8, 999, 1, 2, 0, 1]
+      span: [35, 7, 17]
+    }
+    location {
+      path: [8, 999, 1, 7]
+      span: [35, 20, 59]
+    }
+    location {
+      path: [8]
+      span: [36, 0, 44]
+    }
+    location {
+      path: [8, 999, 2]
+      span: [36, 0, 44]
+    }
+    location {
+      path: [8, 999, 2, 2]
+      span: [36, 7, 19]
+    }
+    location {
+      path: [8, 999, 2, 2, 0]
+      span: [36, 7, 19]
+    }
+    location {
+      path: [8, 999, 2, 2, 0, 1]
+      span: [36, 7, 19]
+    }
+    location {
+      path: [8, 999, 2, 7]
+      span: [36, 22, 43]
+    }
+    location {
+      path: [8]
+      span: [37, 0, 41]
+    }
+    location {
+      path: [8, 999, 3]
+      span: [37, 0, 41]
+    }
+    location {
+      path: [8, 999, 3, 2]
+      span: [37, 7, 27]
+    }
+    location {
+      path: [8, 999, 3, 2, 0]
+      span: [37, 7, 27]
+    }
+    location {
+      path: [8, 999, 3, 2, 0, 1]
+      span: [37, 7, 27]
+    }
+    location {
+      path: [8, 999, 3, 7]
+      span: [37, 30, 40]
+    }
+    location {
+      path: [8]
+      span: [38, 0, 34]
+    }
+    location {
+      path: [8, 999, 4]
+      span: [38, 0, 34]
+    }
+    location {
+      path: [8, 999, 4, 2]
+      span: [38, 7, 26]
+    }
+    location {
+      path: [8, 999, 4, 2, 0]
+      span: [38, 7, 26]
+    }
+    location {
+      path: [8, 999, 4, 2, 0, 1]
+      span: [38, 7, 26]
+    }
+    location {
+      path: [8, 999, 4, 3]
+      span: [38, 29, 33]
+    }
+    location {
+      path: [8]
+      span: [39, 0, 33]
+    }
+    location {
+      path: [8, 999, 5]
+      span: [39, 0, 33]
+    }
+    location {
+      path: [8, 999, 5, 2]
+      span: [39, 7, 24]
+    }
+    location {
+      path: [8, 999, 5, 2, 0]
+      span: [39, 7, 24]
+    }
+    location {
+      path: [8, 999, 5, 2, 0, 1]
+      span: [39, 7, 24]
+    }
+    location {
+      path: [8, 999, 5, 7]
+      span: [39, 27, 32]
+    }
+    location {
+      path: [4, 0]
+      span: [111, 0, 138, 1]
+      leading_comments: " `Any` contains an arbitrary serialized protocol buffer message along with a\n URL that describes the type of the serialized message.\n\n Protobuf library provides support to pack/unpack Any values in the form\n of utility functions or additional generated methods of the Any type.\n\n Example 1: Pack and unpack a message in C++.\n\n     Foo foo = ...;\n     Any any;\n     any.PackFrom(foo);\n     ...\n     if (any.UnpackTo(&foo)) {\n       ...\n     }\n\n Example 2: Pack and unpack a message in Java.\n\n     Foo foo = ...;\n     Any any = Any.pack(foo);\n     ...\n     if (any.is(Foo.class)) {\n       foo = any.unpack(Foo.class);\n     }\n\n  Example 3: Pack and unpack a message in Python.\n\n     foo = Foo(...)\n     any = Any()\n     any.Pack(foo)\n     ...\n     if any.Is(Foo.DESCRIPTOR):\n       any.Unpack(foo)\n       ...\n\n The pack methods provided by protobuf library will by default use\n 'type.googleapis.com/full.type.name' as the type URL and the unpack\n methods only use the fully qualified type name after the last '/'\n in the type URL, for example \"foo.bar.com/x/y.z\" will yield type\n name \"y.z\".\n\n\n JSON\n ====\n The JSON representation of an `Any` value uses the regular\n representation of the deserialized, embedded message, with an\n additional field `@type` which contains the type URL. Example:\n\n     package google.profile;\n     message Person {\n       string first_name = 1;\n       string last_name = 2;\n     }\n\n     {\n       \"@type\": \"type.googleapis.com/google.profile.Person\",\n       \"firstName\": <string>,\n       \"lastName\": <string>\n     }\n\n If the embedded message type is well-known and has a custom JSON\n representation, that representation will be embedded adding a field\n `value` which holds the custom JSON in addition to the `@type`\n field. Example (for message [google.protobuf.Duration][]):\n\n     {\n       \"@type\": \"type.googleapis.com/google.protobuf.Duration\",\n       \"value\": \"1.212s\"\n     }\n\n"
+    }
+    location {
+      path: [4, 0, 1]
+      span: [111, 8, 11]
+    }
+    location {
+      path: [4, 0, 2, 0]
+      span: [134, 2, 22]
+      leading_comments: " A URL/resource name whose content describes the type of the\n serialized protocol buffer message.\n\n For URLs which use the scheme `http`, `https`, or no scheme, the\n following restrictions and interpretations apply:\n\n * If no scheme is provided, `https` is assumed.\n * The last segment of the URL's path must represent the fully\n   qualified name of the type (as in `path/google.protobuf.Duration`).\n   The name should be in a canonical form (e.g., leading \".\" is\n   not accepted).\n * An HTTP GET on the URL must yield a [google.protobuf.Type][]\n   value in binary format, or produce an error.\n * Applications are allowed to cache lookup results based on the\n   URL, or have them precompiled into a binary to avoid any\n   lookup. Therefore, binary compatibility needs to be preserved\n   on changes to types. (Use versioned type names to manage\n   breaking changes.)\n\n Schemes other than `http`, `https` (or the empty scheme) might be\n used with implementation specific semantics.\n\n"
+    }
+    location {
+      path: [4, 0, 2, 0, 4]
+      span: [134, 2, 111, 13]
+    }
+    location {
+      path: [4, 0, 2, 0, 5]
+      span: [134, 2, 8]
+    }
+    location {
+      path: [4, 0, 2, 0, 1]
+      span: [134, 9, 17]
+    }
+    location {
+      path: [4, 0, 2, 0, 3]
+      span: [134, 20, 21]
+    }
+    location {
+      path: [4, 0, 2, 1]
+      span: [137, 2, 18]
+      leading_comments: " Must be a valid serialized protocol buffer of the above specified type.\n"
+    }
+    location {
+      path: [4, 0, 2, 1, 4]
+      span: [137, 2, 134, 22]
+    }
+    location {
+      path: [4, 0, 2, 1, 5]
+      span: [137, 2, 7]
+    }
+    location {
+      path: [4, 0, 2, 1, 1]
+      span: [137, 8, 13]
+    }
+    location {
+      path: [4, 0, 2, 1, 3]
+      span: [137, 16, 17]
+    }
+  }
+  syntax: "proto3"
+}
+proto_file {
+  name: "tensorflow_serving/util/class_registration_test.proto"
+  package: "tensorflow.serving"
+  dependency: "google/protobuf/any.proto"
+  message_type {
+    name: "Config1"
+    field {
+      name: "string_field"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_STRING
+      json_name: "stringField"
+    }
+  }
+  message_type {
+    name: "Config2"
+    field {
+      name: "string_field"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_STRING
+      json_name: "stringField"
+    }
+  }
+  message_type {
+    name: "MessageWithAny"
+    field {
+      name: "any_field"
+      number: 1
+      label: LABEL_OPTIONAL
+      type: TYPE_MESSAGE
+      type_name: ".google.protobuf.Any"
+      json_name: "anyField"
+    }
+  }
+  source_code_info {
+    location {
+      span: [2, 0, 18, 1]
     }
     location {
       path: [12]
       span: [2, 0, 18]
-      leading_detached_comments: " Protocol buffer representing the shape of tensors.\n"
-    }
-    location {
-      path: [8]
-      span: [3, 0, 31]
-    }
-    location {
-      path: [8, 999, 0]
-      span: [3, 0, 31]
-    }
-    location {
-      path: [8, 999, 0, 2]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 2, 0]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 2, 0, 1]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 3]
-      span: [3, 26, 30]
-    }
-    location {
-      path: [8]
-      span: [4, 0, 50]
-    }
-    location {
-      path: [8, 999, 1]
-      span: [4, 0, 50]
-    }
-    location {
-      path: [8, 999, 1, 2]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 2, 0]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 2, 0, 1]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 7]
-      span: [4, 30, 49]
-    }
-    location {
-      path: [8]
-      span: [5, 0, 34]
-    }
-    location {
-      path: [8, 999, 2]
-      span: [5, 0, 34]
-    }
-    location {
-      path: [8, 999, 2, 2]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 2, 0]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 2, 0, 1]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 3]
-      span: [5, 29, 33]
-    }
-    location {
-      path: [8]
-      span: [6, 0, 49]
-    }
-    location {
-      path: [8, 999, 3]
-      span: [6, 0, 49]
-    }
-    location {
-      path: [8, 999, 3, 2]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 2, 0]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 2, 0, 1]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 7]
-      span: [6, 22, 48]
-    }
-    location {
-      path: [2]
-      span: [8, 8, 18]
-    }
-    location {
-      path: [4, 0]
-      span: [11, 0, 44, 1]
-      leading_comments: " Dimensions of a tensor.\n"
-    }
-    location {
-      path: [4, 0, 1]
-      span: [11, 8, 24]
-    }
-    location {
-      path: [4, 0, 3, 0]
-      span: [13, 2, 23, 3]
-      leading_comments: " One dimension of the tensor.\n"
-    }
-    location {
-      path: [4, 0, 3, 0, 1]
-      span: [13, 10, 13]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 0]
-      span: [19, 4, 19]
-      leading_comments: " Size of the tensor in that dimension.\n This value must be >= -1, but values of -1 are reserved for \"unknown\"\n shapes (values of -1 mean \"unknown\" dimension).  Certain wrappers\n that work with TensorShapeProto may fail at runtime when deserializing\n a TensorShapeProto containing a dim value of -1.\n"
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 0, 4]
-      span: [19, 4, 13, 15]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 0, 5]
-      span: [19, 4, 9]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 0, 1]
-      span: [19, 10, 14]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 0, 3]
-      span: [19, 17, 18]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 1]
-      span: [22, 4, 20]
-      leading_comments: " Optional name of the tensor dimension.\n"
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 1, 4]
-      span: [22, 4, 19, 19]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 1, 5]
-      span: [22, 4, 10]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 1, 1]
-      span: [22, 11, 15]
-    }
-    location {
-      path: [4, 0, 3, 0, 2, 1, 3]
-      span: [22, 18, 19]
-    }
-    location {
-      path: [4, 0, 2, 0]
-      span: [38, 2, 23]
-      leading_comments: " Dimensions of the tensor, such as {\"input\", 30}, {\"output\", 40}\n for a 30 x 40 2D tensor.  If an entry has size -1, this\n corresponds to a dimension of unknown size. The names are\n optional.\n\n The order of entries in \"dim\" matters: It indicates the layout of the\n values in the tensor in-memory representation.\n\n The first entry in \"dim\" is the outermost dimension used to layout the\n values, the last entry is the innermost dimension.  This matches the\n in-memory layout of RowMajor Eigen tensors.\n\n If \"dim.size()\" > 0, \"unknown_rank\" must be false.\n"
-    }
-    location {
-      path: [4, 0, 2, 0, 4]
-      span: [38, 2, 10]
-    }
-    location {
-      path: [4, 0, 2, 0, 6]
-      span: [38, 11, 14]
-    }
-    location {
-      path: [4, 0, 2, 0, 1]
-      span: [38, 15, 18]
-    }
-    location {
-      path: [4, 0, 2, 0, 3]
-      span: [38, 21, 22]
-    }
-    location {
-      path: [4, 0, 2, 1]
-      span: [43, 2, 24]
-      leading_comments: " If true, the number of dimensions in the shape is unknown.\n\n If true, \"dim.size()\" must be 0.\n"
-    }
-    location {
-      path: [4, 0, 2, 1, 4]
-      span: [43, 2, 38, 23]
-    }
-    location {
-      path: [4, 0, 2, 1, 5]
-      span: [43, 2, 6]
-    }
-    location {
-      path: [4, 0, 2, 1, 1]
-      span: [43, 7, 19]
-    }
-    location {
-      path: [4, 0, 2, 1, 3]
-      span: [43, 22, 23]
-    }
-  }
-  syntax: "proto3"
-}
-proto_file {
-  name: "tensorflow/core/framework/types.proto"
-  package: "tensorflow"
-  enum_type {
-    name: "DataType"
-    value {
-      name: "DT_INVALID"
-      number: 0
-    }
-    value {
-      name: "DT_FLOAT"
-      number: 1
-    }
-    value {
-      name: "DT_DOUBLE"
-      number: 2
-    }
-    value {
-      name: "DT_INT32"
-      number: 3
-    }
-    value {
-      name: "DT_UINT8"
-      number: 4
-    }
-    value {
-      name: "DT_INT16"
-      number: 5
-    }
-    value {
-      name: "DT_INT8"
-      number: 6
-    }
-    value {
-      name: "DT_STRING"
-      number: 7
-    }
-    value {
-      name: "DT_COMPLEX64"
-      number: 8
-    }
-    value {
-      name: "DT_INT64"
-      number: 9
-    }
-    value {
-      name: "DT_BOOL"
-      number: 10
-    }
-    value {
-      name: "DT_QINT8"
-      number: 11
-    }
-    value {
-      name: "DT_QUINT8"
-      number: 12
-    }
-    value {
-      name: "DT_QINT32"
-      number: 13
-    }
-    value {
-      name: "DT_BFLOAT16"
-      number: 14
-    }
-    value {
-      name: "DT_QINT16"
-      number: 15
-    }
-    value {
-      name: "DT_QUINT16"
-      number: 16
-    }
-    value {
-      name: "DT_UINT16"
-      number: 17
-    }
-    value {
-      name: "DT_COMPLEX128"
-      number: 18
-    }
-    value {
-      name: "DT_HALF"
-      number: 19
-    }
-    value {
-      name: "DT_RESOURCE"
-      number: 20
-    }
-    value {
-      name: "DT_FLOAT_REF"
-      number: 101
-    }
-    value {
-      name: "DT_DOUBLE_REF"
-      number: 102
-    }
-    value {
-      name: "DT_INT32_REF"
-      number: 103
-    }
-    value {
-      name: "DT_UINT8_REF"
-      number: 104
-    }
-    value {
-      name: "DT_INT16_REF"
-      number: 105
-    }
-    value {
-      name: "DT_INT8_REF"
-      number: 106
-    }
-    value {
-      name: "DT_STRING_REF"
-      number: 107
-    }
-    value {
-      name: "DT_COMPLEX64_REF"
-      number: 108
-    }
-    value {
-      name: "DT_INT64_REF"
-      number: 109
-    }
-    value {
-      name: "DT_BOOL_REF"
-      number: 110
-    }
-    value {
-      name: "DT_QINT8_REF"
-      number: 111
-    }
-    value {
-      name: "DT_QUINT8_REF"
-      number: 112
-    }
-    value {
-      name: "DT_QINT32_REF"
-      number: 113
-    }
-    value {
-      name: "DT_BFLOAT16_REF"
-      number: 114
-    }
-    value {
-      name: "DT_QINT16_REF"
-      number: 115
-    }
-    value {
-      name: "DT_QUINT16_REF"
-      number: 116
-    }
-    value {
-      name: "DT_UINT16_REF"
-      number: 117
-    }
-    value {
-      name: "DT_COMPLEX128_REF"
-      number: 118
-    }
-    value {
-      name: "DT_HALF_REF"
-      number: 119
-    }
-    value {
-      name: "DT_RESOURCE_REF"
-      number: 120
-    }
-  }
-  options {
-    java_package: "org.tensorflow.framework"
-    java_outer_classname: "TypesProtos"
-    java_multiple_files: true
-    cc_enable_arenas: true
-  }
-  source_code_info {
-    location {
-      span: [0, 0, 62, 1]
-    }
-    location {
-      path: [12]
-      span: [0, 0, 18]
-    }
-    location {
-      path: [2]
-      span: [2, 8, 18]
-    }
-    location {
-      path: [8]
-      span: [3, 0, 31]
-    }
-    location {
-      path: [8, 999, 0]
-      span: [3, 0, 31]
-    }
-    location {
-      path: [8, 999, 0, 2]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 2, 0]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 2, 0, 1]
-      span: [3, 7, 23]
-    }
-    location {
-      path: [8, 999, 0, 3]
-      span: [3, 26, 30]
-    }
-    location {
-      path: [8]
-      span: [4, 0, 44]
-    }
-    location {
-      path: [8, 999, 1]
-      span: [4, 0, 44]
-    }
-    location {
-      path: [8, 999, 1, 2]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 2, 0]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 2, 0, 1]
-      span: [4, 7, 27]
-    }
-    location {
-      path: [8, 999, 1, 7]
-      span: [4, 30, 43]
-    }
-    location {
-      path: [8]
-      span: [5, 0, 34]
-    }
-    location {
-      path: [8, 999, 2]
-      span: [5, 0, 34]
-    }
-    location {
-      path: [8, 999, 2, 2]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 2, 0]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 2, 0, 1]
-      span: [5, 7, 26]
-    }
-    location {
-      path: [8, 999, 2, 3]
-      span: [5, 29, 33]
-    }
-    location {
-      path: [8]
-      span: [6, 0, 49]
-    }
-    location {
-      path: [8, 999, 3]
-      span: [6, 0, 49]
-    }
-    location {
-      path: [8, 999, 3, 2]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 2, 0]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 2, 0, 1]
-      span: [6, 7, 19]
-    }
-    location {
-      path: [8, 999, 3, 7]
-      span: [6, 22, 48]
-    }
-    location {
-      path: [5, 0]
-      span: [9, 0, 62, 1]
-      leading_comments: " LINT.IfChange\n"
-    }
-    location {
-      path: [5, 0, 1]
-      span: [9, 5, 13]
-    }
-    location {
-      path: [5, 0, 2, 0]
-      span: [12, 2, 17]
-      leading_comments: " Not a legal value for DataType.  Used to indicate a DataType field\n has not been set.\n"
-    }
-    location {
-      path: [5, 0, 2, 0, 1]
-      span: [12, 2, 12]
-    }
-    location {
-      path: [5, 0, 2, 0, 2]
-      span: [12, 15, 16]
-    }
-    location {
-      path: [5, 0, 2, 1]
-      span: [16, 2, 15]
-      leading_comments: " Data types that all computation devices are expected to be\n capable to support.\n"
-    }
-    location {
-      path: [5, 0, 2, 1, 1]
-      span: [16, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 1, 2]
-      span: [16, 13, 14]
-    }
-    location {
-      path: [5, 0, 2, 2]
-      span: [17, 2, 16]
-    }
-    location {
-      path: [5, 0, 2, 2, 1]
-      span: [17, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 2, 2]
-      span: [17, 14, 15]
-    }
-    location {
-      path: [5, 0, 2, 3]
-      span: [18, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 3, 1]
-      span: [18, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 3, 2]
-      span: [18, 13, 14]
-    }
-    location {
-      path: [5, 0, 2, 4]
-      span: [19, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 4, 1]
-      span: [19, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 4, 2]
-      span: [19, 13, 14]
-    }
-    location {
-      path: [5, 0, 2, 5]
-      span: [20, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 5, 1]
-      span: [20, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 5, 2]
-      span: [20, 13, 14]
-    }
-    location {
-      path: [5, 0, 2, 6]
-      span: [21, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 6, 1]
-      span: [21, 2, 9]
-    }
-    location {
-      path: [5, 0, 2, 6, 2]
-      span: [21, 12, 13]
-    }
-    location {
-      path: [5, 0, 2, 7]
-      span: [22, 2, 16]
-    }
-    location {
-      path: [5, 0, 2, 7, 1]
-      span: [22, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 7, 2]
-      span: [22, 14, 15]
-    }
-    location {
-      path: [5, 0, 2, 8]
-      span: [23, 2, 19]
-      trailing_comments: " Single-precision complex\n"
-    }
-    location {
-      path: [5, 0, 2, 8, 1]
-      span: [23, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 8, 2]
-      span: [23, 17, 18]
-    }
-    location {
-      path: [5, 0, 2, 9]
-      span: [24, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 9, 1]
-      span: [24, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 9, 2]
-      span: [24, 13, 14]
-    }
-    location {
-      path: [5, 0, 2, 10]
-      span: [25, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 10, 1]
-      span: [25, 2, 9]
-    }
-    location {
-      path: [5, 0, 2, 10, 2]
-      span: [25, 12, 14]
-    }
-    location {
-      path: [5, 0, 2, 11]
-      span: [26, 2, 16]
-      trailing_comments: " Quantized int8\n"
-    }
-    location {
-      path: [5, 0, 2, 11, 1]
-      span: [26, 2, 10]
-    }
-    location {
-      path: [5, 0, 2, 11, 2]
-      span: [26, 13, 15]
-    }
-    location {
-      path: [5, 0, 2, 12]
-      span: [27, 2, 17]
-      trailing_comments: " Quantized uint8\n"
-    }
-    location {
-      path: [5, 0, 2, 12, 1]
-      span: [27, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 12, 2]
-      span: [27, 14, 16]
-    }
-    location {
-      path: [5, 0, 2, 13]
-      span: [28, 2, 17]
-      trailing_comments: " Quantized int32\n"
-    }
-    location {
-      path: [5, 0, 2, 13, 1]
-      span: [28, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 13, 2]
-      span: [28, 14, 16]
-    }
-    location {
-      path: [5, 0, 2, 14]
-      span: [29, 2, 19]
-      trailing_comments: " Float32 truncated to 16 bits.  Only for cast ops.\n"
-    }
-    location {
-      path: [5, 0, 2, 14, 1]
-      span: [29, 2, 13]
-    }
-    location {
-      path: [5, 0, 2, 14, 2]
-      span: [29, 16, 18]
-    }
-    location {
-      path: [5, 0, 2, 15]
-      span: [30, 2, 17]
-      trailing_comments: " Quantized int16\n"
-    }
-    location {
-      path: [5, 0, 2, 15, 1]
-      span: [30, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 15, 2]
-      span: [30, 14, 16]
-    }
-    location {
-      path: [5, 0, 2, 16]
-      span: [31, 2, 18]
-      trailing_comments: " Quantized uint16\n"
-    }
-    location {
-      path: [5, 0, 2, 16, 1]
-      span: [31, 2, 12]
-    }
-    location {
-      path: [5, 0, 2, 16, 2]
-      span: [31, 15, 17]
-    }
-    location {
-      path: [5, 0, 2, 17]
-      span: [32, 2, 17]
-    }
-    location {
-      path: [5, 0, 2, 17, 1]
-      span: [32, 2, 11]
-    }
-    location {
-      path: [5, 0, 2, 17, 2]
-      span: [32, 14, 16]
-    }
-    location {
-      path: [5, 0, 2, 18]
-      span: [33, 2, 21]
-      trailing_comments: " Double-precision complex\n"
-    }
-    location {
-      path: [5, 0, 2, 18, 1]
-      span: [33, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 18, 2]
-      span: [33, 18, 20]
-    }
-    location {
-      path: [5, 0, 2, 19]
-      span: [34, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 19, 1]
-      span: [34, 2, 9]
-    }
-    location {
-      path: [5, 0, 2, 19, 2]
-      span: [34, 12, 14]
-    }
-    location {
-      path: [5, 0, 2, 20]
-      span: [35, 2, 19]
-    }
-    location {
-      path: [5, 0, 2, 20, 1]
-      span: [35, 2, 13]
-    }
-    location {
-      path: [5, 0, 2, 20, 2]
-      span: [35, 16, 18]
-    }
-    location {
-      path: [5, 0, 2, 21]
-      span: [42, 2, 21]
-      leading_comments: " Do not use!  These are only for parameters.  Every enum above\n should have a corresponding value below (verified by types_test).\n"
-      leading_detached_comments: " TODO(josh11b): DT_GENERIC_PROTO = ??;\n TODO(jeff,josh11b): DT_UINT64?  DT_UINT32?\n"
-    }
-    location {
-      path: [5, 0, 2, 21, 1]
-      span: [42, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 21, 2]
-      span: [42, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 22]
-      span: [43, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 22, 1]
-      span: [43, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 22, 2]
-      span: [43, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 23]
-      span: [44, 2, 21]
-    }
-    location {
-      path: [5, 0, 2, 23, 1]
-      span: [44, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 23, 2]
-      span: [44, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 24]
-      span: [45, 2, 21]
-    }
-    location {
-      path: [5, 0, 2, 24, 1]
-      span: [45, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 24, 2]
-      span: [45, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 25]
-      span: [46, 2, 21]
-    }
-    location {
-      path: [5, 0, 2, 25, 1]
-      span: [46, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 25, 2]
-      span: [46, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 26]
-      span: [47, 2, 20]
-    }
-    location {
-      path: [5, 0, 2, 26, 1]
-      span: [47, 2, 13]
-    }
-    location {
-      path: [5, 0, 2, 26, 2]
-      span: [47, 16, 19]
-    }
-    location {
-      path: [5, 0, 2, 27]
-      span: [48, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 27, 1]
-      span: [48, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 27, 2]
-      span: [48, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 28]
-      span: [49, 2, 25]
-    }
-    location {
-      path: [5, 0, 2, 28, 1]
-      span: [49, 2, 18]
-    }
-    location {
-      path: [5, 0, 2, 28, 2]
-      span: [49, 21, 24]
-    }
-    location {
-      path: [5, 0, 2, 29]
-      span: [50, 2, 21]
-    }
-    location {
-      path: [5, 0, 2, 29, 1]
-      span: [50, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 29, 2]
-      span: [50, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 30]
-      span: [51, 2, 20]
-    }
-    location {
-      path: [5, 0, 2, 30, 1]
-      span: [51, 2, 13]
-    }
-    location {
-      path: [5, 0, 2, 30, 2]
-      span: [51, 16, 19]
-    }
-    location {
-      path: [5, 0, 2, 31]
-      span: [52, 2, 21]
-    }
-    location {
-      path: [5, 0, 2, 31, 1]
-      span: [52, 2, 14]
-    }
-    location {
-      path: [5, 0, 2, 31, 2]
-      span: [52, 17, 20]
-    }
-    location {
-      path: [5, 0, 2, 32]
-      span: [53, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 32, 1]
-      span: [53, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 32, 2]
-      span: [53, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 33]
-      span: [54, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 33, 1]
-      span: [54, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 33, 2]
-      span: [54, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 34]
-      span: [55, 2, 24]
-    }
-    location {
-      path: [5, 0, 2, 34, 1]
-      span: [55, 2, 17]
-    }
-    location {
-      path: [5, 0, 2, 34, 2]
-      span: [55, 20, 23]
-    }
-    location {
-      path: [5, 0, 2, 35]
-      span: [56, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 35, 1]
-      span: [56, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 35, 2]
-      span: [56, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 36]
-      span: [57, 2, 23]
-    }
-    location {
-      path: [5, 0, 2, 36, 1]
-      span: [57, 2, 16]
-    }
-    location {
-      path: [5, 0, 2, 36, 2]
-      span: [57, 19, 22]
-    }
-    location {
-      path: [5, 0, 2, 37]
-      span: [58, 2, 22]
-    }
-    location {
-      path: [5, 0, 2, 37, 1]
-      span: [58, 2, 15]
-    }
-    location {
-      path: [5, 0, 2, 37, 2]
-      span: [58, 18, 21]
-    }
-    location {
-      path: [5, 0, 2, 38]
-      span: [59, 2, 26]
-    }
-    location {
-      path: [5, 0, 2, 38, 1]
-      span: [59, 2, 19]
-    }
-    location {
-      path: [5, 0, 2, 38, 2]
-      span: [59, 22, 25]
-    }
-    location {
-      path: [5, 0, 2, 39]
-      span: [60, 2, 20]
-    }
-    location {
-      path: [5, 0, 2, 39, 1]
-      span: [60, 2, 13]
-    }
-    location {
-      path: [5, 0, 2, 39, 2]
-      span: [60, 16, 19]
-    }
-    location {
-      path: [5, 0, 2, 40]
-      span: [61, 2, 24]
-    }
-    location {
-      path: [5, 0, 2, 40, 1]
-      span: [61, 2, 17]
-    }
-    location {
-      path: [5, 0, 2, 40, 2]
-      span: [61, 20, 23]
-    }
-  }
-  syntax: "proto3"
-}
-proto_file {
-  name: "tensorflow/tools/tfprof/tfprof_output.proto"
-  package: "tensorflow.tfprof"
-  dependency: "tensorflow/core/framework/tensor_shape.proto"
-  dependency: "tensorflow/core/framework/types.proto"
-  message_type {
-    name: "TFProfTensorProto"
-    field {
-      name: "dtype"
-      number: 1
-      label: LABEL_OPTIONAL
-      type: TYPE_ENUM
-      type_name: ".tensorflow.DataType"
-      json_name: "dtype"
-    }
-    field {
-      name: "value_double"
-      number: 2
-      label: LABEL_REPEATED
-      type: TYPE_DOUBLE
-      json_name: "valueDouble"
-    }
-    field {
-      name: "value_int64"
-      number: 3
-      label: LABEL_REPEATED
-      type: TYPE_INT64
-      json_name: "valueInt64"
-    }
-    field {
-      name: "value_str"
-      number: 4
-      label: LABEL_REPEATED
-      type: TYPE_STRING
-      json_name: "valueStr"
-    }
-  }
-  message_type {
-    name: "TFProfNode"
-    field {
-      name: "name"
-      number: 1
-      label: LABEL_OPTIONAL
-      type: TYPE_STRING
-      json_name: "name"
-    }
-    field {
-      name: "tensor_value"
-      number: 15
-      label: LABEL_OPTIONAL
-      type: TYPE_MESSAGE
-      type_name: ".tensorflow.tfprof.TFProfTensorProto"
-      json_name: "tensorValue"
-    }
-    field {
-      name: "exec_micros"
-      number: 2
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "execMicros"
-    }
-    field {
-      name: "requested_bytes"
-      number: 3
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "requestedBytes"
-    }
-    field {
-      name: "parameters"
-      number: 4
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "parameters"
-    }
-    field {
-      name: "float_ops"
-      number: 13
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "floatOps"
-    }
-    field {
-      name: "inputs"
-      number: 5
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "inputs"
-    }
-    field {
-      name: "device"
-      number: 10
-      label: LABEL_OPTIONAL
-      type: TYPE_STRING
-      json_name: "device"
-    }
-    field {
-      name: "total_exec_micros"
-      number: 6
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "totalExecMicros"
-    }
-    field {
-      name: "total_requested_bytes"
-      number: 7
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "totalRequestedBytes"
-    }
-    field {
-      name: "total_parameters"
-      number: 8
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "totalParameters"
-    }
-    field {
-      name: "total_float_ops"
-      number: 14
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "totalFloatOps"
-    }
-    field {
-      name: "total_inputs"
-      number: 9
-      label: LABEL_OPTIONAL
-      type: TYPE_INT64
-      json_name: "totalInputs"
-    }
-    field {
-      name: "shapes"
-      number: 11
-      label: LABEL_REPEATED
-      type: TYPE_MESSAGE
-      type_name: ".tensorflow.TensorShapeProto"
-      json_name: "shapes"
-    }
-    field {
-      name: "children"
-      number: 12
-      label: LABEL_REPEATED
-      type: TYPE_MESSAGE
-      type_name: ".tensorflow.tfprof.TFProfNode"
-      json_name: "children"
-    }
-  }
-  source_code_info {
-    location {
-      span: [0, 0, 48, 1]
-    }
-    location {
-      path: [12]
-      span: [0, 0, 18]
+      leading_detached_comments: " Proto messages used by class_registration_test.cc.\n"
     }
     location {
       path: [3, 0]
-      span: [2, 7, 53]
-    }
-    location {
-      path: [3, 1]
-      span: [3, 7, 46]
+      span: [4, 7, 34]
     }
     location {
       path: [2]
-      span: [5, 8, 25]
+      span: [6, 8, 26]
     }
     location {
       path: [4, 0]
-      span: [7, 0, 14, 1]
+      span: [8, 0, 10, 1]
     }
     location {
       path: [4, 0, 1]
-      span: [7, 8, 25]
+      span: [8, 8, 15]
     }
     location {
       path: [4, 0, 2, 0]
-      span: [8, 2, 30]
+      span: [9, 2, 26]
     }
     location {
       path: [4, 0, 2, 0, 4]
-      span: [8, 2, 10]
+      span: [9, 2, 8, 17]
     }
     location {
-      path: [4, 0, 2, 0, 6]
-      span: [8, 11, 19]
+      path: [4, 0, 2, 0, 5]
+      span: [9, 2, 8]
     }
     location {
       path: [4, 0, 2, 0, 1]
-      span: [8, 20, 25]
+      span: [9, 9, 21]
     }
     location {
       path: [4, 0, 2, 0, 3]
-      span: [8, 28, 29]
-    }
-    location {
-      path: [4, 0, 2, 1]
-      span: [11, 2, 35]
-      leading_comments: " Flatten tensor in row-major.\n Only one of the following array is set.\n"
-    }
-    location {
-      path: [4, 0, 2, 1, 4]
-      span: [11, 2, 10]
-    }
-    location {
-      path: [4, 0, 2, 1, 5]
-      span: [11, 11, 17]
-    }
-    location {
-      path: [4, 0, 2, 1, 1]
-      span: [11, 18, 30]
-    }
-    location {
-      path: [4, 0, 2, 1, 3]
-      span: [11, 33, 34]
-    }
-    location {
-      path: [4, 0, 2, 2]
-      span: [12, 2, 33]
-    }
-    location {
-      path: [4, 0, 2, 2, 4]
-      span: [12, 2, 10]
-    }
-    location {
-      path: [4, 0, 2, 2, 5]
-      span: [12, 11, 16]
-    }
-    location {
-      path: [4, 0, 2, 2, 1]
-      span: [12, 17, 28]
-    }
-    location {
-      path: [4, 0, 2, 2, 3]
-      span: [12, 31, 32]
-    }
-    location {
-      path: [4, 0, 2, 3]
-      span: [13, 2, 32]
-    }
-    location {
-      path: [4, 0, 2, 3, 4]
-      span: [13, 2, 10]
-    }
-    location {
-      path: [4, 0, 2, 3, 5]
-      span: [13, 11, 17]
-    }
-    location {
-      path: [4, 0, 2, 3, 1]
-      span: [13, 18, 27]
-    }
-    location {
-      path: [4, 0, 2, 3, 3]
-      span: [13, 30, 31]
+      span: [9, 24, 25]
     }
     location {
       path: [4, 1]
-      span: [16, 0, 48, 1]
+      span: [12, 0, 14, 1]
     }
     location {
       path: [4, 1, 1]
-      span: [16, 8, 18]
+      span: [12, 8, 15]
     }
     location {
       path: [4, 1, 2, 0]
-      span: [18, 2, 27]
-      leading_comments: " op name.\n"
+      span: [13, 2, 26]
     }
     location {
       path: [4, 1, 2, 0, 4]
-      span: [18, 2, 10]
+      span: [13, 2, 12, 17]
     }
     location {
       path: [4, 1, 2, 0, 5]
-      span: [18, 11, 17]
+      span: [13, 2, 8]
     }
     location {
       path: [4, 1, 2, 0, 1]
-      span: [18, 18, 22]
+      span: [13, 9, 21]
     }
     location {
       path: [4, 1, 2, 0, 3]
-      span: [18, 25, 26]
+      span: [13, 24, 25]
     }
     location {
-      path: [4, 1, 2, 1]
-      span: [20, 2, 47]
-      leading_comments: " tensor value restored from checkpoint.\n"
+      path: [4, 2]
+      span: [16, 0, 18, 1]
     }
     location {
-      path: [4, 1, 2, 1, 4]
-      span: [20, 2, 10]
+      path: [4, 2, 1]
+      span: [16, 8, 22]
     }
     location {
-      path: [4, 1, 2, 1, 6]
-      span: [20, 11, 28]
+      path: [4, 2, 2, 0]
+      span: [17, 2, 36]
     }
     location {
-      path: [4, 1, 2, 1, 1]
-      span: [20, 29, 41]
+      path: [4, 2, 2, 0, 4]
+      span: [17, 2, 16, 24]
     }
     location {
-      path: [4, 1, 2, 1, 3]
-      span: [20, 44, 46]
+      path: [4, 2, 2, 0, 6]
+      span: [17, 2, 21]
     }
     location {
-      path: [4, 1, 2, 2]
-      span: [22, 2, 33]
-      leading_comments: " op execution time.\n"
+      path: [4, 2, 2, 0, 1]
+      span: [17, 22, 31]
     }
     location {
-      path: [4, 1, 2, 2, 4]
-      span: [22, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 2, 5]
-      span: [22, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 2, 1]
-      span: [22, 17, 28]
-    }
-    location {
-      path: [4, 1, 2, 2, 3]
-      span: [22, 31, 32]
-    }
-    location {
-      path: [4, 1, 2, 3]
-      span: [24, 2, 37]
-      leading_comments: " Total requested bytes by the op.\n"
-    }
-    location {
-      path: [4, 1, 2, 3, 4]
-      span: [24, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 3, 5]
-      span: [24, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 3, 1]
-      span: [24, 17, 32]
-    }
-    location {
-      path: [4, 1, 2, 3, 3]
-      span: [24, 35, 36]
-    }
-    location {
-      path: [4, 1, 2, 4]
-      span: [26, 2, 32]
-      leading_comments: " Number of parameters if available.\n"
-    }
-    location {
-      path: [4, 1, 2, 4, 4]
-      span: [26, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 4, 5]
-      span: [26, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 4, 1]
-      span: [26, 17, 27]
-    }
-    location {
-      path: [4, 1, 2, 4, 3]
-      span: [26, 30, 31]
-    }
-    location {
-      path: [4, 1, 2, 5]
-      span: [28, 2, 32]
-      leading_comments: " Number of float operations.\n"
-    }
-    location {
-      path: [4, 1, 2, 5, 4]
-      span: [28, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 5, 5]
-      span: [28, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 5, 1]
-      span: [28, 17, 26]
-    }
-    location {
-      path: [4, 1, 2, 5, 3]
-      span: [28, 29, 31]
-    }
-    location {
-      path: [4, 1, 2, 6]
-      span: [30, 2, 28]
-      leading_comments: " Number of inputs to the op.\n"
-    }
-    location {
-      path: [4, 1, 2, 6, 4]
-      span: [30, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 6, 5]
-      span: [30, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 6, 1]
-      span: [30, 17, 23]
-    }
-    location {
-      path: [4, 1, 2, 6, 3]
-      span: [30, 26, 27]
-    }
-    location {
-      path: [4, 1, 2, 7]
-      span: [32, 2, 30]
-      leading_comments: " Device the op is assigned to.\n"
-    }
-    location {
-      path: [4, 1, 2, 7, 4]
-      span: [32, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 7, 5]
-      span: [32, 11, 17]
-    }
-    location {
-      path: [4, 1, 2, 7, 1]
-      span: [32, 18, 24]
-    }
-    location {
-      path: [4, 1, 2, 7, 3]
-      span: [32, 27, 29]
-    }
-    location {
-      path: [4, 1, 2, 8]
-      span: [37, 2, 39]
-      leading_comments: " The following are the aggregated stats from all accounted descendants and\n the op itself. The actual descendants depend on the data structure used\n (scope, graph).\n"
-    }
-    location {
-      path: [4, 1, 2, 8, 4]
-      span: [37, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 8, 5]
-      span: [37, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 8, 1]
-      span: [37, 17, 34]
-    }
-    location {
-      path: [4, 1, 2, 8, 3]
-      span: [37, 37, 38]
-    }
-    location {
-      path: [4, 1, 2, 9]
-      span: [38, 2, 43]
-    }
-    location {
-      path: [4, 1, 2, 9, 4]
-      span: [38, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 9, 5]
-      span: [38, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 9, 1]
-      span: [38, 17, 38]
-    }
-    location {
-      path: [4, 1, 2, 9, 3]
-      span: [38, 41, 42]
-    }
-    location {
-      path: [4, 1, 2, 10]
-      span: [39, 2, 38]
-    }
-    location {
-      path: [4, 1, 2, 10, 4]
-      span: [39, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 10, 5]
-      span: [39, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 10, 1]
-      span: [39, 17, 33]
-    }
-    location {
-      path: [4, 1, 2, 10, 3]
-      span: [39, 36, 37]
-    }
-    location {
-      path: [4, 1, 2, 11]
-      span: [40, 2, 38]
-    }
-    location {
-      path: [4, 1, 2, 11, 4]
-      span: [40, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 11, 5]
-      span: [40, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 11, 1]
-      span: [40, 17, 32]
-    }
-    location {
-      path: [4, 1, 2, 11, 3]
-      span: [40, 35, 37]
-    }
-    location {
-      path: [4, 1, 2, 12]
-      span: [41, 2, 34]
-    }
-    location {
-      path: [4, 1, 2, 12, 4]
-      span: [41, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 12, 5]
-      span: [41, 11, 16]
-    }
-    location {
-      path: [4, 1, 2, 12, 1]
-      span: [41, 17, 29]
-    }
-    location {
-      path: [4, 1, 2, 12, 3]
-      span: [41, 32, 33]
-    }
-    location {
-      path: [4, 1, 2, 13]
-      span: [44, 2, 40]
-      leading_comments: " shape information, if available.\n"
-    }
-    location {
-      path: [4, 1, 2, 13, 4]
-      span: [44, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 13, 6]
-      span: [44, 11, 27]
-    }
-    location {
-      path: [4, 1, 2, 13, 1]
-      span: [44, 28, 34]
-    }
-    location {
-      path: [4, 1, 2, 13, 3]
-      span: [44, 37, 39]
-    }
-    location {
-      path: [4, 1, 2, 14]
-      span: [47, 2, 36]
-      leading_comments: " Descendants of the graph. The actual descendants depend on the data\n structure used (scope, graph).\n"
-    }
-    location {
-      path: [4, 1, 2, 14, 4]
-      span: [47, 2, 10]
-    }
-    location {
-      path: [4, 1, 2, 14, 6]
-      span: [47, 11, 21]
-    }
-    location {
-      path: [4, 1, 2, 14, 1]
-      span: [47, 22, 30]
-    }
-    location {
-      path: [4, 1, 2, 14, 3]
-      span: [47, 33, 35]
+      path: [4, 2, 2, 0, 3]
+      span: [17, 34, 35]
     }
   }
+  syntax: "proto3"
 }
