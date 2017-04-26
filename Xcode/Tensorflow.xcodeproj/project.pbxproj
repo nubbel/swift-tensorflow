@@ -7,6 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8340D3861EB1599B0046BAF4 /* tfcompile.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2EF1EB1599B0046BAF4 /* tfcompile.proto */; };
+		8340D3871EB1599B0046BAF4 /* session.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2F21EB1599B0046BAF4 /* session.proto */; };
+		8340D3881EB1599B0046BAF4 /* xla.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2F31EB1599B0046BAF4 /* xla.proto */; };
+		8340D3891EB1599B0046BAF4 /* xla_data.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2F41EB1599B0046BAF4 /* xla_data.proto */; };
+		8340D38A1EB1599B0046BAF4 /* learner.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2F81EB1599B0046BAF4 /* learner.proto */; };
+		8340D38B1EB1599B0046BAF4 /* quantiles.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2F91EB1599B0046BAF4 /* quantiles.proto */; };
+		8340D38C1EB1599B0046BAF4 /* tree_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2FA1EB1599B0046BAF4 /* tree_config.proto */; };
+		8340D38D1EB1599B0046BAF4 /* bigquery_table_partition.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2FD1EB1599B0046BAF4 /* bigquery_table_partition.proto */; };
+		8340D38E1EB1599B0046BAF4 /* manifest.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D2FF1EB1599B0046BAF4 /* manifest.proto */; };
+		8340D38F1EB1599B0046BAF4 /* graph_explorer.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3031EB1599B0046BAF4 /* graph_explorer.proto */; };
+		8340D3901EB1599B0046BAF4 /* trace_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3061EB1599B0046BAF4 /* trace_info.proto */; };
+		8340D3911EB1599B0046BAF4 /* hparam.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D30A1EB1599B0046BAF4 /* hparam.proto */; };
+		8340D3921EB1599B0046BAF4 /* verbs_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D30C1EB1599B0046BAF4 /* verbs_service.proto */; };
+		8340D3931EB1599B0046BAF4 /* debug_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D30F1EB1599B0046BAF4 /* debug_service.proto */; };
+		8340D3941EB1599B0046BAF4 /* example.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3111EB1599B0046BAF4 /* example.proto */; };
+		8340D3951EB1599B0046BAF4 /* example_parser_configuration.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3121EB1599B0046BAF4 /* example_parser_configuration.proto */; };
+		8340D3961EB1599B0046BAF4 /* feature.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3131EB1599B0046BAF4 /* feature.proto */; };
+		8340D3971EB1599B0046BAF4 /* allocation_description.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3151EB1599B0046BAF4 /* allocation_description.proto */; };
+		8340D3981EB1599B0046BAF4 /* attr_value.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3161EB1599B0046BAF4 /* attr_value.proto */; };
+		8340D3991EB1599B0046BAF4 /* cost_graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3171EB1599B0046BAF4 /* cost_graph.proto */; };
+		8340D39A1EB1599B0046BAF4 /* device_attributes.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3181EB1599B0046BAF4 /* device_attributes.proto */; };
+		8340D39B1EB1599B0046BAF4 /* function.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3191EB1599B0046BAF4 /* function.proto */; };
+		8340D39C1EB1599B0046BAF4 /* graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31A1EB1599B0046BAF4 /* graph.proto */; };
+		8340D39D1EB1599B0046BAF4 /* graph_transfer_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31B1EB1599B0046BAF4 /* graph_transfer_info.proto */; };
+		8340D39E1EB1599B0046BAF4 /* kernel_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31C1EB1599B0046BAF4 /* kernel_def.proto */; };
+		8340D39F1EB1599B0046BAF4 /* log_memory.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31D1EB1599B0046BAF4 /* log_memory.proto */; };
+		8340D3A01EB1599B0046BAF4 /* node_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31E1EB1599B0046BAF4 /* node_def.proto */; };
+		8340D3A11EB1599B0046BAF4 /* op_def.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D31F1EB1599B0046BAF4 /* op_def.proto */; };
+		8340D3A21EB1599B0046BAF4 /* op_gen_overrides.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3201EB1599B0046BAF4 /* op_gen_overrides.proto */; };
+		8340D3A31EB1599B0046BAF4 /* reader_base.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3211EB1599B0046BAF4 /* reader_base.proto */; };
+		8340D3A41EB1599B0046BAF4 /* remote_fused_graph_execute_info.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3221EB1599B0046BAF4 /* remote_fused_graph_execute_info.proto */; };
+		8340D3A51EB1599B0046BAF4 /* resource_handle.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3231EB1599B0046BAF4 /* resource_handle.proto */; };
+		8340D3A61EB1599B0046BAF4 /* step_stats.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3241EB1599B0046BAF4 /* step_stats.proto */; };
+		8340D3A71EB1599B0046BAF4 /* summary.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3251EB1599B0046BAF4 /* summary.proto */; };
+		8340D3A81EB1599B0046BAF4 /* tensor.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3261EB1599B0046BAF4 /* tensor.proto */; };
+		8340D3A91EB1599B0046BAF4 /* tensor_description.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3271EB1599B0046BAF4 /* tensor_description.proto */; };
+		8340D3AA1EB1599B0046BAF4 /* tensor_shape.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3281EB1599B0046BAF4 /* tensor_shape.proto */; };
+		8340D3AB1EB1599B0046BAF4 /* tensor_slice.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3291EB1599B0046BAF4 /* tensor_slice.proto */; };
+		8340D3AC1EB1599B0046BAF4 /* types.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D32A1EB1599B0046BAF4 /* types.proto */; };
+		8340D3AD1EB1599B0046BAF4 /* variable.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D32B1EB1599B0046BAF4 /* variable.proto */; };
+		8340D3AE1EB1599B0046BAF4 /* versions.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D32C1EB1599B0046BAF4 /* versions.proto */; };
+		8340D3AF1EB1599B0046BAF4 /* op_performance_data.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D32F1EB1599B0046BAF4 /* op_performance_data.proto */; };
+		8340D3B01EB1599B0046BAF4 /* error_codes.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3321EB1599B0046BAF4 /* error_codes.proto */; };
+		8340D3B11EB1599B0046BAF4 /* config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3341EB1599B0046BAF4 /* config.proto */; };
+		8340D3B21EB1599B0046BAF4 /* control_flow.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3351EB1599B0046BAF4 /* control_flow.proto */; };
+		8340D3B31EB1599B0046BAF4 /* debug.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3361EB1599B0046BAF4 /* debug.proto */; };
+		8340D3B41EB1599B0046BAF4 /* master.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3371EB1599B0046BAF4 /* master.proto */; };
+		8340D3B51EB1599B0046BAF4 /* master_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3381EB1599B0046BAF4 /* master_service.proto */; };
+		8340D3B61EB1599B0046BAF4 /* meta_graph.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3391EB1599B0046BAF4 /* meta_graph.proto */; };
+		8340D3B71EB1599B0046BAF4 /* named_tensor.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33A1EB1599B0046BAF4 /* named_tensor.proto */; };
+		8340D3B81EB1599B0046BAF4 /* queue_runner.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33B1EB1599B0046BAF4 /* queue_runner.proto */; };
+		8340D3B91EB1599B0046BAF4 /* rewriter_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33C1EB1599B0046BAF4 /* rewriter_config.proto */; };
+		8340D3BA1EB1599B0046BAF4 /* saved_model.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33D1EB1599B0046BAF4 /* saved_model.proto */; };
+		8340D3BB1EB1599B0046BAF4 /* saver.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33E1EB1599B0046BAF4 /* saver.proto */; };
+		8340D3BC1EB1599B0046BAF4 /* tensor_bundle.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D33F1EB1599B0046BAF4 /* tensor_bundle.proto */; };
+		8340D3BD1EB1599B0046BAF4 /* tensorflow_server.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3401EB1599B0046BAF4 /* tensorflow_server.proto */; };
+		8340D3BE1EB1599B0046BAF4 /* worker.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3411EB1599B0046BAF4 /* worker.proto */; };
+		8340D3BF1EB1599B0046BAF4 /* worker_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3421EB1599B0046BAF4 /* worker_service.proto */; };
+		8340D3C01EB1599B0046BAF4 /* event.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3441EB1599B0046BAF4 /* event.proto */; };
+		8340D3C11EB1599B0046BAF4 /* example_proto_fast_parsing_test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3451EB1599B0046BAF4 /* example_proto_fast_parsing_test.proto */; };
+		8340D3C21EB1599B0046BAF4 /* memmapped_file_system.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3461EB1599B0046BAF4 /* memmapped_file_system.proto */; };
+		8340D3C31EB1599B0046BAF4 /* saved_tensor_slice.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3471EB1599B0046BAF4 /* saved_tensor_slice.proto */; };
+		8340D3C41EB1599B0046BAF4 /* test_log.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3481EB1599B0046BAF4 /* test_log.proto */; };
+		8340D3C51EB1599B0046BAF4 /* cpp_shape_inference.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D34B1EB1599B0046BAF4 /* cpp_shape_inference.proto */; };
+		8340D3C61EB1599B0046BAF4 /* checkpoint_state.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D34D1EB1599B0046BAF4 /* checkpoint_state.proto */; };
+		8340D3C71EB1599B0046BAF4 /* compare_test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3501EB1599B0046BAF4 /* compare_test.proto */; };
+		8340D3C81EB1599B0046BAF4 /* projector_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3541EB1599B0046BAF4 /* projector_config.proto */; };
+		8340D3C91EB1599B0046BAF4 /* api_objects.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3581EB1599B0046BAF4 /* api_objects.proto */; };
+		8340D3CA1EB1599B0046BAF4 /* test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D35A1EB1599B0046BAF4 /* test.proto */; };
+		8340D3CB1EB1599B0046BAF4 /* tfprof_log.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D35C1EB1599B0046BAF4 /* tfprof_log.proto */; };
+		8340D3CC1EB1599B0046BAF4 /* tfprof_options.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D35D1EB1599B0046BAF4 /* tfprof_options.proto */; };
+		8340D3CD1EB1599B0046BAF4 /* tfprof_output.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D35E1EB1599B0046BAF4 /* tfprof_output.proto */; };
+		8340D3CE1EB1599B0046BAF4 /* classification.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3611EB1599B0046BAF4 /* classification.proto */; };
+		8340D3CF1EB1599B0046BAF4 /* get_model_metadata.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3621EB1599B0046BAF4 /* get_model_metadata.proto */; };
+		8340D3D01EB1599B0046BAF4 /* inference.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3631EB1599B0046BAF4 /* inference.proto */; };
+		8340D3D11EB1599B0046BAF4 /* input.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3641EB1599B0046BAF4 /* input.proto */; };
+		8340D3D21EB1599B0046BAF4 /* serialized_input.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3661EB1599B0046BAF4 /* serialized_input.proto */; };
+		8340D3D31EB1599B0046BAF4 /* model.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3671EB1599B0046BAF4 /* model.proto */; };
+		8340D3D41EB1599B0046BAF4 /* predict.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3681EB1599B0046BAF4 /* predict.proto */; };
+		8340D3D51EB1599B0046BAF4 /* prediction_service.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3691EB1599B0046BAF4 /* prediction_service.proto */; };
+		8340D3D61EB1599B0046BAF4 /* regression.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D36A1EB1599B0046BAF4 /* regression.proto */; };
+		8340D3D71EB1599B0046BAF4 /* log_collector_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D36C1EB1599B0046BAF4 /* log_collector_config.proto */; };
+		8340D3D81EB1599B0046BAF4 /* logging_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D36D1EB1599B0046BAF4 /* logging_config.proto */; };
+		8340D3D91EB1599B0046BAF4 /* model_server_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D36E1EB1599B0046BAF4 /* model_server_config.proto */; };
+		8340D3DA1EB1599B0046BAF4 /* platform_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D36F1EB1599B0046BAF4 /* platform_config.proto */; };
+		8340D3DB1EB1599B0046BAF4 /* logging.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3711EB1599B0046BAF4 /* logging.proto */; };
+		8340D3DC1EB1599B0046BAF4 /* fake_loader_source_adapter.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3731EB1599B0046BAF4 /* fake_loader_source_adapter.proto */; };
+		8340D3DD1EB1599B0046BAF4 /* storage_path_error_injecting_source_adapter.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3761EB1599B0046BAF4 /* storage_path_error_injecting_source_adapter.proto */; };
+		8340D3DE1EB1599B0046BAF4 /* resources.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3781EB1599B0046BAF4 /* resources.proto */; };
+		8340D3DF1EB1599B0046BAF4 /* hashmap_source_adapter.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D37B1EB1599B0046BAF4 /* hashmap_source_adapter.proto */; };
+		8340D3E01EB1599B0046BAF4 /* saved_model_bundle_source_adapter.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D37D1EB1599B0046BAF4 /* saved_model_bundle_source_adapter.proto */; };
+		8340D3E11EB1599B0046BAF4 /* session_bundle_config.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D37E1EB1599B0046BAF4 /* session_bundle_config.proto */; };
+		8340D3E21EB1599B0046BAF4 /* session_bundle_source_adapter.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D37F1EB1599B0046BAF4 /* session_bundle_source_adapter.proto */; };
+		8340D3E31EB1599B0046BAF4 /* file_system_storage_path_source.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3821EB1599B0046BAF4 /* file_system_storage_path_source.proto */; };
+		8340D3E41EB1599B0046BAF4 /* static_storage_path_source.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3831EB1599B0046BAF4 /* static_storage_path_source.proto */; };
+		8340D3E51EB1599B0046BAF4 /* class_registration_test.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D3851EB1599B0046BAF4 /* class_registration_test.proto */; };
 		D35C9FAC1D74B079000443CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C9FAB1D74B079000443CD /* AppDelegate.swift */; };
 		D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAD1D74B079000443CD /* Assets.xcassets */; };
 		D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAF1D74B079000443CD /* MainMenu.xib */; };
@@ -304,6 +400,102 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8340D2EF1EB1599B0046BAF4 /* tfcompile.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfcompile.proto; sourceTree = "<group>"; };
+		8340D2F21EB1599B0046BAF4 /* session.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = session.proto; sourceTree = "<group>"; };
+		8340D2F31EB1599B0046BAF4 /* xla.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xla.proto; sourceTree = "<group>"; };
+		8340D2F41EB1599B0046BAF4 /* xla_data.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = xla_data.proto; sourceTree = "<group>"; };
+		8340D2F81EB1599B0046BAF4 /* learner.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = learner.proto; sourceTree = "<group>"; };
+		8340D2F91EB1599B0046BAF4 /* quantiles.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quantiles.proto; sourceTree = "<group>"; };
+		8340D2FA1EB1599B0046BAF4 /* tree_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tree_config.proto; sourceTree = "<group>"; };
+		8340D2FD1EB1599B0046BAF4 /* bigquery_table_partition.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bigquery_table_partition.proto; sourceTree = "<group>"; };
+		8340D2FF1EB1599B0046BAF4 /* manifest.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = manifest.proto; sourceTree = "<group>"; };
+		8340D3031EB1599B0046BAF4 /* graph_explorer.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph_explorer.proto; sourceTree = "<group>"; };
+		8340D3061EB1599B0046BAF4 /* trace_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trace_info.proto; sourceTree = "<group>"; };
+		8340D30A1EB1599B0046BAF4 /* hparam.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hparam.proto; sourceTree = "<group>"; };
+		8340D30C1EB1599B0046BAF4 /* verbs_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verbs_service.proto; sourceTree = "<group>"; };
+		8340D30F1EB1599B0046BAF4 /* debug_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debug_service.proto; sourceTree = "<group>"; };
+		8340D3111EB1599B0046BAF4 /* example.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.proto; sourceTree = "<group>"; };
+		8340D3121EB1599B0046BAF4 /* example_parser_configuration.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_parser_configuration.proto; sourceTree = "<group>"; };
+		8340D3131EB1599B0046BAF4 /* feature.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = feature.proto; sourceTree = "<group>"; };
+		8340D3151EB1599B0046BAF4 /* allocation_description.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allocation_description.proto; sourceTree = "<group>"; };
+		8340D3161EB1599B0046BAF4 /* attr_value.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = attr_value.proto; sourceTree = "<group>"; };
+		8340D3171EB1599B0046BAF4 /* cost_graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cost_graph.proto; sourceTree = "<group>"; };
+		8340D3181EB1599B0046BAF4 /* device_attributes.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = device_attributes.proto; sourceTree = "<group>"; };
+		8340D3191EB1599B0046BAF4 /* function.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = function.proto; sourceTree = "<group>"; };
+		8340D31A1EB1599B0046BAF4 /* graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph.proto; sourceTree = "<group>"; };
+		8340D31B1EB1599B0046BAF4 /* graph_transfer_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph_transfer_info.proto; sourceTree = "<group>"; };
+		8340D31C1EB1599B0046BAF4 /* kernel_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kernel_def.proto; sourceTree = "<group>"; };
+		8340D31D1EB1599B0046BAF4 /* log_memory.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log_memory.proto; sourceTree = "<group>"; };
+		8340D31E1EB1599B0046BAF4 /* node_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = node_def.proto; sourceTree = "<group>"; };
+		8340D31F1EB1599B0046BAF4 /* op_def.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_def.proto; sourceTree = "<group>"; };
+		8340D3201EB1599B0046BAF4 /* op_gen_overrides.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_gen_overrides.proto; sourceTree = "<group>"; };
+		8340D3211EB1599B0046BAF4 /* reader_base.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reader_base.proto; sourceTree = "<group>"; };
+		8340D3221EB1599B0046BAF4 /* remote_fused_graph_execute_info.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = remote_fused_graph_execute_info.proto; sourceTree = "<group>"; };
+		8340D3231EB1599B0046BAF4 /* resource_handle.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resource_handle.proto; sourceTree = "<group>"; };
+		8340D3241EB1599B0046BAF4 /* step_stats.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = step_stats.proto; sourceTree = "<group>"; };
+		8340D3251EB1599B0046BAF4 /* summary.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = summary.proto; sourceTree = "<group>"; };
+		8340D3261EB1599B0046BAF4 /* tensor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor.proto; sourceTree = "<group>"; };
+		8340D3271EB1599B0046BAF4 /* tensor_description.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_description.proto; sourceTree = "<group>"; };
+		8340D3281EB1599B0046BAF4 /* tensor_shape.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_shape.proto; sourceTree = "<group>"; };
+		8340D3291EB1599B0046BAF4 /* tensor_slice.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_slice.proto; sourceTree = "<group>"; };
+		8340D32A1EB1599B0046BAF4 /* types.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = types.proto; sourceTree = "<group>"; };
+		8340D32B1EB1599B0046BAF4 /* variable.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = variable.proto; sourceTree = "<group>"; };
+		8340D32C1EB1599B0046BAF4 /* versions.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = versions.proto; sourceTree = "<group>"; };
+		8340D32F1EB1599B0046BAF4 /* op_performance_data.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = op_performance_data.proto; sourceTree = "<group>"; };
+		8340D3321EB1599B0046BAF4 /* error_codes.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = error_codes.proto; sourceTree = "<group>"; };
+		8340D3341EB1599B0046BAF4 /* config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.proto; sourceTree = "<group>"; };
+		8340D3351EB1599B0046BAF4 /* control_flow.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_flow.proto; sourceTree = "<group>"; };
+		8340D3361EB1599B0046BAF4 /* debug.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = debug.proto; sourceTree = "<group>"; };
+		8340D3371EB1599B0046BAF4 /* master.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master.proto; sourceTree = "<group>"; };
+		8340D3381EB1599B0046BAF4 /* master_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master_service.proto; sourceTree = "<group>"; };
+		8340D3391EB1599B0046BAF4 /* meta_graph.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = meta_graph.proto; sourceTree = "<group>"; };
+		8340D33A1EB1599B0046BAF4 /* named_tensor.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = named_tensor.proto; sourceTree = "<group>"; };
+		8340D33B1EB1599B0046BAF4 /* queue_runner.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queue_runner.proto; sourceTree = "<group>"; };
+		8340D33C1EB1599B0046BAF4 /* rewriter_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rewriter_config.proto; sourceTree = "<group>"; };
+		8340D33D1EB1599B0046BAF4 /* saved_model.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saved_model.proto; sourceTree = "<group>"; };
+		8340D33E1EB1599B0046BAF4 /* saver.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saver.proto; sourceTree = "<group>"; };
+		8340D33F1EB1599B0046BAF4 /* tensor_bundle.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensor_bundle.proto; sourceTree = "<group>"; };
+		8340D3401EB1599B0046BAF4 /* tensorflow_server.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tensorflow_server.proto; sourceTree = "<group>"; };
+		8340D3411EB1599B0046BAF4 /* worker.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = worker.proto; sourceTree = "<group>"; };
+		8340D3421EB1599B0046BAF4 /* worker_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = worker_service.proto; sourceTree = "<group>"; };
+		8340D3441EB1599B0046BAF4 /* event.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = event.proto; sourceTree = "<group>"; };
+		8340D3451EB1599B0046BAF4 /* example_proto_fast_parsing_test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example_proto_fast_parsing_test.proto; sourceTree = "<group>"; };
+		8340D3461EB1599B0046BAF4 /* memmapped_file_system.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memmapped_file_system.proto; sourceTree = "<group>"; };
+		8340D3471EB1599B0046BAF4 /* saved_tensor_slice.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saved_tensor_slice.proto; sourceTree = "<group>"; };
+		8340D3481EB1599B0046BAF4 /* test_log.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test_log.proto; sourceTree = "<group>"; };
+		8340D34B1EB1599B0046BAF4 /* cpp_shape_inference.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cpp_shape_inference.proto; sourceTree = "<group>"; };
+		8340D34D1EB1599B0046BAF4 /* checkpoint_state.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = checkpoint_state.proto; sourceTree = "<group>"; };
+		8340D3501EB1599B0046BAF4 /* compare_test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = compare_test.proto; sourceTree = "<group>"; };
+		8340D3541EB1599B0046BAF4 /* projector_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projector_config.proto; sourceTree = "<group>"; };
+		8340D3581EB1599B0046BAF4 /* api_objects.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = api_objects.proto; sourceTree = "<group>"; };
+		8340D35A1EB1599B0046BAF4 /* test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.proto; sourceTree = "<group>"; };
+		8340D35C1EB1599B0046BAF4 /* tfprof_log.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_log.proto; sourceTree = "<group>"; };
+		8340D35D1EB1599B0046BAF4 /* tfprof_options.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_options.proto; sourceTree = "<group>"; };
+		8340D35E1EB1599B0046BAF4 /* tfprof_output.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tfprof_output.proto; sourceTree = "<group>"; };
+		8340D3611EB1599B0046BAF4 /* classification.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = classification.proto; sourceTree = "<group>"; };
+		8340D3621EB1599B0046BAF4 /* get_model_metadata.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = get_model_metadata.proto; sourceTree = "<group>"; };
+		8340D3631EB1599B0046BAF4 /* inference.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inference.proto; sourceTree = "<group>"; };
+		8340D3641EB1599B0046BAF4 /* input.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.proto; sourceTree = "<group>"; };
+		8340D3661EB1599B0046BAF4 /* serialized_input.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = serialized_input.proto; sourceTree = "<group>"; };
+		8340D3671EB1599B0046BAF4 /* model.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model.proto; sourceTree = "<group>"; };
+		8340D3681EB1599B0046BAF4 /* predict.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = predict.proto; sourceTree = "<group>"; };
+		8340D3691EB1599B0046BAF4 /* prediction_service.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prediction_service.proto; sourceTree = "<group>"; };
+		8340D36A1EB1599B0046BAF4 /* regression.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = regression.proto; sourceTree = "<group>"; };
+		8340D36C1EB1599B0046BAF4 /* log_collector_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = log_collector_config.proto; sourceTree = "<group>"; };
+		8340D36D1EB1599B0046BAF4 /* logging_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logging_config.proto; sourceTree = "<group>"; };
+		8340D36E1EB1599B0046BAF4 /* model_server_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model_server_config.proto; sourceTree = "<group>"; };
+		8340D36F1EB1599B0046BAF4 /* platform_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = platform_config.proto; sourceTree = "<group>"; };
+		8340D3711EB1599B0046BAF4 /* logging.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = logging.proto; sourceTree = "<group>"; };
+		8340D3731EB1599B0046BAF4 /* fake_loader_source_adapter.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fake_loader_source_adapter.proto; sourceTree = "<group>"; };
+		8340D3761EB1599B0046BAF4 /* storage_path_error_injecting_source_adapter.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = storage_path_error_injecting_source_adapter.proto; sourceTree = "<group>"; };
+		8340D3781EB1599B0046BAF4 /* resources.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = resources.proto; sourceTree = "<group>"; };
+		8340D37B1EB1599B0046BAF4 /* hashmap_source_adapter.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hashmap_source_adapter.proto; sourceTree = "<group>"; };
+		8340D37D1EB1599B0046BAF4 /* saved_model_bundle_source_adapter.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saved_model_bundle_source_adapter.proto; sourceTree = "<group>"; };
+		8340D37E1EB1599B0046BAF4 /* session_bundle_config.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = session_bundle_config.proto; sourceTree = "<group>"; };
+		8340D37F1EB1599B0046BAF4 /* session_bundle_source_adapter.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = session_bundle_source_adapter.proto; sourceTree = "<group>"; };
+		8340D3821EB1599B0046BAF4 /* file_system_storage_path_source.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file_system_storage_path_source.proto; sourceTree = "<group>"; };
+		8340D3831EB1599B0046BAF4 /* static_storage_path_source.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = static_storage_path_source.proto; sourceTree = "<group>"; };
+		8340D3851EB1599B0046BAF4 /* class_registration_test.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = class_registration_test.proto; sourceTree = "<group>"; };
 		D35C9FA81D74B079000443CD /* Tensorflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35C9FAB1D74B079000443CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35C9FAD1D74B079000443CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -507,9 +699,578 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8340D2EB1EB1599B0046BAF4 /* serving */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2EC1EB1599B0046BAF4 /* tensorflow */,
+				8340D35F1EB1599B0046BAF4 /* tensorflow_serving */,
+			);
+			name = serving;
+			path = ../serving;
+			sourceTree = "<group>";
+		};
+		8340D2EC1EB1599B0046BAF4 /* tensorflow */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2ED1EB1599B0046BAF4 /* compiler */,
+				8340D2F51EB1599B0046BAF4 /* contrib */,
+				8340D30D1EB1599B0046BAF4 /* core */,
+				8340D3491EB1599B0046BAF4 /* python */,
+				8340D3511EB1599B0046BAF4 /* tensorboard */,
+				8340D3551EB1599B0046BAF4 /* tools */,
+			);
+			path = tensorflow;
+			sourceTree = "<group>";
+		};
+		8340D2ED1EB1599B0046BAF4 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2EE1EB1599B0046BAF4 /* aot */,
+				8340D2F01EB1599B0046BAF4 /* xla */,
+			);
+			path = compiler;
+			sourceTree = "<group>";
+		};
+		8340D2EE1EB1599B0046BAF4 /* aot */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2EF1EB1599B0046BAF4 /* tfcompile.proto */,
+			);
+			path = aot;
+			sourceTree = "<group>";
+		};
+		8340D2F01EB1599B0046BAF4 /* xla */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2F11EB1599B0046BAF4 /* service */,
+				8340D2F31EB1599B0046BAF4 /* xla.proto */,
+				8340D2F41EB1599B0046BAF4 /* xla_data.proto */,
+			);
+			path = xla;
+			sourceTree = "<group>";
+		};
+		8340D2F11EB1599B0046BAF4 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2F21EB1599B0046BAF4 /* session.proto */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		8340D2F51EB1599B0046BAF4 /* contrib */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2F61EB1599B0046BAF4 /* boosted_trees */,
+				8340D2FB1EB1599B0046BAF4 /* cloud */,
+				8340D2FE1EB1599B0046BAF4 /* session_bundle */,
+				8340D3001EB1599B0046BAF4 /* tensorboard */,
+				8340D3071EB1599B0046BAF4 /* training */,
+				8340D30B1EB1599B0046BAF4 /* verbs */,
+			);
+			path = contrib;
+			sourceTree = "<group>";
+		};
+		8340D2F61EB1599B0046BAF4 /* boosted_trees */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2F71EB1599B0046BAF4 /* proto */,
+			);
+			path = boosted_trees;
+			sourceTree = "<group>";
+		};
+		8340D2F71EB1599B0046BAF4 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2F81EB1599B0046BAF4 /* learner.proto */,
+				8340D2F91EB1599B0046BAF4 /* quantiles.proto */,
+				8340D2FA1EB1599B0046BAF4 /* tree_config.proto */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		8340D2FB1EB1599B0046BAF4 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2FC1EB1599B0046BAF4 /* kernels */,
+			);
+			path = cloud;
+			sourceTree = "<group>";
+		};
+		8340D2FC1EB1599B0046BAF4 /* kernels */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2FD1EB1599B0046BAF4 /* bigquery_table_partition.proto */,
+			);
+			path = kernels;
+			sourceTree = "<group>";
+		};
+		8340D2FE1EB1599B0046BAF4 /* session_bundle */ = {
+			isa = PBXGroup;
+			children = (
+				8340D2FF1EB1599B0046BAF4 /* manifest.proto */,
+			);
+			path = session_bundle;
+			sourceTree = "<group>";
+		};
+		8340D3001EB1599B0046BAF4 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3011EB1599B0046BAF4 /* graph_explorer */,
+				8340D3041EB1599B0046BAF4 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		8340D3011EB1599B0046BAF4 /* graph_explorer */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3021EB1599B0046BAF4 /* proto */,
+			);
+			path = graph_explorer;
+			sourceTree = "<group>";
+		};
+		8340D3021EB1599B0046BAF4 /* proto */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3031EB1599B0046BAF4 /* graph_explorer.proto */,
+			);
+			path = proto;
+			sourceTree = "<group>";
+		};
+		8340D3041EB1599B0046BAF4 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3051EB1599B0046BAF4 /* trace */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		8340D3051EB1599B0046BAF4 /* trace */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3061EB1599B0046BAF4 /* trace_info.proto */,
+			);
+			path = trace;
+			sourceTree = "<group>";
+		};
+		8340D3071EB1599B0046BAF4 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3081EB1599B0046BAF4 /* python */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		8340D3081EB1599B0046BAF4 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3091EB1599B0046BAF4 /* training */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		8340D3091EB1599B0046BAF4 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				8340D30A1EB1599B0046BAF4 /* hparam.proto */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		8340D30B1EB1599B0046BAF4 /* verbs */ = {
+			isa = PBXGroup;
+			children = (
+				8340D30C1EB1599B0046BAF4 /* verbs_service.proto */,
+			);
+			path = verbs;
+			sourceTree = "<group>";
+		};
+		8340D30D1EB1599B0046BAF4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				8340D30E1EB1599B0046BAF4 /* debug */,
+				8340D3101EB1599B0046BAF4 /* example */,
+				8340D3141EB1599B0046BAF4 /* framework */,
+				8340D32D1EB1599B0046BAF4 /* grappler */,
+				8340D3301EB1599B0046BAF4 /* lib */,
+				8340D3331EB1599B0046BAF4 /* protobuf */,
+				8340D3431EB1599B0046BAF4 /* util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		8340D30E1EB1599B0046BAF4 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				8340D30F1EB1599B0046BAF4 /* debug_service.proto */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		8340D3101EB1599B0046BAF4 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3111EB1599B0046BAF4 /* example.proto */,
+				8340D3121EB1599B0046BAF4 /* example_parser_configuration.proto */,
+				8340D3131EB1599B0046BAF4 /* feature.proto */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		8340D3141EB1599B0046BAF4 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3151EB1599B0046BAF4 /* allocation_description.proto */,
+				8340D3161EB1599B0046BAF4 /* attr_value.proto */,
+				8340D3171EB1599B0046BAF4 /* cost_graph.proto */,
+				8340D3181EB1599B0046BAF4 /* device_attributes.proto */,
+				8340D3191EB1599B0046BAF4 /* function.proto */,
+				8340D31A1EB1599B0046BAF4 /* graph.proto */,
+				8340D31B1EB1599B0046BAF4 /* graph_transfer_info.proto */,
+				8340D31C1EB1599B0046BAF4 /* kernel_def.proto */,
+				8340D31D1EB1599B0046BAF4 /* log_memory.proto */,
+				8340D31E1EB1599B0046BAF4 /* node_def.proto */,
+				8340D31F1EB1599B0046BAF4 /* op_def.proto */,
+				8340D3201EB1599B0046BAF4 /* op_gen_overrides.proto */,
+				8340D3211EB1599B0046BAF4 /* reader_base.proto */,
+				8340D3221EB1599B0046BAF4 /* remote_fused_graph_execute_info.proto */,
+				8340D3231EB1599B0046BAF4 /* resource_handle.proto */,
+				8340D3241EB1599B0046BAF4 /* step_stats.proto */,
+				8340D3251EB1599B0046BAF4 /* summary.proto */,
+				8340D3261EB1599B0046BAF4 /* tensor.proto */,
+				8340D3271EB1599B0046BAF4 /* tensor_description.proto */,
+				8340D3281EB1599B0046BAF4 /* tensor_shape.proto */,
+				8340D3291EB1599B0046BAF4 /* tensor_slice.proto */,
+				8340D32A1EB1599B0046BAF4 /* types.proto */,
+				8340D32B1EB1599B0046BAF4 /* variable.proto */,
+				8340D32C1EB1599B0046BAF4 /* versions.proto */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		8340D32D1EB1599B0046BAF4 /* grappler */ = {
+			isa = PBXGroup;
+			children = (
+				8340D32E1EB1599B0046BAF4 /* costs */,
+			);
+			path = grappler;
+			sourceTree = "<group>";
+		};
+		8340D32E1EB1599B0046BAF4 /* costs */ = {
+			isa = PBXGroup;
+			children = (
+				8340D32F1EB1599B0046BAF4 /* op_performance_data.proto */,
+			);
+			path = costs;
+			sourceTree = "<group>";
+		};
+		8340D3301EB1599B0046BAF4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3311EB1599B0046BAF4 /* core */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		8340D3311EB1599B0046BAF4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3321EB1599B0046BAF4 /* error_codes.proto */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		8340D3331EB1599B0046BAF4 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3341EB1599B0046BAF4 /* config.proto */,
+				8340D3351EB1599B0046BAF4 /* control_flow.proto */,
+				8340D3361EB1599B0046BAF4 /* debug.proto */,
+				8340D3371EB1599B0046BAF4 /* master.proto */,
+				8340D3381EB1599B0046BAF4 /* master_service.proto */,
+				8340D3391EB1599B0046BAF4 /* meta_graph.proto */,
+				8340D33A1EB1599B0046BAF4 /* named_tensor.proto */,
+				8340D33B1EB1599B0046BAF4 /* queue_runner.proto */,
+				8340D33C1EB1599B0046BAF4 /* rewriter_config.proto */,
+				8340D33D1EB1599B0046BAF4 /* saved_model.proto */,
+				8340D33E1EB1599B0046BAF4 /* saver.proto */,
+				8340D33F1EB1599B0046BAF4 /* tensor_bundle.proto */,
+				8340D3401EB1599B0046BAF4 /* tensorflow_server.proto */,
+				8340D3411EB1599B0046BAF4 /* worker.proto */,
+				8340D3421EB1599B0046BAF4 /* worker_service.proto */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		8340D3431EB1599B0046BAF4 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3441EB1599B0046BAF4 /* event.proto */,
+				8340D3451EB1599B0046BAF4 /* example_proto_fast_parsing_test.proto */,
+				8340D3461EB1599B0046BAF4 /* memmapped_file_system.proto */,
+				8340D3471EB1599B0046BAF4 /* saved_tensor_slice.proto */,
+				8340D3481EB1599B0046BAF4 /* test_log.proto */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		8340D3491EB1599B0046BAF4 /* python */ = {
+			isa = PBXGroup;
+			children = (
+				8340D34A1EB1599B0046BAF4 /* framework */,
+				8340D34C1EB1599B0046BAF4 /* training */,
+				8340D34E1EB1599B0046BAF4 /* util */,
+			);
+			path = python;
+			sourceTree = "<group>";
+		};
+		8340D34A1EB1599B0046BAF4 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				8340D34B1EB1599B0046BAF4 /* cpp_shape_inference.proto */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		8340D34C1EB1599B0046BAF4 /* training */ = {
+			isa = PBXGroup;
+			children = (
+				8340D34D1EB1599B0046BAF4 /* checkpoint_state.proto */,
+			);
+			path = training;
+			sourceTree = "<group>";
+		};
+		8340D34E1EB1599B0046BAF4 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8340D34F1EB1599B0046BAF4 /* protobuf */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		8340D34F1EB1599B0046BAF4 /* protobuf */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3501EB1599B0046BAF4 /* compare_test.proto */,
+			);
+			path = protobuf;
+			sourceTree = "<group>";
+		};
+		8340D3511EB1599B0046BAF4 /* tensorboard */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3521EB1599B0046BAF4 /* plugins */,
+			);
+			path = tensorboard;
+			sourceTree = "<group>";
+		};
+		8340D3521EB1599B0046BAF4 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3531EB1599B0046BAF4 /* projector */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		8340D3531EB1599B0046BAF4 /* projector */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3541EB1599B0046BAF4 /* projector_config.proto */,
+			);
+			path = projector;
+			sourceTree = "<group>";
+		};
+		8340D3551EB1599B0046BAF4 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3561EB1599B0046BAF4 /* api */,
+				8340D3591EB1599B0046BAF4 /* proto_text */,
+				8340D35B1EB1599B0046BAF4 /* tfprof */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		8340D3561EB1599B0046BAF4 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3571EB1599B0046BAF4 /* lib */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		8340D3571EB1599B0046BAF4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3581EB1599B0046BAF4 /* api_objects.proto */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		8340D3591EB1599B0046BAF4 /* proto_text */ = {
+			isa = PBXGroup;
+			children = (
+				8340D35A1EB1599B0046BAF4 /* test.proto */,
+			);
+			path = proto_text;
+			sourceTree = "<group>";
+		};
+		8340D35B1EB1599B0046BAF4 /* tfprof */ = {
+			isa = PBXGroup;
+			children = (
+				8340D35C1EB1599B0046BAF4 /* tfprof_log.proto */,
+				8340D35D1EB1599B0046BAF4 /* tfprof_options.proto */,
+				8340D35E1EB1599B0046BAF4 /* tfprof_output.proto */,
+			);
+			path = tfprof;
+			sourceTree = "<group>";
+		};
+		8340D35F1EB1599B0046BAF4 /* tensorflow_serving */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3601EB1599B0046BAF4 /* apis */,
+				8340D36B1EB1599B0046BAF4 /* config */,
+				8340D3701EB1599B0046BAF4 /* core */,
+				8340D3741EB1599B0046BAF4 /* model_servers */,
+				8340D3771EB1599B0046BAF4 /* resources */,
+				8340D3791EB1599B0046BAF4 /* servables */,
+				8340D3801EB1599B0046BAF4 /* sources */,
+				8340D3841EB1599B0046BAF4 /* util */,
+			);
+			path = tensorflow_serving;
+			sourceTree = "<group>";
+		};
+		8340D3601EB1599B0046BAF4 /* apis */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3611EB1599B0046BAF4 /* classification.proto */,
+				8340D3621EB1599B0046BAF4 /* get_model_metadata.proto */,
+				8340D3631EB1599B0046BAF4 /* inference.proto */,
+				8340D3641EB1599B0046BAF4 /* input.proto */,
+				8340D3651EB1599B0046BAF4 /* internal */,
+				8340D3671EB1599B0046BAF4 /* model.proto */,
+				8340D3681EB1599B0046BAF4 /* predict.proto */,
+				8340D3691EB1599B0046BAF4 /* prediction_service.proto */,
+				8340D36A1EB1599B0046BAF4 /* regression.proto */,
+			);
+			path = apis;
+			sourceTree = "<group>";
+		};
+		8340D3651EB1599B0046BAF4 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3661EB1599B0046BAF4 /* serialized_input.proto */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		8340D36B1EB1599B0046BAF4 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				8340D36C1EB1599B0046BAF4 /* log_collector_config.proto */,
+				8340D36D1EB1599B0046BAF4 /* logging_config.proto */,
+				8340D36E1EB1599B0046BAF4 /* model_server_config.proto */,
+				8340D36F1EB1599B0046BAF4 /* platform_config.proto */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		8340D3701EB1599B0046BAF4 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3711EB1599B0046BAF4 /* logging.proto */,
+				8340D3721EB1599B0046BAF4 /* test_util */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		8340D3721EB1599B0046BAF4 /* test_util */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3731EB1599B0046BAF4 /* fake_loader_source_adapter.proto */,
+			);
+			path = test_util;
+			sourceTree = "<group>";
+		};
+		8340D3741EB1599B0046BAF4 /* model_servers */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3751EB1599B0046BAF4 /* test_util */,
+			);
+			path = model_servers;
+			sourceTree = "<group>";
+		};
+		8340D3751EB1599B0046BAF4 /* test_util */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3761EB1599B0046BAF4 /* storage_path_error_injecting_source_adapter.proto */,
+			);
+			path = test_util;
+			sourceTree = "<group>";
+		};
+		8340D3771EB1599B0046BAF4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3781EB1599B0046BAF4 /* resources.proto */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		8340D3791EB1599B0046BAF4 /* servables */ = {
+			isa = PBXGroup;
+			children = (
+				8340D37A1EB1599B0046BAF4 /* hashmap */,
+				8340D37C1EB1599B0046BAF4 /* tensorflow */,
+			);
+			path = servables;
+			sourceTree = "<group>";
+		};
+		8340D37A1EB1599B0046BAF4 /* hashmap */ = {
+			isa = PBXGroup;
+			children = (
+				8340D37B1EB1599B0046BAF4 /* hashmap_source_adapter.proto */,
+			);
+			path = hashmap;
+			sourceTree = "<group>";
+		};
+		8340D37C1EB1599B0046BAF4 /* tensorflow */ = {
+			isa = PBXGroup;
+			children = (
+				8340D37D1EB1599B0046BAF4 /* saved_model_bundle_source_adapter.proto */,
+				8340D37E1EB1599B0046BAF4 /* session_bundle_config.proto */,
+				8340D37F1EB1599B0046BAF4 /* session_bundle_source_adapter.proto */,
+			);
+			path = tensorflow;
+			sourceTree = "<group>";
+		};
+		8340D3801EB1599B0046BAF4 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3811EB1599B0046BAF4 /* storage_path */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+		8340D3811EB1599B0046BAF4 /* storage_path */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3821EB1599B0046BAF4 /* file_system_storage_path_source.proto */,
+				8340D3831EB1599B0046BAF4 /* static_storage_path_source.proto */,
+			);
+			path = storage_path;
+			sourceTree = "<group>";
+		};
+		8340D3841EB1599B0046BAF4 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8340D3851EB1599B0046BAF4 /* class_registration_test.proto */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		D35C9F9F1D74B079000443CD = {
 			isa = PBXGroup;
 			children = (
+				8340D2EB1EB1599B0046BAF4 /* serving */,
 				E811CE361EB12E2F004C58C3 /* Generated */,
 				E8D0D7351EB0E8C7009B2929 /* README.md */,
 				D371D5D91EA9306500C39169 /* SwiftProtobuf.xcodeproj */,
@@ -1733,74 +2494,170 @@
 				E811CFC11EB12E2F004C58C3 /* saved_model.proto in Resources */,
 				E811CF9F1EB12E2F004C58C3 /* attr_value.proto in Resources */,
 				E811CFC01EB12E2F004C58C3 /* rewriter_config.proto in Resources */,
+				8340D3AF1EB1599B0046BAF4 /* op_performance_data.proto in Resources */,
+				8340D3CB1EB1599B0046BAF4 /* tfprof_log.proto in Resources */,
+				8340D39E1EB1599B0046BAF4 /* kernel_def.proto in Resources */,
+				8340D3DE1EB1599B0046BAF4 /* resources.proto in Resources */,
 				D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */,
+				8340D39F1EB1599B0046BAF4 /* log_memory.proto in Resources */,
+				8340D3B11EB1599B0046BAF4 /* config.proto in Resources */,
+				8340D3BE1EB1599B0046BAF4 /* worker.proto in Resources */,
+				8340D3B61EB1599B0046BAF4 /* meta_graph.proto in Resources */,
 				E811CFBB1EB12E2F004C58C3 /* master.proto in Resources */,
+				8340D3B71EB1599B0046BAF4 /* named_tensor.proto in Resources */,
 				E811CFB91EB12E2F004C58C3 /* control_flow.proto in Resources */,
+				8340D3DD1EB1599B0046BAF4 /* storage_path_error_injecting_source_adapter.proto in Resources */,
 				E811CFA71EB12E2F004C58C3 /* node_def.proto in Resources */,
 				E811CF961EB12E2F004C58C3 /* graph_explorer.proto in Resources */,
+				8340D3B81EB1599B0046BAF4 /* queue_runner.proto in Resources */,
 				E811CF9E1EB12E2F004C58C3 /* allocation_description.proto in Resources */,
 				E811CFCF1EB12E2F004C58C3 /* projector_config.proto in Resources */,
 				E811CFD31EB12E2F004C58C3 /* tfprof_options.proto in Resources */,
+				8340D3B01EB1599B0046BAF4 /* error_codes.proto in Resources */,
+				8340D3BF1EB1599B0046BAF4 /* worker_service.proto in Resources */,
+				8340D3D31EB1599B0046BAF4 /* model.proto in Resources */,
 				E811CFBA1EB12E2F004C58C3 /* debug.proto in Resources */,
 				E811CFBD1EB12E2F004C58C3 /* meta_graph.proto in Resources */,
 				E811CFC71EB12E2F004C58C3 /* event.proto in Resources */,
 				E811CFD21EB12E2F004C58C3 /* tfprof_log.proto in Resources */,
 				E811CF941EB12E2F004C58C3 /* bigquery_table_partition.proto in Resources */,
+				8340D38F1EB1599B0046BAF4 /* graph_explorer.proto in Resources */,
+				8340D3AD1EB1599B0046BAF4 /* variable.proto in Resources */,
+				8340D3BB1EB1599B0046BAF4 /* saver.proto in Resources */,
 				E811CFD41EB12E2F004C58C3 /* tfprof_output.proto in Resources */,
 				E811CFBC1EB12E2F004C58C3 /* master_service.proto in Resources */,
+				8340D3B91EB1599B0046BAF4 /* rewriter_config.proto in Resources */,
+				8340D3961EB1599B0046BAF4 /* feature.proto in Resources */,
+				8340D3891EB1599B0046BAF4 /* xla_data.proto in Resources */,
+				8340D3DB1EB1599B0046BAF4 /* logging.proto in Resources */,
 				E811CFC31EB12E2F004C58C3 /* tensor_bundle.proto in Resources */,
 				E811CF911EB12E2F004C58C3 /* learner.proto in Resources */,
+				8340D3CA1EB1599B0046BAF4 /* test.proto in Resources */,
 				E8D0D7451EB0F8F9009B2929 /* echo.proto in Resources */,
 				D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */,
+				8340D3D61EB1599B0046BAF4 /* regression.proto in Resources */,
+				8340D3A11EB1599B0046BAF4 /* op_def.proto in Resources */,
+				8340D3BC1EB1599B0046BAF4 /* tensor_bundle.proto in Resources */,
+				8340D3901EB1599B0046BAF4 /* trace_info.proto in Resources */,
 				E811CF9B1EB12E2F004C58C3 /* example.proto in Resources */,
+				8340D3B41EB1599B0046BAF4 /* master.proto in Resources */,
+				8340D39B1EB1599B0046BAF4 /* function.proto in Resources */,
 				E811CFD01EB12E2F004C58C3 /* api_objects.proto in Resources */,
+				8340D3DC1EB1599B0046BAF4 /* fake_loader_source_adapter.proto in Resources */,
+				8340D3941EB1599B0046BAF4 /* example.proto in Resources */,
+				8340D3931EB1599B0046BAF4 /* debug_service.proto in Resources */,
+				8340D3AC1EB1599B0046BAF4 /* types.proto in Resources */,
+				8340D3991EB1599B0046BAF4 /* cost_graph.proto in Resources */,
+				8340D3E31EB1599B0046BAF4 /* file_system_storage_path_source.proto in Resources */,
 				E811CFB41EB12E2F004C58C3 /* variable.proto in Resources */,
+				8340D3C61EB1599B0046BAF4 /* checkpoint_state.proto in Resources */,
+				8340D3DA1EB1599B0046BAF4 /* platform_config.proto in Resources */,
+				8340D3C21EB1599B0046BAF4 /* memmapped_file_system.proto in Resources */,
+				8340D3D71EB1599B0046BAF4 /* log_collector_config.proto in Resources */,
 				E811CF901EB12E2F004C58C3 /* xla_data.proto in Resources */,
 				E811CFC51EB12E2F004C58C3 /* worker.proto in Resources */,
+				8340D3C41EB1599B0046BAF4 /* test_log.proto in Resources */,
+				8340D3CF1EB1599B0046BAF4 /* get_model_metadata.proto in Resources */,
 				E811CFA11EB12E2F004C58C3 /* device_attributes.proto in Resources */,
+				8340D3CC1EB1599B0046BAF4 /* tfprof_options.proto in Resources */,
+				8340D38E1EB1599B0046BAF4 /* manifest.proto in Resources */,
+				8340D3A61EB1599B0046BAF4 /* step_stats.proto in Resources */,
 				E811CFAC1EB12E2F004C58C3 /* resource_handle.proto in Resources */,
+				8340D3911EB1599B0046BAF4 /* hparam.proto in Resources */,
 				E811CFC21EB12E2F004C58C3 /* saver.proto in Resources */,
 				E811CF951EB12E2F004C58C3 /* manifest.proto in Resources */,
+				8340D3A21EB1599B0046BAF4 /* op_gen_overrides.proto in Resources */,
 				E811CFCE1EB12E2F004C58C3 /* compare_test.proto in Resources */,
 				E811CFB21EB12E2F004C58C3 /* tensor_slice.proto in Resources */,
 				D3971E211D89132E001A0B3F /* ssl.key in Resources */,
 				E811CFBF1EB12E2F004C58C3 /* queue_runner.proto in Resources */,
+				8340D3A31EB1599B0046BAF4 /* reader_base.proto in Resources */,
 				E811CFA81EB12E2F004C58C3 /* op_def.proto in Resources */,
+				8340D3E51EB1599B0046BAF4 /* class_registration_test.proto in Resources */,
+				8340D3861EB1599B0046BAF4 /* tfcompile.proto in Resources */,
+				8340D3C01EB1599B0046BAF4 /* event.proto in Resources */,
+				8340D3D81EB1599B0046BAF4 /* logging_config.proto in Resources */,
 				E811CFCD1EB12E2F004C58C3 /* checkpoint_state.proto in Resources */,
 				E811CFB81EB12E2F004C58C3 /* config.proto in Resources */,
 				E811CFBE1EB12E2F004C58C3 /* named_tensor.proto in Resources */,
 				E811CFB61EB12E2F004C58C3 /* op_performance_data.proto in Resources */,
+				8340D3BD1EB1599B0046BAF4 /* tensorflow_server.proto in Resources */,
 				E811CFAD1EB12E2F004C58C3 /* step_stats.proto in Resources */,
 				E811CF8D1EB12E2F004C58C3 /* tfcompile.proto in Resources */,
+				8340D3E11EB1599B0046BAF4 /* session_bundle_config.proto in Resources */,
 				E811CF931EB12E2F004C58C3 /* tree_config.proto in Resources */,
+				8340D3C51EB1599B0046BAF4 /* cpp_shape_inference.proto in Resources */,
+				8340D3921EB1599B0046BAF4 /* verbs_service.proto in Resources */,
+				8340D3C81EB1599B0046BAF4 /* projector_config.proto in Resources */,
+				8340D3B21EB1599B0046BAF4 /* control_flow.proto in Resources */,
 				E811CF971EB12E2F004C58C3 /* trace_info.proto in Resources */,
 				E811CF9C1EB12E2F004C58C3 /* example_parser_configuration.proto in Resources */,
 				E811CF921EB12E2F004C58C3 /* quantiles.proto in Resources */,
+				8340D3AB1EB1599B0046BAF4 /* tensor_slice.proto in Resources */,
+				8340D3951EB1599B0046BAF4 /* example_parser_configuration.proto in Resources */,
+				8340D3AA1EB1599B0046BAF4 /* tensor_shape.proto in Resources */,
 				E811CFAF1EB12E2F004C58C3 /* tensor.proto in Resources */,
+				8340D3D91EB1599B0046BAF4 /* model_server_config.proto in Resources */,
+				8340D38B1EB1599B0046BAF4 /* quantiles.proto in Resources */,
+				8340D3E01EB1599B0046BAF4 /* saved_model_bundle_source_adapter.proto in Resources */,
 				E811CF981EB12E2F004C58C3 /* hparam.proto in Resources */,
 				E811CFB11EB12E2F004C58C3 /* tensor_shape.proto in Resources */,
+				8340D3A51EB1599B0046BAF4 /* resource_handle.proto in Resources */,
 				E811CFCA1EB12E2F004C58C3 /* saved_tensor_slice.proto in Resources */,
 				D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */,
+				8340D3C71EB1599B0046BAF4 /* compare_test.proto in Resources */,
 				E811CFA91EB12E2F004C58C3 /* op_gen_overrides.proto in Resources */,
 				E811CFB51EB12E2F004C58C3 /* versions.proto in Resources */,
 				E811CF8E1EB12E2F004C58C3 /* session.proto in Resources */,
 				E811CFA21EB12E2F004C58C3 /* function.proto in Resources */,
 				E811CFAB1EB12E2F004C58C3 /* remote_fused_graph_execute_info.proto in Resources */,
+				8340D39A1EB1599B0046BAF4 /* device_attributes.proto in Resources */,
+				8340D3B51EB1599B0046BAF4 /* master_service.proto in Resources */,
 				E811CFC61EB12E2F004C58C3 /* worker_service.proto in Resources */,
+				8340D3981EB1599B0046BAF4 /* attr_value.proto in Resources */,
 				E811CFB01EB12E2F004C58C3 /* tensor_description.proto in Resources */,
+				8340D39D1EB1599B0046BAF4 /* graph_transfer_info.proto in Resources */,
+				8340D3A71EB1599B0046BAF4 /* summary.proto in Resources */,
+				8340D3871EB1599B0046BAF4 /* session.proto in Resources */,
+				8340D3A91EB1599B0046BAF4 /* tensor_description.proto in Resources */,
+				8340D3CE1EB1599B0046BAF4 /* classification.proto in Resources */,
+				8340D3881EB1599B0046BAF4 /* xla.proto in Resources */,
+				8340D3A81EB1599B0046BAF4 /* tensor.proto in Resources */,
+				8340D38D1EB1599B0046BAF4 /* bigquery_table_partition.proto in Resources */,
+				8340D3BA1EB1599B0046BAF4 /* saved_model.proto in Resources */,
+				8340D3A01EB1599B0046BAF4 /* node_def.proto in Resources */,
 				E811CFAA1EB12E2F004C58C3 /* reader_base.proto in Resources */,
 				E811CFD11EB12E2F004C58C3 /* test.proto in Resources */,
+				8340D3E41EB1599B0046BAF4 /* static_storage_path_source.proto in Resources */,
+				8340D3AE1EB1599B0046BAF4 /* versions.proto in Resources */,
+				8340D3D01EB1599B0046BAF4 /* inference.proto in Resources */,
 				E811CFC81EB12E2F004C58C3 /* example_proto_fast_parsing_test.proto in Resources */,
 				E811CFCB1EB12E2F004C58C3 /* test_log.proto in Resources */,
+				8340D3DF1EB1599B0046BAF4 /* hashmap_source_adapter.proto in Resources */,
+				8340D38A1EB1599B0046BAF4 /* learner.proto in Resources */,
+				8340D3971EB1599B0046BAF4 /* allocation_description.proto in Resources */,
 				E811CFA41EB12E2F004C58C3 /* graph_transfer_info.proto in Resources */,
+				8340D3D51EB1599B0046BAF4 /* prediction_service.proto in Resources */,
+				8340D3C91EB1599B0046BAF4 /* api_objects.proto in Resources */,
+				8340D3D21EB1599B0046BAF4 /* serialized_input.proto in Resources */,
 				E811CFA01EB12E2F004C58C3 /* cost_graph.proto in Resources */,
+				8340D3D41EB1599B0046BAF4 /* predict.proto in Resources */,
 				E811CFB71EB12E2F004C58C3 /* error_codes.proto in Resources */,
 				E811CF9D1EB12E2F004C58C3 /* feature.proto in Resources */,
+				8340D3B31EB1599B0046BAF4 /* debug.proto in Resources */,
 				E811CFC91EB12E2F004C58C3 /* memmapped_file_system.proto in Resources */,
+				8340D3E21EB1599B0046BAF4 /* session_bundle_source_adapter.proto in Resources */,
+				8340D3A41EB1599B0046BAF4 /* remote_fused_graph_execute_info.proto in Resources */,
 				E811CF9A1EB12E2F004C58C3 /* debug_service.proto in Resources */,
 				E811CFA61EB12E2F004C58C3 /* log_memory.proto in Resources */,
 				E811CF991EB12E2F004C58C3 /* verbs_service.proto in Resources */,
+				8340D39C1EB1599B0046BAF4 /* graph.proto in Resources */,
+				8340D3D11EB1599B0046BAF4 /* input.proto in Resources */,
+				8340D38C1EB1599B0046BAF4 /* tree_config.proto in Resources */,
+				8340D3C11EB1599B0046BAF4 /* example_proto_fast_parsing_test.proto in Resources */,
+				8340D3C31EB1599B0046BAF4 /* saved_tensor_slice.proto in Resources */,
 				E811CFA31EB12E2F004C58C3 /* graph.proto in Resources */,
+				8340D3CD1EB1599B0046BAF4 /* tfprof_output.proto in Resources */,
 				E811CFCC1EB12E2F004C58C3 /* cpp_shape_inference.proto in Resources */,
 				E811CFC41EB12E2F004C58C3 /* tensorflow_server.proto in Resources */,
 			);
@@ -2015,7 +2872,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = ../../../Sources/CgRPC/include;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../grpc-swift/Sources/CgRPC/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2060,7 +2917,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = ../../../Sources/CgRPC/include;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../grpc-swift/Sources/CgRPC/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;

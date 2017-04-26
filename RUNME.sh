@@ -8,14 +8,22 @@
 
 function gitCloneGrpcSwift { 
   printf "\033c"
-  echo "🚀  Fetching latest protoc-gen-swiftgrpc from Google"
+  echo "🚀  Fetching github.com/grpc/grpc-swift.git"
   git clone https://github.com/grpc/grpc-swift.git
   cd grpc-swift
+  make
+  cd third_party 
+   echo "🚀  Fetching github.com/apple/swift-protobuf.git"
+  git clone https://github.com/apple/swift-protobuf.git
+   echo "🚀  Fetching github.com/grpc/grpc.git"
+  git clone https://github.com/grpc/grpc.git
+  cd ..
   cd Plugin
   make
   cd ..
   cd ..
 }
+
 
 function installProtocDoc {
   printf "\033c"
@@ -242,7 +250,7 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
 
   # C++
   if [ "$CONDITION" == "7" ] ; then
-    echo "\n👾 protoc --proto_path=serving  --cpp_out=. --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin`   $file_path \n \n" 
+    echo "\n👾 protoc --proto_path=serving  --cpp_out=. --grpc_out=. --plugin=protoc-gen-grpc=$(which grpc_cpp_plugin)   $file_path \n \n" 
     protoc --plugin=protoc-gen-grpc=$(which grpc_cpp_plugin) \
     --proto_path=serving \
     --cpp_out=. \
