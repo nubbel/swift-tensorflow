@@ -1,9 +1,7 @@
 #  🚀 swift-tensorflow    
 
 
-
-[Tensorflow](https://www.tensorflow.org) data structures generated from [protobuf definitions](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/framework) using [swift-protobuf](https://github.com/apple/swift-protobuf) &    
- swift-tensorflow  [Tensorflow](https://www.tensorflow.org) data structures generated from [protobuf definitions](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/framework)  
+ [Tensorflow](https://www.tensorflow.org) data structures generated from [protobuf definitions](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/framework)  
  using [swift-protobuf](https://github.com/apple/swift-protobuf) &     using [swift-grpc-protobuf](https://github.com/grpc/grpc-swift)   
 
 
