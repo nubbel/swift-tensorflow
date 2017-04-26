@@ -294,9 +294,10 @@ if which protoc >/dev/null; then
      
 	done
   # move swift files to this directory
-  mkdir Sources
+  mkdir Generated
+  find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
   cd tensorflow
-  find ./ -name "*.swift" -exec mv {} ../Sources \;
+  find ./ -name "*.swift" -exec mv {} ../Generated \;
 
    
 else
