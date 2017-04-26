@@ -20,30 +20,30 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Protocol buffer representing a QueueRunner.
-struct Tensorflow_QueueRunnerDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".QueueRunnerDef"
+public struct Tensorflow_QueueRunnerDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".QueueRunnerDef"
 
   /// Queue name.
-  var queueName: String = String()
+  public var queueName: String = String()
 
   /// A list of enqueue operations.
-  var enqueueOpName: [String] = []
+  public var enqueueOpName: [String] = []
 
   /// The operation to run to close the queue.
-  var closeOpName: String = String()
+  public var closeOpName: String = String()
 
   /// The operation to run to cancel the queue.
-  var cancelOpName: String = String()
+  public var cancelOpName: String = String()
 
   /// A list of exception types considered to signal a safely closed queue
   /// if raised during enqueue operations.
-  var queueClosedExceptionTypes: [Tensorflow_Error_Code] = []
+  public var queueClosedExceptionTypes: [Tensorflow_Error_Code] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.queueName)
@@ -56,7 +56,7 @@ struct Tensorflow_QueueRunnerDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.queueName.isEmpty {
       try visitor.visitSingularStringField(value: self.queueName, fieldNumber: 1)
     }
@@ -81,7 +81,7 @@ struct Tensorflow_QueueRunnerDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_QueueRunnerDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "queue_name"),
     2: .standard(proto: "enqueue_op_name"),
     3: .standard(proto: "close_op_name"),
@@ -89,7 +89,7 @@ extension Tensorflow_QueueRunnerDef: SwiftProtobuf._MessageImplementationBase, S
     5: .standard(proto: "queue_closed_exception_types"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_QueueRunnerDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_QueueRunnerDef) -> Bool {
     if self.queueName != other.queueName {return false}
     if self.enqueueOpName != other.enqueueOpName {return false}
     if self.closeOpName != other.closeOpName {return false}

@@ -23,66 +23,66 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// This message is parallel to Example, but with additional fields to test
 /// unknown fields handling in example_proto_fast_parsing_test.cc.
-struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ExampleWithExtras"
+public struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ExampleWithExtras"
 
-  var features: Tensorflow_Features {
+  public var features: Tensorflow_Features {
     get {return _storage._features ?? Tensorflow_Features()}
     set {_uniqueStorage()._features = newValue}
   }
-  var hasFeatures: Bool {
+  public var hasFeatures: Bool {
     return _storage._features != nil
   }
-  mutating func clearFeatures() {
+  public mutating func clearFeatures() {
     _storage._features = nil
   }
 
-  var extra1: String {
+  public var extra1: String {
     get {return _storage._extra1}
     set {_uniqueStorage()._extra1 = newValue}
   }
 
-  var extra2: Int64 {
+  public var extra2: Int64 {
     get {return _storage._extra2}
     set {_uniqueStorage()._extra2 = newValue}
   }
 
-  var extra3: UInt32 {
+  public var extra3: UInt32 {
     get {return _storage._extra3}
     set {_uniqueStorage()._extra3 = newValue}
   }
 
-  var extra4: UInt64 {
+  public var extra4: UInt64 {
     get {return _storage._extra4}
     set {_uniqueStorage()._extra4 = newValue}
   }
 
-  var extra5: Double {
+  public var extra5: Double {
     get {return _storage._extra5}
     set {_uniqueStorage()._extra5 = newValue}
   }
 
-  var extra6: [Float] {
+  public var extra6: [Float] {
     get {return _storage._extra6}
     set {_uniqueStorage()._extra6 = newValue}
   }
 
-  var extra7: Tensorflow_Features {
+  public var extra7: Tensorflow_Features {
     get {return _storage._extra7 ?? Tensorflow_Features()}
     set {_uniqueStorage()._extra7 = newValue}
   }
-  var hasExtra7: Bool {
+  public var hasExtra7: Bool {
     return _storage._extra7 != nil
   }
-  mutating func clearExtra7() {
+  public mutating func clearExtra7() {
     _storage._extra7 = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -101,7 +101,7 @@ struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._features {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -139,7 +139,7 @@ struct Tensorflow_ExampleWithExtras: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_ExampleWithExtras: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "features"),
     1337: .same(proto: "extra1"),
     1338: .same(proto: "extra2"),
@@ -181,7 +181,7 @@ extension Tensorflow_ExampleWithExtras: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ExampleWithExtras) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ExampleWithExtras) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._features != other_storage._features {return false}

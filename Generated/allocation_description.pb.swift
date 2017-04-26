@@ -19,32 +19,32 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_AllocationDescription: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".AllocationDescription"
+public struct Tensorflow_AllocationDescription: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".AllocationDescription"
 
   /// Total number of bytes requested
-  var requestedBytes: Int64 = 0
+  public var requestedBytes: Int64 = 0
 
   /// Total number of bytes allocated if known
-  var allocatedBytes: Int64 = 0
+  public var allocatedBytes: Int64 = 0
 
   /// Name of the allocator used
-  var allocatorName: String = String()
+  public var allocatorName: String = String()
 
   /// Identifier of the allocated buffer if known
-  var allocationId: Int64 = 0
+  public var allocationId: Int64 = 0
 
   /// Set if this tensor only has one remaining reference
-  var hasSingleReference_p: Bool = false
+  public var hasSingleReference_p: Bool = false
 
   /// Address of the allocation.
-  var ptr: UInt64 = 0
+  public var ptr: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.requestedBytes)
@@ -58,7 +58,7 @@ struct Tensorflow_AllocationDescription: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.requestedBytes != 0 {
       try visitor.visitSingularInt64Field(value: self.requestedBytes, fieldNumber: 1)
     }
@@ -86,7 +86,7 @@ struct Tensorflow_AllocationDescription: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_AllocationDescription: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "requested_bytes"),
     2: .standard(proto: "allocated_bytes"),
     3: .standard(proto: "allocator_name"),
@@ -95,7 +95,7 @@ extension Tensorflow_AllocationDescription: SwiftProtobuf._MessageImplementation
     6: .same(proto: "ptr"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_AllocationDescription) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_AllocationDescription) -> Bool {
     if self.requestedBytes != other.requestedBytes {return false}
     if self.allocatedBytes != other.allocatedBytes {return false}
     if self.allocatorName != other.allocatorName {return false}

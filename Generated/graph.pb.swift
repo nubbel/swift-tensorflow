@@ -20,10 +20,10 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Represents the graph of operations
-struct Tensorflow_GraphDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GraphDef"
+public struct Tensorflow_GraphDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GraphDef"
 
-  var node: [Tensorflow_NodeDef] {
+  public var node: [Tensorflow_NodeDef] {
     get {return _storage._node}
     set {_uniqueStorage()._node = newValue}
   }
@@ -31,21 +31,21 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
   /// Compatibility versions of the graph.  See core/public/version.h for version
   /// history.  The GraphDef version is distinct from the TensorFlow version, and
   /// each release of TensorFlow will support a range of GraphDef versions.
-  var versions: Tensorflow_VersionDef {
+  public var versions: Tensorflow_VersionDef {
     get {return _storage._versions ?? Tensorflow_VersionDef()}
     set {_uniqueStorage()._versions = newValue}
   }
-  var hasVersions: Bool {
+  public var hasVersions: Bool {
     return _storage._versions != nil
   }
-  mutating func clearVersions() {
+  public mutating func clearVersions() {
     _storage._versions = nil
   }
 
   /// Deprecated single version field; use versions above instead.  Since all
   /// GraphDef changes before "versions" was introduced were forward
   /// compatible, this field is entirely ignored.
-  var version: Int32 {
+  public var version: Int32 {
     get {return _storage._version}
     set {_uniqueStorage()._version = newValue}
   }
@@ -78,22 +78,22 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
   ///     consumer may want to use Tuple() mechanism to ensure the
   ///     consumer does not start until all return values of the callee
   ///     function are ready.
-  var library: Tensorflow_FunctionDefLibrary {
+  public var library: Tensorflow_FunctionDefLibrary {
     get {return _storage._library ?? Tensorflow_FunctionDefLibrary()}
     set {_uniqueStorage()._library = newValue}
   }
-  var hasLibrary: Bool {
+  public var hasLibrary: Bool {
     return _storage._library != nil
   }
-  mutating func clearLibrary() {
+  public mutating func clearLibrary() {
     _storage._library = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -108,7 +108,7 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._node.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._node, fieldNumber: 1)
@@ -134,7 +134,7 @@ struct Tensorflow_GraphDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_GraphDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "node"),
     4: .same(proto: "versions"),
     3: .same(proto: "version"),
@@ -164,7 +164,7 @@ extension Tensorflow_GraphDef: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._node != other_storage._node {return false}

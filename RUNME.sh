@@ -144,6 +144,7 @@ if which protoc >/dev/null; then
           echo "\n🚀 protoc  \ \n--proto_path=tensorflow  \ \n--swift_out=. --descriptor_set_out $output_file \ \n $file_path \n \n" #\n--doc_out=markdown,$doc_output_file:"." \
           protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift   \
           --proto_path=tensorflow \
+          --swift_opt=Visibility=Public \
           --swift_out="." \
           --descriptor_set_out $output_file \
           $file_path 
@@ -262,8 +263,6 @@ if which protoc >/dev/null; then
           $file_path
         fi
 
-
-     
 	done
   # move swift files to this directory
   mkdir Generated

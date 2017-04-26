@@ -34,20 +34,20 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_Channel: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Channel"
+public struct Tensorflow_Channel: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Channel"
 
-  var lid: Int32 = 0
+  public var lid: Int32 = 0
 
-  var qpn: Int32 = 0
+  public var qpn: Int32 = 0
 
-  var psn: Int32 = 0
+  public var psn: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.lid)
@@ -58,7 +58,7 @@ struct Tensorflow_Channel: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.lid != 0 {
       try visitor.visitSingularInt32Field(value: self.lid, fieldNumber: 1)
     }
@@ -72,18 +72,18 @@ struct Tensorflow_Channel: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_MemoryRegion: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MemoryRegion"
+public struct Tensorflow_MemoryRegion: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MemoryRegion"
 
-  var remoteAddr: UInt64 = 0
+  public var remoteAddr: UInt64 = 0
 
-  var rkey: UInt32 = 0
+  public var rkey: UInt32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.remoteAddr)
@@ -93,7 +93,7 @@ struct Tensorflow_MemoryRegion: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.remoteAddr != 0 {
       try visitor.visitSingularUInt64Field(value: self.remoteAddr, fieldNumber: 1)
     }
@@ -104,35 +104,35 @@ struct Tensorflow_MemoryRegion: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_GetRemoteAddressRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetRemoteAddressRequest"
+public struct Tensorflow_GetRemoteAddressRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetRemoteAddressRequest"
 
-  var hostName: String {
+  public var hostName: String {
     get {return _storage._hostName}
     set {_uniqueStorage()._hostName = newValue}
   }
 
-  var channel: Tensorflow_Channel {
+  public var channel: Tensorflow_Channel {
     get {return _storage._channel ?? Tensorflow_Channel()}
     set {_uniqueStorage()._channel = newValue}
   }
-  var hasChannel: Bool {
+  public var hasChannel: Bool {
     return _storage._channel != nil
   }
-  mutating func clearChannel() {
+  public mutating func clearChannel() {
     _storage._channel = nil
   }
 
-  var mr: [Tensorflow_MemoryRegion] {
+  public var mr: [Tensorflow_MemoryRegion] {
     get {return _storage._mr}
     set {_uniqueStorage()._mr = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -146,7 +146,7 @@ struct Tensorflow_GetRemoteAddressRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._hostName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._hostName, fieldNumber: 1)
@@ -164,35 +164,35 @@ struct Tensorflow_GetRemoteAddressRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_GetRemoteAddressResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetRemoteAddressResponse"
+public struct Tensorflow_GetRemoteAddressResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetRemoteAddressResponse"
 
-  var hostName: String {
+  public var hostName: String {
     get {return _storage._hostName}
     set {_uniqueStorage()._hostName = newValue}
   }
 
-  var channel: Tensorflow_Channel {
+  public var channel: Tensorflow_Channel {
     get {return _storage._channel ?? Tensorflow_Channel()}
     set {_uniqueStorage()._channel = newValue}
   }
-  var hasChannel: Bool {
+  public var hasChannel: Bool {
     return _storage._channel != nil
   }
-  mutating func clearChannel() {
+  public mutating func clearChannel() {
     _storage._channel = nil
   }
 
-  var mr: [Tensorflow_MemoryRegion] {
+  public var mr: [Tensorflow_MemoryRegion] {
     get {return _storage._mr}
     set {_uniqueStorage()._mr = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -206,7 +206,7 @@ struct Tensorflow_GetRemoteAddressResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._hostName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._hostName, fieldNumber: 1)
@@ -229,13 +229,13 @@ struct Tensorflow_GetRemoteAddressResponse: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_Channel: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "lid"),
     2: .same(proto: "qpn"),
     3: .same(proto: "psn"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Channel) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Channel) -> Bool {
     if self.lid != other.lid {return false}
     if self.qpn != other.qpn {return false}
     if self.psn != other.psn {return false}
@@ -245,12 +245,12 @@ extension Tensorflow_Channel: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Tensorflow_MemoryRegion: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "remote_addr"),
     2: .same(proto: "rkey"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_MemoryRegion) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_MemoryRegion) -> Bool {
     if self.remoteAddr != other.remoteAddr {return false}
     if self.rkey != other.rkey {return false}
     if unknownFields != other.unknownFields {return false}
@@ -259,7 +259,7 @@ extension Tensorflow_MemoryRegion: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Tensorflow_GetRemoteAddressRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "host_name"),
     2: .same(proto: "channel"),
     3: .same(proto: "mr"),
@@ -286,7 +286,7 @@ extension Tensorflow_GetRemoteAddressRequest: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GetRemoteAddressRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GetRemoteAddressRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._hostName != other_storage._hostName {return false}
@@ -302,7 +302,7 @@ extension Tensorflow_GetRemoteAddressRequest: SwiftProtobuf._MessageImplementati
 }
 
 extension Tensorflow_GetRemoteAddressResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "host_name"),
     2: .same(proto: "channel"),
     3: .same(proto: "mr"),
@@ -329,7 +329,7 @@ extension Tensorflow_GetRemoteAddressResponse: SwiftProtobuf._MessageImplementat
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GetRemoteAddressResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GetRemoteAddressResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._hostName != other_storage._hostName {return false}

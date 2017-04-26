@@ -26,50 +26,50 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// valuable debugging information. And if needed, these can be used as defensive
 /// information ensuring reader (binary version) of the checkpoint and the writer
 /// (binary version) must match within certain range, etc.
-struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BundleHeaderProto"
+public struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BundleHeaderProto"
 
   /// Number of data files in the bundle.
-  var numShards: Int32 {
+  public var numShards: Int32 {
     get {return _storage._numShards}
     set {_uniqueStorage()._numShards = newValue}
   }
 
-  var endianness: Tensorflow_BundleHeaderProto.Endianness {
+  public var endianness: Tensorflow_BundleHeaderProto.Endianness {
     get {return _storage._endianness}
     set {_uniqueStorage()._endianness = newValue}
   }
 
   /// Versioning of the tensor bundle format.
-  var version: Tensorflow_VersionDef {
+  public var version: Tensorflow_VersionDef {
     get {return _storage._version ?? Tensorflow_VersionDef()}
     set {_uniqueStorage()._version = newValue}
   }
-  var hasVersion: Bool {
+  public var hasVersion: Bool {
     return _storage._version != nil
   }
-  mutating func clearVersion() {
+  public mutating func clearVersion() {
     _storage._version = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// An enum indicating the endianness of the platform that produced this
   /// bundle.  A bundle can only be read by a platform with matching endianness.
   /// Defaults to LITTLE, as most modern platforms are little-endian.
   ///
   /// Affects the binary tensor data bytes only, not the metadata in protobufs.
-  enum Endianness: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Endianness: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case little // = 0
     case big // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .little
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .little
       case 1: self = .big
@@ -77,7 +77,7 @@ struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .little: return 0
       case .big: return 1
@@ -87,9 +87,9 @@ struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -103,7 +103,7 @@ struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._numShards != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numShards, fieldNumber: 1)
@@ -122,45 +122,45 @@ struct Tensorflow_BundleHeaderProto: SwiftProtobuf.Message {
 }
 
 /// Describes the metadata related to a checkpointed tensor.
-struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BundleEntryProto"
+public struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BundleEntryProto"
 
   /// The tensor dtype and shape.
-  var dtype: Tensorflow_DataType {
+  public var dtype: Tensorflow_DataType {
     get {return _storage._dtype}
     set {_uniqueStorage()._dtype = newValue}
   }
 
-  var shape: Tensorflow_TensorShapeProto {
+  public var shape: Tensorflow_TensorShapeProto {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
   /// The binary content of the tensor lies in:
   ///   File "shard_id": bytes [offset, offset + size).
-  var shardId: Int32 {
+  public var shardId: Int32 {
     get {return _storage._shardId}
     set {_uniqueStorage()._shardId = newValue}
   }
 
-  var offset: Int64 {
+  public var offset: Int64 {
     get {return _storage._offset}
     set {_uniqueStorage()._offset = newValue}
   }
 
-  var size: Int64 {
+  public var size: Int64 {
     get {return _storage._size}
     set {_uniqueStorage()._size = newValue}
   }
 
   /// The CRC32C checksum of the tensor bytes.
-  var crc32C: UInt32 {
+  public var crc32C: UInt32 {
     get {return _storage._crc32C}
     set {_uniqueStorage()._crc32C = newValue}
   }
@@ -172,16 +172,16 @@ struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
   ///   "shard_id", "offset", "size", "crc32c": all IGNORED.
   ///      These information for each slice can be looked up in their own
   ///      BundleEntryProto, keyed by each "slice_name".
-  var slices: [Tensorflow_TensorSliceProto] {
+  public var slices: [Tensorflow_TensorSliceProto] {
     get {return _storage._slices}
     set {_uniqueStorage()._slices = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -199,7 +199,7 @@ struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._dtype != Tensorflow_DataType.dtInvalid {
         try visitor.visitSingularEnumField(value: _storage._dtype, fieldNumber: 1)
@@ -234,7 +234,7 @@ struct Tensorflow_BundleEntryProto: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_BundleHeaderProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "num_shards"),
     2: .same(proto: "endianness"),
     3: .same(proto: "version"),
@@ -261,7 +261,7 @@ extension Tensorflow_BundleHeaderProto: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BundleHeaderProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BundleHeaderProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._numShards != other_storage._numShards {return false}
@@ -277,14 +277,14 @@ extension Tensorflow_BundleHeaderProto: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_BundleHeaderProto.Endianness: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "LITTLE"),
     1: .same(proto: "BIG"),
   ]
 }
 
 extension Tensorflow_BundleEntryProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .same(proto: "shape"),
     3: .standard(proto: "shard_id"),
@@ -323,7 +323,7 @@ extension Tensorflow_BundleEntryProto: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BundleEntryProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BundleEntryProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._dtype != other_storage._dtype {return false}

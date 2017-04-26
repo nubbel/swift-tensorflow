@@ -21,59 +21,59 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// Defines an operation. A NodeDef in a GraphDef specifies an Op by
 /// using the "op" field which should match the name of a OpDef.
-struct Tensorflow_OpDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpDef"
+public struct Tensorflow_OpDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpDef"
 
   /// Op names starting with an underscore are reserved for internal use.
   /// Names should be CamelCase and match the regexp "[A-Z][a-zA-Z0-9_]*".
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
   /// Description of the input(s).
-  var inputArg: [Tensorflow_OpDef.ArgDef] {
+  public var inputArg: [Tensorflow_OpDef.ArgDef] {
     get {return _storage._inputArg}
     set {_uniqueStorage()._inputArg = newValue}
   }
 
   /// Description of the output(s).
-  var outputArg: [Tensorflow_OpDef.ArgDef] {
+  public var outputArg: [Tensorflow_OpDef.ArgDef] {
     get {return _storage._outputArg}
     set {_uniqueStorage()._outputArg = newValue}
   }
 
-  var attr: [Tensorflow_OpDef.AttrDef] {
+  public var attr: [Tensorflow_OpDef.AttrDef] {
     get {return _storage._attr}
     set {_uniqueStorage()._attr = newValue}
   }
 
   /// Optional deprecation based on GraphDef versions.
-  var deprecation: Tensorflow_OpDeprecation {
+  public var deprecation: Tensorflow_OpDeprecation {
     get {return _storage._deprecation ?? Tensorflow_OpDeprecation()}
     set {_uniqueStorage()._deprecation = newValue}
   }
-  var hasDeprecation: Bool {
+  public var hasDeprecation: Bool {
     return _storage._deprecation != nil
   }
-  mutating func clearDeprecation() {
+  public mutating func clearDeprecation() {
     _storage._deprecation = nil
   }
 
   /// One-line human-readable description of what the Op does.
-  var summary: String {
+  public var summary: String {
     get {return _storage._summary}
     set {_uniqueStorage()._summary = newValue}
   }
 
   /// Additional, longer human-readable description of what the Op does.
-  var description_p: String {
+  public var description_p: String {
     get {return _storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
   /// True if the operation is commutative ("op(a,b) == op(b,a)" for all inputs)
-  var isCommutative: Bool {
+  public var isCommutative: Bool {
     get {return _storage._isCommutative}
     set {_uniqueStorage()._isCommutative = newValue}
   }
@@ -86,7 +86,7 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
   /// that aggregate locally within each device (and possibly within
   /// groups of nearby devices) before communicating.
   /// TODO(josh11b): Implement that optimization.
-  var isAggregate: Bool {
+  public var isAggregate: Bool {
     get {return _storage._isAggregate}
     set {_uniqueStorage()._isAggregate = newValue}
   }
@@ -96,7 +96,7 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
   /// be moved (e.g. via some sort of save / restore).
   /// Stateful ops are guaranteed to never be optimized away by Common
   /// Subexpression Elimination (CSE).
-  var isStateful: Bool {
+  public var isStateful: Bool {
     get {return _storage._isStateful}
     set {_uniqueStorage()._isStateful = newValue}
   }
@@ -105,22 +105,22 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
   /// that may initialize tensors for the first time should set this
   /// field to true, to allow the Op to take an uninitialized Tensor as
   /// input.
-  var allowsUninitializedInput: Bool {
+  public var allowsUninitializedInput: Bool {
     get {return _storage._allowsUninitializedInput}
     set {_uniqueStorage()._allowsUninitializedInput = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// For describing inputs and outputs.
-  struct ArgDef: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpDef.protoMessageName + ".ArgDef"
+  public struct ArgDef: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpDef.protoMessageName + ".ArgDef"
 
     /// Name for the input/output.  Should match the regexp "[a-z][a-z0-9_]*".
-    var name: String = String()
+    public var name: String = String()
 
     /// Human readable description.
-    var description_p: String = String()
+    public var description_p: String = String()
 
     /// Describes the type of one or more tensors that are accepted/produced
     /// by this input/output arg.  The only legal combinations are:
@@ -132,28 +132,28 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
     ///   single tensors.
     /// * For a sequence of tensors, the "type_list_attr" field will be set
     ///   to the name of an attr with type "list(type)".
-    var type: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
+    public var type: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
 
     /// if specified, attr must have type "type"
-    var typeAttr: String = String()
+    public var typeAttr: String = String()
 
     /// if specified, attr must have type "int"
-    var numberAttr: String = String()
+    public var numberAttr: String = String()
 
     /// If specified, attr must have type "list(type)", and none of
     /// type, type_attr, and number_attr may be specified.
-    var typeListAttr: String = String()
+    public var typeListAttr: String = String()
 
     /// For inputs: if true, the inputs are required to be refs.
     ///   By default, inputs can be either refs or non-refs.
     /// For outputs: if true, outputs are refs, otherwise they are not.
-    var isRef: Bool = false
+    public var isRef: Bool = false
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -168,7 +168,7 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -197,51 +197,51 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
   /// Description of the graph-construction-time configuration of this
   /// Op.  That is to say, this describes the attr fields that will
   /// be specified in the NodeDef.
-  struct AttrDef: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpDef.protoMessageName + ".AttrDef"
+  public struct AttrDef: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpDef.protoMessageName + ".AttrDef"
 
     /// A descriptive name for the argument.  May be used, e.g. by the
     /// Python client, as a keyword argument name, and so should match
     /// the regexp "[a-z][a-z0-9_]+".
-    var name: String {
+    public var name: String {
       get {return _storage._name}
       set {_uniqueStorage()._name = newValue}
     }
 
     /// One of the type names from attr_value.proto ("string", "list(string)",
     /// "int", etc.).
-    var type: String {
+    public var type: String {
       get {return _storage._type}
       set {_uniqueStorage()._type = newValue}
     }
 
     /// A reasonable default for this attribute if the user does not supply
     /// a value.  If not specified, the user must supply a value.
-    var defaultValue: Tensorflow_AttrValue {
+    public var defaultValue: Tensorflow_AttrValue {
       get {return _storage._defaultValue ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._defaultValue = newValue}
     }
-    var hasDefaultValue: Bool {
+    public var hasDefaultValue: Bool {
       return _storage._defaultValue != nil
     }
-    mutating func clearDefaultValue() {
+    public mutating func clearDefaultValue() {
       _storage._defaultValue = nil
     }
 
     /// Human-readable description.
-    var description_p: String {
+    public var description_p: String {
       get {return _storage._description_p}
       set {_uniqueStorage()._description_p = newValue}
     }
 
     /// For type == "int", this is a minimum value.  For "list(___)"
     /// types, this is the minimum length.
-    var hasMinimum_p: Bool {
+    public var hasMinimum_p: Bool {
       get {return _storage._hasMinimum_p}
       set {_uniqueStorage()._hasMinimum_p = newValue}
     }
 
-    var minimum: Int64 {
+    public var minimum: Int64 {
       get {return _storage._minimum}
       set {_uniqueStorage()._minimum = newValue}
     }
@@ -252,22 +252,22 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
     /// of "allowed_values.list" has the set of allowed DataTypes.
     /// If type == "string" or "list(string)", then the "s" field of
     /// "allowed_values.list" has the set of allowed strings.
-    var allowedValues: Tensorflow_AttrValue {
+    public var allowedValues: Tensorflow_AttrValue {
       get {return _storage._allowedValues ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._allowedValues = newValue}
     }
-    var hasAllowedValues: Bool {
+    public var hasAllowedValues: Bool {
       return _storage._allowedValues != nil
     }
-    mutating func clearAllowedValues() {
+    public mutating func clearAllowedValues() {
       _storage._allowedValues = nil
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -285,7 +285,7 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if !_storage._name.isEmpty {
           try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -315,9 +315,9 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
     fileprivate var _storage = _StorageClass()
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -339,7 +339,7 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -382,20 +382,20 @@ struct Tensorflow_OpDef: SwiftProtobuf.Message {
 }
 
 /// Information about version-dependent deprecation of an op
-struct Tensorflow_OpDeprecation: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpDeprecation"
+public struct Tensorflow_OpDeprecation: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpDeprecation"
 
   /// First GraphDef version at which the op is disallowed.
-  var version: Int32 = 0
+  public var version: Int32 = 0
 
   /// Explanation of why it was deprecated and what to use instead.
-  var explanation: String = String()
+  public var explanation: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.version)
@@ -405,7 +405,7 @@ struct Tensorflow_OpDeprecation: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.version != 0 {
       try visitor.visitSingularInt32Field(value: self.version, fieldNumber: 1)
     }
@@ -417,16 +417,16 @@ struct Tensorflow_OpDeprecation: SwiftProtobuf.Message {
 }
 
 /// A collection of OpDefs
-struct Tensorflow_OpList: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpList"
+public struct Tensorflow_OpList: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpList"
 
-  var op: [Tensorflow_OpDef] = []
+  public var op: [Tensorflow_OpDef] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.op)
@@ -435,7 +435,7 @@ struct Tensorflow_OpList: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.op.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.op, fieldNumber: 1)
     }
@@ -448,7 +448,7 @@ struct Tensorflow_OpList: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_OpDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "input_arg"),
     3: .standard(proto: "output_arg"),
@@ -499,7 +499,7 @@ extension Tensorflow_OpDef: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}
@@ -523,7 +523,7 @@ extension Tensorflow_OpDef: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Tensorflow_OpDef.ArgDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "description"),
     3: .same(proto: "type"),
@@ -533,7 +533,7 @@ extension Tensorflow_OpDef.ArgDef: SwiftProtobuf._MessageImplementationBase, Swi
     16: .standard(proto: "is_ref"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef.ArgDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef.ArgDef) -> Bool {
     if self.name != other.name {return false}
     if self.description_p != other.description_p {return false}
     if self.type != other.type {return false}
@@ -547,7 +547,7 @@ extension Tensorflow_OpDef.ArgDef: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Tensorflow_OpDef.AttrDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "type"),
     3: .standard(proto: "default_value"),
@@ -586,7 +586,7 @@ extension Tensorflow_OpDef.AttrDef: SwiftProtobuf._MessageImplementationBase, Sw
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef.AttrDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpDef.AttrDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}
@@ -606,12 +606,12 @@ extension Tensorflow_OpDef.AttrDef: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Tensorflow_OpDeprecation: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
     2: .same(proto: "explanation"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpDeprecation) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpDeprecation) -> Bool {
     if self.version != other.version {return false}
     if self.explanation != other.explanation {return false}
     if unknownFields != other.unknownFields {return false}
@@ -620,11 +620,11 @@ extension Tensorflow_OpDeprecation: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Tensorflow_OpList: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "op"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpList) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpList) -> Bool {
     if self.op != other.op {return false}
     if unknownFields != other.unknownFields {return false}
     return true

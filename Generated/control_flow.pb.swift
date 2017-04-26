@@ -20,20 +20,20 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Protocol buffer representing the values in ControlFlowContext.
-struct Tensorflow_ValuesDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ValuesDef"
+public struct Tensorflow_ValuesDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ValuesDef"
 
   /// Value names that have been seen in this context.
-  var values: [String] = []
+  public var values: [String] = []
 
   /// Value names referenced by but external to this context.
-  var externalValues: Dictionary<String,String> = [:]
+  public var externalValues: Dictionary<String,String> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.values)
@@ -43,7 +43,7 @@ struct Tensorflow_ValuesDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.values.isEmpty {
       try visitor.visitRepeatedStringField(value: self.values, fieldNumber: 1)
     }
@@ -55,50 +55,50 @@ struct Tensorflow_ValuesDef: SwiftProtobuf.Message {
 }
 
 /// Protocol buffer representing a CondContext object.
-struct Tensorflow_CondContextDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CondContextDef"
+public struct Tensorflow_CondContextDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CondContextDef"
 
   /// Name of the context.
-  var contextName: String {
+  public var contextName: String {
     get {return _storage._contextName}
     set {_uniqueStorage()._contextName = newValue}
   }
 
   /// Name of the pred tensor.
-  var predName: String {
+  public var predName: String {
     get {return _storage._predName}
     set {_uniqueStorage()._predName = newValue}
   }
 
   /// Name of the pivot tensor.
-  var pivotName: String {
+  public var pivotName: String {
     get {return _storage._pivotName}
     set {_uniqueStorage()._pivotName = newValue}
   }
 
   /// Branch prediction. 0 or 1.
-  var branch: Int32 {
+  public var branch: Int32 {
     get {return _storage._branch}
     set {_uniqueStorage()._branch = newValue}
   }
 
   /// Values and external values in control flow context.
-  var valuesDef: Tensorflow_ValuesDef {
+  public var valuesDef: Tensorflow_ValuesDef {
     get {return _storage._valuesDef ?? Tensorflow_ValuesDef()}
     set {_uniqueStorage()._valuesDef = newValue}
   }
-  var hasValuesDef: Bool {
+  public var hasValuesDef: Bool {
     return _storage._valuesDef != nil
   }
-  mutating func clearValuesDef() {
+  public mutating func clearValuesDef() {
     _storage._valuesDef = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -114,7 +114,7 @@ struct Tensorflow_CondContextDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._contextName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._contextName, fieldNumber: 1)
@@ -139,74 +139,74 @@ struct Tensorflow_CondContextDef: SwiftProtobuf.Message {
 }
 
 /// Protocol buffer representing a WhileContext object.
-struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".WhileContextDef"
+public struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".WhileContextDef"
 
   /// Name of the context.
-  var contextName: String {
+  public var contextName: String {
     get {return _storage._contextName}
     set {_uniqueStorage()._contextName = newValue}
   }
 
   /// The number of iterations allowed to run in parallel.
-  var parallelIterations: Int32 {
+  public var parallelIterations: Int32 {
     get {return _storage._parallelIterations}
     set {_uniqueStorage()._parallelIterations = newValue}
   }
 
   /// Whether backprop is enabled for this while loop.
-  var backProp: Bool {
+  public var backProp: Bool {
     get {return _storage._backProp}
     set {_uniqueStorage()._backProp = newValue}
   }
 
   /// Whether GPU-CPU memory swap is enabled for this loop.
-  var swapMemory: Bool {
+  public var swapMemory: Bool {
     get {return _storage._swapMemory}
     set {_uniqueStorage()._swapMemory = newValue}
   }
 
   /// Name of the pivot tensor.
-  var pivotName: String {
+  public var pivotName: String {
     get {return _storage._pivotName}
     set {_uniqueStorage()._pivotName = newValue}
   }
 
   /// Name of the pivot_for_pred tensor.
-  var pivotForPredName: String {
+  public var pivotForPredName: String {
     get {return _storage._pivotForPredName}
     set {_uniqueStorage()._pivotForPredName = newValue}
   }
 
   /// Name of the pivot_for_body tensor.
-  var pivotForBodyName: String {
+  public var pivotForBodyName: String {
     get {return _storage._pivotForBodyName}
     set {_uniqueStorage()._pivotForBodyName = newValue}
   }
 
   /// List of names for exit tensors.
-  var loopExitNames: [String] {
+  public var loopExitNames: [String] {
     get {return _storage._loopExitNames}
     set {_uniqueStorage()._loopExitNames = newValue}
   }
 
   /// Values and external values in control flow context.
-  var valuesDef: Tensorflow_ValuesDef {
+  public var valuesDef: Tensorflow_ValuesDef {
     get {return _storage._valuesDef ?? Tensorflow_ValuesDef()}
     set {_uniqueStorage()._valuesDef = newValue}
   }
-  var hasValuesDef: Bool {
+  public var hasValuesDef: Bool {
     return _storage._valuesDef != nil
   }
-  mutating func clearValuesDef() {
+  public mutating func clearValuesDef() {
     _storage._valuesDef = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -226,7 +226,7 @@ struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._contextName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._contextName, fieldNumber: 1)
@@ -267,12 +267,12 @@ struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_ValuesDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "values"),
     2: .standard(proto: "external_values"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ValuesDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ValuesDef) -> Bool {
     if self.values != other.values {return false}
     if self.externalValues != other.externalValues {return false}
     if unknownFields != other.unknownFields {return false}
@@ -281,7 +281,7 @@ extension Tensorflow_ValuesDef: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Tensorflow_CondContextDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "context_name"),
     2: .standard(proto: "pred_name"),
     3: .standard(proto: "pivot_name"),
@@ -314,7 +314,7 @@ extension Tensorflow_CondContextDef: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CondContextDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CondContextDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._contextName != other_storage._contextName {return false}
@@ -332,7 +332,7 @@ extension Tensorflow_CondContextDef: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "context_name"),
     2: .standard(proto: "parallel_iterations"),
     3: .standard(proto: "back_prop"),
@@ -377,7 +377,7 @@ extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_WhileContextDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_WhileContextDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._contextName != other_storage._contextName {return false}

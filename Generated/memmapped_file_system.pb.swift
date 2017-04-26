@@ -35,18 +35,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// A message that describes one region of memmapped file.
-struct Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MemmappedFileSystemDirectoryElement"
+public struct Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MemmappedFileSystemDirectoryElement"
 
-  var offset: UInt64 = 0
+  public var offset: UInt64 = 0
 
-  var name: String = String()
+  public var name: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.offset)
@@ -56,7 +56,7 @@ struct Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.offset != 0 {
       try visitor.visitSingularUInt64Field(value: self.offset, fieldNumber: 1)
     }
@@ -68,16 +68,16 @@ struct Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf.Message {
 }
 
 /// A directory of regions in a memmapped file.
-struct Tensorflow_MemmappedFileSystemDirectory: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MemmappedFileSystemDirectory"
+public struct Tensorflow_MemmappedFileSystemDirectory: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MemmappedFileSystemDirectory"
 
-  var element: [Tensorflow_MemmappedFileSystemDirectoryElement] = []
+  public var element: [Tensorflow_MemmappedFileSystemDirectoryElement] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.element)
@@ -86,7 +86,7 @@ struct Tensorflow_MemmappedFileSystemDirectory: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.element.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.element, fieldNumber: 1)
     }
@@ -99,12 +99,12 @@ struct Tensorflow_MemmappedFileSystemDirectory: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "offset"),
     2: .same(proto: "name"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_MemmappedFileSystemDirectoryElement) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_MemmappedFileSystemDirectoryElement) -> Bool {
     if self.offset != other.offset {return false}
     if self.name != other.name {return false}
     if unknownFields != other.unknownFields {return false}
@@ -113,11 +113,11 @@ extension Tensorflow_MemmappedFileSystemDirectoryElement: SwiftProtobuf._Message
 }
 
 extension Tensorflow_MemmappedFileSystemDirectory: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "element"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_MemmappedFileSystemDirectory) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_MemmappedFileSystemDirectory) -> Bool {
     if self.element != other.element {return false}
     if unknownFields != other.unknownFields {return false}
     return true

@@ -20,11 +20,11 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// A pair of tensor name and tensor values.
-struct Tensorflow_NamedTensorProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".NamedTensorProto"
+public struct Tensorflow_NamedTensorProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".NamedTensorProto"
 
   /// Name of the tensor.
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
@@ -35,22 +35,22 @@ struct Tensorflow_NamedTensorProto: SwiftProtobuf.Message {
   /// The client specifies whether the returned tensor values should be
   /// filled tensor fields (float_val, int_val, etc.) or encoded in a
   /// compact form in tensor.tensor_content.
-  var tensor: Tensorflow_TensorProto {
+  public var tensor: Tensorflow_TensorProto {
     get {return _storage._tensor ?? Tensorflow_TensorProto()}
     set {_uniqueStorage()._tensor = newValue}
   }
-  var hasTensor: Bool {
+  public var hasTensor: Bool {
     return _storage._tensor != nil
   }
-  mutating func clearTensor() {
+  public mutating func clearTensor() {
     _storage._tensor = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -63,7 +63,7 @@ struct Tensorflow_NamedTensorProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -83,7 +83,7 @@ struct Tensorflow_NamedTensorProto: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_NamedTensorProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "tensor"),
   ]
@@ -107,7 +107,7 @@ extension Tensorflow_NamedTensorProto: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_NamedTensorProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_NamedTensorProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}

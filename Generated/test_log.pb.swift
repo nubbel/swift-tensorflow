@@ -21,12 +21,12 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_EntryValue: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".EntryValue"
+public struct Tensorflow_EntryValue: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".EntryValue"
 
-  var kind: Tensorflow_EntryValue.OneOf_Kind? = nil
+  public var kind: Tensorflow_EntryValue.OneOf_Kind? = nil
 
-  var doubleValue: Double {
+  public var doubleValue: Double {
     get {
       if case .doubleValue(let v)? = kind {return v}
       return 0
@@ -34,7 +34,7 @@ struct Tensorflow_EntryValue: SwiftProtobuf.Message {
     set {kind = .doubleValue(newValue)}
   }
 
-  var stringValue: String {
+  public var stringValue: String {
     get {
       if case .stringValue(let v)? = kind {return v}
       return String()
@@ -42,13 +42,13 @@ struct Tensorflow_EntryValue: SwiftProtobuf.Message {
     set {kind = .stringValue(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Kind: Equatable {
+  public enum OneOf_Kind: Equatable {
     case doubleValue(Double)
     case stringValue(String)
 
-    static func ==(lhs: Tensorflow_EntryValue.OneOf_Kind, rhs: Tensorflow_EntryValue.OneOf_Kind) -> Bool {
+    public static func ==(lhs: Tensorflow_EntryValue.OneOf_Kind, rhs: Tensorflow_EntryValue.OneOf_Kind) -> Bool {
       switch (lhs, rhs) {
       case (.doubleValue(let l), .doubleValue(let r)): return l == r
       case (.stringValue(let l), .stringValue(let r)): return l == r
@@ -57,9 +57,9 @@ struct Tensorflow_EntryValue: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1, 2:
@@ -72,7 +72,7 @@ struct Tensorflow_EntryValue: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try self.kind?.traverse(visitor: &visitor)
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -85,33 +85,33 @@ struct Tensorflow_EntryValue: SwiftProtobuf.Message {
 ///
 /// This BenchmarkEntry should be emitted by each unit test or benchmark
 /// reporter.
-struct Tensorflow_BenchmarkEntry: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BenchmarkEntry"
+public struct Tensorflow_BenchmarkEntry: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BenchmarkEntry"
 
   /// The name of the specific benchmark or test
   /// (e.g. BM_AdjustContrast_gpu_B_W_H)
-  var name: String = String()
+  public var name: String = String()
 
   /// If a benchmark, how many iterations it was run for
-  var iters: Int64 = 0
+  public var iters: Int64 = 0
 
   /// Total cpu time used for all iterations (in seconds)
-  var cpuTime: Double = 0
+  public var cpuTime: Double = 0
 
   /// Total wall time used for all iterations (in seconds)
-  var wallTime: Double = 0
+  public var wallTime: Double = 0
 
   /// Throughput (in MB/s)
-  var throughput: Double = 0
+  public var throughput: Double = 0
 
   /// Generic map from result key to value.
-  var extras: Dictionary<String,Tensorflow_EntryValue> = [:]
+  public var extras: Dictionary<String,Tensorflow_EntryValue> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -125,7 +125,7 @@ struct Tensorflow_BenchmarkEntry: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -148,16 +148,16 @@ struct Tensorflow_BenchmarkEntry: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_BenchmarkEntries: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BenchmarkEntries"
+public struct Tensorflow_BenchmarkEntries: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BenchmarkEntries"
 
-  var entry: [Tensorflow_BenchmarkEntry] = []
+  public var entry: [Tensorflow_BenchmarkEntry] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.entry)
@@ -166,7 +166,7 @@ struct Tensorflow_BenchmarkEntries: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.entry.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.entry, fieldNumber: 1)
     }
@@ -174,23 +174,23 @@ struct Tensorflow_BenchmarkEntries: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_BuildConfiguration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BuildConfiguration"
+public struct Tensorflow_BuildConfiguration: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BuildConfiguration"
 
   /// opt, dbg, etc
-  var mode: String = String()
+  public var mode: String = String()
 
   /// CC compiler flags, if known
-  var ccFlags: [String] = []
+  public var ccFlags: [String] = []
 
   /// Bazel compilation options, if known
-  var opts: [String] = []
+  public var opts: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.mode)
@@ -201,7 +201,7 @@ struct Tensorflow_BuildConfiguration: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.mode.isEmpty {
       try visitor.visitSingularStringField(value: self.mode, fieldNumber: 1)
     }
@@ -215,12 +215,12 @@ struct Tensorflow_BuildConfiguration: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_CommitId: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CommitId"
+public struct Tensorflow_CommitId: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CommitId"
 
-  var kind: Tensorflow_CommitId.OneOf_Kind? = nil
+  public var kind: Tensorflow_CommitId.OneOf_Kind? = nil
 
-  var changelist: Int64 {
+  public var changelist: Int64 {
     get {
       if case .changelist(let v)? = kind {return v}
       return 0
@@ -228,7 +228,7 @@ struct Tensorflow_CommitId: SwiftProtobuf.Message {
     set {kind = .changelist(newValue)}
   }
 
-  var hash_p: String {
+  public var hash_p: String {
     get {
       if case .hash_p(let v)? = kind {return v}
       return String()
@@ -238,15 +238,15 @@ struct Tensorflow_CommitId: SwiftProtobuf.Message {
 
   /// Hash of intermediate change between hash/changelist and what was tested.
   /// Not used if the build is from a commit without modifications.
-  var snapshot: String = String()
+  public var snapshot: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Kind: Equatable {
+  public enum OneOf_Kind: Equatable {
     case changelist(Int64)
     case hash_p(String)
 
-    static func ==(lhs: Tensorflow_CommitId.OneOf_Kind, rhs: Tensorflow_CommitId.OneOf_Kind) -> Bool {
+    public static func ==(lhs: Tensorflow_CommitId.OneOf_Kind, rhs: Tensorflow_CommitId.OneOf_Kind) -> Bool {
       switch (lhs, rhs) {
       case (.changelist(let l), .changelist(let r)): return l == r
       case (.hash_p(let l), .hash_p(let r)): return l == r
@@ -255,9 +255,9 @@ struct Tensorflow_CommitId: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1, 2:
@@ -271,7 +271,7 @@ struct Tensorflow_CommitId: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try self.kind?.traverse(visitor: &visitor)
     if !self.snapshot.isEmpty {
       try visitor.visitSingularStringField(value: self.snapshot, fieldNumber: 3)
@@ -280,32 +280,32 @@ struct Tensorflow_CommitId: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_CPUInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CPUInfo"
+public struct Tensorflow_CPUInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CPUInfo"
 
-  var numCores: Int64 = 0
+  public var numCores: Int64 = 0
 
-  var numCoresAllowed: Int64 = 0
+  public var numCoresAllowed: Int64 = 0
 
   /// How fast are these cpus?
-  var mhzPerCpu: Double = 0
+  public var mhzPerCpu: Double = 0
 
   /// Additional cpu information. For example,
   /// Intel Ivybridge with HyperThreading (24 cores) dL1:32KB dL2:256KB dL3:30MB
-  var cpuInfo: String = String()
+  public var cpuInfo: String = String()
 
   /// What kind of cpu scaling is enabled on the host.
   /// Examples include "performance", "ondemand", "conservative", "mixed".
-  var cpuGovernor: String = String()
+  public var cpuGovernor: String = String()
 
   /// Cache sizes (in bytes), e.g. "L2": 262144 (for 256KB)
-  var cacheSize: Dictionary<String,Int64> = [:]
+  public var cacheSize: Dictionary<String,Int64> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.numCores)
@@ -319,7 +319,7 @@ struct Tensorflow_CPUInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.numCores != 0 {
       try visitor.visitSingularInt64Field(value: self.numCores, fieldNumber: 1)
     }
@@ -342,20 +342,20 @@ struct Tensorflow_CPUInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_MemoryInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MemoryInfo"
+public struct Tensorflow_MemoryInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MemoryInfo"
 
   /// Total virtual memory in bytes
-  var total: Int64 = 0
+  public var total: Int64 = 0
 
   /// Immediately available memory in bytes
-  var available: Int64 = 0
+  public var available: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.total)
@@ -365,7 +365,7 @@ struct Tensorflow_MemoryInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.total != 0 {
       try visitor.visitSingularInt64Field(value: self.total, fieldNumber: 1)
     }
@@ -376,23 +376,23 @@ struct Tensorflow_MemoryInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_GPUInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GPUInfo"
+public struct Tensorflow_GPUInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GPUInfo"
 
   /// e.g. "Tesla K40c"
-  var model: String = String()
+  public var model: String = String()
 
   /// Final entry in output of "nvidia-smi -L"
-  var uuid: String = String()
+  public var uuid: String = String()
 
   /// e.g. "0000:04:00.0"
-  var busId: String = String()
+  public var busId: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.model)
@@ -403,7 +403,7 @@ struct Tensorflow_GPUInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.model.isEmpty {
       try visitor.visitSingularStringField(value: self.model, fieldNumber: 1)
     }
@@ -417,32 +417,32 @@ struct Tensorflow_GPUInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_PlatformInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PlatformInfo"
+public struct Tensorflow_PlatformInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".PlatformInfo"
 
   /// e.g. '64bit'
-  var bits: String = String()
+  public var bits: String = String()
 
   /// e.g. 'ELF'
-  var linkage: String = String()
+  public var linkage: String = String()
 
   /// e.g. 'i386'
-  var machine: String = String()
+  public var machine: String = String()
 
   /// e.g. '3.13.0-76-generic'
-  var release: String = String()
+  public var release: String = String()
 
   /// e.g. 'Linux'
-  var system: String = String()
+  public var system: String = String()
 
   /// e.g. '#120-Ubuntu SMP Mon Jan 18 15:59:10 UTC 2016'
-  var version: String = String()
+  public var version: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.bits)
@@ -456,7 +456,7 @@ struct Tensorflow_PlatformInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.bits.isEmpty {
       try visitor.visitSingularStringField(value: self.bits, fieldNumber: 1)
     }
@@ -480,26 +480,26 @@ struct Tensorflow_PlatformInfo: SwiftProtobuf.Message {
 }
 
 /// Matches DeviceAttributes
-struct Tensorflow_AvailableDeviceInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".AvailableDeviceInfo"
+public struct Tensorflow_AvailableDeviceInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".AvailableDeviceInfo"
 
   /// Device name.
-  var name: String = String()
+  public var name: String = String()
 
   /// Device type, e.g. 'CPU' or 'GPU'.
-  var type: String = String()
+  public var type: String = String()
 
   /// Memory capacity in bytes.
-  var memoryLimit: Int64 = 0
+  public var memoryLimit: Int64 = 0
 
   /// The physical description of this device.
-  var physicalDescription: String = String()
+  public var physicalDescription: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -511,7 +511,7 @@ struct Tensorflow_AvailableDeviceInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -528,73 +528,73 @@ struct Tensorflow_AvailableDeviceInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MachineConfiguration"
+public struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MachineConfiguration"
 
   /// Host name of machine that ran the benchmark.
-  var hostname: String {
+  public var hostname: String {
     get {return _storage._hostname}
     set {_uniqueStorage()._hostname = newValue}
   }
 
   /// Unique serial number of the machine.
-  var serialIdentifier: String {
+  public var serialIdentifier: String {
     get {return _storage._serialIdentifier}
     set {_uniqueStorage()._serialIdentifier = newValue}
   }
 
   /// Additional platform information.
-  var platformInfo: Tensorflow_PlatformInfo {
+  public var platformInfo: Tensorflow_PlatformInfo {
     get {return _storage._platformInfo ?? Tensorflow_PlatformInfo()}
     set {_uniqueStorage()._platformInfo = newValue}
   }
-  var hasPlatformInfo: Bool {
+  public var hasPlatformInfo: Bool {
     return _storage._platformInfo != nil
   }
-  mutating func clearPlatformInfo() {
+  public mutating func clearPlatformInfo() {
     _storage._platformInfo = nil
   }
 
   /// CPU Information.
-  var cpuInfo: Tensorflow_CPUInfo {
+  public var cpuInfo: Tensorflow_CPUInfo {
     get {return _storage._cpuInfo ?? Tensorflow_CPUInfo()}
     set {_uniqueStorage()._cpuInfo = newValue}
   }
-  var hasCpuInfo: Bool {
+  public var hasCpuInfo: Bool {
     return _storage._cpuInfo != nil
   }
-  mutating func clearCpuInfo() {
+  public mutating func clearCpuInfo() {
     _storage._cpuInfo = nil
   }
 
   /// Other devices that are attached and relevant (e.g. GPUInfo).
-  var deviceInfo: [Google_Protobuf_Any] {
+  public var deviceInfo: [Google_Protobuf_Any] {
     get {return _storage._deviceInfo}
     set {_uniqueStorage()._deviceInfo = newValue}
   }
 
   /// Devices accessible to the test (e.g. as given by list_local_devices).
-  var availableDeviceInfo: [Tensorflow_AvailableDeviceInfo] {
+  public var availableDeviceInfo: [Tensorflow_AvailableDeviceInfo] {
     get {return _storage._availableDeviceInfo}
     set {_uniqueStorage()._availableDeviceInfo = newValue}
   }
 
-  var memoryInfo: Tensorflow_MemoryInfo {
+  public var memoryInfo: Tensorflow_MemoryInfo {
     get {return _storage._memoryInfo ?? Tensorflow_MemoryInfo()}
     set {_uniqueStorage()._memoryInfo = newValue}
   }
-  var hasMemoryInfo: Bool {
+  public var hasMemoryInfo: Bool {
     return _storage._memoryInfo != nil
   }
-  mutating func clearMemoryInfo() {
+  public mutating func clearMemoryInfo() {
     _storage._memoryInfo = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -612,7 +612,7 @@ struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._hostname.isEmpty {
         try visitor.visitSingularStringField(value: _storage._hostname, fieldNumber: 1)
@@ -643,16 +643,16 @@ struct Tensorflow_MachineConfiguration: SwiftProtobuf.Message {
 }
 
 /// Run-specific items such as arguments to the test / benchmark.
-struct Tensorflow_RunConfiguration: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RunConfiguration"
+public struct Tensorflow_RunConfiguration: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RunConfiguration"
 
-  var argument: [String] = []
+  public var argument: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.argument)
@@ -661,7 +661,7 @@ struct Tensorflow_RunConfiguration: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.argument.isEmpty {
       try visitor.visitRepeatedStringField(value: self.argument, fieldNumber: 1)
     }
@@ -676,110 +676,110 @@ struct Tensorflow_RunConfiguration: SwiftProtobuf.Message {
 /// test / BM in a subprocess and then reads the emitted BenchmarkEntry messages;
 /// usually from a serialized json file, finally collecting them along
 /// with additional information about the test run.
-struct Tensorflow_TestResults: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TestResults"
+public struct Tensorflow_TestResults: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TestResults"
 
   /// The target of the run, e.g.:
   ///  //tensorflow/core:kernels_adjust_contrast_op_benchmark_test
-  var target: String {
+  public var target: String {
     get {return _storage._target}
     set {_uniqueStorage()._target = newValue}
   }
 
   /// The list of tests or benchmarks in this run.
-  var entries: Tensorflow_BenchmarkEntries {
+  public var entries: Tensorflow_BenchmarkEntries {
     get {return _storage._entries ?? Tensorflow_BenchmarkEntries()}
     set {_uniqueStorage()._entries = newValue}
   }
-  var hasEntries: Bool {
+  public var hasEntries: Bool {
     return _storage._entries != nil
   }
-  mutating func clearEntries() {
+  public mutating func clearEntries() {
     _storage._entries = nil
   }
 
   /// The configuration of the build (compiled opt? with cuda? any copts?)
-  var buildConfiguration: Tensorflow_BuildConfiguration {
+  public var buildConfiguration: Tensorflow_BuildConfiguration {
     get {return _storage._buildConfiguration ?? Tensorflow_BuildConfiguration()}
     set {_uniqueStorage()._buildConfiguration = newValue}
   }
-  var hasBuildConfiguration: Bool {
+  public var hasBuildConfiguration: Bool {
     return _storage._buildConfiguration != nil
   }
-  mutating func clearBuildConfiguration() {
+  public mutating func clearBuildConfiguration() {
     _storage._buildConfiguration = nil
   }
 
   /// The commit id (git hash or changelist)
-  var commitId: Tensorflow_CommitId {
+  public var commitId: Tensorflow_CommitId {
     get {return _storage._commitId ?? Tensorflow_CommitId()}
     set {_uniqueStorage()._commitId = newValue}
   }
-  var hasCommitId: Bool {
+  public var hasCommitId: Bool {
     return _storage._commitId != nil
   }
-  mutating func clearCommitId() {
+  public mutating func clearCommitId() {
     _storage._commitId = nil
   }
 
   /// The time the run started (in seconds of UTC time since Unix epoch)
-  var startTime: Int64 {
+  public var startTime: Int64 {
     get {return _storage._startTime}
     set {_uniqueStorage()._startTime = newValue}
   }
 
   /// The amount of time the total run took (wall time in seconds)
-  var runTime: Double {
+  public var runTime: Double {
     get {return _storage._runTime}
     set {_uniqueStorage()._runTime = newValue}
   }
 
   /// Machine-specific parameters (Platform and CPU info)
-  var machineConfiguration: Tensorflow_MachineConfiguration {
+  public var machineConfiguration: Tensorflow_MachineConfiguration {
     get {return _storage._machineConfiguration ?? Tensorflow_MachineConfiguration()}
     set {_uniqueStorage()._machineConfiguration = newValue}
   }
-  var hasMachineConfiguration: Bool {
+  public var hasMachineConfiguration: Bool {
     return _storage._machineConfiguration != nil
   }
-  mutating func clearMachineConfiguration() {
+  public mutating func clearMachineConfiguration() {
     _storage._machineConfiguration = nil
   }
 
   /// Run-specific parameters (arguments, etc)
-  var runConfiguration: Tensorflow_RunConfiguration {
+  public var runConfiguration: Tensorflow_RunConfiguration {
     get {return _storage._runConfiguration ?? Tensorflow_RunConfiguration()}
     set {_uniqueStorage()._runConfiguration = newValue}
   }
-  var hasRunConfiguration: Bool {
+  public var hasRunConfiguration: Bool {
     return _storage._runConfiguration != nil
   }
-  mutating func clearRunConfiguration() {
+  public mutating func clearRunConfiguration() {
     _storage._runConfiguration = nil
   }
 
   /// Benchmark target identifier.
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var benchmarkType: Tensorflow_TestResults.BenchmarkType {
+  public var benchmarkType: Tensorflow_TestResults.BenchmarkType {
     get {return _storage._benchmarkType}
     set {_uniqueStorage()._benchmarkType = newValue}
   }
 
   /// Used for differentiating between continuous and debug builds.
-  var runMode: String {
+  public var runMode: String {
     get {return _storage._runMode}
     set {_uniqueStorage()._runMode = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// The type of benchmark.
-  enum BenchmarkType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum BenchmarkType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
 
     /// Fallback for protos written before Type was introduced.
     case unknown // = 0
@@ -788,11 +788,11 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
     case androidBenchmark // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unknown
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unknown
       case 1: self = .cppMicrobenchmark
@@ -802,7 +802,7 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unknown: return 0
       case .cppMicrobenchmark: return 1
@@ -814,9 +814,9 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -838,7 +838,7 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._target.isEmpty {
         try visitor.visitSingularStringField(value: _storage._target, fieldNumber: 1)
@@ -885,12 +885,12 @@ struct Tensorflow_TestResults: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_EntryValue: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "double_value"),
     2: .standard(proto: "string_value"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_EntryValue) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_EntryValue) -> Bool {
     if self.kind != other.kind {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -927,7 +927,7 @@ extension Tensorflow_EntryValue.OneOf_Kind {
 }
 
 extension Tensorflow_BenchmarkEntry: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "iters"),
     3: .standard(proto: "cpu_time"),
@@ -936,7 +936,7 @@ extension Tensorflow_BenchmarkEntry: SwiftProtobuf._MessageImplementationBase, S
     6: .same(proto: "extras"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BenchmarkEntry) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BenchmarkEntry) -> Bool {
     if self.name != other.name {return false}
     if self.iters != other.iters {return false}
     if self.cpuTime != other.cpuTime {return false}
@@ -949,11 +949,11 @@ extension Tensorflow_BenchmarkEntry: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_BenchmarkEntries: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "entry"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BenchmarkEntries) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BenchmarkEntries) -> Bool {
     if self.entry != other.entry {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -961,13 +961,13 @@ extension Tensorflow_BenchmarkEntries: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_BuildConfiguration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "mode"),
     2: .standard(proto: "cc_flags"),
     3: .same(proto: "opts"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BuildConfiguration) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BuildConfiguration) -> Bool {
     if self.mode != other.mode {return false}
     if self.ccFlags != other.ccFlags {return false}
     if self.opts != other.opts {return false}
@@ -977,13 +977,13 @@ extension Tensorflow_BuildConfiguration: SwiftProtobuf._MessageImplementationBas
 }
 
 extension Tensorflow_CommitId: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "changelist"),
     2: .same(proto: "hash"),
     3: .same(proto: "snapshot"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CommitId) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CommitId) -> Bool {
     if self.kind != other.kind {return false}
     if self.snapshot != other.snapshot {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1021,7 +1021,7 @@ extension Tensorflow_CommitId.OneOf_Kind {
 }
 
 extension Tensorflow_CPUInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "num_cores"),
     2: .standard(proto: "num_cores_allowed"),
     3: .standard(proto: "mhz_per_cpu"),
@@ -1030,7 +1030,7 @@ extension Tensorflow_CPUInfo: SwiftProtobuf._MessageImplementationBase, SwiftPro
     6: .standard(proto: "cache_size"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CPUInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CPUInfo) -> Bool {
     if self.numCores != other.numCores {return false}
     if self.numCoresAllowed != other.numCoresAllowed {return false}
     if self.mhzPerCpu != other.mhzPerCpu {return false}
@@ -1043,12 +1043,12 @@ extension Tensorflow_CPUInfo: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Tensorflow_MemoryInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "total"),
     2: .same(proto: "available"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_MemoryInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_MemoryInfo) -> Bool {
     if self.total != other.total {return false}
     if self.available != other.available {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1057,13 +1057,13 @@ extension Tensorflow_MemoryInfo: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Tensorflow_GPUInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "model"),
     2: .same(proto: "uuid"),
     3: .standard(proto: "bus_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GPUInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GPUInfo) -> Bool {
     if self.model != other.model {return false}
     if self.uuid != other.uuid {return false}
     if self.busId != other.busId {return false}
@@ -1073,7 +1073,7 @@ extension Tensorflow_GPUInfo: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Tensorflow_PlatformInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "bits"),
     2: .same(proto: "linkage"),
     3: .same(proto: "machine"),
@@ -1082,7 +1082,7 @@ extension Tensorflow_PlatformInfo: SwiftProtobuf._MessageImplementationBase, Swi
     6: .same(proto: "version"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_PlatformInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_PlatformInfo) -> Bool {
     if self.bits != other.bits {return false}
     if self.linkage != other.linkage {return false}
     if self.machine != other.machine {return false}
@@ -1095,14 +1095,14 @@ extension Tensorflow_PlatformInfo: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Tensorflow_AvailableDeviceInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "type"),
     3: .standard(proto: "memory_limit"),
     4: .standard(proto: "physical_description"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_AvailableDeviceInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_AvailableDeviceInfo) -> Bool {
     if self.name != other.name {return false}
     if self.type != other.type {return false}
     if self.memoryLimit != other.memoryLimit {return false}
@@ -1113,7 +1113,7 @@ extension Tensorflow_AvailableDeviceInfo: SwiftProtobuf._MessageImplementationBa
 }
 
 extension Tensorflow_MachineConfiguration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "hostname"),
     7: .standard(proto: "serial_identifier"),
     2: .standard(proto: "platform_info"),
@@ -1152,7 +1152,7 @@ extension Tensorflow_MachineConfiguration: SwiftProtobuf._MessageImplementationB
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_MachineConfiguration) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_MachineConfiguration) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._hostname != other_storage._hostname {return false}
@@ -1172,11 +1172,11 @@ extension Tensorflow_MachineConfiguration: SwiftProtobuf._MessageImplementationB
 }
 
 extension Tensorflow_RunConfiguration: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "argument"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RunConfiguration) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RunConfiguration) -> Bool {
     if self.argument != other.argument {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1184,7 +1184,7 @@ extension Tensorflow_RunConfiguration: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_TestResults: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "target"),
     2: .same(proto: "entries"),
     3: .standard(proto: "build_configuration"),
@@ -1235,7 +1235,7 @@ extension Tensorflow_TestResults: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TestResults) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TestResults) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._target != other_storage._target {return false}
@@ -1259,7 +1259,7 @@ extension Tensorflow_TestResults: SwiftProtobuf._MessageImplementationBase, Swif
 }
 
 extension Tensorflow_TestResults.BenchmarkType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN"),
     1: .same(proto: "CPP_MICROBENCHMARK"),
     2: .same(proto: "PYTHON_BENCHMARK"),

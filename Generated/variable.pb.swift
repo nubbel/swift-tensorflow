@@ -20,50 +20,50 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Protocol buffer representing a Variable.
-struct Tensorflow_VariableDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".VariableDef"
+public struct Tensorflow_VariableDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".VariableDef"
 
   /// Name of the variable tensor.
-  var variableName: String {
+  public var variableName: String {
     get {return _storage._variableName}
     set {_uniqueStorage()._variableName = newValue}
   }
 
   /// Name of the initializer op.
-  var initializerName: String {
+  public var initializerName: String {
     get {return _storage._initializerName}
     set {_uniqueStorage()._initializerName = newValue}
   }
 
   /// Name of the snapshot tensor.
-  var snapshotName: String {
+  public var snapshotName: String {
     get {return _storage._snapshotName}
     set {_uniqueStorage()._snapshotName = newValue}
   }
 
   /// Support for saving variables as slices of a larger variable.
-  var saveSliceInfoDef: Tensorflow_SaveSliceInfoDef {
+  public var saveSliceInfoDef: Tensorflow_SaveSliceInfoDef {
     get {return _storage._saveSliceInfoDef ?? Tensorflow_SaveSliceInfoDef()}
     set {_uniqueStorage()._saveSliceInfoDef = newValue}
   }
-  var hasSaveSliceInfoDef: Bool {
+  public var hasSaveSliceInfoDef: Bool {
     return _storage._saveSliceInfoDef != nil
   }
-  mutating func clearSaveSliceInfoDef() {
+  public mutating func clearSaveSliceInfoDef() {
     _storage._saveSliceInfoDef = nil
   }
 
   /// Whether to represent this as a ResourceVariable.
-  var isResource: Bool {
+  public var isResource: Bool {
     get {return _storage._isResource}
     set {_uniqueStorage()._isResource = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -79,7 +79,7 @@ struct Tensorflow_VariableDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._variableName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._variableName, fieldNumber: 1)
@@ -103,26 +103,26 @@ struct Tensorflow_VariableDef: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_SaveSliceInfoDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SaveSliceInfoDef"
+public struct Tensorflow_SaveSliceInfoDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SaveSliceInfoDef"
 
   /// Name of the full variable of which this is a slice.
-  var fullName: String = String()
+  public var fullName: String = String()
 
   /// Shape of the full variable.
-  var fullShape: [Int64] = []
+  public var fullShape: [Int64] = []
 
   /// Offset of this variable into the full variable.
-  var varOffset: [Int64] = []
+  public var varOffset: [Int64] = []
 
   /// Shape of this variable.
-  var varShape: [Int64] = []
+  public var varShape: [Int64] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fullName)
@@ -134,7 +134,7 @@ struct Tensorflow_SaveSliceInfoDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fullName.isEmpty {
       try visitor.visitSingularStringField(value: self.fullName, fieldNumber: 1)
     }
@@ -156,7 +156,7 @@ struct Tensorflow_SaveSliceInfoDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_VariableDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "variable_name"),
     2: .standard(proto: "initializer_name"),
     3: .standard(proto: "snapshot_name"),
@@ -189,7 +189,7 @@ extension Tensorflow_VariableDef: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_VariableDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_VariableDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._variableName != other_storage._variableName {return false}
@@ -207,14 +207,14 @@ extension Tensorflow_VariableDef: SwiftProtobuf._MessageImplementationBase, Swif
 }
 
 extension Tensorflow_SaveSliceInfoDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "full_name"),
     2: .standard(proto: "full_shape"),
     3: .standard(proto: "var_offset"),
     4: .standard(proto: "var_shape"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SaveSliceInfoDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SaveSliceInfoDef) -> Bool {
     if self.fullName != other.fullName {return false}
     if self.fullShape != other.fullShape {return false}
     if self.varOffset != other.varOffset {return false}

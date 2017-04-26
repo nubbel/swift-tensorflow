@@ -19,44 +19,44 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_TensorDescription: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TensorDescription"
+public struct Tensorflow_TensorDescription: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TensorDescription"
 
   /// Data type of tensor elements
-  var dtype: Tensorflow_DataType {
+  public var dtype: Tensorflow_DataType {
     get {return _storage._dtype}
     set {_uniqueStorage()._dtype = newValue}
   }
 
   /// Shape of the tensor.
-  var shape: Tensorflow_TensorShapeProto {
+  public var shape: Tensorflow_TensorShapeProto {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
   /// Information about the size and allocator used for the data
-  var allocationDescription: Tensorflow_AllocationDescription {
+  public var allocationDescription: Tensorflow_AllocationDescription {
     get {return _storage._allocationDescription ?? Tensorflow_AllocationDescription()}
     set {_uniqueStorage()._allocationDescription = newValue}
   }
-  var hasAllocationDescription: Bool {
+  public var hasAllocationDescription: Bool {
     return _storage._allocationDescription != nil
   }
-  mutating func clearAllocationDescription() {
+  public mutating func clearAllocationDescription() {
     _storage._allocationDescription = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -70,7 +70,7 @@ struct Tensorflow_TensorDescription: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._dtype != Tensorflow_DataType.dtInvalid {
         try visitor.visitSingularEnumField(value: _storage._dtype, fieldNumber: 1)
@@ -93,7 +93,7 @@ struct Tensorflow_TensorDescription: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_TensorDescription: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .same(proto: "shape"),
     4: .standard(proto: "allocation_description"),
@@ -120,7 +120,7 @@ extension Tensorflow_TensorDescription: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TensorDescription) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TensorDescription) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._dtype != other_storage._dtype {return false}

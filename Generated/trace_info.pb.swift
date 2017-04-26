@@ -34,18 +34,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TraceInfo"
+public struct Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TraceInfo"
 
-  var ops: [Tensorflow_Contrib_Tensorboard_OpInfo] = []
+  public var ops: [Tensorflow_Contrib_Tensorboard_OpInfo] = []
 
-  var files: [Tensorflow_Contrib_Tensorboard_FileInfo] = []
+  public var files: [Tensorflow_Contrib_Tensorboard_FileInfo] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.ops)
@@ -55,7 +55,7 @@ struct Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.ops.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.ops, fieldNumber: 1)
     }
@@ -66,26 +66,26 @@ struct Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpInfo"
+public struct Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpInfo"
 
-  var name: String = String()
+  public var name: String = String()
 
-  var opType: String = String()
+  public var opType: String = String()
 
-  var device: String = String()
+  public var device: String = String()
 
-  var traceback: [Tensorflow_Contrib_Tensorboard_LineTrace] = []
+  public var traceback: [Tensorflow_Contrib_Tensorboard_LineTrace] = []
 
-  var inputs: [Tensorflow_Contrib_Tensorboard_TensorInfo] = []
+  public var inputs: [Tensorflow_Contrib_Tensorboard_TensorInfo] = []
 
-  var outputs: [Tensorflow_Contrib_Tensorboard_TensorInfo] = []
+  public var outputs: [Tensorflow_Contrib_Tensorboard_TensorInfo] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -99,7 +99,7 @@ struct Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -122,20 +122,20 @@ struct Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LineTrace"
+public struct Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LineTrace"
 
   /// Absolute file path.
-  var filePath: String = String()
+  public var filePath: String = String()
 
   /// 1-based line number.
-  var lineNumber: UInt32 = 0
+  public var lineNumber: UInt32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.filePath)
@@ -145,7 +145,7 @@ struct Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.filePath.isEmpty {
       try visitor.visitSingularStringField(value: self.filePath, fieldNumber: 1)
     }
@@ -156,27 +156,27 @@ struct Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TensorInfo"
+public struct Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TensorInfo"
 
   /// Size of the tensor for each dimension. Value of -1 denotes "unknown"
   /// size for that dimension.
-  var shape: [Int32] = []
+  public var shape: [Int32] = []
 
   /// The data type of the tensor.
-  var dtype: String = String()
+  public var dtype: String = String()
 
   /// Number of bytes per element in the tensor.
-  var numBytesPerElem: UInt32 = 0
+  public var numBytesPerElem: UInt32 = 0
 
   /// List of operation names that consume this tensor.
-  var consumers: [String] = []
+  public var consumers: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.shape)
@@ -188,7 +188,7 @@ struct Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.shape.isEmpty {
       try visitor.visitPackedInt32Field(value: self.shape, fieldNumber: 1)
     }
@@ -205,23 +205,23 @@ struct Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Contrib_Tensorboard_FileInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".FileInfo"
+public struct Tensorflow_Contrib_Tensorboard_FileInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".FileInfo"
 
   /// Absolute file path to the source code.
-  var filePath: String = String()
+  public var filePath: String = String()
 
-  var sourceCode: String = String()
+  public var sourceCode: String = String()
 
   /// Map from end of statement to start of statement. End and start are 0-based
   /// line indexes.
-  var multilineStatements: Dictionary<UInt32,UInt32> = [:]
+  public var multilineStatements: Dictionary<UInt32,UInt32> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.filePath)
@@ -232,7 +232,7 @@ struct Tensorflow_Contrib_Tensorboard_FileInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.filePath.isEmpty {
       try visitor.visitSingularStringField(value: self.filePath, fieldNumber: 1)
     }
@@ -251,12 +251,12 @@ struct Tensorflow_Contrib_Tensorboard_FileInfo: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.contrib.tensorboard"
 
 extension Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "ops"),
     2: .same(proto: "files"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_TraceInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_TraceInfo) -> Bool {
     if self.ops != other.ops {return false}
     if self.files != other.files {return false}
     if unknownFields != other.unknownFields {return false}
@@ -265,7 +265,7 @@ extension Tensorflow_Contrib_Tensorboard_TraceInfo: SwiftProtobuf._MessageImplem
 }
 
 extension Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "op_type"),
     3: .same(proto: "device"),
@@ -274,7 +274,7 @@ extension Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf._MessageImplement
     6: .same(proto: "outputs"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_OpInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_OpInfo) -> Bool {
     if self.name != other.name {return false}
     if self.opType != other.opType {return false}
     if self.device != other.device {return false}
@@ -287,12 +287,12 @@ extension Tensorflow_Contrib_Tensorboard_OpInfo: SwiftProtobuf._MessageImplement
 }
 
 extension Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "file_path"),
     2: .standard(proto: "line_number"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_LineTrace) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_LineTrace) -> Bool {
     if self.filePath != other.filePath {return false}
     if self.lineNumber != other.lineNumber {return false}
     if unknownFields != other.unknownFields {return false}
@@ -301,14 +301,14 @@ extension Tensorflow_Contrib_Tensorboard_LineTrace: SwiftProtobuf._MessageImplem
 }
 
 extension Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .same(proto: "dtype"),
     3: .standard(proto: "num_bytes_per_elem"),
     4: .same(proto: "consumers"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_TensorInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_TensorInfo) -> Bool {
     if self.shape != other.shape {return false}
     if self.dtype != other.dtype {return false}
     if self.numBytesPerElem != other.numBytesPerElem {return false}
@@ -319,13 +319,13 @@ extension Tensorflow_Contrib_Tensorboard_TensorInfo: SwiftProtobuf._MessageImple
 }
 
 extension Tensorflow_Contrib_Tensorboard_FileInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "file_path"),
     2: .standard(proto: "source_code"),
     3: .standard(proto: "multiline_statements"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_FileInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Contrib_Tensorboard_FileInfo) -> Bool {
     if self.filePath != other.filePath {return false}
     if self.sourceCode != other.sourceCode {return false}
     if self.multilineStatements != other.multilineStatements {return false}

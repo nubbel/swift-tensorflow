@@ -21,136 +21,136 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// Refers to tfprof_options.h/cc for documentation.
 /// Only used to pass tfprof options from Python to C++.
-struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OptionsProto"
+public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OptionsProto"
 
   fileprivate var _maxDepth: Int64? = nil
-  var maxDepth: Int64 {
+  public var maxDepth: Int64 {
     get {return _maxDepth ?? 0}
     set {_maxDepth = newValue}
   }
-  var hasMaxDepth: Bool {
+  public var hasMaxDepth: Bool {
     return self._maxDepth != nil
   }
-  mutating func clearMaxDepth() {
+  public mutating func clearMaxDepth() {
     self._maxDepth = nil
   }
 
   fileprivate var _minBytes: Int64? = nil
-  var minBytes: Int64 {
+  public var minBytes: Int64 {
     get {return _minBytes ?? 0}
     set {_minBytes = newValue}
   }
-  var hasMinBytes: Bool {
+  public var hasMinBytes: Bool {
     return self._minBytes != nil
   }
-  mutating func clearMinBytes() {
+  public mutating func clearMinBytes() {
     self._minBytes = nil
   }
 
   fileprivate var _minMicros: Int64? = nil
-  var minMicros: Int64 {
+  public var minMicros: Int64 {
     get {return _minMicros ?? 0}
     set {_minMicros = newValue}
   }
-  var hasMinMicros: Bool {
+  public var hasMinMicros: Bool {
     return self._minMicros != nil
   }
-  mutating func clearMinMicros() {
+  public mutating func clearMinMicros() {
     self._minMicros = nil
   }
 
   fileprivate var _minParams: Int64? = nil
-  var minParams: Int64 {
+  public var minParams: Int64 {
     get {return _minParams ?? 0}
     set {_minParams = newValue}
   }
-  var hasMinParams: Bool {
+  public var hasMinParams: Bool {
     return self._minParams != nil
   }
-  mutating func clearMinParams() {
+  public mutating func clearMinParams() {
     self._minParams = nil
   }
 
   fileprivate var _minFloatOps: Int64? = nil
-  var minFloatOps: Int64 {
+  public var minFloatOps: Int64 {
     get {return _minFloatOps ?? 0}
     set {_minFloatOps = newValue}
   }
-  var hasMinFloatOps: Bool {
+  public var hasMinFloatOps: Bool {
     return self._minFloatOps != nil
   }
-  mutating func clearMinFloatOps() {
+  public mutating func clearMinFloatOps() {
     self._minFloatOps = nil
   }
 
-  var deviceRegexes: [String] = []
+  public var deviceRegexes: [String] = []
 
   fileprivate var _orderBy: String? = nil
-  var orderBy: String {
+  public var orderBy: String {
     get {return _orderBy ?? String()}
     set {_orderBy = newValue}
   }
-  var hasOrderBy: Bool {
+  public var hasOrderBy: Bool {
     return self._orderBy != nil
   }
-  mutating func clearOrderBy() {
+  public mutating func clearOrderBy() {
     self._orderBy = nil
   }
 
-  var accountTypeRegexes: [String] = []
+  public var accountTypeRegexes: [String] = []
 
-  var startNameRegexes: [String] = []
+  public var startNameRegexes: [String] = []
 
-  var trimNameRegexes: [String] = []
+  public var trimNameRegexes: [String] = []
 
-  var showNameRegexes: [String] = []
+  public var showNameRegexes: [String] = []
 
-  var hideNameRegexes: [String] = []
+  public var hideNameRegexes: [String] = []
 
   fileprivate var _accountDisplayedOpOnly: Bool? = nil
-  var accountDisplayedOpOnly: Bool {
+  public var accountDisplayedOpOnly: Bool {
     get {return _accountDisplayedOpOnly ?? false}
     set {_accountDisplayedOpOnly = newValue}
   }
-  var hasAccountDisplayedOpOnly: Bool {
+  public var hasAccountDisplayedOpOnly: Bool {
     return self._accountDisplayedOpOnly != nil
   }
-  mutating func clearAccountDisplayedOpOnly() {
+  public mutating func clearAccountDisplayedOpOnly() {
     self._accountDisplayedOpOnly = nil
   }
 
-  var select: [String] = []
+  public var select: [String] = []
 
   fileprivate var _viz: Bool? = nil
-  var viz: Bool {
+  public var viz: Bool {
     get {return _viz ?? false}
     set {_viz = newValue}
   }
-  var hasViz: Bool {
+  public var hasViz: Bool {
     return self._viz != nil
   }
-  mutating func clearViz() {
+  public mutating func clearViz() {
     self._viz = nil
   }
 
   fileprivate var _dumpToFile: String? = nil
-  var dumpToFile: String {
+  public var dumpToFile: String {
     get {return _dumpToFile ?? String()}
     set {_dumpToFile = newValue}
   }
-  var hasDumpToFile: Bool {
+  public var hasDumpToFile: Bool {
     return self._dumpToFile != nil
   }
-  mutating func clearDumpToFile() {
+  public mutating func clearDumpToFile() {
     self._dumpToFile = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self._maxDepth)
@@ -174,7 +174,7 @@ struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._maxDepth {
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 1)
     }
@@ -232,7 +232,7 @@ struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.tfprof"
 
 extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "max_depth"),
     2: .standard(proto: "min_bytes"),
     3: .standard(proto: "min_micros"),
@@ -251,7 +251,7 @@ extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBa
     16: .standard(proto: "dump_to_file"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OptionsProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OptionsProto) -> Bool {
     if self._maxDepth != other._maxDepth {return false}
     if self._minBytes != other._minBytes {return false}
     if self._minMicros != other._minMicros {return false}

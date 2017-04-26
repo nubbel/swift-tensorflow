@@ -59,8 +59,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// nodes and a 'leaf node' has no internal structure.  The metanode containment
 /// relationship is acyclic, meaning that if a metanode 'A' contains the metanode
 /// 'B', then 'B' cannot contain 'A'.
-struct GraphExplorer_Node: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Node"
+public struct GraphExplorer_Node: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Node"
 
   /// The identifier of a node is a sequence of strings separated by '/'. The
   /// identifier provides a unique name for a node and defines its hierarchical
@@ -75,21 +75,21 @@ struct GraphExplorer_Node: SwiftProtobuf.Message {
   ///
   /// The identifiers for these nodes are: "node1", "node1/node2",
   /// "node1/node2/node3", and "node1/node4".
-  var name: String = String()
+  public var name: String = String()
 
   /// A node attribute is information used by Graph Explorer to style a node.
-  var nodeAttr: Dictionary<String,String> = [:]
+  public var nodeAttr: Dictionary<String,String> = [:]
 
   /// A metanode attribute is one that is inherited by all nodes inside the
   /// current metanode. If an attribute applies only to the current node and
   /// should not be inherited, it should be specified as a node attribute.
-  var metanodeAttr: Dictionary<String,String> = [:]
+  public var metanodeAttr: Dictionary<String,String> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -100,7 +100,7 @@ struct GraphExplorer_Node: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -118,22 +118,22 @@ struct GraphExplorer_Node: SwiftProtobuf.Message {
 /// identifiers. An edge has attributes and data that are similar to node
 /// attributes and node data. Edges do not form a hierarchy so there are no
 /// metanode attributes.
-struct GraphExplorer_Edge: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Edge"
+public struct GraphExplorer_Edge: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Edge"
 
   /// The source and target fields must have the format of a Node name.
-  var source: String = String()
+  public var source: String = String()
 
-  var target: String = String()
+  public var target: String = String()
 
   /// Edge attributes.
-  var edgeAttr: Dictionary<String,String> = [:]
+  public var edgeAttr: Dictionary<String,String> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.source)
@@ -144,7 +144,7 @@ struct GraphExplorer_Edge: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.source.isEmpty {
       try visitor.visitSingularStringField(value: self.source, fieldNumber: 1)
     }
@@ -158,30 +158,30 @@ struct GraphExplorer_Edge: SwiftProtobuf.Message {
   }
 }
 
-struct GraphExplorer_Graph: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Graph"
+public struct GraphExplorer_Graph: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Graph"
 
   /// List of nodes in the graph.
-  var node: [GraphExplorer_Node] = []
+  public var node: [GraphExplorer_Node] = []
 
   /// List of edges in the graph.
-  var edge: [GraphExplorer_Edge] = []
+  public var edge: [GraphExplorer_Edge] = []
 
   /// Default values of node, metanode and edge attributes.
-  var nodeAttr: Dictionary<String,String> = [:]
+  public var nodeAttr: Dictionary<String,String> = [:]
 
-  var metanodeAttr: Dictionary<String,String> = [:]
+  public var metanodeAttr: Dictionary<String,String> = [:]
 
-  var edgeAttr: Dictionary<String,String> = [:]
+  public var edgeAttr: Dictionary<String,String> = [:]
 
   /// Graph attributes.
-  var graphAttr: Dictionary<String,String> = [:]
+  public var graphAttr: Dictionary<String,String> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.node)
@@ -195,7 +195,7 @@ struct GraphExplorer_Graph: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.node.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.node, fieldNumber: 1)
     }
@@ -223,13 +223,13 @@ struct GraphExplorer_Graph: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "graph_explorer"
 
 extension GraphExplorer_Node: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "node_attr"),
     3: .standard(proto: "metanode_attr"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: GraphExplorer_Node) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: GraphExplorer_Node) -> Bool {
     if self.name != other.name {return false}
     if self.nodeAttr != other.nodeAttr {return false}
     if self.metanodeAttr != other.metanodeAttr {return false}
@@ -239,13 +239,13 @@ extension GraphExplorer_Node: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension GraphExplorer_Edge: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "source"),
     2: .same(proto: "target"),
     3: .standard(proto: "edge_attr"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: GraphExplorer_Edge) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: GraphExplorer_Edge) -> Bool {
     if self.source != other.source {return false}
     if self.target != other.target {return false}
     if self.edgeAttr != other.edgeAttr {return false}
@@ -255,7 +255,7 @@ extension GraphExplorer_Edge: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension GraphExplorer_Graph: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "node"),
     2: .same(proto: "edge"),
     3: .standard(proto: "node_attr"),
@@ -264,7 +264,7 @@ extension GraphExplorer_Graph: SwiftProtobuf._MessageImplementationBase, SwiftPr
     6: .standard(proto: "graph_attr"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: GraphExplorer_Graph) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: GraphExplorer_Graph) -> Bool {
     if self.node != other.node {return false}
     if self.edge != other.edge {return false}
     if self.nodeAttr != other.nodeAttr {return false}

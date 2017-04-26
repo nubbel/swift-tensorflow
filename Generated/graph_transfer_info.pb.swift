@@ -22,38 +22,38 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// Protocol buffer representing a handle to a tensorflow resource. Handles are
 /// not valid across executions, but can be serialized back and forth from within
 /// a single run.
-struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GraphTransferInfo"
+public struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GraphTransferInfo"
 
-  var nodeInfo: [Tensorflow_GraphTransferInfo.NodeInfo] = []
+  public var nodeInfo: [Tensorflow_GraphTransferInfo.NodeInfo] = []
 
-  var constNodeInfo: [Tensorflow_GraphTransferInfo.ConstNodeInfo] = []
+  public var constNodeInfo: [Tensorflow_GraphTransferInfo.ConstNodeInfo] = []
 
-  var nodeInputInfo: [Tensorflow_GraphTransferInfo.NodeInputInfo] = []
+  public var nodeInputInfo: [Tensorflow_GraphTransferInfo.NodeInputInfo] = []
 
-  var nodeOutputInfo: [Tensorflow_GraphTransferInfo.NodeOutputInfo] = []
+  public var nodeOutputInfo: [Tensorflow_GraphTransferInfo.NodeOutputInfo] = []
 
   /// Input Node parameters of transferred graph
-  var graphInputNodeInfo: [Tensorflow_GraphTransferInfo.GraphInputNodeInfo] = []
+  public var graphInputNodeInfo: [Tensorflow_GraphTransferInfo.GraphInputNodeInfo] = []
 
-  var graphOutputNodeInfo: [Tensorflow_GraphTransferInfo.GraphOutputNodeInfo] = []
+  public var graphOutputNodeInfo: [Tensorflow_GraphTransferInfo.GraphOutputNodeInfo] = []
 
   /// Destination of graph transfer
-  var destination: Tensorflow_GraphTransferInfo.Destination = Tensorflow_GraphTransferInfo.Destination.nop
+  public var destination: Tensorflow_GraphTransferInfo.Destination = Tensorflow_GraphTransferInfo.Destination.nop
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Destination: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Destination: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case nop // = 0
     case hexagon // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .nop
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .nop
       case 1: self = .hexagon
@@ -61,7 +61,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .nop: return 0
       case .hexagon: return 1
@@ -71,18 +71,18 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
 
   }
 
-  struct NodeInput: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInput"
+  public struct NodeInput: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInput"
 
-    var nodeId: Int32 = 0
+    public var nodeId: Int32 = 0
 
-    var outputPort: Int32 = 0
+    public var outputPort: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt32Field(value: &self.nodeId)
@@ -92,7 +92,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if self.nodeId != 0 {
         try visitor.visitSingularInt32Field(value: self.nodeId, fieldNumber: 1)
       }
@@ -103,28 +103,28 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct NodeInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInfo"
+  public struct NodeInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInfo"
 
-    var name: String = String()
+    public var name: String = String()
 
-    var nodeId: Int32 = 0
+    public var nodeId: Int32 = 0
 
-    var typeName: String = String()
+    public var typeName: String = String()
 
-    var socOpId: Int32 = 0
+    public var socOpId: Int32 = 0
 
-    var paddingId: Int32 = 0
+    public var paddingId: Int32 = 0
 
-    var inputCount: Int32 = 0
+    public var inputCount: Int32 = 0
 
-    var outputCount: Int32 = 0
+    public var outputCount: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -139,7 +139,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -165,24 +165,24 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct ConstNodeInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".ConstNodeInfo"
+  public struct ConstNodeInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".ConstNodeInfo"
 
-    var name: String = String()
+    public var name: String = String()
 
-    var nodeId: Int32 = 0
+    public var nodeId: Int32 = 0
 
-    var shape: [Int64] = []
+    public var shape: [Int64] = []
 
-    var data: Data = SwiftProtobuf.Internal.emptyData
+    public var data: Data = SwiftProtobuf.Internal.emptyData
 
-    var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
+    public var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -195,7 +195,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -215,18 +215,18 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct NodeInputInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInputInfo"
+  public struct NodeInputInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeInputInfo"
 
-    var nodeId: Int32 = 0
+    public var nodeId: Int32 = 0
 
-    var nodeInput: [Tensorflow_GraphTransferInfo.NodeInput] = []
+    public var nodeInput: [Tensorflow_GraphTransferInfo.NodeInput] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt32Field(value: &self.nodeId)
@@ -236,7 +236,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if self.nodeId != 0 {
         try visitor.visitSingularInt32Field(value: self.nodeId, fieldNumber: 1)
       }
@@ -247,18 +247,18 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct NodeOutputInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeOutputInfo"
+  public struct NodeOutputInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".NodeOutputInfo"
 
-    var nodeId: Int32 = 0
+    public var nodeId: Int32 = 0
 
-    var maxByteSize: [Int32] = []
+    public var maxByteSize: [Int32] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt32Field(value: &self.nodeId)
@@ -268,7 +268,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if self.nodeId != 0 {
         try visitor.visitSingularInt32Field(value: self.nodeId, fieldNumber: 1)
       }
@@ -279,20 +279,20 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct GraphInputNodeInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".GraphInputNodeInfo"
+  public struct GraphInputNodeInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".GraphInputNodeInfo"
 
-    var name: String = String()
+    public var name: String = String()
 
-    var shape: [Int64] = []
+    public var shape: [Int64] = []
 
-    var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
+    public var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -303,7 +303,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -317,20 +317,20 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  struct GraphOutputNodeInfo: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".GraphOutputNodeInfo"
+  public struct GraphOutputNodeInfo: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_GraphTransferInfo.protoMessageName + ".GraphOutputNodeInfo"
 
-    var name: String = String()
+    public var name: String = String()
 
-    var shape: [Int64] = []
+    public var shape: [Int64] = []
 
-    var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
+    public var dtype: Tensorflow_DataType = Tensorflow_DataType.dtInvalid
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -341,7 +341,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -355,9 +355,9 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.nodeInfo)
@@ -372,7 +372,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nodeInfo.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nodeInfo, fieldNumber: 1)
     }
@@ -403,7 +403,7 @@ struct Tensorflow_GraphTransferInfo: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_GraphTransferInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_info"),
     2: .standard(proto: "const_node_info"),
     3: .standard(proto: "node_input_info"),
@@ -413,7 +413,7 @@ extension Tensorflow_GraphTransferInfo: SwiftProtobuf._MessageImplementationBase
     7: .same(proto: "destination"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo) -> Bool {
     if self.nodeInfo != other.nodeInfo {return false}
     if self.constNodeInfo != other.constNodeInfo {return false}
     if self.nodeInputInfo != other.nodeInputInfo {return false}
@@ -427,19 +427,19 @@ extension Tensorflow_GraphTransferInfo: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_GraphTransferInfo.Destination: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NOP"),
     1: .same(proto: "HEXAGON"),
   ]
 }
 
 extension Tensorflow_GraphTransferInfo.NodeInput: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_id"),
     2: .standard(proto: "output_port"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInput) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInput) -> Bool {
     if self.nodeId != other.nodeId {return false}
     if self.outputPort != other.outputPort {return false}
     if unknownFields != other.unknownFields {return false}
@@ -448,7 +448,7 @@ extension Tensorflow_GraphTransferInfo.NodeInput: SwiftProtobuf._MessageImplemen
 }
 
 extension Tensorflow_GraphTransferInfo.NodeInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "node_id"),
     3: .standard(proto: "type_name"),
@@ -458,7 +458,7 @@ extension Tensorflow_GraphTransferInfo.NodeInfo: SwiftProtobuf._MessageImplement
     7: .standard(proto: "output_count"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInfo) -> Bool {
     if self.name != other.name {return false}
     if self.nodeId != other.nodeId {return false}
     if self.typeName != other.typeName {return false}
@@ -472,7 +472,7 @@ extension Tensorflow_GraphTransferInfo.NodeInfo: SwiftProtobuf._MessageImplement
 }
 
 extension Tensorflow_GraphTransferInfo.ConstNodeInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "node_id"),
     3: .same(proto: "shape"),
@@ -480,7 +480,7 @@ extension Tensorflow_GraphTransferInfo.ConstNodeInfo: SwiftProtobuf._MessageImpl
     5: .same(proto: "dtype"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.ConstNodeInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.ConstNodeInfo) -> Bool {
     if self.name != other.name {return false}
     if self.nodeId != other.nodeId {return false}
     if self.shape != other.shape {return false}
@@ -492,12 +492,12 @@ extension Tensorflow_GraphTransferInfo.ConstNodeInfo: SwiftProtobuf._MessageImpl
 }
 
 extension Tensorflow_GraphTransferInfo.NodeInputInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_id"),
     2: .standard(proto: "node_input"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInputInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeInputInfo) -> Bool {
     if self.nodeId != other.nodeId {return false}
     if self.nodeInput != other.nodeInput {return false}
     if unknownFields != other.unknownFields {return false}
@@ -506,12 +506,12 @@ extension Tensorflow_GraphTransferInfo.NodeInputInfo: SwiftProtobuf._MessageImpl
 }
 
 extension Tensorflow_GraphTransferInfo.NodeOutputInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_id"),
     2: .standard(proto: "max_byte_size"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeOutputInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.NodeOutputInfo) -> Bool {
     if self.nodeId != other.nodeId {return false}
     if self.maxByteSize != other.maxByteSize {return false}
     if unknownFields != other.unknownFields {return false}
@@ -520,13 +520,13 @@ extension Tensorflow_GraphTransferInfo.NodeOutputInfo: SwiftProtobuf._MessageImp
 }
 
 extension Tensorflow_GraphTransferInfo.GraphInputNodeInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "shape"),
     3: .same(proto: "dtype"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.GraphInputNodeInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.GraphInputNodeInfo) -> Bool {
     if self.name != other.name {return false}
     if self.shape != other.shape {return false}
     if self.dtype != other.dtype {return false}
@@ -536,13 +536,13 @@ extension Tensorflow_GraphTransferInfo.GraphInputNodeInfo: SwiftProtobuf._Messag
 }
 
 extension Tensorflow_GraphTransferInfo.GraphOutputNodeInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "shape"),
     3: .same(proto: "dtype"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.GraphOutputNodeInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GraphTransferInfo.GraphOutputNodeInfo) -> Bool {
     if self.name != other.name {return false}
     if self.shape != other.shape {return false}
     if self.dtype != other.dtype {return false}

@@ -36,74 +36,74 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// Description of an operation as well as the parameters expected to impact its
 /// performance.
-struct Tensorflow_OpInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpInfo"
+public struct Tensorflow_OpInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpInfo"
 
   /// The operation name.  There may be custom parameters in attrs.
-  var op: String {
+  public var op: String {
     get {return _storage._op}
     set {_uniqueStorage()._op = newValue}
   }
 
   /// Custom parameters impacting the behavior of the op.
-  var attr: Dictionary<String,Tensorflow_AttrValue> {
+  public var attr: Dictionary<String,Tensorflow_AttrValue> {
     get {return _storage._attr}
     set {_uniqueStorage()._attr = newValue}
   }
 
-  var inputs: [Tensorflow_OpInfo.TensorProperties] {
+  public var inputs: [Tensorflow_OpInfo.TensorProperties] {
     get {return _storage._inputs}
     set {_uniqueStorage()._inputs = newValue}
   }
 
-  var device: Tensorflow_OpInfo.DeviceProperties {
+  public var device: Tensorflow_OpInfo.DeviceProperties {
     get {return _storage._device ?? Tensorflow_OpInfo.DeviceProperties()}
     set {_uniqueStorage()._device = newValue}
   }
-  var hasDevice: Bool {
+  public var hasDevice: Bool {
     return _storage._device != nil
   }
-  mutating func clearDevice() {
+  public mutating func clearDevice() {
     _storage._device = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct TensorProperties: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpInfo.protoMessageName + ".TensorProperties"
+  public struct TensorProperties: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpInfo.protoMessageName + ".TensorProperties"
 
-    var dtype: Tensorflow_DataType {
+    public var dtype: Tensorflow_DataType {
       get {return _storage._dtype}
       set {_uniqueStorage()._dtype = newValue}
     }
 
-    var shape: Tensorflow_TensorShapeProto {
+    public var shape: Tensorflow_TensorShapeProto {
       get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
       set {_uniqueStorage()._shape = newValue}
     }
-    var hasShape: Bool {
+    public var hasShape: Bool {
       return _storage._shape != nil
     }
-    mutating func clearShape() {
+    public mutating func clearShape() {
       _storage._shape = nil
     }
 
-    var value: Tensorflow_TensorProto {
+    public var value: Tensorflow_TensorProto {
       get {return _storage._value ?? Tensorflow_TensorProto()}
       set {_uniqueStorage()._value = newValue}
     }
-    var hasValue: Bool {
+    public var hasValue: Bool {
       return _storage._value != nil
     }
-    mutating func clearValue() {
+    public mutating func clearValue() {
       _storage._value = nil
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -117,7 +117,7 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if _storage._dtype != Tensorflow_DataType.dtInvalid {
           try visitor.visitSingularEnumField(value: _storage._dtype, fieldNumber: 1)
@@ -136,40 +136,40 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
   }
 
   /// Input types, shapes and values if known.
-  struct DeviceProperties: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpInfo.protoMessageName + ".DeviceProperties"
+  public struct DeviceProperties: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpInfo.protoMessageName + ".DeviceProperties"
 
-    var type: String = String()
+    public var type: String = String()
 
-    var vendor: String = String()
+    public var vendor: String = String()
 
-    var model: String = String()
+    public var model: String = String()
 
-    var frequency: Int64 = 0
+    public var frequency: Int64 = 0
 
-    var numCores: Int64 = 0
+    public var numCores: Int64 = 0
 
-    var environment: Dictionary<String,String> = [:]
+    public var environment: Dictionary<String,String> = [:]
 
-    var numRegisters: Int64 = 0
+    public var numRegisters: Int64 = 0
 
-    var l1CacheSize: Int64 = 0
+    public var l1CacheSize: Int64 = 0
 
-    var l2CacheSize: Int64 = 0
+    public var l2CacheSize: Int64 = 0
 
-    var l3CacheSize: Int64 = 0
+    public var l3CacheSize: Int64 = 0
 
-    var sharedMemorySizePerMultiprocessor: Int64 = 0
+    public var sharedMemorySizePerMultiprocessor: Int64 = 0
 
-    var memorySize: Int64 = 0
+    public var memorySize: Int64 = 0
 
-    var bandwidth: Int64 = 0
+    public var bandwidth: Int64 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.type)
@@ -190,7 +190,7 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.type.isEmpty {
         try visitor.visitSingularStringField(value: self.type, fieldNumber: 1)
       }
@@ -234,9 +234,9 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -251,7 +251,7 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._op.isEmpty {
         try visitor.visitSingularStringField(value: _storage._op, fieldNumber: 1)
@@ -273,99 +273,99 @@ struct Tensorflow_OpInfo: SwiftProtobuf.Message {
 }
 
 /// Performance data for tensorflow operations
-struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpPerformance"
+public struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpPerformance"
 
   /// The op
-  var op: Tensorflow_OpInfo {
+  public var op: Tensorflow_OpInfo {
     get {return _storage._op ?? Tensorflow_OpInfo()}
     set {_uniqueStorage()._op = newValue}
   }
-  var hasOp: Bool {
+  public var hasOp: Bool {
     return _storage._op != nil
   }
-  mutating func clearOp() {
+  public mutating func clearOp() {
     _storage._op = nil
   }
 
   /// The node name (optional). Makes it easier to associate the performance data
   /// with a specific graph node.
-  var node: String {
+  public var node: String {
     get {return _storage._node}
     set {_uniqueStorage()._node = newValue}
   }
 
   /// Temporary memory used by this node (in bytes).
-  var temporaryMemorySize: Int64 {
+  public var temporaryMemorySize: Int64 {
     get {return _storage._temporaryMemorySize}
     set {_uniqueStorage()._temporaryMemorySize = newValue}
   }
 
   /// Time it takes to run the op (in nanoseconds).
-  var computeCost: Int64 {
+  public var computeCost: Int64 {
     get {return _storage._computeCost}
     set {_uniqueStorage()._computeCost = newValue}
   }
 
   /// Analytical compute cost (in nanoseconds).
-  var computeTime: Int64 {
+  public var computeTime: Int64 {
     get {return _storage._computeTime}
     set {_uniqueStorage()._computeTime = newValue}
   }
 
   /// Analytical memory access cost (in nanoseconds).
-  var memoryTime: Int64 {
+  public var memoryTime: Int64 {
     get {return _storage._memoryTime}
     set {_uniqueStorage()._memoryTime = newValue}
   }
 
   /// Percentage of theoretical compute performance.
-  var computeEfficiency: Double {
+  public var computeEfficiency: Double {
     get {return _storage._computeEfficiency}
     set {_uniqueStorage()._computeEfficiency = newValue}
   }
 
   /// Percentage of theoretical memory performance.
-  var memoryEfficiency: Double {
+  public var memoryEfficiency: Double {
     get {return _storage._memoryEfficiency}
     set {_uniqueStorage()._memoryEfficiency = newValue}
   }
 
-  var opMemory: Tensorflow_OpPerformance.OpMemory {
+  public var opMemory: Tensorflow_OpPerformance.OpMemory {
     get {return _storage._opMemory ?? Tensorflow_OpPerformance.OpMemory()}
     set {_uniqueStorage()._opMemory = newValue}
   }
-  var hasOpMemory: Bool {
+  public var hasOpMemory: Bool {
     return _storage._opMemory != nil
   }
-  mutating func clearOpMemory() {
+  public mutating func clearOpMemory() {
     _storage._opMemory = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Memory usage data for a tensorflow operation.
-  struct OpMemory: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpPerformance.protoMessageName + ".OpMemory"
+  public struct OpMemory: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpPerformance.protoMessageName + ".OpMemory"
 
     /// The output information may have memory usage and output shapes.
-    var outputMemory: [Int64] = []
+    public var outputMemory: [Int64] = []
 
     /// Temporary memory allocated by this node.
-    var hostTempMemory: Int64 = 0
+    public var hostTempMemory: Int64 = 0
 
-    var deviceTempMemory: Int64 = 0
+    public var deviceTempMemory: Int64 = 0
 
     /// The persisted_memory doesn't include outputs.
-    var hostPersistentMemory: Int64 = 0
+    public var hostPersistentMemory: Int64 = 0
 
-    var devicePersistentMemory: Int64 = 0
+    public var devicePersistentMemory: Int64 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeRepeatedInt64Field(value: &self.outputMemory)
@@ -378,7 +378,7 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.outputMemory.isEmpty {
         try visitor.visitPackedInt64Field(value: self.outputMemory, fieldNumber: 1)
       }
@@ -398,9 +398,9 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -420,7 +420,7 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._op {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -457,16 +457,16 @@ struct Tensorflow_OpPerformance: SwiftProtobuf.Message {
 }
 
 /// A collection of OpPerformance data points.
-struct Tensorflow_OpPerformanceList: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpPerformanceList"
+public struct Tensorflow_OpPerformanceList: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpPerformanceList"
 
-  var opPerformance: [Tensorflow_OpPerformance] = []
+  public var opPerformance: [Tensorflow_OpPerformance] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.opPerformance)
@@ -475,7 +475,7 @@ struct Tensorflow_OpPerformanceList: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.opPerformance.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.opPerformance, fieldNumber: 1)
     }
@@ -488,7 +488,7 @@ struct Tensorflow_OpPerformanceList: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_OpInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "op"),
     2: .same(proto: "attr"),
     3: .same(proto: "inputs"),
@@ -518,7 +518,7 @@ extension Tensorflow_OpInfo: SwiftProtobuf._MessageImplementationBase, SwiftProt
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._op != other_storage._op {return false}
@@ -535,7 +535,7 @@ extension Tensorflow_OpInfo: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Tensorflow_OpInfo.TensorProperties: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .same(proto: "shape"),
     3: .same(proto: "value"),
@@ -562,7 +562,7 @@ extension Tensorflow_OpInfo.TensorProperties: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo.TensorProperties) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo.TensorProperties) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._dtype != other_storage._dtype {return false}
@@ -578,7 +578,7 @@ extension Tensorflow_OpInfo.TensorProperties: SwiftProtobuf._MessageImplementati
 }
 
 extension Tensorflow_OpInfo.DeviceProperties: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .same(proto: "vendor"),
     3: .same(proto: "model"),
@@ -594,7 +594,7 @@ extension Tensorflow_OpInfo.DeviceProperties: SwiftProtobuf._MessageImplementati
     13: .same(proto: "bandwidth"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo.DeviceProperties) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo.DeviceProperties) -> Bool {
     if self.type != other.type {return false}
     if self.vendor != other.vendor {return false}
     if self.model != other.model {return false}
@@ -614,7 +614,7 @@ extension Tensorflow_OpInfo.DeviceProperties: SwiftProtobuf._MessageImplementati
 }
 
 extension Tensorflow_OpPerformance: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "op"),
     5: .same(proto: "node"),
     2: .standard(proto: "temporary_memory_size"),
@@ -659,7 +659,7 @@ extension Tensorflow_OpPerformance: SwiftProtobuf._MessageImplementationBase, Sw
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformance) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformance) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._op != other_storage._op {return false}
@@ -681,7 +681,7 @@ extension Tensorflow_OpPerformance: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Tensorflow_OpPerformance.OpMemory: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "output_memory"),
     2: .standard(proto: "host_temp_memory"),
     3: .standard(proto: "device_temp_memory"),
@@ -689,7 +689,7 @@ extension Tensorflow_OpPerformance.OpMemory: SwiftProtobuf._MessageImplementatio
     5: .standard(proto: "device_persistent_memory"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformance.OpMemory) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformance.OpMemory) -> Bool {
     if self.outputMemory != other.outputMemory {return false}
     if self.hostTempMemory != other.hostTempMemory {return false}
     if self.deviceTempMemory != other.deviceTempMemory {return false}
@@ -701,11 +701,11 @@ extension Tensorflow_OpPerformance.OpMemory: SwiftProtobuf._MessageImplementatio
 }
 
 extension Tensorflow_OpPerformanceList: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "op_performance"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformanceList) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpPerformanceList) -> Bool {
     if self.opPerformance != other.opPerformance {return false}
     if unknownFields != other.unknownFields {return false}
     return true

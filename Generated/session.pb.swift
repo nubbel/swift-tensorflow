@@ -39,28 +39,28 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Describes a single operation request.
-struct Xla_OperationRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OperationRequest"
+public struct Xla_OperationRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OperationRequest"
 
-  var outputHandle: Xla_ComputationDataHandle {
+  public var outputHandle: Xla_ComputationDataHandle {
     get {return _storage._outputHandle ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._outputHandle = newValue}
   }
-  var hasOutputHandle: Bool {
+  public var hasOutputHandle: Bool {
     return _storage._outputHandle != nil
   }
-  mutating func clearOutputHandle() {
+  public mutating func clearOutputHandle() {
     _storage._outputHandle = nil
   }
 
-  var outputShape: Xla_Shape {
+  public var outputShape: Xla_Shape {
     get {return _storage._outputShape ?? Xla_Shape()}
     set {_uniqueStorage()._outputShape = newValue}
   }
-  var hasOutputShape: Bool {
+  public var hasOutputShape: Bool {
     return _storage._outputShape != nil
   }
-  mutating func clearOutputShape() {
+  public mutating func clearOutputShape() {
     _storage._outputShape = nil
   }
 
@@ -75,29 +75,29 @@ struct Xla_OperationRequest: SwiftProtobuf.Message {
   ///
   /// "While" operation takes two; index 0 is the "condition" version and index 1
   /// is the "body" version.
-  var embeddedComputationVersions: [Int64] {
+  public var embeddedComputationVersions: [Int64] {
     get {return _storage._embeddedComputationVersions}
     set {_uniqueStorage()._embeddedComputationVersions = newValue}
   }
 
   /// The actual request, which in itself is a tagged union of all possible
   /// operation request types.
-  var request: Xla_OpRequest {
+  public var request: Xla_OpRequest {
     get {return _storage._request ?? Xla_OpRequest()}
     set {_uniqueStorage()._request = newValue}
   }
-  var hasRequest: Bool {
+  public var hasRequest: Bool {
     return _storage._request != nil
   }
-  mutating func clearRequest() {
+  public mutating func clearRequest() {
     _storage._request = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -112,7 +112,7 @@ struct Xla_OperationRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._outputHandle {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -135,39 +135,39 @@ struct Xla_OperationRequest: SwiftProtobuf.Message {
 
 /// Describes a sequence of operation requests which define an XLA
 /// computation.
-struct Xla_SessionComputation: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SessionComputation"
+public struct Xla_SessionComputation: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SessionComputation"
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
   /// The ComputationHandle used to refer to this computation in the XLA
   /// service.
-  var computationHandle: Xla_ComputationHandle {
+  public var computationHandle: Xla_ComputationHandle {
     get {return _storage._computationHandle ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computationHandle = newValue}
   }
-  var hasComputationHandle: Bool {
+  public var hasComputationHandle: Bool {
     return _storage._computationHandle != nil
   }
-  mutating func clearComputationHandle() {
+  public mutating func clearComputationHandle() {
     _storage._computationHandle = nil
   }
 
   /// Map from ComputationDataHandle value to operation request. The highest
   /// ComputationDataHandle value corresponds to the root of the computation.
-  var requests: Dictionary<Int64,Xla_OperationRequest> {
+  public var requests: Dictionary<Int64,Xla_OperationRequest> {
     get {return _storage._requests}
     set {_uniqueStorage()._requests = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -181,7 +181,7 @@ struct Xla_SessionComputation: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -205,58 +205,58 @@ struct Xla_SessionComputation: SwiftProtobuf.Message {
 /// This message is used to serialize a computation that has been built via the
 /// XLA service API, along with its dependencies, for purposes such as
 /// analysis/replay/file-storage.
-struct Xla_SessionModule: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SessionModule"
+public struct Xla_SessionModule: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SessionModule"
 
   /// The entry computation, which was requested for serialization. This may have
   /// referred to embedded computations, which are reflected below.
-  var entry: Xla_SessionComputation {
+  public var entry: Xla_SessionComputation {
     get {return _storage._entry ?? Xla_SessionComputation()}
     set {_uniqueStorage()._entry = newValue}
   }
-  var hasEntry: Bool {
+  public var hasEntry: Bool {
     return _storage._entry != nil
   }
-  mutating func clearEntry() {
+  public mutating func clearEntry() {
     _storage._entry = nil
   }
 
   /// Embedded computations that are transitively referred to by the entry
   /// computation.
-  var embeddedComputations: [Xla_SessionComputation] {
+  public var embeddedComputations: [Xla_SessionComputation] {
     get {return _storage._embeddedComputations}
     set {_uniqueStorage()._embeddedComputations = newValue}
   }
 
   /// The arguments passed to the computation.
-  var arguments: [Xla_Literal] {
+  public var arguments: [Xla_Literal] {
     get {return _storage._arguments}
     set {_uniqueStorage()._arguments = newValue}
   }
 
   /// The result of the computation.
-  var result: Xla_Literal {
+  public var result: Xla_Literal {
     get {return _storage._result ?? Xla_Literal()}
     set {_uniqueStorage()._result = newValue}
   }
-  var hasResult: Bool {
+  public var hasResult: Bool {
     return _storage._result != nil
   }
-  mutating func clearResult() {
+  public mutating func clearResult() {
     _storage._result = nil
   }
 
   /// The name of the platform used to run the computation.
-  var executionPlatform: String {
+  public var executionPlatform: String {
     get {return _storage._executionPlatform}
     set {_uniqueStorage()._executionPlatform = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -272,7 +272,7 @@ struct Xla_SessionModule: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._entry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -301,7 +301,7 @@ struct Xla_SessionModule: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "xla"
 
 extension Xla_OperationRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "output_handle"),
     2: .standard(proto: "output_shape"),
     3: .standard(proto: "embedded_computation_versions"),
@@ -331,7 +331,7 @@ extension Xla_OperationRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_OperationRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_OperationRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._outputHandle != other_storage._outputHandle {return false}
@@ -348,7 +348,7 @@ extension Xla_OperationRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_SessionComputation: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "computation_handle"),
     3: .same(proto: "requests"),
@@ -375,7 +375,7 @@ extension Xla_SessionComputation: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_SessionComputation) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_SessionComputation) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}
@@ -391,7 +391,7 @@ extension Xla_SessionComputation: SwiftProtobuf._MessageImplementationBase, Swif
 }
 
 extension Xla_SessionModule: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "entry"),
     2: .standard(proto: "embedded_computations"),
     3: .same(proto: "arguments"),
@@ -424,7 +424,7 @@ extension Xla_SessionModule: SwiftProtobuf._MessageImplementationBase, SwiftProt
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_SessionModule) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_SessionModule) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._entry != other_storage._entry {return false}

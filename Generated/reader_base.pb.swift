@@ -21,22 +21,22 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// For serializing and restoring the state of ReaderBase, see
 /// reader_base.h for details.
-struct Tensorflow_ReaderBaseState: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ReaderBaseState"
+public struct Tensorflow_ReaderBaseState: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ReaderBaseState"
 
-  var workStarted: Int64 = 0
+  public var workStarted: Int64 = 0
 
-  var workFinished: Int64 = 0
+  public var workFinished: Int64 = 0
 
-  var numRecordsProduced: Int64 = 0
+  public var numRecordsProduced: Int64 = 0
 
-  var currentWork: Data = SwiftProtobuf.Internal.emptyData
+  public var currentWork: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.workStarted)
@@ -48,7 +48,7 @@ struct Tensorflow_ReaderBaseState: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.workStarted != 0 {
       try visitor.visitSingularInt64Field(value: self.workStarted, fieldNumber: 1)
     }
@@ -70,14 +70,14 @@ struct Tensorflow_ReaderBaseState: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_ReaderBaseState: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "work_started"),
     2: .standard(proto: "work_finished"),
     3: .standard(proto: "num_records_produced"),
     4: .standard(proto: "current_work"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ReaderBaseState) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ReaderBaseState) -> Bool {
     if self.workStarted != other.workStarted {return false}
     if self.workFinished != other.workFinished {return false}
     if self.numRecordsProduced != other.numRecordsProduced {return false}

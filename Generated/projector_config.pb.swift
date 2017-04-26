@@ -34,19 +34,19 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_SpriteMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SpriteMetadata"
+public struct Tensorflow_SpriteMetadata: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SpriteMetadata"
 
-  var imagePath: String = String()
+  public var imagePath: String = String()
 
   /// [width, height] of a single image in the sprite.
-  var singleImageDim: [UInt32] = []
+  public var singleImageDim: [UInt32] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.imagePath)
@@ -56,7 +56,7 @@ struct Tensorflow_SpriteMetadata: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.imagePath.isEmpty {
       try visitor.visitSingularStringField(value: self.imagePath, fieldNumber: 1)
     }
@@ -67,54 +67,54 @@ struct Tensorflow_SpriteMetadata: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_EmbeddingInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".EmbeddingInfo"
+public struct Tensorflow_EmbeddingInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".EmbeddingInfo"
 
-  var tensorName: String {
+  public var tensorName: String {
     get {return _storage._tensorName}
     set {_uniqueStorage()._tensorName = newValue}
   }
 
-  var metadataPath: String {
+  public var metadataPath: String {
     get {return _storage._metadataPath}
     set {_uniqueStorage()._metadataPath = newValue}
   }
 
-  var bookmarksPath: String {
+  public var bookmarksPath: String {
     get {return _storage._bookmarksPath}
     set {_uniqueStorage()._bookmarksPath = newValue}
   }
 
   /// Shape of the 2D tensor [N x D]. If missing, it will be inferred from the
   /// model checkpoint.
-  var tensorShape: [UInt32] {
+  public var tensorShape: [UInt32] {
     get {return _storage._tensorShape}
     set {_uniqueStorage()._tensorShape = newValue}
   }
 
-  var sprite: Tensorflow_SpriteMetadata {
+  public var sprite: Tensorflow_SpriteMetadata {
     get {return _storage._sprite ?? Tensorflow_SpriteMetadata()}
     set {_uniqueStorage()._sprite = newValue}
   }
-  var hasSprite: Bool {
+  public var hasSprite: Bool {
     return _storage._sprite != nil
   }
-  mutating func clearSprite() {
+  public mutating func clearSprite() {
     _storage._sprite = nil
   }
 
   /// Path to the TSV file holding the tensor values. If missing, the tensor
   /// is assumed to be stored in the model checkpoint.
-  var tensorPath: String {
+  public var tensorPath: String {
     get {return _storage._tensorPath}
     set {_uniqueStorage()._tensorPath = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -131,7 +131,7 @@ struct Tensorflow_EmbeddingInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._tensorName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._tensorName, fieldNumber: 1)
@@ -158,23 +158,23 @@ struct Tensorflow_EmbeddingInfo: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_ProjectorConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ProjectorConfig"
+public struct Tensorflow_ProjectorConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ProjectorConfig"
 
   /// Path to the checkpoint file. Use either this or model_checkpoint_dir.
-  var modelCheckpointPath: String = String()
+  public var modelCheckpointPath: String = String()
 
-  var embeddings: [Tensorflow_EmbeddingInfo] = []
+  public var embeddings: [Tensorflow_EmbeddingInfo] = []
 
   /// Path to the checkpoint directory. The directory will be scanned for the
   /// latest checkpoint file.
-  var modelCheckpointDir: String = String()
+  public var modelCheckpointDir: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.modelCheckpointPath)
@@ -185,7 +185,7 @@ struct Tensorflow_ProjectorConfig: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.modelCheckpointPath.isEmpty {
       try visitor.visitSingularStringField(value: self.modelCheckpointPath, fieldNumber: 1)
     }
@@ -204,12 +204,12 @@ struct Tensorflow_ProjectorConfig: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_SpriteMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "image_path"),
     2: .standard(proto: "single_image_dim"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SpriteMetadata) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SpriteMetadata) -> Bool {
     if self.imagePath != other.imagePath {return false}
     if self.singleImageDim != other.singleImageDim {return false}
     if unknownFields != other.unknownFields {return false}
@@ -218,7 +218,7 @@ extension Tensorflow_SpriteMetadata: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_EmbeddingInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "tensor_name"),
     2: .standard(proto: "metadata_path"),
     3: .standard(proto: "bookmarks_path"),
@@ -254,7 +254,7 @@ extension Tensorflow_EmbeddingInfo: SwiftProtobuf._MessageImplementationBase, Sw
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_EmbeddingInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_EmbeddingInfo) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._tensorName != other_storage._tensorName {return false}
@@ -273,13 +273,13 @@ extension Tensorflow_EmbeddingInfo: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Tensorflow_ProjectorConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "model_checkpoint_path"),
     2: .same(proto: "embeddings"),
     3: .standard(proto: "model_checkpoint_dir"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ProjectorConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ProjectorConfig) -> Bool {
     if self.modelCheckpointPath != other.modelCheckpointPath {return false}
     if self.embeddings != other.embeddings {return false}
     if self.modelCheckpointDir != other.modelCheckpointDir {return false}

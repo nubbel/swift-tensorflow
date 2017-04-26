@@ -19,41 +19,41 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_CppShapeInferenceResult: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CppShapeInferenceResult"
+public struct Tensorflow_CppShapeInferenceResult: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CppShapeInferenceResult"
 
-  var shape: Tensorflow_TensorShapeProto {
+  public var shape: Tensorflow_TensorShapeProto {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var handleShape: Tensorflow_TensorShapeProto {
+  public var handleShape: Tensorflow_TensorShapeProto {
     get {return _storage._handleShape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._handleShape = newValue}
   }
-  var hasHandleShape: Bool {
+  public var hasHandleShape: Bool {
     return _storage._handleShape != nil
   }
-  mutating func clearHandleShape() {
+  public mutating func clearHandleShape() {
     _storage._handleShape = nil
   }
 
-  var handleDtype: Tensorflow_DataType {
+  public var handleDtype: Tensorflow_DataType {
     get {return _storage._handleDtype}
     set {_uniqueStorage()._handleDtype = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -67,7 +67,7 @@ struct Tensorflow_CppShapeInferenceResult: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -85,18 +85,18 @@ struct Tensorflow_CppShapeInferenceResult: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_CppShapeInferenceInputsNeeded: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CppShapeInferenceInputsNeeded"
+public struct Tensorflow_CppShapeInferenceInputsNeeded: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CppShapeInferenceInputsNeeded"
 
-  var inputTensorsNeeded: [Int32] = []
+  public var inputTensorsNeeded: [Int32] = []
 
-  var inputTensorsAsShapesNeeded: [Int32] = []
+  public var inputTensorsAsShapesNeeded: [Int32] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.inputTensorsNeeded)
@@ -106,7 +106,7 @@ struct Tensorflow_CppShapeInferenceInputsNeeded: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.inputTensorsNeeded.isEmpty {
       try visitor.visitPackedInt32Field(value: self.inputTensorsNeeded, fieldNumber: 1)
     }
@@ -122,7 +122,7 @@ struct Tensorflow_CppShapeInferenceInputsNeeded: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_CppShapeInferenceResult: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .standard(proto: "handle_shape"),
     3: .standard(proto: "handle_dtype"),
@@ -149,7 +149,7 @@ extension Tensorflow_CppShapeInferenceResult: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CppShapeInferenceResult) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CppShapeInferenceResult) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -165,12 +165,12 @@ extension Tensorflow_CppShapeInferenceResult: SwiftProtobuf._MessageImplementati
 }
 
 extension Tensorflow_CppShapeInferenceInputsNeeded: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "input_tensors_needed"),
     2: .standard(proto: "input_tensors_as_shapes_needed"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CppShapeInferenceInputsNeeded) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CppShapeInferenceInputsNeeded) -> Bool {
     if self.inputTensorsNeeded != other.inputTensorsNeeded {return false}
     if self.inputTensorsAsShapesNeeded != other.inputTensorsAsShapesNeeded {return false}
     if unknownFields != other.unknownFields {return false}

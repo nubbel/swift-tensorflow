@@ -20,23 +20,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Protocol buffer representing a tensor.
-struct Tensorflow_TensorProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TensorProto"
+public struct Tensorflow_TensorProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TensorProto"
 
-  var dtype: Tensorflow_DataType {
+  public var dtype: Tensorflow_DataType {
     get {return _storage._dtype}
     set {_uniqueStorage()._dtype = newValue}
   }
 
   /// Shape of the tensor.  TODO(touts): sort out the 0-rank issues.
-  var tensorShape: Tensorflow_TensorShapeProto {
+  public var tensorShape: Tensorflow_TensorShapeProto {
     get {return _storage._tensorShape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._tensorShape = newValue}
   }
-  var hasTensorShape: Bool {
+  public var hasTensorShape: Bool {
     return _storage._tensorShape != nil
   }
-  mutating func clearTensorShape() {
+  public mutating func clearTensorShape() {
     _storage._tensorShape = nil
   }
 
@@ -45,7 +45,7 @@ struct Tensorflow_TensorProto: SwiftProtobuf.Message {
   /// In version 0, if the "repeated xxx" representations contain only one
   /// element, that element is repeated to fill the shape.  This makes it easy
   /// to represent a constant Tensor with a single value.
-  var versionNumber: Int32 {
+  public var versionNumber: Int32 {
     get {return _storage._versionNumber}
     set {_uniqueStorage()._versionNumber = newValue}
   }
@@ -55,79 +55,79 @@ struct Tensorflow_TensorProto: SwiftProtobuf.Message {
   /// can be used for all tensor types. The purpose of this representation is to
   /// reduce serialization overhead during RPC call by avoiding serialization of
   /// many repeated small items.
-  var tensorContent: Data {
+  public var tensorContent: Data {
     get {return _storage._tensorContent}
     set {_uniqueStorage()._tensorContent = newValue}
   }
 
   /// DT_HALF. Note that since protobuf has no int16 type, we'll have some
   /// pointless zero padding for each value here.
-  var halfVal: [Int32] {
+  public var halfVal: [Int32] {
     get {return _storage._halfVal}
     set {_uniqueStorage()._halfVal = newValue}
   }
 
   /// DT_FLOAT.
-  var floatVal: [Float] {
+  public var floatVal: [Float] {
     get {return _storage._floatVal}
     set {_uniqueStorage()._floatVal = newValue}
   }
 
   /// DT_DOUBLE.
-  var doubleVal: [Double] {
+  public var doubleVal: [Double] {
     get {return _storage._doubleVal}
     set {_uniqueStorage()._doubleVal = newValue}
   }
 
   /// DT_INT32, DT_INT16, DT_INT8, DT_UINT8.
-  var intVal: [Int32] {
+  public var intVal: [Int32] {
     get {return _storage._intVal}
     set {_uniqueStorage()._intVal = newValue}
   }
 
   /// DT_STRING
-  var stringVal: [Data] {
+  public var stringVal: [Data] {
     get {return _storage._stringVal}
     set {_uniqueStorage()._stringVal = newValue}
   }
 
   /// DT_COMPLEX64. scomplex_val(2*i) and scomplex_val(2*i+1) are real
   /// and imaginary parts of i-th single precision complex.
-  var scomplexVal: [Float] {
+  public var scomplexVal: [Float] {
     get {return _storage._scomplexVal}
     set {_uniqueStorage()._scomplexVal = newValue}
   }
 
   /// DT_INT64
-  var int64Val: [Int64] {
+  public var int64Val: [Int64] {
     get {return _storage._int64Val}
     set {_uniqueStorage()._int64Val = newValue}
   }
 
   /// DT_BOOL
-  var boolVal: [Bool] {
+  public var boolVal: [Bool] {
     get {return _storage._boolVal}
     set {_uniqueStorage()._boolVal = newValue}
   }
 
   /// DT_COMPLEX128. dcomplex_val(2*i) and dcomplex_val(2*i+1) are real
   /// and imaginary parts of i-th double precision complex.
-  var dcomplexVal: [Double] {
+  public var dcomplexVal: [Double] {
     get {return _storage._dcomplexVal}
     set {_uniqueStorage()._dcomplexVal = newValue}
   }
 
   /// DT_RESOURCE
-  var resourceHandleVal: [Tensorflow_ResourceHandle] {
+  public var resourceHandleVal: [Tensorflow_ResourceHandle] {
     get {return _storage._resourceHandleVal}
     set {_uniqueStorage()._resourceHandleVal = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -152,7 +152,7 @@ struct Tensorflow_TensorProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._dtype != Tensorflow_DataType.dtInvalid {
         try visitor.visitSingularEnumField(value: _storage._dtype, fieldNumber: 1)
@@ -208,7 +208,7 @@ struct Tensorflow_TensorProto: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_TensorProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .standard(proto: "tensor_shape"),
     3: .standard(proto: "version_number"),
@@ -268,7 +268,7 @@ extension Tensorflow_TensorProto: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TensorProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TensorProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._dtype != other_storage._dtype {return false}

@@ -20,41 +20,41 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Protocol buffer representing the configuration of a Saver.
-struct Tensorflow_SaverDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SaverDef"
+public struct Tensorflow_SaverDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SaverDef"
 
   /// The name of the tensor in which to specify the filename when saving or
   /// restoring a model checkpoint.
-  var filenameTensorName: String = String()
+  public var filenameTensorName: String = String()
 
   /// The operation to run when saving a model checkpoint.
-  var saveTensorName: String = String()
+  public var saveTensorName: String = String()
 
   /// The operation to run when restoring a model checkpoint.
-  var restoreOpName: String = String()
+  public var restoreOpName: String = String()
 
   /// Maximum number of checkpoints to keep.  If 0, no checkpoints are deleted.
-  var maxToKeep: Int32 = 0
+  public var maxToKeep: Int32 = 0
 
   /// Shard the save files, one per device that has Variable nodes.
-  var sharded: Bool = false
+  public var sharded: Bool = false
 
   /// How often to keep an additional checkpoint. If not specified, only the last
   /// "max_to_keep" checkpoints are kept; if specified, in addition to keeping
   /// the last "max_to_keep" checkpoints, an additional checkpoint will be kept
   /// for every n hours of training.
-  var keepCheckpointEveryNHours: Float = 0
+  public var keepCheckpointEveryNHours: Float = 0
 
-  var version: Tensorflow_SaverDef.CheckpointFormatVersion = Tensorflow_SaverDef.CheckpointFormatVersion.legacy
+  public var version: Tensorflow_SaverDef.CheckpointFormatVersion = Tensorflow_SaverDef.CheckpointFormatVersion.legacy
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// A version number that identifies a different on-disk checkpoint format.
   /// Usually, each subclass of BaseSaverBuilder works with a particular
   /// version/format.  However, it is possible that the same builder may be
   /// upgraded to support a newer checkpoint format in the future.
-  enum CheckpointFormatVersion: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum CheckpointFormatVersion: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
 
     /// Internal legacy format.
     case legacy // = 0
@@ -66,11 +66,11 @@ struct Tensorflow_SaverDef: SwiftProtobuf.Message {
     case v2 // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .legacy
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .legacy
       case 1: self = .v1
@@ -79,7 +79,7 @@ struct Tensorflow_SaverDef: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .legacy: return 0
       case .v1: return 1
@@ -90,9 +90,9 @@ struct Tensorflow_SaverDef: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.filenameTensorName)
@@ -107,7 +107,7 @@ struct Tensorflow_SaverDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.filenameTensorName.isEmpty {
       try visitor.visitSingularStringField(value: self.filenameTensorName, fieldNumber: 1)
     }
@@ -138,7 +138,7 @@ struct Tensorflow_SaverDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_SaverDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "filename_tensor_name"),
     2: .standard(proto: "save_tensor_name"),
     3: .standard(proto: "restore_op_name"),
@@ -148,7 +148,7 @@ extension Tensorflow_SaverDef: SwiftProtobuf._MessageImplementationBase, SwiftPr
     7: .same(proto: "version"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SaverDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SaverDef) -> Bool {
     if self.filenameTensorName != other.filenameTensorName {return false}
     if self.saveTensorName != other.saveTensorName {return false}
     if self.restoreOpName != other.restoreOpName {return false}
@@ -162,7 +162,7 @@ extension Tensorflow_SaverDef: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Tensorflow_SaverDef.CheckpointFormatVersion: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "LEGACY"),
     1: .same(proto: "V1"),
     2: .same(proto: "V2"),

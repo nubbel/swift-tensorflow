@@ -19,55 +19,55 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_KernelDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".KernelDef"
+public struct Tensorflow_KernelDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".KernelDef"
 
   /// Must match the name of an Op.
-  var op: String = String()
+  public var op: String = String()
 
   /// Type of device this kernel runs on.
-  var deviceType: String = String()
+  public var deviceType: String = String()
 
-  var constraint: [Tensorflow_KernelDef.AttrConstraint] = []
+  public var constraint: [Tensorflow_KernelDef.AttrConstraint] = []
 
   /// Names of the Op's input_/output_args that reside in host memory
   /// instead of device memory.
-  var hostMemoryArg: [String] = []
+  public var hostMemoryArg: [String] = []
 
   /// This allows experimental kernels to be registered for an op that
   /// won't be used unless the user specifies a "_kernel" attr with
   /// value matching this.
-  var label: String = String()
+  public var label: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct AttrConstraint: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_KernelDef.protoMessageName + ".AttrConstraint"
+  public struct AttrConstraint: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_KernelDef.protoMessageName + ".AttrConstraint"
 
     /// Name of an attr from the Op.
-    var name: String {
+    public var name: String {
       get {return _storage._name}
       set {_uniqueStorage()._name = newValue}
     }
 
     /// A list of values that this kernel supports for this attr.
     /// Like OpDef.AttrDef.allowed_values, except for kernels instead of Ops.
-    var allowedValues: Tensorflow_AttrValue {
+    public var allowedValues: Tensorflow_AttrValue {
       get {return _storage._allowedValues ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._allowedValues = newValue}
     }
-    var hasAllowedValues: Bool {
+    public var hasAllowedValues: Bool {
       return _storage._allowedValues != nil
     }
-    mutating func clearAllowedValues() {
+    public mutating func clearAllowedValues() {
       _storage._allowedValues = nil
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -80,7 +80,7 @@ struct Tensorflow_KernelDef: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if !_storage._name.isEmpty {
           try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -95,9 +95,9 @@ struct Tensorflow_KernelDef: SwiftProtobuf.Message {
     fileprivate var _storage = _StorageClass()
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.op)
@@ -110,7 +110,7 @@ struct Tensorflow_KernelDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.op.isEmpty {
       try visitor.visitSingularStringField(value: self.op, fieldNumber: 1)
     }
@@ -135,7 +135,7 @@ struct Tensorflow_KernelDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_KernelDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "op"),
     2: .standard(proto: "device_type"),
     3: .same(proto: "constraint"),
@@ -143,7 +143,7 @@ extension Tensorflow_KernelDef: SwiftProtobuf._MessageImplementationBase, SwiftP
     5: .same(proto: "label"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_KernelDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_KernelDef) -> Bool {
     if self.op != other.op {return false}
     if self.deviceType != other.deviceType {return false}
     if self.constraint != other.constraint {return false}
@@ -155,7 +155,7 @@ extension Tensorflow_KernelDef: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Tensorflow_KernelDef.AttrConstraint: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "allowed_values"),
   ]
@@ -179,7 +179,7 @@ extension Tensorflow_KernelDef.AttrConstraint: SwiftProtobuf._MessageImplementat
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_KernelDef.AttrConstraint) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_KernelDef.AttrConstraint) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}

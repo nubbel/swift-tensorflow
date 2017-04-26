@@ -22,48 +22,48 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// Protocol buffer representing a handle to a tensorflow resource. Handles are
 /// not valid across executions, but can be serialized back and forth from within
 /// a single run.
-struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RemoteFusedGraphExecuteInfo"
+public struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RemoteFusedGraphExecuteInfo"
 
   /// Definition of remote graph
-  var remoteGraph: Tensorflow_GraphDef {
+  public var remoteGraph: Tensorflow_GraphDef {
     get {return _storage._remoteGraph ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._remoteGraph = newValue}
   }
-  var hasRemoteGraph: Bool {
+  public var hasRemoteGraph: Bool {
     return _storage._remoteGraph != nil
   }
-  mutating func clearRemoteGraph() {
+  public mutating func clearRemoteGraph() {
     _storage._remoteGraph = nil
   }
 
   /// Remote fused graph input node name
-  var graphInputNodeName: [String] {
+  public var graphInputNodeName: [String] {
     get {return _storage._graphInputNodeName}
     set {_uniqueStorage()._graphInputNodeName = newValue}
   }
 
   /// Remote fused graph output node name
-  var graphOutputNodeName: [String] {
+  public var graphOutputNodeName: [String] {
     get {return _storage._graphOutputNodeName}
     set {_uniqueStorage()._graphOutputNodeName = newValue}
   }
 
   /// Executor's name
-  var executorName: String {
+  public var executorName: String {
     get {return _storage._executorName}
     set {_uniqueStorage()._executorName = newValue}
   }
 
   /// Optional: Parameters given to the executor
-  var serializedExecutorParameters: Data {
+  public var serializedExecutorParameters: Data {
     get {return _storage._serializedExecutorParameters}
     set {_uniqueStorage()._serializedExecutorParameters = newValue}
   }
 
   /// Optional: Default graph input tensor shape used to allocate memory
   /// before executing op
-  var defaultGraphInputTensorShape: [Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto] {
+  public var defaultGraphInputTensorShape: [Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto] {
     get {return _storage._defaultGraphInputTensorShape}
     set {_uniqueStorage()._defaultGraphInputTensorShape = newValue}
   }
@@ -72,37 +72,37 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
   /// before executing op
   /// TODO(satok): Remote output tensor shape once shape information is stored
   /// in NodeDef
-  var defaultGraphOutputTensorShape: [Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto] {
+  public var defaultGraphOutputTensorShape: [Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto] {
     get {return _storage._defaultGraphOutputTensorShape}
     set {_uniqueStorage()._defaultGraphOutputTensorShape = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct TensorShapeTypeProto: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_RemoteFusedGraphExecuteInfo.protoMessageName + ".TensorShapeTypeProto"
+  public struct TensorShapeTypeProto: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_RemoteFusedGraphExecuteInfo.protoMessageName + ".TensorShapeTypeProto"
 
-    var dtype: Tensorflow_DataType {
+    public var dtype: Tensorflow_DataType {
       get {return _storage._dtype}
       set {_uniqueStorage()._dtype = newValue}
     }
 
-    var shape: Tensorflow_TensorShapeProto {
+    public var shape: Tensorflow_TensorShapeProto {
       get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
       set {_uniqueStorage()._shape = newValue}
     }
-    var hasShape: Bool {
+    public var hasShape: Bool {
       return _storage._shape != nil
     }
-    mutating func clearShape() {
+    public mutating func clearShape() {
       _storage._shape = nil
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -115,7 +115,7 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if _storage._dtype != Tensorflow_DataType.dtInvalid {
           try visitor.visitSingularEnumField(value: _storage._dtype, fieldNumber: 1)
@@ -130,9 +130,9 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
     fileprivate var _storage = _StorageClass()
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -150,7 +150,7 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._remoteGraph {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -185,7 +185,7 @@ struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "remote_graph"),
     2: .standard(proto: "graph_input_node_name"),
     3: .standard(proto: "graph_output_node_name"),
@@ -224,7 +224,7 @@ extension Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf._MessageImplemen
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RemoteFusedGraphExecuteInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RemoteFusedGraphExecuteInfo) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._remoteGraph != other_storage._remoteGraph {return false}
@@ -244,7 +244,7 @@ extension Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf._MessageImplemen
 }
 
 extension Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .same(proto: "shape"),
   ]
@@ -268,7 +268,7 @@ extension Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto: SwiftProt
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._dtype != other_storage._dtype {return false}

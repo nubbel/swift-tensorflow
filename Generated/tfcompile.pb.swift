@@ -23,18 +23,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// index of a particular node in the graph.  If the output of the named node
 /// feeds into other node(s), this corresponds to one or more edges.  Otherwise
 /// it doesn't correspond to any existing edges at all, e.g. for output nodes.
-struct Tensorflow_Tfcompile_TensorId: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TensorId"
+public struct Tensorflow_Tfcompile_TensorId: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TensorId"
 
-  var nodeName: String = String()
+  public var nodeName: String = String()
 
-  var outputIndex: Int64 = 0
+  public var outputIndex: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.nodeName)
@@ -44,7 +44,7 @@ struct Tensorflow_Tfcompile_TensorId: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nodeName.isEmpty {
       try visitor.visitSingularStringField(value: self.nodeName, fieldNumber: 1)
     }
@@ -57,42 +57,42 @@ struct Tensorflow_Tfcompile_TensorId: SwiftProtobuf.Message {
 
 /// Feed represents a single feed tensor in the graph, which corresponds to an
 /// input argument for the generated function.
-struct Tensorflow_Tfcompile_Feed: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Feed"
+public struct Tensorflow_Tfcompile_Feed: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Feed"
 
-  var id: Tensorflow_Tfcompile_TensorId {
+  public var id: Tensorflow_Tfcompile_TensorId {
     get {return _storage._id ?? Tensorflow_Tfcompile_TensorId()}
     set {_uniqueStorage()._id = newValue}
   }
-  var hasId: Bool {
+  public var hasId: Bool {
     return _storage._id != nil
   }
-  mutating func clearId() {
+  public mutating func clearId() {
     _storage._id = nil
   }
 
-  var shape: Tensorflow_TensorShapeProto {
+  public var shape: Tensorflow_TensorShapeProto {
     get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
   /// Optional name for generated code.
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -106,7 +106,7 @@ struct Tensorflow_Tfcompile_Feed: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._id {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -126,31 +126,31 @@ struct Tensorflow_Tfcompile_Feed: SwiftProtobuf.Message {
 
 /// Fetch represents a single fetch tensor in the graph, which corresponds to an
 /// output argument for the generated function.
-struct Tensorflow_Tfcompile_Fetch: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Fetch"
+public struct Tensorflow_Tfcompile_Fetch: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Fetch"
 
-  var id: Tensorflow_Tfcompile_TensorId {
+  public var id: Tensorflow_Tfcompile_TensorId {
     get {return _storage._id ?? Tensorflow_Tfcompile_TensorId()}
     set {_uniqueStorage()._id = newValue}
   }
-  var hasId: Bool {
+  public var hasId: Bool {
     return _storage._id != nil
   }
-  mutating func clearId() {
+  public mutating func clearId() {
     _storage._id = nil
   }
 
   /// Optional name for generated code.
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -163,7 +163,7 @@ struct Tensorflow_Tfcompile_Fetch: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._id {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -179,22 +179,22 @@ struct Tensorflow_Tfcompile_Fetch: SwiftProtobuf.Message {
 }
 
 /// Config represents configuration information for tfcompile.
-struct Tensorflow_Tfcompile_Config: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Config"
+public struct Tensorflow_Tfcompile_Config: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Config"
 
   /// Each feed is a positional input argument for the generated function.  The
   /// order of each entry matches the order of each input argument.
-  var feed: [Tensorflow_Tfcompile_Feed] = []
+  public var feed: [Tensorflow_Tfcompile_Feed] = []
 
   /// Each fetch is a positional output argument for the generated function.  The
   /// order of each entry matches the order of each output argument.
-  var fetch: [Tensorflow_Tfcompile_Fetch] = []
+  public var fetch: [Tensorflow_Tfcompile_Fetch] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.feed)
@@ -204,7 +204,7 @@ struct Tensorflow_Tfcompile_Config: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.feed.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.feed, fieldNumber: 1)
     }
@@ -220,12 +220,12 @@ struct Tensorflow_Tfcompile_Config: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.tfcompile"
 
 extension Tensorflow_Tfcompile_TensorId: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_name"),
     2: .standard(proto: "output_index"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_TensorId) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_TensorId) -> Bool {
     if self.nodeName != other.nodeName {return false}
     if self.outputIndex != other.outputIndex {return false}
     if unknownFields != other.unknownFields {return false}
@@ -234,7 +234,7 @@ extension Tensorflow_Tfcompile_TensorId: SwiftProtobuf._MessageImplementationBas
 }
 
 extension Tensorflow_Tfcompile_Feed: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "shape"),
     3: .same(proto: "name"),
@@ -261,7 +261,7 @@ extension Tensorflow_Tfcompile_Feed: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Feed) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Feed) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._id != other_storage._id {return false}
@@ -277,7 +277,7 @@ extension Tensorflow_Tfcompile_Feed: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_Tfcompile_Fetch: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .same(proto: "name"),
   ]
@@ -301,7 +301,7 @@ extension Tensorflow_Tfcompile_Fetch: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Fetch) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Fetch) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._id != other_storage._id {return false}
@@ -316,12 +316,12 @@ extension Tensorflow_Tfcompile_Fetch: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension Tensorflow_Tfcompile_Config: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "feed"),
     2: .same(proto: "fetch"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Config) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfcompile_Config) -> Bool {
     if self.feed != other.feed {return false}
     if self.fetch != other.fetch {return false}
     if unknownFields != other.unknownFields {return false}

@@ -22,25 +22,25 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_Example: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Example"
+public struct Tensorflow_Example: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Example"
 
-  var features: Tensorflow_Features {
+  public var features: Tensorflow_Features {
     get {return _storage._features ?? Tensorflow_Features()}
     set {_uniqueStorage()._features = newValue}
   }
-  var hasFeatures: Bool {
+  public var hasFeatures: Bool {
     return _storage._features != nil
   }
-  mutating func clearFeatures() {
+  public mutating func clearFeatures() {
     _storage._features = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -52,7 +52,7 @@ struct Tensorflow_Example: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._features {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -64,36 +64,36 @@ struct Tensorflow_Example: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_SequenceExample: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SequenceExample"
+public struct Tensorflow_SequenceExample: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SequenceExample"
 
-  var context: Tensorflow_Features {
+  public var context: Tensorflow_Features {
     get {return _storage._context ?? Tensorflow_Features()}
     set {_uniqueStorage()._context = newValue}
   }
-  var hasContext: Bool {
+  public var hasContext: Bool {
     return _storage._context != nil
   }
-  mutating func clearContext() {
+  public mutating func clearContext() {
     _storage._context = nil
   }
 
-  var featureLists: Tensorflow_FeatureLists {
+  public var featureLists: Tensorflow_FeatureLists {
     get {return _storage._featureLists ?? Tensorflow_FeatureLists()}
     set {_uniqueStorage()._featureLists = newValue}
   }
-  var hasFeatureLists: Bool {
+  public var hasFeatureLists: Bool {
     return _storage._featureLists != nil
   }
-  mutating func clearFeatureLists() {
+  public mutating func clearFeatureLists() {
     _storage._featureLists = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -106,7 +106,7 @@ struct Tensorflow_SequenceExample: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._context {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -126,7 +126,7 @@ struct Tensorflow_SequenceExample: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_Example: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "features"),
   ]
 
@@ -147,7 +147,7 @@ extension Tensorflow_Example: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Example) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Example) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._features != other_storage._features {return false}
@@ -161,7 +161,7 @@ extension Tensorflow_Example: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Tensorflow_SequenceExample: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "context"),
     2: .standard(proto: "feature_lists"),
   ]
@@ -185,7 +185,7 @@ extension Tensorflow_SequenceExample: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SequenceExample) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SequenceExample) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._context != other_storage._context {return false}

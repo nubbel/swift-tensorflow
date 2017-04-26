@@ -35,67 +35,67 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// can change the semantics of existing code.  These changes may need
 /// to wait until a major release of TensorFlow to avoid breaking our
 /// compatibility promises.
-struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpGenOverride"
+public struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpGenOverride"
 
   /// Name of the op to apply overrides to.
-  var name: String = String()
+  public var name: String = String()
 
   /// Do not include this op in the generated API.
   /// If `skip` is true, all other overrides are ignored for this op.
-  var skip: Bool = false
+  public var skip: Bool = false
 
   /// Hide this op by putting it into an internal namespace (or whatever
   /// is appropriate in the target language).
-  var hide: Bool = false
+  public var hide: Bool = false
 
   /// Use a different name in the API than the op's name. Note that
   /// the op's name in `backticks` will also be replaced in the docs.
-  var renameTo: String = String()
+  public var renameTo: String = String()
 
   /// Create *additional* API endpoints with different names (contrast
   /// with rename_to, which affects the original name).
-  var alias: [String] = []
+  public var alias: [String] = []
 
-  var attrDefault: [Tensorflow_OpGenOverride.AttrDefault] = []
+  public var attrDefault: [Tensorflow_OpGenOverride.AttrDefault] = []
 
-  var attrRename: [Tensorflow_OpGenOverride.Rename] = []
+  public var attrRename: [Tensorflow_OpGenOverride.Rename] = []
 
-  var inputRename: [Tensorflow_OpGenOverride.Rename] = []
+  public var inputRename: [Tensorflow_OpGenOverride.Rename] = []
 
-  var outputRename: [Tensorflow_OpGenOverride.Rename] = []
+  public var outputRename: [Tensorflow_OpGenOverride.Rename] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Map the name of an attr to a new default value to use.  This
   /// default will be used when creating new graphs, as opposed to the
   /// default in the OpDef, which will be used when interpreting old
   /// GraphDefs.  If this attr is also renamed (using attr_rename
   /// below), use the original name of the attr.
-  struct AttrDefault: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpGenOverride.protoMessageName + ".AttrDefault"
+  public struct AttrDefault: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpGenOverride.protoMessageName + ".AttrDefault"
 
-    var name: String {
+    public var name: String {
       get {return _storage._name}
       set {_uniqueStorage()._name = newValue}
     }
 
-    var value: Tensorflow_AttrValue {
+    public var value: Tensorflow_AttrValue {
       get {return _storage._value ?? Tensorflow_AttrValue()}
       set {_uniqueStorage()._value = newValue}
     }
-    var hasValue: Bool {
+    public var hasValue: Bool {
       return _storage._value != nil
     }
-    mutating func clearValue() {
+    public mutating func clearValue() {
       _storage._value = nil
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -108,7 +108,7 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if !_storage._name.isEmpty {
           try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -126,18 +126,18 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
   /// Change the name used to access attrs/inputs/outputs in the API
   /// from what is used in the GraphDef.  Note that these names in
   /// `backticks` will also be replaced in the docs.
-  struct Rename: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_OpGenOverride.protoMessageName + ".Rename"
+  public struct Rename: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_OpGenOverride.protoMessageName + ".Rename"
 
-    var from: String = String()
+    public var from: String = String()
 
-    var to: String = String()
+    public var to: String = String()
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.from)
@@ -147,7 +147,7 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.from.isEmpty {
         try visitor.visitSingularStringField(value: self.from, fieldNumber: 1)
       }
@@ -158,9 +158,9 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -177,7 +177,7 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -209,16 +209,16 @@ struct Tensorflow_OpGenOverride: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_OpGenOverrides: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpGenOverrides"
+public struct Tensorflow_OpGenOverrides: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpGenOverrides"
 
-  var op: [Tensorflow_OpGenOverride] = []
+  public var op: [Tensorflow_OpGenOverride] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.op)
@@ -227,7 +227,7 @@ struct Tensorflow_OpGenOverrides: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.op.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.op, fieldNumber: 1)
     }
@@ -240,7 +240,7 @@ struct Tensorflow_OpGenOverrides: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_OpGenOverride: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "skip"),
     3: .same(proto: "hide"),
@@ -252,7 +252,7 @@ extension Tensorflow_OpGenOverride: SwiftProtobuf._MessageImplementationBase, Sw
     9: .standard(proto: "output_rename"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride) -> Bool {
     if self.name != other.name {return false}
     if self.skip != other.skip {return false}
     if self.hide != other.hide {return false}
@@ -268,7 +268,7 @@ extension Tensorflow_OpGenOverride: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Tensorflow_OpGenOverride.AttrDefault: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "value"),
   ]
@@ -292,7 +292,7 @@ extension Tensorflow_OpGenOverride.AttrDefault: SwiftProtobuf._MessageImplementa
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride.AttrDefault) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride.AttrDefault) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}
@@ -307,12 +307,12 @@ extension Tensorflow_OpGenOverride.AttrDefault: SwiftProtobuf._MessageImplementa
 }
 
 extension Tensorflow_OpGenOverride.Rename: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "from"),
     2: .same(proto: "to"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride.Rename) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverride.Rename) -> Bool {
     if self.from != other.from {return false}
     if self.to != other.to {return false}
     if unknownFields != other.unknownFields {return false}
@@ -321,11 +321,11 @@ extension Tensorflow_OpGenOverride.Rename: SwiftProtobuf._MessageImplementationB
 }
 
 extension Tensorflow_OpGenOverrides: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "op"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverrides) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpGenOverrides) -> Bool {
     if self.op != other.op {return false}
     if unknownFields != other.unknownFields {return false}
     return true

@@ -19,18 +19,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_DeviceLocality: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceLocality"
+public struct Tensorflow_DeviceLocality: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DeviceLocality"
 
   /// Optional bus locality of device.  Default value of 0 means
   /// no specific locality.  Specific localities are indexed from 1.
-  var busId: Int32 = 0
+  public var busId: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.busId)
@@ -39,7 +39,7 @@ struct Tensorflow_DeviceLocality: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.busId != 0 {
       try visitor.visitSingularInt32Field(value: self.busId, fieldNumber: 1)
     }
@@ -47,58 +47,58 @@ struct Tensorflow_DeviceLocality: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_DeviceAttributes: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceAttributes"
+public struct Tensorflow_DeviceAttributes: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DeviceAttributes"
 
   /// Fully specified name of the device within a cluster.
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
   /// String representation of device_type.
-  var deviceType: String {
+  public var deviceType: String {
     get {return _storage._deviceType}
     set {_uniqueStorage()._deviceType = newValue}
   }
 
   /// Memory capacity of device in bytes.
-  var memoryLimit: Int64 {
+  public var memoryLimit: Int64 {
     get {return _storage._memoryLimit}
     set {_uniqueStorage()._memoryLimit = newValue}
   }
 
   /// Platform-specific data about device that may be useful
   /// for supporting efficient data transfers.
-  var locality: Tensorflow_DeviceLocality {
+  public var locality: Tensorflow_DeviceLocality {
     get {return _storage._locality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._locality = newValue}
   }
-  var hasLocality: Bool {
+  public var hasLocality: Bool {
     return _storage._locality != nil
   }
-  mutating func clearLocality() {
+  public mutating func clearLocality() {
     _storage._locality = nil
   }
 
   /// A device is assigned a global unique number each time it is
   /// initialized. "incarnation" should never be 0.
-  var incarnation: UInt64 {
+  public var incarnation: UInt64 {
     get {return _storage._incarnation}
     set {_uniqueStorage()._incarnation = newValue}
   }
 
   /// String representation of the physical device that this device maps to.
-  var physicalDeviceDesc: String {
+  public var physicalDeviceDesc: String {
     get {return _storage._physicalDeviceDesc}
     set {_uniqueStorage()._physicalDeviceDesc = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -115,7 +115,7 @@ struct Tensorflow_DeviceAttributes: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -147,11 +147,11 @@ struct Tensorflow_DeviceAttributes: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_DeviceLocality: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "bus_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DeviceLocality) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DeviceLocality) -> Bool {
     if self.busId != other.busId {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -159,7 +159,7 @@ extension Tensorflow_DeviceLocality: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_DeviceAttributes: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "device_type"),
     4: .standard(proto: "memory_limit"),
@@ -195,7 +195,7 @@ extension Tensorflow_DeviceAttributes: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DeviceAttributes) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DeviceAttributes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}

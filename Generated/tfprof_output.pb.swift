@@ -19,34 +19,34 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFProfTensorProto"
+public struct Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFProfTensorProto"
 
   fileprivate var _dtype: Tensorflow_DataType? = nil
-  var dtype: Tensorflow_DataType {
+  public var dtype: Tensorflow_DataType {
     get {return _dtype ?? Tensorflow_DataType.dtInvalid}
     set {_dtype = newValue}
   }
-  var hasDtype: Bool {
+  public var hasDtype: Bool {
     return self._dtype != nil
   }
-  mutating func clearDtype() {
+  public mutating func clearDtype() {
     self._dtype = nil
   }
 
   /// Flatten tensor in row-major.
   /// Only one of the following array is set.
-  var valueDouble: [Double] = []
+  public var valueDouble: [Double] = []
 
-  var valueInt64: [Int64] = []
+  public var valueInt64: [Int64] = []
 
-  var valueStr: [String] = []
+  public var valueStr: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self._dtype)
@@ -58,7 +58,7 @@ struct Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._dtype {
       try visitor.visitSingularEnumField(value: v, fieldNumber: 1)
     }
@@ -75,181 +75,181 @@ struct Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Tfprof_TFProfNode: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFProfNode"
+public struct Tensorflow_Tfprof_TFProfNode: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFProfNode"
 
   /// op name.
-  var name: String {
+  public var name: String {
     get {return _storage._name ?? String()}
     set {_uniqueStorage()._name = newValue}
   }
-  var hasName: Bool {
+  public var hasName: Bool {
     return _storage._name != nil
   }
-  mutating func clearName() {
+  public mutating func clearName() {
     _storage._name = nil
   }
 
   /// tensor value restored from checkpoint.
-  var tensorValue: Tensorflow_Tfprof_TFProfTensorProto {
+  public var tensorValue: Tensorflow_Tfprof_TFProfTensorProto {
     get {return _storage._tensorValue ?? Tensorflow_Tfprof_TFProfTensorProto()}
     set {_uniqueStorage()._tensorValue = newValue}
   }
-  var hasTensorValue: Bool {
+  public var hasTensorValue: Bool {
     return _storage._tensorValue != nil
   }
-  mutating func clearTensorValue() {
+  public mutating func clearTensorValue() {
     _storage._tensorValue = nil
   }
 
   /// op execution time.
-  var execMicros: Int64 {
+  public var execMicros: Int64 {
     get {return _storage._execMicros ?? 0}
     set {_uniqueStorage()._execMicros = newValue}
   }
-  var hasExecMicros: Bool {
+  public var hasExecMicros: Bool {
     return _storage._execMicros != nil
   }
-  mutating func clearExecMicros() {
+  public mutating func clearExecMicros() {
     _storage._execMicros = nil
   }
 
   /// Total requested bytes by the op.
-  var requestedBytes: Int64 {
+  public var requestedBytes: Int64 {
     get {return _storage._requestedBytes ?? 0}
     set {_uniqueStorage()._requestedBytes = newValue}
   }
-  var hasRequestedBytes: Bool {
+  public var hasRequestedBytes: Bool {
     return _storage._requestedBytes != nil
   }
-  mutating func clearRequestedBytes() {
+  public mutating func clearRequestedBytes() {
     _storage._requestedBytes = nil
   }
 
   /// Number of parameters if available.
-  var parameters: Int64 {
+  public var parameters: Int64 {
     get {return _storage._parameters ?? 0}
     set {_uniqueStorage()._parameters = newValue}
   }
-  var hasParameters: Bool {
+  public var hasParameters: Bool {
     return _storage._parameters != nil
   }
-  mutating func clearParameters() {
+  public mutating func clearParameters() {
     _storage._parameters = nil
   }
 
   /// Number of float operations.
-  var floatOps: Int64 {
+  public var floatOps: Int64 {
     get {return _storage._floatOps ?? 0}
     set {_uniqueStorage()._floatOps = newValue}
   }
-  var hasFloatOps: Bool {
+  public var hasFloatOps: Bool {
     return _storage._floatOps != nil
   }
-  mutating func clearFloatOps() {
+  public mutating func clearFloatOps() {
     _storage._floatOps = nil
   }
 
   /// Number of inputs to the op.
-  var inputs: Int64 {
+  public var inputs: Int64 {
     get {return _storage._inputs ?? 0}
     set {_uniqueStorage()._inputs = newValue}
   }
-  var hasInputs: Bool {
+  public var hasInputs: Bool {
     return _storage._inputs != nil
   }
-  mutating func clearInputs() {
+  public mutating func clearInputs() {
     _storage._inputs = nil
   }
 
   /// Device the op is assigned to.
-  var device: String {
+  public var device: String {
     get {return _storage._device ?? String()}
     set {_uniqueStorage()._device = newValue}
   }
-  var hasDevice: Bool {
+  public var hasDevice: Bool {
     return _storage._device != nil
   }
-  mutating func clearDevice() {
+  public mutating func clearDevice() {
     _storage._device = nil
   }
 
   /// The following are the aggregated stats from all accounted descendants and
   /// the op itself. The actual descendants depend on the data structure used
   /// (scope, graph).
-  var totalExecMicros: Int64 {
+  public var totalExecMicros: Int64 {
     get {return _storage._totalExecMicros ?? 0}
     set {_uniqueStorage()._totalExecMicros = newValue}
   }
-  var hasTotalExecMicros: Bool {
+  public var hasTotalExecMicros: Bool {
     return _storage._totalExecMicros != nil
   }
-  mutating func clearTotalExecMicros() {
+  public mutating func clearTotalExecMicros() {
     _storage._totalExecMicros = nil
   }
 
-  var totalRequestedBytes: Int64 {
+  public var totalRequestedBytes: Int64 {
     get {return _storage._totalRequestedBytes ?? 0}
     set {_uniqueStorage()._totalRequestedBytes = newValue}
   }
-  var hasTotalRequestedBytes: Bool {
+  public var hasTotalRequestedBytes: Bool {
     return _storage._totalRequestedBytes != nil
   }
-  mutating func clearTotalRequestedBytes() {
+  public mutating func clearTotalRequestedBytes() {
     _storage._totalRequestedBytes = nil
   }
 
-  var totalParameters: Int64 {
+  public var totalParameters: Int64 {
     get {return _storage._totalParameters ?? 0}
     set {_uniqueStorage()._totalParameters = newValue}
   }
-  var hasTotalParameters: Bool {
+  public var hasTotalParameters: Bool {
     return _storage._totalParameters != nil
   }
-  mutating func clearTotalParameters() {
+  public mutating func clearTotalParameters() {
     _storage._totalParameters = nil
   }
 
-  var totalFloatOps: Int64 {
+  public var totalFloatOps: Int64 {
     get {return _storage._totalFloatOps ?? 0}
     set {_uniqueStorage()._totalFloatOps = newValue}
   }
-  var hasTotalFloatOps: Bool {
+  public var hasTotalFloatOps: Bool {
     return _storage._totalFloatOps != nil
   }
-  mutating func clearTotalFloatOps() {
+  public mutating func clearTotalFloatOps() {
     _storage._totalFloatOps = nil
   }
 
-  var totalInputs: Int64 {
+  public var totalInputs: Int64 {
     get {return _storage._totalInputs ?? 0}
     set {_uniqueStorage()._totalInputs = newValue}
   }
-  var hasTotalInputs: Bool {
+  public var hasTotalInputs: Bool {
     return _storage._totalInputs != nil
   }
-  mutating func clearTotalInputs() {
+  public mutating func clearTotalInputs() {
     _storage._totalInputs = nil
   }
 
   /// shape information, if available.
-  var shapes: [Tensorflow_TensorShapeProto] {
+  public var shapes: [Tensorflow_TensorShapeProto] {
     get {return _storage._shapes}
     set {_uniqueStorage()._shapes = newValue}
   }
 
   /// Descendants of the graph. The actual descendants depend on the data
   /// structure used (scope, graph).
-  var children: [Tensorflow_Tfprof_TFProfNode] {
+  public var children: [Tensorflow_Tfprof_TFProfNode] {
     get {return _storage._children}
     set {_uniqueStorage()._children = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -275,7 +275,7 @@ struct Tensorflow_Tfprof_TFProfNode: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._name {
         try visitor.visitSingularStringField(value: v, fieldNumber: 1)
@@ -334,14 +334,14 @@ struct Tensorflow_Tfprof_TFProfNode: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.tfprof"
 
 extension Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dtype"),
     2: .standard(proto: "value_double"),
     3: .standard(proto: "value_int64"),
     4: .standard(proto: "value_str"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_TFProfTensorProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_TFProfTensorProto) -> Bool {
     if self._dtype != other._dtype {return false}
     if self.valueDouble != other.valueDouble {return false}
     if self.valueInt64 != other.valueInt64 {return false}
@@ -352,7 +352,7 @@ extension Tensorflow_Tfprof_TFProfTensorProto: SwiftProtobuf._MessageImplementat
 }
 
 extension Tensorflow_Tfprof_TFProfNode: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     15: .standard(proto: "tensor_value"),
     2: .standard(proto: "exec_micros"),
@@ -415,7 +415,7 @@ extension Tensorflow_Tfprof_TFProfNode: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_TFProfNode) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_TFProfNode) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._name != other_storage._name {return false}

@@ -22,33 +22,33 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Can only be interpreted if you know the corresponding TensorShape.
-struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TensorSliceProto"
+public struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TensorSliceProto"
 
   /// Extent of the slice in all tensor dimensions.
   ///
   /// Must have one entry for each of the dimension of the tensor that this
   /// slice belongs to.  The order of sizes is the same as the order of
   /// dimensions in the TensorShape.
-  var extent: [Tensorflow_TensorSliceProto.Extent] = []
+  public var extent: [Tensorflow_TensorSliceProto.Extent] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Extent of the slice in one dimension.
-  struct Extent: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_TensorSliceProto.protoMessageName + ".Extent"
+  public struct Extent: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_TensorSliceProto.protoMessageName + ".Extent"
 
     /// Start index of the slice, starting at 0.
-    var start: Int64 = 0
+    public var start: Int64 = 0
 
     /// Length of the slice: if the length is missing or -1 we will
     /// interpret this as "everything in this dimension".  We use
     /// "oneof" to preserve information about whether the length is
     /// present without changing the serialization format from the
     /// prior proto2 version of this proto.
-    var hasLength: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength? = nil
+    public var hasLength: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength? = nil
 
-    var length: Int64 {
+    public var length: Int64 {
       get {
         if case .length(let v)? = hasLength {return v}
         return 0
@@ -56,26 +56,26 @@ struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
       set {hasLength = .length(newValue)}
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     /// Length of the slice: if the length is missing or -1 we will
     /// interpret this as "everything in this dimension".  We use
     /// "oneof" to preserve information about whether the length is
     /// present without changing the serialization format from the
     /// prior proto2 version of this proto.
-    enum OneOf_HasLength: Equatable {
+    public enum OneOf_HasLength: Equatable {
       case length(Int64)
 
-      static func ==(lhs: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength, rhs: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength) -> Bool {
+      public static func ==(lhs: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength, rhs: Tensorflow_TensorSliceProto.Extent.OneOf_HasLength) -> Bool {
         switch (lhs, rhs) {
         case (.length(let l), .length(let r)): return l == r
         }
       }
     }
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt64Field(value: &self.start)
@@ -89,7 +89,7 @@ struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if self.start != 0 {
         try visitor.visitSingularInt64Field(value: self.start, fieldNumber: 1)
       }
@@ -98,9 +98,9 @@ struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.extent)
@@ -109,7 +109,7 @@ struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.extent.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.extent, fieldNumber: 1)
     }
@@ -122,11 +122,11 @@ struct Tensorflow_TensorSliceProto: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_TensorSliceProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "extent"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TensorSliceProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TensorSliceProto) -> Bool {
     if self.extent != other.extent {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -134,12 +134,12 @@ extension Tensorflow_TensorSliceProto: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_TensorSliceProto.Extent: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "start"),
     2: .same(proto: "length"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TensorSliceProto.Extent) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TensorSliceProto.Extent) -> Bool {
     if self.start != other.start {return false}
     if self.hasLength != other.hasLength {return false}
     if unknownFields != other.unknownFields {return false}

@@ -22,23 +22,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// Protocol buffer representing the checkpoint state.
 ///
 /// TODO(touts): Add other attributes as needed.
-struct Tensorflow_CheckpointState: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CheckpointState"
+public struct Tensorflow_CheckpointState: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CheckpointState"
 
   /// Path to the most-recent model checkpoint.
-  var modelCheckpointPath: String = String()
+  public var modelCheckpointPath: String = String()
 
   /// Paths to all not-yet-deleted model checkpoints, sorted from oldest to
   /// newest.
   /// Note that the value of model_checkpoint_path should be the last item in
   /// this list.
-  var allModelCheckpointPaths: [String] = []
+  public var allModelCheckpointPaths: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.modelCheckpointPath)
@@ -48,7 +48,7 @@ struct Tensorflow_CheckpointState: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.modelCheckpointPath.isEmpty {
       try visitor.visitSingularStringField(value: self.modelCheckpointPath, fieldNumber: 1)
     }
@@ -64,12 +64,12 @@ struct Tensorflow_CheckpointState: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_CheckpointState: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "model_checkpoint_path"),
     2: .standard(proto: "all_model_checkpoint_paths"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CheckpointState) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CheckpointState) -> Bool {
     if self.modelCheckpointPath != other.modelCheckpointPath {return false}
     if self.allModelCheckpointPaths != other.allModelCheckpointPaths {return false}
     if unknownFields != other.unknownFields {return false}

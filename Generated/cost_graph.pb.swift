@@ -19,76 +19,76 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CostGraphDef"
+public struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CostGraphDef"
 
-  var node: [Tensorflow_CostGraphDef.Node] = []
+  public var node: [Tensorflow_CostGraphDef.Node] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct Node: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_CostGraphDef.protoMessageName + ".Node"
+  public struct Node: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_CostGraphDef.protoMessageName + ".Node"
 
     /// The name of the node. Names are globally unique.
-    var name: String = String()
+    public var name: String = String()
 
     /// The device of the node. Can be empty if the node is mapped to the
     /// default partition or partitioning hasn't been run yet.
-    var device: String = String()
+    public var device: String = String()
 
     /// The id of the node. Node ids are only unique inside a partition.
-    var id: Int32 = 0
+    public var id: Int32 = 0
 
-    var inputInfo: [Tensorflow_CostGraphDef.Node.InputInfo] = []
+    public var inputInfo: [Tensorflow_CostGraphDef.Node.InputInfo] = []
 
-    var outputInfo: [Tensorflow_CostGraphDef.Node.OutputInfo] = []
+    public var outputInfo: [Tensorflow_CostGraphDef.Node.OutputInfo] = []
 
     /// Temporary memory used by this node.
-    var temporaryMemorySize: Int64 = 0
+    public var temporaryMemorySize: Int64 = 0
 
-    var hostTempMemorySize: Int64 = 0
+    public var hostTempMemorySize: Int64 = 0
 
-    var deviceTempMemorySize: Int64 = 0
+    public var deviceTempMemorySize: Int64 = 0
 
-    var hostPersistentMemorySize: Int64 = 0
+    public var hostPersistentMemorySize: Int64 = 0
 
-    var devicePersistentMemorySize: Int64 = 0
+    public var devicePersistentMemorySize: Int64 = 0
 
     /// Estimate of the computational cost of this node, in microseconds.
-    var computeCost: Int64 = 0
+    public var computeCost: Int64 = 0
 
     /// Analytical estimate of the computational cost of this node, in
     /// microseconds.
-    var computeTime: Int64 = 0
+    public var computeTime: Int64 = 0
 
     /// Analytical estimate of the memory access cost of this node, in
     /// microseconds.
-    var memoryTime: Int64 = 0
+    public var memoryTime: Int64 = 0
 
     /// If true, the output is permanent: it can't be discarded, because this
     /// node is part of the "final output". Nodes may depend on final nodes.
-    var isFinal: Bool = false
+    public var isFinal: Bool = false
 
     /// Ids of the control inputs for this node.
-    var controlInput: [Int32] = []
+    public var controlInput: [Int32] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     /// Inputs of this node. They must be executed before this node can be
     /// executed. An input is a particular output of another node, specified
     /// by the node id and the output index.
-    struct InputInfo: SwiftProtobuf.Message {
-      static let protoMessageName: String = Tensorflow_CostGraphDef.Node.protoMessageName + ".InputInfo"
+    public struct InputInfo: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_CostGraphDef.Node.protoMessageName + ".InputInfo"
 
-      var precedingNode: Int32 = 0
+      public var precedingNode: Int32 = 0
 
-      var precedingPort: Int32 = 0
+      public var precedingPort: Int32 = 0
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
 
-      mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
         while let fieldNumber = try decoder.nextFieldNumber() {
           switch fieldNumber {
           case 1: try decoder.decodeSingularInt32Field(value: &self.precedingNode)
@@ -98,7 +98,7 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
         }
       }
 
-      func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
         if self.precedingNode != 0 {
           try visitor.visitSingularInt32Field(value: self.precedingNode, fieldNumber: 1)
         }
@@ -110,10 +110,10 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
     }
 
     /// Outputs of this node.
-    struct OutputInfo: SwiftProtobuf.Message {
-      static let protoMessageName: String = Tensorflow_CostGraphDef.Node.protoMessageName + ".OutputInfo"
+    public struct OutputInfo: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_CostGraphDef.Node.protoMessageName + ".OutputInfo"
 
-      var size: Int64 {
+      public var size: Int64 {
         get {return _storage._size}
         set {_uniqueStorage()._size = newValue}
       }
@@ -121,32 +121,32 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
       /// If >= 0, the output is an alias of an input. Note that an alias input
       /// may itself be an alias. The algorithm will therefore need to follow
       /// those pointers.
-      var aliasInputPort: Int64 {
+      public var aliasInputPort: Int64 {
         get {return _storage._aliasInputPort}
         set {_uniqueStorage()._aliasInputPort = newValue}
       }
 
-      var shape: Tensorflow_TensorShapeProto {
+      public var shape: Tensorflow_TensorShapeProto {
         get {return _storage._shape ?? Tensorflow_TensorShapeProto()}
         set {_uniqueStorage()._shape = newValue}
       }
-      var hasShape: Bool {
+      public var hasShape: Bool {
         return _storage._shape != nil
       }
-      mutating func clearShape() {
+      public mutating func clearShape() {
         _storage._shape = nil
       }
 
-      var dtype: Tensorflow_DataType {
+      public var dtype: Tensorflow_DataType {
         get {return _storage._dtype}
         set {_uniqueStorage()._dtype = newValue}
       }
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
 
-      mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
         _ = _uniqueStorage()
         try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
           while let fieldNumber = try decoder.nextFieldNumber() {
@@ -161,7 +161,7 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
         }
       }
 
-      func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
         try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
           if _storage._size != 0 {
             try visitor.visitSingularInt64Field(value: _storage._size, fieldNumber: 1)
@@ -182,9 +182,9 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
       fileprivate var _storage = _StorageClass()
     }
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -207,7 +207,7 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if !self.name.isEmpty {
         try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
       }
@@ -257,9 +257,9 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.node)
@@ -268,7 +268,7 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.node.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.node, fieldNumber: 1)
     }
@@ -281,11 +281,11 @@ struct Tensorflow_CostGraphDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_CostGraphDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "node"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef) -> Bool {
     if self.node != other.node {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -293,7 +293,7 @@ extension Tensorflow_CostGraphDef: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Tensorflow_CostGraphDef.Node: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "device"),
     3: .same(proto: "id"),
@@ -311,7 +311,7 @@ extension Tensorflow_CostGraphDef.Node: SwiftProtobuf._MessageImplementationBase
     8: .standard(proto: "control_input"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node) -> Bool {
     if self.name != other.name {return false}
     if self.device != other.device {return false}
     if self.id != other.id {return false}
@@ -333,12 +333,12 @@ extension Tensorflow_CostGraphDef.Node: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_CostGraphDef.Node.InputInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "preceding_node"),
     2: .standard(proto: "preceding_port"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node.InputInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node.InputInfo) -> Bool {
     if self.precedingNode != other.precedingNode {return false}
     if self.precedingPort != other.precedingPort {return false}
     if unknownFields != other.unknownFields {return false}
@@ -347,7 +347,7 @@ extension Tensorflow_CostGraphDef.Node.InputInfo: SwiftProtobuf._MessageImplemen
 }
 
 extension Tensorflow_CostGraphDef.Node.OutputInfo: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "size"),
     2: .standard(proto: "alias_input_port"),
     3: .same(proto: "shape"),
@@ -377,7 +377,7 @@ extension Tensorflow_CostGraphDef.Node.OutputInfo: SwiftProtobuf._MessageImpleme
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node.OutputInfo) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CostGraphDef.Node.OutputInfo) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._size != other_storage._size {return false}

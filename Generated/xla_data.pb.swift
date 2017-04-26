@@ -37,8 +37,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 /// Primitive types are the individual values that can be held in rectangular
 /// multidimensional arrays. A description of the rectangular multidimensional
 /// array dimensions / primitive type is given by Shape, below.
-enum Xla_PrimitiveType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_PrimitiveType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
 
   /// Invalid primitive type to serve as default.
   case primitiveTypeInvalid // = 0
@@ -79,11 +79,11 @@ enum Xla_PrimitiveType: SwiftProtobuf.Enum {
   case opaque // = 14
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .primitiveTypeInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .primitiveTypeInvalid
     case 1: self = .pred
@@ -104,7 +104,7 @@ enum Xla_PrimitiveType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .primitiveTypeInvalid: return 0
     case .pred: return 1
@@ -128,8 +128,8 @@ enum Xla_PrimitiveType: SwiftProtobuf.Enum {
 }
 
 /// Describes the value held inside padding elements.
-enum Xla_PaddingValue: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_PaddingValue: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case invalidPad // = 0
 
   /// Zero padding must be 0-values that correspond to the shape's element type.
@@ -150,11 +150,11 @@ enum Xla_PaddingValue: SwiftProtobuf.Enum {
   case unknownPad // = 5
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .invalidPad
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .invalidPad
     case 1: self = .zeroPad
@@ -166,7 +166,7 @@ enum Xla_PaddingValue: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .invalidPad: return 0
     case .zeroPad: return 1
@@ -180,8 +180,8 @@ enum Xla_PaddingValue: SwiftProtobuf.Enum {
 
 }
 
-enum Xla_UnaryOperation: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_UnaryOperation: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unopInvalid // = 0
 
   /// Elementwise, logical negation
@@ -218,11 +218,11 @@ enum Xla_UnaryOperation: SwiftProtobuf.Enum {
   case unopIsFinite // = 11
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unopInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unopInvalid
     case 1: self = .unopLogicalNot
@@ -240,7 +240,7 @@ enum Xla_UnaryOperation: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unopInvalid: return 0
     case .unopLogicalNot: return 1
@@ -260,8 +260,8 @@ enum Xla_UnaryOperation: SwiftProtobuf.Enum {
 
 }
 
-enum Xla_BinaryOperation: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_BinaryOperation: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case binopInvalid // = 0
 
   /// Arithmetic operations.
@@ -306,11 +306,11 @@ enum Xla_BinaryOperation: SwiftProtobuf.Enum {
   case binopLogicalOr // = 19
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .binopInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .binopInvalid
     case 1: self = .binopAdd
@@ -335,7 +335,7 @@ enum Xla_BinaryOperation: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .binopInvalid: return 0
     case .binopAdd: return 1
@@ -362,8 +362,8 @@ enum Xla_BinaryOperation: SwiftProtobuf.Enum {
 
 }
 
-enum Xla_RandomDistribution: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_RandomDistribution: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case rngInvalid // = 0
 
   /// Creates a uniform-distribution-generated random number on the semi-open
@@ -379,11 +379,11 @@ enum Xla_RandomDistribution: SwiftProtobuf.Enum {
   case rngBernoulli // = 3
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .rngInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .rngInvalid
     case 1: self = .rngUniform
@@ -393,7 +393,7 @@ enum Xla_RandomDistribution: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .rngInvalid: return 0
     case .rngUniform: return 1
@@ -405,8 +405,8 @@ enum Xla_RandomDistribution: SwiftProtobuf.Enum {
 
 }
 
-enum Xla_TernaryOperation: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_TernaryOperation: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case triopInvalid // = 0
 
   /// Given a predicate and two operands, selects operand0 if the predicate is
@@ -423,11 +423,11 @@ enum Xla_TernaryOperation: SwiftProtobuf.Enum {
   case triopClamp // = 3
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .triopInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .triopInvalid
     case 1: self = .triopSelect
@@ -437,7 +437,7 @@ enum Xla_TernaryOperation: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .triopInvalid: return 0
     case .triopSelect: return 1
@@ -449,19 +449,19 @@ enum Xla_TernaryOperation: SwiftProtobuf.Enum {
 
 }
 
-enum Xla_VariadicOperation: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Xla_VariadicOperation: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case varopInvalid // = 0
 
   /// Creates a tuple from its operands.
   case varopTuple // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .varopInvalid
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .varopInvalid
     case 1: self = .varopTuple
@@ -469,7 +469,7 @@ enum Xla_VariadicOperation: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .varopInvalid: return 0
     case .varopTuple: return 1
@@ -481,32 +481,32 @@ enum Xla_VariadicOperation: SwiftProtobuf.Enum {
 
 /// Describes the padding configuration for Pad operation. The padding amount on
 /// both edges as well as between the elements are specified for each dimension.
-struct Xla_PaddingConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PaddingConfig"
+public struct Xla_PaddingConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".PaddingConfig"
 
   /// The padding configuration for all dimensions.
-  var dimensions: [Xla_PaddingConfig.PaddingConfigDimension] = []
+  public var dimensions: [Xla_PaddingConfig.PaddingConfigDimension] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Describes the padding configuration for a dimension.
-  struct PaddingConfigDimension: SwiftProtobuf.Message {
-    static let protoMessageName: String = Xla_PaddingConfig.protoMessageName + ".PaddingConfigDimension"
+  public struct PaddingConfigDimension: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Xla_PaddingConfig.protoMessageName + ".PaddingConfigDimension"
 
     /// Padding amount on the low-end (next to the index 0).
-    var edgePaddingLow: Int64 = 0
+    public var edgePaddingLow: Int64 = 0
 
     /// Padding amount on the high-end (next to the highest index).
-    var edgePaddingHigh: Int64 = 0
+    public var edgePaddingHigh: Int64 = 0
 
     /// Padding amount between the elements.
-    var interiorPadding: Int64 = 0
+    public var interiorPadding: Int64 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt64Field(value: &self.edgePaddingLow)
@@ -517,7 +517,7 @@ struct Xla_PaddingConfig: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       if self.edgePaddingLow != 0 {
         try visitor.visitSingularInt64Field(value: self.edgePaddingLow, fieldNumber: 1)
       }
@@ -531,9 +531,9 @@ struct Xla_PaddingConfig: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.dimensions)
@@ -542,7 +542,7 @@ struct Xla_PaddingConfig: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.dimensions.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.dimensions, fieldNumber: 1)
     }
@@ -559,29 +559,29 @@ struct Xla_PaddingConfig: SwiftProtobuf.Message {
 /// example, Convert) are ignored.
 ///
 /// See the XLA documentation for more information on shapes and layouts.
-struct Xla_Layout: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Layout"
+public struct Xla_Layout: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Layout"
 
   /// Sequence of dimension numbers, from minor (fastest varying index) to major
   /// (slowest varying index). This field is required.
-  var minorToMajor: [Int64] = []
+  public var minorToMajor: [Int64] = []
 
   /// The width to which the layout of each dimension is padded up
   /// to. If present, the size of the padded_dimensions must equal the
   /// rank of the shape. The padding appears at the end of a dimension,
   /// not at the beginning. This kind of padding, unlike padding in
   /// e.g. convolution, is not part of the shape.
-  var paddedDimensions: [Int64] = []
+  public var paddedDimensions: [Int64] = []
 
   /// Describes the values in the padding specified by
   /// padded_dimensions.
-  var paddingValue: Xla_PaddingValue = Xla_PaddingValue.invalidPad
+  public var paddingValue: Xla_PaddingValue = Xla_PaddingValue.invalidPad
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt64Field(value: &self.minorToMajor)
@@ -592,7 +592,7 @@ struct Xla_Layout: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.minorToMajor.isEmpty {
       try visitor.visitPackedInt64Field(value: self.minorToMajor, fieldNumber: 1)
     }
@@ -613,11 +613,11 @@ struct Xla_Layout: SwiftProtobuf.Message {
 /// defined.
 ///
 /// See the XLA documentation for more information on shapes and layouts.
-struct Xla_Shape: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Shape"
+public struct Xla_Shape: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Shape"
 
   /// The element type for this shape.
-  var elementType: Xla_PrimitiveType {
+  public var elementType: Xla_PrimitiveType {
     get {return _storage._elementType}
     set {_uniqueStorage()._elementType = newValue}
   }
@@ -627,34 +627,34 @@ struct Xla_Shape: SwiftProtobuf.Message {
   /// N-dimensional array. The first element of 'dimensions' is the size of
   /// dimension 0, the second element is the size of dimension 1, and so forth.
   /// Empty list indicates a scalar.
-  var dimensions: [Int64] {
+  public var dimensions: [Int64] {
     get {return _storage._dimensions}
     set {_uniqueStorage()._dimensions = newValue}
   }
 
   /// For tuples only, the shapes of constitutent shapes in the tuple sequence.
-  var tupleShapes: [Xla_Shape] {
+  public var tupleShapes: [Xla_Shape] {
     get {return _storage._tupleShapes}
     set {_uniqueStorage()._tupleShapes = newValue}
   }
 
   /// The layout used to back this shape.
-  var layout: Xla_Layout {
+  public var layout: Xla_Layout {
     get {return _storage._layout ?? Xla_Layout()}
     set {_uniqueStorage()._layout = newValue}
   }
-  var hasLayout: Bool {
+  public var hasLayout: Bool {
     return _storage._layout != nil
   }
-  mutating func clearLayout() {
+  public mutating func clearLayout() {
     _storage._layout = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -669,7 +669,7 @@ struct Xla_Shape: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._elementType != Xla_PrimitiveType.primitiveTypeInvalid {
         try visitor.visitSingularEnumField(value: _storage._elementType, fieldNumber: 2)
@@ -692,35 +692,35 @@ struct Xla_Shape: SwiftProtobuf.Message {
 
 /// Shape of the parameters and output of a computation (like a traditional
 /// function signature).
-struct Xla_ProgramShape: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ProgramShape"
+public struct Xla_ProgramShape: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ProgramShape"
 
-  var parameters: [Xla_Shape] {
+  public var parameters: [Xla_Shape] {
     get {return _storage._parameters}
     set {_uniqueStorage()._parameters = newValue}
   }
 
-  var result: Xla_Shape {
+  public var result: Xla_Shape {
     get {return _storage._result ?? Xla_Shape()}
     set {_uniqueStorage()._result = newValue}
   }
-  var hasResult: Bool {
+  public var hasResult: Bool {
     return _storage._result != nil
   }
-  mutating func clearResult() {
+  public mutating func clearResult() {
     _storage._result = nil
   }
 
-  var parameterNames: [String] {
+  public var parameterNames: [String] {
     get {return _storage._parameterNames}
     set {_uniqueStorage()._parameterNames = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -734,7 +734,7 @@ struct Xla_ProgramShape: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._parameters.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._parameters, fieldNumber: 1)
@@ -753,20 +753,20 @@ struct Xla_ProgramShape: SwiftProtobuf.Message {
 }
 
 /// Statistics of a computation.
-struct Xla_ComputationStats: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ComputationStats"
+public struct Xla_ComputationStats: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ComputationStats"
 
   /// The number of floating point operations in the computation.
-  var flopCount: Double = 0
+  public var flopCount: Double = 0
 
   /// The number of transcendental operations (e.g., exp) in the computation.
-  var transcendentalCount: Double = 0
+  public var transcendentalCount: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.flopCount)
@@ -776,7 +776,7 @@ struct Xla_ComputationStats: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.flopCount != 0 {
       try visitor.visitSingularDoubleField(value: self.flopCount, fieldNumber: 1)
     }
@@ -791,8 +791,8 @@ struct Xla_ComputationStats: SwiftProtobuf.Message {
 ///
 /// This metadata is used for debugging XLA code generation, as well as
 /// performance profiling of XLA-generated executables.
-struct Xla_OpMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpMetadata"
+public struct Xla_OpMetadata: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpMetadata"
 
   /// The framework op name that generated this XLA op.
   ///
@@ -801,26 +801,26 @@ struct Xla_OpMetadata: SwiftProtobuf.Message {
   /// framework's "ops" are implemented as multiple XLA HLO Ops, they can be
   /// grouped appropriately. (e.g. if a SoftMax layer is emitted into XLA as
   /// multiple ops, then each op should have the op_type be "SoftMax".)
-  var opType: String = String()
+  public var opType: String = String()
 
   /// The user-specified name of the op.
   ///
   /// This name is often unique within a computation. Note: some frameworks
   /// add auto-generated names if the user does not provide one.
-  var opName: String = String()
+  public var opName: String = String()
 
   /// Indicate a file and line that this op is associated to in a user's program.
   ///
   /// e.g. it could be be the file and line of user code that generated the op.
-  var sourceFile: String = String()
+  public var sourceFile: String = String()
 
-  var sourceLine: Int32 = 0
+  public var sourceLine: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.opType)
@@ -832,7 +832,7 @@ struct Xla_OpMetadata: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.opType.isEmpty {
       try visitor.visitSingularStringField(value: self.opType, fieldNumber: 1)
     }
@@ -850,36 +850,36 @@ struct Xla_OpMetadata: SwiftProtobuf.Message {
 }
 
 /// Profile data from the execution of a computation.
-struct Xla_ExecutionProfile: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ExecutionProfile"
+public struct Xla_ExecutionProfile: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ExecutionProfile"
 
   /// Whether the executable was read from the compilation cache.
-  var compilationCacheHit: Bool = false
+  public var compilationCacheHit: Bool = false
 
   /// The time in milliseconds spent to compile the computation. This only set if
   /// the executable was not read from the compilation cache
   /// (compilation_cache_hit == false).
-  var compileTimeMs: Int64 = 0
+  public var compileTimeMs: Int64 = 0
 
   /// The number of cycles spent for the computation. This does not include the
   /// time taken for the data transfers between the host and the device. This is
   /// a target-dependent field and only used for debugging purposes.
-  var computeCycleCount: Int64 = 0
+  public var computeCycleCount: Int64 = 0
 
   /// The time in nanoseconds spent for the computation, without data transfer.
-  var computeTimeNs: Int64 = 0
+  public var computeTimeNs: Int64 = 0
 
   /// The time in nanoseconds spent for the entire computation, including the
   /// result data transfer time. Current implementation does not spend any cycles
   /// for the input data transfer since the memory is initialized with the proper
   /// values before the execution.
-  var computeAndTransferTimeNs: Int64 = 0
+  public var computeAndTransferTimeNs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.compilationCacheHit)
@@ -892,7 +892,7 @@ struct Xla_ExecutionProfile: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.compilationCacheHit != false {
       try visitor.visitSingularBoolField(value: self.compilationCacheHit, fieldNumber: 1)
     }
@@ -914,16 +914,16 @@ struct Xla_ExecutionProfile: SwiftProtobuf.Message {
 
 /// Handle given to a user that represents a computation that the user builds up
 /// before execution.
-struct Xla_ComputationHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ComputationHandle"
+public struct Xla_ComputationHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ComputationHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -932,7 +932,7 @@ struct Xla_ComputationHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -942,16 +942,16 @@ struct Xla_ComputationHandle: SwiftProtobuf.Message {
 
 /// Handle given to a user that represents an execution that the user launched
 /// asynchronously on the device.
-struct Xla_ExecutionHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ExecutionHandle"
+public struct Xla_ExecutionHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ExecutionHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -960,7 +960,7 @@ struct Xla_ExecutionHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -971,16 +971,16 @@ struct Xla_ExecutionHandle: SwiftProtobuf.Message {
 /// Handle given to a user that represents a globally accessible allocation.
 /// Contrast this against a ComputationDataHandle, which is not globally
 /// accessible, since it only exists within a specific computation.
-struct Xla_GlobalDataHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GlobalDataHandle"
+public struct Xla_GlobalDataHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GlobalDataHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -989,7 +989,7 @@ struct Xla_GlobalDataHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -1000,16 +1000,16 @@ struct Xla_GlobalDataHandle: SwiftProtobuf.Message {
 /// Handle given to a user that represents a data result in a computation.
 /// This is used to pass to subsequent computations that depends upon the data as
 /// an operand.
-struct Xla_ComputationDataHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ComputationDataHandle"
+public struct Xla_ComputationDataHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ComputationDataHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -1018,7 +1018,7 @@ struct Xla_ComputationDataHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -1029,16 +1029,16 @@ struct Xla_ComputationDataHandle: SwiftProtobuf.Message {
 /// Handle given to a user that represents a device to execute a computation.
 /// When replication is enabled, the device handle represents the device for the
 /// replica id 0.
-struct Xla_DeviceHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeviceHandle"
+public struct Xla_DeviceHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DeviceHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -1047,7 +1047,7 @@ struct Xla_DeviceHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -1058,16 +1058,16 @@ struct Xla_DeviceHandle: SwiftProtobuf.Message {
 /// Handle given to a user to represent a channel between two computations
 /// via a Send and Recv instruction pair. Channels are unbuffered, so Send
 /// Send instructions will be blocked until the data is transferred.
-struct Xla_ChannelHandle: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ChannelHandle"
+public struct Xla_ChannelHandle: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ChannelHandle"
 
-  var handle: Int64 = 0
+  public var handle: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.handle)
@@ -1076,7 +1076,7 @@ struct Xla_ChannelHandle: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.handle != 0 {
       try visitor.visitSingularInt64Field(value: self.handle, fieldNumber: 1)
     }
@@ -1090,70 +1090,70 @@ struct Xla_ChannelHandle: SwiftProtobuf.Message {
 ///
 /// Transfers to/from the client are encoded in literal form, and the structure
 /// of the repeated fields is implied by the shape.
-struct Xla_Literal: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Literal"
+public struct Xla_Literal: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Literal"
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var preds: [Bool] {
+  public var preds: [Bool] {
     get {return _storage._preds}
     set {_uniqueStorage()._preds = newValue}
   }
 
-  var u8S: Data {
+  public var u8S: Data {
     get {return _storage._u8S}
     set {_uniqueStorage()._u8S = newValue}
   }
 
-  var s32S: [Int32] {
+  public var s32S: [Int32] {
     get {return _storage._s32S}
     set {_uniqueStorage()._s32S = newValue}
   }
 
-  var s64S: [Int64] {
+  public var s64S: [Int64] {
     get {return _storage._s64S}
     set {_uniqueStorage()._s64S = newValue}
   }
 
-  var u32S: [UInt32] {
+  public var u32S: [UInt32] {
     get {return _storage._u32S}
     set {_uniqueStorage()._u32S = newValue}
   }
 
-  var u64S: [UInt64] {
+  public var u64S: [UInt64] {
     get {return _storage._u64S}
     set {_uniqueStorage()._u64S = newValue}
   }
 
-  var f32S: [Float] {
+  public var f32S: [Float] {
     get {return _storage._f32S}
     set {_uniqueStorage()._f32S = newValue}
   }
 
-  var f64S: [Double] {
+  public var f64S: [Double] {
     get {return _storage._f64S}
     set {_uniqueStorage()._f64S = newValue}
   }
 
-  var tupleLiterals: [Xla_Literal] {
+  public var tupleLiterals: [Xla_Literal] {
     get {return _storage._tupleLiterals}
     set {_uniqueStorage()._tupleLiterals = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1174,7 +1174,7 @@ struct Xla_Literal: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -1213,47 +1213,47 @@ struct Xla_Literal: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_WindowDimension: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".WindowDimension"
+public struct Xla_WindowDimension: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".WindowDimension"
 
   /// The size of the window in this dimension. For a rectangle, this would be
   /// the width or height.
-  var size: Int64 = 0
+  public var size: Int64 = 0
 
   /// The stride at which the window moves across the base area in this
   /// dimension. In other words, this is the spacing between different
   /// positions of the window in this dimension.
-  var stride: Int64 = 0
+  public var stride: Int64 = 0
 
   /// If positive, means the amount of padding with zeroes to add to the base
   /// area at the low end of this dimension; if negative, its negative means the
   /// number of elements removed from the low end of this dimension. For example,
   /// in the horizontal dimension of a rectangle, this would be the number of
   /// zeroes to pad on the left, given that indices increase when going right.
-  var paddingLow: Int64 = 0
+  public var paddingLow: Int64 = 0
 
   /// As padding_low, but on the high end of this dimension. For
   /// example, in the horizontal dimension of a rectangle, this would
   /// be the number of zeroes to pad on the right, given that indices
   /// increase when going right.
-  var paddingHigh: Int64 = 0
+  public var paddingHigh: Int64 = 0
 
   /// Dilation factor of the sliding window in this dimension. A dilation factor
   /// of 1 means no dilation. window_dilation - 1 no-op entries ("holes") are
   /// implicitly placed between each kernel element. See documentation for
   /// convolution.
-  var windowDilation: Int64 = 0
+  public var windowDilation: Int64 = 0
 
   /// Dilation factor of the base area in this dimension. A dilation factor of 1
   /// means no dilation. base_dilation - 1 no-op entries ("holes") are implicitly
   /// placed between each base area element. See documentation for convolution.
-  var baseDilation: Int64 = 0
+  public var baseDilation: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.size)
@@ -1267,7 +1267,7 @@ struct Xla_WindowDimension: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.size != 0 {
       try visitor.visitSingularInt64Field(value: self.size, fieldNumber: 1)
     }
@@ -1295,16 +1295,16 @@ struct Xla_WindowDimension: SwiftProtobuf.Message {
 /// The window is moved across a base area and for each position of the
 /// window a computation is performed. The field below describes the
 /// window and the movement of the window across a base area.
-struct Xla_Window: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Window"
+public struct Xla_Window: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Window"
 
-  var dimensions: [Xla_WindowDimension] = []
+  public var dimensions: [Xla_WindowDimension] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.dimensions)
@@ -1313,7 +1313,7 @@ struct Xla_Window: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.dimensions.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.dimensions, fieldNumber: 1)
     }
@@ -1321,25 +1321,25 @@ struct Xla_Window: SwiftProtobuf.Message {
   }
 }
 
-struct Xla_ConstantRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ConstantRequest"
+public struct Xla_ConstantRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ConstantRequest"
 
-  var literal: Xla_Literal {
+  public var literal: Xla_Literal {
     get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
-  var hasLiteral: Bool {
+  public var hasLiteral: Bool {
     return _storage._literal != nil
   }
-  mutating func clearLiteral() {
+  public mutating func clearLiteral() {
     _storage._literal = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1351,7 +1351,7 @@ struct Xla_ConstantRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._literal {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1363,30 +1363,30 @@ struct Xla_ConstantRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_GetTupleElementRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetTupleElementRequest"
+public struct Xla_GetTupleElementRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetTupleElementRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var index: Int64 {
+  public var index: Int64 {
     get {return _storage._index}
     set {_uniqueStorage()._index = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1399,7 +1399,7 @@ struct Xla_GetTupleElementRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1414,35 +1414,35 @@ struct Xla_GetTupleElementRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_SliceRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SliceRequest"
+public struct Xla_SliceRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SliceRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var startIndices: [Int64] {
+  public var startIndices: [Int64] {
     get {return _storage._startIndices}
     set {_uniqueStorage()._startIndices = newValue}
   }
 
-  var limitIndices: [Int64] {
+  public var limitIndices: [Int64] {
     get {return _storage._limitIndices}
     set {_uniqueStorage()._limitIndices = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1456,7 +1456,7 @@ struct Xla_SliceRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1474,45 +1474,45 @@ struct Xla_SliceRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_DynamicSliceRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DynamicSliceRequest"
+public struct Xla_DynamicSliceRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DynamicSliceRequest"
 
   /// Operand from which to slice at dynamic 'start_indices'.
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// Dynamically computed 'start_indices' for slice operation.
-  var startIndices: Xla_ComputationDataHandle {
+  public var startIndices: Xla_ComputationDataHandle {
     get {return _storage._startIndices ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._startIndices = newValue}
   }
-  var hasStartIndices: Bool {
+  public var hasStartIndices: Bool {
     return _storage._startIndices != nil
   }
-  mutating func clearStartIndices() {
+  public mutating func clearStartIndices() {
     _storage._startIndices = nil
   }
 
   /// Slice sizes for each dimension (note that indices calculations are computed
   /// modulo dimension sizes to avoid out-of-bound array accesses).
-  var sliceSizes: [Int64] {
+  public var sliceSizes: [Int64] {
     get {return _storage._sliceSizes}
     set {_uniqueStorage()._sliceSizes = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1526,7 +1526,7 @@ struct Xla_DynamicSliceRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1544,50 +1544,50 @@ struct Xla_DynamicSliceRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_DynamicUpdateSliceRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DynamicUpdateSliceRequest"
+public struct Xla_DynamicUpdateSliceRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DynamicUpdateSliceRequest"
 
   /// Operand on which slice 'update' is to be applied.
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// The slice update to apply to 'operand'.
-  var update: Xla_ComputationDataHandle {
+  public var update: Xla_ComputationDataHandle {
     get {return _storage._update ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._update = newValue}
   }
-  var hasUpdate: Bool {
+  public var hasUpdate: Bool {
     return _storage._update != nil
   }
-  mutating func clearUpdate() {
+  public mutating func clearUpdate() {
     _storage._update = nil
   }
 
   /// Dynamically computed start indices for the update slice operation.
-  var startIndices: Xla_ComputationDataHandle {
+  public var startIndices: Xla_ComputationDataHandle {
     get {return _storage._startIndices ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._startIndices = newValue}
   }
-  var hasStartIndices: Bool {
+  public var hasStartIndices: Bool {
     return _storage._startIndices != nil
   }
-  mutating func clearStartIndices() {
+  public mutating func clearStartIndices() {
     _storage._startIndices = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1601,7 +1601,7 @@ struct Xla_DynamicUpdateSliceRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1619,39 +1619,39 @@ struct Xla_DynamicUpdateSliceRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ConvolutionDimensionNumbers: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ConvolutionDimensionNumbers"
+public struct Xla_ConvolutionDimensionNumbers: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ConvolutionDimensionNumbers"
 
   /// The number of the dimension that represents batch in the input
   /// (lhs) and output.
-  var batchDimension: Int64 = 0
+  public var batchDimension: Int64 = 0
 
   /// The number of the dimension that represents features in the input
   /// (lhs) and output.
-  var featureDimension: Int64 = 0
+  public var featureDimension: Int64 = 0
 
   /// The dimension numbers for the spatial dimensions that the window
   /// moves through in the input (lhs) and output.
-  var spatialDimensions: [Int64] = []
+  public var spatialDimensions: [Int64] = []
 
   /// The number of the dimension that represents input features in the
   /// convolutional kernel (rhs).
-  var kernelInputFeatureDimension: Int64 = 0
+  public var kernelInputFeatureDimension: Int64 = 0
 
   /// The number of the dimension that represents output features in
   /// the convolutional kernel (rhs).
-  var kernelOutputFeatureDimension: Int64 = 0
+  public var kernelOutputFeatureDimension: Int64 = 0
 
   /// The dimension numbers for the spatial dimensions that the window
   /// moves through in the kernel (rhs). window.strides(0) is the
   /// stride in the kernel_spatial_dimensions(0) dimension.
-  var kernelSpatialDimensions: [Int64] = []
+  public var kernelSpatialDimensions: [Int64] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.batchDimension)
@@ -1665,7 +1665,7 @@ struct Xla_ConvolutionDimensionNumbers: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.batchDimension != 0 {
       try visitor.visitSingularInt64Field(value: self.batchDimension, fieldNumber: 1)
     }
@@ -1688,60 +1688,60 @@ struct Xla_ConvolutionDimensionNumbers: SwiftProtobuf.Message {
   }
 }
 
-struct Xla_ConvolveRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ConvolveRequest"
+public struct Xla_ConvolveRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ConvolveRequest"
 
-  var lhs: Xla_ComputationDataHandle {
+  public var lhs: Xla_ComputationDataHandle {
     get {return _storage._lhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._lhs = newValue}
   }
-  var hasLhs: Bool {
+  public var hasLhs: Bool {
     return _storage._lhs != nil
   }
-  mutating func clearLhs() {
+  public mutating func clearLhs() {
     _storage._lhs = nil
   }
 
   /// This is the filter/kernel.
-  var rhs: Xla_ComputationDataHandle {
+  public var rhs: Xla_ComputationDataHandle {
     get {return _storage._rhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._rhs = newValue}
   }
-  var hasRhs: Bool {
+  public var hasRhs: Bool {
     return _storage._rhs != nil
   }
-  mutating func clearRhs() {
+  public mutating func clearRhs() {
     _storage._rhs = nil
   }
 
   /// Describes the filter/kenel.
-  var window: Xla_Window {
+  public var window: Xla_Window {
     get {return _storage._window ?? Xla_Window()}
     set {_uniqueStorage()._window = newValue}
   }
-  var hasWindow: Bool {
+  public var hasWindow: Bool {
     return _storage._window != nil
   }
-  mutating func clearWindow() {
+  public mutating func clearWindow() {
     _storage._window = nil
   }
 
-  var dimensionNumbers: Xla_ConvolutionDimensionNumbers {
+  public var dimensionNumbers: Xla_ConvolutionDimensionNumbers {
     get {return _storage._dimensionNumbers ?? Xla_ConvolutionDimensionNumbers()}
     set {_uniqueStorage()._dimensionNumbers = newValue}
   }
-  var hasDimensionNumbers: Bool {
+  public var hasDimensionNumbers: Bool {
     return _storage._dimensionNumbers != nil
   }
-  mutating func clearDimensionNumbers() {
+  public mutating func clearDimensionNumbers() {
     _storage._dimensionNumbers = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1756,7 +1756,7 @@ struct Xla_ConvolveRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._lhs {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1777,32 +1777,32 @@ struct Xla_ConvolveRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_InfeedRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".InfeedRequest"
+public struct Xla_InfeedRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".InfeedRequest"
 
   /// The shape of the data returned by reading the device's infeed buffer.
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
   /// Additional infeed configuration for the backend.
-  var config: Data {
+  public var config: Data {
     get {return _storage._config}
     set {_uniqueStorage()._config = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1815,7 +1815,7 @@ struct Xla_InfeedRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1830,44 +1830,44 @@ struct Xla_InfeedRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_OutfeedRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OutfeedRequest"
+public struct Xla_OutfeedRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OutfeedRequest"
 
   /// The shape of the data returned by reading the device's outfeed buffer.
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
   /// Operand to the Outfeed. Supports tuple.
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// Backend-specific information for how to perform the outfeed.
-  var outfeedConfig: Data {
+  public var outfeedConfig: Data {
     get {return _storage._outfeedConfig}
     set {_uniqueStorage()._outfeedConfig = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1881,7 +1881,7 @@ struct Xla_OutfeedRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -1899,30 +1899,30 @@ struct Xla_OutfeedRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_CallRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CallRequest"
+public struct Xla_CallRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CallRequest"
 
-  var toApply: Xla_ComputationHandle {
+  public var toApply: Xla_ComputationHandle {
     get {return _storage._toApply ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._toApply = newValue}
   }
-  var hasToApply: Bool {
+  public var hasToApply: Bool {
     return _storage._toApply != nil
   }
-  mutating func clearToApply() {
+  public mutating func clearToApply() {
     _storage._toApply = nil
   }
 
-  var operands: [Xla_ComputationDataHandle] {
+  public var operands: [Xla_ComputationDataHandle] {
     get {return _storage._operands}
     set {_uniqueStorage()._operands = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1935,7 +1935,7 @@ struct Xla_CallRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._toApply {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -1950,35 +1950,35 @@ struct Xla_CallRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_CustomCallRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CustomCallRequest"
+public struct Xla_CustomCallRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CustomCallRequest"
 
-  var callTargetName: String {
+  public var callTargetName: String {
     get {return _storage._callTargetName}
     set {_uniqueStorage()._callTargetName = newValue}
   }
 
-  var operands: [Xla_ComputationDataHandle] {
+  public var operands: [Xla_ComputationDataHandle] {
     get {return _storage._operands}
     set {_uniqueStorage()._operands = newValue}
   }
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1992,7 +1992,7 @@ struct Xla_CustomCallRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._callTargetName.isEmpty {
         try visitor.visitSingularStringField(value: _storage._callTargetName, fieldNumber: 2)
@@ -2010,35 +2010,35 @@ struct Xla_CustomCallRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_MapRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".MapRequest"
+public struct Xla_MapRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".MapRequest"
 
-  var operands: [Xla_ComputationDataHandle] {
+  public var operands: [Xla_ComputationDataHandle] {
     get {return _storage._operands}
     set {_uniqueStorage()._operands = newValue}
   }
 
-  var toApply: Xla_ComputationHandle {
+  public var toApply: Xla_ComputationHandle {
     get {return _storage._toApply ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._toApply = newValue}
   }
-  var hasToApply: Bool {
+  public var hasToApply: Bool {
     return _storage._toApply != nil
   }
-  mutating func clearToApply() {
+  public mutating func clearToApply() {
     _storage._toApply = nil
   }
 
-  var staticOperands: [Xla_ComputationDataHandle] {
+  public var staticOperands: [Xla_ComputationDataHandle] {
     get {return _storage._staticOperands}
     set {_uniqueStorage()._staticOperands = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2052,7 +2052,7 @@ struct Xla_MapRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._operands.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._operands, fieldNumber: 2)
@@ -2070,57 +2070,57 @@ struct Xla_MapRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ReduceRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ReduceRequest"
+public struct Xla_ReduceRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ReduceRequest"
 
   /// Operand to the reduction.
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// Initial value for the reduction. This must be consistent with the result
   /// shape of to_apply.
-  var initValue: Xla_ComputationDataHandle {
+  public var initValue: Xla_ComputationDataHandle {
     get {return _storage._initValue ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._initValue = newValue}
   }
-  var hasInitValue: Bool {
+  public var hasInitValue: Bool {
     return _storage._initValue != nil
   }
-  mutating func clearInitValue() {
+  public mutating func clearInitValue() {
     _storage._initValue = nil
   }
 
   /// The dimensions to reduce over.
-  var dimensions: [Int64] {
+  public var dimensions: [Int64] {
     get {return _storage._dimensions}
     set {_uniqueStorage()._dimensions = newValue}
   }
 
   /// The computation to apply in the reduction.
-  var toApply: Xla_ComputationHandle {
+  public var toApply: Xla_ComputationHandle {
     get {return _storage._toApply ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._toApply = newValue}
   }
-  var hasToApply: Bool {
+  public var hasToApply: Bool {
     return _storage._toApply != nil
   }
-  mutating func clearToApply() {
+  public mutating func clearToApply() {
     _storage._toApply = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2135,7 +2135,7 @@ struct Xla_ReduceRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2156,58 +2156,58 @@ struct Xla_ReduceRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ReduceWindowRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ReduceWindowRequest"
+public struct Xla_ReduceWindowRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ReduceWindowRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var initValue: Xla_ComputationDataHandle {
+  public var initValue: Xla_ComputationDataHandle {
     get {return _storage._initValue ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._initValue = newValue}
   }
-  var hasInitValue: Bool {
+  public var hasInitValue: Bool {
     return _storage._initValue != nil
   }
-  mutating func clearInitValue() {
+  public mutating func clearInitValue() {
     _storage._initValue = nil
   }
 
-  var window: Xla_Window {
+  public var window: Xla_Window {
     get {return _storage._window ?? Xla_Window()}
     set {_uniqueStorage()._window = newValue}
   }
-  var hasWindow: Bool {
+  public var hasWindow: Bool {
     return _storage._window != nil
   }
-  mutating func clearWindow() {
+  public mutating func clearWindow() {
     _storage._window = nil
   }
 
-  var toApply: Xla_ComputationHandle {
+  public var toApply: Xla_ComputationHandle {
     get {return _storage._toApply ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._toApply = newValue}
   }
-  var hasToApply: Bool {
+  public var hasToApply: Bool {
     return _storage._toApply != nil
   }
-  mutating func clearToApply() {
+  public mutating func clearToApply() {
     _storage._toApply = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2222,7 +2222,7 @@ struct Xla_ReduceWindowRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2243,25 +2243,25 @@ struct Xla_ReduceWindowRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_CrossReplicaSumRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CrossReplicaSumRequest"
+public struct Xla_CrossReplicaSumRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CrossReplicaSumRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2273,7 +2273,7 @@ struct Xla_CrossReplicaSumRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2285,87 +2285,87 @@ struct Xla_CrossReplicaSumRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_SelectAndScatterRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SelectAndScatterRequest"
+public struct Xla_SelectAndScatterRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SelectAndScatterRequest"
 
   /// Operand array on which the windows slide.
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// Source array for the data to scatter.
-  var source: Xla_ComputationDataHandle {
+  public var source: Xla_ComputationDataHandle {
     get {return _storage._source ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._source = newValue}
   }
-  var hasSource: Bool {
+  public var hasSource: Bool {
     return _storage._source != nil
   }
-  mutating func clearSource() {
+  public mutating func clearSource() {
     _storage._source = nil
   }
 
   /// Initial scalar value for each element in the output.
-  var initValue: Xla_ComputationDataHandle {
+  public var initValue: Xla_ComputationDataHandle {
     get {return _storage._initValue ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._initValue = newValue}
   }
-  var hasInitValue: Bool {
+  public var hasInitValue: Bool {
     return _storage._initValue != nil
   }
-  mutating func clearInitValue() {
+  public mutating func clearInitValue() {
     _storage._initValue = nil
   }
 
   /// Window configuration.
-  var window: Xla_Window {
+  public var window: Xla_Window {
     get {return _storage._window ?? Xla_Window()}
     set {_uniqueStorage()._window = newValue}
   }
-  var hasWindow: Bool {
+  public var hasWindow: Bool {
     return _storage._window != nil
   }
-  mutating func clearWindow() {
+  public mutating func clearWindow() {
     _storage._window = nil
   }
 
   /// Binary function used to select an element from each window.
-  var select: Xla_ComputationHandle {
+  public var select: Xla_ComputationHandle {
     get {return _storage._select ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._select = newValue}
   }
-  var hasSelect: Bool {
+  public var hasSelect: Bool {
     return _storage._select != nil
   }
-  mutating func clearSelect() {
+  public mutating func clearSelect() {
     _storage._select = nil
   }
 
   /// Binary function used to combine each scattered value from source with the
   /// current output value at the selected location.
-  var scatter: Xla_ComputationHandle {
+  public var scatter: Xla_ComputationHandle {
     get {return _storage._scatter ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._scatter = newValue}
   }
-  var hasScatter: Bool {
+  public var hasScatter: Bool {
     return _storage._scatter != nil
   }
-  mutating func clearScatter() {
+  public mutating func clearScatter() {
     _storage._scatter = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2382,7 +2382,7 @@ struct Xla_SelectAndScatterRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2409,30 +2409,30 @@ struct Xla_SelectAndScatterRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ReverseRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ReverseRequest"
+public struct Xla_ReverseRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ReverseRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var dimensions: [Int64] {
+  public var dimensions: [Int64] {
     get {return _storage._dimensions}
     set {_uniqueStorage()._dimensions = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2445,7 +2445,7 @@ struct Xla_ReverseRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2460,30 +2460,30 @@ struct Xla_ReverseRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_BroadcastRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BroadcastRequest"
+public struct Xla_BroadcastRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BroadcastRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var broadcastSizes: [Int64] {
+  public var broadcastSizes: [Int64] {
     get {return _storage._broadcastSizes}
     set {_uniqueStorage()._broadcastSizes = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2496,7 +2496,7 @@ struct Xla_BroadcastRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2511,47 +2511,47 @@ struct Xla_BroadcastRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_PadRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".PadRequest"
+public struct Xla_PadRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".PadRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var paddingValue: Xla_ComputationDataHandle {
+  public var paddingValue: Xla_ComputationDataHandle {
     get {return _storage._paddingValue ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._paddingValue = newValue}
   }
-  var hasPaddingValue: Bool {
+  public var hasPaddingValue: Bool {
     return _storage._paddingValue != nil
   }
-  mutating func clearPaddingValue() {
+  public mutating func clearPaddingValue() {
     _storage._paddingValue = nil
   }
 
-  var paddingConfig: Xla_PaddingConfig {
+  public var paddingConfig: Xla_PaddingConfig {
     get {return _storage._paddingConfig ?? Xla_PaddingConfig()}
     set {_uniqueStorage()._paddingConfig = newValue}
   }
-  var hasPaddingConfig: Bool {
+  public var hasPaddingConfig: Bool {
     return _storage._paddingConfig != nil
   }
-  mutating func clearPaddingConfig() {
+  public mutating func clearPaddingConfig() {
     _storage._paddingConfig = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2565,7 +2565,7 @@ struct Xla_PadRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2583,37 +2583,37 @@ struct Xla_PadRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ReshapeRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ReshapeRequest"
+public struct Xla_ReshapeRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ReshapeRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// The dimension order for collapse (from fastest-changing to slowest).
-  var dimensions: [Int64] {
+  public var dimensions: [Int64] {
     get {return _storage._dimensions}
     set {_uniqueStorage()._dimensions = newValue}
   }
 
   /// The new dimension sizes (from dimension 0 to n-1).
-  var newSizes: [Int64] {
+  public var newSizes: [Int64] {
     get {return _storage._newSizes}
     set {_uniqueStorage()._newSizes = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2627,7 +2627,7 @@ struct Xla_ReshapeRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2645,31 +2645,31 @@ struct Xla_ReshapeRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_TransposeRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TransposeRequest"
+public struct Xla_TransposeRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TransposeRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
   /// The permutation of the operand's dimensions (in the range 0 to n-1).
-  var dimensions: [Int64] {
+  public var dimensions: [Int64] {
     get {return _storage._dimensions}
     set {_uniqueStorage()._dimensions = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2682,7 +2682,7 @@ struct Xla_TransposeRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2697,35 +2697,35 @@ struct Xla_TransposeRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ParameterRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ParameterRequest"
+public struct Xla_ParameterRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ParameterRequest"
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var parameter: Int64 {
+  public var parameter: Int64 {
     get {return _storage._parameter}
     set {_uniqueStorage()._parameter = newValue}
   }
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2739,7 +2739,7 @@ struct Xla_ParameterRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2757,36 +2757,36 @@ struct Xla_ParameterRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_GetLocalShapeRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetLocalShapeRequest"
+public struct Xla_GetLocalShapeRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetLocalShapeRequest"
 
-  var computation: Xla_ComputationHandle {
+  public var computation: Xla_ComputationHandle {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  var hasComputation: Bool {
+  public var hasComputation: Bool {
     return _storage._computation != nil
   }
-  mutating func clearComputation() {
+  public mutating func clearComputation() {
     _storage._computation = nil
   }
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2799,7 +2799,7 @@ struct Xla_GetLocalShapeRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._computation {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -2814,25 +2814,25 @@ struct Xla_GetLocalShapeRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_GetLocalShapeResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetLocalShapeResponse"
+public struct Xla_GetLocalShapeResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetLocalShapeResponse"
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2844,7 +2844,7 @@ struct Xla_GetLocalShapeResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -2856,30 +2856,30 @@ struct Xla_GetLocalShapeResponse: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_TraceRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TraceRequest"
+public struct Xla_TraceRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TraceRequest"
 
-  var tag: String {
+  public var tag: String {
     get {return _storage._tag}
     set {_uniqueStorage()._tag = newValue}
   }
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2892,7 +2892,7 @@ struct Xla_TraceRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._tag.isEmpty {
         try visitor.visitSingularStringField(value: _storage._tag, fieldNumber: 2)
@@ -2907,30 +2907,30 @@ struct Xla_TraceRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ConvertRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ConvertRequest"
+public struct Xla_ConvertRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ConvertRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var newElementType: Xla_PrimitiveType {
+  public var newElementType: Xla_PrimitiveType {
     get {return _storage._newElementType}
     set {_uniqueStorage()._newElementType = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2943,7 +2943,7 @@ struct Xla_ConvertRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -2958,22 +2958,22 @@ struct Xla_ConvertRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_ConcatenateRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ConcatenateRequest"
+public struct Xla_ConcatenateRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ConcatenateRequest"
 
-  var operands: [Xla_ComputationDataHandle] = []
+  public var operands: [Xla_ComputationDataHandle] = []
 
   /// The dimension in which we concatenate; e.g. if you had dimension arrays of
   /// [4, 1] and [5, 1], you'd concatenate in dimension 0 to produce a [9, 1].
   /// Attempting to concatenate those in dimension 1 would produce an error, as
   /// 4 != 5 (and there is no ragged array support).
-  var dimension: Int64 = 0
+  public var dimension: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 2: try decoder.decodeRepeatedMessageField(value: &self.operands)
@@ -2983,7 +2983,7 @@ struct Xla_ConcatenateRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.operands.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.operands, fieldNumber: 2)
     }
@@ -2994,47 +2994,47 @@ struct Xla_ConcatenateRequest: SwiftProtobuf.Message {
   }
 }
 
-struct Xla_WhileRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".WhileRequest"
+public struct Xla_WhileRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".WhileRequest"
 
-  var condition: Xla_ComputationHandle {
+  public var condition: Xla_ComputationHandle {
     get {return _storage._condition ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._condition = newValue}
   }
-  var hasCondition: Bool {
+  public var hasCondition: Bool {
     return _storage._condition != nil
   }
-  mutating func clearCondition() {
+  public mutating func clearCondition() {
     _storage._condition = nil
   }
 
-  var body: Xla_ComputationHandle {
+  public var body: Xla_ComputationHandle {
     get {return _storage._body ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._body = newValue}
   }
-  var hasBody: Bool {
+  public var hasBody: Bool {
     return _storage._body != nil
   }
-  mutating func clearBody() {
+  public mutating func clearBody() {
     _storage._body = nil
   }
 
-  var init_p: Xla_ComputationDataHandle {
+  public var init_p: Xla_ComputationDataHandle {
     get {return _storage._init_p ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._init_p = newValue}
   }
-  var hasInit_p: Bool {
+  public var hasInit_p: Bool {
     return _storage._init_p != nil
   }
-  mutating func clearInit_p() {
+  public mutating func clearInit_p() {
     _storage._init_p = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3048,7 +3048,7 @@ struct Xla_WhileRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._condition {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -3066,30 +3066,30 @@ struct Xla_WhileRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_UnaryOpRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".UnaryOpRequest"
+public struct Xla_UnaryOpRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".UnaryOpRequest"
 
-  var unop: Xla_UnaryOperation {
+  public var unop: Xla_UnaryOperation {
     get {return _storage._unop}
     set {_uniqueStorage()._unop = newValue}
   }
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3102,7 +3102,7 @@ struct Xla_UnaryOpRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._unop != Xla_UnaryOperation.unopInvalid {
         try visitor.visitSingularEnumField(value: _storage._unop, fieldNumber: 2)
@@ -3117,46 +3117,46 @@ struct Xla_UnaryOpRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_BinaryOpRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".BinaryOpRequest"
+public struct Xla_BinaryOpRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".BinaryOpRequest"
 
-  var binop: Xla_BinaryOperation {
+  public var binop: Xla_BinaryOperation {
     get {return _storage._binop}
     set {_uniqueStorage()._binop = newValue}
   }
 
-  var lhs: Xla_ComputationDataHandle {
+  public var lhs: Xla_ComputationDataHandle {
     get {return _storage._lhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._lhs = newValue}
   }
-  var hasLhs: Bool {
+  public var hasLhs: Bool {
     return _storage._lhs != nil
   }
-  mutating func clearLhs() {
+  public mutating func clearLhs() {
     _storage._lhs = nil
   }
 
-  var rhs: Xla_ComputationDataHandle {
+  public var rhs: Xla_ComputationDataHandle {
     get {return _storage._rhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._rhs = newValue}
   }
-  var hasRhs: Bool {
+  public var hasRhs: Bool {
     return _storage._rhs != nil
   }
-  mutating func clearRhs() {
+  public mutating func clearRhs() {
     _storage._rhs = nil
   }
 
-  var broadcastDimensions: [Int64] {
+  public var broadcastDimensions: [Int64] {
     get {return _storage._broadcastDimensions}
     set {_uniqueStorage()._broadcastDimensions = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3171,7 +3171,7 @@ struct Xla_BinaryOpRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._binop != Xla_BinaryOperation.binopInvalid {
         try visitor.visitSingularEnumField(value: _storage._binop, fieldNumber: 2)
@@ -3192,35 +3192,35 @@ struct Xla_BinaryOpRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_RngRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RngRequest"
+public struct Xla_RngRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RngRequest"
 
-  var distribution: Xla_RandomDistribution {
+  public var distribution: Xla_RandomDistribution {
     get {return _storage._distribution}
     set {_uniqueStorage()._distribution = newValue}
   }
 
-  var parameter: [Xla_ComputationDataHandle] {
+  public var parameter: [Xla_ComputationDataHandle] {
     get {return _storage._parameter}
     set {_uniqueStorage()._parameter = newValue}
   }
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3234,7 +3234,7 @@ struct Xla_RngRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._distribution != Xla_RandomDistribution.rngInvalid {
         try visitor.visitSingularEnumField(value: _storage._distribution, fieldNumber: 2)
@@ -3252,52 +3252,52 @@ struct Xla_RngRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_TernaryOpRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TernaryOpRequest"
+public struct Xla_TernaryOpRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TernaryOpRequest"
 
-  var triop: Xla_TernaryOperation {
+  public var triop: Xla_TernaryOperation {
     get {return _storage._triop}
     set {_uniqueStorage()._triop = newValue}
   }
 
-  var lhs: Xla_ComputationDataHandle {
+  public var lhs: Xla_ComputationDataHandle {
     get {return _storage._lhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._lhs = newValue}
   }
-  var hasLhs: Bool {
+  public var hasLhs: Bool {
     return _storage._lhs != nil
   }
-  mutating func clearLhs() {
+  public mutating func clearLhs() {
     _storage._lhs = nil
   }
 
-  var rhs: Xla_ComputationDataHandle {
+  public var rhs: Xla_ComputationDataHandle {
     get {return _storage._rhs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._rhs = newValue}
   }
-  var hasRhs: Bool {
+  public var hasRhs: Bool {
     return _storage._rhs != nil
   }
-  mutating func clearRhs() {
+  public mutating func clearRhs() {
     _storage._rhs = nil
   }
 
-  var ehs: Xla_ComputationDataHandle {
+  public var ehs: Xla_ComputationDataHandle {
     get {return _storage._ehs ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._ehs = newValue}
   }
-  var hasEhs: Bool {
+  public var hasEhs: Bool {
     return _storage._ehs != nil
   }
-  mutating func clearEhs() {
+  public mutating func clearEhs() {
     _storage._ehs = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3312,7 +3312,7 @@ struct Xla_TernaryOpRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._triop != Xla_TernaryOperation.triopInvalid {
         try visitor.visitSingularEnumField(value: _storage._triop, fieldNumber: 2)
@@ -3333,18 +3333,18 @@ struct Xla_TernaryOpRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_VariadicOpRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".VariadicOpRequest"
+public struct Xla_VariadicOpRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".VariadicOpRequest"
 
-  var varop: Xla_VariadicOperation = Xla_VariadicOperation.varopInvalid
+  public var varop: Xla_VariadicOperation = Xla_VariadicOperation.varopInvalid
 
-  var operands: [Xla_ComputationDataHandle] = []
+  public var operands: [Xla_ComputationDataHandle] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 2: try decoder.decodeSingularEnumField(value: &self.varop)
@@ -3354,7 +3354,7 @@ struct Xla_VariadicOpRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.varop != Xla_VariadicOperation.varopInvalid {
       try visitor.visitSingularEnumField(value: self.varop, fieldNumber: 2)
     }
@@ -3365,36 +3365,36 @@ struct Xla_VariadicOpRequest: SwiftProtobuf.Message {
   }
 }
 
-struct Xla_SendRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SendRequest"
+public struct Xla_SendRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SendRequest"
 
-  var operand: Xla_ComputationDataHandle {
+  public var operand: Xla_ComputationDataHandle {
     get {return _storage._operand ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._operand = newValue}
   }
-  var hasOperand: Bool {
+  public var hasOperand: Bool {
     return _storage._operand != nil
   }
-  mutating func clearOperand() {
+  public mutating func clearOperand() {
     _storage._operand = nil
   }
 
-  var channelHandle: Xla_ChannelHandle {
+  public var channelHandle: Xla_ChannelHandle {
     get {return _storage._channelHandle ?? Xla_ChannelHandle()}
     set {_uniqueStorage()._channelHandle = newValue}
   }
-  var hasChannelHandle: Bool {
+  public var hasChannelHandle: Bool {
     return _storage._channelHandle != nil
   }
-  mutating func clearChannelHandle() {
+  public mutating func clearChannelHandle() {
     _storage._channelHandle = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3407,7 +3407,7 @@ struct Xla_SendRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._operand {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -3422,36 +3422,36 @@ struct Xla_SendRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_RecvRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RecvRequest"
+public struct Xla_RecvRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RecvRequest"
 
-  var shape: Xla_Shape {
+  public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
     set {_uniqueStorage()._shape = newValue}
   }
-  var hasShape: Bool {
+  public var hasShape: Bool {
     return _storage._shape != nil
   }
-  mutating func clearShape() {
+  public mutating func clearShape() {
     _storage._shape = nil
   }
 
-  var channelHandle: Xla_ChannelHandle {
+  public var channelHandle: Xla_ChannelHandle {
     get {return _storage._channelHandle ?? Xla_ChannelHandle()}
     set {_uniqueStorage()._channelHandle = newValue}
   }
-  var hasChannelHandle: Bool {
+  public var hasChannelHandle: Bool {
     return _storage._channelHandle != nil
   }
-  mutating func clearChannelHandle() {
+  public mutating func clearChannelHandle() {
     _storage._channelHandle = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3464,7 +3464,7 @@ struct Xla_RecvRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._shape {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -3479,37 +3479,37 @@ struct Xla_RecvRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_OpRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpRequest"
+public struct Xla_OpRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpRequest"
 
-  var computation: Xla_ComputationHandle {
+  public var computation: Xla_ComputationHandle {
     get {return _storage._computation ?? Xla_ComputationHandle()}
     set {_uniqueStorage()._computation = newValue}
   }
-  var hasComputation: Bool {
+  public var hasComputation: Bool {
     return _storage._computation != nil
   }
-  mutating func clearComputation() {
+  public mutating func clearComputation() {
     _storage._computation = nil
   }
 
-  var metadata: Xla_OpMetadata {
+  public var metadata: Xla_OpMetadata {
     get {return _storage._metadata ?? Xla_OpMetadata()}
     set {_uniqueStorage()._metadata = newValue}
   }
-  var hasMetadata: Bool {
+  public var hasMetadata: Bool {
     return _storage._metadata != nil
   }
-  mutating func clearMetadata() {
+  public mutating func clearMetadata() {
     _storage._metadata = nil
   }
 
-  var op: OneOf_Op? {
+  public var op: OneOf_Op? {
     get {return _storage._op}
     set {_uniqueStorage()._op = newValue}
   }
 
-  var binaryOpRequest: Xla_BinaryOpRequest {
+  public var binaryOpRequest: Xla_BinaryOpRequest {
     get {
       if case .binaryOpRequest(let v)? = _storage._op {return v}
       return Xla_BinaryOpRequest()
@@ -3517,7 +3517,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .binaryOpRequest(newValue)}
   }
 
-  var broadcastRequest: Xla_BroadcastRequest {
+  public var broadcastRequest: Xla_BroadcastRequest {
     get {
       if case .broadcastRequest(let v)? = _storage._op {return v}
       return Xla_BroadcastRequest()
@@ -3525,7 +3525,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .broadcastRequest(newValue)}
   }
 
-  var callRequest: Xla_CallRequest {
+  public var callRequest: Xla_CallRequest {
     get {
       if case .callRequest(let v)? = _storage._op {return v}
       return Xla_CallRequest()
@@ -3533,7 +3533,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .callRequest(newValue)}
   }
 
-  var concatenateRequest: Xla_ConcatenateRequest {
+  public var concatenateRequest: Xla_ConcatenateRequest {
     get {
       if case .concatenateRequest(let v)? = _storage._op {return v}
       return Xla_ConcatenateRequest()
@@ -3541,7 +3541,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .concatenateRequest(newValue)}
   }
 
-  var constantRequest: Xla_ConstantRequest {
+  public var constantRequest: Xla_ConstantRequest {
     get {
       if case .constantRequest(let v)? = _storage._op {return v}
       return Xla_ConstantRequest()
@@ -3549,7 +3549,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .constantRequest(newValue)}
   }
 
-  var convertRequest: Xla_ConvertRequest {
+  public var convertRequest: Xla_ConvertRequest {
     get {
       if case .convertRequest(let v)? = _storage._op {return v}
       return Xla_ConvertRequest()
@@ -3557,7 +3557,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .convertRequest(newValue)}
   }
 
-  var convolveRequest: Xla_ConvolveRequest {
+  public var convolveRequest: Xla_ConvolveRequest {
     get {
       if case .convolveRequest(let v)? = _storage._op {return v}
       return Xla_ConvolveRequest()
@@ -3565,7 +3565,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .convolveRequest(newValue)}
   }
 
-  var crossReplicaSumRequest: Xla_CrossReplicaSumRequest {
+  public var crossReplicaSumRequest: Xla_CrossReplicaSumRequest {
     get {
       if case .crossReplicaSumRequest(let v)? = _storage._op {return v}
       return Xla_CrossReplicaSumRequest()
@@ -3573,7 +3573,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .crossReplicaSumRequest(newValue)}
   }
 
-  var customCallRequest: Xla_CustomCallRequest {
+  public var customCallRequest: Xla_CustomCallRequest {
     get {
       if case .customCallRequest(let v)? = _storage._op {return v}
       return Xla_CustomCallRequest()
@@ -3581,7 +3581,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .customCallRequest(newValue)}
   }
 
-  var dynamicSliceRequest: Xla_DynamicSliceRequest {
+  public var dynamicSliceRequest: Xla_DynamicSliceRequest {
     get {
       if case .dynamicSliceRequest(let v)? = _storage._op {return v}
       return Xla_DynamicSliceRequest()
@@ -3589,7 +3589,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .dynamicSliceRequest(newValue)}
   }
 
-  var dynamicUpdateSliceRequest: Xla_DynamicUpdateSliceRequest {
+  public var dynamicUpdateSliceRequest: Xla_DynamicUpdateSliceRequest {
     get {
       if case .dynamicUpdateSliceRequest(let v)? = _storage._op {return v}
       return Xla_DynamicUpdateSliceRequest()
@@ -3597,7 +3597,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .dynamicUpdateSliceRequest(newValue)}
   }
 
-  var getTupleElementRequest: Xla_GetTupleElementRequest {
+  public var getTupleElementRequest: Xla_GetTupleElementRequest {
     get {
       if case .getTupleElementRequest(let v)? = _storage._op {return v}
       return Xla_GetTupleElementRequest()
@@ -3605,7 +3605,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .getTupleElementRequest(newValue)}
   }
 
-  var infeedRequest: Xla_InfeedRequest {
+  public var infeedRequest: Xla_InfeedRequest {
     get {
       if case .infeedRequest(let v)? = _storage._op {return v}
       return Xla_InfeedRequest()
@@ -3613,7 +3613,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .infeedRequest(newValue)}
   }
 
-  var mapRequest: Xla_MapRequest {
+  public var mapRequest: Xla_MapRequest {
     get {
       if case .mapRequest(let v)? = _storage._op {return v}
       return Xla_MapRequest()
@@ -3621,7 +3621,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .mapRequest(newValue)}
   }
 
-  var padRequest: Xla_PadRequest {
+  public var padRequest: Xla_PadRequest {
     get {
       if case .padRequest(let v)? = _storage._op {return v}
       return Xla_PadRequest()
@@ -3629,7 +3629,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .padRequest(newValue)}
   }
 
-  var parameterRequest: Xla_ParameterRequest {
+  public var parameterRequest: Xla_ParameterRequest {
     get {
       if case .parameterRequest(let v)? = _storage._op {return v}
       return Xla_ParameterRequest()
@@ -3637,7 +3637,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .parameterRequest(newValue)}
   }
 
-  var reduceRequest: Xla_ReduceRequest {
+  public var reduceRequest: Xla_ReduceRequest {
     get {
       if case .reduceRequest(let v)? = _storage._op {return v}
       return Xla_ReduceRequest()
@@ -3645,7 +3645,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .reduceRequest(newValue)}
   }
 
-  var reduceWindowRequest: Xla_ReduceWindowRequest {
+  public var reduceWindowRequest: Xla_ReduceWindowRequest {
     get {
       if case .reduceWindowRequest(let v)? = _storage._op {return v}
       return Xla_ReduceWindowRequest()
@@ -3653,7 +3653,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .reduceWindowRequest(newValue)}
   }
 
-  var reshapeRequest: Xla_ReshapeRequest {
+  public var reshapeRequest: Xla_ReshapeRequest {
     get {
       if case .reshapeRequest(let v)? = _storage._op {return v}
       return Xla_ReshapeRequest()
@@ -3661,7 +3661,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .reshapeRequest(newValue)}
   }
 
-  var reverseRequest: Xla_ReverseRequest {
+  public var reverseRequest: Xla_ReverseRequest {
     get {
       if case .reverseRequest(let v)? = _storage._op {return v}
       return Xla_ReverseRequest()
@@ -3669,7 +3669,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .reverseRequest(newValue)}
   }
 
-  var rngRequest: Xla_RngRequest {
+  public var rngRequest: Xla_RngRequest {
     get {
       if case .rngRequest(let v)? = _storage._op {return v}
       return Xla_RngRequest()
@@ -3677,7 +3677,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .rngRequest(newValue)}
   }
 
-  var selectAndScatterRequest: Xla_SelectAndScatterRequest {
+  public var selectAndScatterRequest: Xla_SelectAndScatterRequest {
     get {
       if case .selectAndScatterRequest(let v)? = _storage._op {return v}
       return Xla_SelectAndScatterRequest()
@@ -3685,7 +3685,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .selectAndScatterRequest(newValue)}
   }
 
-  var sliceRequest: Xla_SliceRequest {
+  public var sliceRequest: Xla_SliceRequest {
     get {
       if case .sliceRequest(let v)? = _storage._op {return v}
       return Xla_SliceRequest()
@@ -3693,7 +3693,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .sliceRequest(newValue)}
   }
 
-  var ternaryOpRequest: Xla_TernaryOpRequest {
+  public var ternaryOpRequest: Xla_TernaryOpRequest {
     get {
       if case .ternaryOpRequest(let v)? = _storage._op {return v}
       return Xla_TernaryOpRequest()
@@ -3701,7 +3701,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .ternaryOpRequest(newValue)}
   }
 
-  var traceRequest: Xla_TraceRequest {
+  public var traceRequest: Xla_TraceRequest {
     get {
       if case .traceRequest(let v)? = _storage._op {return v}
       return Xla_TraceRequest()
@@ -3709,7 +3709,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .traceRequest(newValue)}
   }
 
-  var transposeRequest: Xla_TransposeRequest {
+  public var transposeRequest: Xla_TransposeRequest {
     get {
       if case .transposeRequest(let v)? = _storage._op {return v}
       return Xla_TransposeRequest()
@@ -3717,7 +3717,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .transposeRequest(newValue)}
   }
 
-  var unaryOpRequest: Xla_UnaryOpRequest {
+  public var unaryOpRequest: Xla_UnaryOpRequest {
     get {
       if case .unaryOpRequest(let v)? = _storage._op {return v}
       return Xla_UnaryOpRequest()
@@ -3725,7 +3725,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .unaryOpRequest(newValue)}
   }
 
-  var variadicOpRequest: Xla_VariadicOpRequest {
+  public var variadicOpRequest: Xla_VariadicOpRequest {
     get {
       if case .variadicOpRequest(let v)? = _storage._op {return v}
       return Xla_VariadicOpRequest()
@@ -3733,7 +3733,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .variadicOpRequest(newValue)}
   }
 
-  var whileRequest: Xla_WhileRequest {
+  public var whileRequest: Xla_WhileRequest {
     get {
       if case .whileRequest(let v)? = _storage._op {return v}
       return Xla_WhileRequest()
@@ -3741,7 +3741,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .whileRequest(newValue)}
   }
 
-  var sendRequest: Xla_SendRequest {
+  public var sendRequest: Xla_SendRequest {
     get {
       if case .sendRequest(let v)? = _storage._op {return v}
       return Xla_SendRequest()
@@ -3749,7 +3749,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .sendRequest(newValue)}
   }
 
-  var recvRequest: Xla_RecvRequest {
+  public var recvRequest: Xla_RecvRequest {
     get {
       if case .recvRequest(let v)? = _storage._op {return v}
       return Xla_RecvRequest()
@@ -3758,7 +3758,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
   }
 
   /// Next: 35
-  var outfeedRequest: Xla_OutfeedRequest {
+  public var outfeedRequest: Xla_OutfeedRequest {
     get {
       if case .outfeedRequest(let v)? = _storage._op {return v}
       return Xla_OutfeedRequest()
@@ -3766,9 +3766,9 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._op = .outfeedRequest(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Op: Equatable {
+  public enum OneOf_Op: Equatable {
     case binaryOpRequest(Xla_BinaryOpRequest)
     case broadcastRequest(Xla_BroadcastRequest)
     case callRequest(Xla_CallRequest)
@@ -3803,7 +3803,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     /// Next: 35
     case outfeedRequest(Xla_OutfeedRequest)
 
-    static func ==(lhs: Xla_OpRequest.OneOf_Op, rhs: Xla_OpRequest.OneOf_Op) -> Bool {
+    public static func ==(lhs: Xla_OpRequest.OneOf_Op, rhs: Xla_OpRequest.OneOf_Op) -> Bool {
       switch (lhs, rhs) {
       case (.binaryOpRequest(let l), .binaryOpRequest(let r)): return l == r
       case (.broadcastRequest(let l), .broadcastRequest(let r)): return l == r
@@ -3842,9 +3842,9 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3862,7 +3862,7 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._computation {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -3879,25 +3879,25 @@ struct Xla_OpRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Xla_OpResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpResponse"
+public struct Xla_OpResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpResponse"
 
-  var output: Xla_ComputationDataHandle {
+  public var output: Xla_ComputationDataHandle {
     get {return _storage._output ?? Xla_ComputationDataHandle()}
     set {_uniqueStorage()._output = newValue}
   }
-  var hasOutput: Bool {
+  public var hasOutput: Bool {
     return _storage._output != nil
   }
-  mutating func clearOutput() {
+  public mutating func clearOutput() {
     _storage._output = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3909,7 +3909,7 @@ struct Xla_OpResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._output {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -3926,7 +3926,7 @@ struct Xla_OpResponse: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "xla"
 
 extension Xla_PrimitiveType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "PRIMITIVE_TYPE_INVALID"),
     1: .same(proto: "PRED"),
     2: .same(proto: "S8"),
@@ -3946,7 +3946,7 @@ extension Xla_PrimitiveType: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_PaddingValue: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "INVALID_PAD"),
     1: .same(proto: "ZERO_PAD"),
     2: .same(proto: "ONE_PAD"),
@@ -3957,7 +3957,7 @@ extension Xla_PaddingValue: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_UnaryOperation: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNOP_INVALID"),
     1: .same(proto: "UNOP_LOGICAL_NOT"),
     2: .same(proto: "UNOP_EXP"),
@@ -3974,7 +3974,7 @@ extension Xla_UnaryOperation: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_BinaryOperation: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "BINOP_INVALID"),
     1: .same(proto: "BINOP_ADD"),
     2: .same(proto: "BINOP_DIV"),
@@ -3998,7 +3998,7 @@ extension Xla_BinaryOperation: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_RandomDistribution: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "RNG_INVALID"),
     1: .same(proto: "RNG_UNIFORM"),
     2: .same(proto: "RNG_NORMAL"),
@@ -4007,7 +4007,7 @@ extension Xla_RandomDistribution: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_TernaryOperation: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "TRIOP_INVALID"),
     1: .same(proto: "TRIOP_SELECT"),
     2: .same(proto: "TRIOP_UPDATE"),
@@ -4016,18 +4016,18 @@ extension Xla_TernaryOperation: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Xla_VariadicOperation: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "VAROP_INVALID"),
     1: .same(proto: "VAROP_TUPLE"),
   ]
 }
 
 extension Xla_PaddingConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dimensions"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_PaddingConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_PaddingConfig) -> Bool {
     if self.dimensions != other.dimensions {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4035,13 +4035,13 @@ extension Xla_PaddingConfig: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Xla_PaddingConfig.PaddingConfigDimension: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "edge_padding_low"),
     2: .standard(proto: "edge_padding_high"),
     3: .standard(proto: "interior_padding"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_PaddingConfig.PaddingConfigDimension) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_PaddingConfig.PaddingConfigDimension) -> Bool {
     if self.edgePaddingLow != other.edgePaddingLow {return false}
     if self.edgePaddingHigh != other.edgePaddingHigh {return false}
     if self.interiorPadding != other.interiorPadding {return false}
@@ -4051,13 +4051,13 @@ extension Xla_PaddingConfig.PaddingConfigDimension: SwiftProtobuf._MessageImplem
 }
 
 extension Xla_Layout: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "minor_to_major"),
     2: .standard(proto: "padded_dimensions"),
     3: .standard(proto: "padding_value"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_Layout) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_Layout) -> Bool {
     if self.minorToMajor != other.minorToMajor {return false}
     if self.paddedDimensions != other.paddedDimensions {return false}
     if self.paddingValue != other.paddingValue {return false}
@@ -4067,7 +4067,7 @@ extension Xla_Layout: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._P
 }
 
 extension Xla_Shape: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "element_type"),
     3: .same(proto: "dimensions"),
     4: .standard(proto: "tuple_shapes"),
@@ -4097,7 +4097,7 @@ extension Xla_Shape: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._Pr
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_Shape) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_Shape) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._elementType != other_storage._elementType {return false}
@@ -4114,7 +4114,7 @@ extension Xla_Shape: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._Pr
 }
 
 extension Xla_ProgramShape: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "parameters"),
     2: .same(proto: "result"),
     3: .standard(proto: "parameter_names"),
@@ -4141,7 +4141,7 @@ extension Xla_ProgramShape: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ProgramShape) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ProgramShape) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._parameters != other_storage._parameters {return false}
@@ -4157,12 +4157,12 @@ extension Xla_ProgramShape: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Xla_ComputationStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "flop_count"),
     2: .standard(proto: "transcendental_count"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ComputationStats) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ComputationStats) -> Bool {
     if self.flopCount != other.flopCount {return false}
     if self.transcendentalCount != other.transcendentalCount {return false}
     if unknownFields != other.unknownFields {return false}
@@ -4171,14 +4171,14 @@ extension Xla_ComputationStats: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_OpMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "op_type"),
     2: .standard(proto: "op_name"),
     3: .standard(proto: "source_file"),
     4: .standard(proto: "source_line"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_OpMetadata) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_OpMetadata) -> Bool {
     if self.opType != other.opType {return false}
     if self.opName != other.opName {return false}
     if self.sourceFile != other.sourceFile {return false}
@@ -4189,7 +4189,7 @@ extension Xla_OpMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
 }
 
 extension Xla_ExecutionProfile: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "compilation_cache_hit"),
     2: .standard(proto: "compile_time_ms"),
     3: .standard(proto: "compute_cycle_count"),
@@ -4197,7 +4197,7 @@ extension Xla_ExecutionProfile: SwiftProtobuf._MessageImplementationBase, SwiftP
     5: .standard(proto: "compute_and_transfer_time_ns"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ExecutionProfile) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ExecutionProfile) -> Bool {
     if self.compilationCacheHit != other.compilationCacheHit {return false}
     if self.compileTimeMs != other.compileTimeMs {return false}
     if self.computeCycleCount != other.computeCycleCount {return false}
@@ -4209,11 +4209,11 @@ extension Xla_ExecutionProfile: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_ComputationHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ComputationHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ComputationHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4221,11 +4221,11 @@ extension Xla_ComputationHandle: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Xla_ExecutionHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ExecutionHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ExecutionHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4233,11 +4233,11 @@ extension Xla_ExecutionHandle: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Xla_GlobalDataHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_GlobalDataHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_GlobalDataHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4245,11 +4245,11 @@ extension Xla_GlobalDataHandle: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_ComputationDataHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ComputationDataHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ComputationDataHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4257,11 +4257,11 @@ extension Xla_ComputationDataHandle: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Xla_DeviceHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_DeviceHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_DeviceHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4269,11 +4269,11 @@ extension Xla_DeviceHandle: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Xla_ChannelHandle: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ChannelHandle) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ChannelHandle) -> Bool {
     if self.handle != other.handle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4281,7 +4281,7 @@ extension Xla_ChannelHandle: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .same(proto: "preds"),
     3: .same(proto: "u8s"),
@@ -4329,7 +4329,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_Literal) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_Literal) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -4352,7 +4352,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
 }
 
 extension Xla_WindowDimension: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "size"),
     2: .same(proto: "stride"),
     3: .standard(proto: "padding_low"),
@@ -4361,7 +4361,7 @@ extension Xla_WindowDimension: SwiftProtobuf._MessageImplementationBase, SwiftPr
     6: .standard(proto: "base_dilation"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_WindowDimension) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_WindowDimension) -> Bool {
     if self.size != other.size {return false}
     if self.stride != other.stride {return false}
     if self.paddingLow != other.paddingLow {return false}
@@ -4374,11 +4374,11 @@ extension Xla_WindowDimension: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Xla_Window: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "dimensions"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_Window) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_Window) -> Bool {
     if self.dimensions != other.dimensions {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -4386,7 +4386,7 @@ extension Xla_Window: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._P
 }
 
 extension Xla_ConstantRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "literal"),
   ]
 
@@ -4407,7 +4407,7 @@ extension Xla_ConstantRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ConstantRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ConstantRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._literal != other_storage._literal {return false}
@@ -4421,7 +4421,7 @@ extension Xla_ConstantRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Xla_GetTupleElementRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "index"),
   ]
@@ -4445,7 +4445,7 @@ extension Xla_GetTupleElementRequest: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_GetTupleElementRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_GetTupleElementRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4460,7 +4460,7 @@ extension Xla_GetTupleElementRequest: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension Xla_SliceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "start_indices"),
     4: .standard(proto: "limit_indices"),
@@ -4487,7 +4487,7 @@ extension Xla_SliceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_SliceRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_SliceRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4503,7 +4503,7 @@ extension Xla_SliceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Xla_DynamicSliceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "start_indices"),
     4: .standard(proto: "slice_sizes"),
@@ -4530,7 +4530,7 @@ extension Xla_DynamicSliceRequest: SwiftProtobuf._MessageImplementationBase, Swi
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_DynamicSliceRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_DynamicSliceRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4546,7 +4546,7 @@ extension Xla_DynamicSliceRequest: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Xla_DynamicUpdateSliceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "update"),
     4: .standard(proto: "start_indices"),
@@ -4573,7 +4573,7 @@ extension Xla_DynamicUpdateSliceRequest: SwiftProtobuf._MessageImplementationBas
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_DynamicUpdateSliceRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_DynamicUpdateSliceRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4589,7 +4589,7 @@ extension Xla_DynamicUpdateSliceRequest: SwiftProtobuf._MessageImplementationBas
 }
 
 extension Xla_ConvolutionDimensionNumbers: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "batch_dimension"),
     2: .standard(proto: "feature_dimension"),
     5: .standard(proto: "spatial_dimensions"),
@@ -4598,7 +4598,7 @@ extension Xla_ConvolutionDimensionNumbers: SwiftProtobuf._MessageImplementationB
     6: .standard(proto: "kernel_spatial_dimensions"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ConvolutionDimensionNumbers) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ConvolutionDimensionNumbers) -> Bool {
     if self.batchDimension != other.batchDimension {return false}
     if self.featureDimension != other.featureDimension {return false}
     if self.spatialDimensions != other.spatialDimensions {return false}
@@ -4611,7 +4611,7 @@ extension Xla_ConvolutionDimensionNumbers: SwiftProtobuf._MessageImplementationB
 }
 
 extension Xla_ConvolveRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "lhs"),
     3: .same(proto: "rhs"),
     4: .same(proto: "window"),
@@ -4641,7 +4641,7 @@ extension Xla_ConvolveRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ConvolveRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ConvolveRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._lhs != other_storage._lhs {return false}
@@ -4658,7 +4658,7 @@ extension Xla_ConvolveRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Xla_InfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "shape"),
     3: .same(proto: "config"),
   ]
@@ -4682,7 +4682,7 @@ extension Xla_InfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftProt
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_InfeedRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_InfeedRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -4697,7 +4697,7 @@ extension Xla_InfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Xla_OutfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .same(proto: "operand"),
     3: .standard(proto: "outfeed_config"),
@@ -4724,7 +4724,7 @@ extension Xla_OutfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_OutfeedRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_OutfeedRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -4740,7 +4740,7 @@ extension Xla_OutfeedRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Xla_CallRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "to_apply"),
     3: .same(proto: "operands"),
   ]
@@ -4764,7 +4764,7 @@ extension Xla_CallRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_CallRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_CallRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._toApply != other_storage._toApply {return false}
@@ -4779,7 +4779,7 @@ extension Xla_CallRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
 }
 
 extension Xla_CustomCallRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "call_target_name"),
     3: .same(proto: "operands"),
     4: .same(proto: "shape"),
@@ -4806,7 +4806,7 @@ extension Xla_CustomCallRequest: SwiftProtobuf._MessageImplementationBase, Swift
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_CustomCallRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_CustomCallRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._callTargetName != other_storage._callTargetName {return false}
@@ -4822,7 +4822,7 @@ extension Xla_CustomCallRequest: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Xla_MapRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operands"),
     3: .standard(proto: "to_apply"),
     4: .standard(proto: "static_operands"),
@@ -4849,7 +4849,7 @@ extension Xla_MapRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_MapRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_MapRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operands != other_storage._operands {return false}
@@ -4865,7 +4865,7 @@ extension Xla_MapRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
 }
 
 extension Xla_ReduceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "init_value"),
     4: .same(proto: "dimensions"),
@@ -4895,7 +4895,7 @@ extension Xla_ReduceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProt
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ReduceRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ReduceRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4912,7 +4912,7 @@ extension Xla_ReduceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Xla_ReduceWindowRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "init_value"),
     4: .same(proto: "window"),
@@ -4942,7 +4942,7 @@ extension Xla_ReduceWindowRequest: SwiftProtobuf._MessageImplementationBase, Swi
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ReduceWindowRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ReduceWindowRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4959,7 +4959,7 @@ extension Xla_ReduceWindowRequest: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Xla_CrossReplicaSumRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
   ]
 
@@ -4980,7 +4980,7 @@ extension Xla_CrossReplicaSumRequest: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_CrossReplicaSumRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_CrossReplicaSumRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -4994,7 +4994,7 @@ extension Xla_CrossReplicaSumRequest: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension Xla_SelectAndScatterRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "source"),
     4: .standard(proto: "init_value"),
@@ -5030,7 +5030,7 @@ extension Xla_SelectAndScatterRequest: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_SelectAndScatterRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_SelectAndScatterRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5049,7 +5049,7 @@ extension Xla_SelectAndScatterRequest: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Xla_ReverseRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "dimensions"),
   ]
@@ -5073,7 +5073,7 @@ extension Xla_ReverseRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ReverseRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ReverseRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5088,7 +5088,7 @@ extension Xla_ReverseRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Xla_BroadcastRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "broadcast_sizes"),
   ]
@@ -5112,7 +5112,7 @@ extension Xla_BroadcastRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_BroadcastRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_BroadcastRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5127,7 +5127,7 @@ extension Xla_BroadcastRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_PadRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "padding_value"),
     4: .standard(proto: "padding_config"),
@@ -5154,7 +5154,7 @@ extension Xla_PadRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_PadRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_PadRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5170,7 +5170,7 @@ extension Xla_PadRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
 }
 
 extension Xla_ReshapeRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "dimensions"),
     4: .standard(proto: "new_sizes"),
@@ -5197,7 +5197,7 @@ extension Xla_ReshapeRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ReshapeRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ReshapeRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5213,7 +5213,7 @@ extension Xla_ReshapeRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Xla_TransposeRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .same(proto: "dimensions"),
   ]
@@ -5237,7 +5237,7 @@ extension Xla_TransposeRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_TransposeRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_TransposeRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5252,7 +5252,7 @@ extension Xla_TransposeRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_ParameterRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "shape"),
     3: .same(proto: "parameter"),
     4: .same(proto: "name"),
@@ -5279,7 +5279,7 @@ extension Xla_ParameterRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ParameterRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ParameterRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -5295,7 +5295,7 @@ extension Xla_ParameterRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_GetLocalShapeRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "computation"),
     2: .same(proto: "operand"),
   ]
@@ -5319,7 +5319,7 @@ extension Xla_GetLocalShapeRequest: SwiftProtobuf._MessageImplementationBase, Sw
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_GetLocalShapeRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_GetLocalShapeRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._computation != other_storage._computation {return false}
@@ -5334,7 +5334,7 @@ extension Xla_GetLocalShapeRequest: SwiftProtobuf._MessageImplementationBase, Sw
 }
 
 extension Xla_GetLocalShapeResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
   ]
 
@@ -5355,7 +5355,7 @@ extension Xla_GetLocalShapeResponse: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_GetLocalShapeResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_GetLocalShapeResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -5369,7 +5369,7 @@ extension Xla_GetLocalShapeResponse: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Xla_TraceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "tag"),
     3: .same(proto: "operand"),
   ]
@@ -5393,7 +5393,7 @@ extension Xla_TraceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_TraceRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_TraceRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._tag != other_storage._tag {return false}
@@ -5408,7 +5408,7 @@ extension Xla_TraceRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Xla_ConvertRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operand"),
     3: .standard(proto: "new_element_type"),
   ]
@@ -5432,7 +5432,7 @@ extension Xla_ConvertRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_ConvertRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ConvertRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5447,12 +5447,12 @@ extension Xla_ConvertRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Xla_ConcatenateRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "operands"),
     3: .same(proto: "dimension"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_ConcatenateRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_ConcatenateRequest) -> Bool {
     if self.operands != other.operands {return false}
     if self.dimension != other.dimension {return false}
     if unknownFields != other.unknownFields {return false}
@@ -5461,7 +5461,7 @@ extension Xla_ConcatenateRequest: SwiftProtobuf._MessageImplementationBase, Swif
 }
 
 extension Xla_WhileRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "condition"),
     3: .same(proto: "body"),
     4: .same(proto: "init"),
@@ -5488,7 +5488,7 @@ extension Xla_WhileRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_WhileRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_WhileRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._condition != other_storage._condition {return false}
@@ -5504,7 +5504,7 @@ extension Xla_WhileRequest: SwiftProtobuf._MessageImplementationBase, SwiftProto
 }
 
 extension Xla_UnaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "unop"),
     3: .same(proto: "operand"),
   ]
@@ -5528,7 +5528,7 @@ extension Xla_UnaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_UnaryOpRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_UnaryOpRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._unop != other_storage._unop {return false}
@@ -5543,7 +5543,7 @@ extension Xla_UnaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
 }
 
 extension Xla_BinaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "binop"),
     3: .same(proto: "lhs"),
     4: .same(proto: "rhs"),
@@ -5573,7 +5573,7 @@ extension Xla_BinaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_BinaryOpRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_BinaryOpRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._binop != other_storage._binop {return false}
@@ -5590,7 +5590,7 @@ extension Xla_BinaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
 }
 
 extension Xla_RngRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "distribution"),
     3: .same(proto: "parameter"),
     4: .same(proto: "shape"),
@@ -5617,7 +5617,7 @@ extension Xla_RngRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_RngRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_RngRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._distribution != other_storage._distribution {return false}
@@ -5633,7 +5633,7 @@ extension Xla_RngRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
 }
 
 extension Xla_TernaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "triop"),
     3: .same(proto: "lhs"),
     4: .same(proto: "rhs"),
@@ -5663,7 +5663,7 @@ extension Xla_TernaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_TernaryOpRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_TernaryOpRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._triop != other_storage._triop {return false}
@@ -5680,12 +5680,12 @@ extension Xla_TernaryOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Xla_VariadicOpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "varop"),
     3: .same(proto: "operands"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Xla_VariadicOpRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_VariadicOpRequest) -> Bool {
     if self.varop != other.varop {return false}
     if self.operands != other.operands {return false}
     if unknownFields != other.unknownFields {return false}
@@ -5694,7 +5694,7 @@ extension Xla_VariadicOpRequest: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Xla_SendRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "operand"),
     2: .standard(proto: "channel_handle"),
   ]
@@ -5718,7 +5718,7 @@ extension Xla_SendRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_SendRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_SendRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._operand != other_storage._operand {return false}
@@ -5733,7 +5733,7 @@ extension Xla_SendRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
 }
 
 extension Xla_RecvRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .standard(proto: "channel_handle"),
   ]
@@ -5757,7 +5757,7 @@ extension Xla_RecvRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_RecvRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_RecvRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -5772,7 +5772,7 @@ extension Xla_RecvRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtob
 }
 
 extension Xla_OpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "computation"),
     33: .same(proto: "metadata"),
     2: .standard(proto: "binary_op_request"),
@@ -5830,7 +5830,7 @@ extension Xla_OpRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_OpRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_OpRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._computation != other_storage._computation {return false}
@@ -6213,7 +6213,7 @@ extension Xla_OpRequest.OneOf_Op {
 }
 
 extension Xla_OpResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "output"),
   ]
 
@@ -6234,7 +6234,7 @@ extension Xla_OpResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobu
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Xla_OpResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_OpResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._output != other_storage._output {return false}

@@ -34,33 +34,33 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_GetStatusRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetStatusRequest"
+public struct Tensorflow_GetStatusRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetStatusRequest"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
-struct Tensorflow_GetStatusResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GetStatusResponse"
+public struct Tensorflow_GetStatusResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GetStatusResponse"
 
-  var deviceAttributes: [Tensorflow_DeviceAttributes] = []
+  public var deviceAttributes: [Tensorflow_DeviceAttributes] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.deviceAttributes)
@@ -69,7 +69,7 @@ struct Tensorflow_GetStatusResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.deviceAttributes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.deviceAttributes, fieldNumber: 1)
     }
@@ -77,32 +77,32 @@ struct Tensorflow_GetStatusResponse: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CreateWorkerSessionRequest"
+public struct Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CreateWorkerSessionRequest"
 
   /// Sessions are identified by a given handle.
-  var sessionHandle: String {
+  public var sessionHandle: String {
     get {return _storage._sessionHandle}
     set {_uniqueStorage()._sessionHandle = newValue}
   }
 
   /// Defines the configuration of a TensorFlow worker.
-  var serverDef: Tensorflow_ServerDef {
+  public var serverDef: Tensorflow_ServerDef {
     get {return _storage._serverDef ?? Tensorflow_ServerDef()}
     set {_uniqueStorage()._serverDef = newValue}
   }
-  var hasServerDef: Bool {
+  public var hasServerDef: Bool {
     return _storage._serverDef != nil
   }
-  mutating func clearServerDef() {
+  public mutating func clearServerDef() {
     _storage._serverDef = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -115,7 +115,7 @@ struct Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._sessionHandle.isEmpty {
         try visitor.visitSingularStringField(value: _storage._sessionHandle, fieldNumber: 1)
@@ -130,70 +130,70 @@ struct Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_CreateWorkerSessionResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CreateWorkerSessionResponse"
+public struct Tensorflow_CreateWorkerSessionResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CreateWorkerSessionResponse"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
-struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RegisterGraphRequest"
+public struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RegisterGraphRequest"
 
   /// Subgraphs are scoped within one session.
-  var sessionHandle: String {
+  public var sessionHandle: String {
     get {return _storage._sessionHandle}
     set {_uniqueStorage()._sessionHandle = newValue}
   }
 
   /// "graph_def" has the subgraph of nodes for this worker, with each node
   /// having its device_name filled in.
-  var graphDef: Tensorflow_GraphDef {
+  public var graphDef: Tensorflow_GraphDef {
     get {return _storage._graphDef ?? Tensorflow_GraphDef()}
     set {_uniqueStorage()._graphDef = newValue}
   }
-  var hasGraphDef: Bool {
+  public var hasGraphDef: Bool {
     return _storage._graphDef != nil
   }
-  mutating func clearGraphDef() {
+  public mutating func clearGraphDef() {
     _storage._graphDef = nil
   }
 
   /// True iff the graph (before partitioning) contains control flow nodes.
   ///
   /// As of 01/11/2015, this is no longer set by clients.
-  var hasControlFlow_p: Bool {
+  public var hasControlFlow_p: Bool {
     get {return _storage._hasControlFlow_p}
     set {_uniqueStorage()._hasControlFlow_p = newValue}
   }
 
   /// Configuration options for the session in which this graph was created.
-  var graphOptions: Tensorflow_GraphOptions {
+  public var graphOptions: Tensorflow_GraphOptions {
     get {return _storage._graphOptions ?? Tensorflow_GraphOptions()}
     set {_uniqueStorage()._graphOptions = newValue}
   }
-  var hasGraphOptions: Bool {
+  public var hasGraphOptions: Bool {
     return _storage._graphOptions != nil
   }
-  mutating func clearGraphOptions() {
+  public mutating func clearGraphOptions() {
     _storage._graphOptions = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -208,7 +208,7 @@ struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._sessionHandle.isEmpty {
         try visitor.visitSingularStringField(value: _storage._sessionHandle, fieldNumber: 1)
@@ -229,19 +229,19 @@ struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_RegisterGraphResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RegisterGraphResponse"
+public struct Tensorflow_RegisterGraphResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RegisterGraphResponse"
 
   /// If the registration succeeds, returns an opaque graph_handle to
   /// the master. The master calls RunGraph with graph_handle to
   /// compute different steps.
-  var graphHandle: String = String()
+  public var graphHandle: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.graphHandle)
@@ -250,7 +250,7 @@ struct Tensorflow_RegisterGraphResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.graphHandle.isEmpty {
       try visitor.visitSingularStringField(value: self.graphHandle, fieldNumber: 1)
     }
@@ -258,18 +258,18 @@ struct Tensorflow_RegisterGraphResponse: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeregisterGraphRequest"
+public struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DeregisterGraphRequest"
 
   /// REQUIRED: graph_handle must be returned by a RegisterGraph call
   /// to the same WorkerService.
-  var graphHandle: String = String()
+  public var graphHandle: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.graphHandle)
@@ -278,7 +278,7 @@ struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.graphHandle.isEmpty {
       try visitor.visitSingularStringField(value: self.graphHandle, fieldNumber: 1)
     }
@@ -287,25 +287,25 @@ struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
 }
 
 /// TODO(mrry): Optionally add summary stats for the graph.
-struct Tensorflow_DeregisterGraphResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DeregisterGraphResponse"
+public struct Tensorflow_DeregisterGraphResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DeregisterGraphResponse"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
-struct Tensorflow_CleanupAllRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CleanupAllRequest"
+public struct Tensorflow_CleanupAllRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CleanupAllRequest"
 
   /// A list of container names.
   ///
@@ -314,13 +314,13 @@ struct Tensorflow_CleanupAllRequest: SwiftProtobuf.Message {
   ///
   /// If 'container' is empty, releases resources in the default
   /// container in all devices.
-  var container: [String] = []
+  public var container: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.container)
@@ -329,7 +329,7 @@ struct Tensorflow_CleanupAllRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.container.isEmpty {
       try visitor.visitRepeatedStringField(value: self.container, fieldNumber: 1)
     }
@@ -337,36 +337,36 @@ struct Tensorflow_CleanupAllRequest: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_CleanupAllResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CleanupAllResponse"
+public struct Tensorflow_CleanupAllResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CleanupAllResponse"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
 /// Options specific to the execution of a single step.
-struct Tensorflow_ExecutorOpts: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ExecutorOpts"
+public struct Tensorflow_ExecutorOpts: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ExecutorOpts"
 
-  var recordCosts: Bool = false
+  public var recordCosts: Bool = false
 
-  var recordTimeline: Bool = false
+  public var recordTimeline: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.recordCosts)
@@ -376,7 +376,7 @@ struct Tensorflow_ExecutorOpts: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.recordCosts != false {
       try visitor.visitSingularBoolField(value: self.recordCosts, fieldNumber: 1)
     }
@@ -387,12 +387,12 @@ struct Tensorflow_ExecutorOpts: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RunGraphRequest"
+public struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RunGraphRequest"
 
   /// REQUIRED: graph_handle must be returned by a RegisterGraph call
   /// to the same WorkerService.
-  var graphHandle: String {
+  public var graphHandle: String {
     get {return _storage._graphHandle}
     set {_uniqueStorage()._graphHandle = newValue}
   }
@@ -403,20 +403,20 @@ struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
   /// different runs of the graph computation. Subgraphs communicate
   /// (e.g., send/recv ops) with each other using `step_id` to
   /// distinguish tensors generated by different runs.
-  var stepId: Int64 {
+  public var stepId: Int64 {
     get {return _storage._stepId}
     set {_uniqueStorage()._stepId = newValue}
   }
 
   /// Options for this step.
-  var execOpts: Tensorflow_ExecutorOpts {
+  public var execOpts: Tensorflow_ExecutorOpts {
     get {return _storage._execOpts ?? Tensorflow_ExecutorOpts()}
     set {_uniqueStorage()._execOpts = newValue}
   }
-  var hasExecOpts: Bool {
+  public var hasExecOpts: Bool {
     return _storage._execOpts != nil
   }
-  mutating func clearExecOpts() {
+  public mutating func clearExecOpts() {
     _storage._execOpts = nil
   }
 
@@ -424,33 +424,33 @@ struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
   ///
   /// Sends the tensors in "send" into the graph before the run and
   /// fetches the keys into `RunGraphResponse.recv` after the run.
-  var send: [Tensorflow_NamedTensorProto] {
+  public var send: [Tensorflow_NamedTensorProto] {
     get {return _storage._send}
     set {_uniqueStorage()._send = newValue}
   }
 
-  var recvKey: [String] {
+  public var recvKey: [String] {
     get {return _storage._recvKey}
     set {_uniqueStorage()._recvKey = newValue}
   }
 
   /// True if the RunGraphRequest is a partial run request.
-  var isPartial: Bool {
+  public var isPartial: Bool {
     get {return _storage._isPartial}
     set {_uniqueStorage()._isPartial = newValue}
   }
 
   /// True if this is the last partial run request in a sequence of requests.
-  var isLastPartialRun: Bool {
+  public var isLastPartialRun: Bool {
     get {return _storage._isLastPartialRun}
     set {_uniqueStorage()._isLastPartialRun = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -468,7 +468,7 @@ struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._graphHandle.isEmpty {
         try visitor.visitSingularStringField(value: _storage._graphHandle, fieldNumber: 1)
@@ -498,45 +498,45 @@ struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_RunGraphResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RunGraphResponse"
+public struct Tensorflow_RunGraphResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RunGraphResponse"
 
   /// A list of tensors corresponding to those requested by
   /// `RunGraphRequest.recv_key`.
-  var recv: [Tensorflow_NamedTensorProto] {
+  public var recv: [Tensorflow_NamedTensorProto] {
     get {return _storage._recv}
     set {_uniqueStorage()._recv = newValue}
   }
 
   /// If the request asked for execution stats or cost graph, these are returned
   /// here.
-  var stepStats: Tensorflow_StepStats {
+  public var stepStats: Tensorflow_StepStats {
     get {return _storage._stepStats ?? Tensorflow_StepStats()}
     set {_uniqueStorage()._stepStats = newValue}
   }
-  var hasStepStats: Bool {
+  public var hasStepStats: Bool {
     return _storage._stepStats != nil
   }
-  mutating func clearStepStats() {
+  public mutating func clearStepStats() {
     _storage._stepStats = nil
   }
 
-  var costGraph: Tensorflow_CostGraphDef {
+  public var costGraph: Tensorflow_CostGraphDef {
     get {return _storage._costGraph ?? Tensorflow_CostGraphDef()}
     set {_uniqueStorage()._costGraph = newValue}
   }
-  var hasCostGraph: Bool {
+  public var hasCostGraph: Bool {
     return _storage._costGraph != nil
   }
-  mutating func clearCostGraph() {
+  public mutating func clearCostGraph() {
     _storage._costGraph = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -550,7 +550,7 @@ struct Tensorflow_RunGraphResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._recv.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._recv, fieldNumber: 1)
@@ -568,16 +568,16 @@ struct Tensorflow_RunGraphResponse: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_CleanupGraphRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CleanupGraphRequest"
+public struct Tensorflow_CleanupGraphRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CleanupGraphRequest"
 
-  var stepId: Int64 = 0
+  public var stepId: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.stepId)
@@ -586,7 +586,7 @@ struct Tensorflow_CleanupGraphRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.stepId != 0 {
       try visitor.visitSingularInt64Field(value: self.stepId, fieldNumber: 1)
     }
@@ -594,89 +594,89 @@ struct Tensorflow_CleanupGraphRequest: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_CleanupGraphResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".CleanupGraphResponse"
+public struct Tensorflow_CleanupGraphResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".CleanupGraphResponse"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
-struct Tensorflow_RecvTensorRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RecvTensorRequest"
+public struct Tensorflow_RecvTensorRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RecvTensorRequest"
 
   /// The step in which the tensor will be produced.
   ///
   /// REQUIRED: This must eventually correspond to the `step_id` passed
   /// into a RunGraph call on the same WorkerService.
-  var stepId: Int64 {
+  public var stepId: Int64 {
     get {return _storage._stepId}
     set {_uniqueStorage()._stepId = newValue}
   }
 
   /// A key that identifies the tensor to be received.
-  var rendezvousKey: String {
+  public var rendezvousKey: String {
     get {return _storage._rendezvousKey}
     set {_uniqueStorage()._rendezvousKey = newValue}
   }
 
   /// If true, use an out-of-band DMA mechanism to transfer the
   /// received tensor.
-  var dmaOk: Bool {
+  public var dmaOk: Bool {
     get {return _storage._dmaOk}
     set {_uniqueStorage()._dmaOk = newValue}
   }
 
   /// Optional information on client-side device locality.
-  var clientLocality: Tensorflow_DeviceLocality {
+  public var clientLocality: Tensorflow_DeviceLocality {
     get {return _storage._clientLocality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._clientLocality = newValue}
   }
-  var hasClientLocality: Bool {
+  public var hasClientLocality: Bool {
     return _storage._clientLocality != nil
   }
-  mutating func clearClientLocality() {
+  public mutating func clearClientLocality() {
     _storage._clientLocality = nil
   }
 
   /// Optional information on server-side device locality.
-  var serverLocality: Tensorflow_DeviceLocality {
+  public var serverLocality: Tensorflow_DeviceLocality {
     get {return _storage._serverLocality ?? Tensorflow_DeviceLocality()}
     set {_uniqueStorage()._serverLocality = newValue}
   }
-  var hasServerLocality: Bool {
+  public var hasServerLocality: Bool {
     return _storage._serverLocality != nil
   }
-  mutating func clearServerLocality() {
+  public mutating func clearServerLocality() {
     _storage._serverLocality = nil
   }
 
   /// Optional information needed by the RPC subsystem.
-  var transportOptions: Google_Protobuf_Any {
+  public var transportOptions: Google_Protobuf_Any {
     get {return _storage._transportOptions ?? Google_Protobuf_Any()}
     set {_uniqueStorage()._transportOptions = newValue}
   }
-  var hasTransportOptions: Bool {
+  public var hasTransportOptions: Bool {
     return _storage._transportOptions != nil
   }
-  mutating func clearTransportOptions() {
+  public mutating func clearTransportOptions() {
     _storage._transportOptions = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -693,7 +693,7 @@ struct Tensorflow_RecvTensorRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._stepId != 0 {
         try visitor.visitSingularInt64Field(value: _storage._stepId, fieldNumber: 1)
@@ -720,52 +720,52 @@ struct Tensorflow_RecvTensorRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".RecvTensorResponse"
+public struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".RecvTensorResponse"
 
   /// The tensor as a proto.
-  var tensor: Tensorflow_TensorProto {
+  public var tensor: Tensorflow_TensorProto {
     get {return _storage._tensor ?? Tensorflow_TensorProto()}
     set {_uniqueStorage()._tensor = newValue}
   }
-  var hasTensor: Bool {
+  public var hasTensor: Bool {
     return _storage._tensor != nil
   }
-  mutating func clearTensor() {
+  public mutating func clearTensor() {
     _storage._tensor = nil
   }
 
   /// If true, this tensor was the output of a dead node, and the
   /// content is invalid.
-  var isDead: Bool {
+  public var isDead: Bool {
     get {return _storage._isDead}
     set {_uniqueStorage()._isDead = newValue}
   }
 
   /// The time at which tensor was available and started to be returned.
-  var sendStartMicros: Int64 {
+  public var sendStartMicros: Int64 {
     get {return _storage._sendStartMicros}
     set {_uniqueStorage()._sendStartMicros = newValue}
   }
 
   /// Optional additional information about how to receive the tensor,
   /// e.g. in the event that `RecvTensorRequest.dma_ok` was true.
-  var transportOptions: Google_Protobuf_Any {
+  public var transportOptions: Google_Protobuf_Any {
     get {return _storage._transportOptions ?? Google_Protobuf_Any()}
     set {_uniqueStorage()._transportOptions = newValue}
   }
-  var hasTransportOptions: Bool {
+  public var hasTransportOptions: Bool {
     return _storage._transportOptions != nil
   }
-  mutating func clearTransportOptions() {
+  public mutating func clearTransportOptions() {
     _storage._transportOptions = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -780,7 +780,7 @@ struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._tensor {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -803,25 +803,25 @@ struct Tensorflow_RecvTensorResponse: SwiftProtobuf.Message {
 
 /// Out-of-band request to begin or end logging, or
 /// to retrieve logs for particular steps.
-struct Tensorflow_LoggingRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LoggingRequest"
+public struct Tensorflow_LoggingRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LoggingRequest"
 
   /// If true, RPC logging will be activated.
-  var rpcLogging: Bool = false
+  public var rpcLogging: Bool = false
 
   /// If true, discard any saved logging data (for all steps).
-  var clear_p: Bool = false
+  public var clear_p: Bool = false
 
   /// When set, requests all saved log data pertaining to the step.
   /// Any log data retrieved is eliminated from the store and cannot be
   /// retrieved again.
-  var fetchStepId: [Int64] = []
+  public var fetchStepId: [Int64] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.rpcLogging)
@@ -832,7 +832,7 @@ struct Tensorflow_LoggingRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.rpcLogging != false {
       try visitor.visitSingularBoolField(value: self.rpcLogging, fieldNumber: 1)
     }
@@ -846,30 +846,30 @@ struct Tensorflow_LoggingRequest: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_LabeledStepStats: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LabeledStepStats"
+public struct Tensorflow_LabeledStepStats: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LabeledStepStats"
 
-  var stepId: Int64 {
+  public var stepId: Int64 {
     get {return _storage._stepId}
     set {_uniqueStorage()._stepId = newValue}
   }
 
-  var stepStats: Tensorflow_StepStats {
+  public var stepStats: Tensorflow_StepStats {
     get {return _storage._stepStats ?? Tensorflow_StepStats()}
     set {_uniqueStorage()._stepStats = newValue}
   }
-  var hasStepStats: Bool {
+  public var hasStepStats: Bool {
     return _storage._stepStats != nil
   }
-  mutating func clearStepStats() {
+  public mutating func clearStepStats() {
     _storage._stepStats = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -882,7 +882,7 @@ struct Tensorflow_LabeledStepStats: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._stepId != 0 {
         try visitor.visitSingularInt64Field(value: _storage._stepId, fieldNumber: 1)
@@ -897,16 +897,16 @@ struct Tensorflow_LabeledStepStats: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_LoggingResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LoggingResponse"
+public struct Tensorflow_LoggingResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LoggingResponse"
 
-  var step: [Tensorflow_LabeledStepStats] = []
+  public var step: [Tensorflow_LabeledStepStats] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.step)
@@ -915,7 +915,7 @@ struct Tensorflow_LoggingResponse: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.step.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.step, fieldNumber: 1)
     }
@@ -923,34 +923,34 @@ struct Tensorflow_LoggingResponse: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_TraceOpts: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TraceOpts"
+public struct Tensorflow_TraceOpts: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TraceOpts"
 
   /// Length of the trace to be taken, in seconds.
-  var duration: Double = 0
+  public var duration: Double = 0
 
   /// If true, capture step profile locally in each worker. Currently
   /// unimplemented.
-  var useStepProfiler: Bool = false
+  public var useStepProfiler: Bool = false
 
   /// If true, capture kernel events from each worker.
-  var useKernelProfiler: Bool = false
+  public var useKernelProfiler: Bool = false
 
   /// If true, capture extended profiling events from TensorFlow process.
-  var useExtendedProfiler: Bool = false
+  public var useExtendedProfiler: Bool = false
 
   /// If true, capture GPU profiling events locally on each
   /// machine. Currently unimplemented.
-  var useGpuProfiler: Bool = false
+  public var useGpuProfiler: Bool = false
 
   /// If true, collect sampled profile events. Currently unimplemented.
-  var useSampleProfiler: Bool = false
+  public var useSampleProfiler: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.duration)
@@ -964,7 +964,7 @@ struct Tensorflow_TraceOpts: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.duration != 0 {
       try visitor.visitSingularDoubleField(value: self.duration, fieldNumber: 1)
     }
@@ -988,25 +988,25 @@ struct Tensorflow_TraceOpts: SwiftProtobuf.Message {
 }
 
 /// Out-of-band request to configure distributed tracing.
-struct Tensorflow_TracingRequest: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TracingRequest"
+public struct Tensorflow_TracingRequest: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TracingRequest"
 
-  var options: Tensorflow_TraceOpts {
+  public var options: Tensorflow_TraceOpts {
     get {return _storage._options ?? Tensorflow_TraceOpts()}
     set {_uniqueStorage()._options = newValue}
   }
-  var hasOptions: Bool {
+  public var hasOptions: Bool {
     return _storage._options != nil
   }
-  mutating func clearOptions() {
+  public mutating func clearOptions() {
     _storage._options = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1018,7 +1018,7 @@ struct Tensorflow_TracingRequest: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._options {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -1030,19 +1030,19 @@ struct Tensorflow_TracingRequest: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_TracingResponse: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TracingResponse"
+public struct Tensorflow_TracingResponse: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TracingResponse"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
@@ -1052,20 +1052,20 @@ struct Tensorflow_TracingResponse: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_GetStatusRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GetStatusRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GetStatusRequest) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }
 }
 
 extension Tensorflow_GetStatusResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "device_attributes"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GetStatusResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GetStatusResponse) -> Bool {
     if self.deviceAttributes != other.deviceAttributes {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1073,7 +1073,7 @@ extension Tensorflow_GetStatusResponse: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "session_handle"),
     2: .standard(proto: "server_def"),
   ]
@@ -1097,7 +1097,7 @@ extension Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf._MessageImplement
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CreateWorkerSessionRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CreateWorkerSessionRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._sessionHandle != other_storage._sessionHandle {return false}
@@ -1112,16 +1112,16 @@ extension Tensorflow_CreateWorkerSessionRequest: SwiftProtobuf._MessageImplement
 }
 
 extension Tensorflow_CreateWorkerSessionResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CreateWorkerSessionResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CreateWorkerSessionResponse) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }
 }
 
 extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "session_handle"),
     2: .standard(proto: "graph_def"),
     3: .standard(proto: "has_control_flow"),
@@ -1151,7 +1151,7 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RegisterGraphRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RegisterGraphRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._sessionHandle != other_storage._sessionHandle {return false}
@@ -1168,11 +1168,11 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
 }
 
 extension Tensorflow_RegisterGraphResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "graph_handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RegisterGraphResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RegisterGraphResponse) -> Bool {
     if self.graphHandle != other.graphHandle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1180,11 +1180,11 @@ extension Tensorflow_RegisterGraphResponse: SwiftProtobuf._MessageImplementation
 }
 
 extension Tensorflow_DeregisterGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "graph_handle"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DeregisterGraphRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DeregisterGraphRequest) -> Bool {
     if self.graphHandle != other.graphHandle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1192,20 +1192,20 @@ extension Tensorflow_DeregisterGraphRequest: SwiftProtobuf._MessageImplementatio
 }
 
 extension Tensorflow_DeregisterGraphResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DeregisterGraphResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DeregisterGraphResponse) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }
 }
 
 extension Tensorflow_CleanupAllRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "container"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupAllRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupAllRequest) -> Bool {
     if self.container != other.container {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1213,21 +1213,21 @@ extension Tensorflow_CleanupAllRequest: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_CleanupAllResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupAllResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupAllResponse) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }
 }
 
 extension Tensorflow_ExecutorOpts: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "record_costs"),
     3: .standard(proto: "record_timeline"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ExecutorOpts) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ExecutorOpts) -> Bool {
     if self.recordCosts != other.recordCosts {return false}
     if self.recordTimeline != other.recordTimeline {return false}
     if unknownFields != other.unknownFields {return false}
@@ -1236,7 +1236,7 @@ extension Tensorflow_ExecutorOpts: SwiftProtobuf._MessageImplementationBase, Swi
 }
 
 extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "graph_handle"),
     2: .standard(proto: "step_id"),
     5: .standard(proto: "exec_opts"),
@@ -1275,7 +1275,7 @@ extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, 
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RunGraphRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RunGraphRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._graphHandle != other_storage._graphHandle {return false}
@@ -1295,7 +1295,7 @@ extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension Tensorflow_RunGraphResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "recv"),
     2: .standard(proto: "step_stats"),
     3: .standard(proto: "cost_graph"),
@@ -1322,7 +1322,7 @@ extension Tensorflow_RunGraphResponse: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RunGraphResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RunGraphResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._recv != other_storage._recv {return false}
@@ -1338,11 +1338,11 @@ extension Tensorflow_RunGraphResponse: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_CleanupGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "step_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupGraphRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupGraphRequest) -> Bool {
     if self.stepId != other.stepId {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1350,16 +1350,16 @@ extension Tensorflow_CleanupGraphRequest: SwiftProtobuf._MessageImplementationBa
 }
 
 extension Tensorflow_CleanupGraphResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupGraphResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_CleanupGraphResponse) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }
 }
 
 extension Tensorflow_RecvTensorRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "step_id"),
     2: .standard(proto: "rendezvous_key"),
     3: .standard(proto: "dma_ok"),
@@ -1395,7 +1395,7 @@ extension Tensorflow_RecvTensorRequest: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RecvTensorRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RecvTensorRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._stepId != other_storage._stepId {return false}
@@ -1414,7 +1414,7 @@ extension Tensorflow_RecvTensorRequest: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_RecvTensorResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "tensor"),
     2: .standard(proto: "is_dead"),
     3: .standard(proto: "send_start_micros"),
@@ -1444,7 +1444,7 @@ extension Tensorflow_RecvTensorResponse: SwiftProtobuf._MessageImplementationBas
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_RecvTensorResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_RecvTensorResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._tensor != other_storage._tensor {return false}
@@ -1461,13 +1461,13 @@ extension Tensorflow_RecvTensorResponse: SwiftProtobuf._MessageImplementationBas
 }
 
 extension Tensorflow_LoggingRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rpc_logging"),
     2: .same(proto: "clear"),
     3: .standard(proto: "fetch_step_id"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_LoggingRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_LoggingRequest) -> Bool {
     if self.rpcLogging != other.rpcLogging {return false}
     if self.clear_p != other.clear_p {return false}
     if self.fetchStepId != other.fetchStepId {return false}
@@ -1477,7 +1477,7 @@ extension Tensorflow_LoggingRequest: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_LabeledStepStats: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "step_id"),
     2: .standard(proto: "step_stats"),
   ]
@@ -1501,7 +1501,7 @@ extension Tensorflow_LabeledStepStats: SwiftProtobuf._MessageImplementationBase,
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_LabeledStepStats) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_LabeledStepStats) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._stepId != other_storage._stepId {return false}
@@ -1516,11 +1516,11 @@ extension Tensorflow_LabeledStepStats: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_LoggingResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "step"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_LoggingResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_LoggingResponse) -> Bool {
     if self.step != other.step {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1528,7 +1528,7 @@ extension Tensorflow_LoggingResponse: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension Tensorflow_TraceOpts: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "duration"),
     2: .standard(proto: "use_step_profiler"),
     3: .standard(proto: "use_kernel_profiler"),
@@ -1537,7 +1537,7 @@ extension Tensorflow_TraceOpts: SwiftProtobuf._MessageImplementationBase, SwiftP
     6: .standard(proto: "use_sample_profiler"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TraceOpts) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TraceOpts) -> Bool {
     if self.duration != other.duration {return false}
     if self.useStepProfiler != other.useStepProfiler {return false}
     if self.useKernelProfiler != other.useKernelProfiler {return false}
@@ -1550,7 +1550,7 @@ extension Tensorflow_TraceOpts: SwiftProtobuf._MessageImplementationBase, SwiftP
 }
 
 extension Tensorflow_TracingRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "options"),
   ]
 
@@ -1571,7 +1571,7 @@ extension Tensorflow_TracingRequest: SwiftProtobuf._MessageImplementationBase, S
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TracingRequest) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TracingRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._options != other_storage._options {return false}
@@ -1585,9 +1585,9 @@ extension Tensorflow_TracingRequest: SwiftProtobuf._MessageImplementationBase, S
 }
 
 extension Tensorflow_TracingResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TracingResponse) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TracingResponse) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }

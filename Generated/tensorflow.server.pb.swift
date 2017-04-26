@@ -79,7 +79,7 @@ public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListene
   }
 
   /// Receive a message. Blocks until a message is received or the client closes the connection.
-  func receive() throws -> Tensorflow_Event {
+  public func receive() throws -> Tensorflow_Event {
     let sem = DispatchSemaphore(value: 0)
     var requestMessage : Tensorflow_Event?
     try self.handler.receiveMessage() {(requestData) in
@@ -101,12 +101,12 @@ public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListene
   }
 
   /// Send a message. Nonblocking.
-  func send(_ response: Tensorflow_EventReply) throws {
+  public func send(_ response: Tensorflow_EventReply) throws {
     try handler.sendResponse(message:response.serializedData()) {}
   }
 
   /// Close a connection. Blocks until the connection is closed.
-  func close() throws {
+  public func close() throws {
     let sem = DispatchSemaphore(value: 0)
     try self.handler.sendStatus(statusCode:self.statusCode,
                                 statusMessage:self.statusMessage,
@@ -164,7 +164,7 @@ public class Tensorflow_EventListenerServer {
   }
 
   /// Start the server.
-  func start(queue:DispatchQueue = DispatchQueue.global()) {
+  public func start(queue:DispatchQueue = DispatchQueue.global()) {
     guard let provider = self.provider else {
       assert(false) // the server requires a provider
     }

@@ -21,22 +21,22 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// SavedModel is the high level serialization format for TensorFlow Models.
 /// See [todo: doc links, similar to session_bundle] for more information.
-struct Tensorflow_SavedModel: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SavedModel"
+public struct Tensorflow_SavedModel: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SavedModel"
 
   /// The schema version of the SavedModel instance. Used for versioning when
   /// making future changes to the specification/implementation. Initial value
   /// at release will be 1.
-  var savedModelSchemaVersion: Int64 = 0
+  public var savedModelSchemaVersion: Int64 = 0
 
   /// One or more MetaGraphs.
-  var metaGraphs: [Tensorflow_MetaGraphDef] = []
+  public var metaGraphs: [Tensorflow_MetaGraphDef] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.savedModelSchemaVersion)
@@ -46,7 +46,7 @@ struct Tensorflow_SavedModel: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.savedModelSchemaVersion != 0 {
       try visitor.visitSingularInt64Field(value: self.savedModelSchemaVersion, fieldNumber: 1)
     }
@@ -62,12 +62,12 @@ struct Tensorflow_SavedModel: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_SavedModel: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "saved_model_schema_version"),
     2: .standard(proto: "meta_graphs"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SavedModel) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SavedModel) -> Bool {
     if self.savedModelSchemaVersion != other.savedModelSchemaVersion {return false}
     if self.metaGraphs != other.metaGraphs {return false}
     if unknownFields != other.unknownFields {return false}

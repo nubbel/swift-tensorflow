@@ -19,19 +19,19 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpLogEntry"
+public struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpLogEntry"
 
   /// op name.
   fileprivate var _name: String? = nil
-  var name: String {
+  public var name: String {
     get {return _name ?? String()}
     set {_name = newValue}
   }
-  var hasName: Bool {
+  public var hasName: Bool {
     return self._name != nil
   }
-  mutating func clearName() {
+  public mutating func clearName() {
     self._name = nil
   }
 
@@ -39,26 +39,26 @@ struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
   /// op has RegisterStatistics defined. Currently, Conv2D, MatMul, etc, are
   /// implemented.
   fileprivate var _floatOps: Int64? = nil
-  var floatOps: Int64 {
+  public var floatOps: Int64 {
     get {return _floatOps ?? 0}
     set {_floatOps = newValue}
   }
-  var hasFloatOps: Bool {
+  public var hasFloatOps: Bool {
     return self._floatOps != nil
   }
-  mutating func clearFloatOps() {
+  public mutating func clearFloatOps() {
     self._floatOps = nil
   }
 
   /// User can define extra op type information for an op. This allows the user
   /// to select a group of ops precisely using op_type as a key.
-  var types: [String] = []
+  public var types: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self._name)
@@ -69,7 +69,7 @@ struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._name {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
     }
@@ -83,16 +83,16 @@ struct Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Tfprof_OpLog: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".OpLog"
+public struct Tensorflow_Tfprof_OpLog: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".OpLog"
 
-  var logEntries: [Tensorflow_Tfprof_OpLogEntry] = []
+  public var logEntries: [Tensorflow_Tfprof_OpLogEntry] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.logEntries)
@@ -101,7 +101,7 @@ struct Tensorflow_Tfprof_OpLog: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.logEntries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.logEntries, fieldNumber: 1)
     }
@@ -114,13 +114,13 @@ struct Tensorflow_Tfprof_OpLog: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.tfprof"
 
 extension Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .standard(proto: "float_ops"),
     3: .same(proto: "types"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OpLogEntry) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OpLogEntry) -> Bool {
     if self._name != other._name {return false}
     if self._floatOps != other._floatOps {return false}
     if self.types != other.types {return false}
@@ -130,11 +130,11 @@ extension Tensorflow_Tfprof_OpLogEntry: SwiftProtobuf._MessageImplementationBase
 }
 
 extension Tensorflow_Tfprof_OpLog: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "log_entries"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OpLog) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Tfprof_OpLog) -> Bool {
     if self.logEntries != other.logEntries {return false}
     if unknownFields != other.unknownFields {return false}
     return true

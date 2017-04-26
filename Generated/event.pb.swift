@@ -21,22 +21,22 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 /// Protocol buffer representing an event that happened during
 /// the execution of a Brain model.
-struct Tensorflow_Event: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".Event"
+public struct Tensorflow_Event: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Event"
 
   /// Timestamp of the event.
-  var wallTime: Double {
+  public var wallTime: Double {
     get {return _storage._wallTime}
     set {_uniqueStorage()._wallTime = newValue}
   }
 
   /// Global step of the event.
-  var step: Int64 {
+  public var step: Int64 {
     get {return _storage._step}
     set {_uniqueStorage()._step = newValue}
   }
 
-  var what: OneOf_What? {
+  public var what: OneOf_What? {
     get {return _storage._what}
     set {_uniqueStorage()._what = newValue}
   }
@@ -45,7 +45,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   /// This is use to identify the contents of the record IO files
   /// easily.  Current version is "brain.Event:2".  All versions
   /// start with "brain.Event:".
-  var fileVersion: String {
+  public var fileVersion: String {
     get {
       if case .fileVersion(let v)? = _storage._what {return v}
       return String()
@@ -54,7 +54,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   }
 
   /// An encoded version of a GraphDef.
-  var graphDef: Data {
+  public var graphDef: Data {
     get {
       if case .graphDef(let v)? = _storage._what {return v}
       return SwiftProtobuf.Internal.emptyData
@@ -63,7 +63,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   }
 
   /// A summary was generated.
-  var summary: Tensorflow_Summary {
+  public var summary: Tensorflow_Summary {
     get {
       if case .summary(let v)? = _storage._what {return v}
       return Tensorflow_Summary()
@@ -73,7 +73,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
 
   /// The user output a log message. Not all messages are logged, only ones
   /// generated via the Python tensorboard_logging module.
-  var logMessage: Tensorflow_LogMessage {
+  public var logMessage: Tensorflow_LogMessage {
     get {
       if case .logMessage(let v)? = _storage._what {return v}
       return Tensorflow_LogMessage()
@@ -82,7 +82,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   }
 
   /// The state of the session which can be used for restarting after crashes.
-  var sessionLog: Tensorflow_SessionLog {
+  public var sessionLog: Tensorflow_SessionLog {
     get {
       if case .sessionLog(let v)? = _storage._what {return v}
       return Tensorflow_SessionLog()
@@ -91,7 +91,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   }
 
   /// The metadata returned by running a session.run() call.
-  var taggedRunMetadata: Tensorflow_TaggedRunMetadata {
+  public var taggedRunMetadata: Tensorflow_TaggedRunMetadata {
     get {
       if case .taggedRunMetadata(let v)? = _storage._what {return v}
       return Tensorflow_TaggedRunMetadata()
@@ -100,7 +100,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
   }
 
   /// An encoded version of a MetaGraphDef.
-  var metaGraphDef: Data {
+  public var metaGraphDef: Data {
     get {
       if case .metaGraphDef(let v)? = _storage._what {return v}
       return SwiftProtobuf.Internal.emptyData
@@ -108,9 +108,9 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
     set {_uniqueStorage()._what = .metaGraphDef(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_What: Equatable {
+  public enum OneOf_What: Equatable {
     /// An event file was started, with the specified version.
     /// This is use to identify the contents of the record IO files
     /// easily.  Current version is "brain.Event:2".  All versions
@@ -130,7 +130,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
     /// An encoded version of a MetaGraphDef.
     case metaGraphDef(Data)
 
-    static func ==(lhs: Tensorflow_Event.OneOf_What, rhs: Tensorflow_Event.OneOf_What) -> Bool {
+    public static func ==(lhs: Tensorflow_Event.OneOf_What, rhs: Tensorflow_Event.OneOf_What) -> Bool {
       switch (lhs, rhs) {
       case (.fileVersion(let l), .fileVersion(let r)): return l == r
       case (.graphDef(let l), .graphDef(let r)): return l == r
@@ -144,9 +144,9 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -164,7 +164,7 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._wallTime != 0 {
         try visitor.visitSingularDoubleField(value: _storage._wallTime, fieldNumber: 1)
@@ -181,17 +181,17 @@ struct Tensorflow_Event: SwiftProtobuf.Message {
 }
 
 /// Protocol buffer used for logging messages to the events file.
-struct Tensorflow_LogMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LogMessage"
+public struct Tensorflow_LogMessage: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LogMessage"
 
-  var level: Tensorflow_LogMessage.Level = Tensorflow_LogMessage.Level.unknown
+  public var level: Tensorflow_LogMessage.Level = Tensorflow_LogMessage.Level.unknown
 
-  var message: String = String()
+  public var message: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Level: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Level: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unknown // = 0
 
     /// Note: The logging level 10 cannot be named DEBUG. Some software
@@ -205,11 +205,11 @@ struct Tensorflow_LogMessage: SwiftProtobuf.Message {
     case fatal // = 50
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unknown
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unknown
       case 10: self = .debugging
@@ -221,7 +221,7 @@ struct Tensorflow_LogMessage: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unknown: return 0
       case .debugging: return 10
@@ -235,9 +235,9 @@ struct Tensorflow_LogMessage: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.level)
@@ -247,7 +247,7 @@ struct Tensorflow_LogMessage: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.level != Tensorflow_LogMessage.Level.unknown {
       try visitor.visitSingularEnumField(value: self.level, fieldNumber: 1)
     }
@@ -259,31 +259,31 @@ struct Tensorflow_LogMessage: SwiftProtobuf.Message {
 }
 
 /// Protocol buffer used for logging session state.
-struct Tensorflow_SessionLog: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".SessionLog"
+public struct Tensorflow_SessionLog: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".SessionLog"
 
-  var status: Tensorflow_SessionLog.SessionStatus = Tensorflow_SessionLog.SessionStatus.statusUnspecified
+  public var status: Tensorflow_SessionLog.SessionStatus = Tensorflow_SessionLog.SessionStatus.statusUnspecified
 
   /// This checkpoint_path contains both the path and filename.
-  var checkpointPath: String = String()
+  public var checkpointPath: String = String()
 
-  var msg: String = String()
+  public var msg: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum SessionStatus: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum SessionStatus: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case statusUnspecified // = 0
     case start // = 1
     case stop // = 2
     case checkpoint // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .statusUnspecified
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .statusUnspecified
       case 1: self = .start
@@ -293,7 +293,7 @@ struct Tensorflow_SessionLog: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .statusUnspecified: return 0
       case .start: return 1
@@ -305,9 +305,9 @@ struct Tensorflow_SessionLog: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
@@ -318,7 +318,7 @@ struct Tensorflow_SessionLog: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.status != Tensorflow_SessionLog.SessionStatus.statusUnspecified {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
     }
@@ -333,21 +333,21 @@ struct Tensorflow_SessionLog: SwiftProtobuf.Message {
 }
 
 /// For logging the metadata output for a single session.run() call.
-struct Tensorflow_TaggedRunMetadata: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TaggedRunMetadata"
+public struct Tensorflow_TaggedRunMetadata: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TaggedRunMetadata"
 
   /// Tag name associated with this metadata.
-  var tag: String = String()
+  public var tag: String = String()
 
   /// Byte-encoded version of the `RunMetadata` proto in order to allow lazy
   /// deserialization.
-  var runMetadata: Data = SwiftProtobuf.Internal.emptyData
+  public var runMetadata: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.tag)
@@ -357,7 +357,7 @@ struct Tensorflow_TaggedRunMetadata: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.tag.isEmpty {
       try visitor.visitSingularStringField(value: self.tag, fieldNumber: 1)
     }
@@ -373,7 +373,7 @@ struct Tensorflow_TaggedRunMetadata: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_Event: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "wall_time"),
     2: .same(proto: "step"),
     3: .standard(proto: "file_version"),
@@ -406,7 +406,7 @@ extension Tensorflow_Event: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Event) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Event) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._wallTime != other_storage._wallTime {return false}
@@ -494,12 +494,12 @@ extension Tensorflow_Event.OneOf_What {
 }
 
 extension Tensorflow_LogMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "level"),
     2: .same(proto: "message"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_LogMessage) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_LogMessage) -> Bool {
     if self.level != other.level {return false}
     if self.message != other.message {return false}
     if unknownFields != other.unknownFields {return false}
@@ -508,7 +508,7 @@ extension Tensorflow_LogMessage: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Tensorflow_LogMessage.Level: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN"),
     10: .same(proto: "DEBUGGING"),
     20: .same(proto: "INFO"),
@@ -519,13 +519,13 @@ extension Tensorflow_LogMessage.Level: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Tensorflow_SessionLog: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "checkpoint_path"),
     3: .same(proto: "msg"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_SessionLog) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_SessionLog) -> Bool {
     if self.status != other.status {return false}
     if self.checkpointPath != other.checkpointPath {return false}
     if self.msg != other.msg {return false}
@@ -535,7 +535,7 @@ extension Tensorflow_SessionLog: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Tensorflow_SessionLog.SessionStatus: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "STATUS_UNSPECIFIED"),
     1: .same(proto: "START"),
     2: .same(proto: "STOP"),
@@ -544,12 +544,12 @@ extension Tensorflow_SessionLog.SessionStatus: SwiftProtobuf._ProtoNameProviding
 }
 
 extension Tensorflow_TaggedRunMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "tag"),
     2: .standard(proto: "run_metadata"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_TaggedRunMetadata) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_TaggedRunMetadata) -> Bool {
     if self.tag != other.tag {return false}
     if self.runMetadata != other.runMetadata {return false}
     if unknownFields != other.unknownFields {return false}

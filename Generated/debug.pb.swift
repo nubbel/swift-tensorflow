@@ -20,23 +20,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// EXPERIMENTAL. Option for watching a node.
-struct Tensorflow_DebugTensorWatch: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DebugTensorWatch"
+public struct Tensorflow_DebugTensorWatch: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DebugTensorWatch"
 
   /// Name of the node to watch.
-  var nodeName: String = String()
+  public var nodeName: String = String()
 
   /// Output slot to watch.
   /// The semantics of output_slot == -1 is that the node is only watched for
   /// completion, but not for any output tensors. See NodeCompletionCallback
   /// in debug_gateway.h.
   /// TODO(cais): Implement this semantics.
-  var outputSlot: Int32 = 0
+  public var outputSlot: Int32 = 0
 
   /// Name(s) of the debugging op(s).
   /// One or more than one probes on a tensor.
   /// e.g., {"DebugIdentity", "DebugNanCount"}
-  var debugOps: [String] = []
+  public var debugOps: [String] = []
 
   /// URL(s) for debug targets(s).
   ///   E.g., "file:///foo/tfdbg_dump", "grpc://localhost:11011"
@@ -49,17 +49,17 @@ struct Tensorflow_DebugTensorWatch: SwiftProtobuf.Message {
   /// debug_urls to make sure that the streamed or dumped events do not overlap
   /// among the invocations.
   /// TODO(cais): More visible documentation of this in g3docs.
-  var debugUrls: [String] = []
+  public var debugUrls: [String] = []
 
   /// Do not error out if debug op creation fails (e.g., due to dtype
   /// incompatibility). Instead, just log the failure.
-  var tolerateDebugOpCreationFailures: Bool = false
+  public var tolerateDebugOpCreationFailures: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.nodeName)
@@ -72,7 +72,7 @@ struct Tensorflow_DebugTensorWatch: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nodeName.isEmpty {
       try visitor.visitSingularStringField(value: self.nodeName, fieldNumber: 1)
     }
@@ -93,22 +93,22 @@ struct Tensorflow_DebugTensorWatch: SwiftProtobuf.Message {
 }
 
 /// EXPERIMENTAL. Options for initializing DebuggerState.
-struct Tensorflow_DebugOptions: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".DebugOptions"
+public struct Tensorflow_DebugOptions: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DebugOptions"
 
   /// Debugging options
-  var debugTensorWatchOpts: [Tensorflow_DebugTensorWatch] = []
+  public var debugTensorWatchOpts: [Tensorflow_DebugTensorWatch] = []
 
   /// Caller-specified global step count.
   /// Note that this is distinct from the session run count and the executor
   /// step count.
-  var globalStep: Int64 = 0
+  public var globalStep: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 4: try decoder.decodeRepeatedMessageField(value: &self.debugTensorWatchOpts)
@@ -118,7 +118,7 @@ struct Tensorflow_DebugOptions: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.debugTensorWatchOpts.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.debugTensorWatchOpts, fieldNumber: 4)
     }
@@ -134,7 +134,7 @@ struct Tensorflow_DebugOptions: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_DebugTensorWatch: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "node_name"),
     2: .standard(proto: "output_slot"),
     3: .standard(proto: "debug_ops"),
@@ -142,7 +142,7 @@ extension Tensorflow_DebugTensorWatch: SwiftProtobuf._MessageImplementationBase,
     5: .standard(proto: "tolerate_debug_op_creation_failures"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DebugTensorWatch) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DebugTensorWatch) -> Bool {
     if self.nodeName != other.nodeName {return false}
     if self.outputSlot != other.outputSlot {return false}
     if self.debugOps != other.debugOps {return false}
@@ -154,12 +154,12 @@ extension Tensorflow_DebugTensorWatch: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension Tensorflow_DebugOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     4: .standard(proto: "debug_tensor_watch_opts"),
     10: .standard(proto: "global_step"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_DebugOptions) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_DebugOptions) -> Bool {
     if self.debugTensorWatchOpts != other.debugTensorWatchOpts {return false}
     if self.globalStep != other.globalStep {return false}
     if unknownFields != other.unknownFields {return false}

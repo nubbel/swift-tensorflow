@@ -20,18 +20,18 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// A library is a set of named functions.
-struct Tensorflow_FunctionDefLibrary: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".FunctionDefLibrary"
+public struct Tensorflow_FunctionDefLibrary: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".FunctionDefLibrary"
 
-  var function: [Tensorflow_FunctionDef] = []
+  public var function: [Tensorflow_FunctionDef] = []
 
-  var gradient: [Tensorflow_GradientDef] = []
+  public var gradient: [Tensorflow_GradientDef] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.function)
@@ -41,7 +41,7 @@ struct Tensorflow_FunctionDefLibrary: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.function.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.function, fieldNumber: 1)
     }
@@ -58,24 +58,24 @@ struct Tensorflow_FunctionDefLibrary: SwiftProtobuf.Message {
 ///
 /// TODO(zhifengc):
 ///   * device spec, etc.
-struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".FunctionDef"
+public struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".FunctionDef"
 
   /// The definition of the function's name, arguments, return values,
   /// attrs etc.
-  var signature: Tensorflow_OpDef {
+  public var signature: Tensorflow_OpDef {
     get {return _storage._signature ?? Tensorflow_OpDef()}
     set {_uniqueStorage()._signature = newValue}
   }
-  var hasSignature: Bool {
+  public var hasSignature: Bool {
     return _storage._signature != nil
   }
-  mutating func clearSignature() {
+  public mutating func clearSignature() {
     _storage._signature = nil
   }
 
   /// Attributes specific to this function definition.
-  var attr: Dictionary<String,Tensorflow_AttrValue> {
+  public var attr: Dictionary<String,Tensorflow_AttrValue> {
     get {return _storage._attr}
     set {_uniqueStorage()._attr = newValue}
   }
@@ -83,23 +83,23 @@ struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
   /// By convention, "op" in node_def is resolved by consulting with a
   /// user-defined library first. If not resolved, "func" is assumed to
   /// be a builtin op.
-  var nodeDef: [Tensorflow_NodeDef] {
+  public var nodeDef: [Tensorflow_NodeDef] {
     get {return _storage._nodeDef}
     set {_uniqueStorage()._nodeDef = newValue}
   }
 
   /// A mapping from the output arg names from `signature` to the
   /// outputs from `node_def` that should be returned by the function.
-  var ret: Dictionary<String,String> {
+  public var ret: Dictionary<String,String> {
     get {return _storage._ret}
     set {_uniqueStorage()._ret = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -114,7 +114,7 @@ struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._signature {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -153,20 +153,20 @@ struct Tensorflow_FunctionDef: SwiftProtobuf.Message {
 /// where L is a scalar-value function of (x1, x2, ..., xN) (e.g., the
 /// loss function). dL/dx_i is the partial derivative of L with respect
 /// to x_i.
-struct Tensorflow_GradientDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".GradientDef"
+public struct Tensorflow_GradientDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GradientDef"
 
   /// The function name.
-  var functionName: String = String()
+  public var functionName: String = String()
 
   /// The gradient function's name.
-  var gradientFunc: String = String()
+  public var gradientFunc: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.functionName)
@@ -176,7 +176,7 @@ struct Tensorflow_GradientDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.functionName.isEmpty {
       try visitor.visitSingularStringField(value: self.functionName, fieldNumber: 1)
     }
@@ -192,12 +192,12 @@ struct Tensorflow_GradientDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_FunctionDefLibrary: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "function"),
     2: .same(proto: "gradient"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_FunctionDefLibrary) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_FunctionDefLibrary) -> Bool {
     if self.function != other.function {return false}
     if self.gradient != other.gradient {return false}
     if unknownFields != other.unknownFields {return false}
@@ -206,7 +206,7 @@ extension Tensorflow_FunctionDefLibrary: SwiftProtobuf._MessageImplementationBas
 }
 
 extension Tensorflow_FunctionDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "signature"),
     5: .same(proto: "attr"),
     3: .standard(proto: "node_def"),
@@ -236,7 +236,7 @@ extension Tensorflow_FunctionDef: SwiftProtobuf._MessageImplementationBase, Swif
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_FunctionDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_FunctionDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._signature != other_storage._signature {return false}
@@ -253,12 +253,12 @@ extension Tensorflow_FunctionDef: SwiftProtobuf._MessageImplementationBase, Swif
 }
 
 extension Tensorflow_GradientDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "function_name"),
     2: .standard(proto: "gradient_func"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_GradientDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_GradientDef) -> Bool {
     if self.functionName != other.functionName {return false}
     if self.gradientFunc != other.gradientFunc {return false}
     if unknownFields != other.unknownFields {return false}

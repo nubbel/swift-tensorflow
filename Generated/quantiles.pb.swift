@@ -19,20 +19,20 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct BoostedTrees_QuantileConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".QuantileConfig"
+public struct BoostedTrees_QuantileConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".QuantileConfig"
 
   /// Maximum eps error when computing quantile summaries.
-  var eps: Double = 0
+  public var eps: Double = 0
 
   /// Number of quantiles to generate.
-  var numQuantiles: Int64 = 0
+  public var numQuantiles: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.eps)
@@ -42,7 +42,7 @@ struct BoostedTrees_QuantileConfig: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.eps != 0 {
       try visitor.visitSingularDoubleField(value: self.eps, fieldNumber: 1)
     }
@@ -53,27 +53,27 @@ struct BoostedTrees_QuantileConfig: SwiftProtobuf.Message {
   }
 }
 
-struct BoostedTrees_QuantileEntry: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".QuantileEntry"
+public struct BoostedTrees_QuantileEntry: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".QuantileEntry"
 
   /// Value for the entry.
-  var value: Float = 0
+  public var value: Float = 0
 
   /// Weight for the entry.
-  var weight: Float = 0
+  public var weight: Float = 0
 
   /// We need the minimum and maximum rank possible for this entry.
   /// Rank is 0.0 for the absolute minimum and sum of the weights for the maximum
   /// value in the input.
-  var minRank: Float = 0
+  public var minRank: Float = 0
 
-  var maxRank: Float = 0
+  public var maxRank: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.value)
@@ -85,7 +85,7 @@ struct BoostedTrees_QuantileEntry: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.value != 0 {
       try visitor.visitSingularFloatField(value: self.value, fieldNumber: 1)
     }
@@ -102,16 +102,16 @@ struct BoostedTrees_QuantileEntry: SwiftProtobuf.Message {
   }
 }
 
-struct BoostedTrees_QuantileSummaryState: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".QuantileSummaryState"
+public struct BoostedTrees_QuantileSummaryState: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".QuantileSummaryState"
 
-  var entries: [BoostedTrees_QuantileEntry] = []
+  public var entries: [BoostedTrees_QuantileEntry] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.entries)
@@ -120,7 +120,7 @@ struct BoostedTrees_QuantileSummaryState: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.entries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.entries, fieldNumber: 1)
     }
@@ -128,16 +128,16 @@ struct BoostedTrees_QuantileSummaryState: SwiftProtobuf.Message {
   }
 }
 
-struct BoostedTrees_QuantileStreamState: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".QuantileStreamState"
+public struct BoostedTrees_QuantileStreamState: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".QuantileStreamState"
 
-  var summaries: [BoostedTrees_QuantileSummaryState] = []
+  public var summaries: [BoostedTrees_QuantileSummaryState] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.summaries)
@@ -146,7 +146,7 @@ struct BoostedTrees_QuantileStreamState: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.summaries.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.summaries, fieldNumber: 1)
     }
@@ -159,12 +159,12 @@ struct BoostedTrees_QuantileStreamState: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "boosted_trees"
 
 extension BoostedTrees_QuantileConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "eps"),
     2: .standard(proto: "num_quantiles"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileConfig) -> Bool {
     if self.eps != other.eps {return false}
     if self.numQuantiles != other.numQuantiles {return false}
     if unknownFields != other.unknownFields {return false}
@@ -173,14 +173,14 @@ extension BoostedTrees_QuantileConfig: SwiftProtobuf._MessageImplementationBase,
 }
 
 extension BoostedTrees_QuantileEntry: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "value"),
     2: .same(proto: "weight"),
     3: .standard(proto: "min_rank"),
     4: .standard(proto: "max_rank"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileEntry) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileEntry) -> Bool {
     if self.value != other.value {return false}
     if self.weight != other.weight {return false}
     if self.minRank != other.minRank {return false}
@@ -191,11 +191,11 @@ extension BoostedTrees_QuantileEntry: SwiftProtobuf._MessageImplementationBase, 
 }
 
 extension BoostedTrees_QuantileSummaryState: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "entries"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileSummaryState) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileSummaryState) -> Bool {
     if self.entries != other.entries {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -203,11 +203,11 @@ extension BoostedTrees_QuantileSummaryState: SwiftProtobuf._MessageImplementatio
 }
 
 extension BoostedTrees_QuantileStreamState: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "summaries"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileStreamState) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: BoostedTrees_QuantileStreamState) -> Bool {
     if self.summaries != other.summaries {return false}
     if unknownFields != other.unknownFields {return false}
     return true

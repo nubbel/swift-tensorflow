@@ -19,38 +19,38 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-struct ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFAPIMember"
+public struct ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFAPIMember"
 
   fileprivate var _name: String? = nil
-  var name: String {
+  public var name: String {
     get {return _name ?? String()}
     set {_name = newValue}
   }
-  var hasName: Bool {
+  public var hasName: Bool {
     return self._name != nil
   }
-  mutating func clearName() {
+  public mutating func clearName() {
     self._name = nil
   }
 
   fileprivate var _mtype: String? = nil
-  var mtype: String {
+  public var mtype: String {
     get {return _mtype ?? String()}
     set {_mtype = newValue}
   }
-  var hasMtype: Bool {
+  public var hasMtype: Bool {
     return self._mtype != nil
   }
-  mutating func clearMtype() {
+  public mutating func clearMtype() {
     self._mtype = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self._name)
@@ -60,7 +60,7 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._name {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
     }
@@ -71,50 +71,50 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf.Message {
   }
 }
 
-struct ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFAPIMethod"
+public struct ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFAPIMethod"
 
   fileprivate var _name: String? = nil
-  var name: String {
+  public var name: String {
     get {return _name ?? String()}
     set {_name = newValue}
   }
-  var hasName: Bool {
+  public var hasName: Bool {
     return self._name != nil
   }
-  mutating func clearName() {
+  public mutating func clearName() {
     self._name = nil
   }
 
   fileprivate var _path: String? = nil
-  var path: String {
+  public var path: String {
     get {return _path ?? String()}
     set {_path = newValue}
   }
-  var hasPath: Bool {
+  public var hasPath: Bool {
     return self._path != nil
   }
-  mutating func clearPath() {
+  public mutating func clearPath() {
     self._path = nil
   }
 
   fileprivate var _argspec: String? = nil
-  var argspec: String {
+  public var argspec: String {
     get {return _argspec ?? String()}
     set {_argspec = newValue}
   }
-  var hasArgspec: Bool {
+  public var hasArgspec: Bool {
     return self._argspec != nil
   }
-  mutating func clearArgspec() {
+  public mutating func clearArgspec() {
     self._argspec = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self._name)
@@ -125,7 +125,7 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if let v = self._name {
       try visitor.visitSingularStringField(value: v, fieldNumber: 1)
     }
@@ -139,18 +139,18 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf.Message {
   }
 }
 
-struct ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFAPIModule"
+public struct ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFAPIModule"
 
-  var member: [ThirdParty_Tensorflow_Tools_Api_TFAPIMember] = []
+  public var member: [ThirdParty_Tensorflow_Tools_Api_TFAPIMember] = []
 
-  var memberMethod: [ThirdParty_Tensorflow_Tools_Api_TFAPIMethod] = []
+  public var memberMethod: [ThirdParty_Tensorflow_Tools_Api_TFAPIMethod] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.member)
@@ -160,7 +160,7 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.member.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.member, fieldNumber: 1)
     }
@@ -171,20 +171,20 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf.Message {
   }
 }
 
-struct ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFAPIClass"
+public struct ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFAPIClass"
 
-  var isInstance: [String] = []
+  public var isInstance: [String] = []
 
-  var member: [ThirdParty_Tensorflow_Tools_Api_TFAPIMember] = []
+  public var member: [ThirdParty_Tensorflow_Tools_Api_TFAPIMember] = []
 
-  var memberMethod: [ThirdParty_Tensorflow_Tools_Api_TFAPIMethod] = []
+  public var memberMethod: [ThirdParty_Tensorflow_Tools_Api_TFAPIMethod] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.isInstance)
@@ -195,7 +195,7 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.isInstance.isEmpty {
       try visitor.visitRepeatedStringField(value: self.isInstance, fieldNumber: 1)
     }
@@ -209,47 +209,47 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf.Message {
   }
 }
 
-struct ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TFAPIObject"
+public struct ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TFAPIObject"
 
-  var path: String {
+  public var path: String {
     get {return _storage._path ?? String()}
     set {_uniqueStorage()._path = newValue}
   }
-  var hasPath: Bool {
+  public var hasPath: Bool {
     return _storage._path != nil
   }
-  mutating func clearPath() {
+  public mutating func clearPath() {
     _storage._path = nil
   }
 
-  var tfModule: ThirdParty_Tensorflow_Tools_Api_TFAPIModule {
+  public var tfModule: ThirdParty_Tensorflow_Tools_Api_TFAPIModule {
     get {return _storage._tfModule ?? ThirdParty_Tensorflow_Tools_Api_TFAPIModule()}
     set {_uniqueStorage()._tfModule = newValue}
   }
-  var hasTfModule: Bool {
+  public var hasTfModule: Bool {
     return _storage._tfModule != nil
   }
-  mutating func clearTfModule() {
+  public mutating func clearTfModule() {
     _storage._tfModule = nil
   }
 
-  var tfClass: ThirdParty_Tensorflow_Tools_Api_TFAPIClass {
+  public var tfClass: ThirdParty_Tensorflow_Tools_Api_TFAPIClass {
     get {return _storage._tfClass ?? ThirdParty_Tensorflow_Tools_Api_TFAPIClass()}
     set {_uniqueStorage()._tfClass = newValue}
   }
-  var hasTfClass: Bool {
+  public var hasTfClass: Bool {
     return _storage._tfClass != nil
   }
-  mutating func clearTfClass() {
+  public mutating func clearTfClass() {
     _storage._tfClass = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -263,7 +263,7 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._path {
         try visitor.visitSingularStringField(value: v, fieldNumber: 1)
@@ -286,12 +286,12 @@ struct ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "third_party.tensorflow.tools.api"
 
 extension ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "mtype"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIMember) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIMember) -> Bool {
     if self._name != other._name {return false}
     if self._mtype != other._mtype {return false}
     if unknownFields != other.unknownFields {return false}
@@ -300,13 +300,13 @@ extension ThirdParty_Tensorflow_Tools_Api_TFAPIMember: SwiftProtobuf._MessageImp
 }
 
 extension ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "path"),
     3: .same(proto: "argspec"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIMethod) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIMethod) -> Bool {
     if self._name != other._name {return false}
     if self._path != other._path {return false}
     if self._argspec != other._argspec {return false}
@@ -316,12 +316,12 @@ extension ThirdParty_Tensorflow_Tools_Api_TFAPIMethod: SwiftProtobuf._MessageImp
 }
 
 extension ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "member"),
     2: .standard(proto: "member_method"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIModule) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIModule) -> Bool {
     if self.member != other.member {return false}
     if self.memberMethod != other.memberMethod {return false}
     if unknownFields != other.unknownFields {return false}
@@ -330,13 +330,13 @@ extension ThirdParty_Tensorflow_Tools_Api_TFAPIModule: SwiftProtobuf._MessageImp
 }
 
 extension ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "is_instance"),
     2: .same(proto: "member"),
     3: .standard(proto: "member_method"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIClass) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIClass) -> Bool {
     if self.isInstance != other.isInstance {return false}
     if self.member != other.member {return false}
     if self.memberMethod != other.memberMethod {return false}
@@ -346,7 +346,7 @@ extension ThirdParty_Tensorflow_Tools_Api_TFAPIClass: SwiftProtobuf._MessageImpl
 }
 
 extension ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "path"),
     2: .standard(proto: "tf_module"),
     3: .standard(proto: "tf_class"),
@@ -373,7 +373,7 @@ extension ThirdParty_Tensorflow_Tools_Api_TFAPIObject: SwiftProtobuf._MessageImp
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIObject) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: ThirdParty_Tensorflow_Tools_Api_TFAPIObject) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._path != other_storage._path {return false}

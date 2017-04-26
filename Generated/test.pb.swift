@@ -19,19 +19,19 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-enum Tensorflow_Test_ForeignEnum: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum Tensorflow_Test_ForeignEnum: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case foreignZero // = 0
   case foreignFoo // = 4
   case foreignBar // = 5
   case foreignBaz // = 6
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .foreignZero
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .foreignZero
     case 4: self = .foreignFoo
@@ -41,7 +41,7 @@ enum Tensorflow_Test_ForeignEnum: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .foreignZero: return 0
     case .foreignFoo: return 4
@@ -53,220 +53,220 @@ enum Tensorflow_Test_ForeignEnum: SwiftProtobuf.Enum {
 
 }
 
-struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TestAllTypes"
+public struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TestAllTypes"
 
   /// Singular
-  var optionalInt32: Int32 {
+  public var optionalInt32: Int32 {
     get {return _storage._optionalInt32}
     set {_uniqueStorage()._optionalInt32 = newValue}
   }
 
-  var optionalInt64: Int64 {
+  public var optionalInt64: Int64 {
     get {return _storage._optionalInt64}
     set {_uniqueStorage()._optionalInt64 = newValue}
   }
 
-  var optionalUint32: UInt32 {
+  public var optionalUint32: UInt32 {
     get {return _storage._optionalUint32}
     set {_uniqueStorage()._optionalUint32 = newValue}
   }
 
   /// use large tag to test output order.
-  var optionalUint64: UInt64 {
+  public var optionalUint64: UInt64 {
     get {return _storage._optionalUint64}
     set {_uniqueStorage()._optionalUint64 = newValue}
   }
 
-  var optionalSint32: Int32 {
+  public var optionalSint32: Int32 {
     get {return _storage._optionalSint32}
     set {_uniqueStorage()._optionalSint32 = newValue}
   }
 
-  var optionalSint64: Int64 {
+  public var optionalSint64: Int64 {
     get {return _storage._optionalSint64}
     set {_uniqueStorage()._optionalSint64 = newValue}
   }
 
-  var optionalFixed32: UInt32 {
+  public var optionalFixed32: UInt32 {
     get {return _storage._optionalFixed32}
     set {_uniqueStorage()._optionalFixed32 = newValue}
   }
 
-  var optionalFixed64: UInt64 {
+  public var optionalFixed64: UInt64 {
     get {return _storage._optionalFixed64}
     set {_uniqueStorage()._optionalFixed64 = newValue}
   }
 
-  var optionalSfixed32: Int32 {
+  public var optionalSfixed32: Int32 {
     get {return _storage._optionalSfixed32}
     set {_uniqueStorage()._optionalSfixed32 = newValue}
   }
 
-  var optionalSfixed64: Int64 {
+  public var optionalSfixed64: Int64 {
     get {return _storage._optionalSfixed64}
     set {_uniqueStorage()._optionalSfixed64 = newValue}
   }
 
-  var optionalFloat: Float {
+  public var optionalFloat: Float {
     get {return _storage._optionalFloat}
     set {_uniqueStorage()._optionalFloat = newValue}
   }
 
-  var optionalDouble: Double {
+  public var optionalDouble: Double {
     get {return _storage._optionalDouble}
     set {_uniqueStorage()._optionalDouble = newValue}
   }
 
-  var optionalBool: Bool {
+  public var optionalBool: Bool {
     get {return _storage._optionalBool}
     set {_uniqueStorage()._optionalBool = newValue}
   }
 
-  var optionalString: String {
+  public var optionalString: String {
     get {return _storage._optionalString}
     set {_uniqueStorage()._optionalString = newValue}
   }
 
-  var optionalBytes: Data {
+  public var optionalBytes: Data {
     get {return _storage._optionalBytes}
     set {_uniqueStorage()._optionalBytes = newValue}
   }
 
-  var optionalNestedMessage: Tensorflow_Test_TestAllTypes.NestedMessage {
+  public var optionalNestedMessage: Tensorflow_Test_TestAllTypes.NestedMessage {
     get {return _storage._optionalNestedMessage ?? Tensorflow_Test_TestAllTypes.NestedMessage()}
     set {_uniqueStorage()._optionalNestedMessage = newValue}
   }
-  var hasOptionalNestedMessage: Bool {
+  public var hasOptionalNestedMessage: Bool {
     return _storage._optionalNestedMessage != nil
   }
-  mutating func clearOptionalNestedMessage() {
+  public mutating func clearOptionalNestedMessage() {
     _storage._optionalNestedMessage = nil
   }
 
-  var optionalForeignMessage: Tensorflow_Test_ForeignMessage {
+  public var optionalForeignMessage: Tensorflow_Test_ForeignMessage {
     get {return _storage._optionalForeignMessage ?? Tensorflow_Test_ForeignMessage()}
     set {_uniqueStorage()._optionalForeignMessage = newValue}
   }
-  var hasOptionalForeignMessage: Bool {
+  public var hasOptionalForeignMessage: Bool {
     return _storage._optionalForeignMessage != nil
   }
-  mutating func clearOptionalForeignMessage() {
+  public mutating func clearOptionalForeignMessage() {
     _storage._optionalForeignMessage = nil
   }
 
-  var optionalNestedEnum: Tensorflow_Test_TestAllTypes.NestedEnum {
+  public var optionalNestedEnum: Tensorflow_Test_TestAllTypes.NestedEnum {
     get {return _storage._optionalNestedEnum}
     set {_uniqueStorage()._optionalNestedEnum = newValue}
   }
 
-  var optionalForeignEnum: Tensorflow_Test_ForeignEnum {
+  public var optionalForeignEnum: Tensorflow_Test_ForeignEnum {
     get {return _storage._optionalForeignEnum}
     set {_uniqueStorage()._optionalForeignEnum = newValue}
   }
 
-  var optionalCord: String {
+  public var optionalCord: String {
     get {return _storage._optionalCord}
     set {_uniqueStorage()._optionalCord = newValue}
   }
 
   /// Repeated
-  var repeatedInt32: [Int32] {
+  public var repeatedInt32: [Int32] {
     get {return _storage._repeatedInt32}
     set {_uniqueStorage()._repeatedInt32 = newValue}
   }
 
-  var repeatedInt64: [Int64] {
+  public var repeatedInt64: [Int64] {
     get {return _storage._repeatedInt64}
     set {_uniqueStorage()._repeatedInt64 = newValue}
   }
 
-  var repeatedUint32: [UInt32] {
+  public var repeatedUint32: [UInt32] {
     get {return _storage._repeatedUint32}
     set {_uniqueStorage()._repeatedUint32 = newValue}
   }
 
-  var repeatedUint64: [UInt64] {
+  public var repeatedUint64: [UInt64] {
     get {return _storage._repeatedUint64}
     set {_uniqueStorage()._repeatedUint64 = newValue}
   }
 
-  var repeatedSint32: [Int32] {
+  public var repeatedSint32: [Int32] {
     get {return _storage._repeatedSint32}
     set {_uniqueStorage()._repeatedSint32 = newValue}
   }
 
-  var repeatedSint64: [Int64] {
+  public var repeatedSint64: [Int64] {
     get {return _storage._repeatedSint64}
     set {_uniqueStorage()._repeatedSint64 = newValue}
   }
 
-  var repeatedFixed32: [UInt32] {
+  public var repeatedFixed32: [UInt32] {
     get {return _storage._repeatedFixed32}
     set {_uniqueStorage()._repeatedFixed32 = newValue}
   }
 
-  var repeatedFixed64: [UInt64] {
+  public var repeatedFixed64: [UInt64] {
     get {return _storage._repeatedFixed64}
     set {_uniqueStorage()._repeatedFixed64 = newValue}
   }
 
-  var repeatedSfixed32: [Int32] {
+  public var repeatedSfixed32: [Int32] {
     get {return _storage._repeatedSfixed32}
     set {_uniqueStorage()._repeatedSfixed32 = newValue}
   }
 
-  var repeatedSfixed64: [Int64] {
+  public var repeatedSfixed64: [Int64] {
     get {return _storage._repeatedSfixed64}
     set {_uniqueStorage()._repeatedSfixed64 = newValue}
   }
 
-  var repeatedFloat: [Float] {
+  public var repeatedFloat: [Float] {
     get {return _storage._repeatedFloat}
     set {_uniqueStorage()._repeatedFloat = newValue}
   }
 
-  var repeatedDouble: [Double] {
+  public var repeatedDouble: [Double] {
     get {return _storage._repeatedDouble}
     set {_uniqueStorage()._repeatedDouble = newValue}
   }
 
-  var repeatedBool: [Bool] {
+  public var repeatedBool: [Bool] {
     get {return _storage._repeatedBool}
     set {_uniqueStorage()._repeatedBool = newValue}
   }
 
-  var repeatedString: [String] {
+  public var repeatedString: [String] {
     get {return _storage._repeatedString}
     set {_uniqueStorage()._repeatedString = newValue}
   }
 
-  var repeatedBytes: [Data] {
+  public var repeatedBytes: [Data] {
     get {return _storage._repeatedBytes}
     set {_uniqueStorage()._repeatedBytes = newValue}
   }
 
-  var repeatedNestedMessage: [Tensorflow_Test_TestAllTypes.NestedMessage] {
+  public var repeatedNestedMessage: [Tensorflow_Test_TestAllTypes.NestedMessage] {
     get {return _storage._repeatedNestedMessage}
     set {_uniqueStorage()._repeatedNestedMessage = newValue}
   }
 
-  var repeatedNestedEnum: [Tensorflow_Test_TestAllTypes.NestedEnum] {
+  public var repeatedNestedEnum: [Tensorflow_Test_TestAllTypes.NestedEnum] {
     get {return _storage._repeatedNestedEnum}
     set {_uniqueStorage()._repeatedNestedEnum = newValue}
   }
 
-  var repeatedCord: [String] {
+  public var repeatedCord: [String] {
     get {return _storage._repeatedCord}
     set {_uniqueStorage()._repeatedCord = newValue}
   }
 
-  var oneofField: OneOf_OneofField? {
+  public var oneofField: OneOf_OneofField? {
     get {return _storage._oneofField}
     set {_uniqueStorage()._oneofField = newValue}
   }
 
-  var oneofUint32: UInt32 {
+  public var oneofUint32: UInt32 {
     get {
       if case .oneofUint32(let v)? = _storage._oneofField {return v}
       return 0
@@ -274,7 +274,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     set {_uniqueStorage()._oneofField = .oneofUint32(newValue)}
   }
 
-  var oneofNestedMessage: Tensorflow_Test_TestAllTypes.NestedMessage {
+  public var oneofNestedMessage: Tensorflow_Test_TestAllTypes.NestedMessage {
     get {
       if case .oneofNestedMessage(let v)? = _storage._oneofField {return v}
       return Tensorflow_Test_TestAllTypes.NestedMessage()
@@ -282,7 +282,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     set {_uniqueStorage()._oneofField = .oneofNestedMessage(newValue)}
   }
 
-  var oneofString: String {
+  public var oneofString: String {
     get {
       if case .oneofString(let v)? = _storage._oneofField {return v}
       return String()
@@ -290,7 +290,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     set {_uniqueStorage()._oneofField = .oneofString(newValue)}
   }
 
-  var oneofBytes: Data {
+  public var oneofBytes: Data {
     get {
       if case .oneofBytes(let v)? = _storage._oneofField {return v}
       return SwiftProtobuf.Internal.emptyData
@@ -298,7 +298,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     set {_uniqueStorage()._oneofField = .oneofBytes(newValue)}
   }
 
-  var oneofEnum: Tensorflow_Test_TestAllTypes.NestedEnum {
+  public var oneofEnum: Tensorflow_Test_TestAllTypes.NestedEnum {
     get {
       if case .oneofEnum(let v)? = _storage._oneofField {return v}
       return Tensorflow_Test_TestAllTypes.NestedEnum.zero
@@ -306,56 +306,56 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     set {_uniqueStorage()._oneofField = .oneofEnum(newValue)}
   }
 
-  var mapStringToMessage: Dictionary<String,Tensorflow_Test_TestAllTypes.NestedMessage> {
+  public var mapStringToMessage: Dictionary<String,Tensorflow_Test_TestAllTypes.NestedMessage> {
     get {return _storage._mapStringToMessage}
     set {_uniqueStorage()._mapStringToMessage = newValue}
   }
 
-  var mapInt32ToMessage: Dictionary<Int32,Tensorflow_Test_TestAllTypes.NestedMessage> {
+  public var mapInt32ToMessage: Dictionary<Int32,Tensorflow_Test_TestAllTypes.NestedMessage> {
     get {return _storage._mapInt32ToMessage}
     set {_uniqueStorage()._mapInt32ToMessage = newValue}
   }
 
-  var mapInt64ToMessage: Dictionary<Int64,Tensorflow_Test_TestAllTypes.NestedMessage> {
+  public var mapInt64ToMessage: Dictionary<Int64,Tensorflow_Test_TestAllTypes.NestedMessage> {
     get {return _storage._mapInt64ToMessage}
     set {_uniqueStorage()._mapInt64ToMessage = newValue}
   }
 
-  var mapBoolToMessage: Dictionary<Bool,Tensorflow_Test_TestAllTypes.NestedMessage> {
+  public var mapBoolToMessage: Dictionary<Bool,Tensorflow_Test_TestAllTypes.NestedMessage> {
     get {return _storage._mapBoolToMessage}
     set {_uniqueStorage()._mapBoolToMessage = newValue}
   }
 
-  var mapStringToInt64: Dictionary<String,Int64> {
+  public var mapStringToInt64: Dictionary<String,Int64> {
     get {return _storage._mapStringToInt64}
     set {_uniqueStorage()._mapStringToInt64 = newValue}
   }
 
-  var mapInt64ToString: Dictionary<Int64,String> {
+  public var mapInt64ToString: Dictionary<Int64,String> {
     get {return _storage._mapInt64ToString}
     set {_uniqueStorage()._mapInt64ToString = newValue}
   }
 
-  var anotherMapStringToMessage: Dictionary<String,Tensorflow_Test_TestAllTypes.NestedMessage> {
+  public var anotherMapStringToMessage: Dictionary<String,Tensorflow_Test_TestAllTypes.NestedMessage> {
     get {return _storage._anotherMapStringToMessage}
     set {_uniqueStorage()._anotherMapStringToMessage = newValue}
   }
 
-  var packedRepeatedInt64: [Int64] {
+  public var packedRepeatedInt64: [Int64] {
     get {return _storage._packedRepeatedInt64}
     set {_uniqueStorage()._packedRepeatedInt64 = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_OneofField: Equatable {
+  public enum OneOf_OneofField: Equatable {
     case oneofUint32(UInt32)
     case oneofNestedMessage(Tensorflow_Test_TestAllTypes.NestedMessage)
     case oneofString(String)
     case oneofBytes(Data)
     case oneofEnum(Tensorflow_Test_TestAllTypes.NestedEnum)
 
-    static func ==(lhs: Tensorflow_Test_TestAllTypes.OneOf_OneofField, rhs: Tensorflow_Test_TestAllTypes.OneOf_OneofField) -> Bool {
+    public static func ==(lhs: Tensorflow_Test_TestAllTypes.OneOf_OneofField, rhs: Tensorflow_Test_TestAllTypes.OneOf_OneofField) -> Bool {
       switch (lhs, rhs) {
       case (.oneofUint32(let l), .oneofUint32(let r)): return l == r
       case (.oneofNestedMessage(let l), .oneofNestedMessage(let r)): return l == r
@@ -367,8 +367,8 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     }
   }
 
-  enum NestedEnum: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum NestedEnum: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case zero // = 0
     case foo // = 1
     case bar // = 2
@@ -378,11 +378,11 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     case neg // = -1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .zero
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case -1: self = .neg
       case 0: self = .zero
@@ -393,7 +393,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .neg: return -1
       case .zero: return 0
@@ -406,47 +406,47 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
 
   }
 
-  struct NestedMessage: SwiftProtobuf.Message {
-    static let protoMessageName: String = Tensorflow_Test_TestAllTypes.protoMessageName + ".NestedMessage"
+  public struct NestedMessage: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_Test_TestAllTypes.protoMessageName + ".NestedMessage"
 
-    var optionalInt32: Int32 {
+    public var optionalInt32: Int32 {
       get {return _storage._optionalInt32}
       set {_uniqueStorage()._optionalInt32 = newValue}
     }
 
-    var repeatedInt32: [Int32] {
+    public var repeatedInt32: [Int32] {
       get {return _storage._repeatedInt32}
       set {_uniqueStorage()._repeatedInt32 = newValue}
     }
 
-    var msg: Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage {
+    public var msg: Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage {
       get {return _storage._msg ?? Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage()}
       set {_uniqueStorage()._msg = newValue}
     }
-    var hasMsg: Bool {
+    public var hasMsg: Bool {
       return _storage._msg != nil
     }
-    mutating func clearMsg() {
+    public mutating func clearMsg() {
       _storage._msg = nil
     }
 
-    var optionalInt64: Int64 {
+    public var optionalInt64: Int64 {
       get {return _storage._optionalInt64}
       set {_uniqueStorage()._optionalInt64 = newValue}
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    struct DoubleNestedMessage: SwiftProtobuf.Message {
-      static let protoMessageName: String = Tensorflow_Test_TestAllTypes.NestedMessage.protoMessageName + ".DoubleNestedMessage"
+    public struct DoubleNestedMessage: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_Test_TestAllTypes.NestedMessage.protoMessageName + ".DoubleNestedMessage"
 
-      var optionalString: String = String()
+      public var optionalString: String = String()
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
 
-      mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
         while let fieldNumber = try decoder.nextFieldNumber() {
           switch fieldNumber {
           case 1: try decoder.decodeSingularStringField(value: &self.optionalString)
@@ -455,7 +455,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
         }
       }
 
-      func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
         if !self.optionalString.isEmpty {
           try visitor.visitSingularStringField(value: self.optionalString, fieldNumber: 1)
         }
@@ -463,9 +463,9 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
       }
     }
 
-    init() {}
+    public init() {}
 
-    mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
       _ = _uniqueStorage()
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         while let fieldNumber = try decoder.nextFieldNumber() {
@@ -480,7 +480,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
       }
     }
 
-    func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
       try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
         if _storage._optionalInt32 != 0 {
           try visitor.visitSingularInt32Field(value: _storage._optionalInt32, fieldNumber: 1)
@@ -501,9 +501,9 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     fileprivate var _storage = _StorageClass()
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -565,7 +565,7 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._optionalInt64 != 0 {
         try visitor.visitSingularInt64Field(value: _storage._optionalInt64, fieldNumber: 2)
@@ -714,41 +714,41 @@ struct Tensorflow_Test_TestAllTypes: SwiftProtobuf.Message {
 }
 
 /// A recursive message.
-struct Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".NestedTestAllTypes"
+public struct Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".NestedTestAllTypes"
 
-  var child: Tensorflow_Test_NestedTestAllTypes {
+  public var child: Tensorflow_Test_NestedTestAllTypes {
     get {return _storage._child ?? Tensorflow_Test_NestedTestAllTypes()}
     set {_uniqueStorage()._child = newValue}
   }
-  var hasChild: Bool {
+  public var hasChild: Bool {
     return _storage._child != nil
   }
-  mutating func clearChild() {
+  public mutating func clearChild() {
     _storage._child = nil
   }
 
-  var payload: Tensorflow_Test_TestAllTypes {
+  public var payload: Tensorflow_Test_TestAllTypes {
     get {return _storage._payload ?? Tensorflow_Test_TestAllTypes()}
     set {_uniqueStorage()._payload = newValue}
   }
-  var hasPayload: Bool {
+  public var hasPayload: Bool {
     return _storage._payload != nil
   }
-  mutating func clearPayload() {
+  public mutating func clearPayload() {
     _storage._payload = nil
   }
 
-  var mapStringToInt64: Dictionary<String,Int64> {
+  public var mapStringToInt64: Dictionary<String,Int64> {
     get {return _storage._mapStringToInt64}
     set {_uniqueStorage()._mapStringToInt64 = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -762,7 +762,7 @@ struct Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._child {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -780,16 +780,16 @@ struct Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf.Message {
   fileprivate var _storage = _StorageClass()
 }
 
-struct Tensorflow_Test_ForeignMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ForeignMessage"
+public struct Tensorflow_Test_ForeignMessage: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ForeignMessage"
 
-  var c: Int32 = 0
+  public var c: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.c)
@@ -798,7 +798,7 @@ struct Tensorflow_Test_ForeignMessage: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.c != 0 {
       try visitor.visitSingularInt32Field(value: self.c, fieldNumber: 1)
     }
@@ -806,19 +806,19 @@ struct Tensorflow_Test_ForeignMessage: SwiftProtobuf.Message {
   }
 }
 
-struct Tensorflow_Test_TestEmptyMessage: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TestEmptyMessage"
+public struct Tensorflow_Test_TestEmptyMessage: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TestEmptyMessage"
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 }
@@ -828,7 +828,7 @@ struct Tensorflow_Test_TestEmptyMessage: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.test"
 
 extension Tensorflow_Test_ForeignEnum: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "FOREIGN_ZERO"),
     4: .same(proto: "FOREIGN_FOO"),
     5: .same(proto: "FOREIGN_BAR"),
@@ -837,7 +837,7 @@ extension Tensorflow_Test_ForeignEnum: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Tensorflow_Test_TestAllTypes: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1000: .standard(proto: "optional_int32"),
     2: .standard(proto: "optional_int64"),
     3: .standard(proto: "optional_uint32"),
@@ -1000,7 +1000,7 @@ extension Tensorflow_Test_TestAllTypes: SwiftProtobuf._MessageImplementationBase
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._optionalInt32 != other_storage._optionalInt32 {return false}
@@ -1112,7 +1112,7 @@ extension Tensorflow_Test_TestAllTypes.OneOf_OneofField {
 }
 
 extension Tensorflow_Test_TestAllTypes.NestedEnum: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     -1: .same(proto: "NEG"),
     0: .same(proto: "ZERO"),
     1: .same(proto: "FOO"),
@@ -1122,7 +1122,7 @@ extension Tensorflow_Test_TestAllTypes.NestedEnum: SwiftProtobuf._ProtoNameProvi
 }
 
 extension Tensorflow_Test_TestAllTypes.NestedMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "optional_int32"),
     2: .standard(proto: "repeated_int32"),
     3: .same(proto: "msg"),
@@ -1152,7 +1152,7 @@ extension Tensorflow_Test_TestAllTypes.NestedMessage: SwiftProtobuf._MessageImpl
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes.NestedMessage) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes.NestedMessage) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._optionalInt32 != other_storage._optionalInt32 {return false}
@@ -1169,11 +1169,11 @@ extension Tensorflow_Test_TestAllTypes.NestedMessage: SwiftProtobuf._MessageImpl
 }
 
 extension Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "optional_string"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage) -> Bool {
     if self.optionalString != other.optionalString {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1181,7 +1181,7 @@ extension Tensorflow_Test_TestAllTypes.NestedMessage.DoubleNestedMessage: SwiftP
 }
 
 extension Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "child"),
     2: .same(proto: "payload"),
     3: .standard(proto: "map_string_to_int64"),
@@ -1208,7 +1208,7 @@ extension Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf._MessageImplementati
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_NestedTestAllTypes) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_NestedTestAllTypes) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._child != other_storage._child {return false}
@@ -1224,11 +1224,11 @@ extension Tensorflow_Test_NestedTestAllTypes: SwiftProtobuf._MessageImplementati
 }
 
 extension Tensorflow_Test_ForeignMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "c"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_ForeignMessage) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_ForeignMessage) -> Bool {
     if self.c != other.c {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1236,9 +1236,9 @@ extension Tensorflow_Test_ForeignMessage: SwiftProtobuf._MessageImplementationBa
 }
 
 extension Tensorflow_Test_TestEmptyMessage: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestEmptyMessage) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Test_TestEmptyMessage) -> Bool {
     if unknownFields != other.unknownFields {return false}
     return true
   }

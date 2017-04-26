@@ -35,11 +35,11 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Defines a single job in a TensorFlow cluster.
-struct Tensorflow_JobDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".JobDef"
+public struct Tensorflow_JobDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".JobDef"
 
   /// The name of this job.
-  var name: String = String()
+  public var name: String = String()
 
   /// Mapping from task ID to "hostname:port" string.
   ///
@@ -49,13 +49,13 @@ struct Tensorflow_JobDef: SwiftProtobuf.Message {
   ///
   /// NOTE(mrry): Currently, only a dense task ID space starting at 0 is
   /// supported.
-  var tasks: Dictionary<Int32,String> = [:]
+  public var tasks: Dictionary<Int32,String> = [:]
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -65,7 +65,7 @@ struct Tensorflow_JobDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -77,17 +77,17 @@ struct Tensorflow_JobDef: SwiftProtobuf.Message {
 }
 
 /// Defines a TensorFlow cluster as a set of jobs.
-struct Tensorflow_ClusterDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ClusterDef"
+public struct Tensorflow_ClusterDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ClusterDef"
 
   /// The jobs that comprise the cluster.
-  var job: [Tensorflow_JobDef] = []
+  public var job: [Tensorflow_JobDef] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.job)
@@ -96,7 +96,7 @@ struct Tensorflow_ClusterDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.job.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.job, fieldNumber: 1)
     }
@@ -105,18 +105,18 @@ struct Tensorflow_ClusterDef: SwiftProtobuf.Message {
 }
 
 /// Defines the configuration of a single TensorFlow server.
-struct Tensorflow_ServerDef: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".ServerDef"
+public struct Tensorflow_ServerDef: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".ServerDef"
 
   /// The cluster of which this server is a member.
-  var cluster: Tensorflow_ClusterDef {
+  public var cluster: Tensorflow_ClusterDef {
     get {return _storage._cluster ?? Tensorflow_ClusterDef()}
     set {_uniqueStorage()._cluster = newValue}
   }
-  var hasCluster: Bool {
+  public var hasCluster: Bool {
     return _storage._cluster != nil
   }
-  mutating func clearCluster() {
+  public mutating func clearCluster() {
     _storage._cluster = nil
   }
 
@@ -124,7 +124,7 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
   ///
   /// NOTE(mrry): The `cluster` field must contain a `JobDef` with a `name` field
   /// that matches this name.
-  var jobName: String {
+  public var jobName: String {
     get {return _storage._jobName}
     set {_uniqueStorage()._jobName = newValue}
   }
@@ -133,36 +133,36 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
   ///
   /// NOTE: The `cluster` field must contain a `JobDef` with a matching `name`
   /// and a mapping in its `tasks` field for this index.
-  var taskIndex: Int32 {
+  public var taskIndex: Int32 {
     get {return _storage._taskIndex}
     set {_uniqueStorage()._taskIndex = newValue}
   }
 
   /// The default configuration for sessions that run on this server.
-  var defaultSessionConfig: Tensorflow_ConfigProto {
+  public var defaultSessionConfig: Tensorflow_ConfigProto {
     get {return _storage._defaultSessionConfig ?? Tensorflow_ConfigProto()}
     set {_uniqueStorage()._defaultSessionConfig = newValue}
   }
-  var hasDefaultSessionConfig: Bool {
+  public var hasDefaultSessionConfig: Bool {
     return _storage._defaultSessionConfig != nil
   }
-  mutating func clearDefaultSessionConfig() {
+  public mutating func clearDefaultSessionConfig() {
     _storage._defaultSessionConfig = nil
   }
 
   /// The protocol to be used by this server.
   ///
   /// Acceptable values include: "grpc".
-  var protocol_p: String {
+  public var protocol_p: String {
     get {return _storage._protocol_p}
     set {_uniqueStorage()._protocol_p = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -178,7 +178,7 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._cluster {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -207,12 +207,12 @@ struct Tensorflow_ServerDef: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow"
 
 extension Tensorflow_JobDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "tasks"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_JobDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_JobDef) -> Bool {
     if self.name != other.name {return false}
     if self.tasks != other.tasks {return false}
     if unknownFields != other.unknownFields {return false}
@@ -221,11 +221,11 @@ extension Tensorflow_JobDef: SwiftProtobuf._MessageImplementationBase, SwiftProt
 }
 
 extension Tensorflow_ClusterDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "job"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ClusterDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ClusterDef) -> Bool {
     if self.job != other.job {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -233,7 +233,7 @@ extension Tensorflow_ClusterDef: SwiftProtobuf._MessageImplementationBase, Swift
 }
 
 extension Tensorflow_ServerDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "cluster"),
     2: .standard(proto: "job_name"),
     3: .standard(proto: "task_index"),
@@ -266,7 +266,7 @@ extension Tensorflow_ServerDef: SwiftProtobuf._MessageImplementationBase, SwiftP
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_ServerDef) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_ServerDef) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._cluster != other_storage._cluster {return false}

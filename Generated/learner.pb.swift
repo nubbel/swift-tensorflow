@@ -20,23 +20,23 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Tree regularization config.
-struct Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TreeRegularizationConfig"
+public struct Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TreeRegularizationConfig"
 
   /// Classic L1/L2.
-  var l1: Float = 0
+  public var l1: Float = 0
 
-  var l2: Float = 0
+  public var l2: Float = 0
 
   /// Tree complexity penalizes overall model complexity effectively
   /// limiting how deep the tree can grow in regions with small gain.
-  var treeComplexity: Float = 0
+  public var treeComplexity: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.l1)
@@ -47,7 +47,7 @@ struct Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.l1 != 0 {
       try visitor.visitSingularFloatField(value: self.l1, fieldNumber: 1)
     }
@@ -62,20 +62,20 @@ struct Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobuf.M
 }
 
 /// Tree constraints config.
-struct Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".TreeConstraintsConfig"
+public struct Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".TreeConstraintsConfig"
 
   /// Maximum depth of the trees.
-  var maxTreeDepth: UInt32 = 0
+  public var maxTreeDepth: UInt32 = 0
 
   /// Min hessian weight per node.
-  var minNodeWeight: Float = 0
+  public var minNodeWeight: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.maxTreeDepth)
@@ -85,7 +85,7 @@ struct Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.maxTreeDepth != 0 {
       try visitor.visitSingularUInt32Field(value: self.maxTreeDepth, fieldNumber: 1)
     }
@@ -97,15 +97,15 @@ struct Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf.Mess
 }
 
 /// LearningRateConfig describes all supported learning rate tuners.
-struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LearningRateConfig"
+public struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LearningRateConfig"
 
-  var tuner: OneOf_Tuner? {
+  public var tuner: OneOf_Tuner? {
     get {return _storage._tuner}
     set {_uniqueStorage()._tuner = newValue}
   }
 
-  var fixed: Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig {
+  public var fixed: Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig {
     get {
       if case .fixed(let v)? = _storage._tuner {return v}
       return Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig()
@@ -113,7 +113,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
     set {_uniqueStorage()._tuner = .fixed(newValue)}
   }
 
-  var dropout: Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig {
+  public var dropout: Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig {
     get {
       if case .dropout(let v)? = _storage._tuner {return v}
       return Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig()
@@ -121,7 +121,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
     set {_uniqueStorage()._tuner = .dropout(newValue)}
   }
 
-  var lineSearch: Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig {
+  public var lineSearch: Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig {
     get {
       if case .lineSearch(let v)? = _storage._tuner {return v}
       return Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig()
@@ -129,14 +129,14 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
     set {_uniqueStorage()._tuner = .lineSearch(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Tuner: Equatable {
+  public enum OneOf_Tuner: Equatable {
     case fixed(Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig)
     case dropout(Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig)
     case lineSearch(Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig)
 
-    static func ==(lhs: Tensorflow_BoostedTrees_Learner_LearningRateConfig.OneOf_Tuner, rhs: Tensorflow_BoostedTrees_Learner_LearningRateConfig.OneOf_Tuner) -> Bool {
+    public static func ==(lhs: Tensorflow_BoostedTrees_Learner_LearningRateConfig.OneOf_Tuner, rhs: Tensorflow_BoostedTrees_Learner_LearningRateConfig.OneOf_Tuner) -> Bool {
       switch (lhs, rhs) {
       case (.fixed(let l), .fixed(let r)): return l == r
       case (.dropout(let l), .dropout(let r)): return l == r
@@ -146,9 +146,9 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -164,7 +164,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       try _storage._tuner?.traverse(visitor: &visitor)
     }
@@ -175,16 +175,16 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf.Message
 }
 
 /// Config for a fixed learning rate.
-struct Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LearningRateFixedConfig"
+public struct Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LearningRateFixedConfig"
 
-  var learningRate: Float = 0
+  public var learningRate: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.learningRate)
@@ -193,7 +193,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf.Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.learningRate != 0 {
       try visitor.visitSingularFloatField(value: self.learningRate, fieldNumber: 1)
     }
@@ -202,20 +202,20 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf.Me
 }
 
 /// Config for a tuned learning rate.
-struct Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LearningRateLineSearchConfig"
+public struct Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LearningRateLineSearchConfig"
 
   /// Max learning rate. Must be strictly positive.
-  var maxLearningRate: Float = 0
+  public var maxLearningRate: Float = 0
 
   /// Number of learning rate values to consider between [0, max_learning_rate).
-  var numSteps: Int32 = 0
+  public var numSteps: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.maxLearningRate)
@@ -225,7 +225,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.maxLearningRate != 0 {
       try visitor.visitSingularFloatField(value: self.maxLearningRate, fieldNumber: 1)
     }
@@ -243,12 +243,12 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftProtob
 /// and tree 2 etc .. ensemble of all trees.
 /// Note that this averaging will apply ONLY DURING PREDICTION. The training
 /// stays the same.
-struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".AveragingConfig"
+public struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".AveragingConfig"
 
-  var config: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config? = nil
+  public var config: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config? = nil
 
-  var averageLastNTrees: Float {
+  public var averageLastNTrees: Float {
     get {
       if case .averageLastNTrees(let v)? = config {return v}
       return 0
@@ -259,7 +259,7 @@ struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
   /// Between 0 and 1. If set to 1.0, we are averaging ensembles of tree 1,
   /// ensemble of tree 1 and tree 2, etc ensemble of all trees. If set to 0.5,
   /// last half of the trees are averaged etc.
-  var averageLastPercentTrees: Float {
+  public var averageLastPercentTrees: Float {
     get {
       if case .averageLastPercentTrees(let v)? = config {return v}
       return 0
@@ -267,16 +267,16 @@ struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
     set {config = .averageLastPercentTrees(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Config: Equatable {
+  public enum OneOf_Config: Equatable {
     case averageLastNTrees(Float)
     /// Between 0 and 1. If set to 1.0, we are averaging ensembles of tree 1,
     /// ensemble of tree 1 and tree 2, etc ensemble of all trees. If set to 0.5,
     /// last half of the trees are averaged etc.
     case averageLastPercentTrees(Float)
 
-    static func ==(lhs: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config, rhs: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config) -> Bool {
+    public static func ==(lhs: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config, rhs: Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config) -> Bool {
       switch (lhs, rhs) {
       case (.averageLastNTrees(let l), .averageLastNTrees(let r)): return l == r
       case (.averageLastPercentTrees(let l), .averageLastPercentTrees(let r)): return l == r
@@ -285,9 +285,9 @@ struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
     }
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1, 2:
@@ -300,17 +300,17 @@ struct Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try self.config?.traverse(visitor: &visitor)
     try unknownFields.traverse(visitor: &visitor)
   }
 }
 
-struct Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LearningRateDropoutDrivenConfig"
+public struct Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LearningRateDropoutDrivenConfig"
 
   /// Probability of dropping each tree in an existing so far ensemble.
-  var dropoutProbability: Float = 0
+  public var dropoutProbability: Float = 0
 
   /// When trees are built after dropout happen, they don't "advance" to the
   /// optimal solution, they just rearrange the path. However you can still
@@ -322,16 +322,16 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftPro
   /// way iterations 100-200 will include approx 90 iterations of dropout and 10
   /// iterations of normal steps.Set it to 0 if you want just keep building
   /// the refinement trees after dropout kicks in.
-  var probabilityOfSkippingDropout: Float = 0
+  public var probabilityOfSkippingDropout: Float = 0
 
   /// Between 0 and 1.
-  var learningRate: Float = 0
+  public var learningRate: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.dropoutProbability)
@@ -342,7 +342,7 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.dropoutProbability != 0 {
       try visitor.visitSingularFloatField(value: self.dropoutProbability, fieldNumber: 1)
     }
@@ -356,23 +356,23 @@ struct Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftPro
   }
 }
 
-struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
-  static let protoMessageName: String = _protobuf_package + ".LearnerConfig"
+public struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".LearnerConfig"
 
   /// Number of classes.
-  var numClasses: UInt32 {
+  public var numClasses: UInt32 {
     get {return _storage._numClasses}
     set {_uniqueStorage()._numClasses = newValue}
   }
 
   /// Fraction of features to consider in each tree sampled randomly
   /// from all available features.
-  var featureFraction: OneOf_FeatureFraction? {
+  public var featureFraction: OneOf_FeatureFraction? {
     get {return _storage._featureFraction}
     set {_uniqueStorage()._featureFraction = newValue}
   }
 
-  var featureFractionPerTree: Float {
+  public var featureFractionPerTree: Float {
     get {
       if case .featureFractionPerTree(let v)? = _storage._featureFraction {return v}
       return 0
@@ -380,7 +380,7 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     set {_uniqueStorage()._featureFraction = .featureFractionPerTree(newValue)}
   }
 
-  var featureFractionPerLevel: Float {
+  public var featureFractionPerLevel: Float {
     get {
       if case .featureFractionPerLevel(let v)? = _storage._featureFraction {return v}
       return 0
@@ -389,81 +389,81 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
   }
 
   /// Regularization.
-  var regularization: Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig {
+  public var regularization: Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig {
     get {return _storage._regularization ?? Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig()}
     set {_uniqueStorage()._regularization = newValue}
   }
-  var hasRegularization: Bool {
+  public var hasRegularization: Bool {
     return _storage._regularization != nil
   }
-  mutating func clearRegularization() {
+  public mutating func clearRegularization() {
     _storage._regularization = nil
   }
 
   /// Constraints.
-  var constraints: Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig {
+  public var constraints: Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig {
     get {return _storage._constraints ?? Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig()}
     set {_uniqueStorage()._constraints = newValue}
   }
-  var hasConstraints: Bool {
+  public var hasConstraints: Bool {
     return _storage._constraints != nil
   }
-  mutating func clearConstraints() {
+  public mutating func clearConstraints() {
     _storage._constraints = nil
   }
 
   /// Pruning.
-  var pruningMode: Tensorflow_BoostedTrees_Learner_LearnerConfig.PruningMode {
+  public var pruningMode: Tensorflow_BoostedTrees_Learner_LearnerConfig.PruningMode {
     get {return _storage._pruningMode}
     set {_uniqueStorage()._pruningMode = newValue}
   }
 
   /// Growing Mode.
-  var growingMode: Tensorflow_BoostedTrees_Learner_LearnerConfig.GrowingMode {
+  public var growingMode: Tensorflow_BoostedTrees_Learner_LearnerConfig.GrowingMode {
     get {return _storage._growingMode}
     set {_uniqueStorage()._growingMode = newValue}
   }
 
   /// Learning rate.
-  var learningRateTuner: Tensorflow_BoostedTrees_Learner_LearningRateConfig {
+  public var learningRateTuner: Tensorflow_BoostedTrees_Learner_LearningRateConfig {
     get {return _storage._learningRateTuner ?? Tensorflow_BoostedTrees_Learner_LearningRateConfig()}
     set {_uniqueStorage()._learningRateTuner = newValue}
   }
-  var hasLearningRateTuner: Bool {
+  public var hasLearningRateTuner: Bool {
     return _storage._learningRateTuner != nil
   }
-  mutating func clearLearningRateTuner() {
+  public mutating func clearLearningRateTuner() {
     _storage._learningRateTuner = nil
   }
 
   /// Multi-class strategy.
-  var multiClassStrategy: Tensorflow_BoostedTrees_Learner_LearnerConfig.MultiClassStrategy {
+  public var multiClassStrategy: Tensorflow_BoostedTrees_Learner_LearnerConfig.MultiClassStrategy {
     get {return _storage._multiClassStrategy}
     set {_uniqueStorage()._multiClassStrategy = newValue}
   }
 
   /// If you want to average the ensembles (for regularization), provide the
   /// config below.
-  var averagingConfig: Tensorflow_BoostedTrees_Learner_AveragingConfig {
+  public var averagingConfig: Tensorflow_BoostedTrees_Learner_AveragingConfig {
     get {return _storage._averagingConfig ?? Tensorflow_BoostedTrees_Learner_AveragingConfig()}
     set {_uniqueStorage()._averagingConfig = newValue}
   }
-  var hasAveragingConfig: Bool {
+  public var hasAveragingConfig: Bool {
     return _storage._averagingConfig != nil
   }
-  mutating func clearAveragingConfig() {
+  public mutating func clearAveragingConfig() {
     _storage._averagingConfig = nil
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// Fraction of features to consider in each tree sampled randomly
   /// from all available features.
-  enum OneOf_FeatureFraction: Equatable {
+  public enum OneOf_FeatureFraction: Equatable {
     case featureFractionPerTree(Float)
     case featureFractionPerLevel(Float)
 
-    static func ==(lhs: Tensorflow_BoostedTrees_Learner_LearnerConfig.OneOf_FeatureFraction, rhs: Tensorflow_BoostedTrees_Learner_LearnerConfig.OneOf_FeatureFraction) -> Bool {
+    public static func ==(lhs: Tensorflow_BoostedTrees_Learner_LearnerConfig.OneOf_FeatureFraction, rhs: Tensorflow_BoostedTrees_Learner_LearnerConfig.OneOf_FeatureFraction) -> Bool {
       switch (lhs, rhs) {
       case (.featureFractionPerTree(let l), .featureFractionPerTree(let r)): return l == r
       case (.featureFractionPerLevel(let l), .featureFractionPerLevel(let r)): return l == r
@@ -472,17 +472,17 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     }
   }
 
-  enum PruningMode: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum PruningMode: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case prePrune // = 0
     case postPrune // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .prePrune
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .prePrune
       case 1: self = .postPrune
@@ -490,7 +490,7 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .prePrune: return 0
       case .postPrune: return 1
@@ -500,19 +500,19 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
 
   }
 
-  enum GrowingMode: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum GrowingMode: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case wholeTree // = 0
 
     /// Layer by layer is only supported by the batch learner.
     case layerByLayer // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .wholeTree
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .wholeTree
       case 1: self = .layerByLayer
@@ -520,7 +520,7 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .wholeTree: return 0
       case .layerByLayer: return 1
@@ -530,18 +530,18 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
 
   }
 
-  enum MultiClassStrategy: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum MultiClassStrategy: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case treePerClass // = 0
     case fullHessian // = 1
     case diagonalHessian // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .treePerClass
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .treePerClass
       case 1: self = .fullHessian
@@ -550,7 +550,7 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .treePerClass: return 0
       case .fullHessian: return 1
@@ -561,9 +561,9 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
 
   }
 
-  init() {}
+  public init() {}
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -587,7 +587,7 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._numClasses != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._numClasses, fieldNumber: 1)
@@ -626,13 +626,13 @@ struct Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf.Message {
 fileprivate let _protobuf_package = "tensorflow.boosted_trees.learner"
 
 extension Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "l1"),
     2: .same(proto: "l2"),
     3: .standard(proto: "tree_complexity"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig) -> Bool {
     if self.l1 != other.l1 {return false}
     if self.l2 != other.l2 {return false}
     if self.treeComplexity != other.treeComplexity {return false}
@@ -642,12 +642,12 @@ extension Tensorflow_BoostedTrees_Learner_TreeRegularizationConfig: SwiftProtobu
 }
 
 extension Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "max_tree_depth"),
     2: .standard(proto: "min_node_weight"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig) -> Bool {
     if self.maxTreeDepth != other.maxTreeDepth {return false}
     if self.minNodeWeight != other.minNodeWeight {return false}
     if unknownFields != other.unknownFields {return false}
@@ -656,7 +656,7 @@ extension Tensorflow_BoostedTrees_Learner_TreeConstraintsConfig: SwiftProtobuf._
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "fixed"),
     2: .same(proto: "dropout"),
     3: .standard(proto: "line_search"),
@@ -679,7 +679,7 @@ extension Tensorflow_BoostedTrees_Learner_LearningRateConfig: SwiftProtobuf._Mes
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateConfig) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._tuner != other_storage._tuner {return false}
@@ -735,11 +735,11 @@ extension Tensorflow_BoostedTrees_Learner_LearningRateConfig.OneOf_Tuner {
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "learning_rate"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig) -> Bool {
     if self.learningRate != other.learningRate {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -747,12 +747,12 @@ extension Tensorflow_BoostedTrees_Learner_LearningRateFixedConfig: SwiftProtobuf
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "max_learning_rate"),
     2: .standard(proto: "num_steps"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig) -> Bool {
     if self.maxLearningRate != other.maxLearningRate {return false}
     if self.numSteps != other.numSteps {return false}
     if unknownFields != other.unknownFields {return false}
@@ -761,12 +761,12 @@ extension Tensorflow_BoostedTrees_Learner_LearningRateLineSearchConfig: SwiftPro
 }
 
 extension Tensorflow_BoostedTrees_Learner_AveragingConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "average_last_n_trees"),
     2: .standard(proto: "average_last_percent_trees"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_AveragingConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_AveragingConfig) -> Bool {
     if self.config != other.config {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -803,13 +803,13 @@ extension Tensorflow_BoostedTrees_Learner_AveragingConfig.OneOf_Config {
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "dropout_probability"),
     2: .standard(proto: "probability_of_skipping_dropout"),
     3: .standard(proto: "learning_rate"),
   ]
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig) -> Bool {
     if self.dropoutProbability != other.dropoutProbability {return false}
     if self.probabilityOfSkippingDropout != other.probabilityOfSkippingDropout {return false}
     if self.learningRate != other.learningRate {return false}
@@ -819,7 +819,7 @@ extension Tensorflow_BoostedTrees_Learner_LearningRateDropoutDrivenConfig: Swift
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "num_classes"),
     2: .standard(proto: "feature_fraction_per_tree"),
     3: .standard(proto: "feature_fraction_per_level"),
@@ -865,7 +865,7 @@ extension Tensorflow_BoostedTrees_Learner_LearnerConfig: SwiftProtobuf._MessageI
     return _storage
   }
 
-  func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearnerConfig) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Learner_LearnerConfig) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._numClasses != other_storage._numClasses {return false}
@@ -916,21 +916,21 @@ extension Tensorflow_BoostedTrees_Learner_LearnerConfig.OneOf_FeatureFraction {
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearnerConfig.PruningMode: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "PRE_PRUNE"),
     1: .same(proto: "POST_PRUNE"),
   ]
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearnerConfig.GrowingMode: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "WHOLE_TREE"),
     1: .same(proto: "LAYER_BY_LAYER"),
   ]
 }
 
 extension Tensorflow_BoostedTrees_Learner_LearnerConfig.MultiClassStrategy: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "TREE_PER_CLASS"),
     1: .same(proto: "FULL_HESSIAN"),
     2: .same(proto: "DIAGONAL_HESSIAN"),
