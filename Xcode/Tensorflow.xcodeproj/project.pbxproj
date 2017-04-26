@@ -94,6 +94,7 @@
 		E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */; };
 		E8D0D73F1EB0EAE6009B2929 /* echo.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */; };
 		E8D0D7431EB0F4EF009B2929 /* EchoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */; };
+		E8D0D7451EB0F8F9009B2929 /* echo.proto in Resources */ = {isa = PBXBuildFile; fileRef = E8D0D7441EB0F8F9009B2929 /* echo.proto */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +297,7 @@
 		E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.pb.swift; sourceTree = "<group>"; };
 		E8D0D73C1EB0EAE6009B2929 /* echo.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.server.pb.swift; sourceTree = "<group>"; };
 		E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EchoProvider.swift; sourceTree = "<group>"; };
+		E8D0D7441EB0F8F9009B2929 /* echo.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = echo.proto; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 		D35C9FAA1D74B079000443CD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				E8D0D7441EB0F8F9009B2929 /* echo.proto */,
 				E8D0D7421EB0F4EF009B2929 /* EchoProvider.swift */,
 				E8D0D7391EB0EAE6009B2929 /* EchoGenerated */,
 				D35C9FAB1D74B079000443CD /* AppDelegate.swift */,
@@ -622,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BFE28C1D87A45D00A648D8 /* ssl.crt in Resources */,
+				E8D0D7451EB0F8F9009B2929 /* echo.proto in Resources */,
 				D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */,
 				D3971E211D89132E001A0B3F /* ssl.key in Resources */,
 				D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */,
