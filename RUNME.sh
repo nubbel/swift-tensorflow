@@ -148,12 +148,28 @@ echo   "4 - Ruby"
 echo   "5 - Node"
 echo   "6 - c#"
 echo   "7 - c++"
+echo   "8 - Java"
+echo   "9 - Go"
 
 printf  "\n\n"
-printf  "[1], 2, 3, 4, 5, 6, 7"
+printf  "[1], 2, 3, 4, 5, 6, 7, 8, 9"
 printf  "\n\n"
 
 read -p "" CONDITION;
+
+
+# Go
+if [ "$CONDITION" == "9" ] ; then
+  go get google.golang.org/grpc
+  go get github.com/golang/protobuf/protoc-gen-go
+  go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+fi
+
+if [ "$CONDITION" == "8" ] ; then
+  # move java files to this directory
+  rm -rf JavaGenerated
+  mkdir JavaGenerated
+fi
 
 
 for file_path in $(find ./serving -type f -name "*.proto" ); do
@@ -258,6 +274,24 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     $file_path
   fi
 
+  # Java
+  if [ "$CONDITION" == "8" ] ; then
+  #
+    echo "\n🦑  protoc --plugin=protoc-gen-grpc-java=$(which protoc-gen-grpc-java)  --proto_path=serving  --java_out=. --grpc-java_out=. $file_path " 
+    protoc --plugin=protoc-gen-grpc-java=$(which protoc-gen-grpc-java)  \
+    --proto_path=serving \
+    --java_out=./JavaGenerated/ \
+    --grpc-java_out=./JavaGenerated/ \
+    $file_path
+  fi
+
+   # Go
+  if [ "$CONDITION" == "9" ] ; then
+  #
+    echo "\n🐎  protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path " 
+    protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path
+  fi
+
 done
 
 if [ "$CONDITION" == "1" ] ; then
@@ -274,4 +308,14 @@ if [ "$CONDITION" == "7" ] ; then
   mkdir CPPGenerated
   mv tensorflow tensorflow_serving CPPGenerated
   echo "\n⛳️ files can be found at CPPGenerated \n \n" 
+fi
+
+
+
+if [ "$CONDITION" == "9" ] ; then
+  # move swift files to this directory
+  rm -rf GoGenerated
+  mkdir GoGenerated
+  mv tensorflow tensorflow_serving GoGenerated
+  echo "\n⛳️ files can be found at GoGenerated \n \n" 
 fi
