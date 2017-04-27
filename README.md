@@ -8,6 +8,31 @@
 [RUNME.sh](RUNME.sh)  will  download latest tensorflow proto files / swift grpc and build protobuf files en masse. 
 
 
+
+
+https://www.tensorflow.org/deploy/distributed
+# Start a TensorFlow server as a single-process "cluster".
+```python
+$ python
+>>> import tensorflow as tf
+>>> c = tf.constant("Hello, distributed TensorFlow!")
+>>> server = tf.train.Server.create_local_server()
+>>> sess = tf.Session(server.target)  # Create a session on the server.
+>>> sess.run(c)
+'Hello, distributed TensorFlow!'
+```
+
+
+TODO - wire up the following
+```swift
+  var predictionServer : Tensorflow_Serving_PredictionServiceServer!
+  var eventServer: Tensorflow_EventListenerServer!
+  var workerServer: Tensorflow_Grpc_WorkerServiceServer!
+```
+
+
+
+
 * [Tensorflow Client Service - tensorflow.client.pb.swift](Generated/tensorflow.client.pb.swift) 
 
 ```swift
