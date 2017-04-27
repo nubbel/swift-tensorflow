@@ -283,6 +283,7 @@
 		E811CFF51EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF461EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift */; };
 		E811CFF61EB12E2F004C58C3 /* static_storage_path_source.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF471EB12E2F004C58C3 /* static_storage_path_source.pb.swift */; };
 		E811CFF71EB12E2F004C58C3 /* class_registration_test.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E811CF491EB12E2F004C58C3 /* class_registration_test.pb.swift */; };
+		E89A1DCF1EB2578B00EA1D01 /* TestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89A1DCE1EB2578B00EA1D01 /* TestProvider.swift */; };
 		E8D0D7361EB0E8C7009B2929 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D7351EB0E8C7009B2929 /* README.md */; };
 		E8D0D73D1EB0EAE6009B2929 /* echo.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */; };
 		E8D0D73E1EB0EAE6009B2929 /* echo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */; };
@@ -680,6 +681,7 @@
 		E811CF461EB12E2F004C58C3 /* file_system_storage_path_source.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = file_system_storage_path_source.pb.swift; sourceTree = "<group>"; };
 		E811CF471EB12E2F004C58C3 /* static_storage_path_source.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = static_storage_path_source.pb.swift; sourceTree = "<group>"; };
 		E811CF491EB12E2F004C58C3 /* class_registration_test.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = class_registration_test.pb.swift; sourceTree = "<group>"; };
+		E89A1DCE1EB2578B00EA1D01 /* TestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestProvider.swift; sourceTree = "<group>"; };
 		E8D0D7351EB0E8C7009B2929 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E8D0D73A1EB0EAE6009B2929 /* echo.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.client.pb.swift; sourceTree = "<group>"; };
 		E8D0D73B1EB0EAE6009B2929 /* echo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = echo.pb.swift; sourceTree = "<group>"; };
@@ -1301,6 +1303,7 @@
 				D35C9FAF1D74B079000443CD /* MainMenu.xib */,
 				D3BFE28B1D87A45D00A648D8 /* ssl.crt */,
 				D3971E201D89132E001A0B3F /* ssl.key */,
+				E89A1DCE1EB2578B00EA1D01 /* TestProvider.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -2754,6 +2757,7 @@
 				E811CF4B1EB12E2F004C58C3 /* session.pb.swift in Sources */,
 				E811CF531EB12E2F004C58C3 /* graph_explorer.pb.swift in Sources */,
 				E811CFD61EB12E2F004C58C3 /* test.pb.swift in Sources */,
+				E89A1DCF1EB2578B00EA1D01 /* TestProvider.swift in Sources */,
 				E811CFDD1EB12E2F004C58C3 /* tensorflow.server.pb.swift in Sources */,
 				E811CF681EB12E2F004C58C3 /* remote_fused_graph_execute_info.pb.swift in Sources */,
 				E811CF7E1EB12E2F004C58C3 /* saved_model.pb.swift in Sources */,

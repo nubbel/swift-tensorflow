@@ -43,6 +43,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   func applicationDidFinishLaunching(_ aNotification: Notification) {
 
+    
+    
     // instantiate our custom-written application handler
     echoProvider = EchoProvider()
 
@@ -59,5 +61,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                    keyURL:keyURL,
                                    provider:echoProvider)
     secureServer.start()
+    
+    // testTensorflow()
+  
   }
+    
+    func testTensorflow(){
+        /* python3
+         >>> import tensorflow as tf
+         >>> c = tf.constant("Hello, distributed TensorFlow!")
+         >>> server = tf.train.Server.create_local_server()
+         >>> sess = tf.Session(server.target)  # Create a session on the server.
+         >>> sess.run(c)
+         'Hello, distributed TensorFlow!'
+         */
+        
+        
+        // some questions - how to glue all this together??? 
+        
+        var predictionServer : Tensorflow_Serving_PredictionServiceServer!
+        var eventServer: Tensorflow_EventListenerServer!
+        var workerServer: Tensorflow_Grpc_WorkerServiceServer!
+        
+        let testProvider = TestPredictionProvider()
+        let testEventListenerProvider =  TestEventListenerProvider()
+        let testWorkerProvider = TestWorkerProvider()
+        predictionServer = Tensorflow_Serving_PredictionServiceServer(address: "localhost:9000", provider:testProvider)
+        eventServer = Tensorflow_EventListenerServer(address: "localhost:9000", provider: testEventListenerProvider)
+        workerServer = Tensorflow_Grpc_WorkerServiceServer(address: "localhost:9000", provider: testWorkerProvider)
+        
+        workerServer.start()
+        predictionServer.start()
+        eventServer.start()
+        
+        // TODO -
+        
+        ///  wire up the example grpc template
+        //  /swift-tensorflow/serving/tensorflow/core/example/example.proto
+        // anything that is a subclass of SwiftProtobuf.Message can be passed to servers
+        
+        
+        
+
+    }
 }
