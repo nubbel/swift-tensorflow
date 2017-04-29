@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var secureServer: Echo_EchoServer!
 
     var workerService: Tensorflow_Grpc_WorkerServiceService!
+    var inceptionService:Tensorflow_Serving_InceptionServiceService!
     
   func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -41,9 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func testTensorflow(){
         /* 
-         
-         
-         
+
          Requires Docker
          
          # pull and start the prebuilt container, forward port 9000
@@ -57,50 +56,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          */
         
         
-   
-        workerService = Tensorflow_Grpc_WorkerServiceService(address: "0.0.0.0:9000")
-        let request = Tensorflow_GetStatusRequest()
-        let status = try? workerService.getstatus(request) { (response, result) in
-            print(request)
-            print(result)
-            
+        var inceptionRequest = Tensorflow_Serving_InceptionRequest()
+        if let imagePath = Bundle.main.pathForImageResource("chicken.jpg"){
+            let url = URL.init(fileURLWithPath: imagePath)
+            if let data  = try? Data.init(contentsOf: url){
+                inceptionRequest.jpegEncoded = data
+            }
+        }else{
+            print("FAILED to load image!")
+            return;
         }
-        print("status:",status)
         
-        /*
-         
-         status: Optional(Tensorflow.Tensorflow_Grpc_WorkerServiceGetStatusCall)
-         Tensorflow.Tensorflow_GetStatusRequest:
-         
-         status 12: 
-         
+     
+        inceptionService =  Tensorflow_Serving_InceptionServiceService(address: "0.0.0.0:9000")
+       
+        let _ = try? inceptionService.classify(inceptionRequest, completion: { (response, result) in
 
-         
-         
-         
-        var predictionServer : Tensorflow_Serving_PredictionServiceServer!
-        var eventServer: Tensorflow_EventListenerServer!
-        var workerServer: Tensorflow_Grpc_WorkerServiceServer!
-        
-        let testProvider = TestPredictionProvider()
-        let testEventListenerProvider =  TestEventListenerProvider()
-        let testWorkerProvider = TestWorkerProvider()
-        predictionServer = Tensorflow_Serving_PredictionServiceServer(address: "localhost:9000", provider:testProvider)
-        eventServer = Tensorflow_EventListenerServer(address: "localhost:9000", provider: testEventListenerProvider)
-        workerServer = Tensorflow_Grpc_WorkerServiceServer(address: "localhost:9000", provider: testWorkerProvider)
-        
-        workerServer.start()
-        predictionServer.start()
-        eventServer.start()
-        
-        // TODO -
-        
-        ///  wire up the example grpc template
-        //  /swift-tensorflow/serving/tensorflow/core/example/example.proto
-        // anything that is a subclass of SwiftProtobuf.Message can be passed to servers
-        
-        */
-        
-
+           print(response?.scores)
+           print("🐣",response?.classes )
+        })
     }
+    
 }
+    
+    

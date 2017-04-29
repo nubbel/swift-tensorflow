@@ -286,6 +286,7 @@
 		8340D62A1EB54BD70046BAF4 /* inception_inference.proto in Resources */ = {isa = PBXBuildFile; fileRef = 8340D6261EB54BD70046BAF4 /* inception_inference.proto */; };
 		8340D62B1EB54BD70046BAF4 /* inception_tensorflow.serving.client.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340D6271EB54BD70046BAF4 /* inception_tensorflow.serving.client.pb.swift */; };
 		8340D62C1EB54BD70046BAF4 /* inception_tensorflow.serving.server.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8340D6281EB54BD70046BAF4 /* inception_tensorflow.serving.server.pb.swift */; };
+		8340D63C1EB54E8E0046BAF4 /* chicken.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8340D63B1EB54E8E0046BAF4 /* chicken.jpg */; };
 		D35C9FAC1D74B079000443CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35C9FAB1D74B079000443CD /* AppDelegate.swift */; };
 		D35C9FAE1D74B079000443CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAD1D74B079000443CD /* Assets.xcassets */; };
 		D35C9FB11D74B079000443CD /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D35C9FAF1D74B079000443CD /* MainMenu.xib */; };
@@ -689,6 +690,7 @@
 		8340D6261EB54BD70046BAF4 /* inception_inference.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inception_inference.proto; sourceTree = "<group>"; };
 		8340D6271EB54BD70046BAF4 /* inception_tensorflow.serving.client.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inception_tensorflow.serving.client.pb.swift; sourceTree = "<group>"; };
 		8340D6281EB54BD70046BAF4 /* inception_tensorflow.serving.server.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inception_tensorflow.serving.server.pb.swift; sourceTree = "<group>"; };
+		8340D63B1EB54E8E0046BAF4 /* chicken.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chicken.jpg; sourceTree = "<group>"; };
 		D35C9FA81D74B079000443CD /* Tensorflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D35C9FAB1D74B079000443CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D35C9FAD1D74B079000443CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2396,6 +2398,7 @@
 		D35C9FAA1D74B079000443CD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				8340D63B1EB54E8E0046BAF4 /* chicken.jpg */,
 				8340D6241EB54BD70046BAF4 /* inception */,
 				8340D4071EB4F7360046BAF4 /* tensorflow-grpc-java */,
 				E8D0D7441EB0F8F9009B2929 /* echo.proto */,
@@ -2764,6 +2767,7 @@
 				8340D3971EB1599B0046BAF4 /* allocation_description.proto in Resources */,
 				8340D3D51EB1599B0046BAF4 /* prediction_service.proto in Resources */,
 				8340D5D01EB54BA10046BAF4 /* graph_transfer_info.proto in Resources */,
+				8340D63C1EB54E8E0046BAF4 /* chicken.jpg in Resources */,
 				8340D5DC1EB54BA10046BAF4 /* tensor_description.proto in Resources */,
 				8340D5E41EB54BA10046BAF4 /* config.proto in Resources */,
 				8340D3C91EB1599B0046BAF4 /* api_objects.proto in Resources */,
