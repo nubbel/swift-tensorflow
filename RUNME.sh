@@ -148,8 +148,8 @@ echo   "4 - Ruby"
 echo   "5 - Node"
 echo   "6 - c#"
 echo   "7 - c++"
-echo   "8 - Java"
-echo   "9 - Go"
+echo   "8 - Java 🦑"
+echo   "9 - Go 🐎"
 
 printf  "\n\n"
 printf  "[1], 2, 3, 4, 5, 6, 7, 8, 9"
@@ -292,8 +292,8 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
    # Go
   if [ "$CONDITION" == "9" ] ; then
   #
-    echo "\n🐎  protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path " 
-    protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path
+    echo "\n🐎  protoc --go_out=. --plugin=$(which protoc-gen-go)  --go_out=plugins=grpc:.  --proto_path=serving $file_path "
+    protoc --go_out=. --plugin=$(which protoc-gen-go) --proto_path=serving $file_path
   fi
 
 done
