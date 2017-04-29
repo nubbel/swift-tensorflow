@@ -238,9 +238,10 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --ruby_out=. \
     --grpc_out=. \
+    $file_path
     #--doc_out=markdown,$html_output_file:"." \
     #--descriptor_set_out $output_file \
-    $file_path
+
   fi
 
   # Node
@@ -249,9 +250,10 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --js_out=. \
     --grpc_out=. \
+    $file_path
     #--doc_out=markdown,$html_output_file:"." \
     #--descriptor_set_out $output_file \
-    $file_path
+
   fi
 
   # C#
@@ -260,9 +262,10 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --csharp_out=. \
     --grpc_out=. \
+    $file_path
     #--doc_out=markdown,$html_output_file:"." \
     #--descriptor_set_out $output_file \
-    $file_path
+
   fi
 
   # C++
