@@ -9,6 +9,7 @@
 function gitCloneGrpcSwift { 
   printf "\033c"
   echo "🚀  Fetching github.com/grpc/grpc-swift.git"
+  rm -rf grpc-swift
   git clone https://github.com/grpc/grpc-swift.git
   cd grpc-swift
   make
@@ -29,8 +30,7 @@ function installProtocDoc {
   printf "\033c"
   echo "🚀  Installing protoc doc generation"
   brew update
-  brew install qt5 protobuf
-  brew link --force qt5
+  brew install  protobuf
   export PROTOBUF_PREFIX=$(brew --prefix protobuf)
   git clone https://github.com/estan/protoc-gen-doc.git
   cd protoc-gen-doc
@@ -189,20 +189,21 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --swiftgrpc_out=. \
     $file_path 
 
+#   \
     # output swift file
-    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift \ \n--proto_path=serving --swift_opt=Visibility=Public \ \n--swift_out=. \ \n $file_path \n \n" 
+    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift  --swift_opt=Visibility=Public  \ \n--proto_path=serving\ \n--swift_out=. \ \n $file_path \n \n" 
     protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift   \
-    --proto_path=serving \
     --swift_opt=Visibility=Public \
+    --proto_path=serving \
     --swift_out="." \
     $file_path 
 
     # output swift proto documentation
-    echo "\n📚 protoc  --proto_path=serving \ \n  --doc_out=markdown,$doc_output_file:. \ \n  $file_path  " 
-    protoc  \
-    --proto_path=serving \
-    --doc_out=markdown,$doc_output_file:"." \
-    $file_path 
+    #echo "\n📚 protoc  --proto_path=serving \ \n  --doc_out=markdown,$doc_output_file:. \ \n  $file_path  " 
+    #protoc  \
+    #--proto_path=serving \
+    #--doc_out=markdown,$doc_output_file:"." \
+    #$file_path 
     # \No such file or directory -  related to directory - https://github.com/estan/protoc-gen-doc/issues/267
   fi
 
@@ -300,10 +301,10 @@ done
 
 if [ "$CONDITION" == "1" ] ; then
   # move swift files to this directory
-  rm -rf Generated
-  mkdir Generated
-  mv tensorflow tensorflow_serving Generated
-  find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
+  rm -rf SwiftGenerated
+  mkdir SwiftGenerated
+  mv tensorflow tensorflow_serving SwiftGenerated
+  find . -maxdepth 1 -name "*.swift" -exec mv {} SwiftGenerated \;
 fi
 
 if [ "$CONDITION" == "7" ] ; then
