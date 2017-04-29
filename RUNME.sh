@@ -143,7 +143,7 @@ echo  "🚀 - Generate Tensorflow + Tensorflow Serving classes  \n\n"
 printf  "\n\n"
 echo  "1 - Swift 🚀"
 echo   "2 - ObjC"
-echo   "3 - Python"
+echo   "3 - Python 🐍"
 echo   "4 - Ruby"
 echo   "5 - Node"
 echo   "6 - c#"
@@ -222,13 +222,14 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
 
   # Python
   if [ "$CONDITION" == "3" ] ; then
+    printf "\033c"
+    echo "\n🐍  protoc   protoc --plugin=protoc-gen-grpc=$(which  grpc_python_plugin)--proto_path=serving --python_out=.    --grpc_out=.  $file_path"
     protoc --plugin=protoc-gen-grpc=$(which  grpc_python_plugin) \
     --proto_path=serving \
     --python_out=. \
     --grpc_out=. \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
     $file_path
+
   fi
 
   # Ruby
@@ -311,6 +312,14 @@ if [ "$CONDITION" == "7" ] ; then
 fi
 
 
+
+if [ "$CONDITION" == "3" ] ; then
+  # move swift files to this directory
+  rm -rf PythonGenerated
+  mkdir PythonGenerated
+  mv tensorflow tensorflow_serving PythonGenerated
+  echo "\n🐍 files can be found at PythonGenerated \n \n" 
+fi
 
 if [ "$CONDITION" == "9" ] ; then
   # move swift files to this directory
