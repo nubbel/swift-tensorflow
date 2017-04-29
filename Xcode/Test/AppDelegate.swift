@@ -33,6 +33,8 @@
 import Cocoa
 
 @NSApplicationMain
+
+
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   @IBOutlet weak var window: NSWindow!
@@ -41,6 +43,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var insecureServer: Echo_EchoServer!
   var secureServer: Echo_EchoServer!
 
+    var workerService: Tensorflow_Grpc_WorkerServiceService!
+    
   func applicationDidFinishLaunching(_ aNotification: Notification) {
 
     
@@ -62,23 +66,49 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                    provider:echoProvider)
     secureServer.start()
     
-    // testTensorflow()
+    testTensorflow()
   
   }
     
     func testTensorflow(){
-        /* python3
-         >>> import tensorflow as tf
-         >>> c = tf.constant("Hello, distributed TensorFlow!")
-         >>> server = tf.train.Server.create_local_server()
-         >>> sess = tf.Session(server.target)  # Create a session on the server.
-         >>> sess.run(c)
-         'Hello, distributed TensorFlow!'
+        /* 
+         
+         
+         
+         Requires Docker
+         
+         # pull and start the prebuilt container, forward port 9000
+         docker run -it -p 9000:9000 tgowda/inception_serving_tika
+         
+         # Inside the container, start tensorflow service
+         root@8311ea4e8074:/# /serving/server.sh
+
+         
+         
          */
         
         
-        // some questions - how to glue all this together??? 
+   
+        workerService = Tensorflow_Grpc_WorkerServiceService(address: "0.0.0.0:9000")
+        let request = Tensorflow_GetStatusRequest()
+        let status = try? workerService.getstatus(request) { (response, result) in
+            print(request)
+            print(result)
+            
+        }
+        print("status:",status)
         
+        /*
+         
+         status: Optional(Tensorflow.Tensorflow_Grpc_WorkerServiceGetStatusCall)
+         Tensorflow.Tensorflow_GetStatusRequest:
+         
+         status 12: 
+         
+
+         
+         
+         
         var predictionServer : Tensorflow_Serving_PredictionServiceServer!
         var eventServer: Tensorflow_EventListenerServer!
         var workerServer: Tensorflow_Grpc_WorkerServiceServer!
@@ -100,7 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //  /swift-tensorflow/serving/tensorflow/core/example/example.proto
         // anything that is a subclass of SwiftProtobuf.Message can be passed to servers
         
-        
+        */
         
 
     }
