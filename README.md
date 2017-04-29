@@ -7,6 +7,9 @@
 
 [RUNME.sh](RUNME.sh)  will  download latest tensorflow proto files / swift grpc and build protobuf files en masse. 
 
+Thanks to thammegowda
+https://github.com/thammegowda/tensorflow-grpc-java
+
 
 
 Requires Docker
