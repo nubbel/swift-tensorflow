@@ -24,12 +24,17 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
 
   public var allocatorName: String = String()
 
+  /// These are per-node allocator memory stats.
   public var totalBytes: Int64 = 0
 
   public var peakBytes: Int64 = 0
 
   /// The bytes that are not deallocated.
   public var liveBytes: Int64 = 0
+
+  /// These are snapshots of the overall allocator memory stats.
+  /// The number of live bytes currently allocated by the allocator.
+  public var allocatorBytesInUse: Int64 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -42,6 +47,7 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
       case 2: try decoder.decodeSingularInt64Field(value: &self.totalBytes)
       case 3: try decoder.decodeSingularInt64Field(value: &self.peakBytes)
       case 4: try decoder.decodeSingularInt64Field(value: &self.liveBytes)
+      case 5: try decoder.decodeSingularInt64Field(value: &self.allocatorBytesInUse)
       default: break
       }
     }
@@ -59,6 +65,9 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
     }
     if self.liveBytes != 0 {
       try visitor.visitSingularInt64Field(value: self.liveBytes, fieldNumber: 4)
+    }
+    if self.allocatorBytesInUse != 0 {
+      try visitor.visitSingularInt64Field(value: self.allocatorBytesInUse, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -387,6 +396,7 @@ extension Tensorflow_AllocatorMemoryUsed: SwiftProtobuf._MessageImplementationBa
     2: .standard(proto: "total_bytes"),
     3: .standard(proto: "peak_bytes"),
     4: .standard(proto: "live_bytes"),
+    5: .standard(proto: "allocator_bytes_in_use"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_AllocatorMemoryUsed) -> Bool {
@@ -394,6 +404,7 @@ extension Tensorflow_AllocatorMemoryUsed: SwiftProtobuf._MessageImplementationBa
     if self.totalBytes != other.totalBytes {return false}
     if self.peakBytes != other.peakBytes {return false}
     if self.liveBytes != other.liveBytes {return false}
+    if self.allocatorBytesInUse != other.allocatorBytesInUse {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

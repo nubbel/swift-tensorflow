@@ -189,6 +189,18 @@ public struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
     _storage._graphOptions = nil
   }
 
+  /// Field(s) used by TensorFlow Debugger (tfdbg).
+  public var debugOptions: Tensorflow_DebugOptions {
+    get {return _storage._debugOptions ?? Tensorflow_DebugOptions()}
+    set {_uniqueStorage()._debugOptions = newValue}
+  }
+  public var hasDebugOptions: Bool {
+    return _storage._debugOptions != nil
+  }
+  public mutating func clearDebugOptions() {
+    _storage._debugOptions = nil
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -202,6 +214,7 @@ public struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
         case 2: try decoder.decodeSingularMessageField(value: &_storage._graphDef)
         case 3: try decoder.decodeSingularBoolField(value: &_storage._hasControlFlow_p)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._graphOptions)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._debugOptions)
         default: break
         }
       }
@@ -221,6 +234,9 @@ public struct Tensorflow_RegisterGraphRequest: SwiftProtobuf.Message {
       }
       if let v = _storage._graphOptions {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      }
+      if let v = _storage._debugOptions {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -261,6 +277,10 @@ public struct Tensorflow_RegisterGraphResponse: SwiftProtobuf.Message {
 public struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".DeregisterGraphRequest"
 
+  /// The session_handle used when registering the graph. If session_handle is
+  /// empty, a single global namespace is used.
+  public var sessionHandle: String = String()
+
   /// REQUIRED: graph_handle must be returned by a RegisterGraph call
   /// to the same WorkerService.
   public var graphHandle: String = String()
@@ -273,6 +293,7 @@ public struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.graphHandle)
+      case 2: try decoder.decodeSingularStringField(value: &self.sessionHandle)
       default: break
       }
     }
@@ -281,6 +302,9 @@ public struct Tensorflow_DeregisterGraphRequest: SwiftProtobuf.Message {
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.graphHandle.isEmpty {
       try visitor.visitSingularStringField(value: self.graphHandle, fieldNumber: 1)
+    }
+    if !self.sessionHandle.isEmpty {
+      try visitor.visitSingularStringField(value: self.sessionHandle, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -390,6 +414,15 @@ public struct Tensorflow_ExecutorOpts: SwiftProtobuf.Message {
 public struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".RunGraphRequest"
 
+  /// session_handle is the the master-generated unique id for this session.
+  /// If session_handle is non-empty, it must be the same as used when
+  /// registering the graph. If it is empty, a single global namespace is used to
+  /// search for the graph_handle.
+  public var sessionHandle: String {
+    get {return _storage._sessionHandle}
+    set {_uniqueStorage()._sessionHandle = newValue}
+  }
+
   /// REQUIRED: graph_handle must be returned by a RegisterGraph call
   /// to the same WorkerService.
   public var graphHandle: String {
@@ -462,6 +495,7 @@ public struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
         case 5: try decoder.decodeSingularMessageField(value: &_storage._execOpts)
         case 6: try decoder.decodeSingularBoolField(value: &_storage._isPartial)
         case 7: try decoder.decodeSingularBoolField(value: &_storage._isLastPartialRun)
+        case 8: try decoder.decodeSingularStringField(value: &_storage._sessionHandle)
         default: break
         }
       }
@@ -490,6 +524,9 @@ public struct Tensorflow_RunGraphRequest: SwiftProtobuf.Message {
       }
       if _storage._isLastPartialRun != false {
         try visitor.visitSingularBoolField(value: _storage._isLastPartialRun, fieldNumber: 7)
+      }
+      if !_storage._sessionHandle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._sessionHandle, fieldNumber: 8)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1126,6 +1163,7 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
     2: .standard(proto: "graph_def"),
     3: .standard(proto: "has_control_flow"),
     4: .standard(proto: "graph_options"),
+    5: .standard(proto: "debug_options"),
   ]
 
   fileprivate class _StorageClass {
@@ -1133,6 +1171,7 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
     var _graphDef: Tensorflow_GraphDef? = nil
     var _hasControlFlow_p: Bool = false
     var _graphOptions: Tensorflow_GraphOptions? = nil
+    var _debugOptions: Tensorflow_DebugOptions? = nil
 
     init() {}
 
@@ -1141,6 +1180,7 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
       _graphDef = source._graphDef
       _hasControlFlow_p = source._hasControlFlow_p
       _graphOptions = source._graphOptions
+      _debugOptions = source._debugOptions
     }
   }
 
@@ -1158,6 +1198,7 @@ extension Tensorflow_RegisterGraphRequest: SwiftProtobuf._MessageImplementationB
         if _storage._graphDef != other_storage._graphDef {return false}
         if _storage._hasControlFlow_p != other_storage._hasControlFlow_p {return false}
         if _storage._graphOptions != other_storage._graphOptions {return false}
+        if _storage._debugOptions != other_storage._debugOptions {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -1181,10 +1222,12 @@ extension Tensorflow_RegisterGraphResponse: SwiftProtobuf._MessageImplementation
 
 extension Tensorflow_DeregisterGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    2: .standard(proto: "session_handle"),
     1: .standard(proto: "graph_handle"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_DeregisterGraphRequest) -> Bool {
+    if self.sessionHandle != other.sessionHandle {return false}
     if self.graphHandle != other.graphHandle {return false}
     if unknownFields != other.unknownFields {return false}
     return true
@@ -1237,6 +1280,7 @@ extension Tensorflow_ExecutorOpts: SwiftProtobuf._MessageImplementationBase, Swi
 
 extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    8: .standard(proto: "session_handle"),
     1: .standard(proto: "graph_handle"),
     2: .standard(proto: "step_id"),
     5: .standard(proto: "exec_opts"),
@@ -1247,6 +1291,7 @@ extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, 
   ]
 
   fileprivate class _StorageClass {
+    var _sessionHandle: String = String()
     var _graphHandle: String = String()
     var _stepId: Int64 = 0
     var _execOpts: Tensorflow_ExecutorOpts? = nil
@@ -1258,6 +1303,7 @@ extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, 
     init() {}
 
     init(copying source: _StorageClass) {
+      _sessionHandle = source._sessionHandle
       _graphHandle = source._graphHandle
       _stepId = source._stepId
       _execOpts = source._execOpts
@@ -1278,6 +1324,7 @@ extension Tensorflow_RunGraphRequest: SwiftProtobuf._MessageImplementationBase, 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_RunGraphRequest) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
+        if _storage._sessionHandle != other_storage._sessionHandle {return false}
         if _storage._graphHandle != other_storage._graphHandle {return false}
         if _storage._stepId != other_storage._stepId {return false}
         if _storage._execOpts != other_storage._execOpts {return false}

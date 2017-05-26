@@ -632,15 +632,16 @@ public struct Tensorflow_BoostedTrees_Trees_DecisionTreeMetadata: SwiftProtobuf.
   }
 }
 
-/// DecisionTreeEnsembleConfig describes an ensemble of decision trees.
-public struct Tensorflow_BoostedTrees_Trees_DecisionTreeEnsembleConfig: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".DecisionTreeEnsembleConfig"
+public struct Tensorflow_BoostedTrees_Trees_GrowingMetadata: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".GrowingMetadata"
 
-  public var trees: [Tensorflow_BoostedTrees_Trees_DecisionTreeConfig] = []
+  /// Number of trees that we have attempted to build. After pruning, these
+  /// trees might have been removed.
+  public var numTreesAttempted: Int64 = 0
 
-  public var treeWeights: [Float] = []
-
-  public var treeMetadata: [Tensorflow_BoostedTrees_Trees_DecisionTreeMetadata] = []
+  /// Number of layers that we have attempted to build. After pruning, these
+  /// layers might have been removed.
+  public var numLayersAttempted: Int64 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -649,26 +650,93 @@ public struct Tensorflow_BoostedTrees_Trees_DecisionTreeEnsembleConfig: SwiftPro
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.trees)
-      case 2: try decoder.decodeRepeatedFloatField(value: &self.treeWeights)
-      case 3: try decoder.decodeRepeatedMessageField(value: &self.treeMetadata)
+      case 1: try decoder.decodeSingularInt64Field(value: &self.numTreesAttempted)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.numLayersAttempted)
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.trees.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.trees, fieldNumber: 1)
+    if self.numTreesAttempted != 0 {
+      try visitor.visitSingularInt64Field(value: self.numTreesAttempted, fieldNumber: 1)
     }
-    if !self.treeWeights.isEmpty {
-      try visitor.visitPackedFloatField(value: self.treeWeights, fieldNumber: 2)
-    }
-    if !self.treeMetadata.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.treeMetadata, fieldNumber: 3)
+    if self.numLayersAttempted != 0 {
+      try visitor.visitSingularInt64Field(value: self.numLayersAttempted, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+}
+
+/// DecisionTreeEnsembleConfig describes an ensemble of decision trees.
+public struct Tensorflow_BoostedTrees_Trees_DecisionTreeEnsembleConfig: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DecisionTreeEnsembleConfig"
+
+  public var trees: [Tensorflow_BoostedTrees_Trees_DecisionTreeConfig] {
+    get {return _storage._trees}
+    set {_uniqueStorage()._trees = newValue}
+  }
+
+  public var treeWeights: [Float] {
+    get {return _storage._treeWeights}
+    set {_uniqueStorage()._treeWeights = newValue}
+  }
+
+  public var treeMetadata: [Tensorflow_BoostedTrees_Trees_DecisionTreeMetadata] {
+    get {return _storage._treeMetadata}
+    set {_uniqueStorage()._treeMetadata = newValue}
+  }
+
+  /// Metadata that is used during the training.
+  public var growingMetadata: Tensorflow_BoostedTrees_Trees_GrowingMetadata {
+    get {return _storage._growingMetadata ?? Tensorflow_BoostedTrees_Trees_GrowingMetadata()}
+    set {_uniqueStorage()._growingMetadata = newValue}
+  }
+  public var hasGrowingMetadata: Bool {
+    return _storage._growingMetadata != nil
+  }
+  public mutating func clearGrowingMetadata() {
+    _storage._growingMetadata = nil
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeRepeatedMessageField(value: &_storage._trees)
+        case 2: try decoder.decodeRepeatedFloatField(value: &_storage._treeWeights)
+        case 3: try decoder.decodeRepeatedMessageField(value: &_storage._treeMetadata)
+        case 4: try decoder.decodeSingularMessageField(value: &_storage._growingMetadata)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._trees.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._trees, fieldNumber: 1)
+      }
+      if !_storage._treeWeights.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._treeWeights, fieldNumber: 2)
+      }
+      if !_storage._treeMetadata.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._treeMetadata, fieldNumber: 3)
+      }
+      if let v = _storage._growingMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  fileprivate var _storage = _StorageClass()
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -1074,17 +1142,62 @@ extension Tensorflow_BoostedTrees_Trees_DecisionTreeMetadata: SwiftProtobuf._Mes
   }
 }
 
+extension Tensorflow_BoostedTrees_Trees_GrowingMetadata: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "num_trees_attempted"),
+    2: .standard(proto: "num_layers_attempted"),
+  ]
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Trees_GrowingMetadata) -> Bool {
+    if self.numTreesAttempted != other.numTreesAttempted {return false}
+    if self.numLayersAttempted != other.numLayersAttempted {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
 extension Tensorflow_BoostedTrees_Trees_DecisionTreeEnsembleConfig: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "trees"),
     2: .standard(proto: "tree_weights"),
     3: .standard(proto: "tree_metadata"),
+    4: .standard(proto: "growing_metadata"),
   ]
 
+  fileprivate class _StorageClass {
+    var _trees: [Tensorflow_BoostedTrees_Trees_DecisionTreeConfig] = []
+    var _treeWeights: [Float] = []
+    var _treeMetadata: [Tensorflow_BoostedTrees_Trees_DecisionTreeMetadata] = []
+    var _growingMetadata: Tensorflow_BoostedTrees_Trees_GrowingMetadata? = nil
+
+    init() {}
+
+    init(copying source: _StorageClass) {
+      _trees = source._trees
+      _treeWeights = source._treeWeights
+      _treeMetadata = source._treeMetadata
+      _growingMetadata = source._growingMetadata
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Trees_DecisionTreeEnsembleConfig) -> Bool {
-    if self.trees != other.trees {return false}
-    if self.treeWeights != other.treeWeights {return false}
-    if self.treeMetadata != other.treeMetadata {return false}
+    if _storage !== other._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
+        if _storage._trees != other_storage._trees {return false}
+        if _storage._treeWeights != other_storage._treeWeights {return false}
+        if _storage._treeMetadata != other_storage._treeMetadata {return false}
+        if _storage._growingMetadata != other_storage._growingMetadata {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if unknownFields != other.unknownFields {return false}
     return true
   }

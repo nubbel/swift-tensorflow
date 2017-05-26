@@ -84,7 +84,17 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
     self._minFloatOps = nil
   }
 
-  public var deviceRegexes: [String] = []
+  fileprivate var _minOccurrence: Int64? = nil
+  public var minOccurrence: Int64 {
+    get {return _minOccurrence ?? 0}
+    set {_minOccurrence = newValue}
+  }
+  public var hasMinOccurrence: Bool {
+    return self._minOccurrence != nil
+  }
+  public mutating func clearMinOccurrence() {
+    self._minOccurrence = nil
+  }
 
   fileprivate var _orderBy: String? = nil
   public var orderBy: String {
@@ -122,16 +132,16 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
 
   public var select: [String] = []
 
-  fileprivate var _viz: Bool? = nil
-  public var viz: Bool {
-    get {return _viz ?? false}
-    set {_viz = newValue}
+  fileprivate var _output: String? = nil
+  public var output: String {
+    get {return _output ?? String()}
+    set {_output = newValue}
   }
-  public var hasViz: Bool {
-    return self._viz != nil
+  public var hasOutput: Bool {
+    return self._output != nil
   }
-  public mutating func clearViz() {
-    self._viz = nil
+  public mutating func clearOutput() {
+    self._output = nil
   }
 
   fileprivate var _dumpToFile: String? = nil
@@ -158,7 +168,6 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
       case 3: try decoder.decodeSingularInt64Field(value: &self._minMicros)
       case 4: try decoder.decodeSingularInt64Field(value: &self._minParams)
       case 5: try decoder.decodeSingularInt64Field(value: &self._minFloatOps)
-      case 6: try decoder.decodeRepeatedStringField(value: &self.deviceRegexes)
       case 7: try decoder.decodeSingularStringField(value: &self._orderBy)
       case 8: try decoder.decodeRepeatedStringField(value: &self.accountTypeRegexes)
       case 9: try decoder.decodeRepeatedStringField(value: &self.startNameRegexes)
@@ -167,8 +176,9 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
       case 12: try decoder.decodeRepeatedStringField(value: &self.hideNameRegexes)
       case 13: try decoder.decodeSingularBoolField(value: &self._accountDisplayedOpOnly)
       case 14: try decoder.decodeRepeatedStringField(value: &self.select)
-      case 15: try decoder.decodeSingularBoolField(value: &self._viz)
+      case 15: try decoder.decodeSingularStringField(value: &self._output)
       case 16: try decoder.decodeSingularStringField(value: &self._dumpToFile)
+      case 17: try decoder.decodeSingularInt64Field(value: &self._minOccurrence)
       default: break
       }
     }
@@ -189,9 +199,6 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
     }
     if let v = self._minFloatOps {
       try visitor.visitSingularInt64Field(value: v, fieldNumber: 5)
-    }
-    if !self.deviceRegexes.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.deviceRegexes, fieldNumber: 6)
     }
     if let v = self._orderBy {
       try visitor.visitSingularStringField(value: v, fieldNumber: 7)
@@ -217,11 +224,14 @@ public struct Tensorflow_Tfprof_OptionsProto: SwiftProtobuf.Message {
     if !self.select.isEmpty {
       try visitor.visitRepeatedStringField(value: self.select, fieldNumber: 14)
     }
-    if let v = self._viz {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
+    if let v = self._output {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 15)
     }
     if let v = self._dumpToFile {
       try visitor.visitSingularStringField(value: v, fieldNumber: 16)
+    }
+    if let v = self._minOccurrence {
+      try visitor.visitSingularInt64Field(value: v, fieldNumber: 17)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -238,7 +248,7 @@ extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBa
     3: .standard(proto: "min_micros"),
     4: .standard(proto: "min_params"),
     5: .standard(proto: "min_float_ops"),
-    6: .standard(proto: "device_regexes"),
+    17: .standard(proto: "min_occurrence"),
     7: .standard(proto: "order_by"),
     8: .standard(proto: "account_type_regexes"),
     9: .standard(proto: "start_name_regexes"),
@@ -247,7 +257,7 @@ extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBa
     12: .standard(proto: "hide_name_regexes"),
     13: .standard(proto: "account_displayed_op_only"),
     14: .same(proto: "select"),
-    15: .same(proto: "viz"),
+    15: .same(proto: "output"),
     16: .standard(proto: "dump_to_file"),
   ]
 
@@ -257,7 +267,7 @@ extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBa
     if self._minMicros != other._minMicros {return false}
     if self._minParams != other._minParams {return false}
     if self._minFloatOps != other._minFloatOps {return false}
-    if self.deviceRegexes != other.deviceRegexes {return false}
+    if self._minOccurrence != other._minOccurrence {return false}
     if self._orderBy != other._orderBy {return false}
     if self.accountTypeRegexes != other.accountTypeRegexes {return false}
     if self.startNameRegexes != other.startNameRegexes {return false}
@@ -266,7 +276,7 @@ extension Tensorflow_Tfprof_OptionsProto: SwiftProtobuf._MessageImplementationBa
     if self.hideNameRegexes != other.hideNameRegexes {return false}
     if self._accountDisplayedOpOnly != other._accountDisplayedOpOnly {return false}
     if self.select != other.select {return false}
-    if self._viz != other._viz {return false}
+    if self._output != other._output {return false}
     if self._dumpToFile != other._dumpToFile {return false}
     if unknownFields != other.unknownFields {return false}
     return true

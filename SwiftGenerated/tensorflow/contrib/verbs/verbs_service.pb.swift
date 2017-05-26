@@ -43,6 +43,10 @@ public struct Tensorflow_Channel: SwiftProtobuf.Message {
 
   public var psn: Int32 = 0
 
+  public var snp: UInt64 = 0
+
+  public var iid: UInt64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -53,6 +57,8 @@ public struct Tensorflow_Channel: SwiftProtobuf.Message {
       case 1: try decoder.decodeSingularInt32Field(value: &self.lid)
       case 2: try decoder.decodeSingularInt32Field(value: &self.qpn)
       case 3: try decoder.decodeSingularInt32Field(value: &self.psn)
+      case 4: try decoder.decodeSingularUInt64Field(value: &self.snp)
+      case 5: try decoder.decodeSingularUInt64Field(value: &self.iid)
       default: break
       }
     }
@@ -67,6 +73,12 @@ public struct Tensorflow_Channel: SwiftProtobuf.Message {
     }
     if self.psn != 0 {
       try visitor.visitSingularInt32Field(value: self.psn, fieldNumber: 3)
+    }
+    if self.snp != 0 {
+      try visitor.visitSingularUInt64Field(value: self.snp, fieldNumber: 4)
+    }
+    if self.iid != 0 {
+      try visitor.visitSingularUInt64Field(value: self.iid, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -233,12 +245,16 @@ extension Tensorflow_Channel: SwiftProtobuf._MessageImplementationBase, SwiftPro
     1: .same(proto: "lid"),
     2: .same(proto: "qpn"),
     3: .same(proto: "psn"),
+    4: .same(proto: "snp"),
+    5: .same(proto: "iid"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_Channel) -> Bool {
     if self.lid != other.lid {return false}
     if self.qpn != other.qpn {return false}
     if self.psn != other.psn {return false}
+    if self.snp != other.snp {return false}
+    if self.iid != other.iid {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

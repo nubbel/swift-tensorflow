@@ -79,6 +79,46 @@ public struct Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf.Message {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
+  public enum NodeType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unused // = 0
+    case graphInput // = 1
+    case graphOutput // = 2
+    case fusedNode // = 3
+    case borderInput // = 4
+    case borderOutput // = 5
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unused
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unused
+      case 1: self = .graphInput
+      case 2: self = .graphOutput
+      case 3: self = .fusedNode
+      case 4: self = .borderInput
+      case 5: self = .borderOutput
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unused: return 0
+      case .graphInput: return 1
+      case .graphOutput: return 2
+      case .fusedNode: return 3
+      case .borderInput: return 4
+      case .borderOutput: return 5
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
+
   public struct TensorShapeTypeProto: SwiftProtobuf.Message {
     public static let protoMessageName: String = Tensorflow_RemoteFusedGraphExecuteInfo.protoMessageName + ".TensorShapeTypeProto"
 
@@ -241,6 +281,17 @@ extension Tensorflow_RemoteFusedGraphExecuteInfo: SwiftProtobuf._MessageImplemen
     if unknownFields != other.unknownFields {return false}
     return true
   }
+}
+
+extension Tensorflow_RemoteFusedGraphExecuteInfo.NodeType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNUSED"),
+    1: .same(proto: "GRAPH_INPUT"),
+    2: .same(proto: "GRAPH_OUTPUT"),
+    3: .same(proto: "FUSED_NODE"),
+    4: .same(proto: "BORDER_INPUT"),
+    5: .same(proto: "BORDER_OUTPUT"),
+  ]
 }
 
 extension Tensorflow_RemoteFusedGraphExecuteInfo.TensorShapeTypeProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

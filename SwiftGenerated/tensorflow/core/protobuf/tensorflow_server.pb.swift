@@ -34,76 +34,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _1
 }
 
-/// Defines a single job in a TensorFlow cluster.
-public struct Tensorflow_JobDef: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".JobDef"
-
-  /// The name of this job.
-  public var name: String = String()
-
-  /// Mapping from task ID to "hostname:port" string.
-  ///
-  /// If the `name` field contains "worker", and the `tasks` map contains a
-  /// mapping from 7 to "example.org:2222", then the device prefix
-  /// "/job:worker/task:7" will be assigned to "example.org:2222".
-  ///
-  /// NOTE(mrry): Currently, only a dense task ID space starting at 0 is
-  /// supported.
-  public var tasks: Dictionary<Int32,String> = [:]
-
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public init() {}
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.name)
-      case 2: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufInt32,SwiftProtobuf.ProtobufString>.self, value: &self.tasks)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.name.isEmpty {
-      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
-    }
-    if !self.tasks.isEmpty {
-      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufInt32,SwiftProtobuf.ProtobufString>.self, value: self.tasks, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
-/// Defines a TensorFlow cluster as a set of jobs.
-public struct Tensorflow_ClusterDef: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".ClusterDef"
-
-  /// The jobs that comprise the cluster.
-  public var job: [Tensorflow_JobDef] = []
-
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public init() {}
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedMessageField(value: &self.job)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.job.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.job, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
 /// Defines the configuration of a single TensorFlow server.
 public struct Tensorflow_ServerDef: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".ServerDef"
@@ -205,32 +135,6 @@ public struct Tensorflow_ServerDef: SwiftProtobuf.Message {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "tensorflow"
-
-extension Tensorflow_JobDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "tasks"),
-  ]
-
-  public func _protobuf_generated_isEqualTo(other: Tensorflow_JobDef) -> Bool {
-    if self.name != other.name {return false}
-    if self.tasks != other.tasks {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Tensorflow_ClusterDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "job"),
-  ]
-
-  public func _protobuf_generated_isEqualTo(other: Tensorflow_ClusterDef) -> Bool {
-    if self.job != other.job {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
 
 extension Tensorflow_ServerDef: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [

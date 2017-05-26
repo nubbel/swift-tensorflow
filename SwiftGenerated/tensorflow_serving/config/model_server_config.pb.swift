@@ -65,6 +65,10 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
   /// Base path to the model, excluding the version directory.
   /// E.g> for a model at /foo/bar/my_model/123, where 123 is the version, the
   /// base path is /foo/bar/my_model.
+  ///
+  /// (This can be changed once a model is in serving, *if* the underlying data
+  /// remains the same. Otherwise there are no guarantees about whether the old
+  /// or new data will be used for model versions currently loaded.)
   public var basePath: String {
     get {return _storage._basePath}
     set {_uniqueStorage()._basePath = newValue}
@@ -78,6 +82,8 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
   }
 
   /// Type of model (e.g. "tensorflow").
+  ///
+  /// (This cannot be changed once a model is in serving.)
   public var modelPlatform: String {
     get {return _storage._modelPlatform}
     set {_uniqueStorage()._modelPlatform = newValue}
@@ -86,12 +92,16 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
   /// Version policy for the model indicating how many versions of the model to
   /// be served at the same time.
   /// The default option is to serve only the latest version of the model.
+  ///
+  /// (This can be changed once a model is in serving.)
   public var versionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.VersionPolicy {
     get {return _storage._versionPolicy}
     set {_uniqueStorage()._versionPolicy = newValue}
   }
 
   /// Configures logging requests and responses, to the model.
+  ///
+  /// (This can be changed once a model is in serving.)
   public var loggingConfig: Tensorflow_Serving_LoggingConfig {
     get {return _storage._loggingConfig ?? Tensorflow_Serving_LoggingConfig()}
     set {_uniqueStorage()._loggingConfig = newValue}

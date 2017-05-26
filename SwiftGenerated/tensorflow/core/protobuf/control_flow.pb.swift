@@ -190,6 +190,12 @@ public struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
     set {_uniqueStorage()._loopExitNames = newValue}
   }
 
+  /// List of names for enter tensors.
+  public var loopEnterNames: [String] {
+    get {return _storage._loopEnterNames}
+    set {_uniqueStorage()._loopEnterNames = newValue}
+  }
+
   /// Values and external values in control flow context.
   public var valuesDef: Tensorflow_ValuesDef {
     get {return _storage._valuesDef ?? Tensorflow_ValuesDef()}
@@ -220,6 +226,7 @@ public struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
         case 7: try decoder.decodeSingularStringField(value: &_storage._pivotForBodyName)
         case 8: try decoder.decodeRepeatedStringField(value: &_storage._loopExitNames)
         case 9: try decoder.decodeSingularMessageField(value: &_storage._valuesDef)
+        case 10: try decoder.decodeRepeatedStringField(value: &_storage._loopEnterNames)
         default: break
         }
       }
@@ -254,6 +261,9 @@ public struct Tensorflow_WhileContextDef: SwiftProtobuf.Message {
       }
       if let v = _storage._valuesDef {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+      }
+      if !_storage._loopEnterNames.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._loopEnterNames, fieldNumber: 10)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -341,6 +351,7 @@ extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, 
     6: .standard(proto: "pivot_for_pred_name"),
     7: .standard(proto: "pivot_for_body_name"),
     8: .standard(proto: "loop_exit_names"),
+    10: .standard(proto: "loop_enter_names"),
     9: .standard(proto: "values_def"),
   ]
 
@@ -353,6 +364,7 @@ extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, 
     var _pivotForPredName: String = String()
     var _pivotForBodyName: String = String()
     var _loopExitNames: [String] = []
+    var _loopEnterNames: [String] = []
     var _valuesDef: Tensorflow_ValuesDef? = nil
 
     init() {}
@@ -366,6 +378,7 @@ extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, 
       _pivotForPredName = source._pivotForPredName
       _pivotForBodyName = source._pivotForBodyName
       _loopExitNames = source._loopExitNames
+      _loopEnterNames = source._loopEnterNames
       _valuesDef = source._valuesDef
     }
   }
@@ -388,6 +401,7 @@ extension Tensorflow_WhileContextDef: SwiftProtobuf._MessageImplementationBase, 
         if _storage._pivotForPredName != other_storage._pivotForPredName {return false}
         if _storage._pivotForBodyName != other_storage._pivotForBodyName {return false}
         if _storage._loopExitNames != other_storage._loopExitNames {return false}
+        if _storage._loopEnterNames != other_storage._loopEnterNames {return false}
         if _storage._valuesDef != other_storage._valuesDef {return false}
         return true
       }

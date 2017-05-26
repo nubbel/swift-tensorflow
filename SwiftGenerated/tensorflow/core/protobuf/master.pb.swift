@@ -61,6 +61,12 @@ public struct Tensorflow_CreateSessionRequest: SwiftProtobuf.Message {
     _storage._config = nil
   }
 
+  /// The target string used from the client's perspective.
+  public var target: String {
+    get {return _storage._target}
+    set {_uniqueStorage()._target = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +78,7 @@ public struct Tensorflow_CreateSessionRequest: SwiftProtobuf.Message {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._graphDef)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._config)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._target)
         default: break
         }
       }
@@ -85,6 +92,9 @@ public struct Tensorflow_CreateSessionRequest: SwiftProtobuf.Message {
       }
       if let v = _storage._config {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+      if !_storage._target.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._target, fieldNumber: 3)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -518,7 +528,7 @@ public struct Tensorflow_CloseSessionResponse: SwiftProtobuf.Message {
 /// Old sessions may continue to have side-effects on resources not in
 /// containers listed in "containers", and thus may affect future
 /// sessions' results in ways that are hard to predict.  Thus, if well-defined
-/// behaviour is desired, is it recommended that all containers be listed in
+/// behavior is desired, is it recommended that all containers be listed in
 /// "containers".  Similarly, if a device_filter is specified, results may be
 /// hard to predict.
 public struct Tensorflow_ResetRequest: SwiftProtobuf.Message {
@@ -637,17 +647,20 @@ extension Tensorflow_CreateSessionRequest: SwiftProtobuf._MessageImplementationB
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "graph_def"),
     2: .same(proto: "config"),
+    3: .same(proto: "target"),
   ]
 
   fileprivate class _StorageClass {
     var _graphDef: Tensorflow_GraphDef? = nil
     var _config: Tensorflow_ConfigProto? = nil
+    var _target: String = String()
 
     init() {}
 
     init(copying source: _StorageClass) {
       _graphDef = source._graphDef
       _config = source._config
+      _target = source._target
     }
   }
 
@@ -663,6 +676,7 @@ extension Tensorflow_CreateSessionRequest: SwiftProtobuf._MessageImplementationB
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._graphDef != other_storage._graphDef {return false}
         if _storage._config != other_storage._config {return false}
+        if _storage._target != other_storage._target {return false}
         return true
       }
       if !storagesAreEqual {return false}

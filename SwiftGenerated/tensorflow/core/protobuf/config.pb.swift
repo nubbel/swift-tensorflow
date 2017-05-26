@@ -609,6 +609,18 @@ public struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
     _storage._rpcOptions = nil
   }
 
+  /// Optional list of all workers to use in this session.
+  public var clusterDef: Tensorflow_ClusterDef {
+    get {return _storage._clusterDef ?? Tensorflow_ClusterDef()}
+    set {_uniqueStorage()._clusterDef = newValue}
+  }
+  public var hasClusterDef: Bool {
+    return _storage._clusterDef != nil
+  }
+  public mutating func clearClusterDef() {
+    _storage._clusterDef = nil
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -631,6 +643,7 @@ public struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
         case 11: try decoder.decodeSingularInt64Field(value: &_storage._operationTimeoutInMs)
         case 12: try decoder.decodeRepeatedMessageField(value: &_storage._sessionInterOpThreadPool)
         case 13: try decoder.decodeSingularMessageField(value: &_storage._rpcOptions)
+        case 14: try decoder.decodeSingularMessageField(value: &_storage._clusterDef)
         default: break
         }
       }
@@ -677,6 +690,9 @@ public struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
       }
       if let v = _storage._rpcOptions {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      }
+      if let v = _storage._clusterDef {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1049,6 +1065,7 @@ extension Tensorflow_ConfigProto: SwiftProtobuf._MessageImplementationBase, Swif
     10: .standard(proto: "graph_options"),
     11: .standard(proto: "operation_timeout_in_ms"),
     13: .standard(proto: "rpc_options"),
+    14: .standard(proto: "cluster_def"),
   ]
 
   fileprivate class _StorageClass {
@@ -1065,6 +1082,7 @@ extension Tensorflow_ConfigProto: SwiftProtobuf._MessageImplementationBase, Swif
     var _graphOptions: Tensorflow_GraphOptions? = nil
     var _operationTimeoutInMs: Int64 = 0
     var _rpcOptions: Tensorflow_RPCOptions? = nil
+    var _clusterDef: Tensorflow_ClusterDef? = nil
 
     init() {}
 
@@ -1082,6 +1100,7 @@ extension Tensorflow_ConfigProto: SwiftProtobuf._MessageImplementationBase, Swif
       _graphOptions = source._graphOptions
       _operationTimeoutInMs = source._operationTimeoutInMs
       _rpcOptions = source._rpcOptions
+      _clusterDef = source._clusterDef
     }
   }
 
@@ -1108,6 +1127,7 @@ extension Tensorflow_ConfigProto: SwiftProtobuf._MessageImplementationBase, Swif
         if _storage._graphOptions != other_storage._graphOptions {return false}
         if _storage._operationTimeoutInMs != other_storage._operationTimeoutInMs {return false}
         if _storage._rpcOptions != other_storage._rpcOptions {return false}
+        if _storage._clusterDef != other_storage._clusterDef {return false}
         return true
       }
       if !storagesAreEqual {return false}

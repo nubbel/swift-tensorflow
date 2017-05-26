@@ -1149,6 +1149,12 @@ public struct Xla_Literal: SwiftProtobuf.Message {
     set {_uniqueStorage()._tupleLiterals = newValue}
   }
 
+  /// Note: the F16s are encoded in little endian byte order
+  public var f16S: Data {
+    get {return _storage._f16S}
+    set {_uniqueStorage()._f16S = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1168,6 +1174,7 @@ public struct Xla_Literal: SwiftProtobuf.Message {
         case 8: try decoder.decodeRepeatedFloatField(value: &_storage._f32S)
         case 9: try decoder.decodeRepeatedDoubleField(value: &_storage._f64S)
         case 10: try decoder.decodeRepeatedMessageField(value: &_storage._tupleLiterals)
+        case 11: try decoder.decodeSingularBytesField(value: &_storage._f16S)
         default: break
         }
       }
@@ -1205,6 +1212,9 @@ public struct Xla_Literal: SwiftProtobuf.Message {
       }
       if !_storage._tupleLiterals.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._tupleLiterals, fieldNumber: 10)
+      }
+      if !_storage._f16S.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._f16S, fieldNumber: 11)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -4292,6 +4302,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
     8: .same(proto: "f32s"),
     9: .same(proto: "f64s"),
     10: .standard(proto: "tuple_literals"),
+    11: .same(proto: "f16s"),
   ]
 
   fileprivate class _StorageClass {
@@ -4305,6 +4316,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
     var _f32S: [Float] = []
     var _f64S: [Double] = []
     var _tupleLiterals: [Xla_Literal] = []
+    var _f16S: Data = SwiftProtobuf.Internal.emptyData
 
     init() {}
 
@@ -4319,6 +4331,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
       _f32S = source._f32S
       _f64S = source._f64S
       _tupleLiterals = source._tupleLiterals
+      _f16S = source._f16S
     }
   }
 
@@ -4342,6 +4355,7 @@ extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._
         if _storage._f32S != other_storage._f32S {return false}
         if _storage._f64S != other_storage._f64S {return false}
         if _storage._tupleLiterals != other_storage._tupleLiterals {return false}
+        if _storage._f16S != other_storage._f16S {return false}
         return true
       }
       if !storagesAreEqual {return false}

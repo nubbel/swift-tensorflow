@@ -56,8 +56,9 @@ public struct Tensorflow_OpInfo: SwiftProtobuf.Message {
     set {_uniqueStorage()._inputs = newValue}
   }
 
-  public var device: Tensorflow_OpInfo.DeviceProperties {
-    get {return _storage._device ?? Tensorflow_OpInfo.DeviceProperties()}
+  /// Device on which the operation is run.
+  public var device: Tensorflow_DeviceProperties {
+    get {return _storage._device ?? Tensorflow_DeviceProperties()}
     set {_uniqueStorage()._device = newValue}
   }
   public var hasDevice: Bool {
@@ -133,105 +134,6 @@ public struct Tensorflow_OpInfo: SwiftProtobuf.Message {
     }
 
     fileprivate var _storage = _StorageClass()
-  }
-
-  /// Input types, shapes and values if known.
-  public struct DeviceProperties: SwiftProtobuf.Message {
-    public static let protoMessageName: String = Tensorflow_OpInfo.protoMessageName + ".DeviceProperties"
-
-    public var type: String = String()
-
-    public var vendor: String = String()
-
-    public var model: String = String()
-
-    public var frequency: Int64 = 0
-
-    public var numCores: Int64 = 0
-
-    public var environment: Dictionary<String,String> = [:]
-
-    public var numRegisters: Int64 = 0
-
-    public var l1CacheSize: Int64 = 0
-
-    public var l2CacheSize: Int64 = 0
-
-    public var l3CacheSize: Int64 = 0
-
-    public var sharedMemorySizePerMultiprocessor: Int64 = 0
-
-    public var memorySize: Int64 = 0
-
-    public var bandwidth: Int64 = 0
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-
-    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &self.type)
-        case 2: try decoder.decodeSingularStringField(value: &self.vendor)
-        case 3: try decoder.decodeSingularStringField(value: &self.model)
-        case 4: try decoder.decodeSingularInt64Field(value: &self.frequency)
-        case 5: try decoder.decodeSingularInt64Field(value: &self.numCores)
-        case 6: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.environment)
-        case 7: try decoder.decodeSingularInt64Field(value: &self.numRegisters)
-        case 8: try decoder.decodeSingularInt64Field(value: &self.l1CacheSize)
-        case 9: try decoder.decodeSingularInt64Field(value: &self.l2CacheSize)
-        case 10: try decoder.decodeSingularInt64Field(value: &self.l3CacheSize)
-        case 11: try decoder.decodeSingularInt64Field(value: &self.sharedMemorySizePerMultiprocessor)
-        case 12: try decoder.decodeSingularInt64Field(value: &self.memorySize)
-        case 13: try decoder.decodeSingularInt64Field(value: &self.bandwidth)
-        default: break
-        }
-      }
-    }
-
-    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if !self.type.isEmpty {
-        try visitor.visitSingularStringField(value: self.type, fieldNumber: 1)
-      }
-      if !self.vendor.isEmpty {
-        try visitor.visitSingularStringField(value: self.vendor, fieldNumber: 2)
-      }
-      if !self.model.isEmpty {
-        try visitor.visitSingularStringField(value: self.model, fieldNumber: 3)
-      }
-      if self.frequency != 0 {
-        try visitor.visitSingularInt64Field(value: self.frequency, fieldNumber: 4)
-      }
-      if self.numCores != 0 {
-        try visitor.visitSingularInt64Field(value: self.numCores, fieldNumber: 5)
-      }
-      if !self.environment.isEmpty {
-        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.environment, fieldNumber: 6)
-      }
-      if self.numRegisters != 0 {
-        try visitor.visitSingularInt64Field(value: self.numRegisters, fieldNumber: 7)
-      }
-      if self.l1CacheSize != 0 {
-        try visitor.visitSingularInt64Field(value: self.l1CacheSize, fieldNumber: 8)
-      }
-      if self.l2CacheSize != 0 {
-        try visitor.visitSingularInt64Field(value: self.l2CacheSize, fieldNumber: 9)
-      }
-      if self.l3CacheSize != 0 {
-        try visitor.visitSingularInt64Field(value: self.l3CacheSize, fieldNumber: 10)
-      }
-      if self.sharedMemorySizePerMultiprocessor != 0 {
-        try visitor.visitSingularInt64Field(value: self.sharedMemorySizePerMultiprocessor, fieldNumber: 11)
-      }
-      if self.memorySize != 0 {
-        try visitor.visitSingularInt64Field(value: self.memorySize, fieldNumber: 12)
-      }
-      if self.bandwidth != 0 {
-        try visitor.visitSingularInt64Field(value: self.bandwidth, fieldNumber: 13)
-      }
-      try unknownFields.traverse(visitor: &visitor)
-    }
   }
 
   public init() {}
@@ -499,7 +401,7 @@ extension Tensorflow_OpInfo: SwiftProtobuf._MessageImplementationBase, SwiftProt
     var _op: String = String()
     var _attr: Dictionary<String,Tensorflow_AttrValue> = [:]
     var _inputs: [Tensorflow_OpInfo.TensorProperties] = []
-    var _device: Tensorflow_OpInfo.DeviceProperties? = nil
+    var _device: Tensorflow_DeviceProperties? = nil
 
     init() {}
 
@@ -572,42 +474,6 @@ extension Tensorflow_OpInfo.TensorProperties: SwiftProtobuf._MessageImplementati
       }
       if !storagesAreEqual {return false}
     }
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
-extension Tensorflow_OpInfo.DeviceProperties: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "vendor"),
-    3: .same(proto: "model"),
-    4: .same(proto: "frequency"),
-    5: .standard(proto: "num_cores"),
-    6: .same(proto: "environment"),
-    7: .standard(proto: "num_registers"),
-    8: .standard(proto: "l1_cache_size"),
-    9: .standard(proto: "l2_cache_size"),
-    10: .standard(proto: "l3_cache_size"),
-    11: .standard(proto: "shared_memory_size_per_multiprocessor"),
-    12: .standard(proto: "memory_size"),
-    13: .same(proto: "bandwidth"),
-  ]
-
-  public func _protobuf_generated_isEqualTo(other: Tensorflow_OpInfo.DeviceProperties) -> Bool {
-    if self.type != other.type {return false}
-    if self.vendor != other.vendor {return false}
-    if self.model != other.model {return false}
-    if self.frequency != other.frequency {return false}
-    if self.numCores != other.numCores {return false}
-    if self.environment != other.environment {return false}
-    if self.numRegisters != other.numRegisters {return false}
-    if self.l1CacheSize != other.l1CacheSize {return false}
-    if self.l2CacheSize != other.l2CacheSize {return false}
-    if self.l3CacheSize != other.l3CacheSize {return false}
-    if self.sharedMemorySizePerMultiprocessor != other.sharedMemorySizePerMultiprocessor {return false}
-    if self.memorySize != other.memorySize {return false}
-    if self.bandwidth != other.bandwidth {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

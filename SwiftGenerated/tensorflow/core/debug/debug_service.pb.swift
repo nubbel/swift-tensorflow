@@ -35,7 +35,7 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 }
 
 /// Reply message from EventListener to the client, i.e., to the source of the
-/// Event protocal buffers, e.g., debug ops inserted by a debugged runtime to a
+/// Event protocol buffers, e.g., debug ops inserted by a debugged runtime to a
 /// TensorFlow graph being executed.
 public struct Tensorflow_EventReply: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".EventReply"
