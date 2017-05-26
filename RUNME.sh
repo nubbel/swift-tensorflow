@@ -144,11 +144,11 @@ printf  "\n\n"
 echo  "1 - Swift 🚀"
 echo   "2 - ObjC"
 echo   "3 - Python"
-echo   "4 - Ruby"
+echo   "4 - Ruby 💎"
 echo   "5 - Node"
 echo   "6 - c#"
 echo   "7 - c++"
-echo   "8 - Java"
+echo   "8 - Java 🦑"
 echo   "9 - Go"
 
 printf  "\n\n"
@@ -171,6 +171,12 @@ if [ "$CONDITION" == "8" ] ; then
   mkdir JavaGenerated
 fi
 
+
+if [ "$CONDITION" == "4" ] ; then
+  # move java files to this directory
+  rm -rf RubyGenerated
+  mkdir RubyGenerated
+fi
 
 for file_path in $(find ./serving -type f -name "*.proto" ); do
   DIR=$(dirname $file_path)
@@ -215,8 +221,6 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --grpc_out=. \
     -I . \
     -I $DIR \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
     $file_path
   fi
 
@@ -226,19 +230,16 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --python_out=. \
     --grpc_out=. \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
     $file_path
   fi
 
   # Ruby
   if [ "$CONDITION" == "4" ] ; then
+   echo "\n💎  protoc --plugin=protoc-gen-grpc=/usr/local/bin/grpc_ruby_plugin   --proto_path=serving  --ruby_out=./RubyGenerated/    --grpc_out=./RubyGenerated/  $file_path" 
     protoc --plugin=protoc-gen-grpc=$(which grpc_ruby_plugin) \
     --proto_path=serving \
-    --ruby_out=. \
-    --grpc_out=. \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
+    --ruby_out=./RubyGenerated/ \
+    --grpc_out=./RubyGenerated/ \
     $file_path
   fi
 
@@ -248,8 +249,6 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --js_out=. \
     --grpc_out=. \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
     $file_path
   fi
 
@@ -259,8 +258,6 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --proto_path=serving \
     --csharp_out=. \
     --grpc_out=. \
-    #--doc_out=markdown,$html_output_file:"." \
-    #--descriptor_set_out $output_file \
     $file_path
   fi
 
@@ -300,6 +297,15 @@ if [ "$CONDITION" == "1" ] ; then
   mkdir Generated
   mv tensorflow tensorflow_serving Generated
   find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
+fi
+
+
+if [ "$CONDITION" == "4" ] ; then
+  # move swift files to this directory
+  rm -rf RubyGenerated
+  mkdir RubyGenerated
+  mv tensorflow tensorflow_serving RubyGenerated
+  find . -maxdepth 1 -name "*.rb" -exec mv {} RubyGenerated \;
 fi
 
 if [ "$CONDITION" == "7" ] ; then
