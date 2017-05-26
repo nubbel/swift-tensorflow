@@ -145,7 +145,7 @@ echo  "1 - Swift 🚀"
 echo   "2 - ObjC"
 echo   "3 - Python 🐍"
 echo   "4 - Ruby 💎"
-echo   "5 - Node"
+echo   "5 - Node 🎱"
 echo   "6 - c#"
 echo   "7 - c++"
 echo   "8 - Java 🦑"
@@ -164,6 +164,9 @@ if [ "$CONDITION" == "9" ] ; then
   go get github.com/golang/protobuf/protoc-gen-go
   go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 fi
+
+
+
 
 if [ "$CONDITION" == "8" ] ; then
   # move java files to this directory
@@ -323,6 +326,12 @@ if [ "$CONDITION" == "7" ] ; then
 fi
 
 
+if [ "$CONDITION" == "5" ] ; then
+  # move java files to this directory
+  rm -rf NodeGenerated
+  mkdir NodeGenerated
+  mv tensorflow tensorflow_serving NodeGenerated
+fi
 
 if [ "$CONDITION" == "3" ] ; then
   # move swift files to this directory
