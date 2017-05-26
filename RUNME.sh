@@ -167,6 +167,11 @@ fi
 
 
 
+if [ "$CONDITION" == "5" ] ; then
+  # move java files to this directory
+  rm -rf NodeGenerated
+  mkdir NodeGenerated
+fi
 
 if [ "$CONDITION" == "8" ] ; then
   # move java files to this directory
@@ -250,8 +255,8 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
   if [ "$CONDITION" == "5" ] ; then
     protoc --plugin=protoc-gen-grpc=$(which grpc_node_plugin) \
     --proto_path=serving \
-    --js_out=. \
-    --grpc_out=. \
+    --js_out=./NodeGenerated/ \
+    --grpc_out=./NodeGenerated/ \
     $file_path
     #--doc_out=markdown,$html_output_file:"." \
     #--descriptor_set_out $output_file \
@@ -326,12 +331,7 @@ if [ "$CONDITION" == "7" ] ; then
 fi
 
 
-if [ "$CONDITION" == "5" ] ; then
-  # move java files to this directory
-  rm -rf NodeGenerated
-  mkdir NodeGenerated
-  mv tensorflow tensorflow_serving NodeGenerated
-fi
+
 
 if [ "$CONDITION" == "3" ] ; then
   # move swift files to this directory
