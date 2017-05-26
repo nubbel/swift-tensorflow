@@ -9,6 +9,7 @@
 function gitCloneGrpcSwift { 
   printf "\033c"
   echo "🚀  Fetching github.com/grpc/grpc-swift.git"
+  rm -rf grpc-swift
   git clone https://github.com/grpc/grpc-swift.git
   cd grpc-swift
   make
@@ -29,8 +30,7 @@ function installProtocDoc {
   printf "\033c"
   echo "🚀  Installing protoc doc generation"
   brew update
-  brew install qt5 protobuf
-  brew link --force qt5
+  brew install  protobuf
   export PROTOBUF_PREFIX=$(brew --prefix protobuf)
   git clone https://github.com/estan/protoc-gen-doc.git
   cd protoc-gen-doc
@@ -143,13 +143,13 @@ echo  "🚀 - Generate Tensorflow + Tensorflow Serving classes  \n\n"
 printf  "\n\n"
 echo  "1 - Swift 🚀"
 echo   "2 - ObjC"
-echo   "3 - Python"
+echo   "3 - Python 🐍"
 echo   "4 - Ruby 💎"
 echo   "5 - Node"
 echo   "6 - c#"
 echo   "7 - c++"
 echo   "8 - Java 🦑"
-echo   "9 - Go"
+echo   "9 - Go 🐎"
 
 printf  "\n\n"
 printf  "[1], 2, 3, 4, 5, 6, 7, 8, 9"
@@ -172,12 +172,6 @@ if [ "$CONDITION" == "8" ] ; then
 fi
 
 
-if [ "$CONDITION" == "4" ] ; then
-  # move java files to this directory
-  rm -rf RubyGenerated
-  mkdir RubyGenerated
-fi
-
 for file_path in $(find ./serving -type f -name "*.proto" ); do
   DIR=$(dirname $file_path)
   file=$(basename $file_path)
@@ -195,20 +189,21 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --swiftgrpc_out=. \
     $file_path 
 
+#   \
     # output swift file
-    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift \ \n--proto_path=serving --swift_opt=Visibility=Public \ \n--swift_out=. \ \n $file_path \n \n" 
+    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift  --swift_opt=Visibility=Public  \ \n--proto_path=serving\ \n--swift_out=. \ \n $file_path \n \n" 
     protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift   \
-    --proto_path=serving \
     --swift_opt=Visibility=Public \
+    --proto_path=serving \
     --swift_out="." \
     $file_path 
 
     # output swift proto documentation
-    echo "\n📚 protoc  --proto_path=serving \ \n  --doc_out=markdown,$doc_output_file:. \ \n  $file_path  " 
-    protoc  \
-    --proto_path=serving \
-    --doc_out=markdown,$doc_output_file:"." \
-    $file_path 
+    #echo "\n📚 protoc  --proto_path=serving \ \n  --doc_out=markdown,$doc_output_file:. \ \n  $file_path  " 
+    #protoc  \
+    #--proto_path=serving \
+    #--doc_out=markdown,$doc_output_file:"." \
+    #$file_path 
     # \No such file or directory -  related to directory - https://github.com/estan/protoc-gen-doc/issues/267
   fi
 
@@ -221,16 +216,21 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --grpc_out=. \
     -I . \
     -I $DIR \
+    #--doc_out=markdown,$html_output_file:"." \
+    #--descriptor_set_out $output_file \
     $file_path
   fi
 
   # Python
   if [ "$CONDITION" == "3" ] ; then
+    printf "\033c"
+    echo "\n🐍  protoc   protoc --plugin=protoc-gen-grpc=$(which  grpc_python_plugin)--proto_path=serving --python_out=.    --grpc_out=.  $file_path"
     protoc --plugin=protoc-gen-grpc=$(which  grpc_python_plugin) \
     --proto_path=serving \
     --python_out=. \
     --grpc_out=. \
     $file_path
+
   fi
 
   # Ruby
@@ -250,6 +250,9 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --js_out=. \
     --grpc_out=. \
     $file_path
+    #--doc_out=markdown,$html_output_file:"." \
+    #--descriptor_set_out $output_file \
+
   fi
 
   # C#
@@ -259,6 +262,9 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
     --csharp_out=. \
     --grpc_out=. \
     $file_path
+    #--doc_out=markdown,$html_output_file:"." \
+    #--descriptor_set_out $output_file \
+
   fi
 
   # C++
@@ -285,20 +291,19 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
    # Go
   if [ "$CONDITION" == "9" ] ; then
   #
-    echo "\n🐎  protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path " 
-    protoc --go_out=. --go_out=plugins=grpc:.  --proto_path=serving $file_path
+    echo "\n🐎  protoc --go_out=. --plugin=$(which protoc-gen-go)  --go_out=plugins=grpc:.  --proto_path=serving $file_path "
+    protoc --go_out=. --plugin=$(which protoc-gen-go) --proto_path=serving $file_path
   fi
 
 done
 
 if [ "$CONDITION" == "1" ] ; then
   # move swift files to this directory
-  rm -rf Generated
-  mkdir Generated
-  mv tensorflow tensorflow_serving Generated
-  find . -maxdepth 1 -name "*.swift" -exec mv {} Generated \;
+  rm -rf SwiftGenerated
+  mkdir SwiftGenerated
+  mv tensorflow tensorflow_serving SwiftGenerated
+  find . -maxdepth 1 -name "*.swift" -exec mv {} SwiftGenerated \;
 fi
-
 
 if [ "$CONDITION" == "4" ] ; then
   # move swift files to this directory
@@ -306,6 +311,7 @@ if [ "$CONDITION" == "4" ] ; then
   mkdir RubyGenerated
   mv tensorflow tensorflow_serving RubyGenerated
   find . -maxdepth 1 -name "*.rb" -exec mv {} RubyGenerated \;
+   echo "\n⛳️ files can be found at RubyGenerated \n \n" 
 fi
 
 if [ "$CONDITION" == "7" ] ; then
@@ -317,6 +323,14 @@ if [ "$CONDITION" == "7" ] ; then
 fi
 
 
+
+if [ "$CONDITION" == "3" ] ; then
+  # move swift files to this directory
+  rm -rf PythonGenerated
+  mkdir PythonGenerated
+  mv tensorflow tensorflow_serving PythonGenerated
+  echo "\n🐍 files can be found at PythonGenerated \n \n" 
+fi
 
 if [ "$CONDITION" == "9" ] ; then
   # move swift files to this directory

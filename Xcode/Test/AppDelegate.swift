@@ -1,38 +1,9 @@
-/*
- *
- * Copyright 2016, Google Inc.
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
- *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- */
+
 import Cocoa
 
 @NSApplicationMain
+
+
 class AppDelegate: NSObject, NSApplicationDelegate {
 
   @IBOutlet weak var window: NSWindow!
@@ -41,6 +12,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   var insecureServer: Echo_EchoServer!
   var secureServer: Echo_EchoServer!
 
+    var workerService: Tensorflow_Grpc_WorkerServiceService!
+    var inceptionService:Tensorflow_Serving_InceptionServiceService!
+    
   func applicationDidFinishLaunching(_ aNotification: Notification) {
 
     
@@ -62,46 +36,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                    provider:echoProvider)
     secureServer.start()
     
-    // testTensorflow()
+    testTensorflow()
   
   }
     
     func testTensorflow(){
-        /* python3
-         >>> import tensorflow as tf
-         >>> c = tf.constant("Hello, distributed TensorFlow!")
-         >>> server = tf.train.Server.create_local_server()
-         >>> sess = tf.Session(server.target)  # Create a session on the server.
-         >>> sess.run(c)
-         'Hello, distributed TensorFlow!'
+        /* 
+
+         Requires Docker
+         
+         # pull and start the prebuilt container, forward port 9000
+         docker run -it -p 9000:9000 tgowda/inception_serving_tika
+         
+         # Inside the container, start tensorflow service
+         root@8311ea4e8074:/# /serving/server.sh
+
+         
+         
          */
         
         
-        // some questions - how to glue all this together??? 
+        var inceptionRequest = Tensorflow_Serving_InceptionRequest()
+        if let imagePath = Bundle.main.pathForImageResource("chicken.jpg"){
+            let url = URL.init(fileURLWithPath: imagePath)
+            if let data  = try? Data.init(contentsOf: url){
+                inceptionRequest.jpegEncoded = data
+            }
+        }else{
+            print("FAILED to load image!")
+            return;
+        }
         
-        var predictionServer : Tensorflow_Serving_PredictionServiceServer!
-        var eventServer: Tensorflow_EventListenerServer!
-        var workerServer: Tensorflow_Grpc_WorkerServiceServer!
-        
-        let testProvider = TestPredictionProvider()
-        let testEventListenerProvider =  TestEventListenerProvider()
-        let testWorkerProvider = TestWorkerProvider()
-        predictionServer = Tensorflow_Serving_PredictionServiceServer(address: "localhost:9000", provider:testProvider)
-        eventServer = Tensorflow_EventListenerServer(address: "localhost:9000", provider: testEventListenerProvider)
-        workerServer = Tensorflow_Grpc_WorkerServiceServer(address: "localhost:9000", provider: testWorkerProvider)
-        
-        workerServer.start()
-        predictionServer.start()
-        eventServer.start()
-        
-        // TODO -
-        
-        ///  wire up the example grpc template
-        //  /swift-tensorflow/serving/tensorflow/core/example/example.proto
-        // anything that is a subclass of SwiftProtobuf.Message can be passed to servers
-        
-        
-        
+     
+        inceptionService =  Tensorflow_Serving_InceptionServiceService(address: "0.0.0.0:9000")
+       
+        let _ = try? inceptionService.classify(inceptionRequest, completion: { (response, result) in
 
+           print(response?.scores)
+           print("🐣",response?.classes )
+        })
     }
+    
 }
+    
+    

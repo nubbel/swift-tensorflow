@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :total_bytes, :int64, 2
     optional :peak_bytes, :int64, 3
     optional :live_bytes, :int64, 4
+    optional :allocator_bytes_in_use, :int64, 5
   end
   add_message "tensorflow.NodeOutput" do
     optional :slot, :int32, 1

@@ -8,6 +8,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :lid, :int32, 1
     optional :qpn, :int32, 2
     optional :psn, :int32, 3
+    optional :snp, :uint64, 4
+    optional :iid, :uint64, 5
   end
   add_message "tensorflow.MemoryRegion" do
     optional :remote_addr, :uint64, 1

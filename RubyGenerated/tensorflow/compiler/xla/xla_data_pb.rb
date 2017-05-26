@@ -74,6 +74,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     repeated :f32s, :float, 8
     repeated :f64s, :double, 9
     repeated :tuple_literals, :message, 10, "xla.Literal"
+    optional :f16s, :bytes, 11
   end
   add_message "xla.WindowDimension" do
     optional :size, :int64, 1

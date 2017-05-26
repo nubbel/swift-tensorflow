@@ -11,6 +11,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "tensorflow.CreateSessionRequest" do
     optional :graph_def, :message, 1, "tensorflow.GraphDef"
     optional :config, :message, 2, "tensorflow.ConfigProto"
+    optional :target, :string, 3
   end
   add_message "tensorflow.CreateSessionResponse" do
     optional :session_handle, :string, 1

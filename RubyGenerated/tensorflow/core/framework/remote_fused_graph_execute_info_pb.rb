@@ -20,9 +20,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :dtype, :enum, 1, "tensorflow.DataType"
     optional :shape, :message, 2, "tensorflow.TensorShapeProto"
   end
+  add_enum "tensorflow.RemoteFusedGraphExecuteInfo.NodeType" do
+    value :UNUSED, 0
+    value :GRAPH_INPUT, 1
+    value :GRAPH_OUTPUT, 2
+    value :FUSED_NODE, 3
+    value :BORDER_INPUT, 4
+    value :BORDER_OUTPUT, 5
+  end
 end
 
 module Tensorflow
   RemoteFusedGraphExecuteInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.RemoteFusedGraphExecuteInfo").msgclass
   RemoteFusedGraphExecuteInfo::TensorShapeTypeProto = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.RemoteFusedGraphExecuteInfo.TensorShapeTypeProto").msgclass
+  RemoteFusedGraphExecuteInfo::NodeType = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.RemoteFusedGraphExecuteInfo.NodeType").enummodule
 end

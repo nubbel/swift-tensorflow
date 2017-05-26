@@ -10,6 +10,7 @@ require 'tensorflow/core/framework/device_attributes_pb'
 require 'tensorflow/core/framework/graph_pb'
 require 'tensorflow/core/framework/tensor_pb'
 require 'tensorflow/core/protobuf/config_pb'
+require 'tensorflow/core/protobuf/debug_pb'
 require 'tensorflow/core/protobuf/named_tensor_pb'
 require 'tensorflow/core/protobuf/tensorflow_server_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
@@ -29,11 +30,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :graph_def, :message, 2, "tensorflow.GraphDef"
     optional :has_control_flow, :bool, 3
     optional :graph_options, :message, 4, "tensorflow.GraphOptions"
+    optional :debug_options, :message, 5, "tensorflow.DebugOptions"
   end
   add_message "tensorflow.RegisterGraphResponse" do
     optional :graph_handle, :string, 1
   end
   add_message "tensorflow.DeregisterGraphRequest" do
+    optional :session_handle, :string, 2
     optional :graph_handle, :string, 1
   end
   add_message "tensorflow.DeregisterGraphResponse" do
@@ -48,6 +51,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :record_timeline, :bool, 3
   end
   add_message "tensorflow.RunGraphRequest" do
+    optional :session_handle, :string, 8
     optional :graph_handle, :string, 1
     optional :step_id, :int64, 2
     optional :exec_opts, :message, 5, "tensorflow.ExecutorOpts"

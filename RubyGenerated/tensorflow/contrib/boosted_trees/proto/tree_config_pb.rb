@@ -64,10 +64,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :num_layers_grown, :int32, 2
     optional :is_finalized, :bool, 3
   end
+  add_message "tensorflow.boosted_trees.trees.GrowingMetadata" do
+    optional :num_trees_attempted, :int64, 1
+    optional :num_layers_attempted, :int64, 2
+  end
   add_message "tensorflow.boosted_trees.trees.DecisionTreeEnsembleConfig" do
     repeated :trees, :message, 1, "tensorflow.boosted_trees.trees.DecisionTreeConfig"
     repeated :tree_weights, :float, 2
     repeated :tree_metadata, :message, 3, "tensorflow.boosted_trees.trees.DecisionTreeMetadata"
+    optional :growing_metadata, :message, 4, "tensorflow.boosted_trees.trees.GrowingMetadata"
   end
 end
 
@@ -86,6 +91,7 @@ module Tensorflow
       CategoricalIdSetMembershipBinarySplit = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.boosted_trees.trees.CategoricalIdSetMembershipBinarySplit").msgclass
       DecisionTreeConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.boosted_trees.trees.DecisionTreeConfig").msgclass
       DecisionTreeMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.boosted_trees.trees.DecisionTreeMetadata").msgclass
+      GrowingMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.boosted_trees.trees.GrowingMetadata").msgclass
       DecisionTreeEnsembleConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.boosted_trees.trees.DecisionTreeEnsembleConfig").msgclass
     end
   end

@@ -43,19 +43,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "xla.TransferToServerResponse" do
     optional :data, :message, 1, "xla.GlobalDataHandle"
   end
-  add_message "xla.TransferToServerInProcessRequest" do
-    optional :buffer, :uint64, 1
-    optional :shape, :message, 2, "xla.Shape"
-  end
-  add_message "xla.TransferToServerInProcessResponse" do
-    optional :data, :message, 1, "xla.GlobalDataHandle"
-  end
-  add_message "xla.TransferToClientInProcessRequest" do
-    optional :data, :message, 1, "xla.GlobalDataHandle"
-    optional :buffer, :uint64, 2
-  end
-  add_message "xla.TransferToClientInProcessResponse" do
-  end
   add_message "xla.TransferToInfeedRequest" do
     optional :literal, :message, 1, "xla.Literal"
     optional :replica_id, :int64, 2
@@ -209,10 +196,6 @@ module Xla
   TransferToClientResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToClientResponse").msgclass
   TransferToServerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToServerRequest").msgclass
   TransferToServerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToServerResponse").msgclass
-  TransferToServerInProcessRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToServerInProcessRequest").msgclass
-  TransferToServerInProcessResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToServerInProcessResponse").msgclass
-  TransferToClientInProcessRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToClientInProcessRequest").msgclass
-  TransferToClientInProcessResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToClientInProcessResponse").msgclass
   TransferToInfeedRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToInfeedRequest").msgclass
   TransferToInfeedResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferToInfeedResponse").msgclass
   TransferFromOutfeedRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("xla.TransferFromOutfeedRequest").msgclass

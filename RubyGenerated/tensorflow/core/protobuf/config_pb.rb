@@ -7,6 +7,7 @@ require 'tensorflow/core/framework/cost_graph_pb'
 require 'tensorflow/core/framework/graph_pb'
 require 'tensorflow/core/framework/step_stats_pb'
 require 'tensorflow/core/protobuf/debug_pb'
+require 'tensorflow/core/protobuf/cluster_pb'
 require 'tensorflow/core/protobuf/rewriter_config_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "tensorflow.GPUOptions" do
@@ -67,6 +68,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :graph_options, :message, 10, "tensorflow.GraphOptions"
     optional :operation_timeout_in_ms, :int64, 11
     optional :rpc_options, :message, 13, "tensorflow.RPCOptions"
+    optional :cluster_def, :message, 14, "tensorflow.ClusterDef"
   end
   add_message "tensorflow.RunOptions" do
     optional :trace_level, :enum, 1, "tensorflow.RunOptions.TraceLevel"

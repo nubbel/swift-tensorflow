@@ -24,6 +24,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :pivot_for_pred_name, :string, 6
     optional :pivot_for_body_name, :string, 7
     repeated :loop_exit_names, :string, 8
+    repeated :loop_enter_names, :string, 10
     optional :values_def, :message, 9, "tensorflow.ValuesDef"
   end
 end

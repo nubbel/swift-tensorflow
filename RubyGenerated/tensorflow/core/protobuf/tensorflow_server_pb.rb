@@ -4,14 +4,8 @@
 require 'google/protobuf'
 
 require 'tensorflow/core/protobuf/config_pb'
+require 'tensorflow/core/protobuf/cluster_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "tensorflow.JobDef" do
-    optional :name, :string, 1
-    map :tasks, :int32, :string, 2
-  end
-  add_message "tensorflow.ClusterDef" do
-    repeated :job, :message, 1, "tensorflow.JobDef"
-  end
   add_message "tensorflow.ServerDef" do
     optional :cluster, :message, 1, "tensorflow.ClusterDef"
     optional :job_name, :string, 2
@@ -22,7 +16,5 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Tensorflow
-  JobDef = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.JobDef").msgclass
-  ClusterDef = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.ClusterDef").msgclass
   ServerDef = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.ServerDef").msgclass
 end

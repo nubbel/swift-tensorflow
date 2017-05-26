@@ -7,32 +7,18 @@ require 'tensorflow/core/framework/tensor_pb'
 require 'tensorflow/core/framework/tensor_shape_pb'
 require 'tensorflow/core/framework/types_pb'
 require 'tensorflow/core/framework/attr_value_pb'
+require 'tensorflow/core/protobuf/device_properties_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "tensorflow.OpInfo" do
     optional :op, :string, 1
     map :attr, :string, :message, 2, "tensorflow.AttrValue"
     repeated :inputs, :message, 3, "tensorflow.OpInfo.TensorProperties"
-    optional :device, :message, 4, "tensorflow.OpInfo.DeviceProperties"
+    optional :device, :message, 4, "tensorflow.DeviceProperties"
   end
   add_message "tensorflow.OpInfo.TensorProperties" do
     optional :dtype, :enum, 1, "tensorflow.DataType"
     optional :shape, :message, 2, "tensorflow.TensorShapeProto"
     optional :value, :message, 3, "tensorflow.TensorProto"
-  end
-  add_message "tensorflow.OpInfo.DeviceProperties" do
-    optional :type, :string, 1
-    optional :vendor, :string, 2
-    optional :model, :string, 3
-    optional :frequency, :int64, 4
-    optional :num_cores, :int64, 5
-    map :environment, :string, :string, 6
-    optional :num_registers, :int64, 7
-    optional :l1_cache_size, :int64, 8
-    optional :l2_cache_size, :int64, 9
-    optional :l3_cache_size, :int64, 10
-    optional :shared_memory_size_per_multiprocessor, :int64, 11
-    optional :memory_size, :int64, 12
-    optional :bandwidth, :int64, 13
   end
   add_message "tensorflow.OpPerformance" do
     optional :op, :message, 1, "tensorflow.OpInfo"
@@ -60,7 +46,6 @@ end
 module Tensorflow
   OpInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpInfo").msgclass
   OpInfo::TensorProperties = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpInfo.TensorProperties").msgclass
-  OpInfo::DeviceProperties = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpInfo.DeviceProperties").msgclass
   OpPerformance = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpPerformance").msgclass
   OpPerformance::OpMemory = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpPerformance.OpMemory").msgclass
   OpPerformanceList = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.OpPerformanceList").msgclass

@@ -8,8 +8,15 @@ require 'tensorflow/core/framework/tensor_shape_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "tensorflow.CppShapeInferenceResult" do
     optional :shape, :message, 1, "tensorflow.TensorShapeProto"
-    optional :handle_shape, :message, 2, "tensorflow.TensorShapeProto"
-    optional :handle_dtype, :enum, 3, "tensorflow.DataType"
+    optional :handle_data, :message, 4, "tensorflow.CppShapeInferenceResult.HandleData"
+  end
+  add_message "tensorflow.CppShapeInferenceResult.HandleShapeAndType" do
+    optional :shape, :message, 1, "tensorflow.TensorShapeProto"
+    optional :dtype, :enum, 2, "tensorflow.DataType"
+  end
+  add_message "tensorflow.CppShapeInferenceResult.HandleData" do
+    optional :is_set, :bool, 1
+    repeated :shape_and_type, :message, 2, "tensorflow.CppShapeInferenceResult.HandleShapeAndType"
   end
   add_message "tensorflow.CppShapeInferenceInputsNeeded" do
     repeated :input_tensors_needed, :int32, 1
@@ -19,5 +26,7 @@ end
 
 module Tensorflow
   CppShapeInferenceResult = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.CppShapeInferenceResult").msgclass
+  CppShapeInferenceResult::HandleShapeAndType = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.CppShapeInferenceResult.HandleShapeAndType").msgclass
+  CppShapeInferenceResult::HandleData = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.CppShapeInferenceResult.HandleData").msgclass
   CppShapeInferenceInputsNeeded = Google::Protobuf::DescriptorPool.generated_pool.lookup("tensorflow.CppShapeInferenceInputsNeeded").msgclass
 end
