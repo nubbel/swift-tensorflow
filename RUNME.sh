@@ -93,19 +93,6 @@ if which protoc ==/dev/null; then
  exit
 fi
 
-# clear screen
-printf "\033c"
-  
-# GOOGLE GRPC SWIFT
-if [ -d "grpc-swift" ] ; then
- read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
-  if [ "$CONDITION" == "y" ] ; then
-      rm -rf grpc-swift
-      gitCloneGrpcSwift
-  fi
-else
-  gitCloneGrpcSwift
-fi
 
 
 
@@ -158,11 +145,34 @@ printf  "\n\n"
 read -p "" CONDITION;
 
 
+# clear screen
+printf "\033c"
+  
+# Swift
+if [ "$CONDITION" == "1" ] ; then
+  # GOOGLE GRPC SWIFT
+  if [ -d "grpc-swift" ] ; then
+  read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+    if [ "$CONDITION" == "y" ] ; then
+        rm -rf grpc-swift
+        gitCloneGrpcSwift
+    fi
+  else
+    gitCloneGrpcSwift
+  fi
+fi
+
+
+
 # Go
 if [ "$CONDITION" == "9" ] ; then
   go get google.golang.org/grpc
   go get github.com/golang/protobuf/protoc-gen-go
   go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+
+   # move golang files to this directory
+  rm -rf GoGenerated
+  mkdir GoGenerated
 fi
 
 
@@ -300,7 +310,11 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
   if [ "$CONDITION" == "9" ] ; then
   #
     echo "\n🐎  protoc --go_out=. --plugin=$(which protoc-gen-go)  --go_out=plugins=grpc:.  --proto_path=serving $file_path "
-    protoc --go_out=. --plugin=$(which protoc-gen-go) --proto_path=serving $file_path
+        protoc --plugin=protoc-gen-grpc-java=$(which protoc-gen-go)  \
+    --proto_path=serving \
+    --go_out=./GoGenerated/ \
+    --grpc-go_out=./GoGenerated/ \
+    $file_path
   fi
 
 done
@@ -311,6 +325,14 @@ if [ "$CONDITION" == "1" ] ; then
   mkdir SwiftGenerated
   mv tensorflow tensorflow_serving SwiftGenerated
   find . -maxdepth 1 -name "*.swift" -exec mv {} SwiftGenerated \;
+fi
+
+if [ "$CONDITION" == "3" ] ; then
+  # move swift files to this directory
+  rm -rf PythonGenerated
+  mkdir PythonGenerated
+  mv tensorflow tensorflow_serving PythonGenerated
+  echo "\n🐍 files can be found at PythonGenerated \n \n" 
 fi
 
 if [ "$CONDITION" == "4" ] ; then
@@ -330,16 +352,6 @@ if [ "$CONDITION" == "7" ] ; then
   echo "\n⛳️ files can be found at CPPGenerated \n \n" 
 fi
 
-
-
-
-if [ "$CONDITION" == "3" ] ; then
-  # move swift files to this directory
-  rm -rf PythonGenerated
-  mkdir PythonGenerated
-  mv tensorflow tensorflow_serving PythonGenerated
-  echo "\n🐍 files can be found at PythonGenerated \n \n" 
-fi
 
 if [ "$CONDITION" == "9" ] ; then
   # move swift files to this directory
