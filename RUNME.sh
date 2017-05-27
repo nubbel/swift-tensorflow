@@ -100,7 +100,7 @@ fi
 
 # TENSORFLOW
 if [ -d "tensorflow" ] ; then
-  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away 🔫 & fetch latest code ?   [y/N]" CONDITION;
   if [ "$CONDITION" == "y" ]; then
       rm -rf tensorflow 
       cloneTensorFlowRemoveAllFilesExceptProto 
@@ -111,7 +111,7 @@ fi
 
 # TENSORFLOW SERVING
 if [ -d "serving" ] ; then
-  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away  🔫 & fetch latest code ? [y/N]" CONDITION;
   if [ "$CONDITION" == "y" ]; then
       rm -rf serving 
       cloneTensorFlowServingRemoveAllFilesExceptProto 
@@ -152,7 +152,7 @@ printf "\033c"
 if [ "$CONDITION" == "1" ] ; then
   # GOOGLE GRPC SWIFT
   if [ -d "grpc-swift" ] ; then
-  read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
+    read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
     if [ "$CONDITION" == "y" ] ; then
         rm -rf grpc-swift
         gitCloneGrpcSwift
@@ -308,12 +308,10 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
 
    # Go
   if [ "$CONDITION" == "9" ] ; then
-  #
-    echo "\n🐎  protoc --go_out=. --plugin=$(which protoc-gen-go)  --go_out=plugins=grpc:.  --proto_path=serving $file_path "
-        protoc --plugin=protoc-gen-grpc-java=$(which protoc-gen-go)  \
+  echo "\n🐎  -I=. --plugin=$(which protoc-gen-go)  --proto_path=serving   --go_out=./GoGenerated/ $file_path "
+    protoc -I=. --plugin=$(which protoc-gen-go)  \
     --proto_path=serving \
-    --go_out=./GoGenerated/ \
-    --grpc-go_out=./GoGenerated/ \
+    --go_out=plugins=grpc:. \
     $file_path
   fi
 
