@@ -52,7 +52,7 @@ function cloneTensorFlowRemoveAllFilesExceptProto {
   #
   git clone https://github.com/tensorflow/tensorflow.git
   cd tensorflow
-  find . -type f ! -name '*.proto' -delete #remove any file not proto
+  find . -type f ! \( -name "*.proto" -o -name "*.pbtxt" \)  -delete #remove any file not proto /pbtxt
   find . -type d -empty -delete #remove empty directories
   cd ..
 }
@@ -65,7 +65,7 @@ function cloneTensorFlowServingRemoveAllFilesExceptProto {
   #
   git clone https://github.com/tensorflow/serving.git
   cd serving
-  find . -type f ! -name '*.proto' -delete #remove any file not proto
+  find . -type f ! \( -name "*.proto" -o -name "*.pbtxt" \)  -delete #remove any file not proto  pbtxt
   find . -type d -empty -delete #remove empty directories
   cd ..
 }
@@ -100,7 +100,7 @@ fi
 
 # TENSORFLOW
 if [ -d "tensorflow" ] ; then
-  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away 🔫 & fetch latest code ?   [y/N]" CONDITION;
+  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away 🔫  & fetch latest code ?   [y/N]" CONDITION;
   if [ "$CONDITION" == "y" ]; then
       rm -rf tensorflow 
       cloneTensorFlowRemoveAllFilesExceptProto 
@@ -111,7 +111,7 @@ fi
 
 # TENSORFLOW SERVING
 if [ -d "serving" ] ; then
-  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away  🔫 & fetch latest code ? [y/N]" CONDITION;
+  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away  🔫  & fetch latest code ? [y/N]" CONDITION;
   if [ "$CONDITION" == "y" ]; then
       rm -rf serving 
       cloneTensorFlowServingRemoveAllFilesExceptProto 
@@ -148,6 +148,20 @@ read -p "" CONDITION;
 # clear screen
 printf "\033c"
   
+
+# create updated ops.pb file for all file generations.
+for opdef_file_path in $(find ./serving -type f -name "op_def.proto" ); do
+#https://github.com/LaurentMazare/tensorflow-ocaml/blob/master/src/gen_ops/how_to_update.txt
+    protoc \
+      --proto_path=serving \
+      --encode=tensorflow.OpList \
+      --proto_path serving $opdef_file_path \
+      < ./tensorflow/tensorflow/core/ops/ops.pbtxt > ops.pb
+  done
+
+exit
+
+
 # Swift
 if [ "$CONDITION" == "1" ] ; then
   # GOOGLE GRPC SWIFT
@@ -188,6 +202,9 @@ if [ "$CONDITION" == "8" ] ; then
   rm -rf JavaGenerated
   mkdir JavaGenerated
 fi
+
+
+
 
 
 for file_path in $(find ./serving -type f -name "*.proto" ); do
@@ -358,3 +375,5 @@ if [ "$CONDITION" == "9" ] ; then
   mv tensorflow tensorflow_serving GoGenerated
   echo "\n⛳️ files can be found at GoGenerated \n \n" 
 fi
+
+
