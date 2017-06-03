@@ -12,6 +12,7 @@ https://github.com/thammegowda/tensorflow-grpc-java
 
 
 
+
 Requires Docker
 
 
@@ -60,6 +61,8 @@ May modify the `/serving/server.sh`, which has
 ```
 
 
+**Native C - API Swift bindings / (work in progress)**
+https://github.com/johndpope/tensorflow/tree/master/tensorflow/swift
 
 
 
