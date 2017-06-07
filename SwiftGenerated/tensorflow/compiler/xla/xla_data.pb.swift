@@ -1198,8 +1198,8 @@ public struct Xla_ChannelHandle: SwiftProtobuf.Message {
 ///
 /// Transfers to/from the client are encoded in literal form, and the structure
 /// of the repeated fields is implied by the shape.
-public struct Xla_LiteralProto: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".LiteralProto"
+public struct Xla_Literal: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".Literal"
 
   public var shape: Xla_Shape {
     get {return _storage._shape ?? Xla_Shape()}
@@ -1250,7 +1250,7 @@ public struct Xla_LiteralProto: SwiftProtobuf.Message {
     set {_uniqueStorage()._f64S = newValue}
   }
 
-  public var tupleLiterals: [Xla_LiteralProto] {
+  public var tupleLiterals: [Xla_Literal] {
     get {return _storage._tupleLiterals}
     set {_uniqueStorage()._tupleLiterals = newValue}
   }
@@ -1464,8 +1464,8 @@ public struct Xla_Window: SwiftProtobuf.Message {
 public struct Xla_ConstantRequest: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".ConstantRequest"
 
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -4914,7 +4914,7 @@ extension Xla_ChannelHandle: SwiftProtobuf._MessageImplementationBase, SwiftProt
   }
 }
 
-extension Xla_LiteralProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension Xla_Literal: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "shape"),
     2: .same(proto: "preds"),
@@ -4939,7 +4939,7 @@ extension Xla_LiteralProto: SwiftProtobuf._MessageImplementationBase, SwiftProto
     var _u64S: [UInt64] = []
     var _f32S: [Float] = []
     var _f64S: [Double] = []
-    var _tupleLiterals: [Xla_LiteralProto] = []
+    var _tupleLiterals: [Xla_Literal] = []
     var _f16S: Data = SwiftProtobuf.Internal.emptyData
 
     static let defaultInstance = _StorageClass()
@@ -4968,7 +4968,7 @@ extension Xla_LiteralProto: SwiftProtobuf._MessageImplementationBase, SwiftProto
     return _storage
   }
 
-  public func _protobuf_generated_isEqualTo(other: Xla_LiteralProto) -> Bool {
+  public func _protobuf_generated_isEqualTo(other: Xla_Literal) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._shape != other_storage._shape {return false}
@@ -5031,7 +5031,7 @@ extension Xla_ConstantRequest: SwiftProtobuf._MessageImplementationBase, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
 
     static let defaultInstance = _StorageClass()
 

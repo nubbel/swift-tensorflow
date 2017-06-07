@@ -34,45 +34,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// Debugging options for XLA. These options may change at any time - there are
-/// no guarantees about backward or forward compatibility for these fields.
-public struct Xla_DebugOptions: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".DebugOptions"
-
-  /// HLO modules matching this regex will be dumped to a .dot file throughout
-  /// various stages in compilation (file names are LOG(INFO)'d). Set to ".*" to
-  /// dump *all* HLO modules.
-  public var xlaGenerateHloGraph: String = String()
-
-  public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public init() {}
-
-  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
-  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
-  /// initializers are defined in the SwiftProtobuf library. See the Message and
-  /// Message+*Additions` files.
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.xlaGenerateHloGraph)
-      default: break
-      }
-    }
-  }
-
-  /// Used by the encoding methods of the SwiftProtobuf library, not generally
-  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
-  /// other serializer methods are defined in the SwiftProtobuf library. See the
-  /// `Message` and `Message+*Additions` files.
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.xlaGenerateHloGraph.isEmpty {
-      try visitor.visitSingularStringField(value: self.xlaGenerateHloGraph, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-}
-
 /// These settings control how XLA compiles and/or runs code.  Not all settings
 /// will have an effect on every platform.
 ///
@@ -115,15 +76,6 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
     set {_uniqueStorage()._seed = newValue}
   }
 
-  public var debugOptions: Xla_DebugOptions {
-    get {return _storage._debugOptions ?? Xla_DebugOptions()}
-    set {_uniqueStorage()._debugOptions = newValue}
-  }
-  /// Returns true if `debugOptions` has been explicitly set.
-  public var hasDebugOptions: Bool {return _storage._debugOptions != nil}
-  /// Clears the value of `debugOptions`. Subsequent reads from it will return its default value.
-  public mutating func clearDebugOptions() {_storage._debugOptions = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -140,7 +92,6 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
         case 1: try decoder.decodeSingularBoolField(value: &_storage._disableFastMath)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._shapeWithOutputLayout)
         case 3: try decoder.decodeSingularUInt64Field(value: &_storage._seed)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._debugOptions)
         default: break
         }
       }
@@ -161,9 +112,6 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
       }
       if _storage._seed != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._seed, fieldNumber: 3)
-      }
-      if let v = _storage._debugOptions {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -498,8 +446,8 @@ public struct Xla_TransferToClientRequest: SwiftProtobuf.Message {
 public struct Xla_TransferToClientResponse: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".TransferToClientResponse"
 
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -546,8 +494,8 @@ public struct Xla_TransferToClientResponse: SwiftProtobuf.Message {
 public struct Xla_TransferToServerRequest: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".TransferToServerRequest"
 
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -655,8 +603,8 @@ public struct Xla_TransferToServerResponse: SwiftProtobuf.Message {
 public struct Xla_TransferToInfeedRequest: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".TransferToInfeedRequest"
 
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -822,8 +770,8 @@ public struct Xla_TransferFromOutfeedRequest: SwiftProtobuf.Message {
 public struct Xla_TransferFromOutfeedResponse: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".TransferFromOutfeedResponse"
 
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -2642,31 +2590,17 @@ public struct Xla_UnpackResponse: SwiftProtobuf.Message {
 
 fileprivate let _protobuf_package = "xla"
 
-extension Xla_DebugOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "xla_generate_hlo_graph"),
-  ]
-
-  public func _protobuf_generated_isEqualTo(other: Xla_DebugOptions) -> Bool {
-    if self.xlaGenerateHloGraph != other.xlaGenerateHloGraph {return false}
-    if unknownFields != other.unknownFields {return false}
-    return true
-  }
-}
-
 extension Xla_ExecutionOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "disable_fast_math"),
     2: .standard(proto: "shape_with_output_layout"),
     3: .same(proto: "seed"),
-    4: .standard(proto: "debug_options"),
   ]
 
   fileprivate class _StorageClass {
     var _disableFastMath: Bool = false
     var _shapeWithOutputLayout: Xla_Shape? = nil
     var _seed: UInt64 = 0
-    var _debugOptions: Xla_DebugOptions? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -2676,7 +2610,6 @@ extension Xla_ExecutionOptions: SwiftProtobuf._MessageImplementationBase, SwiftP
       _disableFastMath = source._disableFastMath
       _shapeWithOutputLayout = source._shapeWithOutputLayout
       _seed = source._seed
-      _debugOptions = source._debugOptions
     }
   }
 
@@ -2693,7 +2626,6 @@ extension Xla_ExecutionOptions: SwiftProtobuf._MessageImplementationBase, SwiftP
         if _storage._disableFastMath != other_storage._disableFastMath {return false}
         if _storage._shapeWithOutputLayout != other_storage._shapeWithOutputLayout {return false}
         if _storage._seed != other_storage._seed {return false}
-        if _storage._debugOptions != other_storage._debugOptions {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -2922,7 +2854,7 @@ extension Xla_TransferToClientResponse: SwiftProtobuf._MessageImplementationBase
   ]
 
   fileprivate class _StorageClass {
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -2960,7 +2892,7 @@ extension Xla_TransferToServerRequest: SwiftProtobuf._MessageImplementationBase,
   ]
 
   fileprivate class _StorageClass {
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
     var _deviceHandle: Xla_DeviceHandle? = nil
 
     static let defaultInstance = _StorageClass()
@@ -3039,7 +2971,7 @@ extension Xla_TransferToInfeedRequest: SwiftProtobuf._MessageImplementationBase,
   ]
 
   fileprivate class _StorageClass {
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
     var _replicaID: Int64 = 0
     var _deviceHandle: Xla_DeviceHandle? = nil
 
@@ -3136,7 +3068,7 @@ extension Xla_TransferFromOutfeedResponse: SwiftProtobuf._MessageImplementationB
   ]
 
   fileprivate class _StorageClass {
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
 
     static let defaultInstance = _StorageClass()
 

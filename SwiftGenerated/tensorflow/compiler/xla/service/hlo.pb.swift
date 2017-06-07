@@ -96,8 +96,8 @@ public struct Xla_HloInstructionProto: SwiftProtobuf.Message {
   public mutating func clearMetadata() {_storage._metadata = nil}
 
   /// Literal, only present for kConstant.
-  public var literal: Xla_LiteralProto {
-    get {return _storage._literal ?? Xla_LiteralProto()}
+  public var literal: Xla_Literal {
+    get {return _storage._literal ?? Xla_Literal()}
     set {_uniqueStorage()._literal = newValue}
   }
   /// Returns true if `literal` has been explicitly set.
@@ -996,7 +996,7 @@ extension Xla_HloInstructionProto: SwiftProtobuf._MessageImplementationBase, Swi
     var _controlPredecessorNames: [String] = []
     var _calledComputationNames: [String] = []
     var _metadata: Xla_OpMetadata? = nil
-    var _literal: Xla_LiteralProto? = nil
+    var _literal: Xla_Literal? = nil
     var _parameterNumber: Int64 = 0
     var _parameterName: String = String()
     var _fusionKind: String = String()
