@@ -7,49 +7,31 @@
  */
 
 /*
+ * Copyright 2017, gRPC Authors All rights reserved.
  *
- * Copyright 2017, Google Inc.
- * All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 import Foundation
 import Dispatch
 import gRPC
 
 /// Type for errors thrown from generated server code.
-public enum Tensorflow_Serving_PredictionServiceServerError : Error {
+internal enum Tensorflow_Serving_PredictionServiceServerError : Error {
   case endOfStream
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-public protocol Tensorflow_Serving_PredictionServiceProvider {
+internal protocol Tensorflow_Serving_PredictionServiceProvider {
   func classify(request : Tensorflow_Serving_ClassificationRequest, session : Tensorflow_Serving_PredictionServiceClassifySession) throws -> Tensorflow_Serving_ClassificationResponse
   func regress(request : Tensorflow_Serving_RegressionRequest, session : Tensorflow_Serving_PredictionServiceRegressSession) throws -> Tensorflow_Serving_RegressionResponse
   func predict(request : Tensorflow_Serving_PredictRequest, session : Tensorflow_Serving_PredictionServicePredictSession) throws -> Tensorflow_Serving_PredictResponse
@@ -58,14 +40,14 @@ public protocol Tensorflow_Serving_PredictionServiceProvider {
 }
 
 /// Common properties available in each service session.
-public class Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServiceSession {
   fileprivate var handler : gRPC.Handler
-  public var requestMetadata : Metadata { return handler.requestMetadata }
+  internal var requestMetadata : Metadata { return handler.requestMetadata }
 
-  public var statusCode : Int = 0
-  public var statusMessage : String = "OK"
-  public var initialMetadata : Metadata = Metadata()
-  public var trailingMetadata : Metadata = Metadata()
+  internal var statusCode : Int = 0
+  internal var statusMessage : String = "OK"
+  internal var initialMetadata : Metadata = Metadata()
+  internal var trailingMetadata : Metadata = Metadata()
 
   fileprivate init(handler:gRPC.Handler) {
     self.handler = handler
@@ -73,7 +55,7 @@ public class Tensorflow_Serving_PredictionServiceSession {
 }
 
 // Classify (Unary)
-public class Tensorflow_Serving_PredictionServiceClassifySession : Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServiceClassifySession : Tensorflow_Serving_PredictionServiceSession {
   private var provider : Tensorflow_Serving_PredictionServiceProvider
 
   /// Create a session.
@@ -98,7 +80,7 @@ public class Tensorflow_Serving_PredictionServiceClassifySession : Tensorflow_Se
 }
 
 // Regress (Unary)
-public class Tensorflow_Serving_PredictionServiceRegressSession : Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServiceRegressSession : Tensorflow_Serving_PredictionServiceSession {
   private var provider : Tensorflow_Serving_PredictionServiceProvider
 
   /// Create a session.
@@ -123,7 +105,7 @@ public class Tensorflow_Serving_PredictionServiceRegressSession : Tensorflow_Ser
 }
 
 // Predict (Unary)
-public class Tensorflow_Serving_PredictionServicePredictSession : Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServicePredictSession : Tensorflow_Serving_PredictionServiceSession {
   private var provider : Tensorflow_Serving_PredictionServiceProvider
 
   /// Create a session.
@@ -148,7 +130,7 @@ public class Tensorflow_Serving_PredictionServicePredictSession : Tensorflow_Ser
 }
 
 // MultiInference (Unary)
-public class Tensorflow_Serving_PredictionServiceMultiInferenceSession : Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServiceMultiInferenceSession : Tensorflow_Serving_PredictionServiceSession {
   private var provider : Tensorflow_Serving_PredictionServiceProvider
 
   /// Create a session.
@@ -173,7 +155,7 @@ public class Tensorflow_Serving_PredictionServiceMultiInferenceSession : Tensorf
 }
 
 // GetModelMetadata (Unary)
-public class Tensorflow_Serving_PredictionServiceGetModelMetadataSession : Tensorflow_Serving_PredictionServiceSession {
+internal class Tensorflow_Serving_PredictionServiceGetModelMetadataSession : Tensorflow_Serving_PredictionServiceSession {
   private var provider : Tensorflow_Serving_PredictionServiceProvider
 
   /// Create a session.
@@ -199,13 +181,13 @@ public class Tensorflow_Serving_PredictionServiceGetModelMetadataSession : Tenso
 
 
 /// Main server for generated service
-public class Tensorflow_Serving_PredictionServiceServer {
+internal class Tensorflow_Serving_PredictionServiceServer {
   private var address: String
   private var server: gRPC.Server
   private var provider: Tensorflow_Serving_PredictionServiceProvider?
 
   /// Create a server that accepts insecure connections.
-  public init(address:String,
+  internal init(address:String,
               provider:Tensorflow_Serving_PredictionServiceProvider) {
     gRPC.initialize()
     self.address = address
@@ -214,7 +196,7 @@ public class Tensorflow_Serving_PredictionServiceServer {
   }
 
   /// Create a server that accepts secure connections.
-  public init?(address:String,
+  internal init?(address:String,
                certificateURL:URL,
                keyURL:URL,
                provider:Tensorflow_Serving_PredictionServiceProvider) {
@@ -231,7 +213,7 @@ public class Tensorflow_Serving_PredictionServiceServer {
   }
 
   /// Start the server.
-  public func start(queue:DispatchQueue = DispatchQueue.global()) {
+  internal func start(queue:DispatchQueue = DispatchQueue.global()) {
     guard let provider = self.provider else {
       assert(false) // the server requires a provider
     }

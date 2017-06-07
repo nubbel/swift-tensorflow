@@ -7,61 +7,43 @@
  */
 
 /*
+ * Copyright 2017, gRPC Authors All rights reserved.
  *
- * Copyright 2017, Google Inc.
- * All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 import Foundation
 import Dispatch
 import gRPC
 
 /// Type for errors thrown from generated server code.
-public enum Tensorflow_EventListenerServerError : Error {
+internal enum Tensorflow_EventListenerServerError : Error {
   case endOfStream
 }
 
 /// To build a server, implement a class that conforms to this protocol.
-public protocol Tensorflow_EventListenerProvider {
+internal protocol Tensorflow_EventListenerProvider {
   func sendevents(session : Tensorflow_EventListenerSendEventsSession) throws
 }
 
 /// Common properties available in each service session.
-public class Tensorflow_EventListenerSession {
+internal class Tensorflow_EventListenerSession {
   fileprivate var handler : gRPC.Handler
-  public var requestMetadata : Metadata { return handler.requestMetadata }
+  internal var requestMetadata : Metadata { return handler.requestMetadata }
 
-  public var statusCode : Int = 0
-  public var statusMessage : String = "OK"
-  public var initialMetadata : Metadata = Metadata()
-  public var trailingMetadata : Metadata = Metadata()
+  internal var statusCode : Int = 0
+  internal var statusMessage : String = "OK"
+  internal var initialMetadata : Metadata = Metadata()
+  internal var trailingMetadata : Metadata = Metadata()
 
   fileprivate init(handler:gRPC.Handler) {
     self.handler = handler
@@ -69,7 +51,7 @@ public class Tensorflow_EventListenerSession {
 }
 
 // SendEvents (Bidirectional Streaming)
-public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListenerSession {
+internal class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListenerSession {
   private var provider : Tensorflow_EventListenerProvider
 
   /// Create a session.
@@ -79,7 +61,7 @@ public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListene
   }
 
   /// Receive a message. Blocks until a message is received or the client closes the connection.
-  public func receive() throws -> Tensorflow_Event {
+  internal func receive() throws -> Tensorflow_Event {
     let sem = DispatchSemaphore(value: 0)
     var requestMessage : Tensorflow_Event?
     try self.handler.receiveMessage() {(requestData) in
@@ -101,12 +83,12 @@ public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListene
   }
 
   /// Send a message. Nonblocking.
-  public func send(_ response: Tensorflow_EventReply) throws {
+  internal func send(_ response: Tensorflow_EventReply) throws {
     try handler.sendResponse(message:response.serializedData()) {}
   }
 
   /// Close a connection. Blocks until the connection is closed.
-  public func close() throws {
+  internal func close() throws {
     let sem = DispatchSemaphore(value: 0)
     try self.handler.sendStatus(statusCode:self.statusCode,
                                 statusMessage:self.statusMessage,
@@ -132,13 +114,13 @@ public class Tensorflow_EventListenerSendEventsSession : Tensorflow_EventListene
 
 
 /// Main server for generated service
-public class Tensorflow_EventListenerServer {
+internal class Tensorflow_EventListenerServer {
   private var address: String
   private var server: gRPC.Server
   private var provider: Tensorflow_EventListenerProvider?
 
   /// Create a server that accepts insecure connections.
-  public init(address:String,
+  internal init(address:String,
               provider:Tensorflow_EventListenerProvider) {
     gRPC.initialize()
     self.address = address
@@ -147,7 +129,7 @@ public class Tensorflow_EventListenerServer {
   }
 
   /// Create a server that accepts secure connections.
-  public init?(address:String,
+  internal init?(address:String,
                certificateURL:URL,
                keyURL:URL,
                provider:Tensorflow_EventListenerProvider) {
@@ -164,7 +146,7 @@ public class Tensorflow_EventListenerServer {
   }
 
   /// Start the server.
-  public func start(queue:DispatchQueue = DispatchQueue.global()) {
+  internal func start(queue:DispatchQueue = DispatchQueue.global()) {
     guard let provider = self.provider else {
       assert(false) // the server requires a provider
     }

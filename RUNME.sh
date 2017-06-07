@@ -57,6 +57,17 @@ function cloneTensorFlowRemoveAllFilesExceptProto {
   cd ..
 }
 
+function cloneMagentaFlowRemoveAllFilesExceptProto {
+  printf "\033c"
+  echo "🚀  Fetching latest proto files from github.com/tensorflow/magenta.git"
+  #
+  git clone https://github.com/tensorflow/magenta.git
+  cd magenta
+  find . -type f ! \( -name "*.proto" -o -name "*.pbtxt" \)  -delete #remove any file not proto /pbtxt
+  find . -type d -empty -delete #remove empty directories
+  cd ..
+}
+
 
 
 function cloneTensorFlowServingRemoveAllFilesExceptProto {
@@ -96,12 +107,21 @@ fi
 
 
 
-
+# MAGENTA
+if [ -d "magenta" ] ; then
+  read -p "⚠️  Existing magenta 🚀 directory detected - do you want to blow away 🔫  & fetch latest code ?   [y/N]" CONFIRM;
+  if [ "$CONFIRM" == "y" ]; then
+      rm -rf magenta 
+      cloneMagentaFlowRemoveAllFilesExceptProto 
+  fi 
+else
+  cloneMagentaFlowRemoveAllFilesExceptProto
+fi
 
 # TENSORFLOW
 if [ -d "tensorflow" ] ; then
-  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away 🔫  & fetch latest code ?   [y/N]" CONDITION;
-  if [ "$CONDITION" == "y" ]; then
+  read -p "⚠️  Existing tensorflow 🚀 directory detected - do you want to blow away 🔫  & fetch latest code ?   [y/N]" CONFIRM;
+  if [ "$CONFIRM" == "y" ]; then
       rm -rf tensorflow 
       cloneTensorFlowRemoveAllFilesExceptProto 
   fi 
@@ -111,8 +131,8 @@ fi
 
 # TENSORFLOW SERVING
 if [ -d "serving" ] ; then
-  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away  🔫  & fetch latest code ? [y/N]" CONDITION;
-  if [ "$CONDITION" == "y" ]; then
+  read -p "⚠️  Existing tensorflow serving ⛳️  directory detected - do you want to blow away  🔫  & fetch latest code ? [y/N]" CONFIRM;
+  if [ "$CONFIRM" == "y" ]; then
       rm -rf serving 
       cloneTensorFlowServingRemoveAllFilesExceptProto 
   fi 
@@ -121,7 +141,6 @@ else
 fi
 
 cp -R tensorflow/tensorflow serving
-
 
 printf "\033c"
 printf  "\n\n"
@@ -157,17 +176,16 @@ for opdef_file_path in $(find ./serving -type f -name "op_def.proto" ); do
       --encode=tensorflow.OpList \
       --proto_path serving $opdef_file_path \
       < ./tensorflow/tensorflow/core/ops/ops.pbtxt > ops.pb
-  done
+done
 
-exit
 
 
 # Swift
 if [ "$CONDITION" == "1" ] ; then
   # GOOGLE GRPC SWIFT
   if [ -d "grpc-swift" ] ; then
-    read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONDITION;
-    if [ "$CONDITION" == "y" ] ; then
+    read -p "⚠️  Existing grpc-swift 📡  detected - do you want to blow away & fetch latest code ? [y/N]" CONFIRM;
+    if [ "$CONFIRM" == "y" ] ; then
         rm -rf grpc-swift
         gitCloneGrpcSwift
     fi
@@ -215,6 +233,7 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
   output_file=${test/.proto/.pb}
   doc_output_file=${test/.proto/.md}
   
+
   if [ "$CONDITION" == "1" ] ; then
     # Swift
     # https://github.com/grpc/grpc-swift/blob/574c47b6a39959ff4f2e3eda1874108f95e00fa9/Plugin/README.md

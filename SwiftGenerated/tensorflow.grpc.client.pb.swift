@@ -7,51 +7,33 @@
  */
 
 /*
+ * Copyright 2017, gRPC Authors All rights reserved.
  *
- * Copyright 2017, Google Inc.
- * All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 import Foundation
 import Dispatch
 import gRPC
 
 /// Type for errors thrown from generated client code.
-public enum Tensorflow_Grpc_WorkerServiceClientError : Error {
+internal enum Tensorflow_Grpc_WorkerServiceClientError : Error {
   case endOfStream
   case invalidMessageReceived
   case error(c: CallResult)
 }
 
 /// GetStatus (Unary)
-public class Tensorflow_Grpc_WorkerServiceGetStatusCall {
+internal class Tensorflow_Grpc_WorkerServiceGetStatusCall {
   private var call : Call
 
   /// Create a call.
@@ -101,7 +83,7 @@ public class Tensorflow_Grpc_WorkerServiceGetStatusCall {
 }
 
 /// CreateWorkerSession (Unary)
-public class Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall {
+internal class Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall {
   private var call : Call
 
   /// Create a call.
@@ -151,7 +133,7 @@ public class Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall {
 }
 
 /// RegisterGraph (Unary)
-public class Tensorflow_Grpc_WorkerServiceRegisterGraphCall {
+internal class Tensorflow_Grpc_WorkerServiceRegisterGraphCall {
   private var call : Call
 
   /// Create a call.
@@ -201,7 +183,7 @@ public class Tensorflow_Grpc_WorkerServiceRegisterGraphCall {
 }
 
 /// DeregisterGraph (Unary)
-public class Tensorflow_Grpc_WorkerServiceDeregisterGraphCall {
+internal class Tensorflow_Grpc_WorkerServiceDeregisterGraphCall {
   private var call : Call
 
   /// Create a call.
@@ -251,7 +233,7 @@ public class Tensorflow_Grpc_WorkerServiceDeregisterGraphCall {
 }
 
 /// RunGraph (Unary)
-public class Tensorflow_Grpc_WorkerServiceRunGraphCall {
+internal class Tensorflow_Grpc_WorkerServiceRunGraphCall {
   private var call : Call
 
   /// Create a call.
@@ -301,7 +283,7 @@ public class Tensorflow_Grpc_WorkerServiceRunGraphCall {
 }
 
 /// CleanupGraph (Unary)
-public class Tensorflow_Grpc_WorkerServiceCleanupGraphCall {
+internal class Tensorflow_Grpc_WorkerServiceCleanupGraphCall {
   private var call : Call
 
   /// Create a call.
@@ -351,7 +333,7 @@ public class Tensorflow_Grpc_WorkerServiceCleanupGraphCall {
 }
 
 /// CleanupAll (Unary)
-public class Tensorflow_Grpc_WorkerServiceCleanupAllCall {
+internal class Tensorflow_Grpc_WorkerServiceCleanupAllCall {
   private var call : Call
 
   /// Create a call.
@@ -401,7 +383,7 @@ public class Tensorflow_Grpc_WorkerServiceCleanupAllCall {
 }
 
 /// RecvTensor (Unary)
-public class Tensorflow_Grpc_WorkerServiceRecvTensorCall {
+internal class Tensorflow_Grpc_WorkerServiceRecvTensorCall {
   private var call : Call
 
   /// Create a call.
@@ -451,7 +433,7 @@ public class Tensorflow_Grpc_WorkerServiceRecvTensorCall {
 }
 
 /// Logging (Unary)
-public class Tensorflow_Grpc_WorkerServiceLoggingCall {
+internal class Tensorflow_Grpc_WorkerServiceLoggingCall {
   private var call : Call
 
   /// Create a call.
@@ -501,7 +483,7 @@ public class Tensorflow_Grpc_WorkerServiceLoggingCall {
 }
 
 /// Tracing (Unary)
-public class Tensorflow_Grpc_WorkerServiceTracingCall {
+internal class Tensorflow_Grpc_WorkerServiceTracingCall {
   private var call : Call
 
   /// Create a call.
@@ -551,16 +533,16 @@ public class Tensorflow_Grpc_WorkerServiceTracingCall {
 }
 
 /// Call methods of this class to make API calls.
-public class Tensorflow_Grpc_WorkerServiceService {
+internal class Tensorflow_Grpc_WorkerServiceService {
   private var channel: Channel
 
   /// This metadata will be sent with all requests.
-  public var metadata : Metadata
+  internal var metadata : Metadata
 
   /// This property allows the service host name to be overridden.
   /// For example, it can be used to make calls to "localhost:8080"
   /// appear to be to "example.com".
-  public var host : String {
+  internal var host : String {
     get {
       return self.channel.host
     }
@@ -570,27 +552,27 @@ public class Tensorflow_Grpc_WorkerServiceService {
   }
 
   /// Create a client that makes insecure connections.
-  public init(address: String) {
+  internal init(address: String) {
     gRPC.initialize()
     channel = Channel(address:address)
     metadata = Metadata()
   }
 
   /// Create a client that makes secure connections.
-  public init(address: String, certificates: String?, host: String?) {
+  internal init(address: String, certificates: String?, host: String?) {
     gRPC.initialize()
     channel = Channel(address:address, certificates:certificates, host:host)
     metadata = Metadata()
   }
 
   /// Synchronous. Unary.
-  public func getstatus(_ request: Tensorflow_GetStatusRequest)
+  internal func getstatus(_ request: Tensorflow_GetStatusRequest)
     throws
     -> Tensorflow_GetStatusResponse {
       return try Tensorflow_Grpc_WorkerServiceGetStatusCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func getstatus(_ request: Tensorflow_GetStatusRequest,
+  internal func getstatus(_ request: Tensorflow_GetStatusRequest,
                   completion: @escaping (Tensorflow_GetStatusResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceGetStatusCall {
@@ -599,13 +581,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest)
+  internal func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest)
     throws
     -> Tensorflow_CreateWorkerSessionResponse {
       return try Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest,
+  internal func createworkersession(_ request: Tensorflow_CreateWorkerSessionRequest,
                   completion: @escaping (Tensorflow_CreateWorkerSessionResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCreateWorkerSessionCall {
@@ -614,13 +596,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func registergraph(_ request: Tensorflow_RegisterGraphRequest)
+  internal func registergraph(_ request: Tensorflow_RegisterGraphRequest)
     throws
     -> Tensorflow_RegisterGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceRegisterGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func registergraph(_ request: Tensorflow_RegisterGraphRequest,
+  internal func registergraph(_ request: Tensorflow_RegisterGraphRequest,
                   completion: @escaping (Tensorflow_RegisterGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRegisterGraphCall {
@@ -629,13 +611,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest)
+  internal func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest)
     throws
     -> Tensorflow_DeregisterGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceDeregisterGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest,
+  internal func deregistergraph(_ request: Tensorflow_DeregisterGraphRequest,
                   completion: @escaping (Tensorflow_DeregisterGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceDeregisterGraphCall {
@@ -644,13 +626,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func rungraph(_ request: Tensorflow_RunGraphRequest)
+  internal func rungraph(_ request: Tensorflow_RunGraphRequest)
     throws
     -> Tensorflow_RunGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceRunGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func rungraph(_ request: Tensorflow_RunGraphRequest,
+  internal func rungraph(_ request: Tensorflow_RunGraphRequest,
                   completion: @escaping (Tensorflow_RunGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRunGraphCall {
@@ -659,13 +641,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest)
+  internal func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest)
     throws
     -> Tensorflow_CleanupGraphResponse {
       return try Tensorflow_Grpc_WorkerServiceCleanupGraphCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest,
+  internal func cleanupgraph(_ request: Tensorflow_CleanupGraphRequest,
                   completion: @escaping (Tensorflow_CleanupGraphResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCleanupGraphCall {
@@ -674,13 +656,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func cleanupall(_ request: Tensorflow_CleanupAllRequest)
+  internal func cleanupall(_ request: Tensorflow_CleanupAllRequest)
     throws
     -> Tensorflow_CleanupAllResponse {
       return try Tensorflow_Grpc_WorkerServiceCleanupAllCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func cleanupall(_ request: Tensorflow_CleanupAllRequest,
+  internal func cleanupall(_ request: Tensorflow_CleanupAllRequest,
                   completion: @escaping (Tensorflow_CleanupAllResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceCleanupAllCall {
@@ -689,13 +671,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func recvtensor(_ request: Tensorflow_RecvTensorRequest)
+  internal func recvtensor(_ request: Tensorflow_RecvTensorRequest)
     throws
     -> Tensorflow_RecvTensorResponse {
       return try Tensorflow_Grpc_WorkerServiceRecvTensorCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func recvtensor(_ request: Tensorflow_RecvTensorRequest,
+  internal func recvtensor(_ request: Tensorflow_RecvTensorRequest,
                   completion: @escaping (Tensorflow_RecvTensorResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceRecvTensorCall {
@@ -704,13 +686,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func logging(_ request: Tensorflow_LoggingRequest)
+  internal func logging(_ request: Tensorflow_LoggingRequest)
     throws
     -> Tensorflow_LoggingResponse {
       return try Tensorflow_Grpc_WorkerServiceLoggingCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func logging(_ request: Tensorflow_LoggingRequest,
+  internal func logging(_ request: Tensorflow_LoggingRequest,
                   completion: @escaping (Tensorflow_LoggingResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceLoggingCall {
@@ -719,13 +701,13 @@ public class Tensorflow_Grpc_WorkerServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func tracing(_ request: Tensorflow_TracingRequest)
+  internal func tracing(_ request: Tensorflow_TracingRequest)
     throws
     -> Tensorflow_TracingResponse {
       return try Tensorflow_Grpc_WorkerServiceTracingCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func tracing(_ request: Tensorflow_TracingRequest,
+  internal func tracing(_ request: Tensorflow_TracingRequest,
                   completion: @escaping (Tensorflow_TracingResponse?, CallResult)->())
     throws
     -> Tensorflow_Grpc_WorkerServiceTracingCall {

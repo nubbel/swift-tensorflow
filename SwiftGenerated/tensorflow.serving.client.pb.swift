@@ -7,51 +7,33 @@
  */
 
 /*
+ * Copyright 2017, gRPC Authors All rights reserved.
  *
- * Copyright 2017, Google Inc.
- * All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are
- * met:
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     * Redistributions of source code must retain the above copyright
- * notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above
- * copyright notice, this list of conditions and the following disclaimer
- * in the documentation and/or other materials provided with the
- * distribution.
- *     * Neither the name of Google Inc. nor the names of its
- * contributors may be used to endorse or promote products derived from
- * this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 import Foundation
 import Dispatch
 import gRPC
 
 /// Type for errors thrown from generated client code.
-public enum Tensorflow_Serving_PredictionServiceClientError : Error {
+internal enum Tensorflow_Serving_PredictionServiceClientError : Error {
   case endOfStream
   case invalidMessageReceived
   case error(c: CallResult)
 }
 
 /// Classify (Unary)
-public class Tensorflow_Serving_PredictionServiceClassifyCall {
+internal class Tensorflow_Serving_PredictionServiceClassifyCall {
   private var call : Call
 
   /// Create a call.
@@ -101,7 +83,7 @@ public class Tensorflow_Serving_PredictionServiceClassifyCall {
 }
 
 /// Regress (Unary)
-public class Tensorflow_Serving_PredictionServiceRegressCall {
+internal class Tensorflow_Serving_PredictionServiceRegressCall {
   private var call : Call
 
   /// Create a call.
@@ -151,7 +133,7 @@ public class Tensorflow_Serving_PredictionServiceRegressCall {
 }
 
 /// Predict (Unary)
-public class Tensorflow_Serving_PredictionServicePredictCall {
+internal class Tensorflow_Serving_PredictionServicePredictCall {
   private var call : Call
 
   /// Create a call.
@@ -201,7 +183,7 @@ public class Tensorflow_Serving_PredictionServicePredictCall {
 }
 
 /// MultiInference (Unary)
-public class Tensorflow_Serving_PredictionServiceMultiInferenceCall {
+internal class Tensorflow_Serving_PredictionServiceMultiInferenceCall {
   private var call : Call
 
   /// Create a call.
@@ -251,7 +233,7 @@ public class Tensorflow_Serving_PredictionServiceMultiInferenceCall {
 }
 
 /// GetModelMetadata (Unary)
-public class Tensorflow_Serving_PredictionServiceGetModelMetadataCall {
+internal class Tensorflow_Serving_PredictionServiceGetModelMetadataCall {
   private var call : Call
 
   /// Create a call.
@@ -301,16 +283,16 @@ public class Tensorflow_Serving_PredictionServiceGetModelMetadataCall {
 }
 
 /// Call methods of this class to make API calls.
-public class Tensorflow_Serving_PredictionServiceService {
+internal class Tensorflow_Serving_PredictionServiceService {
   private var channel: Channel
 
   /// This metadata will be sent with all requests.
-  public var metadata : Metadata
+  internal var metadata : Metadata
 
   /// This property allows the service host name to be overridden.
   /// For example, it can be used to make calls to "localhost:8080"
   /// appear to be to "example.com".
-  public var host : String {
+  internal var host : String {
     get {
       return self.channel.host
     }
@@ -320,27 +302,27 @@ public class Tensorflow_Serving_PredictionServiceService {
   }
 
   /// Create a client that makes insecure connections.
-  public init(address: String) {
+  internal init(address: String) {
     gRPC.initialize()
     channel = Channel(address:address)
     metadata = Metadata()
   }
 
   /// Create a client that makes secure connections.
-  public init(address: String, certificates: String?, host: String?) {
+  internal init(address: String, certificates: String?, host: String?) {
     gRPC.initialize()
     channel = Channel(address:address, certificates:certificates, host:host)
     metadata = Metadata()
   }
 
   /// Synchronous. Unary.
-  public func classify(_ request: Tensorflow_Serving_ClassificationRequest)
+  internal func classify(_ request: Tensorflow_Serving_ClassificationRequest)
     throws
     -> Tensorflow_Serving_ClassificationResponse {
       return try Tensorflow_Serving_PredictionServiceClassifyCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func classify(_ request: Tensorflow_Serving_ClassificationRequest,
+  internal func classify(_ request: Tensorflow_Serving_ClassificationRequest,
                   completion: @escaping (Tensorflow_Serving_ClassificationResponse?, CallResult)->())
     throws
     -> Tensorflow_Serving_PredictionServiceClassifyCall {
@@ -349,13 +331,13 @@ public class Tensorflow_Serving_PredictionServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func regress(_ request: Tensorflow_Serving_RegressionRequest)
+  internal func regress(_ request: Tensorflow_Serving_RegressionRequest)
     throws
     -> Tensorflow_Serving_RegressionResponse {
       return try Tensorflow_Serving_PredictionServiceRegressCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func regress(_ request: Tensorflow_Serving_RegressionRequest,
+  internal func regress(_ request: Tensorflow_Serving_RegressionRequest,
                   completion: @escaping (Tensorflow_Serving_RegressionResponse?, CallResult)->())
     throws
     -> Tensorflow_Serving_PredictionServiceRegressCall {
@@ -364,13 +346,13 @@ public class Tensorflow_Serving_PredictionServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func predict(_ request: Tensorflow_Serving_PredictRequest)
+  internal func predict(_ request: Tensorflow_Serving_PredictRequest)
     throws
     -> Tensorflow_Serving_PredictResponse {
       return try Tensorflow_Serving_PredictionServicePredictCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func predict(_ request: Tensorflow_Serving_PredictRequest,
+  internal func predict(_ request: Tensorflow_Serving_PredictRequest,
                   completion: @escaping (Tensorflow_Serving_PredictResponse?, CallResult)->())
     throws
     -> Tensorflow_Serving_PredictionServicePredictCall {
@@ -379,13 +361,13 @@ public class Tensorflow_Serving_PredictionServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func multiinference(_ request: Tensorflow_Serving_MultiInferenceRequest)
+  internal func multiinference(_ request: Tensorflow_Serving_MultiInferenceRequest)
     throws
     -> Tensorflow_Serving_MultiInferenceResponse {
       return try Tensorflow_Serving_PredictionServiceMultiInferenceCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func multiinference(_ request: Tensorflow_Serving_MultiInferenceRequest,
+  internal func multiinference(_ request: Tensorflow_Serving_MultiInferenceRequest,
                   completion: @escaping (Tensorflow_Serving_MultiInferenceResponse?, CallResult)->())
     throws
     -> Tensorflow_Serving_PredictionServiceMultiInferenceCall {
@@ -394,13 +376,13 @@ public class Tensorflow_Serving_PredictionServiceService {
                                                  completion:completion)
   }
   /// Synchronous. Unary.
-  public func getmodelmetadata(_ request: Tensorflow_Serving_GetModelMetadataRequest)
+  internal func getmodelmetadata(_ request: Tensorflow_Serving_GetModelMetadataRequest)
     throws
     -> Tensorflow_Serving_GetModelMetadataResponse {
       return try Tensorflow_Serving_PredictionServiceGetModelMetadataCall(channel).run(request:request, metadata:metadata)
   }
   /// Asynchronous. Unary.
-  public func getmodelmetadata(_ request: Tensorflow_Serving_GetModelMetadataRequest,
+  internal func getmodelmetadata(_ request: Tensorflow_Serving_GetModelMetadataRequest,
                   completion: @escaping (Tensorflow_Serving_GetModelMetadataResponse?, CallResult)->())
     throws
     -> Tensorflow_Serving_PredictionServiceGetModelMetadataCall {
