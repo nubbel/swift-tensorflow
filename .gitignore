@@ -21,6 +21,7 @@ Generated/
 tensorflow/
 serving/
 magenta/
+swiftgrpc.log
 
 
 ## Various settings
