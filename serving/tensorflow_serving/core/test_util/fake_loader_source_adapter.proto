@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package tensorflow.serving.test_util;
-
-// Config proto for FakeLoaderSourceAdapter.
-message FakeLoaderSourceAdapterConfig {
-  // FakeLoaderSourceAdapter's 'suffix' ctor parameter.
-  string suffix = 1;
-}

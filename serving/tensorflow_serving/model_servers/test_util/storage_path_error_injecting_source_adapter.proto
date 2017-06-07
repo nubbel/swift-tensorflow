@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package tensorflow.serving.test_util;
-
-// Config proto for StoragePathErrorInjectingSourceAdapter.
-message StoragePathErrorInjectingSourceAdapterConfig {
-  // The error message the adapter emits.
-  string error_message = 1;
-}
