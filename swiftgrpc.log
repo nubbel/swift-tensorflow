@@ -4,7 +4,7 @@ PluginLibrary.Google_Protobuf_Compiler_CodeGeneratorRequest:
 file_to_generate: "tensorflow_serving/util/class_registration_test.proto"
 compiler_version {
   major: 3
-  minor: 2
+  minor: 3
   patch: 0
   suffix: ""
 }

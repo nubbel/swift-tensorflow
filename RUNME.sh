@@ -6,6 +6,10 @@
 #
 #!/bin/bash
 
+
+printf "\033c"
+printf "Intention of this script is it checkout latest apple protobuf +  tensorflow proto files then build protobuf files en masse."
+
 function gitCloneGrpcSwift { 
   printf "\033c"
   echo "🚀  Fetching github.com/grpc/grpc-swift.git"
@@ -359,8 +363,9 @@ if [ "$CONDITION" == "1" ] ; then
   # move swift files to this directory
   rm -rf Sources
   mkdir Sources
-  #find . -maxdepth 1 -name "*.swift" -exec mv {} Sources \;
-  find .  -name "*.swift" -exec mv {} Sources \;
+  find ./tensorflow  -name "*.swift" -exec mv {} Sources \;
+  find ./tensorflow_serving  -name "*.swift" -exec mv {} Sources \;
+  find ./protobuf  -name "*.swift" -exec mv {} Sources \;
 fi
 
 if [ "$CONDITION" == "3" ] ; then
