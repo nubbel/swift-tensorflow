@@ -141,13 +141,15 @@ else
 fi
 
 cp -R tensorflow/tensorflow serving
+cp -R magenta/magenta/protobuf serving
 
 printf "\033c"
 printf  "\n\n"
 printf  "\n\n"
-echo  "🚀 - Generate Tensorflow + Tensorflow Serving classes  \n\n"
+echo  "🚀 - Generate Tensorflow + Tensorflow Serving + magenta protobuf classes  \n\n"
 printf  "\n\n"
 echo  "1 - Swift 🚀"
+echo  "1b - Swift - (todo exclude grpc) 🚀"
 echo   "2 - ObjC"
 echo   "3 - Python 🐍"
 echo   "4 - Ruby 💎"
@@ -225,7 +227,7 @@ fi
 
 
 
-for file_path in $(find ./serving -type f -name "*.proto" ); do
+for file_path in $(find  ./serving -type f -name "*.proto" ); do
   DIR=$(dirname $file_path)
   file=$(basename $file_path)
   
@@ -245,7 +247,7 @@ for file_path in $(find ./serving -type f -name "*.proto" ); do
 
 #   \
     # output swift file
-    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift  --swift_opt=Visibility=Public  \ \n--proto_path=serving\ \n--swift_out=. \ \n $file_path \n \n" 
+    echo "\n👾 protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift  --swift_opt=Visibility=Public  \ \n--proto_path=serving \ \n--swift_out=. \ \n $file_path \n \n" 
     protoc --plugin=./grpc-swift/Plugin/protoc-gen-swift   \
     --swift_opt=Visibility=Public \
     --proto_path=serving \
@@ -355,10 +357,10 @@ done
 
 if [ "$CONDITION" == "1" ] ; then
   # move swift files to this directory
-  rm -rf SwiftGenerated
-  mkdir SwiftGenerated
-  mv tensorflow tensorflow_serving SwiftGenerated
-  find . -maxdepth 1 -name "*.swift" -exec mv {} SwiftGenerated \;
+  rm -rf Sources
+  mkdir Sources
+  #find . -maxdepth 1 -name "*.swift" -exec mv {} Sources \;
+  find .  -name "*.swift" -exec mv {} Sources \;
 fi
 
 if [ "$CONDITION" == "3" ] ; then
