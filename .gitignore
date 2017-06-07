@@ -18,7 +18,9 @@ third_party/
 xla/
 graph_explorer/
 Generated/
-
+tensorflow/
+serving/
+magenta/
 
 
 ## Various settings

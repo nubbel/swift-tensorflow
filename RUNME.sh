@@ -363,6 +363,12 @@ if [ "$CONDITION" == "1" ] ; then
   # move swift files to this directory
   rm -rf Sources
   mkdir Sources
+  read -p "add grpc service files? [y/N]" CONFIRM;
+  if [ "$CONFIRM" == "y" ] ; then
+      find . -maxdepth 1 -name "*.swift" -exec mv {} Sources \;
+  else
+      rm . -maxdepth 1 -name "*.swift" -exec mv {} Sources \;
+  fi
   find ./tensorflow  -name "*.swift" -exec mv {} Sources \;
   find ./tensorflow_serving  -name "*.swift" -exec mv {} Sources \;
   find ./protobuf  -name "*.swift" -exec mv {} Sources \;
