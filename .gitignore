@@ -10,17 +10,12 @@ org/
 boosted_trees/
 compare_test/
 #swift magenta generated
-protobuf/
-serving/
-tensorflow/
-tensorflow_serving/
+
 third_party/
 xla/
 graph_explorer/
 Generated/
-tensorflow/
-serving/
-magenta/
+
 swiftgrpc.log
 
 
