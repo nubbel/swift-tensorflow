@@ -94,10 +94,14 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
   /// The default option is to serve only the latest version of the model.
   ///
   /// (This can be changed once a model is in serving.)
-  public var versionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.VersionPolicy {
-    get {return _storage._versionPolicy}
-    set {_uniqueStorage()._versionPolicy = newValue}
+  public var modelVersionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy {
+    get {return _storage._modelVersionPolicy ?? Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy()}
+    set {_uniqueStorage()._modelVersionPolicy = newValue}
   }
+  /// Returns true if `modelVersionPolicy` has been explicitly set.
+  public var hasModelVersionPolicy: Bool {return _storage._modelVersionPolicy != nil}
+  /// Clears the value of `modelVersionPolicy`. Subsequent reads from it will return its default value.
+  public mutating func clearModelVersionPolicy() {_storage._modelVersionPolicy = nil}
 
   /// Configures logging requests and responses, to the model.
   ///
@@ -128,8 +132,8 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
         case 2: try decoder.decodeSingularStringField(value: &_storage._basePath)
         case 3: try decoder.decodeSingularEnumField(value: &_storage._modelType)
         case 4: try decoder.decodeSingularStringField(value: &_storage._modelPlatform)
-        case 5: try decoder.decodeSingularEnumField(value: &_storage._versionPolicy)
         case 6: try decoder.decodeSingularMessageField(value: &_storage._loggingConfig)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._modelVersionPolicy)
         default: break
         }
       }
@@ -154,11 +158,11 @@ public struct Tensorflow_Serving_ModelConfig: SwiftProtobuf.Message {
       if !_storage._modelPlatform.isEmpty {
         try visitor.visitSingularStringField(value: _storage._modelPlatform, fieldNumber: 4)
       }
-      if _storage._versionPolicy != .latestVersion {
-        try visitor.visitSingularEnumField(value: _storage._versionPolicy, fieldNumber: 5)
-      }
       if let v = _storage._loggingConfig {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      }
+      if let v = _storage._modelVersionPolicy {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -319,7 +323,7 @@ extension Tensorflow_Serving_ModelConfig: SwiftProtobuf._MessageImplementationBa
     2: .standard(proto: "base_path"),
     3: .standard(proto: "model_type"),
     4: .standard(proto: "model_platform"),
-    5: .standard(proto: "version_policy"),
+    7: .standard(proto: "model_version_policy"),
     6: .standard(proto: "logging_config"),
   ]
 
@@ -328,7 +332,7 @@ extension Tensorflow_Serving_ModelConfig: SwiftProtobuf._MessageImplementationBa
     var _basePath: String = String()
     var _modelType: Tensorflow_Serving_ModelType = .unspecified
     var _modelPlatform: String = String()
-    var _versionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.VersionPolicy = .latestVersion
+    var _modelVersionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy? = nil
     var _loggingConfig: Tensorflow_Serving_LoggingConfig? = nil
 
     static let defaultInstance = _StorageClass()
@@ -340,7 +344,7 @@ extension Tensorflow_Serving_ModelConfig: SwiftProtobuf._MessageImplementationBa
       _basePath = source._basePath
       _modelType = source._modelType
       _modelPlatform = source._modelPlatform
-      _versionPolicy = source._versionPolicy
+      _modelVersionPolicy = source._modelVersionPolicy
       _loggingConfig = source._loggingConfig
     }
   }
@@ -359,7 +363,7 @@ extension Tensorflow_Serving_ModelConfig: SwiftProtobuf._MessageImplementationBa
         if _storage._basePath != other_storage._basePath {return false}
         if _storage._modelType != other_storage._modelType {return false}
         if _storage._modelPlatform != other_storage._modelPlatform {return false}
-        if _storage._versionPolicy != other_storage._versionPolicy {return false}
+        if _storage._modelVersionPolicy != other_storage._modelVersionPolicy {return false}
         if _storage._loggingConfig != other_storage._loggingConfig {return false}
         return true
       }

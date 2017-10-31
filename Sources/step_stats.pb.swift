@@ -19,6 +19,49 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+/// An allocation/de-allocation operation performed by the allocator.
+public struct Tensorflow_AllocationRecord: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".AllocationRecord"
+
+  /// The timestamp of the operation.
+  public var allocMicros: Int64 = 0
+
+  /// Number of bytes allocated, or de-allocated if negative.
+  public var allocBytes: Int64 = 0
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+  /// initializers are defined in the SwiftProtobuf library. See the Message and
+  /// Message+*Additions` files.
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.allocMicros)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.allocBytes)
+      default: break
+      }
+    }
+  }
+
+  /// Used by the encoding methods of the SwiftProtobuf library, not generally
+  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+  /// other serializer methods are defined in the SwiftProtobuf library. See the
+  /// `Message` and `Message+*Additions` files.
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.allocMicros != 0 {
+      try visitor.visitSingularInt64Field(value: self.allocMicros, fieldNumber: 1)
+    }
+    if self.allocBytes != 0 {
+      try visitor.visitSingularInt64Field(value: self.allocBytes, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+}
+
 public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".AllocatorMemoryUsed"
 
@@ -31,6 +74,9 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
 
   /// The bytes that are not deallocated.
   public var liveBytes: Int64 = 0
+
+  /// The allocation and deallocation timeline.
+  public var allocationRecords: [Tensorflow_AllocationRecord] = []
 
   /// These are snapshots of the overall allocator memory stats.
   /// The number of live bytes currently allocated by the allocator.
@@ -52,6 +98,7 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
       case 3: try decoder.decodeSingularInt64Field(value: &self.peakBytes)
       case 4: try decoder.decodeSingularInt64Field(value: &self.liveBytes)
       case 5: try decoder.decodeSingularInt64Field(value: &self.allocatorBytesInUse)
+      case 6: try decoder.decodeRepeatedMessageField(value: &self.allocationRecords)
       default: break
       }
     }
@@ -76,6 +123,9 @@ public struct Tensorflow_AllocatorMemoryUsed: SwiftProtobuf.Message {
     }
     if self.allocatorBytesInUse != 0 {
       try visitor.visitSingularInt64Field(value: self.allocatorBytesInUse, fieldNumber: 5)
+    }
+    if !self.allocationRecords.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.allocationRecords, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -434,12 +484,27 @@ public struct Tensorflow_StepStats: SwiftProtobuf.Message {
 
 fileprivate let _protobuf_package = "tensorflow"
 
+extension Tensorflow_AllocationRecord: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "alloc_micros"),
+    2: .standard(proto: "alloc_bytes"),
+  ]
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_AllocationRecord) -> Bool {
+    if self.allocMicros != other.allocMicros {return false}
+    if self.allocBytes != other.allocBytes {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
 extension Tensorflow_AllocatorMemoryUsed: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "allocator_name"),
     2: .standard(proto: "total_bytes"),
     3: .standard(proto: "peak_bytes"),
     4: .standard(proto: "live_bytes"),
+    6: .standard(proto: "allocation_records"),
     5: .standard(proto: "allocator_bytes_in_use"),
   ]
 
@@ -448,6 +513,7 @@ extension Tensorflow_AllocatorMemoryUsed: SwiftProtobuf._MessageImplementationBa
     if self.totalBytes != other.totalBytes {return false}
     if self.peakBytes != other.peakBytes {return false}
     if self.liveBytes != other.liveBytes {return false}
+    if self.allocationRecords != other.allocationRecords {return false}
     if self.allocatorBytesInUse != other.allocatorBytesInUse {return false}
     if unknownFields != other.unknownFields {return false}
     return true

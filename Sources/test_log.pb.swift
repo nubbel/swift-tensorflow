@@ -263,6 +263,7 @@ public struct Tensorflow_CommitId: SwiftProtobuf.Message {
 
   public var kind: Tensorflow_CommitId.OneOf_Kind? = nil
 
+  /// Submitted changelist.
   public var changelist: Int64 {
     get {
       if case .changelist(let v)? = kind {return v}
@@ -283,9 +284,13 @@ public struct Tensorflow_CommitId: SwiftProtobuf.Message {
   /// Not used if the build is from a commit without modifications.
   public var snapshot: String = String()
 
+  /// Changelist tested if the change list is not already submitted.
+  public var pendingChangelist: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Kind: Equatable {
+    /// Submitted changelist.
     case changelist(Int64)
     case hash(String)
 
@@ -318,6 +323,7 @@ public struct Tensorflow_CommitId: SwiftProtobuf.Message {
         try decoder.decodeSingularStringField(value: &v)
         if let v = v {self.kind = .hash(v)}
       case 3: try decoder.decodeSingularStringField(value: &self.snapshot)
+      case 4: try decoder.decodeSingularInt64Field(value: &self.pendingChangelist)
       default: break
       }
     }
@@ -337,6 +343,9 @@ public struct Tensorflow_CommitId: SwiftProtobuf.Message {
     }
     if !self.snapshot.isEmpty {
       try visitor.visitSingularStringField(value: self.snapshot, fieldNumber: 3)
+    }
+    if self.pendingChangelist != 0 {
+      try visitor.visitSingularInt64Field(value: self.pendingChangelist, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -872,6 +881,10 @@ public struct Tensorflow_TestResults: SwiftProtobuf.Message {
   }
 
   /// Used for differentiating between continuous and debug builds.
+  /// Must be one of:
+  /// * cbuild: results from continuous build.
+  /// * presubmit: results from oneshot requests.
+  /// * culprit: results from culprit finder rerun.
   public var runMode: String {
     get {return _storage._runMode}
     set {_uniqueStorage()._runMode = newValue}
@@ -1062,11 +1075,13 @@ extension Tensorflow_CommitId: SwiftProtobuf._MessageImplementationBase, SwiftPr
     1: .same(proto: "changelist"),
     2: .same(proto: "hash"),
     3: .same(proto: "snapshot"),
+    4: .standard(proto: "pending_changelist"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_CommitId) -> Bool {
     if self.kind != other.kind {return false}
     if self.snapshot != other.snapshot {return false}
+    if self.pendingChangelist != other.pendingChangelist {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

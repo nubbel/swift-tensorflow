@@ -274,7 +274,8 @@ public struct Tensorflow_BoostedTrees_Trees_Leaf: SwiftProtobuf.Message {
     set {_uniqueStorage()._leaf = newValue}
   }
 
-  /// See learning/decision_trees/proto/generic_tree_model.proto?l=133
+  /// See third_party/tensorflow/contrib/decision_trees/
+  /// proto/generic_tree_model.proto
   /// for a description of how vector and sparse_vector might be used.
   public var vector: Tensorflow_BoostedTrees_Trees_Vector {
     get {
@@ -295,7 +296,8 @@ public struct Tensorflow_BoostedTrees_Trees_Leaf: SwiftProtobuf.Message {
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Leaf: Equatable {
-    /// See learning/decision_trees/proto/generic_tree_model.proto?l=133
+    /// See third_party/tensorflow/contrib/decision_trees/
+    /// proto/generic_tree_model.proto
     /// for a description of how vector and sparse_vector might be used.
     case vector(Tensorflow_BoostedTrees_Trees_Vector)
     case sparseVector(Tensorflow_BoostedTrees_Trees_SparseVector)
@@ -444,6 +446,10 @@ public struct Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit: SwiftProtobuf
   /// the rule feature <= threshold.
   public var featureColumn: Int32 = 0
 
+  /// If feature column is multivalent, this holds the index of the feature for
+  /// the split. Defaults to 0.
+  public var featureID: Int32 = 0
+
   public var threshold: Float = 0
 
   /// Node children indexing into a contiguous
@@ -467,6 +473,7 @@ public struct Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit: SwiftProtobuf
       case 2: try decoder.decodeSingularFloatField(value: &self.threshold)
       case 3: try decoder.decodeSingularInt32Field(value: &self.leftID)
       case 4: try decoder.decodeSingularInt32Field(value: &self.rightID)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.featureID)
       default: break
       }
     }
@@ -488,6 +495,9 @@ public struct Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit: SwiftProtobuf
     }
     if self.rightID != 0 {
       try visitor.visitSingularInt32Field(value: self.rightID, fieldNumber: 4)
+    }
+    if self.featureID != 0 {
+      try visitor.visitSingularInt32Field(value: self.featureID, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1073,6 +1083,7 @@ extension Tensorflow_BoostedTrees_Trees_SparseVector: SwiftProtobuf._MessageImpl
 extension Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "feature_column"),
+    5: .standard(proto: "feature_id"),
     2: .same(proto: "threshold"),
     3: .standard(proto: "left_id"),
     4: .standard(proto: "right_id"),
@@ -1080,6 +1091,7 @@ extension Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit: SwiftProtobuf._Me
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_BoostedTrees_Trees_DenseFloatBinarySplit) -> Bool {
     if self.featureColumn != other.featureColumn {return false}
+    if self.featureID != other.featureID {return false}
     if self.threshold != other.threshold {return false}
     if self.leftID != other.leftID {return false}
     if self.rightID != other.rightID {return false}

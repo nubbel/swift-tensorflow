@@ -48,39 +48,222 @@ public struct Tensorflow_Serving_FileSystemStoragePathSourceConfig: SwiftProtobu
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  /// The policy to define how many versions of the servable should be
-  /// served at the same time.
-  public enum VersionPolicy: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
+  /// A policy that dictates which version(s) of a servable should be served.
+  public struct ServableVersionPolicy: SwiftProtobuf.Message {
+    public static let protoMessageName: String = Tensorflow_Serving_FileSystemStoragePathSourceConfig.protoMessageName + ".ServableVersionPolicy"
 
-    /// Only serve the latest version that exists in the base path.
-    /// This is the default behavior.
-    case latestVersion // = 0
-
-    /// Serves all the versions that exist in the base path.
-    case allVersions // = 1
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .latestVersion
+    public var policyChoice: OneOf_PolicyChoice? {
+      get {return _storage._policyChoice}
+      set {_uniqueStorage()._policyChoice = newValue}
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .latestVersion
-      case 1: self = .allVersions
-      default: self = .UNRECOGNIZED(rawValue)
+    public var latest: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest {
+      get {
+        if case .latest(let v)? = _storage._policyChoice {return v}
+        return Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest()
+      }
+      set {_uniqueStorage()._policyChoice = .latest(newValue)}
+    }
+
+    public var all: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All {
+      get {
+        if case .all(let v)? = _storage._policyChoice {return v}
+        return Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All()
+      }
+      set {_uniqueStorage()._policyChoice = .all(newValue)}
+    }
+
+    public var specific: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific {
+      get {
+        if case .specific(let v)? = _storage._policyChoice {return v}
+        return Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific()
+      }
+      set {_uniqueStorage()._policyChoice = .specific(newValue)}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum OneOf_PolicyChoice: Equatable {
+      case latest(Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest)
+      case all(Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All)
+      case specific(Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific)
+
+      public static func ==(lhs: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.OneOf_PolicyChoice, rhs: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.OneOf_PolicyChoice) -> Bool {
+        switch (lhs, rhs) {
+        case (.latest(let l), .latest(let r)): return l == r
+        case (.all(let l), .all(let r)): return l == r
+        case (.specific(let l), .specific(let r)): return l == r
+        default: return false
+        }
       }
     }
 
-    public var rawValue: Int {
-      switch self {
-      case .latestVersion: return 0
-      case .allVersions: return 1
-      case .UNRECOGNIZED(let i): return i
+    /// Serve the latest versions (i.e. the ones with the highest version
+    /// numbers), among those found on disk.
+    ///
+    /// This is the default policy, with the default number of versions as 1.
+    public struct Latest: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.protoMessageName + ".Latest"
+
+      /// Number of latest versions to serve. (The default is 1.)
+      public var numVersions: UInt32 = 0
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+
+      /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+      /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+      /// initializers are defined in the SwiftProtobuf library. See the Message and
+      /// Message+*Additions` files.
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+        while let fieldNumber = try decoder.nextFieldNumber() {
+          switch fieldNumber {
+          case 1: try decoder.decodeSingularUInt32Field(value: &self.numVersions)
+          default: break
+          }
+        }
+      }
+
+      /// Used by the encoding methods of the SwiftProtobuf library, not generally
+      /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+      /// other serializer methods are defined in the SwiftProtobuf library. See the
+      /// `Message` and `Message+*Additions` files.
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+        if self.numVersions != 0 {
+          try visitor.visitSingularUInt32Field(value: self.numVersions, fieldNumber: 1)
+        }
+        try unknownFields.traverse(visitor: &visitor)
       }
     }
 
+    /// Serve all versions found on disk.
+    public struct All: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.protoMessageName + ".All"
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+
+      /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+      /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+      /// initializers are defined in the SwiftProtobuf library. See the Message and
+      /// Message+*Additions` files.
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+        while let _ = try decoder.nextFieldNumber() {
+        }
+      }
+
+      /// Used by the encoding methods of the SwiftProtobuf library, not generally
+      /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+      /// other serializer methods are defined in the SwiftProtobuf library. See the
+      /// `Message` and `Message+*Additions` files.
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+        try unknownFields.traverse(visitor: &visitor)
+      }
+    }
+
+    /// Serve a specific version (or set of versions).
+    ///
+    /// This policy is useful for rolling back to a specific version, or for
+    /// canarying a specific version while still serving a separate stable
+    /// version.
+    public struct Specific: SwiftProtobuf.Message {
+      public static let protoMessageName: String = Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.protoMessageName + ".Specific"
+
+      /// The version numbers to serve.
+      public var versions: [Int64] = []
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+
+      /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+      /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+      /// initializers are defined in the SwiftProtobuf library. See the Message and
+      /// Message+*Additions` files.
+      public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+        while let fieldNumber = try decoder.nextFieldNumber() {
+          switch fieldNumber {
+          case 1: try decoder.decodeRepeatedInt64Field(value: &self.versions)
+          default: break
+          }
+        }
+      }
+
+      /// Used by the encoding methods of the SwiftProtobuf library, not generally
+      /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+      /// other serializer methods are defined in the SwiftProtobuf library. See the
+      /// `Message` and `Message+*Additions` files.
+      public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+        if !self.versions.isEmpty {
+          try visitor.visitPackedInt64Field(value: self.versions, fieldNumber: 1)
+        }
+        try unknownFields.traverse(visitor: &visitor)
+      }
+    }
+
+    public init() {}
+
+    /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+    /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+    /// initializers are defined in the SwiftProtobuf library. See the Message and
+    /// Message+*Additions` files.
+    public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+      _ = _uniqueStorage()
+      try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+        while let fieldNumber = try decoder.nextFieldNumber() {
+          switch fieldNumber {
+          case 100:
+            var v: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest?
+            if let current = _storage._policyChoice {
+              try decoder.handleConflictingOneOf()
+              if case .latest(let m) = current {v = m}
+            }
+            try decoder.decodeSingularMessageField(value: &v)
+            if let v = v {_storage._policyChoice = .latest(v)}
+          case 101:
+            var v: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All?
+            if let current = _storage._policyChoice {
+              try decoder.handleConflictingOneOf()
+              if case .all(let m) = current {v = m}
+            }
+            try decoder.decodeSingularMessageField(value: &v)
+            if let v = v {_storage._policyChoice = .all(v)}
+          case 102:
+            var v: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific?
+            if let current = _storage._policyChoice {
+              try decoder.handleConflictingOneOf()
+              if case .specific(let m) = current {v = m}
+            }
+            try decoder.decodeSingularMessageField(value: &v)
+            if let v = v {_storage._policyChoice = .specific(v)}
+          default: break
+          }
+        }
+      }
+    }
+
+    /// Used by the encoding methods of the SwiftProtobuf library, not generally
+    /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+    /// other serializer methods are defined in the SwiftProtobuf library. See the
+    /// `Message` and `Message+*Additions` files.
+    public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+      try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+        switch _storage._policyChoice {
+        case .latest(let v)?:
+          try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+        case .all(let v)?:
+          try visitor.visitSingularMessageField(value: v, fieldNumber: 101)
+        case .specific(let v)?:
+          try visitor.visitSingularMessageField(value: v, fieldNumber: 102)
+        case nil: break
+        }
+      }
+      try unknownFields.traverse(visitor: &visitor)
+    }
+
+    fileprivate var _storage = _StorageClass.defaultInstance
   }
 
   /// A servable name and base path to look for versions of the servable.
@@ -89,14 +272,27 @@ public struct Tensorflow_Serving_FileSystemStoragePathSourceConfig: SwiftProtobu
 
     /// The servable name to supply in aspired-versions callback calls. Child
     /// paths of 'base_path' are considered to be versions of this servable.
-    public var servableName: String = String()
+    public var servableName: String {
+      get {return _storage._servableName}
+      set {_uniqueStorage()._servableName = newValue}
+    }
 
     /// The path to monitor, i.e. look for child paths of the form base_path/123.
-    public var basePath: String = String()
+    public var basePath: String {
+      get {return _storage._basePath}
+      set {_uniqueStorage()._basePath = newValue}
+    }
 
     /// The policy to determines the number of versions of the servable to be
     /// served at the same time.
-    public var versionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.VersionPolicy = .latestVersion
+    public var servableVersionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy {
+      get {return _storage._servableVersionPolicy ?? Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy()}
+      set {_uniqueStorage()._servableVersionPolicy = newValue}
+    }
+    /// Returns true if `servableVersionPolicy` has been explicitly set.
+    public var hasServableVersionPolicy: Bool {return _storage._servableVersionPolicy != nil}
+    /// Clears the value of `servableVersionPolicy`. Subsequent reads from it will return its default value.
+    public mutating func clearServableVersionPolicy() {_storage._servableVersionPolicy = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -107,12 +303,15 @@ public struct Tensorflow_Serving_FileSystemStoragePathSourceConfig: SwiftProtobu
     /// initializers are defined in the SwiftProtobuf library. See the Message and
     /// Message+*Additions` files.
     public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularStringField(value: &self.servableName)
-        case 2: try decoder.decodeSingularStringField(value: &self.basePath)
-        case 3: try decoder.decodeSingularEnumField(value: &self.versionPolicy)
-        default: break
+      _ = _uniqueStorage()
+      try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+        while let fieldNumber = try decoder.nextFieldNumber() {
+          switch fieldNumber {
+          case 1: try decoder.decodeSingularStringField(value: &_storage._servableName)
+          case 2: try decoder.decodeSingularStringField(value: &_storage._basePath)
+          case 4: try decoder.decodeSingularMessageField(value: &_storage._servableVersionPolicy)
+          default: break
+          }
         }
       }
     }
@@ -122,17 +321,21 @@ public struct Tensorflow_Serving_FileSystemStoragePathSourceConfig: SwiftProtobu
     /// other serializer methods are defined in the SwiftProtobuf library. See the
     /// `Message` and `Message+*Additions` files.
     public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-      if !self.servableName.isEmpty {
-        try visitor.visitSingularStringField(value: self.servableName, fieldNumber: 1)
-      }
-      if !self.basePath.isEmpty {
-        try visitor.visitSingularStringField(value: self.basePath, fieldNumber: 2)
-      }
-      if self.versionPolicy != .latestVersion {
-        try visitor.visitSingularEnumField(value: self.versionPolicy, fieldNumber: 3)
+      try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+        if !_storage._servableName.isEmpty {
+          try visitor.visitSingularStringField(value: _storage._servableName, fieldNumber: 1)
+        }
+        if !_storage._basePath.isEmpty {
+          try visitor.visitSingularStringField(value: _storage._basePath, fieldNumber: 2)
+        }
+        if let v = _storage._servableVersionPolicy {
+          try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+        }
       }
       try unknownFields.traverse(visitor: &visitor)
     }
+
+    fileprivate var _storage = _StorageClass.defaultInstance
   }
 
   public init() {}
@@ -202,24 +405,118 @@ extension Tensorflow_Serving_FileSystemStoragePathSourceConfig: SwiftProtobuf._M
   }
 }
 
-extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.VersionPolicy: SwiftProtobuf._ProtoNameProviding {
+extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "LATEST_VERSION"),
-    1: .same(proto: "ALL_VERSIONS"),
+    100: .same(proto: "latest"),
+    101: .same(proto: "all"),
+    102: .same(proto: "specific"),
   ]
+
+  fileprivate class _StorageClass {
+    var _policyChoice: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.OneOf_PolicyChoice?
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _policyChoice = source._policyChoice
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy) -> Bool {
+    if _storage !== other._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
+        if _storage._policyChoice != other_storage._policyChoice {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "num_versions"),
+  ]
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Latest) -> Bool {
+    if self.numVersions != other.numVersions {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.All) -> Bool {
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "versions"),
+  ]
+
+  public func _protobuf_generated_isEqualTo(other: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy.Specific) -> Bool {
+    if self.versions != other.versions {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
 }
 
 extension Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableToMonitor: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "servable_name"),
     2: .standard(proto: "base_path"),
-    3: .standard(proto: "version_policy"),
+    4: .standard(proto: "servable_version_policy"),
   ]
 
+  fileprivate class _StorageClass {
+    var _servableName: String = String()
+    var _basePath: String = String()
+    var _servableVersionPolicy: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableVersionPolicy? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _servableName = source._servableName
+      _basePath = source._basePath
+      _servableVersionPolicy = source._servableVersionPolicy
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public func _protobuf_generated_isEqualTo(other: Tensorflow_Serving_FileSystemStoragePathSourceConfig.ServableToMonitor) -> Bool {
-    if self.servableName != other.servableName {return false}
-    if self.basePath != other.basePath {return false}
-    if self.versionPolicy != other.versionPolicy {return false}
+    if _storage !== other._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
+        if _storage._servableName != other_storage._servableName {return false}
+        if _storage._basePath != other_storage._basePath {return false}
+        if _storage._servableVersionPolicy != other_storage._servableVersionPolicy {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if unknownFields != other.unknownFields {return false}
     return true
   }

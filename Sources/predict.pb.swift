@@ -37,10 +37,8 @@ public struct Tensorflow_Serving_PredictRequest: SwiftProtobuf.Message {
 
   /// Input tensors.
   /// Names of input tensor are alias names. The mapping from aliases to real
-  /// input tensor names is expected to be stored as named generic signature
-  /// under the key "inputs" in the model export.
-  /// Each alias listed in a generic signature named "inputs" should be provided
-  /// exactly once in order to run the prediction.
+  /// input tensor names is stored in the SavedModel export as a prediction
+  /// SignatureDef under the 'inputs' field.
   public var inputs: Dictionary<String,Tensorflow_TensorProto> {
     get {return _storage._inputs}
     set {_uniqueStorage()._inputs = newValue}
@@ -48,8 +46,8 @@ public struct Tensorflow_Serving_PredictRequest: SwiftProtobuf.Message {
 
   /// Output filter.
   /// Names specified are alias names. The mapping from aliases to real output
-  /// tensor names is expected to be stored as named generic signature under
-  /// the key "outputs" in the model export.
+  /// tensor names is stored in the SavedModel export as a prediction
+  /// SignatureDef under the 'outputs' field.
   /// Only tensors specified here will be run/fetched and returned, with the
   /// exception that when none is specified, all tensors specified in the
   /// named signature will be run/fetched and returned.

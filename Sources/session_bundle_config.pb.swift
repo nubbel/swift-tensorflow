@@ -82,6 +82,19 @@ public struct Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf.Message {
 
   /// EXPERIMENTAL. THIS FIELD MAY CHANGE OR GO AWAY. USE WITH CAUTION.
   ///
+  /// Transient memory used while loading a model, which is released once the
+  /// loading phase has completed. (This is on top of the memory used in steady-
+  /// state while the model is in memory after it has finished loading.)
+  ///
+  /// TODO(b/38376838): This is a temporary hack, and it applies to all models.
+  /// Remove it once resource estimates are moved inside SavedModel.
+  public var experimentalTransientRamBytesDuringLoad: UInt64 {
+    get {return _storage._experimentalTransientRamBytesDuringLoad}
+    set {_uniqueStorage()._experimentalTransientRamBytesDuringLoad = newValue}
+  }
+
+  /// EXPERIMENTAL. THIS FIELD MAY CHANGE OR GO AWAY. USE WITH CAUTION.
+  ///
   /// Input tensors to append to every Session::Run() call.
   public var experimentalFixedInputTensors: [Tensorflow_NamedTensorProto] {
     get {return _storage._experimentalFixedInputTensors}
@@ -105,6 +118,7 @@ public struct Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf.Message {
         case 2: try decoder.decodeSingularMessageField(value: &_storage._sessionConfig)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._batchingParameters)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._sessionRunLoadThreadpoolIndex)
+        case 5: try decoder.decodeSingularUInt64Field(value: &_storage._experimentalTransientRamBytesDuringLoad)
         case 778: try decoder.decodeRepeatedMessageField(value: &_storage._experimentalFixedInputTensors)
         default: break
         }
@@ -129,6 +143,9 @@ public struct Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf.Message {
       }
       if let v = _storage._sessionRunLoadThreadpoolIndex {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      }
+      if _storage._experimentalTransientRamBytesDuringLoad != 0 {
+        try visitor.visitSingularUInt64Field(value: _storage._experimentalTransientRamBytesDuringLoad, fieldNumber: 5)
       }
       if !_storage._experimentalFixedInputTensors.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._experimentalFixedInputTensors, fieldNumber: 778)
@@ -214,6 +231,12 @@ public struct Tensorflow_Serving_BatchingParameters: SwiftProtobuf.Message {
     set {_uniqueStorage()._allowedBatchSizes = newValue}
   }
 
+  /// Whether to pad variable-length inputs when a batch is formed.
+  public var padVariableLengthInputs: Bool {
+    get {return _storage._padVariableLengthInputs}
+    set {_uniqueStorage()._padVariableLengthInputs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -233,6 +256,7 @@ public struct Tensorflow_Serving_BatchingParameters: SwiftProtobuf.Message {
         case 4: try decoder.decodeSingularMessageField(value: &_storage._numBatchThreads)
         case 5: try decoder.decodeSingularMessageField(value: &_storage._threadPoolName)
         case 6: try decoder.decodeRepeatedInt64Field(value: &_storage._allowedBatchSizes)
+        case 7: try decoder.decodeSingularBoolField(value: &_storage._padVariableLengthInputs)
         default: break
         }
       }
@@ -263,6 +287,9 @@ public struct Tensorflow_Serving_BatchingParameters: SwiftProtobuf.Message {
       if !_storage._allowedBatchSizes.isEmpty {
         try visitor.visitPackedInt64Field(value: _storage._allowedBatchSizes, fieldNumber: 6)
       }
+      if _storage._padVariableLengthInputs != false {
+        try visitor.visitSingularBoolField(value: _storage._padVariableLengthInputs, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -280,6 +307,7 @@ extension Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf._MessageImplemen
     2: .standard(proto: "session_config"),
     3: .standard(proto: "batching_parameters"),
     4: .standard(proto: "session_run_load_threadpool_index"),
+    5: .standard(proto: "experimental_transient_ram_bytes_during_load"),
     778: .standard(proto: "experimental_fixed_input_tensors"),
   ]
 
@@ -288,6 +316,7 @@ extension Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf._MessageImplemen
     var _sessionConfig: Tensorflow_ConfigProto? = nil
     var _batchingParameters: Tensorflow_Serving_BatchingParameters? = nil
     var _sessionRunLoadThreadpoolIndex: SwiftProtobuf.Google_Protobuf_Int32Value? = nil
+    var _experimentalTransientRamBytesDuringLoad: UInt64 = 0
     var _experimentalFixedInputTensors: [Tensorflow_NamedTensorProto] = []
 
     static let defaultInstance = _StorageClass()
@@ -299,6 +328,7 @@ extension Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf._MessageImplemen
       _sessionConfig = source._sessionConfig
       _batchingParameters = source._batchingParameters
       _sessionRunLoadThreadpoolIndex = source._sessionRunLoadThreadpoolIndex
+      _experimentalTransientRamBytesDuringLoad = source._experimentalTransientRamBytesDuringLoad
       _experimentalFixedInputTensors = source._experimentalFixedInputTensors
     }
   }
@@ -317,6 +347,7 @@ extension Tensorflow_Serving_SessionBundleConfig: SwiftProtobuf._MessageImplemen
         if _storage._sessionConfig != other_storage._sessionConfig {return false}
         if _storage._batchingParameters != other_storage._batchingParameters {return false}
         if _storage._sessionRunLoadThreadpoolIndex != other_storage._sessionRunLoadThreadpoolIndex {return false}
+        if _storage._experimentalTransientRamBytesDuringLoad != other_storage._experimentalTransientRamBytesDuringLoad {return false}
         if _storage._experimentalFixedInputTensors != other_storage._experimentalFixedInputTensors {return false}
         return true
       }
@@ -335,6 +366,7 @@ extension Tensorflow_Serving_BatchingParameters: SwiftProtobuf._MessageImplement
     4: .standard(proto: "num_batch_threads"),
     5: .standard(proto: "thread_pool_name"),
     6: .standard(proto: "allowed_batch_sizes"),
+    7: .standard(proto: "pad_variable_length_inputs"),
   ]
 
   fileprivate class _StorageClass {
@@ -344,6 +376,7 @@ extension Tensorflow_Serving_BatchingParameters: SwiftProtobuf._MessageImplement
     var _numBatchThreads: SwiftProtobuf.Google_Protobuf_Int64Value? = nil
     var _threadPoolName: SwiftProtobuf.Google_Protobuf_StringValue? = nil
     var _allowedBatchSizes: [Int64] = []
+    var _padVariableLengthInputs: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -356,6 +389,7 @@ extension Tensorflow_Serving_BatchingParameters: SwiftProtobuf._MessageImplement
       _numBatchThreads = source._numBatchThreads
       _threadPoolName = source._threadPoolName
       _allowedBatchSizes = source._allowedBatchSizes
+      _padVariableLengthInputs = source._padVariableLengthInputs
     }
   }
 
@@ -375,6 +409,7 @@ extension Tensorflow_Serving_BatchingParameters: SwiftProtobuf._MessageImplement
         if _storage._numBatchThreads != other_storage._numBatchThreads {return false}
         if _storage._threadPoolName != other_storage._threadPoolName {return false}
         if _storage._allowedBatchSizes != other_storage._allowedBatchSizes {return false}
+        if _storage._padVariableLengthInputs != other_storage._padVariableLengthInputs {return false}
         return true
       }
       if !storagesAreEqual {return false}

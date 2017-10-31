@@ -50,7 +50,7 @@ public struct Tensorflow_GPUOptions: SwiftProtobuf.Message {
   /// A comma-separated list of GPU ids that determines the 'visible'
   /// to 'virtual' mapping of GPU devices.  For example, if TensorFlow
   /// can see 8 GPU devices in the process, and one wanted to map
-  /// visible GPU devices 5 and 3 as "/gpu:0", and "/gpu:1", then one
+  /// visible GPU devices 5 and 3 as "/device:GPU:0", and "/device:GPU:1", then one
   /// would specify this field as "5,3".  This field is similar in
   /// spirit to the CUDA_VISIBLE_DEVICES environment variable, except
   /// it applies to the visible GPU devices in the process.
@@ -153,9 +153,18 @@ public struct Tensorflow_OptimizerOptions: SwiftProtobuf.Message {
   /// If true, perform constant folding optimization on the graph.
   public var doConstantFolding: Bool = false
 
+  /// Constant folding optimization replaces tensors whose values can be
+  /// predetermined, with constant nodes. To avoid inserting too large constants,
+  /// the size of each constant created can be limited. If this value is zero, a
+  /// default limit of 10 MiB will be applied. If constant folding optimization
+  /// is disabled, this value is ignored.
+  public var maxFoldedConstantInBytes: Int64 = 0
+
   /// If true, perform function inlining on the graph.
   public var doFunctionInlining: Bool = false
 
+  /// Overall optimization level. The actual optimizations applied will be the
+  /// logical OR of the flags that this level implies and any flags already set.
   public var optLevel: Tensorflow_OptimizerOptions.Level = .l1
 
   public var globalJitLevel: Tensorflow_OptimizerOptions.GlobalJitLevel = .default
@@ -254,6 +263,7 @@ public struct Tensorflow_OptimizerOptions: SwiftProtobuf.Message {
       case 3: try decoder.decodeSingularEnumField(value: &self.optLevel)
       case 4: try decoder.decodeSingularBoolField(value: &self.doFunctionInlining)
       case 5: try decoder.decodeSingularEnumField(value: &self.globalJitLevel)
+      case 6: try decoder.decodeSingularInt64Field(value: &self.maxFoldedConstantInBytes)
       default: break
       }
     }
@@ -278,6 +288,9 @@ public struct Tensorflow_OptimizerOptions: SwiftProtobuf.Message {
     }
     if self.globalJitLevel != .default {
       try visitor.visitSingularEnumField(value: self.globalJitLevel, fieldNumber: 5)
+    }
+    if self.maxFoldedConstantInBytes != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxFoldedConstantInBytes, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -351,6 +364,8 @@ public struct Tensorflow_GraphOptions: SwiftProtobuf.Message {
   }
 
   /// Options that control the type and amount of graph rewriting.
+  /// Not currently configurable via the public Python API (i.e. there is no API
+  /// stability guarantee if you import RewriterConfig explicitly).
   public var rewriteOptions: Tensorflow_RewriterConfig {
     get {return _storage._rewriteOptions ?? Tensorflow_RewriterConfig()}
     set {_uniqueStorage()._rewriteOptions = newValue}
@@ -437,6 +452,23 @@ public struct Tensorflow_ThreadPoolOptionProto: SwiftProtobuf.Message {
   /// (see the declaration of the specific field for more info).
   public var numThreads: Int32 = 0
 
+  /// The global name of the threadpool.
+  ///
+  /// If empty, then the threadpool is made and used according to the scope it's
+  /// in - e.g., for a session threadpool, it is used by that session only.
+  ///
+  /// If non-empty, then:
+  /// - a global threadpool associated with this name is looked
+  ///   up or created. This allows, for example, sharing one threadpool across
+  ///   many sessions (e.g., like the default behavior, if
+  ///   inter_op_parallelism_threads is not configured), but still partitioning
+  ///   into a large and small pool.
+  /// - if the threadpool for this global_name already exists, then it is an
+  ///   error if the existing pool was created using a different num_threads
+  ///   value as is specified on this call.
+  /// - threadpools created this way are never garbage collected.
+  public var globalName: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -449,6 +481,7 @@ public struct Tensorflow_ThreadPoolOptionProto: SwiftProtobuf.Message {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.numThreads)
+      case 2: try decoder.decodeSingularStringField(value: &self.globalName)
       default: break
       }
     }
@@ -461,6 +494,9 @@ public struct Tensorflow_ThreadPoolOptionProto: SwiftProtobuf.Message {
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.numThreads != 0 {
       try visitor.visitSingularInt32Field(value: self.numThreads, fieldNumber: 1)
+    }
+    if !self.globalName.isEmpty {
+      try visitor.visitSingularStringField(value: self.globalName, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -555,13 +591,24 @@ public struct Tensorflow_ConfigProto: SwiftProtobuf.Message {
   }
 
   /// This option is experimental - it may be replaced with a different mechanism
-  /// in the future. The intended use is for when some session invocations need
-  /// to run in a background pool limited to a small number of threads.
+  /// in the future.
   ///
   /// Configures session thread pools. If this is configured, then RunOptions for
   /// a Run call can select the thread pool to use.
   ///
-  /// If a pool's num_threads is 0, then inter_op_parallelism_threads is used.
+  /// The intended use is for when some session invocations need to run in a
+  /// background pool limited to a small number of threads:
+  /// - For example, a session may be configured to have one large pool (for
+  /// regular compute) and one small pool (for periodic, low priority work);
+  /// using the small pool is currently the mechanism for limiting the inter-op
+  /// parallelism of the low priority work.  Note that it does not limit the
+  /// parallelism of work spawned by a single op kernel implementation.
+  /// - Using this setting is normally not needed in training, but may help some
+  /// serving use cases.
+  /// - It is also generally recommended to set the global_name field of this
+  /// proto, to avoid creating multiple large pools. It is typically better to
+  /// run the non-low-priority work, even across sessions, in a single large
+  /// pool.
   public var sessionInterOpThreadPool: [Tensorflow_ThreadPoolOptionProto] {
     get {return _storage._sessionInterOpThreadPool}
     set {_uniqueStorage()._sessionInterOpThreadPool = newValue}
@@ -973,6 +1020,7 @@ extension Tensorflow_OptimizerOptions: SwiftProtobuf._MessageImplementationBase,
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "do_common_subexpression_elimination"),
     2: .standard(proto: "do_constant_folding"),
+    6: .standard(proto: "max_folded_constant_in_bytes"),
     4: .standard(proto: "do_function_inlining"),
     3: .standard(proto: "opt_level"),
     5: .standard(proto: "global_jit_level"),
@@ -981,6 +1029,7 @@ extension Tensorflow_OptimizerOptions: SwiftProtobuf._MessageImplementationBase,
   public func _protobuf_generated_isEqualTo(other: Tensorflow_OptimizerOptions) -> Bool {
     if self.doCommonSubexpressionElimination != other.doCommonSubexpressionElimination {return false}
     if self.doConstantFolding != other.doConstantFolding {return false}
+    if self.maxFoldedConstantInBytes != other.maxFoldedConstantInBytes {return false}
     if self.doFunctionInlining != other.doFunctionInlining {return false}
     if self.optLevel != other.optLevel {return false}
     if self.globalJitLevel != other.globalJitLevel {return false}
@@ -1077,10 +1126,12 @@ extension Tensorflow_GraphOptions: SwiftProtobuf._MessageImplementationBase, Swi
 extension Tensorflow_ThreadPoolOptionProto: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "num_threads"),
+    2: .standard(proto: "global_name"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_ThreadPoolOptionProto) -> Bool {
     if self.numThreads != other.numThreads {return false}
+    if self.globalName != other.globalName {return false}
     if unknownFields != other.unknownFields {return false}
     return true
   }

@@ -34,17 +34,82 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// Debugging options for XLA. These options may change at any time - there are
-/// no guarantees about backward or forward compatibility for these fields.
-public struct Xla_DebugOptions: SwiftProtobuf.Message {
-  public static let protoMessageName: String = _protobuf_package + ".DebugOptions"
+/// Options for the HLO insert-reduce-precision-operations pass.
+public struct Xla_HloReducePrecisionOptions: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".HloReducePrecisionOptions"
 
-  /// HLO modules matching this regex will be dumped to a .dot file throughout
-  /// various stages in compilation (file names are LOG(INFO)'d). Set to ".*" to
-  /// dump *all* HLO modules.
-  public var xlaGenerateHloGraph: String = String()
+  public var location: Xla_HloReducePrecisionOptions.Location = .opInputs
+
+  /// Exponent and mantissa bit counts for the reduced precision.
+  public var exponentBits: UInt32 = 0
+
+  public var mantissaBits: UInt32 = 0
+
+  /// Operations matching these opcodes should be suffixed with reduce-precision
+  /// operations.
+  public var opcodesToSuffix: [UInt32] = []
+
+  /// Operations with names containing these substrings should be suffixed with
+  /// reduce-precision operations.
+  public var opnameSubstringsToSuffix: [String] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  /// Where and when the reduce-precision operations will be added.
+  public enum Location: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+
+    /// Add reduce-precision operations to the inputs of selected instructions.
+    /// This is done before any optimization occurs.
+    case opInputs // = 0
+
+    /// Add reduce-precision operations to the outputs of selected instructions.
+    /// This is done before any optimization occurs.
+    case opOutputs // = 1
+
+    /// After operation-fusion occurs, add reduce-precision operations to the
+    /// outputs of any selected instructions that have not been fused into
+    /// fusion instructions.
+    case unfusedOpOutputs // = 2
+
+    /// After operation-fusion occurs, add reduce-precision operations to the
+    /// outputs of any fusion instructions that contain operations matching the
+    /// selection criteria.
+    case fusionInputsByContent // = 3
+
+    /// After operation-fusion occurs, add reduce-precision operations to the
+    /// outputs of any fusion instructions that contain operations matching the
+    /// selection criteria.
+    case fusionOutputsByContent // = 4
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .opInputs
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .opInputs
+      case 1: self = .opOutputs
+      case 2: self = .unfusedOpOutputs
+      case 3: self = .fusionInputsByContent
+      case 4: self = .fusionOutputsByContent
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .opInputs: return 0
+      case .opOutputs: return 1
+      case .unfusedOpOutputs: return 2
+      case .fusionInputsByContent: return 3
+      case .fusionOutputsByContent: return 4
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public init() {}
 
@@ -55,7 +120,11 @@ public struct Xla_DebugOptions: SwiftProtobuf.Message {
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.xlaGenerateHloGraph)
+      case 1: try decoder.decodeSingularEnumField(value: &self.location)
+      case 2: try decoder.decodeSingularUInt32Field(value: &self.exponentBits)
+      case 3: try decoder.decodeSingularUInt32Field(value: &self.mantissaBits)
+      case 4: try decoder.decodeRepeatedUInt32Field(value: &self.opcodesToSuffix)
+      case 5: try decoder.decodeRepeatedStringField(value: &self.opnameSubstringsToSuffix)
       default: break
       }
     }
@@ -66,11 +135,366 @@ public struct Xla_DebugOptions: SwiftProtobuf.Message {
   /// other serializer methods are defined in the SwiftProtobuf library. See the
   /// `Message` and `Message+*Additions` files.
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.xlaGenerateHloGraph.isEmpty {
-      try visitor.visitSingularStringField(value: self.xlaGenerateHloGraph, fieldNumber: 1)
+    if self.location != .opInputs {
+      try visitor.visitSingularEnumField(value: self.location, fieldNumber: 1)
+    }
+    if self.exponentBits != 0 {
+      try visitor.visitSingularUInt32Field(value: self.exponentBits, fieldNumber: 2)
+    }
+    if self.mantissaBits != 0 {
+      try visitor.visitSingularUInt32Field(value: self.mantissaBits, fieldNumber: 3)
+    }
+    if !self.opcodesToSuffix.isEmpty {
+      try visitor.visitPackedUInt32Field(value: self.opcodesToSuffix, fieldNumber: 4)
+    }
+    if !self.opnameSubstringsToSuffix.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.opnameSubstringsToSuffix, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
+}
+
+/// Debugging options for XLA. These options may change at any time - there are
+/// no guarantees about backward or forward compatibility for these fields.
+public struct Xla_DebugOptions: SwiftProtobuf.Message {
+  public static let protoMessageName: String = _protobuf_package + ".DebugOptions"
+
+  /// HLO modules matching this regex will be dumped to a .dot file throughout
+  /// various stages in compilation (file names are LOG(INFO)'d). Set to ".*" to
+  /// dump *all* HLO modules.
+  public var xlaGenerateHloGraph: String {
+    get {return _storage._xlaGenerateHloGraph}
+    set {_uniqueStorage()._xlaGenerateHloGraph = newValue}
+  }
+
+  /// Show addresses of HLO ops in graph dump.
+  public var xlaHloGraphAddresses: Bool {
+    get {return _storage._xlaHloGraphAddresses}
+    set {_uniqueStorage()._xlaHloGraphAddresses = newValue}
+  }
+
+  /// Path to dump HLO graphs to.
+  public var xlaHloGraphPath: String {
+    get {return _storage._xlaHloGraphPath}
+    set {_uniqueStorage()._xlaHloGraphPath = newValue}
+  }
+
+  /// Dump HLO graphs as TensorFlow GraphDefs.
+  public var xlaHloDumpAsGraphdef: Bool {
+    get {return _storage._xlaHloDumpAsGraphdef}
+    set {_uniqueStorage()._xlaHloDumpAsGraphdef = newValue}
+  }
+
+  /// HLO modules matching this regex will be dumped to LOG(INFO). Set to ".*" to
+  /// dump *all* HLO modules.
+  public var xlaLogHloText: String {
+    get {return _storage._xlaLogHloText}
+    set {_uniqueStorage()._xlaLogHloText = newValue}
+  }
+
+  /// Dump all HLO modules as text into the provided directory path.
+  public var xlaGenerateHloTextTo: String {
+    get {return _storage._xlaGenerateHloTextTo}
+    set {_uniqueStorage()._xlaGenerateHloTextTo = newValue}
+  }
+
+  /// Dump compilation artifacts in binary proto into this directory.
+  public var xlaDumpHloProtoTo: String {
+    get {return _storage._xlaDumpHloProtoTo}
+    set {_uniqueStorage()._xlaDumpHloProtoTo = newValue}
+  }
+
+  /// Instrument the computation to collect per-HLO cycle counts.
+  public var xlaHloProfile: Bool {
+    get {return _storage._xlaHloProfile}
+    set {_uniqueStorage()._xlaHloProfile = newValue}
+  }
+
+  /// Dumps computations that XLA executes into the provided directory path.
+  public var xlaDumpComputationsTo: String {
+    get {return _storage._xlaDumpComputationsTo}
+    set {_uniqueStorage()._xlaDumpComputationsTo = newValue}
+  }
+
+  /// Dumps parameters and results of computations that XLA executes into the
+  /// provided directory path.
+  public var xlaDumpExecutionsTo: String {
+    get {return _storage._xlaDumpExecutionsTo}
+    set {_uniqueStorage()._xlaDumpExecutionsTo = newValue}
+  }
+
+  /// List of HLO passes to disable. These names must exactly match the pass
+  /// names as specified by the HloPassInterface::name() method.
+  public var xlaDisableHloPasses: [String] {
+    get {return _storage._xlaDisableHloPasses}
+    set {_uniqueStorage()._xlaDisableHloPasses = newValue}
+  }
+
+  /// Numerical optimization level for the XLA compiler backend; the specific
+  /// interpretation of this value is left to the backends.
+  public var xlaBackendOptimizationLevel: Int32 {
+    get {return _storage._xlaBackendOptimizationLevel}
+    set {_uniqueStorage()._xlaBackendOptimizationLevel = newValue}
+  }
+
+  /// When true, "unsafe" mathematical optimizations are enabled. These
+  /// transformations include but are not limited to:
+  ///
+  ///  - Reducing the precision of operations (e.g. using an approximate sin
+  ///    function, or transforming x/y into x * (1/y)).
+  ///  - Assuming that operations never produce or consume NaN or +/- Inf.
+  ///  - Assuming that +0 and -0 are indistinguishable.
+  public var xlaEnableFastMath: Bool {
+    get {return _storage._xlaEnableFastMath}
+    set {_uniqueStorage()._xlaEnableFastMath = newValue}
+  }
+
+  /// Embed the compiler IR as a string in the executable.
+  public var xlaEmbedIrInExecutable: Bool {
+    get {return _storage._xlaEmbedIrInExecutable}
+    set {_uniqueStorage()._xlaEmbedIrInExecutable = newValue}
+  }
+
+  /// Dump the compiler IR into this directory as individual files.
+  public var xlaDumpIrTo: String {
+    get {return _storage._xlaDumpIrTo}
+    set {_uniqueStorage()._xlaDumpIrTo = newValue}
+  }
+
+  /// Eliminate implicit broadcasts when lowering user computations to HLO
+  /// instructions; use explicit broadcast instead.
+  public var xlaEliminateHloImplicitBroadcast: Bool {
+    get {return _storage._xlaEliminateHloImplicitBroadcast}
+    set {_uniqueStorage()._xlaEliminateHloImplicitBroadcast = newValue}
+  }
+
+  /// When generating calls to Eigen in the CPU backend, use multi-threaded Eigen
+  /// mode.
+  public var xlaCpuMultiThreadEigen: Bool {
+    get {return _storage._xlaCpuMultiThreadEigen}
+    set {_uniqueStorage()._xlaCpuMultiThreadEigen = newValue}
+  }
+
+  /// Path to directory with cuda/ptx tools and libraries.
+  public var xlaGpuCudaDataDir: String {
+    get {return _storage._xlaGpuCudaDataDir}
+    set {_uniqueStorage()._xlaGpuCudaDataDir = newValue}
+  }
+
+  /// Enable flush-to-zero semantics in the GPU backend.
+  public var xlaGpuFtz: Bool {
+    get {return _storage._xlaGpuFtz}
+    set {_uniqueStorage()._xlaGpuFtz = newValue}
+  }
+
+  /// Disable multi-streaming in the GPU backend.
+  public var xlaGpuDisableMultiStreaming: Bool {
+    get {return _storage._xlaGpuDisableMultiStreaming}
+    set {_uniqueStorage()._xlaGpuDisableMultiStreaming = newValue}
+  }
+
+  /// If true, in LLVM-based backends, emit !alias.scope metadata in
+  /// generated IR.
+  public var xlaLlvmEnableAliasScopeMetadata: Bool {
+    get {return _storage._xlaLlvmEnableAliasScopeMetadata}
+    set {_uniqueStorage()._xlaLlvmEnableAliasScopeMetadata = newValue}
+  }
+
+  /// If true, in LLVM-based backends, emit !noalias metadata in the
+  /// generated IR.
+  public var xlaLlvmEnableNoaliasMetadata: Bool {
+    get {return _storage._xlaLlvmEnableNoaliasMetadata}
+    set {_uniqueStorage()._xlaLlvmEnableNoaliasMetadata = newValue}
+  }
+
+  /// If true, in LLVM-based backends, emit !invariant.load metadata in
+  /// the generated IR.
+  public var xlaLlvmEnableInvariantLoadMetadata: Bool {
+    get {return _storage._xlaLlvmEnableInvariantLoadMetadata}
+    set {_uniqueStorage()._xlaLlvmEnableInvariantLoadMetadata = newValue}
+  }
+
+  /// If true, a set of expensive LLVM optimization passes will not be run.
+  public var xlaLlvmDisableExpensivePasses: Bool {
+    get {return _storage._xlaLlvmDisableExpensivePasses}
+    set {_uniqueStorage()._xlaLlvmDisableExpensivePasses = newValue}
+  }
+
+  /// Options for inserting reduce-precision operations for numerical
+  /// experimentation.  This is a repeated field, as we may want to have
+  /// multiple passes with different parameters.
+  public var hloReducePrecisionOptions: [Xla_HloReducePrecisionOptions] {
+    get {return _storage._hloReducePrecisionOptions}
+    set {_uniqueStorage()._hloReducePrecisionOptions = newValue}
+  }
+
+  /// This is used by ClientLibraryTestBase::ComputeAndCompare*. If true, the
+  /// computation will run n! times with all permunations of layouts for the
+  /// output shape in rank n. For example, with a 3D shape, all permutations of
+  /// the set {0, 1, 2} are tried.
+  public var xlaTestAllOutputLayouts: Bool {
+    get {return _storage._xlaTestAllOutputLayouts}
+    set {_uniqueStorage()._xlaTestAllOutputLayouts = newValue}
+  }
+
+  /// This is used by ClientLibraryTestBase::ComputeAndCompare*. If true, the
+  /// computation will run for all permunations of layouts of all input
+  /// arguments. For example, with 2 input arguments in 2D and 4D shapes, the
+  /// computation will run 2! * 4! times.
+  public var xlaTestAllInputLayouts: Bool {
+    get {return _storage._xlaTestAllInputLayouts}
+    set {_uniqueStorage()._xlaTestAllInputLayouts = newValue}
+  }
+
+  /// Extra options to pass to the compilation backend; specific interpretation
+  /// of these values is left to the backend.
+  public var xlaBackendExtraOptions: Dictionary<String,String> {
+    get {return _storage._xlaBackendExtraOptions}
+    set {_uniqueStorage()._xlaBackendExtraOptions = newValue}
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  /// Used by the decoding initializers in the SwiftProtobuf library, not generally
+  /// used directly. `init(serializedData:)`, `init(jsonUTF8Data:)`, and other decoding
+  /// initializers are defined in the SwiftProtobuf library. See the Message and
+  /// Message+*Additions` files.
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._xlaGenerateHloGraph)
+        case 2: try decoder.decodeSingularBoolField(value: &_storage._xlaHloGraphAddresses)
+        case 4: try decoder.decodeSingularStringField(value: &_storage._xlaHloGraphPath)
+        case 5: try decoder.decodeSingularBoolField(value: &_storage._xlaHloDumpAsGraphdef)
+        case 6: try decoder.decodeSingularStringField(value: &_storage._xlaLogHloText)
+        case 7: try decoder.decodeSingularStringField(value: &_storage._xlaGenerateHloTextTo)
+        case 8: try decoder.decodeSingularStringField(value: &_storage._xlaDumpHloProtoTo)
+        case 9: try decoder.decodeSingularBoolField(value: &_storage._xlaHloProfile)
+        case 10: try decoder.decodeSingularStringField(value: &_storage._xlaDumpComputationsTo)
+        case 11: try decoder.decodeSingularStringField(value: &_storage._xlaDumpExecutionsTo)
+        case 30: try decoder.decodeRepeatedStringField(value: &_storage._xlaDisableHloPasses)
+        case 31: try decoder.decodeSingularInt32Field(value: &_storage._xlaBackendOptimizationLevel)
+        case 32: try decoder.decodeSingularBoolField(value: &_storage._xlaEnableFastMath)
+        case 33: try decoder.decodeSingularBoolField(value: &_storage._xlaEmbedIrInExecutable)
+        case 34: try decoder.decodeSingularStringField(value: &_storage._xlaDumpIrTo)
+        case 35: try decoder.decodeSingularBoolField(value: &_storage._xlaEliminateHloImplicitBroadcast)
+        case 60: try decoder.decodeSingularBoolField(value: &_storage._xlaCpuMultiThreadEigen)
+        case 61: try decoder.decodeSingularStringField(value: &_storage._xlaGpuCudaDataDir)
+        case 62: try decoder.decodeSingularBoolField(value: &_storage._xlaGpuFtz)
+        case 63: try decoder.decodeSingularBoolField(value: &_storage._xlaGpuDisableMultiStreaming)
+        case 70: try decoder.decodeSingularBoolField(value: &_storage._xlaLlvmEnableAliasScopeMetadata)
+        case 71: try decoder.decodeSingularBoolField(value: &_storage._xlaLlvmEnableNoaliasMetadata)
+        case 72: try decoder.decodeSingularBoolField(value: &_storage._xlaLlvmEnableInvariantLoadMetadata)
+        case 73: try decoder.decodeSingularBoolField(value: &_storage._xlaLlvmDisableExpensivePasses)
+        case 80: try decoder.decodeRepeatedMessageField(value: &_storage._hloReducePrecisionOptions)
+        case 90: try decoder.decodeSingularBoolField(value: &_storage._xlaTestAllOutputLayouts)
+        case 91: try decoder.decodeSingularBoolField(value: &_storage._xlaTestAllInputLayouts)
+        case 500: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &_storage._xlaBackendExtraOptions)
+        default: break
+        }
+      }
+    }
+  }
+
+  /// Used by the encoding methods of the SwiftProtobuf library, not generally
+  /// used directly. `Message.serializedData()`, `Message.jsonUTF8Data()`, and
+  /// other serializer methods are defined in the SwiftProtobuf library. See the
+  /// `Message` and `Message+*Additions` files.
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._xlaGenerateHloGraph.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaGenerateHloGraph, fieldNumber: 1)
+      }
+      if _storage._xlaHloGraphAddresses != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaHloGraphAddresses, fieldNumber: 2)
+      }
+      if !_storage._xlaHloGraphPath.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaHloGraphPath, fieldNumber: 4)
+      }
+      if _storage._xlaHloDumpAsGraphdef != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaHloDumpAsGraphdef, fieldNumber: 5)
+      }
+      if !_storage._xlaLogHloText.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaLogHloText, fieldNumber: 6)
+      }
+      if !_storage._xlaGenerateHloTextTo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaGenerateHloTextTo, fieldNumber: 7)
+      }
+      if !_storage._xlaDumpHloProtoTo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaDumpHloProtoTo, fieldNumber: 8)
+      }
+      if _storage._xlaHloProfile != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaHloProfile, fieldNumber: 9)
+      }
+      if !_storage._xlaDumpComputationsTo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaDumpComputationsTo, fieldNumber: 10)
+      }
+      if !_storage._xlaDumpExecutionsTo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaDumpExecutionsTo, fieldNumber: 11)
+      }
+      if !_storage._xlaDisableHloPasses.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._xlaDisableHloPasses, fieldNumber: 30)
+      }
+      if _storage._xlaBackendOptimizationLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._xlaBackendOptimizationLevel, fieldNumber: 31)
+      }
+      if _storage._xlaEnableFastMath != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaEnableFastMath, fieldNumber: 32)
+      }
+      if _storage._xlaEmbedIrInExecutable != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaEmbedIrInExecutable, fieldNumber: 33)
+      }
+      if !_storage._xlaDumpIrTo.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaDumpIrTo, fieldNumber: 34)
+      }
+      if _storage._xlaEliminateHloImplicitBroadcast != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaEliminateHloImplicitBroadcast, fieldNumber: 35)
+      }
+      if _storage._xlaCpuMultiThreadEigen != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaCpuMultiThreadEigen, fieldNumber: 60)
+      }
+      if !_storage._xlaGpuCudaDataDir.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._xlaGpuCudaDataDir, fieldNumber: 61)
+      }
+      if _storage._xlaGpuFtz != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaGpuFtz, fieldNumber: 62)
+      }
+      if _storage._xlaGpuDisableMultiStreaming != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaGpuDisableMultiStreaming, fieldNumber: 63)
+      }
+      if _storage._xlaLlvmEnableAliasScopeMetadata != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaLlvmEnableAliasScopeMetadata, fieldNumber: 70)
+      }
+      if _storage._xlaLlvmEnableNoaliasMetadata != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaLlvmEnableNoaliasMetadata, fieldNumber: 71)
+      }
+      if _storage._xlaLlvmEnableInvariantLoadMetadata != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaLlvmEnableInvariantLoadMetadata, fieldNumber: 72)
+      }
+      if _storage._xlaLlvmDisableExpensivePasses != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaLlvmDisableExpensivePasses, fieldNumber: 73)
+      }
+      if !_storage._hloReducePrecisionOptions.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._hloReducePrecisionOptions, fieldNumber: 80)
+      }
+      if _storage._xlaTestAllOutputLayouts != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaTestAllOutputLayouts, fieldNumber: 90)
+      }
+      if _storage._xlaTestAllInputLayouts != false {
+        try visitor.visitSingularBoolField(value: _storage._xlaTestAllInputLayouts, fieldNumber: 91)
+      }
+      if !_storage._xlaBackendExtraOptions.isEmpty {
+        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: _storage._xlaBackendExtraOptions, fieldNumber: 500)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// These settings control how XLA compiles and/or runs code.  Not all settings
@@ -79,18 +503,6 @@ public struct Xla_DebugOptions: SwiftProtobuf.Message {
 /// When adding new fields, keep in mind that boolean fields default to false.
 public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".ExecutionOptions"
-
-  /// When false, "unsafe" mathematical optimizations are enabled.  These
-  /// transformations include but are not limited to:
-  ///
-  ///  - Reducing the precision of operations (e.g. using an approximate sin
-  ///    function, or transforming x/y into x * (1/y)).
-  ///  - Assuming that operations never produce or consume NaN or +/- Inf.
-  ///  - Assuming that +0 and -0 are indistinguishable.
-  public var disableFastMath: Bool {
-    get {return _storage._disableFastMath}
-    set {_uniqueStorage()._disableFastMath = newValue}
-  }
 
   /// This optional field's layout is used as a hint when storing the output of
   /// this computation.  Subsequent transfers of this output array to the client
@@ -124,6 +536,14 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
   /// Clears the value of `debugOptions`. Subsequent reads from it will return its default value.
   public mutating func clearDebugOptions() {_storage._debugOptions = nil}
 
+  /// This optional field specifies a particular set of devices to run the
+  /// computation on. The computation will be partitioned across these devices.
+  /// If not provided, the default device will be chosen.
+  public var deviceHandles: [Xla_DeviceHandle] {
+    get {return _storage._deviceHandles}
+    set {_uniqueStorage()._deviceHandles = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -137,10 +557,10 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularBoolField(value: &_storage._disableFastMath)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._shapeWithOutputLayout)
         case 3: try decoder.decodeSingularUInt64Field(value: &_storage._seed)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._debugOptions)
+        case 5: try decoder.decodeRepeatedMessageField(value: &_storage._deviceHandles)
         default: break
         }
       }
@@ -153,9 +573,6 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
   /// `Message` and `Message+*Additions` files.
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._disableFastMath != false {
-        try visitor.visitSingularBoolField(value: _storage._disableFastMath, fieldNumber: 1)
-      }
       if let v = _storage._shapeWithOutputLayout {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
@@ -164,6 +581,9 @@ public struct Xla_ExecutionOptions: SwiftProtobuf.Message {
       }
       if let v = _storage._debugOptions {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      }
+      if !_storage._deviceHandles.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._deviceHandles, fieldNumber: 5)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -952,6 +1372,15 @@ public struct Xla_ComputationStatsRequest: SwiftProtobuf.Message {
   /// Clears the value of `computation`. Subsequent reads from it will return its default value.
   public mutating func clearComputation() {_storage._computation = nil}
 
+  public var debugOptions: Xla_DebugOptions {
+    get {return _storage._debugOptions ?? Xla_DebugOptions()}
+    set {_uniqueStorage()._debugOptions = newValue}
+  }
+  /// Returns true if `debugOptions` has been explicitly set.
+  public var hasDebugOptions: Bool {return _storage._debugOptions != nil}
+  /// Clears the value of `debugOptions`. Subsequent reads from it will return its default value.
+  public mutating func clearDebugOptions() {_storage._debugOptions = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -966,6 +1395,7 @@ public struct Xla_ComputationStatsRequest: SwiftProtobuf.Message {
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._computation)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._debugOptions)
         default: break
         }
       }
@@ -980,6 +1410,9 @@ public struct Xla_ComputationStatsRequest: SwiftProtobuf.Message {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._computation {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if let v = _storage._debugOptions {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1367,17 +1800,6 @@ public struct Xla_ExecuteRequest: SwiftProtobuf.Message {
     set {_uniqueStorage()._arguments = newValue}
   }
 
-  /// This optional field specifies a particular device to run the computation.
-  /// If not provided, the default device will be chosen.
-  public var deviceHandle: Xla_DeviceHandle {
-    get {return _storage._deviceHandle ?? Xla_DeviceHandle()}
-    set {_uniqueStorage()._deviceHandle = newValue}
-  }
-  /// Returns true if `deviceHandle` has been explicitly set.
-  public var hasDeviceHandle: Bool {return _storage._deviceHandle != nil}
-  /// Clears the value of `deviceHandle`. Subsequent reads from it will return its default value.
-  public mutating func clearDeviceHandle() {_storage._deviceHandle = nil}
-
   /// Options that affect how XLA compiles and runs code to service this request.
   public var executionOptions: Xla_ExecutionOptions {
     get {return _storage._executionOptions ?? Xla_ExecutionOptions()}
@@ -1403,8 +1825,7 @@ public struct Xla_ExecuteRequest: SwiftProtobuf.Message {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._computation)
         case 2: try decoder.decodeRepeatedMessageField(value: &_storage._arguments)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._deviceHandle)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._executionOptions)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._executionOptions)
         default: break
         }
       }
@@ -1423,11 +1844,8 @@ public struct Xla_ExecuteRequest: SwiftProtobuf.Message {
       if !_storage._arguments.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._arguments, fieldNumber: 2)
       }
-      if let v = _storage._deviceHandle {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
       if let v = _storage._executionOptions {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1966,14 +2384,16 @@ public struct Xla_ComputeConstantRequest: SwiftProtobuf.Message {
 public struct Xla_ComputeConstantResponse: SwiftProtobuf.Message {
   public static let protoMessageName: String = _protobuf_package + ".ComputeConstantResponse"
 
-  public var output: Xla_GlobalDataHandle {
-    get {return _storage._output ?? Xla_GlobalDataHandle()}
-    set {_uniqueStorage()._output = newValue}
+  /// A LiteralProto is returned directly for this request, instead of a
+  /// ComputationDataHandle.
+  public var literal: Xla_LiteralProto {
+    get {return _storage._literal ?? Xla_LiteralProto()}
+    set {_uniqueStorage()._literal = newValue}
   }
-  /// Returns true if `output` has been explicitly set.
-  public var hasOutput: Bool {return _storage._output != nil}
-  /// Clears the value of `output`. Subsequent reads from it will return its default value.
-  public mutating func clearOutput() {_storage._output = nil}
+  /// Returns true if `literal` has been explicitly set.
+  public var hasLiteral: Bool {return _storage._literal != nil}
+  /// Clears the value of `literal`. Subsequent reads from it will return its default value.
+  public mutating func clearLiteral() {_storage._literal = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -1988,7 +2408,7 @@ public struct Xla_ComputeConstantResponse: SwiftProtobuf.Message {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._output)
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._literal)
         default: break
         }
       }
@@ -2001,7 +2421,7 @@ public struct Xla_ComputeConstantResponse: SwiftProtobuf.Message {
   /// `Message` and `Message+*Additions` files.
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._output {
+      if let v = _storage._literal {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
     }
@@ -2642,13 +3062,176 @@ public struct Xla_UnpackResponse: SwiftProtobuf.Message {
 
 fileprivate let _protobuf_package = "xla"
 
+extension Xla_HloReducePrecisionOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "location"),
+    2: .standard(proto: "exponent_bits"),
+    3: .standard(proto: "mantissa_bits"),
+    4: .standard(proto: "opcodes_to_suffix"),
+    5: .standard(proto: "opname_substrings_to_suffix"),
+  ]
+
+  public func _protobuf_generated_isEqualTo(other: Xla_HloReducePrecisionOptions) -> Bool {
+    if self.location != other.location {return false}
+    if self.exponentBits != other.exponentBits {return false}
+    if self.mantissaBits != other.mantissaBits {return false}
+    if self.opcodesToSuffix != other.opcodesToSuffix {return false}
+    if self.opnameSubstringsToSuffix != other.opnameSubstringsToSuffix {return false}
+    if unknownFields != other.unknownFields {return false}
+    return true
+  }
+}
+
+extension Xla_HloReducePrecisionOptions.Location: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "OP_INPUTS"),
+    1: .same(proto: "OP_OUTPUTS"),
+    2: .same(proto: "UNFUSED_OP_OUTPUTS"),
+    3: .same(proto: "FUSION_INPUTS_BY_CONTENT"),
+    4: .same(proto: "FUSION_OUTPUTS_BY_CONTENT"),
+  ]
+}
+
 extension Xla_DebugOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "xla_generate_hlo_graph"),
+    2: .standard(proto: "xla_hlo_graph_addresses"),
+    4: .standard(proto: "xla_hlo_graph_path"),
+    5: .standard(proto: "xla_hlo_dump_as_graphdef"),
+    6: .standard(proto: "xla_log_hlo_text"),
+    7: .standard(proto: "xla_generate_hlo_text_to"),
+    8: .standard(proto: "xla_dump_hlo_proto_to"),
+    9: .standard(proto: "xla_hlo_profile"),
+    10: .standard(proto: "xla_dump_computations_to"),
+    11: .standard(proto: "xla_dump_executions_to"),
+    30: .standard(proto: "xla_disable_hlo_passes"),
+    31: .standard(proto: "xla_backend_optimization_level"),
+    32: .standard(proto: "xla_enable_fast_math"),
+    33: .standard(proto: "xla_embed_ir_in_executable"),
+    34: .standard(proto: "xla_dump_ir_to"),
+    35: .standard(proto: "xla_eliminate_hlo_implicit_broadcast"),
+    60: .standard(proto: "xla_cpu_multi_thread_eigen"),
+    61: .standard(proto: "xla_gpu_cuda_data_dir"),
+    62: .standard(proto: "xla_gpu_ftz"),
+    63: .standard(proto: "xla_gpu_disable_multi_streaming"),
+    70: .standard(proto: "xla_llvm_enable_alias_scope_metadata"),
+    71: .standard(proto: "xla_llvm_enable_noalias_metadata"),
+    72: .standard(proto: "xla_llvm_enable_invariant_load_metadata"),
+    73: .standard(proto: "xla_llvm_disable_expensive_passes"),
+    80: .standard(proto: "hlo_reduce_precision_options"),
+    90: .standard(proto: "xla_test_all_output_layouts"),
+    91: .standard(proto: "xla_test_all_input_layouts"),
+    500: .standard(proto: "xla_backend_extra_options"),
   ]
 
+  fileprivate class _StorageClass {
+    var _xlaGenerateHloGraph: String = String()
+    var _xlaHloGraphAddresses: Bool = false
+    var _xlaHloGraphPath: String = String()
+    var _xlaHloDumpAsGraphdef: Bool = false
+    var _xlaLogHloText: String = String()
+    var _xlaGenerateHloTextTo: String = String()
+    var _xlaDumpHloProtoTo: String = String()
+    var _xlaHloProfile: Bool = false
+    var _xlaDumpComputationsTo: String = String()
+    var _xlaDumpExecutionsTo: String = String()
+    var _xlaDisableHloPasses: [String] = []
+    var _xlaBackendOptimizationLevel: Int32 = 0
+    var _xlaEnableFastMath: Bool = false
+    var _xlaEmbedIrInExecutable: Bool = false
+    var _xlaDumpIrTo: String = String()
+    var _xlaEliminateHloImplicitBroadcast: Bool = false
+    var _xlaCpuMultiThreadEigen: Bool = false
+    var _xlaGpuCudaDataDir: String = String()
+    var _xlaGpuFtz: Bool = false
+    var _xlaGpuDisableMultiStreaming: Bool = false
+    var _xlaLlvmEnableAliasScopeMetadata: Bool = false
+    var _xlaLlvmEnableNoaliasMetadata: Bool = false
+    var _xlaLlvmEnableInvariantLoadMetadata: Bool = false
+    var _xlaLlvmDisableExpensivePasses: Bool = false
+    var _hloReducePrecisionOptions: [Xla_HloReducePrecisionOptions] = []
+    var _xlaTestAllOutputLayouts: Bool = false
+    var _xlaTestAllInputLayouts: Bool = false
+    var _xlaBackendExtraOptions: Dictionary<String,String> = [:]
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _xlaGenerateHloGraph = source._xlaGenerateHloGraph
+      _xlaHloGraphAddresses = source._xlaHloGraphAddresses
+      _xlaHloGraphPath = source._xlaHloGraphPath
+      _xlaHloDumpAsGraphdef = source._xlaHloDumpAsGraphdef
+      _xlaLogHloText = source._xlaLogHloText
+      _xlaGenerateHloTextTo = source._xlaGenerateHloTextTo
+      _xlaDumpHloProtoTo = source._xlaDumpHloProtoTo
+      _xlaHloProfile = source._xlaHloProfile
+      _xlaDumpComputationsTo = source._xlaDumpComputationsTo
+      _xlaDumpExecutionsTo = source._xlaDumpExecutionsTo
+      _xlaDisableHloPasses = source._xlaDisableHloPasses
+      _xlaBackendOptimizationLevel = source._xlaBackendOptimizationLevel
+      _xlaEnableFastMath = source._xlaEnableFastMath
+      _xlaEmbedIrInExecutable = source._xlaEmbedIrInExecutable
+      _xlaDumpIrTo = source._xlaDumpIrTo
+      _xlaEliminateHloImplicitBroadcast = source._xlaEliminateHloImplicitBroadcast
+      _xlaCpuMultiThreadEigen = source._xlaCpuMultiThreadEigen
+      _xlaGpuCudaDataDir = source._xlaGpuCudaDataDir
+      _xlaGpuFtz = source._xlaGpuFtz
+      _xlaGpuDisableMultiStreaming = source._xlaGpuDisableMultiStreaming
+      _xlaLlvmEnableAliasScopeMetadata = source._xlaLlvmEnableAliasScopeMetadata
+      _xlaLlvmEnableNoaliasMetadata = source._xlaLlvmEnableNoaliasMetadata
+      _xlaLlvmEnableInvariantLoadMetadata = source._xlaLlvmEnableInvariantLoadMetadata
+      _xlaLlvmDisableExpensivePasses = source._xlaLlvmDisableExpensivePasses
+      _hloReducePrecisionOptions = source._hloReducePrecisionOptions
+      _xlaTestAllOutputLayouts = source._xlaTestAllOutputLayouts
+      _xlaTestAllInputLayouts = source._xlaTestAllInputLayouts
+      _xlaBackendExtraOptions = source._xlaBackendExtraOptions
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public func _protobuf_generated_isEqualTo(other: Xla_DebugOptions) -> Bool {
-    if self.xlaGenerateHloGraph != other.xlaGenerateHloGraph {return false}
+    if _storage !== other._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
+        if _storage._xlaGenerateHloGraph != other_storage._xlaGenerateHloGraph {return false}
+        if _storage._xlaHloGraphAddresses != other_storage._xlaHloGraphAddresses {return false}
+        if _storage._xlaHloGraphPath != other_storage._xlaHloGraphPath {return false}
+        if _storage._xlaHloDumpAsGraphdef != other_storage._xlaHloDumpAsGraphdef {return false}
+        if _storage._xlaLogHloText != other_storage._xlaLogHloText {return false}
+        if _storage._xlaGenerateHloTextTo != other_storage._xlaGenerateHloTextTo {return false}
+        if _storage._xlaDumpHloProtoTo != other_storage._xlaDumpHloProtoTo {return false}
+        if _storage._xlaHloProfile != other_storage._xlaHloProfile {return false}
+        if _storage._xlaDumpComputationsTo != other_storage._xlaDumpComputationsTo {return false}
+        if _storage._xlaDumpExecutionsTo != other_storage._xlaDumpExecutionsTo {return false}
+        if _storage._xlaDisableHloPasses != other_storage._xlaDisableHloPasses {return false}
+        if _storage._xlaBackendOptimizationLevel != other_storage._xlaBackendOptimizationLevel {return false}
+        if _storage._xlaEnableFastMath != other_storage._xlaEnableFastMath {return false}
+        if _storage._xlaEmbedIrInExecutable != other_storage._xlaEmbedIrInExecutable {return false}
+        if _storage._xlaDumpIrTo != other_storage._xlaDumpIrTo {return false}
+        if _storage._xlaEliminateHloImplicitBroadcast != other_storage._xlaEliminateHloImplicitBroadcast {return false}
+        if _storage._xlaCpuMultiThreadEigen != other_storage._xlaCpuMultiThreadEigen {return false}
+        if _storage._xlaGpuCudaDataDir != other_storage._xlaGpuCudaDataDir {return false}
+        if _storage._xlaGpuFtz != other_storage._xlaGpuFtz {return false}
+        if _storage._xlaGpuDisableMultiStreaming != other_storage._xlaGpuDisableMultiStreaming {return false}
+        if _storage._xlaLlvmEnableAliasScopeMetadata != other_storage._xlaLlvmEnableAliasScopeMetadata {return false}
+        if _storage._xlaLlvmEnableNoaliasMetadata != other_storage._xlaLlvmEnableNoaliasMetadata {return false}
+        if _storage._xlaLlvmEnableInvariantLoadMetadata != other_storage._xlaLlvmEnableInvariantLoadMetadata {return false}
+        if _storage._xlaLlvmDisableExpensivePasses != other_storage._xlaLlvmDisableExpensivePasses {return false}
+        if _storage._hloReducePrecisionOptions != other_storage._hloReducePrecisionOptions {return false}
+        if _storage._xlaTestAllOutputLayouts != other_storage._xlaTestAllOutputLayouts {return false}
+        if _storage._xlaTestAllInputLayouts != other_storage._xlaTestAllInputLayouts {return false}
+        if _storage._xlaBackendExtraOptions != other_storage._xlaBackendExtraOptions {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if unknownFields != other.unknownFields {return false}
     return true
   }
@@ -2656,27 +3239,27 @@ extension Xla_DebugOptions: SwiftProtobuf._MessageImplementationBase, SwiftProto
 
 extension Xla_ExecutionOptions: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "disable_fast_math"),
     2: .standard(proto: "shape_with_output_layout"),
     3: .same(proto: "seed"),
     4: .standard(proto: "debug_options"),
+    5: .standard(proto: "device_handles"),
   ]
 
   fileprivate class _StorageClass {
-    var _disableFastMath: Bool = false
     var _shapeWithOutputLayout: Xla_Shape? = nil
     var _seed: UInt64 = 0
     var _debugOptions: Xla_DebugOptions? = nil
+    var _deviceHandles: [Xla_DeviceHandle] = []
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _disableFastMath = source._disableFastMath
       _shapeWithOutputLayout = source._shapeWithOutputLayout
       _seed = source._seed
       _debugOptions = source._debugOptions
+      _deviceHandles = source._deviceHandles
     }
   }
 
@@ -2690,10 +3273,10 @@ extension Xla_ExecutionOptions: SwiftProtobuf._MessageImplementationBase, SwiftP
   public func _protobuf_generated_isEqualTo(other: Xla_ExecutionOptions) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._disableFastMath != other_storage._disableFastMath {return false}
         if _storage._shapeWithOutputLayout != other_storage._shapeWithOutputLayout {return false}
         if _storage._seed != other_storage._seed {return false}
         if _storage._debugOptions != other_storage._debugOptions {return false}
+        if _storage._deviceHandles != other_storage._deviceHandles {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -3216,10 +3799,12 @@ extension Xla_ResetDeviceResponse: SwiftProtobuf._MessageImplementationBase, Swi
 extension Xla_ComputationStatsRequest: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "computation"),
+    2: .standard(proto: "debug_options"),
   ]
 
   fileprivate class _StorageClass {
     var _computation: Xla_ComputationHandle? = nil
+    var _debugOptions: Xla_DebugOptions? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -3227,6 +3812,7 @@ extension Xla_ComputationStatsRequest: SwiftProtobuf._MessageImplementationBase,
 
     init(copying source: _StorageClass) {
       _computation = source._computation
+      _debugOptions = source._debugOptions
     }
   }
 
@@ -3241,6 +3827,7 @@ extension Xla_ComputationStatsRequest: SwiftProtobuf._MessageImplementationBase,
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._computation != other_storage._computation {return false}
+        if _storage._debugOptions != other_storage._debugOptions {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -3482,14 +4069,12 @@ extension Xla_ExecuteRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "computation"),
     2: .same(proto: "arguments"),
-    5: .standard(proto: "device_handle"),
-    6: .standard(proto: "execution_options"),
+    5: .standard(proto: "execution_options"),
   ]
 
   fileprivate class _StorageClass {
     var _computation: Xla_ComputationHandle? = nil
     var _arguments: [Xla_GlobalDataHandle] = []
-    var _deviceHandle: Xla_DeviceHandle? = nil
     var _executionOptions: Xla_ExecutionOptions? = nil
 
     static let defaultInstance = _StorageClass()
@@ -3499,7 +4084,6 @@ extension Xla_ExecuteRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
     init(copying source: _StorageClass) {
       _computation = source._computation
       _arguments = source._arguments
-      _deviceHandle = source._deviceHandle
       _executionOptions = source._executionOptions
     }
   }
@@ -3516,7 +4100,6 @@ extension Xla_ExecuteRequest: SwiftProtobuf._MessageImplementationBase, SwiftPro
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
         if _storage._computation != other_storage._computation {return false}
         if _storage._arguments != other_storage._arguments {return false}
-        if _storage._deviceHandle != other_storage._deviceHandle {return false}
         if _storage._executionOptions != other_storage._executionOptions {return false}
         return true
       }
@@ -3852,18 +4435,18 @@ extension Xla_ComputeConstantRequest: SwiftProtobuf._MessageImplementationBase, 
 
 extension Xla_ComputeConstantResponse: SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "output"),
+    1: .same(proto: "literal"),
   ]
 
   fileprivate class _StorageClass {
-    var _output: Xla_GlobalDataHandle? = nil
+    var _literal: Xla_LiteralProto? = nil
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _output = source._output
+      _literal = source._literal
     }
   }
 
@@ -3877,7 +4460,7 @@ extension Xla_ComputeConstantResponse: SwiftProtobuf._MessageImplementationBase,
   public func _protobuf_generated_isEqualTo(other: Xla_ComputeConstantResponse) -> Bool {
     if _storage !== other._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((_storage, other._storage)) { (_storage, other_storage) in
-        if _storage._output != other_storage._output {return false}
+        if _storage._literal != other_storage._literal {return false}
         return true
       }
       if !storagesAreEqual {return false}

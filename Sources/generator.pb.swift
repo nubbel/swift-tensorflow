@@ -139,7 +139,9 @@ public struct Tensorflow_Magenta_GeneratorOptions: SwiftProtobuf.Message {
   public struct ArgValue: SwiftProtobuf.Message {
     public static let protoMessageName: String = Tensorflow_Magenta_GeneratorOptions.protoMessageName + ".ArgValue"
 
-    /// Each argument value can be exactly one kind.
+    /// Each argument value can be exactly one kind. The "bytes" kind is intended
+    /// for arbitrary serialized data, while the "string" kind is intended for
+    /// text strings.
     public var kind: Tensorflow_Magenta_GeneratorOptions.ArgValue.OneOf_Kind? = nil
 
     public var byteValue: Data {
@@ -174,14 +176,25 @@ public struct Tensorflow_Magenta_GeneratorOptions: SwiftProtobuf.Message {
       set {kind = .boolValue(newValue)}
     }
 
+    public var stringValue: String {
+      get {
+        if case .stringValue(let v)? = kind {return v}
+        return String()
+      }
+      set {kind = .stringValue(newValue)}
+    }
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    /// Each argument value can be exactly one kind.
+    /// Each argument value can be exactly one kind. The "bytes" kind is intended
+    /// for arbitrary serialized data, while the "string" kind is intended for
+    /// text strings.
     public enum OneOf_Kind: Equatable {
       case byteValue(Data)
       case intValue(Int32)
       case floatValue(Double)
       case boolValue(Bool)
+      case stringValue(String)
 
       public static func ==(lhs: Tensorflow_Magenta_GeneratorOptions.ArgValue.OneOf_Kind, rhs: Tensorflow_Magenta_GeneratorOptions.ArgValue.OneOf_Kind) -> Bool {
         switch (lhs, rhs) {
@@ -189,6 +202,7 @@ public struct Tensorflow_Magenta_GeneratorOptions: SwiftProtobuf.Message {
         case (.intValue(let l), .intValue(let r)): return l == r
         case (.floatValue(let l), .floatValue(let r)): return l == r
         case (.boolValue(let l), .boolValue(let r)): return l == r
+        case (.stringValue(let l), .stringValue(let r)): return l == r
         default: return false
         }
       }
@@ -223,6 +237,11 @@ public struct Tensorflow_Magenta_GeneratorOptions: SwiftProtobuf.Message {
           var v: Bool?
           try decoder.decodeSingularBoolField(value: &v)
           if let v = v {self.kind = .boolValue(v)}
+        case 5:
+          if self.kind != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {self.kind = .stringValue(v)}
         default: break
         }
       }
@@ -242,6 +261,8 @@ public struct Tensorflow_Magenta_GeneratorOptions: SwiftProtobuf.Message {
         try visitor.visitSingularDoubleField(value: v, fieldNumber: 3)
       case .boolValue(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+      case .stringValue(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 5)
       case nil: break
       }
       try unknownFields.traverse(visitor: &visitor)
@@ -461,6 +482,7 @@ extension Tensorflow_Magenta_GeneratorOptions.ArgValue: SwiftProtobuf._MessageIm
     2: .standard(proto: "int_value"),
     3: .standard(proto: "float_value"),
     4: .standard(proto: "bool_value"),
+    5: .standard(proto: "string_value"),
   ]
 
   public func _protobuf_generated_isEqualTo(other: Tensorflow_Magenta_GeneratorOptions.ArgValue) -> Bool {
